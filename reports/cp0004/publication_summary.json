@@ -1,0 +1,11 @@
+{
+  "checkpoint": "CP0004",
+  "repository": "llioncourt/NemesisLegendsNES",
+  "source_commit": "71cc11859dc78a057fe412683ea24018a55bf6ae",
+  "source_snapshot_sha256": "3444d2418d7bfb8eda4e29cdd2f64302899423baaf1b637b402f6aeed0e07a4a",
+  "workflow_run_id": 40243969397,
+  "artifact_id": 12617896897,
+  "verified_file_count": 29,
+  "rom_sha256": "0c9d1135a7675165e8d7125db0f5d8a990265e112b7508f9701cb63662c70d02",
+  "scope": "All 29 changed source/report files fetched back from the committed source artifact match local bytes. This is publication verification, not full-game completion."
+}
