@@ -1,0 +1,95 @@
+name: Apply reviewed source snapshot
+
+on:
+  push:
+    paths:
+      - '.migration/source-snapshot.json'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: reviewed-source-snapshot
+  cancel-in-progress: false
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
+      - name: Verify and apply reviewed UTF-8 source files
+        shell: python
+        run: |
+          import base64, hashlib, json, pathlib, subprocess, zlib
+          root = pathlib.Path('.').resolve()
+          envelope = json.loads((root / '.migration/source-snapshot.json').read_text())
+          if envelope.get('schema') != 1:
+              raise ValueError('Unsupported snapshot schema')
+          compressed = base64.b85decode(envelope['zlib_base85'])
+          decoder = zlib.decompressobj()
+          raw = decoder.decompress(compressed, 2 * 1024 * 1024 + 1)
+          if len(raw) > 2 * 1024 * 1024 or not decoder.eof or decoder.unused_data or decoder.unconsumed_tail:
+              raise ValueError('Invalid or oversized snapshot')
+          if hashlib.sha256(raw).hexdigest() != envelope['sha256']:
+              raise ValueError('Snapshot digest mismatch')
+          snapshot = json.loads(raw)
+          allowed = {'tools', 'tests', 'docs', 'manifests', 'evidence', 'reports', 'src', 'cfg'}
+          top = {'README.md', 'requirements.txt', 'REBUILD_EVIDENCE.cmd', 'BUILD.cmd', 'Makefile', '.gitignore', 'NOTICE.md', 'audio/SUNO_STYLE.txt'}
+          suffixes = {'.py', '.md', '.json', '.txt', '.cfg', '.s', '.asm', '.inc', '.cmd', '.csv', '.c', '.h'}
+          checked = []
+          seen = set()
+          for item in snapshot['files']:
+              name = item['path']
+              path = pathlib.PurePosixPath(name)
+              if path.is_absolute() or '..' in path.parts or '\\' in name or not path.parts or name in seen:
+                  raise ValueError('Unsafe or duplicate path: ' + name)
+              if name not in top and (path.parts[0] not in allowed or path.suffix not in suffixes):
+                  raise ValueError('Path outside reviewed source scope: ' + name)
+              seen.add(name)
+              target = root / path
+              if root not in target.resolve().parents:
+                  raise ValueError('Path resolves outside checkout')
+              if any(p.is_symlink() for p in [target, *target.parents] if p != root):
+                  raise ValueError('Symlinks are not supported')
+              data = item['content'].encode('utf-8')
+              if b'\x00' in data or hashlib.sha256(data).hexdigest() != item['sha256']:
+                  raise ValueError('Not verified UTF-8 source: ' + name)
+              old = target.read_bytes() if target.exists() else None
+              expected = item.get('previous_sha256')
+              if old != data:
+                  actual = hashlib.sha256(old).hexdigest() if old is not None else None
+                  if actual != expected:
+                      raise ValueError('Concurrent change or unreviewed overwrite: ' + name)
+              checked.append((name, target, data))
+          for name, target, data in checked:
+              target.parent.mkdir(parents=True, exist_ok=True)
+              target.write_bytes(data)
+          subprocess.run(['git', 'add', '--', *[x[0] for x in checked]], check=True)
+          message = snapshot['message']
+          if '\n' in message or len(message) > 200:
+              raise ValueError('Invalid commit message')
+          pathlib.Path('/tmp/source-snapshot-message.txt').write_text(message)
+          pathlib.Path('/tmp/source-snapshot-report.json').write_text(json.dumps({'snapshot_sha256': envelope['sha256'], 'files': [{'path': x[0], 'sha256': hashlib.sha256(x[2]).hexdigest(), 'bytes': len(x[2])} for x in checked]}, indent=2) + '\n')
+          print('Verified source files:', len(checked))
+      - name: Commit verified sources without rewriting history
+        run: |
+          if git diff --cached --quiet; then
+            echo 'Snapshot already applied; no commit needed.'
+          else
+            git config user.name 'Silicon Forge Build'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git commit -F /tmp/source-snapshot-message.txt
+            git push origin HEAD:main
+          fi
+      - name: Preserve public migration evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: verified-source-snapshot
+          path: /tmp/source-snapshot-report.json
+          if-no-files-found: error
+          retention-days: 30
