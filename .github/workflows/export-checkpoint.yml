@@ -1,0 +1,49 @@
+name: Export current source checkpoint
+
+on:
+  push:
+    paths:
+      - '.github/workflows/export-checkpoint.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  export:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Export tracked source and verify staged part hashes
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p recovery-export
+          git archive --format=tar HEAD > recovery-export/current-source.tar
+          git rev-parse HEAD > recovery-export/COMMIT.txt
+          sha256sum recovery-export/current-source.tar > recovery-export/SHA256SUMS.txt
+          python - <<'PY'
+          import base64, hashlib, json, pathlib, zlib
+          parts = sorted(pathlib.Path('.migration/chunks').glob('cp0003_*.b85'))
+          report = []
+          encoded = b''
+          for part in parts:
+              data = part.read_bytes()
+              report.append({'path': str(part), 'sha256': hashlib.sha256(data).hexdigest(), 'bytes': len(data)})
+              encoded += data.strip()
+          pathlib.Path('recovery-export/staged-parts.json').write_text(json.dumps(report, indent=2) + '\n')
+          if encoded:
+              inflater = zlib.decompressobj()
+              prefix = inflater.decompress(base64.b85decode(encoded))
+              pathlib.Path('recovery-export/snapshot-prefix.json').write_bytes(prefix)
+              pathlib.Path('recovery-export/prefix-status.json').write_text(json.dumps({'complete_zlib_stream': inflater.eof, 'decoded_prefix_bytes': len(prefix), 'parts_present': len(parts)}, indent=2) + '\n')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: current-source-and-staged-snapshot
+          path: recovery-export/
+          if-no-files-found: error
+          retention-days: 30
