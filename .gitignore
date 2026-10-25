@@ -1,0 +1,36 @@
+# Commercial inputs and private source caches stay local.
+inputs/*.zip
+private_sources/
+*.nes
+*.rom
+*.ROM
+*.nsf
+*.kss
+*.mp3
+*.wav
+*.7z
+
+# Reproducible outputs, fetched upstream source and temporary build products.
+__pycache__/
+*.pyc
+.venv/
+venv/
+third_party/*/
+build/
+work/
+logs/
+audio/native_nes/
+audio/msx_reference/
+audio/mp3/
+*.o
+*.map
+*.dbg
+
+# Never add credentials, environment secrets or editor state.
+.env
+.env.*
+!.env.example
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
