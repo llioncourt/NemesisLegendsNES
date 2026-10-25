@@ -1,0 +1,70 @@
+name: Native build and verification tools
+
+on:
+  push:
+    paths:
+      - '.github/workflows/build-tools.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  tools:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 20
+    steps:
+      - name: Install assembler packages
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y cc65 pasmo
+          mkdir -p toolchain/bin toolchain/share toolchain/licenses
+          cp /usr/bin/ca65 /usr/bin/ld65 /usr/bin/cl65 /usr/bin/cc65 /usr/bin/ar65 /usr/bin/da65 /usr/bin/pasmo toolchain/bin/
+          cp -a /usr/share/cc65 toolchain/share/
+          cp -a /usr/share/doc/cc65 /usr/share/doc/pasmo toolchain/licenses/
+          dpkg-query -W cc65 pasmo > toolchain/PACKAGE_VERSIONS.txt
+      - name: Retrieve pinned FCEUmm source
+        shell: python
+        run: |
+          import hashlib, io, json, pathlib, stat, urllib.request, zipfile
+          commit = 'ac0d00a7fc01166f84c7bac01d1084ebfd2b865e'
+          url = 'https://codeload.github.com/libretro/libretro-fceumm/zip/' + commit
+          with urllib.request.urlopen(url, timeout=120) as response:
+              data = response.read(64 * 1024 * 1024 + 1)
+          if len(data) > 64 * 1024 * 1024:
+              raise ValueError('Archive size limit exceeded')
+          root = pathlib.Path('toolchain/fceumm-source')
+          with zipfile.ZipFile(io.BytesIO(data)) as archive:
+              if sum(info.file_size for info in archive.infolist()) > 256 * 1024 * 1024:
+                  raise ValueError('Expanded size limit exceeded')
+              for info in archive.infolist():
+                  path = pathlib.PurePosixPath(info.filename)
+                  if path.is_absolute() or '..' in path.parts or stat.S_ISLNK(info.external_attr >> 16):
+                      raise ValueError('Unsafe path')
+                  relative = pathlib.Path(*path.parts[1:])
+                  if not relative.parts or info.is_dir():
+                      continue
+                  destination = root / relative
+                  destination.parent.mkdir(parents=True, exist_ok=True)
+                  destination.write_bytes(archive.read(info))
+          pathlib.Path('toolchain/FCEUMM_PIN.json').write_text(json.dumps({'repository': 'libretro/libretro-fceumm', 'commit': commit, 'archive_sha256': hashlib.sha256(data).hexdigest()}, indent=2) + '\n')
+      - name: Build headless NES verification core
+        run: |
+          make -C toolchain/fceumm-source -j2
+          cp toolchain/fceumm-source/fceumm_libretro.so toolchain/bin/
+          python3 toolchain/fceumm-source/tests/onebus_chr.py toolchain/bin/fceumm_libretro.so
+      - name: Record artifact hashes
+        shell: python
+        run: |
+          import hashlib, json, pathlib
+          root = pathlib.Path('toolchain')
+          rows = [{'path': str(p.relative_to(root)), 'bytes': p.stat().st_size, 'sha256': hashlib.sha256(p.read_bytes()).hexdigest()} for p in sorted(root.rglob('*')) if p.is_file()]
+          (root / 'FILES.json').write_text(json.dumps(rows, indent=2) + '\n')
+      - name: Preserve tools and corresponding source/licences
+        uses: actions/upload-artifact@v4
+        with:
+          name: native-build-verification-tools-linux-x64
+          path: toolchain/
+          if-no-files-found: error
+          include-hidden-files: true
+          retention-days: 30
