@@ -1,0 +1,69 @@
+name: Source evidence acquisition
+
+on:
+  push:
+    paths:
+      - '.github/workflows/source-evidence.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  acquire:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Download pinned public disassemblies without executing them
+        shell: python
+        run: |
+          import hashlib, io, json, pathlib, stat, urllib.request, zipfile
+          repositories = {
+              'antxiko/Nemesis-disassembly': '3e486bc2f39c65eb97a944cda246f85fd30218ec',
+              'antxiko/Nemesis2-disassembly': 'c25da4fb19682e2ba64441ca74e5ea6b2ae00657',
+              'antxiko/Salamander-disassembly': '6f166825c6df198f4a3044b7efb90c24b80862d3',
+              'antxiko/Nemesis3-disassembly': 'd3d4ae800a5bb5d858a931edf3214db4f114b42c',
+          }
+          root = pathlib.Path('source-evidence')
+          root.mkdir()
+          manifest = []
+          for repo, commit in repositories.items():
+              url = f'https://codeload.github.com/{repo}/zip/{commit}'
+              request = urllib.request.Request(url, headers={'User-Agent': 'NemesisLegendsNES-source-evidence'})
+              with urllib.request.urlopen(request, timeout=120) as response:
+                  data = response.read(256 * 1024 * 1024 + 1)
+              if len(data) > 256 * 1024 * 1024:
+                  raise ValueError('Archive size limit exceeded: ' + repo)
+              target = root / repo.replace('/', '__')
+              files = []
+              omitted = []
+              with zipfile.ZipFile(io.BytesIO(data)) as archive:
+                  if sum(item.file_size for item in archive.infolist()) > 512 * 1024 * 1024:
+                      raise ValueError('Expanded archive size limit exceeded: ' + repo)
+                  for info in archive.infolist():
+                      path = pathlib.PurePosixPath(info.filename)
+                      if path.is_absolute() or '..' in path.parts or stat.S_ISLNK(info.external_attr >> 16):
+                          raise ValueError('Unsafe archive entry: ' + info.filename)
+                      relative = pathlib.Path(*path.parts[1:])
+                      if not relative.parts or info.is_dir():
+                          continue
+                      # Preserve source, documentation and licences. Do not publish
+                      # commercial ROM binaries or redundant soundtrack/capture media.
+                      if relative.suffix.lower() in {'.rom', '.nes', '.nsf', '.kss', '.mp3', '.wav', '.mp4', '.ogg', '.flac'}:
+                          omitted.append(str(relative))
+                          continue
+                      payload = archive.read(info)
+                      destination = target / relative
+                      destination.parent.mkdir(parents=True, exist_ok=True)
+                      destination.write_bytes(payload)
+                      files.append({'path': str(relative), 'bytes': len(payload), 'sha256': hashlib.sha256(payload).hexdigest()})
+              manifest.append({'repo': repo, 'commit': commit, 'archive_sha256': hashlib.sha256(data).hexdigest(), 'files': files, 'omitted_media': omitted, 'code_executed': False, 'reassembly_verified': False})
+          (root / 'ACQUISITION.json').write_text(json.dumps(manifest, indent=2) + '\n', encoding='utf-8')
+          print(json.dumps([{k: v for k, v in item.items() if k not in ('files', 'omitted_media')} | {'files': len(item['files'])} for item in manifest], indent=2))
+      - name: Preserve auditable source snapshot
+        uses: actions/upload-artifact@v4
+        with:
+          name: pinned-msx-source-evidence
+          path: source-evidence/
+          if-no-files-found: error
+          retention-days: 30
