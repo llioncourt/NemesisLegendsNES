@@ -1,0 +1,36 @@
+{
+  "source_sha256": "3210f8a0f2309dd4b9a89fc2b24d0f178ce4393a0a1f2854fbce545c361261bc",
+  "terrain_records": 12,
+  "tile_occurrences": 9216,
+  "unique_pixel_tiles": 1169,
+  "color_counts_per_tile": {
+    "1": 2096,
+    "3": 2869,
+    "2": 1314,
+    "4": 2206,
+    "5": 304,
+    "6": 411,
+    "7": 16
+  },
+  "nonblack_color_counts_per_tile": {
+    "0": 2092,
+    "2": 2828,
+    "1": 1183,
+    "3": 2368,
+    "4": 316,
+    "5": 413,
+    "6": 16
+  },
+  "unique_rle_streams": 167,
+  "rle_stream_bytes_sum": 10224,
+  "mirror_records": 141,
+  "upstream_mirror_decoder_corrected": true,
+  "runtime_integration": false,
+  "original_machine_vram_comparison": "pending",
+  "limitations": [
+    "Static terrain and source graphics only; no claims of gameplay completion.",
+    "Background objects and animations must be implemented from event/object routines.",
+    "Starfield lengths use recorded event marker for a finite inspection preview.",
+    "No NES palette quantization has silently been applied."
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "checkpoint": "CP0002",
+  "stage": "verified_upstream_sources_and_native_campaign_module",
+  "playable_game_rom": false,
+  "full_game_complete": false,
+  "chapters": [
+    {
+      "chapter": 1,
+      "source": "nemesis_msx",
+      "source_available": true,
+      "original_hash_verified": true,
+      "static_maps_extracted": 12,
+      "sprite_variants_extracted": 0,
+      "original_audio_driver_ripped": true,
+      "nes_music_conversion_complete": false,
+      "nes_gameplay_complete": false,
+      "cutscenes_integrated": false,
+      "endings_validated": false,
+      "upstream_reassembly_byte_exact": true
+    },
+    {
+      "chapter": 2,
+      "source": "nemesis2_msx",
+      "source_available": true,
+      "original_hash_verified": true,
+      "static_maps_extracted": 12,
+      "sprite_variants_extracted": 48,
+      "original_audio_driver_ripped": true,
+      "nes_music_conversion_complete": false,
+      "nes_gameplay_complete": false,
+      "cutscenes_integrated": false,
+      "endings_validated": false,
+      "upstream_reassembly_byte_exact": true
+    },
+    {
+      "chapter": 3,
+      "source": "salamander_msx",
+      "source_available": true,
+      "original_hash_verified": true,
+      "static_maps_extracted": 0,
+      "sprite_variants_extracted": 0,
+      "original_audio_driver_ripped": true,
+      "nes_music_conversion_complete": false,
+      "nes_gameplay_complete": false,
+      "cutscenes_integrated": false,
+      "endings_validated": false,
+      "upstream_reassembly_byte_exact": true
+    },
+    {
+      "chapter": 4,
+      "source": "nemesis3_msx",
+      "source_available": true,
+      "original_hash_verified": true,
+      "static_maps_extracted": 0,
+      "sprite_variants_extracted": 0,
+      "original_audio_driver_ripped": false,
+      "nes_music_conversion_complete": false,
+      "nes_gameplay_complete": false,
+      "cutscenes_integrated": false,
+      "endings_validated": false,
+      "upstream_reassembly_byte_exact": true
+    }
+  ],
+  "custom_title_native_asset": true,
+  "custom_title_in_game": false,
+  "konami_code_implemented": false,
+  "silicon_forge_menu_implemented": false,
+  "native_campaign_flow_implemented": true,
+  "native_campaign_unit_checks": 288,
+  "gameplay_runtime_integrated": false
+}

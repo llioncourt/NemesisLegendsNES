@@ -1,0 +1,12 @@
+{
+  "rendered": 98,
+  "driver_files": 6,
+  "mp3_bytes": 206749619,
+  "duration_seconds": 8608.914326800454,
+  "warnings": 0,
+  "pcm_clipping_metrics_missing": 40,
+  "tracks_with_observed_pcm_clipping": 17,
+  "silence_check": "Rendered source references only; not console parity or arrangement validation.",
+  "native_nes_sequences": 42,
+  "msx_reference_sequences": 56
+}

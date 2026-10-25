@@ -1,0 +1,138 @@
+{
+  "repositories": [
+    {
+      "game": "Nemesis / Gradius MSX",
+      "repo": "antxiko/Nemesis-disassembly",
+      "commit": "3e486bc2f39c65eb97a944cda246f85fd30218ec",
+      "kind": "annotated_Z80_disassembly",
+      "source_slug": "nemesis_msx",
+      "local_validation": "All assembly banks were rebuilt with Pasmo and matched the canonical supplied ROM byte for byte. See reports/upstream_reassembly.json. This is not a NES gameplay test.",
+      "read_files": [
+        "Makefile",
+        "tools/graficos.py",
+        "tools/musica.py",
+        "src/nemesis_p00.asm"
+      ],
+      "url": "https://github.com/antxiko/Nemesis-disassembly",
+      "accessed": "2026-10-25",
+      "retrieval": "pinned_complete_source_snapshot_with_media_exclusions",
+      "full_checkout_included": false,
+      "complete_source_available": true,
+      "verified_at_checkpoint": "CP0002"
+    },
+    {
+      "game": "Nemesis 2 / Gradius 2 MSX",
+      "repo": "antxiko/Nemesis2-disassembly",
+      "commit": "c25da4fb19682e2ba64441ca74e5ea6b2ae00657",
+      "kind": "annotated_Z80_disassembly",
+      "source_slug": "nemesis2_msx",
+      "local_validation": "All assembly banks were rebuilt with Pasmo and matched the canonical supplied ROM byte for byte. See reports/upstream_reassembly.json. This is not a NES gameplay test.",
+      "read_files": [
+        "tools/musica.py",
+        "tools/motor_musica.py",
+        "tools/dibuja.py",
+        "tools/vram.py"
+      ],
+      "url": "https://github.com/antxiko/Nemesis2-disassembly",
+      "accessed": "2026-10-25",
+      "retrieval": "pinned_complete_source_snapshot_with_media_exclusions",
+      "full_checkout_included": false,
+      "complete_source_available": true,
+      "verified_at_checkpoint": "CP0002"
+    },
+    {
+      "game": "Salamander - Operation X MSX",
+      "repo": "antxiko/Salamander-disassembly",
+      "commit": "6f166825c6df198f4a3044b7efb90c24b80862d3",
+      "kind": "annotated_Z80_disassembly",
+      "source_slug": "salamander_msx",
+      "local_validation": "All assembly banks were rebuilt with Pasmo and matched the canonical supplied ROM byte for byte. See reports/upstream_reassembly.json. This is not a NES gameplay test.",
+      "read_files": [
+        "README.md",
+        "Makefile",
+        "tools/musica.py"
+      ],
+      "url": "https://github.com/antxiko/Salamander-disassembly",
+      "accessed": "2026-10-25",
+      "retrieval": "pinned_complete_source_snapshot_with_media_exclusions",
+      "full_checkout_included": false,
+      "complete_source_available": true,
+      "verified_at_checkpoint": "CP0002"
+    },
+    {
+      "game": "Nemesis 3 / Gofer no Yabou Episode II MSX",
+      "repo": "antxiko/Nemesis3-disassembly",
+      "commit": "d3d4ae800a5bb5d858a931edf3214db4f114b42c",
+      "kind": "annotated_Z80_disassembly",
+      "source_slug": "nemesis3_msx",
+      "local_validation": "All assembly banks were rebuilt with Pasmo and matched the canonical supplied ROM byte for byte. See reports/upstream_reassembly.json. This is not a NES gameplay test.",
+      "read_files": [
+        "docs/UNDER-THE-HOOD.md"
+      ],
+      "url": "https://github.com/antxiko/Nemesis3-disassembly",
+      "accessed": "2026-10-25",
+      "retrieval": "pinned_complete_source_snapshot_with_media_exclusions",
+      "full_checkout_included": false,
+      "complete_source_available": true,
+      "verified_at_checkpoint": "CP0002"
+    },
+    {
+      "game": "Gradius NES",
+      "repo": "Fabulu/Mixup",
+      "commit": null,
+      "kind": "semantic_reimplementation_and_ROM_notes",
+      "local_validation": "Selected Gradius notes inspected. Not a native MMC5 port; not accepted as a byte-exact NES disassembly.",
+      "read_files": [
+        "games/gradius/NOTES-rom.md"
+      ],
+      "url": "https://github.com/Fabulu/Mixup",
+      "accessed": "2026-10-25",
+      "retrieval": "selected_text_files_via_GitHub_connector",
+      "full_checkout_included": false
+    },
+    {
+      "game": "Salamander Famicom",
+      "repo": "MikeWuPing/UEFI_Salamander",
+      "commit": null,
+      "kind": "C_reimplementation_with_6502_evidence_and_asset_tools",
+      "local_validation": "README inspected. Author explicitly states no audio and known fidelity gaps. Not compiled or integrated locally.",
+      "read_files": [
+        "README.md"
+      ],
+      "url": "https://github.com/MikeWuPing/UEFI_Salamander",
+      "accessed": "2026-10-25",
+      "retrieval": "selected_text_files_via_GitHub_connector",
+      "full_checkout_included": false
+    }
+  ],
+  "other_references": [
+    {
+      "url": "https://github.com/Konamiman/MSX-Gradius-disassembly",
+      "purpose": "Earlier Nemesis disassembly lineage; reference, not independently built"
+    },
+    {
+      "url": "https://github.com/libgme/game-music-emu",
+      "purpose": "NSF/KSS renderer and KSS bank/BIOS semantics; inspected gme/Kss_Emu.cpp and gme/gme.h"
+    },
+    {
+      "url": "https://ototoy.jp/_/default/p/3649893",
+      "purpose": "Konami-published Gradius FC track titles"
+    },
+    {
+      "url": "https://ototoy.jp/_/default/p/3649892",
+      "purpose": "Konami-published Salamander FC track titles"
+    },
+    {
+      "url": "https://ototoy.jp/_/default/p/3649890",
+      "purpose": "Konami-published Gradius II FC track titles"
+    }
+  ],
+  "scope_limit": "Search is not proof that no other repository exists. No verified complete Gradius II Famicom disassembly was found in this investigation.",
+  "source_artifact": {
+    "workflow_run": 40206719642,
+    "artifact_id": 12603564576,
+    "files_verified": 912,
+    "sha256": "05b5435457a266b78d73f59c6a97c25c30b68d08be7969cad20e3285ac509f75",
+    "omissions": "Commercial ROM binaries and redundant audiovisual captures; all published source files retained."
+  }
+}

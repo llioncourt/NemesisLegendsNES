@@ -1,0 +1,26 @@
+{
+  "source_sha256": "227113f94d9900cb48d2f9e88627224dd8cc3d9504614a01e94cf6b23ba508dc",
+  "map_records": 12,
+  "terrain_columns": 4192,
+  "source_tile_occurrences": 9216,
+  "unique_source_pixel_tiles": 1695,
+  "sprite_sets": 48,
+  "compressed_streams": 148,
+  "runtime_integration": false,
+  "source_hardware_vram_comparison": "pending",
+  "color_counts_per_tile": {
+    "1": 1727,
+    "3": 2176,
+    "4": 2166,
+    "7": 168,
+    "8": 72,
+    "5": 1327,
+    "6": 769,
+    "2": 811
+  },
+  "limitations": [
+    "Map IDs are not twelve consecutive campaign stages. Return traversal and secret/interior maps require original progression events.",
+    "Static graphics extraction only. Enemy objects, collision behavior, bosses and cutscenes are not implemented.",
+    "VRAM snapshots and expanded maps are inspection files, not a proposed ROM representation."
+  ]
+}

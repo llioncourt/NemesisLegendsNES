@@ -1,0 +1,10 @@
+{
+  "domain": "Decoded MSX indexed 8x8 pixels; palette indices preserved",
+  "input_tiles": 2864,
+  "unique_tiles": 2821,
+  "duplicate_tiles": 43,
+  "bytes_per_source_tile": 64,
+  "unique_bytes": 180544,
+  "nes_conversion": false,
+  "semantic_equivalence": "Exact pixels only; collision, timing and events remain separate."
+}

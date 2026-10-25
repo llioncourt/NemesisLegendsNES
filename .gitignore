@@ -34,3 +34,13 @@ audio/mp3/
 .idea/
 .DS_Store
 Thumbs.db
+
+# Regenerated source assets include complete donor PRG data: never stage these.
+assets/msx/
+assets/nes/
+assets/title/
+third_party/ACQUISITION.json
+audio/metadata.json
+audio/tracklist.csv
+audio/listen_all.m3u8
+audio/suno_prompt_metadata.json

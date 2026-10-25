@@ -1,0 +1,38 @@
+[
+  {
+    "repo": "antxiko/Nemesis-disassembly",
+    "url": "https://github.com/antxiko/Nemesis-disassembly",
+    "clone_status": 128,
+    "log": "Cloning into '/mnt/data/Nemesis_Legends_CP0001/third_party/antxiko__Nemesis-disassembly'...\nfatal: unable to access 'https://github.com/antxiko/Nemesis-disassembly.git/': Could not resolve host: github.com\n"
+  },
+  {
+    "repo": "antxiko/Nemesis2-disassembly",
+    "url": "https://github.com/antxiko/Nemesis2-disassembly",
+    "clone_status": 128,
+    "log": "Cloning into '/mnt/data/Nemesis_Legends_CP0001/third_party/antxiko__Nemesis2-disassembly'...\nfatal: unable to access 'https://github.com/antxiko/Nemesis2-disassembly.git/': Could not resolve host: github.com\n"
+  },
+  {
+    "repo": "antxiko/Salamander-disassembly",
+    "url": "https://github.com/antxiko/Salamander-disassembly",
+    "clone_status": 128,
+    "log": "Cloning into '/mnt/data/Nemesis_Legends_CP0001/third_party/antxiko__Salamander-disassembly'...\nfatal: unable to access 'https://github.com/antxiko/Salamander-disassembly.git/': Could not resolve host: github.com\n"
+  },
+  {
+    "repo": "antxiko/Nemesis3-disassembly",
+    "url": "https://github.com/antxiko/Nemesis3-disassembly",
+    "clone_status": 128,
+    "log": "Cloning into '/mnt/data/Nemesis_Legends_CP0001/third_party/antxiko__Nemesis3-disassembly'...\nfatal: unable to access 'https://github.com/antxiko/Nemesis3-disassembly.git/': Could not resolve host: github.com\n"
+  },
+  {
+    "repo": "MikeWuPing/UEFI_Salamander",
+    "url": "https://github.com/MikeWuPing/UEFI_Salamander",
+    "clone_status": 128,
+    "log": "Cloning into '/mnt/data/Nemesis_Legends_CP0001/third_party/MikeWuPing__UEFI_Salamander'...\nfatal: unable to access 'https://github.com/MikeWuPing/UEFI_Salamander.git/': Could not resolve host: github.com\n"
+  },
+  {
+    "repo": "Fabulu/Mixup",
+    "url": "https://github.com/Fabulu/Mixup",
+    "clone_status": 128,
+    "log": "Cloning into '/mnt/data/Nemesis_Legends_CP0001/third_party/Fabulu__Mixup'...\nfatal: unable to access 'https://github.com/Fabulu/Mixup.git/': Could not resolve host: github.com\n"
+  }
+]

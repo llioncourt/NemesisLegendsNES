@@ -1,0 +1,52 @@
+{
+  "scope": "Pinned original-source reconstruction, not a NES gameplay completion test",
+  "all_identical": true,
+  "total_banks": 80,
+  "total_bytes": 655360,
+  "games": [
+    {
+      "source": "nemesis_msx",
+      "repository": "antxiko/Nemesis-disassembly",
+      "commit": "3e486bc2f39c65eb97a944cda246f85fd30218ec",
+      "bytes": 131072,
+      "sha256": "3210f8a0f2309dd4b9a89fc2b24d0f178ce4393a0a1f2854fbce545c361261bc",
+      "identical_to_supplied_original": true,
+      "method": "Pasmo --bin each source bank; exact byte comparison; concatenation",
+      "game_port_complete": false,
+      "banks": 16
+    },
+    {
+      "source": "nemesis2_msx",
+      "repository": "antxiko/Nemesis2-disassembly",
+      "commit": "c25da4fb19682e2ba64441ca74e5ea6b2ae00657",
+      "bytes": 131072,
+      "sha256": "227113f94d9900cb48d2f9e88627224dd8cc3d9504614a01e94cf6b23ba508dc",
+      "identical_to_supplied_original": true,
+      "method": "Pasmo --bin each source bank; exact byte comparison; concatenation",
+      "game_port_complete": false,
+      "banks": 16
+    },
+    {
+      "source": "salamander_msx",
+      "repository": "antxiko/Salamander-disassembly",
+      "commit": "6f166825c6df198f4a3044b7efb90c24b80862d3",
+      "bytes": 131072,
+      "sha256": "edbbba820ac67d6a55b9dc5da9309e45979936d5620c07d09793efaf077e86b9",
+      "identical_to_supplied_original": true,
+      "method": "Pasmo --bin each source bank; exact byte comparison; concatenation",
+      "game_port_complete": false,
+      "banks": 16
+    },
+    {
+      "source": "nemesis3_msx",
+      "repository": "antxiko/Nemesis3-disassembly",
+      "commit": "d3d4ae800a5bb5d858a931edf3214db4f114b42c",
+      "bytes": 262144,
+      "sha256": "fb4f66bcc3eabaf7eea6b91d1e2f5a15aa2f80a31a056af41d948b32646877a9",
+      "identical_to_supplied_original": true,
+      "method": "Pasmo --bin each source bank; exact byte comparison; concatenation",
+      "game_port_complete": false,
+      "banks": 32
+    }
+  ]
+}

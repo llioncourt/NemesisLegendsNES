@@ -1,0 +1,59 @@
+{
+  "kind": "design_contract_not_implemented",
+  "order": [
+    "nemesis_msx",
+    "nemesis2_msx",
+    "salamander_msx",
+    "nemesis3_msx"
+  ],
+  "chronology": "Narrative chronology; the final chapter travels into the past without moving it before the first chapter.",
+  "seamless": true,
+  "rom_launcher": false,
+  "one_native_6502_runtime": true,
+  "preserve": [
+    "all original areas",
+    "return routes",
+    "secret areas",
+    "Operation X",
+    "chapter-specific weapons and ship rules",
+    "Salamander co-op",
+    "original boss behavior",
+    "all endings and story events"
+  ],
+  "cutscene_rule": "Each adapted fact needs a source/manual/ROM-text citation; connective scenes must be marked as new adaptations.",
+  "cheats": {
+    "implementation_order": "after full campaign integration, per user instruction",
+    "sequence": [
+      "UP",
+      "UP",
+      "DOWN",
+      "DOWN",
+      "LEFT",
+      "RIGHT",
+      "LEFT",
+      "RIGHT",
+      "B",
+      "A",
+      "START"
+    ],
+    "brand": "Silicon Forge",
+    "language": "English",
+    "items": [
+      "Invulnerability",
+      "Lives",
+      "Weapons",
+      "Stage Select",
+      "Scene Select",
+      "Ending Select",
+      "Timeline",
+      "Sound Test",
+      "Return to Game"
+    ],
+    "safety": [
+      "pause simulation",
+      "preserve banks and PPU state",
+      "preserve sound state",
+      "restore controls without latching Start"
+    ]
+  }
+}
