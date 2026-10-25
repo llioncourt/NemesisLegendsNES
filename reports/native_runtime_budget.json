@@ -1,0 +1,148 @@
+{
+  "checkpoint": "CP0004",
+  "rom_sha256": "0c9d1135a7675165e8d7125db0f5d8a990265e112b7508f9701cb63662c70d02",
+  "rom_bytes": 262160,
+  "prg_allocated_bytes": 131072,
+  "chr_allocated_bytes": 131072,
+  "chr_useful_bytes": 77824,
+  "chr_allocation_padding_bytes": 53248,
+  "converted_terrain_unique_tiles": 1312,
+  "sprite_unique_1k_banks": 43,
+  "static_terrain_records": 12,
+  "stage_descriptor_allocation_bytes": 49152,
+  "compact_stage_script_bytes": 4284,
+  "metatile_useful_bytes": 6110,
+  "cartridge_work_RAM_bytes": 8192,
+  "source_collision_cache_bytes": 1024,
+  "actor_record_bytes": 32,
+  "maximum_actor_records": 17,
+  "player_shot_slots": 9,
+  "enemy_shot_slots": 10,
+  "segments": [
+    {
+      "name": "GRAPHICS",
+      "start": "000000",
+      "end": "01FFFF",
+      "bytes": 131072
+    },
+    {
+      "name": "HEADER",
+      "start": "000000",
+      "end": "00000F",
+      "bytes": 16
+    },
+    {
+      "name": "ZEROPAGE",
+      "start": "000080",
+      "end": "000081",
+      "bytes": 2
+    },
+    {
+      "name": "BSS",
+      "start": "000500",
+      "end": "00050F",
+      "bytes": 16
+    },
+    {
+      "name": "BOSSDATA",
+      "start": "008000",
+      "end": "009FFF",
+      "bytes": 8192
+    },
+    {
+      "name": "STAGE0",
+      "start": "008000",
+      "end": "009FFF",
+      "bytes": 8192
+    },
+    {
+      "name": "STAGE1",
+      "start": "008000",
+      "end": "009FFF",
+      "bytes": 8192
+    },
+    {
+      "name": "STAGE2",
+      "start": "008000",
+      "end": "009FFF",
+      "bytes": 8192
+    },
+    {
+      "name": "STAGE3",
+      "start": "008000",
+      "end": "009FFF",
+      "bytes": 8192
+    },
+    {
+      "name": "STAGE4",
+      "start": "008000",
+      "end": "009FFF",
+      "bytes": 8192
+    },
+    {
+      "name": "STAGE5",
+      "start": "008000",
+      "end": "009FFF",
+      "bytes": 8192
+    },
+    {
+      "name": "ACTORS",
+      "start": "00A000",
+      "end": "00AA8B",
+      "bytes": 2700
+    },
+    {
+      "name": "MAPS",
+      "start": "00A000",
+      "end": "00BFFF",
+      "bytes": 8192
+    },
+    {
+      "name": "CODE",
+      "start": "00C000",
+      "end": "00D9EE",
+      "bytes": 6639
+    },
+    {
+      "name": "RODATA",
+      "start": "00D9EF",
+      "end": "00DA0C",
+      "bytes": 30
+    },
+    {
+      "name": "BOOT",
+      "start": "00E000",
+      "end": "00E823",
+      "bytes": 2084
+    },
+    {
+      "name": "SOUND",
+      "start": "00EC1E",
+      "end": "00FFF9",
+      "bytes": 5084
+    },
+    {
+      "name": "VECTORS",
+      "start": "00FFFA",
+      "end": "00FFFF",
+      "bytes": 6
+    }
+  ],
+  "whole_game_fit_proven": false,
+  "hardware_timing_validated": false,
+  "bank_roles": {
+    "0-5": "12 source terrain descriptors, two per bank",
+    "6": "source compact metatiles",
+    "7": "native actor code",
+    "8": "Big Core converted data",
+    "9-13": "reserved for further integrated content; bank13 used by isolated test fixture only",
+    "14": "fixed native kernel/projectiles/boss/laser/campaign",
+    "15": "boot/NMI/IRQ and original native NES APU driver"
+  },
+  "notes": [
+    "Segment sizes include intentional descriptor/bank allocation; they are not all useful payload bytes.",
+    "Current ROM carries converted first-game assets; most stage behavior remains pending.",
+    "The 1 MiB PRG/CHR planning ceilings are not allocated and are not proof of four-game fit.",
+    "NMI budget is bounded NTSC binary execution, not a hardware measurement; see its own report."
+  ]
+}

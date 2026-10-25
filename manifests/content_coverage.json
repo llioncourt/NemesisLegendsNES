@@ -1,7 +1,7 @@
 {
-  "checkpoint": "CP0002",
-  "stage": "verified_upstream_sources_and_native_campaign_module",
-  "playable_game_rom": false,
+  "checkpoint": "CP0004",
+  "stage": "native_first_stage_event_route_and_stage_two_entry",
+  "playable_game_rom": true,
   "full_game_complete": false,
   "chapters": [
     {
@@ -16,7 +16,17 @@
       "nes_gameplay_complete": false,
       "cutscenes_integrated": false,
       "endings_validated": false,
-      "upstream_reassembly_byte_exact": true
+      "upstream_reassembly_byte_exact": true,
+      "native_stage_event_routes_integrated": [
+        1
+      ],
+      "native_stage_entries_tested": [
+        1,
+        2
+      ],
+      "converted_terrain_records": 12,
+      "converted_sprite_sheets": 12,
+      "first_stage_unassisted_clear_validated": false
     },
     {
       "chapter": 2,
@@ -62,10 +72,18 @@
     }
   ],
   "custom_title_native_asset": true,
-  "custom_title_in_game": false,
+  "custom_title_in_game": true,
   "konami_code_implemented": false,
   "silicon_forge_menu_implemented": false,
   "native_campaign_flow_implemented": true,
   "native_campaign_unit_checks": 288,
-  "gameplay_runtime_integrated": false
+  "gameplay_runtime_integrated": true,
+  "native_runtime_checks": {
+    "combat_assertions": 60,
+    "controller_checks": 10,
+    "assisted_stage_one_routes": 2,
+    "ppu_transfer_cases": 5,
+    "dense_weapon_sample_frames": 2000,
+    "dense_weapon_sample_missed_NMIs": 0
+  }
 }

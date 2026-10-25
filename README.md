@@ -8,26 +8,29 @@ The accepted scope preserves every source stage, return/bonus route, Operation X
 chapter-specific weapons, co-op, story event and ending. Donor NES/Famicom code
 and graphics may be reused where they genuinely match the MSX content.
 
-## Current checkpoint: CP0002
+## Current checkpoint: CP0004
 
-**There is not yet a playable Nemesis Legends game ROM.** The repository now
-contains real source, extraction tools and native 6502 progression code, not only
-a planning README. The native test cartridge is a component test, not a game.
+**A runnable native MMC5 gameplay build now exists; the four-game anthology is
+not complete.** The private cartridge integrates Nemesis stage 1's main route,
+its five-part encounter, volcanic sequence, Big Core, death/checkpoints and
+stage-2 entry. The custom title, ship, weapons, Options and source-derived
+terrain run on the NES; no original-game emulator or captured playback is used.
 
-Verified locally:
+Start begins/pauses, B fires and A activates the selected power-up. Normal boot
+has no QA assistance. Stage 2 onward is incomplete; do not call entry into stage 2
+completion of that stage or the first game.
 
-- All four canonical MSX inputs identified by hash; 137 supplied ROM images audited.
-- 912 upstream source files acquired and checked at four exact commits.
-- 80 Z80 ASM banks reassembled: all 655,360 bytes match the supplied originals.
-- Native 6502 progression module: 288 route/event checks executed in FCEUmm,
-  plus a corrupted-native-table negative control and stack-leak checks.
-- 13 public source-only tests and 22 private extraction/audio integration tests pass.
-- Preserved CP0001 resources: 12 Nemesis terrain records, 12 Nemesis 2 map IDs,
-  48 sprite variants, native custom title assets, three NSF and three KSS source
-  rips, 98 private reference MP3s and an 877-character Suno style prompt.
+Verified on the exact build identified by `reports/native_runtime_budget.json`:
+60 production-6502 combat assertions and negative control; 10 controller-level
+checks; two assisted start-to-stage-2 boss routes; five bounded NMI transfer
+cases plus an oversized-queue negative control. The 2,000-frame dense-weapon test
+recorded zero missed NMIs. The separate router's 288 event tests, 13 public and
+22 private evidence tests also pass. Hardware/PAL/full-campaign validation is
+not implied. See [runtime evidence and gaps](docs/NATIVE_RUNTIME_CP0004.md).
 
-These figures do **not** claim completed gameplay, adapted cutscenes, full music
-conversion, whole-game timing validation or an implemented cheat menu.
+Preserved evidence: all four canonical originals, 80 byte-exact reconstructed
+Z80 banks, source maps, reference NSF/KSS/MP3 music and the Suno prompt. Source
+music rips are not a completed MSX-to-NES score conversion.
 
 ## Build and evidence
 
@@ -49,10 +52,11 @@ completed-game releases use IPS patches under the project owner's standing rule.
 
 ## Remaining gates
 
-The native actors, bosses, collisions, renderer, co-op, cutscene scripting,
-seamless runtime integration, source-to-NES arrangements, and full-route hardware
-verification remain implementation work. The requested Konami Code and English
-Silicon Forge cheat menu follow complete-campaign integration, not replace it.
+Finish Nemesis stage 2 and all subsequent stages/routes, then integrate the
+remaining three chapters with their actual mechanics. Co-op, source cutscenes,
+seamless chapter bridges, endings, remaining music, full hardware verification,
+and the final Konami Code / English Silicon Forge menu are still pending.
+Known combat/palette/score/presentation gaps are explicit in the runtime document.
 
 Do not restart this as a generic shooter, captured playback or a title demo.
 See [NOTICE](NOTICE.md) for source and third-party attribution boundaries.

@@ -1,6 +1,8 @@
 .setcpu "6502"
 .include "native.inc"
-.import Main, DrawColumn, UploadColumn, LoadStage, FrameGame
+.include "longbranch.inc"
+.include "boss.inc"
+.import Main, DrawColumn, UploadColumn, LoadStage, FrameGame, UploadBossQueue
 .export Reset, NMI, IRQ, PollPad, HideSprites, StarRows, SourceObjectDefaults
 .export AngleTable, SineTable, SpriteCode, SoundRequest, ClearPPU
 .export TitleName, TitlePalette
@@ -73,12 +75,12 @@ NMI:
  pha
  inc frame
  lda screenon
- beq @audio
+ jeq @audio
  lda ready
  bne @consume
  lda mode
  cmp #1
- bne @audio
+ jne @audio
  inc missed
  jmp @audio
 @consume:
@@ -89,7 +91,18 @@ NMI:
  jsr UploadColumn
  lda #0
  sta column_pending
+ jmp @nohud
 @oam:
+ lda boss_dirty
+ beq @normaldma
+ jsr UploadBossQueue
+@nohud:
+ lda #0
+ sta $2003
+ lda #2
+ sta $4014
+ jmp @scroll
+@normaldma:
  lda #0
  sta $2003
  lda #2
@@ -255,5 +268,7 @@ TitlePalette: .incbin "assets/title/title.pal"
 .incbin "build/native/stage_12.bin"
 .segment "MAPS"
 .incbin "build/native/metatiles.bin"
+.segment "BOSSDATA"
+.incbin "build/native/boss.bin"
 .segment "GRAPHICS"
 .incbin "build/native/graphics.chr"

@@ -1,5 +1,40 @@
 # Build and test entry points
 
+## Playable native integration (private assets)
+
+The private checkpoint includes `build/native/Nemesis_Legends_CP0004.nes` ready
+for an NTSC NES emulator with MMC5 and NES 2.0 support. No Python is needed to
+play the included ROM. The build is incomplete; see the runtime handoff.
+
+To rebuild the supplied converted assets with ca65/ld65:
+
+```
+python tools/build_native.py --tools "/path with spaces/to/cc65/bin"
+```
+
+To regenerate converted assets from the hash-checked private originals as well:
+
+```
+python tools/build_native.py --tools "/path/to/cc65/bin" --assets
+```
+
+On Windows the same Python entry points accept the matching tool executables.
+The supplied compiler/core binaries are Linux x64, not Windows executables.
+Public source checkouts intentionally do not contain commercial input assets.
+
+After building, run the scoped native checks:
+
+```
+python tools/test_combat_native.py --tools /path/to/cc65/bin --core /path/to/fceumm_libretro.so
+python tools/test_native_integration.py --core /path/to/fceumm_libretro.so
+python tools/test_stage_one.py --core /path/to/fceumm_libretro.so
+python tools/test_vblank_budget.py
+```
+
+The reports contain the ROM hash and distinguish component fixtures, assisted
+runs, ordinary input tests and bounded timing assumptions. They do not certify
+complete gameplay or physical hardware.
+
 ## Public source-only checks
 
 Python 3.10 or newer and the packages in `requirements.txt` are required.

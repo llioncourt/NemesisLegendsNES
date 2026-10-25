@@ -1,0 +1,25 @@
+; Shared stage-event / large-background-actor ABI.
+boss_dirty=$76
+BOSSQ=$6a00              ; nine right-aligned rows, 12 bytes per row
+BQLO=$6a80
+BQHI=$6a90
+BQWIDTH=$6aa0
+BQHEIGHT=$6aa1
+BS=$6b00
+bs_visible=BS
+bs_oldx=BS+1
+bs_oldy=BS+2
+bs_move=BS+3
+bs_steps=BS+4
+bs_wait=BS+5
+bs_needs=BS+6
+bs_hit=BS+7
+bs_killed=BS+8
+mid_seen=BS+9
+volcano_emitted=BS+10
+volcano_emitted_hi=BS+11
+core_seen=BS+12
+core_cleared=BS+13
+mid_parts=BS+14
+boss_blits=BS+15
+boss_closures=BS+16

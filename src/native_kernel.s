@@ -1,11 +1,14 @@
 .setcpu "6502"
 .include "native.inc"
+.include "boss.inc"
 .include "campaign.inc"
 .import Flow_State, Flow_NewGame, Flow_Event
 .import PollPad, HideSprites, StarRows, SpriteCode, SoundRequest, ClearPPU
 .import TitleName,TitlePalette
 .import ActorsFrame, ActorsDraw, SpawnCannon, SpawnWaves, ShotsFrame, InitActors
+.import StageEvents
 .export Main, DrawColumn, UploadColumn, LoadStage, FrameGame
+.export DrawSprite8
 .export DrawSprite, UpdateHUD, PlayerHit, LoadDataBank, AdvanceStage
 .segment "CODE"
 Main:
@@ -20,6 +23,10 @@ Main:
  and #BTN_START
  beq @titleidle
  jsr Flow_NewGame
+ lda #0
+ sta score_lo
+ sta score_hi
+ sta route_flag
  lda #3
  sta player_lives
  lda #1
@@ -151,7 +158,7 @@ Title:
  lda TitlePalette,x
  sta $2007
  inx
- cpx #32
+ cpx #16
  bne @pal
  lda #0
  sta $2005
@@ -181,10 +188,18 @@ LoadStage:
  sta audio_on
  sta column_pending
  sta phase
+ sta boss_dirty
  sta phase_timer
  sta phase_hi
  sta wave_state
  sta wave_timer
+ sta player_dead
+ sta player_xf
+ sta player_yf
+ sta boss_hp
+ lda route_flag
+ bne @retain_power
+ lda #0
  sta power_slot
  sta power_missile
  sta power_double
@@ -192,10 +207,8 @@ LoadStage:
  sta power_options
  sta power_shield
  sta player_speed
- sta player_dead
- sta score_lo
- sta score_hi
- sta boss_hp
+@retain_power:
+ lda #0
  sta route_flag
  lda stage_id
  sec
@@ -298,6 +311,16 @@ LoadStage:
  sta player_x
  lda #$4a
  sta player_y
+ ldx #0
+@history:
+ lda player_x
+ sta HISTORY,x
+ lda player_y
+ sta HISTORY+1,x
+ inx
+ inx
+ cpx #128
+ bne @history
  lda #90
  sta player_iframes
  lda #0
@@ -581,10 +604,13 @@ UploadColumn:
 
 FrameGame:
  inc logic
+ jsr StageEvents
  lda #0
  sta new_column
  lda phase
  cmp #2
+ beq @noscroll
+ cmp #4
  bcs @noscroll
  inc camera
  lda camera
@@ -601,7 +627,10 @@ FrameGame:
  jsr SpawnCannon
 @noscroll:
  jsr MovePlayer
+ lda phase
+ bne :+
  jsr SpawnWaves
+:
  jsr ActorsFrame
  jsr ShotsFrame
  jsr HideSprites
@@ -619,84 +648,161 @@ FrameGame:
  clc
  adc #15
  sta sprite_y
- lda #120
- sta sprite_frame
- lda pad
- and #BTN_UP
- beq :+
- lda #122
- sta sprite_frame
-:
- lda pad
- and #BTN_DOWN
- beq :+
- lda #121
- sta sprite_frame
-:
+ ; Source p02:99EB/99F7/9A0F, composited to two NES sprites.
  lda #0
+ sta sprite_frame
  sta sprite_pal
  sta sprite_flags
+ lda pad
+ and #(BTN_UP|BTN_DOWN)
+ cmp #BTN_UP
+ bne :+
+ inc sprite_frame
+:
+ cmp #BTN_DOWN
+ bne :+
+ lda #2
+ sta sprite_frame
+:
+ lda power_shield
+ beq @ship_ready
+ cmp #2
+ bcs @strong_shield
+ lda sprite_frame
+ clc
+ adc #3
+ sta sprite_frame
+ lda logic
+ and #4
+ beq @ship_ready
+ lda #1
+ sta sprite_pal
+ bne @shield_blink
+@strong_shield:
+ lda sprite_frame
+ clc
+ adc #9
+ sta sprite_frame
+ lda logic
+ and #4
+ beq @ship_ready
+ lda #3
+ sta sprite_pal
+@shield_blink:
+ lda sprite_frame
+ clc
+ adc #3
+ sta sprite_frame
+@ship_ready:
  jsr DrawSprite
 @actors:
  jsr ActorsDraw
  jsr UpdateHUD
+ lda logic
+ and #7
+ bne @qa_done
+ ; Read-only QA snapshot: allows tests to inspect volatile cart RAM via libretro.
+ ldx #31
+@qa:
+ lda $6600,x
+ sta $0700,x
+ lda $6900,x
+ sta $0720,x
+ lda OBJECTS,x
+ sta $0740,x
+ lda $6b00,x
+ sta $0760,x
+ dex
+ bpl @qa
+@qa_done:
  rts
 
 MovePlayer:
- lda #2
- sta temp
+ ; Source p02:9B0D,9B4D: signed 8.8 base $0080 times 3+min(speed,7).
+ ; Opposite directions cancel, and diagonal movement keeps both source axes.
  lda player_speed
- lsr a
+ cmp #8
+ bcc :+
+ lda #7
+:
  clc
- adc temp
+ adc #3
+ lsr a
+ sta temp2
+ lda #0
+ ror a
  sta temp
  lda pad
- and #BTN_UP
+ and #(BTN_UP|BTN_DOWN)
+ cmp #BTN_UP
+ beq @up
+ cmp #BTN_DOWN
  beq @down
- lda player_y
+ jmp @horizontal
+@up:
+ lda player_yf
  sec
  sbc temp
+ sta player_yf
+ lda player_y
+ sbc temp2
  bcs :+
  lda #0
+ sta player_yf
 :
  sta player_y
+ jmp @horizontal
 @down:
- lda pad
- and #BTN_DOWN
- beq @left
- lda player_y
+ lda player_yf
  clc
  adc temp
+ sta player_yf
+ lda player_y
+ adc temp2
  cmp #166
  bcc :+
+ lda #0
+ sta player_yf
  lda #165
 :
  sta player_y
-@left:
+@horizontal:
  lda pad
- and #BTN_LEFT
+ and #(BTN_LEFT|BTN_RIGHT)
+ cmp #BTN_LEFT
+ beq @left
+ cmp #BTN_RIGHT
  beq @right
- lda player_x
+ rts
+@left:
+ lda player_xf
  sec
  sbc temp
+ sta player_xf
+ lda player_x
+ sbc temp2
  cmp #8
  bcs :+
+ lda #0
+ sta player_xf
  lda #8
 :
  sta player_x
+ rts
 @right:
- lda pad
- and #BTN_RIGHT
- beq @done
- lda player_x
+ lda player_xf
  clc
  adc temp
+ sta player_xf
+ lda player_x
+ adc temp2
  cmp #217
  bcc :+
+ lda #0
+ sta player_xf
  lda #216
 :
  sta player_x
-@done:
  rts
 
 ; A source frame is two 8x16 NES sprites, never four background writes.
@@ -729,6 +835,26 @@ DrawSprite:
 @done:
  rts
 
+DrawSprite8:
+ ldx sprite_index
+ cpx #$fc
+ bcs @done
+ ldy sprite_frame
+ lda SpriteCode,y
+ sta OAM+1,x
+ lda sprite_y
+ sta OAM,x
+ lda sprite_pal
+ ora sprite_flags
+ sta OAM+2,x
+ lda sprite_x
+ sta OAM+3,x
+ txa
+ clc
+ adc #4
+ sta sprite_index
+@done:rts
+
 PlayerHit:
  lda qa_flags
  and #1
@@ -747,6 +873,24 @@ PlayerHit:
 @no:rts
 
 UpdateHUD:
+ lda stage_id
+ eor HUD+3
+ cmp #$30
+ bne @update
+ lda player_lives
+ eor HUD+8
+ cmp #$30
+ bne @update
+ lda power_slot
+ eor HUD+15
+ cmp #$30
+ bne @update
+ lda power_options
+ eor HUD+21
+ cmp #$30
+ bne @update
+ rts
+@update:
  ldx #31
 @copy:
  lda HUDTemplate,x
@@ -764,11 +908,11 @@ UpdateHUD:
  lda power_slot
  clc
  adc #$30
- sta HUD+14
+ sta HUD+15
  lda power_options
  clc
  adc #$30
- sta HUD+20
+ sta HUD+21
  lda #1
  sta hud_pending
  rts
@@ -779,6 +923,8 @@ AdvanceStage:
  jsr Flow_Event
  cmp #ACTION_LOAD
  bne @scene
+ lda #1
+ sta route_flag
  lda Flow_State+F_STAGE
  sta stage_id
  lda #$20
@@ -790,5 +936,5 @@ AdvanceStage:
  lda #4
  sta mode
  rts
-SpritePalette: .byte $0f,$30,$16,$12,$0f,$16,$30,$12,$0f,$28,$30,$16,$0f,$12,$30,$16
+SpritePalette: .byte $0f,$30,$16,$12,$0f,$16,$30,$26,$0f,$28,$30,$16,$0f,$30,$1c,$26
 HUDTemplate: .byte "ST:1  L:3  PWR:0  OP:0   NEMESIS "

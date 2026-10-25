@@ -42,13 +42,13 @@ RLE entrypoint byte sums may overlap; do not add them as disjoint ROM usage.
 Full VRAM images, expanded maps, contact sheets, MP3s and NSF/KSS reference
 containers are **not** the proposed cartridge data layout.
 
-## Still unmeasured
+## Remaining whole-game measurements
 
 Complete enemy/script/cutscene/music coverage, converted tile palettes and bank
 sets, decoder overhead, memory working sets, sprite occupancy, OAM and PPU
 transfer budgets, worst-case CPU cycles, IRQ behavior, load times, SRAM/save
-usage, full soundtrack conversion size, and final ROM utilization. No frame-rate
-claim or numeric whole-game fit claim is made before those measurements exist.
+usage, full soundtrack conversion size, and final ROM utilization. The current scoped CP0004 measurements below do not establish a numeric
+whole-game fit or complete-campaign performance claim.
 
 Hardware reference: https://www.nesdev.org/wiki/MMC5
 NSF format reference: https://www.nesdev.org/wiki/NSF
@@ -60,3 +60,24 @@ The module owns 16 state bytes and two zero-page bytes. Its 288 route checks run
 in FCEUmm. These are measured component figures, not the whole-game budget.
 All four original MSX source trees also reassemble exactly (80 banks, 655,360
 bytes); this removes the missing-source gate, not the gameplay-budget gates.
+
+## CP0004 current allocation and measured integration
+
+The active board is NES 2.0 MMC5: 128 KiB PRG, 128 KiB CHR, 8 KiB work RAM.
+The current useful generated CHR is 77,824 bytes (53,248 allocation padding),
+with 1,312 unique terrain patterns and 43 unique 1 KiB sprite banks. Original
+compact metatiles occupy 6,110 useful bytes; the twelve 4 KiB stage descriptors
+include intentionally reserved space. They are not twelve completed stages.
+
+The engine retains a 1 KiB source-ID collision ring, 17 maximum 32-byte actor
+records, nine player-shot records and ten enemy-shot records. Big Core has a
+bounded background update queue. IRQ/DMA/video transfer code is real native
+6502, not a register replay. Current linked segments and PRG bank roles are in
+`reports/native_runtime_budget.json`.
+
+`reports/cp0004/vblank_budget.json` executes the actual NMI binary with explicit
+NTSC/DMA assumptions: worst video-write margin 216 cycles, with an oversized
+queue rejected. Separate FCEUmm stress and assisted first-stage runs recorded
+zero missed NMIs on their stated inputs. Neither is full-game/physical-hardware
+certification. Reserve planning still has to cover unintegrated chapters,
+cutscenes, sound arrangements and their worst-case workloads.

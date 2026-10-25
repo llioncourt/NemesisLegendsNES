@@ -11,7 +11,7 @@ def main():
         if not found or not pathlib.Path(found).is_file():raise SystemExit(f'Missing {name}; provide --tools DIRECTORY')
         return found
     out=ROOT/'build/native';out.mkdir(parents=True,exist_ok=True)
-    names=['native_boot','native_kernel','native_actors','campaign']
+    names=['native_boot','native_kernel','native_actors','native_projectiles','native_boss','native_laser','campaign']
     for n in names:subprocess.run([tool('ca65'),'-g','-I','src','src/'+n+'.s','-o',str(out/(n+'.o'))],cwd=ROOT,check=True)
     rom=out/'Nemesis_Legends_CP0004.nes'
     subprocess.run([tool('ld65'),'-C','cfg/native.cfg','-o',str(rom),'-m',str(out/'native.map'),'-Ln',str(out/'native.lbl'),*[str(out/(n+'.o')) for n in names]],cwd=ROOT,check=True)

@@ -72,7 +72,27 @@ class EvidenceTests(unittest.TestCase):
    p=ROOT/t['mp3'];self.assertEqual(p.stat().st_size,t['bytes']);self.assertEqual(hashlib.sha256(p.read_bytes()).hexdigest(),t['sha256']);self.assertGreater(t['rendered_seconds'],0)
  def test_suno_limit(self):self.assertLessEqual(len((ROOT/'audio/SUNO_STYLE.txt').read_text().strip()),1000)
  def test_no_false_completion(self):
-  m=json.loads((ROOT/'manifests/content_coverage.json').read_text());self.assertFalse(m['playable_game_rom']);self.assertFalse(m['full_game_complete']);self.assertFalse(m['konami_code_implemented']);self.assertTrue(all(not c['nes_gameplay_complete']for c in m['chapters']))
+  m=json.loads((ROOT/'manifests/content_coverage.json').read_text())
+  self.assertFalse(m['full_game_complete'])
+  self.assertFalse(m['konami_code_implemented'])
+  self.assertTrue(all(not c['nes_gameplay_complete'] for c in m['chapters']))
+  # CP0004 changes the playable-component claim, not the completion gate.
+  # Require its real binary and hash-matched passing gameplay evidence.
+  if m['playable_game_rom']:
+      rom=(ROOT/'build/native/Nemesis_Legends_CP0004.nes').read_bytes()
+      self.assertEqual(rom[:4], b'NES\x1a')
+      self.assertEqual((rom[6] >> 4) | (rom[7] & 240), 5)
+      sha=hashlib.sha256(rom).hexdigest()
+      for name in ('combat_unit_tests.json','native_integration_tests.json','stage_one_integration.json'):
+          report=json.loads((ROOT/'reports/cp0004'/name).read_text())
+          self.assertEqual(report['rom_sha256'],sha)
+      combat=json.loads((ROOT/'reports/cp0004/combat_unit_tests.json').read_text())
+      self.assertTrue(combat['passed'])
+      self.assertTrue(combat['negative_control']['rejected'])
+      gameplay=json.loads((ROOT/'reports/cp0004/native_integration_tests.json').read_text())
+      self.assertTrue(all(c['passed'] for c in gameplay['checks']))
+      self.assertTrue(m['custom_title_in_game'])
+      self.assertFalse(m['chapters'][0]['first_stage_unassisted_clear_validated'])
  def test_original_input_archives(self):
   files=list((ROOT/'inputs').glob('*.zip'));self.assertEqual(len(files),8)
   for p in files:

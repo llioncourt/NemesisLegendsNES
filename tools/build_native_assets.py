@@ -6,7 +6,8 @@ Private generated assets are not source-controlled. Palette reduction is measure
 from __future__ import annotations
 import collections, hashlib, itertools, json, math, pathlib, struct, sys
 import numpy as np
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw
+from create_title_asset import FONT
 from extract_nemesis_msx import Extractor, PAL, ROOT
 
 OUT = ROOT / 'build/native'
@@ -53,11 +54,28 @@ def main():
     title=(ROOT/'assets/title/title.chr').read_bytes()
     assert len(title)==4096
     chrdata=bytearray(title)
-    font=ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf',8)
+    # Deterministic authored 5x7 font; no installed font-version dependency.
+    glyphs=dict(FONT)
+    glyphs.update({
+      '0':['01110','10001','10011','10101','11001','10001','01110'],
+      '1':['00100','01100','00100','00100','00100','00100','01110'],
+      '2':['01110','10001','00001','00010','00100','01000','11111'],
+      '3':['11110','00001','00001','01110','00001','00001','11110'],
+      '4':['00010','00110','01010','10010','11111','00010','00010'],
+      '5':['11111','10000','10000','11110','00001','00001','11110'],
+      '6':['01110','10000','10000','11110','10001','10001','01110'],
+      '7':['11111','00001','00010','00100','01000','01000','01000'],
+      '8':['01110','10001','10001','01110','10001','10001','01110'],
+      '9':['01110','10001','10001','01111','00001','00001','01110'],
+      ':':['00000','00100','00100','00000','00100','00100','00000'],
+      '-':['00000','00000','00000','11111','00000','00000','00000'],
+      '.':['00000','00000','00000','00000','00000','00110','00110']})
     fnt=bytearray(4096)
-    for c in range(32,127):
-        im=Image.new('L',(8,8));d=ImageDraw.Draw(im);d.text((1,-1),chr(c),font=font,fill=1)
-        fnt[c*16:c*16+16]=encode(np.array(im))
+    for ch,rows in glyphs.items():
+        pic=np.zeros((8,8),dtype=np.uint8)
+        for y,line in enumerate(rows):
+            for x,v in enumerate(line):pic[y,x+1]=3 if v=='1' else 0
+        fnt[ord(ch)*16:ord(ch)*16+16]=encode(pic)
     chrdata+=fnt
     dictionary={bytes(16):512}; chrdata+=bytes(16)
     def addtile(raw):
@@ -107,6 +125,11 @@ def main():
         else:raise ValueError('Unterminated cannon list')
         assert len(cannon)+2<=0x300
         desc[0xa00:0xa00+len(cannon)+2]=cannon+b'\xff\xff'
+        if stage <= 8:
+            waves=ex.word(3,0xa3a6+stage*2)
+            desc[0xd00:0xd10]=bytes(ex.byte(3,waves+j) for j in range(16))
+            desc[0xd10]=ex.byte(3,0xa5af+stage)
+        desc[0xd20:0xd24]=bytes(ex.byte(2,0x9205+orientation*12+stage-1) for orientation in range(4))
         # Hardware TMS frames -> monochrome NES frames; palettes supplied by objects.
         sheet=bytearray()
         for frame in range(64):
@@ -134,10 +157,53 @@ def main():
                         if src[(xx//8)*16+yy]&(128>>(xx&7)):pix[yy,xx]=layer+1
             for xx in (0,8):
                 for yy in (0,8):sheet+=encode(pix[yy:yy+8,xx:xx+8])
-        # 123-127: native projectile glyphs / option / explosion, source-based where possible.
+        # Source glyph $F8 normal shot and $FC laser. Option $44, missile $20.
         for frame in range(123,128):
-            srcframe={123:31,124:32,125:34,126:35,127:36}[frame]
-            sheet+=sheet[srcframe*64:srcframe*64+64]
+            if frame in (123,125):
+                glyph=np.array(msxtile(v,0xf8 if frame==123 else 0xfc,0)).reshape(8,8)
+                pix=np.zeros((16,16),dtype=np.uint8)
+                pix[:8,:8]=(glyph!=0).astype(np.uint8)
+                if frame==125:pix[:8,8:]=(glyph!=0).astype(np.uint8)
+                for xx in (0,8):
+                    for yy in (0,8):sheet+=encode(pix[yy:yy+8,xx:xx+8])
+            else:
+                srcframe={124:17,126:8,127:6}[frame]
+                sheet+=sheet[srcframe*64:srcframe*64+64]
+        # Source player and force-field records. Original hardware frames 0..14
+        # are player/field/weapon resources, not enemy frames. Weapons above were
+        # copied first to their native slots. Preserve the source front-layer
+        # priority when compositing the two source monochrome sprites.
+        ship_records = [(0x99eb,3), (0x99f7,6), (0x9a0f,6)]
+        ship_index=0
+        for state,(base,count) in enumerate(ship_records):
+            for variant in range(count):
+                entries=[(ex.byte(2,base+variant*4+j),ex.byte(2,base+variant*4+j+1)) for j in (0,2)]
+                pix=np.zeros((16,16),dtype=np.uint8)
+                light_weak=state==1 and variant>=3
+                palette={0:0,15:2 if light_weak else 1,8:2,5:3,6:2,9:3,7:2}
+                for pattern,color in reversed(entries):
+                    src=v[0x1800+pattern*8:0x1800+pattern*8+32]
+                    for yy in range(16):
+                        for xx in range(16):
+                            if src[(xx//8)*16+yy]&(128>>(xx&7)):pix[yy,xx]=palette[color]
+                raw=b''.join(encode(pix[yy:yy+8,xx:xx+8]) for xx in (0,8) for yy in (0,8))
+                sheet[ship_index*64:(ship_index+1)*64]=raw
+                ship_index+=1
+        assert ship_index==15
+        # Stage-one five-piece encounter: source character table p02:905C.
+        # Source software frames 35..39 are blank in this stage and explicitly
+        # reserved here, without altering any other stage's frame set.
+        if stage == 1:
+            for part in range(5):
+                source_slot = 5 - part
+                codes=[ex.byte(2,0x905c+source_slot*4+j) for j in range(4)]
+                if part != 2: codes[2:]=[0,0]
+                pix=np.zeros((16,16),dtype=np.uint8)
+                for j,c in enumerate(codes):
+                    pix[(j//2)*8:(j//2+1)*8,(j%2)*8:(j%2+1)*8]=np.array(msxtile(v,c,1)).reshape(8,8)
+                ix=DIST[pix][:,:,(0,15,8,4)].argmin(2)
+                raw=b''.join(encode(ix[yy:yy+8,xx:xx+8]) for xx in (0,8) for yy in (0,8))
+                sheet[(99+part)*64:(100+part)*64]=raw
         assert len(sheet)==8192,len(sheet)
         stage_data.append(desc);spr_sheets.append(sheet)
         stats.append(dict(stage=stage,terrain_script_bytes=len(rawscript),cannon_records=len(cannon)//3,
@@ -157,6 +223,40 @@ def main():
     # At $A000 the source address $8000 becomes $A000, and $8FF0 becomes $AFF0.
     metatiles=rom[11*8192:11*8192+(0x97de-0x8000)]
     (OUT/'metatiles.bin').write_bytes(metatiles+bytes(8192-len(metatiles)))
+    # Big Core background graphics: original loader 4A6D / record 98A3.
+    # E100=1 selects VERTICAL mirroring, including color-row reversal.
+    bv=ex.stage_vram(1); ex.load_records(bv,0x98a3)
+    a=0x98b0
+    while ex.byte(5,a):
+        source,dest,flags,count=[ex.byte(5,a+j) for j in range(4)]
+        third=0 if flags&4 else 0x800 if flags&2 else 0x1000
+        pat=bytes(bv[0x2000+third+source*8:0x2000+third+(source+count)*8])
+        col=bytes(bv[third+source*8:third+(source+count)*8])
+        pat=b''.join(pat[i:i+8][::-1] for i in range(0,len(pat),8))
+        col=b''.join(col[i:i+8][::-1] for i in range(0,len(col),8))
+        for bit,t in [(3,0x1000),(4,0x800),(5,0)]:
+            if flags&(1<<bit):
+                bv[0x2000+t+dest*8:0x2000+t+(dest+count)*8]=pat
+                bv[t+dest*8:t+(dest+count)*8]=col
+        a+=4
+    body=bytes(ex.byte(1,0x7ee6+j) for j in range(88))
+    eye=bytes(ex.byte(1,0x7f3e+j) for j in range(36))
+    face=bytes(ex.byte(1,0x7f62+j) for j in range(18))
+    btiles=[msxtile(bv,c,0) for c in range(256)]
+    weights=collections.Counter(body+eye+face)
+    counts=np.bincount([color for c in body+eye+face for color in btiles[c]],minlength=16)
+    candidates=[(0,*p) for p in itertools.combinations(range(2,16),3)]
+    bp=min(candidates,key=lambda p: int(counts@DIST[:,p].min(1)))
+    chrdata+=bytes((-len(chrdata))%4096)
+    bbank=len(chrdata)//4096
+    for t in btiles:
+        arr=np.array(t); ix=DIST[arr][:,bp].argmin(1);chrdata+=encode(ix)
+    boss=bytearray(8192);boss[0]=bbank;boss[4:8]=bytes(NEAREST[c] for c in bp)
+    boss[0x100:0x158]=body;boss[0x160:0x184]=eye;boss[0x190:0x1a2]=face
+    boss[0x1b0:0x1d0]=bytes(ex.byte(1,0x718d+j) for j in range(32))
+    boss[0x1d0:0x1d8]=bytes(ex.byte(1,0x7e03+j) for j in range(8))
+    (OUT/'boss.bin').write_bytes(boss)
+    (OUT/'boss.inc').write_text('BossBGbank = '+str(bbank)+'\n')
     target=8192
     while target<len(chrdata):target*=2
     useful=len(chrdata);chrdata+=bytes(target-len(chrdata));(OUT/'graphics.chr').write_bytes(chrdata)
@@ -167,6 +267,8 @@ def main():
     tables[0x200:0x300]=bytes(ex.byte(1,0x6753+i) for i in range(256))
     tables[0x300:0x340]=bytes(ex.byte(1,0x6853+i) for i in range(64))
     (OUT/'tables.bin').write_bytes(tables)
+    vel=[(ex.byte(1,0x6853+i)*0x50)>>5 for i in range(64)]
+    (OUT/'aim.bin').write_bytes(bytes([v&255 for v in vel]+[v>>8 for v in vel]+[v&255 for v in vel[::-1]]+[v>>8 for v in vel[::-1]]))
     nrom=(ROOT/'private_sources/cda334d473ae84fbda5df431e6618b46d9541da9fc572bd9035dccfb0df4e33d.nes').read_bytes()
     assert hashlib.sha256(nrom).hexdigest()=='cda334d473ae84fbda5df431e6618b46d9541da9fc572bd9035dccfb0df4e33d'
     audio=nrom[16+0x6c1e:16+0x7ffa];assert len(audio)==0x13dc
@@ -174,6 +276,7 @@ def main():
     report=dict(source_sha256=hashlib.sha256(rom).hexdigest(),stages=stats,terrain_unique_tiles=len(dictionary),
                 chr_useful_bytes=useful,chr_allocated_bytes=target,sprite_unique_1k_banks=len(banks),
                 metatile_bytes=len(metatiles),stage_descriptors_bytes=12*4096,
+                boss_chr_bank=bbank,boss_source_palette=bp,
                 limitations=['Palette reduction is lossy; software actor palette provisional.',
                              'These are extracted assets, not integrated stage completion.'])
     (OUT/'assets_report.json').write_text(json.dumps(report,indent=2)+'\n')
