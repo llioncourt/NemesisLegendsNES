@@ -30,7 +30,21 @@ jobs:
           envelope = json.loads((root / '.migration/source-snapshot.json').read_text())
           if envelope.get('schema') != 1:
               raise ValueError('Unsupported snapshot schema')
-          compressed = base64.b85decode(envelope['zlib_base85'])
+          if 'parts' in envelope:
+              if not 1 <= len(envelope['parts']) <= 32:
+                  raise ValueError('Invalid part count')
+              encoded = []
+              for part in envelope['parts']:
+                  path = pathlib.PurePosixPath(part['path'])
+                  if path.is_absolute() or '..' in path.parts or path.parts[:2] != ('.migration', 'chunks') or path.suffix != '.b85':
+                      raise ValueError('Invalid snapshot part path')
+                  data = (root / path).read_bytes()
+                  if len(data) > 16384 or hashlib.sha256(data).hexdigest() != part['sha256']:
+                      raise ValueError('Snapshot part digest/size mismatch: ' + str(path))
+                  encoded.append(data.strip())
+              compressed = base64.b85decode(b''.join(encoded))
+          else:
+              compressed = base64.b85decode(envelope['zlib_base85'])
           decoder = zlib.decompressobj()
           raw = decoder.decompress(compressed, 2 * 1024 * 1024 + 1)
           if len(raw) > 2 * 1024 * 1024 or not decoder.eof or decoder.unused_data or decoder.unconsumed_tail:
@@ -86,10 +100,15 @@ jobs:
             git commit -F /tmp/source-snapshot-message.txt
             git push origin HEAD:main
           fi
+          git rev-parse HEAD > /tmp/public-source-commit.txt
+          git archive --format=zip HEAD -o /tmp/NemesisLegendsNES_public_source.zip
       - name: Preserve public migration evidence
         uses: actions/upload-artifact@v4
         with:
           name: verified-source-snapshot
-          path: /tmp/source-snapshot-report.json
+          path: |
+            /tmp/source-snapshot-report.json
+            /tmp/public-source-commit.txt
+            /tmp/NemesisLegendsNES_public_source.zip
           if-no-files-found: error
           retention-days: 30
