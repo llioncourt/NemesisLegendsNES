@@ -9,6 +9,7 @@
 .import StageEvents
 .import Stage2Init, Stage2Tick, Stage2Draw
 .import Stage3Init, Stage3Tick, Stage3Draw
+.import TargetNewGame,TargetInit,TargetTick,TargetDraw
 .export Main, DrawColumn, UploadColumn, LoadStage, FrameGame
 .export DrawSprite8
  .export DrawSprite, UpdateHUD, PlayerHit, LoadDataBank, AdvanceStage
@@ -25,6 +26,7 @@ Main:
  jsr TitleFrame
  bcc @titleidle
  jsr Flow_NewGame
+ jsr TargetNewGame
  lda #0
  sta score_lo
  sta score_hi
@@ -306,6 +308,7 @@ LoadStage:
  jsr InitActors
  jsr Stage2Init
  jsr Stage3Init
+ jsr TargetInit
  lda #$50
  sta player_x
  lda #$4a
@@ -636,6 +639,7 @@ FrameGame:
  jsr MovePlayer
  jsr Stage2Tick
  jsr Stage3Tick
+ jsr TargetTick
  lda phase
  bne :+
  jsr SpawnWaves
@@ -708,6 +712,7 @@ FrameGame:
  jsr ActorsDraw
  jsr Stage2Draw
  jsr Stage3Draw
+ jsr TargetDraw
  jsr UpdateHUD
  lda logic
  and #7
@@ -726,6 +731,12 @@ FrameGame:
  dex
  bpl @qa
 @qa_done:
+ ; Group spawner production QA counters; $07C4/$07C5 are outside
+ ; title state ($07E0..$07EF) and outside stage collision cache.
+ lda $6918
+ sta $07c4
+ lda $6919
+ sta $07c5
  rts
 
 MovePlayer:

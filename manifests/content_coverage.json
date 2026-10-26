@@ -1,6 +1,6 @@
 {
-  "checkpoint": "CP0008",
-  "stage": "native_stage_two_normal_route_and_bonus_stage9_to_stage3",
+  "checkpoint": "CP0011",
+  "stage": "source-derived N1 stage3 2-core normal and stage4 cross-stage bonus11; all other games WIP",
   "playable_game_rom": true,
   "full_game_complete": false,
   "chapters": [
@@ -19,13 +19,19 @@
       "upstream_reassembly_byte_exact": true,
       "native_stage_event_routes_integrated": [
         1,
-        2
+        2,
+        3,
+        4
       ],
       "native_stage_entries_tested": [
         1,
         2,
         3,
-        9
+        4,
+        5,
+        9,
+        10,
+        11
       ],
       "converted_terrain_records": 12,
       "converted_sprite_sheets": 12,
@@ -60,6 +66,26 @@
           "cutscenes",
           "real_hardware"
         ]
+      },
+      "native_stage_three": {
+        "source_type1_boss_at_0060": "integrated and assisted route tested",
+        "source_type1_boss_at_01AF": "integrated and assisted route tested",
+        "source_target_at_012A": "integrated and assisted route tested",
+        "bonus10_64_frame_freeze": "integrated and assisted route tested",
+        "enemy_type9_flock": "source group active observed naturally",
+        "background_eight_objects": "NOT integrated",
+        "all_enemy_patterns": "NOT integrated",
+        "unassisted_clear": "NOT tested",
+        "visuals": "NOT approved"
+      },
+      "native_stage_four": {
+        "source_target_types_3_and_4": "integrated and assisted route tested",
+        "cross_stage_secret_types_2_3_4": "integrated and assisted route tested",
+        "bonus_stage11": "secret branch reaches stage5",
+        "source_mixed_group": "integrated, scoped isolated fixture tested only",
+        "source_two_bosses": "NOT integrated",
+        "normal_stage4_clear": "NOT available",
+        "stage5_content": "NOT integrated"
       }
     },
     {
@@ -126,7 +152,11 @@
     "stage_two_rain_frames": 900,
     "stage_two_rock_successes_normal_test": 40,
     "stage_two_normal_missed_NMI": 0,
-    "stage_two_secret_missed_NMI": 0
+    "stage_two_secret_missed_NMI": 0,
+    "stage_three_assisted_routes": 2,
+    "inter_stage_target_assisted_routes": 2,
+    "source_wave_type9_natural_seen": true,
+    "source_wave_mixed_fixture_only": true
   },
   "title_menu": {
     "native": true,

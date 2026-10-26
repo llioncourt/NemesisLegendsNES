@@ -9,7 +9,7 @@ ROOT=pathlib.Path(__file__).resolve().parents[1]
 
 def main():
  p=argparse.ArgumentParser();p.add_argument('--core',required=True);a=p.parse_args()
- rom=(ROOT/'build/native/Nemesis_Legends_CP0010.nes').read_bytes();out=ROOT/'reports/cp0009';out.mkdir(parents=True,exist_ok=True)
+ rom=(ROOT/'build/native/Nemesis_Legends_CP0011.nes').read_bytes();out=ROOT/'reports/cp0011';out.mkdir(parents=True,exist_ok=True)
  checks=[]
  def check(name,ok,**info):
   checks.append(dict(name=name,passed=bool(ok),**info));print(name,ok,info)

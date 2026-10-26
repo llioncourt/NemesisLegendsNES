@@ -3,7 +3,7 @@
 .include "native.inc"
 .include "actors.inc"
 .include "boss.inc"
-.import Stage3MidbossCleared
+.import Stage3MidbossCleared,S3_State
 .import SpawnMidActor
 .import SpawnActor,RNG,ObjectPointer,DrawSprite,AdvanceStage,UpdateHUD,StarRows,PlayerHit
 .export StageEvents,EnterBigCore,BuildBossQueue,UploadBossQueue,BossShotHit
@@ -413,6 +413,9 @@ StageEvents:
  inc core_cleared
  lda stage_id
  cmp #3
+ bne @ordinary_clear
+ ; S3_State + 6 = final source type-1 boss has already been entered.
+ lda S3_State+6
  bne @ordinary_clear
  jmp Stage3MidbossCleared
 @ordinary_clear:

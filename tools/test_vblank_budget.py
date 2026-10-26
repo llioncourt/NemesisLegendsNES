@@ -110,7 +110,7 @@ class Counter6502:
   return self.cycles
 
 def main():
- rom=(ROOT/'build/native/Nemesis_Legends_CP0010.nes').read_bytes();results=[]
+ rom=(ROOT/'build/native/Nemesis_Legends_CP0011.nes').read_bytes();results=[]
  cases=[('idle',0,0,0,0),('hud',0,1,0,0),('column_and_deferred_hud',1,1,0,0),
         ('boss_vertical_and_deferred_hud',0,1,11,9),('boss_horizontal_and_deferred_hud',0,1,12,8)]
  for name,col,hud,w,h in cases:

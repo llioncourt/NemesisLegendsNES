@@ -146,13 +146,15 @@ SpawnFound:
  cmp #3
  beq @three
  cmp #4
- beq @four
+ jeq @four
  cmp #5
  jeq @five
  cmp #6
  jeq @six
  cmp #8
  jeq @rock
+ cmp #9
+ jeq @nine
  cmp #$0f
  beq @native_extra
  cmp #$20
@@ -163,6 +165,16 @@ SpawnFound:
  jeq @capsule
  ; Unsupported source handlers remain explicitly observable, not generic motion.
  sta unknown_type
+ clc
+ rts
+@nine:
+ ; Source p03:$AD27/$AD33: three pixels left, tracking starts at x<$80.
+ lda #$fd
+ ldy #O_VXH
+ sta (objptr),y
+ lda #$ec
+ ldy #O_FRAME
+ sta (objptr),y
  clc
  rts
 @rock:
@@ -377,9 +389,21 @@ SpawnWaves:
  beq :+
  jsr SpawnBottom
 :
- ; Later chapter-specific groups will be integrated from their own dispatchers.
+ ; Bit 4 = original type-9 flock; bit 5 = original mixed type5/6.
+ ; Source p03:$A359-$A37B calls six independently selected groups.
  lda wave_side
- and #$f0
+ and #$10
+ beq :+
+ jsr SpawnFlock
+:
+ lda wave_side
+ and #$20
+ beq :+
+ jsr SpawnMixed
+:
+ ; Any later reserved bits stay visible to diagnostics, not invented actors.
+ lda wave_side
+ and #$c0
  beq @done
  sta unknown_type
 @done:rts
@@ -562,6 +586,102 @@ SpawnBottom:
  jsr SpawnActor
 @done:rts
 
+; Source p03:$A5D7-$A60C: eight type-9 units, 7 frames apart.
+; First four enter at y=$88, last four at y=$18; 60-frame recharge.
+SpawnFlock:
+ lda flock_left
+ bne @active
+ lda flock_timer
+ beq @reset
+ dec flock_timer
+ bne @done
+@reset:
+ lda #8
+ sta flock_left
+ lda #1
+ sta flock_timer
+ rts
+@active:
+ dec flock_timer
+ bne @done
+ lda #7
+ sta flock_timer
+ dec flock_left
+ bne @emit
+ lda #60
+ sta flock_timer
+@emit:
+ lda #240
+ sta sprite_x
+ lda flock_left
+ cmp #4
+ lda #$18
+ bcc :+
+ lda #$88
+:
+ sta sprite_y
+ lda #0
+ sta sprite_pal
+ lda #9
+ jsr SpawnActor
+ bcs @done
+ inc flock_spawned
+@done:rts
+
+; Source p03:$A679-$A6BF: mixed band of eight, sharing p03:$A648
+; four-unit group counters. First four type 5 enter from ship-opposite
+; vertical side, last four type 6 alternate horizontal entry.
+SpawnMixed:
+ lda bottom_left
+ bne @active
+ lda #8
+ sta bottom_left
+ lda #1
+ sta bottom_timer
+ rts
+@active:
+ dec bottom_timer
+ bne @done
+ lda #80
+ sta bottom_timer
+ dec bottom_left
+ lda bottom_left
+ cmp #4
+ bcc @type6
+ lda #0
+ sta sprite_x
+ lda player_y
+ cmp #$58
+ lda #$90
+ bcc :+
+ lda #8
+:
+ sta sprite_y
+ lda #5
+ bne @spawn
+@type6:
+ lda bottom_left
+ and #1
+ beq @left
+ lda #240
+ bne @setx
+@left:
+ lda #0
+@setx:
+ sta sprite_x
+ lda #$90
+ sta sprite_y
+ lda #6
+@spawn:
+ pha
+ lda #0
+ sta sprite_pal
+ pla
+ jsr SpawnActor
+ bcs @done
+ inc mixed_spawned
+@done:rts
+
 ActorsFrame:
  lda #0
  sta fire_used
@@ -586,6 +706,8 @@ ActorsFrame:
  beq @six
  cmp #8
  beq @rock
+ cmp #9
+ beq @nine
  cmp #$0f
  beq @volcano
  cmp #$20
@@ -615,6 +737,8 @@ ActorsFrame:
  jmp @move
 @rock:jsr Stage2RockFrame
  jmp @collide
+@nine:jsr TypeNine
+ jmp @move
 @capsule:jsr Capsule
  jmp @next
 @explode:jsr Explosion
@@ -1210,6 +1334,48 @@ TypeSix:
  rts
 @gravity:jmp AddAY
 
+TypeNine:
+ jsr FireAtPlayer
+ ldy #O_CLOCK
+ lda (objptr),y
+ clc
+ adc #1
+ cmp #24
+ bcc :+
+ lda #0
+:
+ sta (objptr),y
+ lsr a
+ lsr a
+ tax
+ lda NineFrames,x
+ ldy #O_FRAME
+ sta (objptr),y
+ ldy #O_X
+ lda (objptr),y
+ cmp #$80
+ bcs @done
+ ldy #O_Y
+ lda player_y
+ sec
+ sbc (objptr),y
+ clc
+ adc #3
+ cmp #7
+ bcc @neutral
+ lda player_y
+ cmp (objptr),y
+ lda #$ff
+ bcc @setvy
+ lda #1
+ bne @setvy
+@neutral:
+ lda #0
+@setvy:
+ ldy #O_VYH
+ sta (objptr),y
+@done:rts
+
 FireAtPlayer:
  ldy #O_FIRE
  lda (objptr),y
@@ -1471,5 +1637,6 @@ ShotsFrame:jmp ProjectileFrame
 Marks:.byte 0,0,0,1,0,0,0,1,0,0,0,2,0,0,0,1
 StreamY:.byte 32,128,64,112
 LeftY:.byte 8,144,8,8,144,8,144,144
+NineFrames:.byte $ec,$f0,$f4,$f8,$f4,$f0
 CurveFrames:.byte $8c,$90,$94,$98,$9c,$98,$94,$90
 WalkerFrames:.byte $d0,$d4,$f4,$f8,$dc,$e0,$e8,$ec

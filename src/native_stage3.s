@@ -8,16 +8,17 @@
 .export Stage3Init,Stage3Tick,Stage3Draw,Stage3MidbossCleared,S3_State
 .segment "BSS"
 S3_State:
-s3_target: .res 1
+s3_target: .res 1             ; 0 inactive,1 active,2 collected
 s3_target_x: .res 1
 s3_bonus_wait: .res 1
 s3_collected: .res 1
 s3_end_reached: .res 1
 s3_midboss_done: .res 1
+s3_final_started: .res 1
 .segment "ACTORS"
 Stage3Init:
  lda #0
- ldx #5
+ ldx #6
 @clear: sta S3_State,x
  dex
  bpl @clear
@@ -80,6 +81,7 @@ Stage3Tick:
  lda s3_target
  cmp #1
  jne @limit
+ ; Source target row $30, ship row offset tolerance [-8,+7].
  lda player_y
  sec
  sbc #$30
@@ -103,19 +105,26 @@ Stage3Tick:
  sta audio_cmd
  rts
 @limit:
- ; Stage 3's actual boss is not ported. Halt at source travel bound,
- ; never skip absent gameplay or silently mark stage 3 complete.
+ ; Source p01 $6DF9/$6E04: after the first boss, advance up to $01AF,
+ ; then call the *same* type-1 boss sequence, not a surrogate enemy.
+ lda s3_midboss_done
+ jeq @done
+ lda s3_final_started
+ jne @done
+ lda new_column
+ jeq @done
  lda worldhi
  cmp #1
  jcc @done
- jne @stop
+ jne @finish
  lda worldlo
- cmp #$9f
+ cmp #$af
  jcc @done
-@stop:
- lda #12
- sta phase
+@finish:
+ lda #1
+ sta s3_final_started
  inc s3_end_reached
+ jsr EnterBigCore
  rts
 @bonus_wait:
  dec s3_bonus_wait
@@ -147,7 +156,7 @@ Stage3Draw:
  jne @done
  lda s3_target_x
  sta sprite_x
- lda #$3f
+ lda #$3f                 ; Native DrawSprite adds 15 to Y, source target $30.
  sta sprite_y
  lda #124
  sta sprite_frame
