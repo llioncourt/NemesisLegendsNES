@@ -1,0 +1,46 @@
+{
+  "baseline_cp0006_sha256": "0e892e7bb6e6418241748c13da1fde344d70c99c89cf7d057ad35e457837af2d",
+  "cp0007_sha256": "158675b365d3f2920bd11c89e7a860cc37cca60d6dd221d30f16271c6e66a19e",
+  "prg_changed_banks": [
+    {
+      "bank": 9,
+      "changed_bytes": 1523,
+      "old_sha256": "308d857fd5123ea9585c4ceaff0165e244440d9538ab489cc225f81a99659440",
+      "new_sha256": "50d55c17ed85abcc23959aa48f32673cd880d1975788d8af69c8ae2db639b9b2"
+    },
+    {
+      "bank": 14,
+      "changed_bytes": 1,
+      "old_sha256": "0b7cc6434899fed9e0721e22525f9d10d55d2c20434cfb2cd5c63f60c5b68bdb",
+      "new_sha256": "27f9c8b3de67b7da294b3317f48e95267101b1aa1c4d936f76cd17b2087732d3"
+    },
+    {
+      "bank": 15,
+      "changed_bytes": 1,
+      "old_sha256": "9013b49e2e24ba26d446c19d8231cb52648e4a1aa736e363b3ed741086b99642",
+      "new_sha256": "7c59418b7693fd31fa0bc900101e5031d174db183b3a4243f9958b6632b5b1f2"
+    }
+  ],
+  "chr_changed_banks": [
+    {
+      "bank": 21,
+      "changed_bytes": 1781,
+      "old_sha256": "5711a3667ee910b0bd1415291bdb84dbb8989ec13003e61c5ef971386cf32125",
+      "new_sha256": "2e3f12da5e67ab6ec84a42f2cad04171d619a2b7846754030690348fbd60638c"
+    },
+    {
+      "bank": 22,
+      "changed_bytes": 2318,
+      "old_sha256": "2578a584a5b506ac55b8cb505664f1fef993f58677285d0cff0c050b874e587f",
+      "new_sha256": "17fc1213a77d99bb305e81420ee55952132a9c35f0e93b34dbb0a853b086d29c"
+    },
+    {
+      "bank": 24,
+      "changed_bytes": 498,
+      "old_sha256": "cb00520d9d7f0246b4ab293e3574fa52aa36bfea172a4cb6097b42199605a1c5",
+      "new_sha256": "22b0a3f0bc86f5daa4dcbc39f57a89348c5757cf6c7029c9b331b5d414245836"
+    }
+  ],
+  "verified_gameplay_banks_unchanged": true,
+  "note": "PRG 9 title code + exactly two relocated JSR bytes in game kernel banks 14/15 (TitleFrame and TitleVBlank). CHR 21/22 scenic image and 24 actual Gradius II glyphs. All gameplay assets/code otherwise unchanged."
+}

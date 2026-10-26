@@ -4,7 +4,7 @@
 .include "campaign.inc"
 .import Flow_State, Flow_NewGame, Flow_Event
 .import PollPad, HideSprites, StarRows, SpriteCode, SoundRequest, ClearPPU
-.import TitleName,TitlePalette
+.import TitleInit, TitleFrame
 .import ActorsFrame, ActorsDraw, SpawnCannon, SpawnWaves, ShotsFrame, InitActors
 .import StageEvents
 .export Main, DrawColumn, UploadColumn, LoadStage, FrameGame
@@ -19,9 +19,8 @@ Main:
  jsr PollPad
  lda mode
  bne @playing
- lda pressed
- and #BTN_START
- beq @titleidle
+ jsr TitleFrame
+ bcc @titleidle
  jsr Flow_NewGame
  lda #0
  sta score_lo
@@ -108,69 +107,14 @@ Main:
  jmp @loop
 
 Title:
- sei
  lda #0
- sta screenon
  sta $2000
+ sta screenon
  sta $2001
  sta $5204
- sta mode
- sta camera
- sta audio_on
- sta $5104
- jsr HideSprites
- jsr ClearPPU
- lda #0
- sta $5104
- ldx #0
-@bank:
- txa
- sta $5128,x
- inx
- cpx #4
- bne @bank
- bit $2002
- lda #$20
- sta $2006
- lda #0
- sta $2006
- lda #<TitleName
- sta ptr
- lda #>TitleName
- sta ptr+1
- ldx #4
- ldy #0
-@title:
- lda (ptr),y
- sta $2007
- iny
- bne @title
- inc ptr+1
- dex
- bne @title
- bit $2002
- lda #$3f
- sta $2006
- lda #0
- sta $2006
- ldx #0
-@pal:
- lda TitlePalette,x
- sta $2007
- inx
- cpx #16
- bne @pal
- lda #0
- sta $2005
- sta $2005
- lda #$a0
- sta $2000
- lda #$1e
- sta $2001
- lda #1
- sta screenon
- cli
- rts
+ lda #$89
+ sta $5114
+ jmp TitleInit
 
 LoadDataBank:
  lda stage_bank
@@ -341,6 +285,12 @@ LoadStage:
  sta audio_on
  sta ready
  sta screenon
+ lda sound_muted
+ beq @audio_enabled
+ lda #0
+ sta audio_on
+ sta $4015
+@audio_enabled:
  lda #$a0
  sta $2000
  lda #$1c

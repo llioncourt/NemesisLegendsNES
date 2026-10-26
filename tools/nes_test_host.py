@@ -17,11 +17,12 @@ class Variable(C.Structure):
 class NES:
     BUTTONS = {'B': 0, 'SELECT': 2, 'START': 3, 'UP': 4, 'DOWN': 5,
                'LEFT': 6, 'RIGHT': 7, 'A': 8}
-    def __init__(self, core: str | pathlib.Path, rom: bytes, capture=False):
+    def __init__(self, core: str | pathlib.Path, rom: bytes, capture=False, options=None):
         self.lib = C.CDLL(str(pathlib.Path(core).resolve()))
         self.temp = tempfile.TemporaryDirectory(prefix='nemesis-native-qa-')
         self.directory = str(self.temp.name).encode()
         self.variables = {b'fceumm_ramstate': b'fill $00'}
+        if options: self.variables.update(options)
         self.buttons = [set(), set()]
         self.capture = capture
         self.pixel_format = 0

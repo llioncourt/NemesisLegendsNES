@@ -1,0 +1,9 @@
+{
+  "patch": "patches/CP0006_to_CP0007.ips",
+  "patch_bytes": 7042,
+  "patch_sha256": "4a4b8afdf7dfaa7cdbc395f3ff26f833e6d979a90e9d4339e0db716caf73b2d9",
+  "baseline_rom_sha256": "0e892e7bb6e6418241748c13da1fde344d70c99c89cf7d057ad35e457837af2d",
+  "target_rom_sha256": "158675b365d3f2920bd11c89e7a860cc37cca60d6dd221d30f16271c6e66a19e",
+  "reconstruction_verified": true,
+  "prg_changed_reason": "Title routine relocation only; stage/actor/boss data unchanged"
+}

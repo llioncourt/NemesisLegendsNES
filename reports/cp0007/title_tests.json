@@ -1,0 +1,865 @@
+{
+  "rom_sha256": "158675b365d3f2920bd11c89e7a860cc37cca60d6dd221d30f16271c6e66a19e",
+  "checks": [
+    {
+      "name": "reveal_all_eight_rows_bottom_up",
+      "passed": true,
+      "rows": [
+        7,
+        6,
+        5,
+        4,
+        3,
+        2,
+        1,
+        0
+      ]
+    },
+    {
+      "name": "entrance_ready_after_13_acknowledged_events",
+      "passed": true
+    },
+    {
+      "name": "normal_boot_no_QA_assistance",
+      "passed": true
+    },
+    {
+      "name": "no_title_hardware_sprites",
+      "passed": true
+    },
+    {
+      "name": "native_resolution",
+      "passed": true
+    },
+    {
+      "name": "background_unchanged_during_idle",
+      "passed": true
+    },
+    {
+      "name": "panel_center_is_opaque_black",
+      "passed": true
+    },
+    {
+      "name": "title_audio_is_native_and_audible",
+      "passed": true
+    },
+    {
+      "name": "up_wraps_to_options",
+      "passed": true
+    },
+    {
+      "name": "down_wraps_to_start",
+      "passed": true
+    },
+    {
+      "name": "opposite_directions_cancel",
+      "passed": true
+    },
+    {
+      "name": "held_repeat_15_frames_then_moves",
+      "passed": true
+    },
+    {
+      "name": "options_is_functional",
+      "passed": true
+    },
+    {
+      "name": "mute_silences_existing_tone",
+      "passed": true
+    },
+    {
+      "name": "unmute_restores_real_APU",
+      "passed": true
+    },
+    {
+      "name": "B_returns_to_root_options_selection",
+      "passed": true
+    },
+    {
+      "name": "simultaneous_confirm_starts_once_without_pause",
+      "passed": true
+    },
+    {
+      "name": "no_title_requests_leak_into_game",
+      "passed": true
+    },
+    {
+      "name": "movement_preserved",
+      "passed": true
+    },
+    {
+      "name": "pause_preserved",
+      "passed": true
+    },
+    {
+      "name": "resume_preserved",
+      "passed": true
+    },
+    {
+      "name": "game_over_reinitializes_title_and_clears_stale_requests",
+      "passed": true,
+      "qa": "forced game-over and pending HUD"
+    },
+    {
+      "name": "return_title_art_preserved",
+      "passed": true,
+      "qa": "forced game-over"
+    },
+    {
+      "name": "long_idle_stays_in_title_without_error",
+      "passed": true
+    },
+    {
+      "name": "reset_reboots_title_cleanly",
+      "passed": true
+    },
+    {
+      "name": "early_start_step_00_does_not_start_game",
+      "passed": true
+    },
+    {
+      "name": "early_start_step_00_requires_new_press",
+      "passed": true
+    },
+    {
+      "name": "early_start_step_01_does_not_start_game",
+      "passed": true
+    },
+    {
+      "name": "early_start_step_01_requires_new_press",
+      "passed": true
+    },
+    {
+      "name": "early_start_step_02_does_not_start_game",
+      "passed": true
+    },
+    {
+      "name": "early_start_step_02_requires_new_press",
+      "passed": true
+    },
+    {
+      "name": "early_start_step_03_does_not_start_game",
+      "passed": true
+    },
+    {
+      "name": "early_start_step_03_requires_new_press",
+      "passed": true
+    },
+    {
+      "name": "early_start_step_04_does_not_start_game",
+      "passed": true
+    },
+    {
+      "name": "early_start_step_04_requires_new_press",
+      "passed": true
+    },
+    {
+      "name": "early_start_step_05_does_not_start_game",
+      "passed": true
+    },
+    {
+      "name": "early_start_step_05_requires_new_press",
+      "passed": true
+    },
+    {
+      "name": "early_start_step_06_does_not_start_game",
+      "passed": true
+    },
+    {
+      "name": "early_start_step_06_requires_new_press",
+      "passed": true
+    },
+    {
+      "name": "early_start_step_07_does_not_start_game",
+      "passed": true
+    },
+    {
+      "name": "early_start_step_07_requires_new_press",
+      "passed": true
+    },
+    {
+      "name": "early_start_step_08_does_not_start_game",
+      "passed": true
+    },
+    {
+      "name": "early_start_step_08_requires_new_press",
+      "passed": true
+    },
+    {
+      "name": "early_start_step_09_does_not_start_game",
+      "passed": true
+    },
+    {
+      "name": "early_start_step_09_requires_new_press",
+      "passed": true
+    },
+    {
+      "name": "early_start_step_10_does_not_start_game",
+      "passed": true
+    },
+    {
+      "name": "early_start_step_10_requires_new_press",
+      "passed": true
+    },
+    {
+      "name": "early_start_step_11_does_not_start_game",
+      "passed": true
+    },
+    {
+      "name": "early_start_step_11_requires_new_press",
+      "passed": true
+    },
+    {
+      "name": "early_start_step_12_does_not_start_game",
+      "passed": true
+    },
+    {
+      "name": "early_start_step_12_requires_new_press",
+      "passed": true
+    },
+    {
+      "name": "mute_persists_into_game",
+      "passed": true
+    },
+    {
+      "name": "all_legal_title_NMI_paths_fit",
+      "passed": true,
+      "cases": 60,
+      "worst": 1408
+    },
+    {
+      "name": "invalid_command_or_row_rejected_255_0",
+      "passed": true
+    },
+    {
+      "name": "invalid_command_or_row_rejected_1_8",
+      "passed": true
+    },
+    {
+      "name": "invalid_command_or_row_rejected_1_255",
+      "passed": true
+    }
+  ],
+  "entrance": [
+    {
+      "frame": 6,
+      "step": 0,
+      "tick": 0
+    },
+    {
+      "frame": 10,
+      "step": 1,
+      "tick": 4
+    },
+    {
+      "frame": 14,
+      "step": 2,
+      "tick": 8
+    },
+    {
+      "frame": 34,
+      "step": 3,
+      "tick": 28
+    },
+    {
+      "frame": 36,
+      "step": 4,
+      "tick": 30
+    },
+    {
+      "frame": 38,
+      "step": 5,
+      "tick": 32
+    },
+    {
+      "frame": 40,
+      "step": 6,
+      "tick": 34
+    },
+    {
+      "frame": 42,
+      "step": 7,
+      "tick": 36
+    },
+    {
+      "frame": 44,
+      "step": 8,
+      "tick": 38
+    },
+    {
+      "frame": 46,
+      "step": 9,
+      "tick": 40
+    },
+    {
+      "frame": 48,
+      "step": 10,
+      "tick": 42
+    },
+    {
+      "frame": 50,
+      "step": 11,
+      "tick": 44
+    },
+    {
+      "frame": 54,
+      "step": 12,
+      "tick": 48
+    },
+    {
+      "frame": 58,
+      "step": 13,
+      "tick": 52
+    }
+  ],
+  "timing": [
+    {
+      "command": 0,
+      "row": 0,
+      "page": 0,
+      "muted": 0,
+      "dim": 0,
+      "last_video_write_cycle": 620,
+      "passed": true
+    },
+    {
+      "command": 0,
+      "row": 0,
+      "page": 0,
+      "muted": 1,
+      "dim": 0,
+      "last_video_write_cycle": 620,
+      "passed": true
+    },
+    {
+      "command": 0,
+      "row": 0,
+      "page": 1,
+      "muted": 0,
+      "dim": 0,
+      "last_video_write_cycle": 620,
+      "passed": true
+    },
+    {
+      "command": 0,
+      "row": 0,
+      "page": 1,
+      "muted": 1,
+      "dim": 0,
+      "last_video_write_cycle": 620,
+      "passed": true
+    },
+    {
+      "command": 1,
+      "row": 0,
+      "page": 0,
+      "muted": 0,
+      "dim": 0,
+      "last_video_write_cycle": 1400,
+      "passed": true
+    },
+    {
+      "command": 1,
+      "row": 0,
+      "page": 0,
+      "muted": 1,
+      "dim": 0,
+      "last_video_write_cycle": 1400,
+      "passed": true
+    },
+    {
+      "command": 1,
+      "row": 0,
+      "page": 1,
+      "muted": 0,
+      "dim": 0,
+      "last_video_write_cycle": 1400,
+      "passed": true
+    },
+    {
+      "command": 1,
+      "row": 0,
+      "page": 1,
+      "muted": 1,
+      "dim": 0,
+      "last_video_write_cycle": 1400,
+      "passed": true
+    },
+    {
+      "command": 1,
+      "row": 1,
+      "page": 0,
+      "muted": 0,
+      "dim": 0,
+      "last_video_write_cycle": 1400,
+      "passed": true
+    },
+    {
+      "command": 1,
+      "row": 1,
+      "page": 0,
+      "muted": 1,
+      "dim": 0,
+      "last_video_write_cycle": 1400,
+      "passed": true
+    },
+    {
+      "command": 1,
+      "row": 1,
+      "page": 1,
+      "muted": 0,
+      "dim": 0,
+      "last_video_write_cycle": 1400,
+      "passed": true
+    },
+    {
+      "command": 1,
+      "row": 1,
+      "page": 1,
+      "muted": 1,
+      "dim": 0,
+      "last_video_write_cycle": 1400,
+      "passed": true
+    },
+    {
+      "command": 1,
+      "row": 2,
+      "page": 0,
+      "muted": 0,
+      "dim": 0,
+      "last_video_write_cycle": 1400,
+      "passed": true
+    },
+    {
+      "command": 1,
+      "row": 2,
+      "page": 0,
+      "muted": 1,
+      "dim": 0,
+      "last_video_write_cycle": 1400,
+      "passed": true
+    },
+    {
+      "command": 1,
+      "row": 2,
+      "page": 1,
+      "muted": 0,
+      "dim": 0,
+      "last_video_write_cycle": 1400,
+      "passed": true
+    },
+    {
+      "command": 1,
+      "row": 2,
+      "page": 1,
+      "muted": 1,
+      "dim": 0,
+      "last_video_write_cycle": 1400,
+      "passed": true
+    },
+    {
+      "command": 1,
+      "row": 3,
+      "page": 0,
+      "muted": 0,
+      "dim": 0,
+      "last_video_write_cycle": 1400,
+      "passed": true
+    },
+    {
+      "command": 1,
+      "row": 3,
+      "page": 0,
+      "muted": 1,
+      "dim": 0,
+      "last_video_write_cycle": 1400,
+      "passed": true
+    },
+    {
+      "command": 1,
+      "row": 3,
+      "page": 1,
+      "muted": 0,
+      "dim": 0,
+      "last_video_write_cycle": 1400,
+      "passed": true
+    },
+    {
+      "command": 1,
+      "row": 3,
+      "page": 1,
+      "muted": 1,
+      "dim": 0,
+      "last_video_write_cycle": 1400,
+      "passed": true
+    },
+    {
+      "command": 1,
+      "row": 4,
+      "page": 0,
+      "muted": 0,
+      "dim": 0,
+      "last_video_write_cycle": 1400,
+      "passed": true
+    },
+    {
+      "command": 1,
+      "row": 4,
+      "page": 0,
+      "muted": 1,
+      "dim": 0,
+      "last_video_write_cycle": 1400,
+      "passed": true
+    },
+    {
+      "command": 1,
+      "row": 4,
+      "page": 1,
+      "muted": 0,
+      "dim": 0,
+      "last_video_write_cycle": 1400,
+      "passed": true
+    },
+    {
+      "command": 1,
+      "row": 4,
+      "page": 1,
+      "muted": 1,
+      "dim": 0,
+      "last_video_write_cycle": 1400,
+      "passed": true
+    },
+    {
+      "command": 1,
+      "row": 5,
+      "page": 0,
+      "muted": 0,
+      "dim": 0,
+      "last_video_write_cycle": 1400,
+      "passed": true
+    },
+    {
+      "command": 1,
+      "row": 5,
+      "page": 0,
+      "muted": 1,
+      "dim": 0,
+      "last_video_write_cycle": 1400,
+      "passed": true
+    },
+    {
+      "command": 1,
+      "row": 5,
+      "page": 1,
+      "muted": 0,
+      "dim": 0,
+      "last_video_write_cycle": 1400,
+      "passed": true
+    },
+    {
+      "command": 1,
+      "row": 5,
+      "page": 1,
+      "muted": 1,
+      "dim": 0,
+      "last_video_write_cycle": 1400,
+      "passed": true
+    },
+    {
+      "command": 1,
+      "row": 6,
+      "page": 0,
+      "muted": 0,
+      "dim": 0,
+      "last_video_write_cycle": 1400,
+      "passed": true
+    },
+    {
+      "command": 1,
+      "row": 6,
+      "page": 0,
+      "muted": 1,
+      "dim": 0,
+      "last_video_write_cycle": 1400,
+      "passed": true
+    },
+    {
+      "command": 1,
+      "row": 6,
+      "page": 1,
+      "muted": 0,
+      "dim": 0,
+      "last_video_write_cycle": 1400,
+      "passed": true
+    },
+    {
+      "command": 1,
+      "row": 6,
+      "page": 1,
+      "muted": 1,
+      "dim": 0,
+      "last_video_write_cycle": 1400,
+      "passed": true
+    },
+    {
+      "command": 1,
+      "row": 7,
+      "page": 0,
+      "muted": 0,
+      "dim": 0,
+      "last_video_write_cycle": 1408,
+      "passed": true
+    },
+    {
+      "command": 1,
+      "row": 7,
+      "page": 0,
+      "muted": 1,
+      "dim": 0,
+      "last_video_write_cycle": 1408,
+      "passed": true
+    },
+    {
+      "command": 1,
+      "row": 7,
+      "page": 1,
+      "muted": 0,
+      "dim": 0,
+      "last_video_write_cycle": 1408,
+      "passed": true
+    },
+    {
+      "command": 1,
+      "row": 7,
+      "page": 1,
+      "muted": 1,
+      "dim": 0,
+      "last_video_write_cycle": 1408,
+      "passed": true
+    },
+    {
+      "command": 2,
+      "row": 0,
+      "page": 0,
+      "muted": 0,
+      "dim": 0,
+      "last_video_write_cycle": 1144,
+      "passed": true
+    },
+    {
+      "command": 2,
+      "row": 0,
+      "page": 0,
+      "muted": 0,
+      "dim": 1,
+      "last_video_write_cycle": 1143,
+      "passed": true
+    },
+    {
+      "command": 2,
+      "row": 0,
+      "page": 0,
+      "muted": 1,
+      "dim": 0,
+      "last_video_write_cycle": 1144,
+      "passed": true
+    },
+    {
+      "command": 2,
+      "row": 0,
+      "page": 0,
+      "muted": 1,
+      "dim": 1,
+      "last_video_write_cycle": 1143,
+      "passed": true
+    },
+    {
+      "command": 2,
+      "row": 0,
+      "page": 1,
+      "muted": 0,
+      "dim": 0,
+      "last_video_write_cycle": 1144,
+      "passed": true
+    },
+    {
+      "command": 2,
+      "row": 0,
+      "page": 1,
+      "muted": 0,
+      "dim": 1,
+      "last_video_write_cycle": 1143,
+      "passed": true
+    },
+    {
+      "command": 2,
+      "row": 0,
+      "page": 1,
+      "muted": 1,
+      "dim": 0,
+      "last_video_write_cycle": 1144,
+      "passed": true
+    },
+    {
+      "command": 2,
+      "row": 0,
+      "page": 1,
+      "muted": 1,
+      "dim": 1,
+      "last_video_write_cycle": 1143,
+      "passed": true
+    },
+    {
+      "command": 3,
+      "row": 0,
+      "page": 0,
+      "muted": 0,
+      "dim": 0,
+      "last_video_write_cycle": 873,
+      "passed": true
+    },
+    {
+      "command": 3,
+      "row": 0,
+      "page": 0,
+      "muted": 1,
+      "dim": 0,
+      "last_video_write_cycle": 873,
+      "passed": true
+    },
+    {
+      "command": 3,
+      "row": 0,
+      "page": 1,
+      "muted": 0,
+      "dim": 0,
+      "last_video_write_cycle": 881,
+      "passed": true
+    },
+    {
+      "command": 3,
+      "row": 0,
+      "page": 1,
+      "muted": 1,
+      "dim": 0,
+      "last_video_write_cycle": 882,
+      "passed": true
+    },
+    {
+      "command": 4,
+      "row": 0,
+      "page": 0,
+      "muted": 0,
+      "dim": 0,
+      "last_video_write_cycle": 885,
+      "passed": true
+    },
+    {
+      "command": 4,
+      "row": 0,
+      "page": 0,
+      "muted": 1,
+      "dim": 0,
+      "last_video_write_cycle": 885,
+      "passed": true
+    },
+    {
+      "command": 4,
+      "row": 0,
+      "page": 1,
+      "muted": 0,
+      "dim": 0,
+      "last_video_write_cycle": 893,
+      "passed": true
+    },
+    {
+      "command": 4,
+      "row": 0,
+      "page": 1,
+      "muted": 1,
+      "dim": 0,
+      "last_video_write_cycle": 894,
+      "passed": true
+    },
+    {
+      "command": 5,
+      "row": 0,
+      "page": 0,
+      "muted": 0,
+      "dim": 0,
+      "last_video_write_cycle": 725,
+      "passed": true
+    },
+    {
+      "command": 5,
+      "row": 0,
+      "page": 0,
+      "muted": 1,
+      "dim": 0,
+      "last_video_write_cycle": 725,
+      "passed": true
+    },
+    {
+      "command": 5,
+      "row": 0,
+      "page": 1,
+      "muted": 0,
+      "dim": 0,
+      "last_video_write_cycle": 725,
+      "passed": true
+    },
+    {
+      "command": 5,
+      "row": 0,
+      "page": 1,
+      "muted": 1,
+      "dim": 0,
+      "last_video_write_cycle": 725,
+      "passed": true
+    },
+    {
+      "command": 6,
+      "row": 0,
+      "page": 0,
+      "muted": 0,
+      "dim": 0,
+      "last_video_write_cycle": 1196,
+      "passed": true
+    },
+    {
+      "command": 6,
+      "row": 0,
+      "page": 0,
+      "muted": 1,
+      "dim": 0,
+      "last_video_write_cycle": 1196,
+      "passed": true
+    },
+    {
+      "command": 6,
+      "row": 0,
+      "page": 1,
+      "muted": 0,
+      "dim": 0,
+      "last_video_write_cycle": 1212,
+      "passed": true
+    },
+    {
+      "command": 6,
+      "row": 0,
+      "page": 1,
+      "muted": 1,
+      "dim": 0,
+      "last_video_write_cycle": 1214,
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "physical_hardware_tested": false,
+  "scope": "Title/control integration and bounded NTSC timing, not full-game validation.",
+  "timing_assumptions": [
+    "Worst OAM DMA 514 cycles",
+    "No DMC DMA during video transfers",
+    "Audio driver runs after video writes"
+  ]
+}

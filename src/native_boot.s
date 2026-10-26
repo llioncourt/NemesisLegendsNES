@@ -5,7 +5,7 @@
 .import Main, DrawColumn, UploadColumn, LoadStage, FrameGame, UploadBossQueue
 .export Reset, NMI, IRQ, PollPad, HideSprites, StarRows, SourceObjectDefaults
 .export AngleTable, SineTable, SpriteCode, SoundRequest, ClearPPU
-.export TitleName, TitlePalette
+.import TitleVBlank
 .segment "HEADER"
 .byte "NES",$1a,8,16,$50,$08,0,0,$07,0,0,0,0,0
 .segment "BOOT"
@@ -84,6 +84,11 @@ NMI:
  inc missed
  jmp @audio
 @consume:
+ lda mode
+ bne @gameconsume
+ jsr TitleVBlank
+ jmp @scroll
+@gameconsume:
  lda #0
  sta $5204
  lda column_pending
@@ -241,8 +246,6 @@ SpriteCode:
 .repeat 128,I
  .byte ((I*4)&$fe)|((I*4)>>8)
 .endrepeat
-TitleName: .incbin "assets/title/title.nam"
-TitlePalette: .incbin "assets/title/title.pal"
 
 .segment "SOUND"
 .incbin "build/native/audio.bin"

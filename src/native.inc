@@ -108,3 +108,23 @@ BTN_RIGHT=$01
 
 player_xf=$77
 player_yf=$78
+
+; CP0005 title-only state. Outside all gameplay scratch/telemetry ranges.
+title_page=$07e0
+title_index=$07e1
+title_dirty=$07e2
+sound_muted=$07e3
+
+; CP0006 title state: 16 bytes total at $07E0-$07EF, no game/audio aliases.
+title_step=$07e4
+title_tick=$07e5
+title_fast=$07e6
+title_release=$07e7
+title_intro=$07e8
+title_row=$07e9
+title_dim=$07ea
+title_blink=$07eb
+title_alt=$07ec
+title_repeat=$07ed
+title_dir=$07ee
+title_error=$07ef

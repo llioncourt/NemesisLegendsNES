@@ -1,103 +1,68 @@
-# Build and test entry points
+# Build and test - lean CP0005
 
-## Playable native integration (private assets)
+## Integrity
 
-The private checkpoint includes `build/native/Nemesis_Legends_CP0004.nes` ready
-for an NTSC NES emulator with MMC5 and NES 2.0 support. No Python is needed to
-play the included ROM. The build is incomplete; see the runtime handoff.
+`python tools/checkpoint.py verify` checks every shipped file against
+`CHECKPOINT_FILES.json`, then the playable ROM and ten canonical input images.
+This is an integrity check for a fresh unpack. Editing files or replacing reports
+with new test runs will naturally invalidate their recorded package hashes.
+Additional build output files are not silently included in the checkpoint.
 
-To rebuild the supplied converted assets with ca65/ld65:
-
-```
-python tools/build_native.py --tools "/path with spaces/to/cc65/bin"
-```
-
-To regenerate converted assets from the hash-checked private originals as well:
+## Native ROM
 
 ```
-python tools/build_native.py --tools "/path/to/cc65/bin" --assets
+python tools/checkpoint.py build
+python tools/checkpoint.py build --assets
 ```
 
-On Windows the same Python entry points accept the matching tool executables.
-The supplied compiler/core binaries are Linux x64, not Windows executables.
-Public source checkouts intentionally do not contain commercial input assets.
+The first command uses the converted data already supplied. The second regenerates
+it from the selected originals and requires numpy/Pillow. Both must reproduce the
+exact CP0005 ROM hash in `manifests/checkpoint.json`. All game code is unchanged.
+On Linux x64, the bundled `toolchain/linux-x64/bin` is selected automatically.
+On Windows, provide Windows ca65/ld65 with `--tools "C:\cc65\bin"`, or put them
+on PATH. This package deliberately does not pretend Linux binaries run on Windows.
 
-After building, run the scoped native checks:
-
-```
-python tools/test_combat_native.py --tools /path/to/cc65/bin --core /path/to/fceumm_libretro.so
-python tools/test_native_integration.py --core /path/to/fceumm_libretro.so
-python tools/test_stage_one.py --core /path/to/fceumm_libretro.so
-python tools/test_vblank_budget.py
-```
-
-The reports contain the ROM hash and distinguish component fixtures, assisted
-runs, ordinary input tests and bounded timing assumptions. They do not certify
-complete gameplay or physical hardware.
-
-## Public source-only checks
-
-Python 3.10 or newer and the packages in `requirements.txt` are required.
-Install them in a local virtual environment, then run:
+## Scoped QA
 
 ```
-python -m unittest discover -s tests -p test_public.py -v
+python tools/checkpoint.py test
 ```
 
-These checks do not require commercial inputs. They are not full-game tests.
+This runs public/evidence tests, the 288-case campaign module test, 60 production
+combat assertions, controller integration, the two assisted first-stage routes
+and bounded vblank checks. No fresh gameplay completion is claimed.
+Pass `--core` and `--tools` for alternate platform-native tools. Test output is
+created under `build/` and `reports/`. MP3/archival-ZIP checks are explicitly
+skipped in the lean edition, not counted as passed. Missing selected ROMs are fatal.
+The old reference-audio playback captures are not a claim of converted MSX music.
 
-## Native 6502 progression checks
-
-Install cc65 (ca65 and ld65) and provide an explicit FCEUmm libretro core:
-
-```
-python tools/test_campaign_native.py --core /path/to/fceumm_libretro.so
-```
-
-On Windows use the matching DLL. When the assemblers are not on PATH, pass
-`--tool-dir "C:\path with spaces\cc65\bin"`. The Linux toolchain artifact built
-by this repository is for Linux x64 only; it is not a Windows distribution.
-
-The script builds `build/campaign/campaign_unit_test.nes`, executes native
-routines in the core, checks 288 source-derived route cases, checks the 6502
-stack, and runs a deliberately corrupted native-table negative control. The
-cartridge is a headless test harness, not a gameplay build for release.
-
-## Private extraction and audio reproduction
-
-Place the eight original supplied ZIPs in `inputs/`. Keep their filenames;
-paths and the project directory may contain spaces. Run:
+## Source evidence and Z80 reassembly
 
 ```
 python tools/rebuild_evidence.py
+python tools/verify_upstream.py --pasmo toolchain/linux-x64/bin/pasmo
 ```
 
-The Windows wrapper is `REBUILD_EVIDENCE.cmd`. This regenerates input selection,
-Nemesis/Nemesis 2 source assets, three NSF and three KSS driver wrappers, and the
-custom native title asset. It does not silently overwrite the reviewed progress
-ledger or source catalogue. It does not produce a complete game ROM.
+The evidence rebuilder now uses `manifests/selected_sources.json` directly and
+requires no upload ZIP or network access. The ten selected input files remain at
+their existing SHA-256 filenames. The source acquisition manifest explicitly
+records a code/text subset: websites, image galleries and upstream MP3s were
+omitted; retained source bytes and revision pins are unchanged. Only the project's
+bank-reassembly verifier is certified here, not every website-producing upstream
+Makefile target or its separate test suite.
 
-To also render the reference soundtrack, provide libgme and ffmpeg/ffprobe:
+The source tool `source_audit.py` still supports old upload collections. To repeat
+that historical 137-image audit, use `rebuild_evidence.py --archives` in a separate
+full-audit workspace containing all eight ZIPs. That is not required for this build.
 
-```
-python tools/rebuild_evidence.py --render-audio
-```
+## Optional listening renders
 
-Without MP3 rendering, the MP3 integration test is explicitly skipped, not
-reported as passed. With the private checkpoint's 98 MP3s present, all 22
-original integration tests pass. Reference rips are not MSX-to-NES arrangements.
+The six source drivers and named track indices are retained. The 98 MP3s live in
+`Nemesis_Legends_Source_Music_CP0001.zip`, not in the working checkpoint. They can
+also be re-rendered with `rebuild_evidence.py --render-audio` when libgme and
+ffmpeg/ffprobe are installed. No empty MP3 directory counts as validated audio.
 
-## Original source reconstruction
+The native tool binaries require a compatible Linux x64 runtime. Python packages
+are environment dependencies, not bundled wheels or a Windows offline installer.
 
-Acquire the four pinned public source trees with `tools/fetch_sources.py`, or
-use the source-evidence workflow artifact. This acquisition step needs network;
-once acquired, extraction/reassembly/test work is local. The original images
-must already have been selected by the evidence rebuilder.
-
-```
-python tools/verify_upstream.py --pasmo /path/to/pasmo
-```
-
-This invokes the assembler directly, checks every bank and rebuilds all four
-originals privately. It does not execute arbitrary downloaded shell scripts.
-No source reconstruction or component test should be called a full NES game.
+For native title validation: python tools/test_title_native.py --core PATH
