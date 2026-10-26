@@ -1,0 +1,62 @@
+{
+  "negative_control": {
+    "change": "oversized twelve-row boss update, outside the production bound",
+    "last_video_write_cycle": 2526,
+    "rejected": true
+  },
+  "assumptions": [
+    "NTSC timing",
+    "No DMC sample DMA during the measured video transfer",
+    "Worst-case OAM DMA charged at 514 cycles"
+  ],
+  "rom_sha256": "33469dc01a072d794002536ae280db404964c2f81a275e4de8ac5f3f0fae2947",
+  "method": "Execute the BUILT NMI's supported 6502 instruction subset to count its cycles.\nThis is a bounded instruction-level timing check, NOT a replacement NES emulator.\nOnly the production NMI path is executed. Unknown opcodes fail. DMA is charged\n514 cycles, and 14 cycles cover interrupt entry + worst interrupted instruction.\nAudio is disabled here because it runs after the final video-register write.\nGameplay checks independently run the unmodified FCEUmm core.\n",
+  "cases": [
+    {
+      "case": "idle",
+      "cycles_including_entry_and_max_dma": 678,
+      "last_video_write_cycle": 624,
+      "ntsc_vblank_budget_cycles": 2273,
+      "margin_cycles": 1649,
+      "video_writes": 5,
+      "passed": true
+    },
+    {
+      "case": "hud",
+      "cycles_including_entry_and_max_dma": 1215,
+      "last_video_write_cycle": 1161,
+      "ntsc_vblank_budget_cycles": 2273,
+      "margin_cycles": 1112,
+      "video_writes": 40,
+      "passed": true
+    },
+    {
+      "case": "column_and_deferred_hud",
+      "cycles_including_entry_and_max_dma": 1774,
+      "last_video_write_cycle": 1720,
+      "ntsc_vblank_budget_cycles": 2273,
+      "margin_cycles": 553,
+      "video_writes": 53,
+      "passed": true
+    },
+    {
+      "case": "boss_vertical_and_deferred_hud",
+      "cycles_including_entry_and_max_dma": 2109,
+      "last_video_write_cycle": 2055,
+      "ntsc_vblank_budget_cycles": 2273,
+      "margin_cycles": 218,
+      "video_writes": 122,
+      "passed": true
+    },
+    {
+      "case": "boss_horizontal_and_deferred_hud",
+      "cycles_including_entry_and_max_dma": 2016,
+      "last_video_write_cycle": 1962,
+      "ntsc_vblank_budget_cycles": 2273,
+      "margin_cycles": 311,
+      "video_writes": 117,
+      "passed": true
+    }
+  ],
+  "passed": true
+}

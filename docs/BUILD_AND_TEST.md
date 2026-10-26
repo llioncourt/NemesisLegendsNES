@@ -1,3 +1,25 @@
+# CP0009 - reproducible build and speed hotfix
+
+**Speed:** SELECT in game or while paused cycles `SPD:30` (default), `SPD:40`,
+`SPD:60` (original source reference). Start pauses. The 60Hz APU and display
+continue at every rate. Source-specific regression tests select `SPD:60`
+with actual controller events. The 30Hz default is an accessibility option,
+not a claim that the MSX ran at 30 logical frames per second.
+
+The private checkpoint builds to `build/native/Nemesis_Legends_CP0009.nes`.
+The previous CP0008 was preserved and can be recovered with the included IPS
+patch if the user holds that exact baseline. `tools/make_ips.py` verifies that
+applying the patch yields the exact SHA-256 listed in
+`manifests/checkpoint.json`.
+
+Run `VERIFY.cmd`, `BUILD.cmd`, or `TEST.cmd` on Windows after installing native
+Windows cc65 and a compatible native FCEUmm core; on bundled Linux x64:
+`python tools/checkpoint.py verify`, `build`, `test` respectively. The binary
+Linux tools in the private package do not execute on Windows. No Python packages
+or ROMs are downloaded by the tools at runtime.
+
+---
+
 # Build and test - lean CP0005
 
 ## Integrity

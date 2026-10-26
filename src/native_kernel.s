@@ -10,7 +10,8 @@
 .import Stage2Init, Stage2Tick, Stage2Draw
 .export Main, DrawColumn, UploadColumn, LoadStage, FrameGame
 .export DrawSprite8
-.export DrawSprite, UpdateHUD, PlayerHit, LoadDataBank, AdvanceStage
+ .export DrawSprite, UpdateHUD, PlayerHit, LoadDataBank, AdvanceStage
+.import GamePace_Mode, GamePace_Phase, GamePace_Edges
 .segment "CODE"
 Main:
  jsr Title
@@ -40,6 +41,23 @@ Main:
 @titleidle:
  jmp @finish
 @playing:
+ ; SELECT toggles comfortable/original cadence in game and while paused.
+ ; This is a presentation-rate option, never a speed-up of the NES clock.
+ lda pressed
+ and #BTN_SELECT
+ beq @no_pace_toggle
+ inc GamePace_Mode
+ lda GamePace_Mode
+ cmp #3
+ bcc @pace_mode_ok
+ lda #0
+ sta GamePace_Mode
+@pace_mode_ok:
+ lda #0
+ sta GamePace_Phase
+ sta GamePace_Edges
+ jsr UpdateHUD
+@no_pace_toggle:
  lda pressed
  and #BTN_START
  beq @notpause
@@ -58,6 +76,39 @@ Main:
  lda mode
  cmp #1
  bne @dead
+ lda GamePace_Mode
+ cmp #2
+ beq @original_pace
+ ; Preserve single-frame A power-up presses across skipped logical steps.
+ lda pressed
+ and #BTN_A
+ ora GamePace_Edges
+ sta GamePace_Edges
+ inc GamePace_Phase
+ lda GamePace_Mode
+ bne @comfort_40
+ ; 30Hz: skip alternate simulation frames, OAM/audio remain at 60Hz.
+ lda GamePace_Phase
+ and #1
+ bne @finish
+ jmp @paced_step
+@comfort_40:
+ ; 40Hz: skip every third simulation opportunity; 2/3 exact cadence.
+ lda GamePace_Phase
+ cmp #3
+ bcc @phase40_ok
+ lda #0
+ sta GamePace_Phase
+@phase40_ok:
+ cmp #1
+ beq @finish
+@paced_step:
+ lda pressed
+ ora GamePace_Edges
+ sta pressed
+ lda #0
+ sta GamePace_Edges
+@original_pace:
  jsr FrameGame
  jmp @finish
 @dead:
@@ -271,6 +322,8 @@ LoadStage:
  sta player_iframes
  lda #0
  sta fire_delay
+ sta GamePace_Phase
+ sta GamePace_Edges
  lda #1
  sta mode
  jsr HideSprites
@@ -843,6 +896,20 @@ UpdateHUD:
  eor HUD+21
  cmp #$30
  bne @update
+ lda GamePace_Mode
+ beq @check_30
+ cmp #1
+ beq @check_40
+ lda #'6'
+ bne @check_pace_char
+@check_40:
+ lda #'4'
+ bne @check_pace_char
+@check_30:
+ lda #'3'
+@check_pace_char:
+ cmp HUD+29
+ bne @update
  rts
 @update:
  ldx #31
@@ -867,6 +934,21 @@ UpdateHUD:
  clc
  adc #$30
  sta HUD+21
+ lda GamePace_Mode
+ beq @speed_30
+ cmp #1
+ beq @speed_40
+ lda #'6'
+ bne @speed_draw
+@speed_40:
+ lda #'4'
+ bne @speed_draw
+@speed_30:
+ lda #'3'
+@speed_draw:
+ sta HUD+29
+ lda #'0'
+ sta HUD+30
  lda #1
  sta hud_pending
  rts
@@ -891,4 +973,4 @@ AdvanceStage:
  sta mode
  rts
 SpritePalette: .byte $0f,$30,$16,$12,$0f,$16,$30,$26,$0f,$28,$30,$16,$0f,$30,$1c,$26
-HUDTemplate: .byte "ST:1  L:3  PWR:0  OP:0   NEMESIS "
+HUDTemplate: .byte "ST:1  L:3  PWR:0  OP:0   SPD:30 "

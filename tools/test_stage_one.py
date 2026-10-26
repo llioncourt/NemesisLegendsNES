@@ -11,12 +11,18 @@ ROOT=pathlib.Path(__file__).resolve().parents[1]
 
 def main():
  p=argparse.ArgumentParser();p.add_argument('--core',required=True);a=p.parse_args()
- rom=(ROOT/'build/native/Nemesis_Legends_CP0008.nes').read_bytes();out=ROOT/'reports/cp0008';out.mkdir(parents=True,exist_ok=True)
+ rom=(ROOT/'build/native/Nemesis_Legends_CP0009.nes').read_bytes();out=ROOT/'reports/cp0009';out.mkdir(parents=True,exist_ok=True)
  runs=[]
  for kind in ('destroy_core','source_timeout'):
   trace=[];closed_hp=[];hits=[];cleared=False;lastphase=-1;lastmiss=0;missed=0;injected=False;carry=None;seen_mid=False;volcano=0;stage2frame=None
   with NES(a.core,rom,True) as n:
-   n.run(100);n.buttons[0]={3};n.run(1);n.buttons[0]={0};n.run(40);n.write(0x53,b'\x01');lastmiss=n.read(0x1c,1)[0]
+   n.run(100);n.buttons[0]={3};n.run(1);n.buttons[0]={0};n.run(40)
+   # Source-speed QA: select 60Hz via two physical SELECT presses.
+   for _ in range(2):
+    n.buttons[0]={2};n.run(1);n.buttons[0]=set();n.run(2)
+   assert n.read(0x520,1)==b'\x02'
+   n.buttons[0]={0}  # preserve the original first-stage fire-through input
+   n.write(0x53,b'\x01');lastmiss=n.read(0x1c,1)[0]
    for tick in range(7000):
     phase=n.read(0x3b,1)[0];stage=n.read(0x1d,1)[0];hp=n.read(0x54,1)[0];opening=n.read(0x58,1)[0]
     m=n.read(0x1c,1)[0];missed+=(m-lastmiss)&255;lastmiss=m

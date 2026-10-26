@@ -1,3 +1,24 @@
+# CP0009 handoff - selectable speed; anthology remains WIP
+
+## Resume without restarting the existing port
+
+The only new production gameplay changes are 30/40/60 logical-FPS pacing,
+controller SELECT cycle and HUD speed indicator. This is a mitigation of the
+user's speed complaint, NOT a solution to the ugly graphics in the screenshot.
+The CP0008 stages and bonus route remain. Four-chapter coverage has not advanced.
+
+Private ROM: `build/native/Nemesis_Legends_CP0009.nes`. Build with `python
+tools/checkpoint.py build`; test with `python tools/checkpoint.py test`.
+Exact hashes are in `manifests/checkpoint.json`.
+
+SELECT cycles 30 (default), 40, 60 while video/APU remain 60. A power-up press
+is buffered through skipped frames. Original source-rhythm tests select 60 via
+controller and pass. Full source graphics, canonical HUD, later stages, the
+other three games, cutscenes, music conversion and final cheat menu remain
+missing. Do not call it complete, do not reintroduce title-demo work.
+
+---
+
 # CP0008 handoff — native stage-2 branching, no anthology completion
 
 ## Resume this real baseline

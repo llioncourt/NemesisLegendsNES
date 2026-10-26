@@ -20,6 +20,11 @@ def run(core,rom,kind,out):
  snapshots={};s2_at_rain=None;state_boss=None;initial_world=None
  with NES(core,rom,True) as n:
   n.run(180);n.buttons[0]={3};n.run(1);n.buttons[0]={0};n.run(40)
+  # Original source cadence for source-duration regression, selected with
+  # real controller inputs. The default 30Hz accessibility mode is separate.
+  for _ in range(2):
+   n.buttons[0]={2};n.run(1);n.buttons[0]=set();n.run(2)
+  assert n.read(0x520,1)==b'\x02'
   n.write(0x53,b'\x01') # explicit assisted invulnerability, NOT gameplay proof
   n.buttons[0]={0}     # shoot actual first-stage boss to unlock stage two
   last_state=None
@@ -97,8 +102,8 @@ def run(core,rom,kind,out):
 
 def main():
  p=argparse.ArgumentParser();p.add_argument('--core',required=True);a=p.parse_args()
- rom=(ROOT/'build/native/Nemesis_Legends_CP0008.nes').read_bytes()
- out=ROOT/'reports/cp0008';out.mkdir(parents=True,exist_ok=True)
+ rom=(ROOT/'build/native/Nemesis_Legends_CP0009.nes').read_bytes()
+ out=ROOT/'reports/cp0009';out.mkdir(parents=True,exist_ok=True)
  runs=[run(a.core,rom,name,out) for name in ('normal','secret')]
  report=dict(checkpoint='CP0008',scope=__doc__,rom_sha256=hashlib.sha256(rom).hexdigest(),
              runs=runs,passed=all(r['passed'] for r in runs))

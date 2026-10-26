@@ -9,7 +9,7 @@ ROOT=pathlib.Path(__file__).resolve().parents[1]
 
 def main():
  p=argparse.ArgumentParser();p.add_argument('--core',required=True);a=p.parse_args()
- rom=(ROOT/'build/native/Nemesis_Legends_CP0008.nes').read_bytes();out=ROOT/'reports/cp0008';out.mkdir(parents=True,exist_ok=True)
+ rom=(ROOT/'build/native/Nemesis_Legends_CP0009.nes').read_bytes();out=ROOT/'reports/cp0009';out.mkdir(parents=True,exist_ok=True)
  checks=[]
  def check(name,ok,**info):
   checks.append(dict(name=name,passed=bool(ok),**info));print(name,ok,info)
@@ -23,7 +23,11 @@ def main():
   tap(n,3);n.run(10);check('resume_advances_world',n.read(2,1)==b'\1' and n.read(6,3)!=world)
   # Separate assisted load case to reach dense encounters deterministically.
  with NES(a.core,rom,True) as n:
-  n.run(180);tap(n,3);n.run(60);n.write(0x53,b'\1');n.buttons[0]={0}
+  n.run(180);tap(n,3);n.run(60)
+  # Select original 60Hz gameplay via controller for all existing combat tests.
+  tap(n,2);tap(n,2)
+  check('original_60hz_mode_for_stress',n.read(0x520,1)==b'\x02')
+  n.write(0x53,b'\1');n.buttons[0]={0} 
   n.run(600);kills=n.read(0x72e,2);check('native_shots_destroy_source_wave_enemies',int.from_bytes(kills,'little')>0,qa='invulnerability only',kills=int.from_bytes(kills,'little'))
   capsules=n.read(0x730,1)[0];check('whole_wave_drops_collectible_capsule',capsules>0,qa='invulnerability only',collected=capsules)
   n.png(out/'opening_combat.png')

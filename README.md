@@ -1,4 +1,4 @@
-# Nemesis Legends — CP0008: native Nemesis stage-two routes
+# Nemesis Legends — CP0009: selectable gameplay speed + preserved stage-two routes
 
 **WIP / playable partial NES/Famicom MMC5 native port, not the completed saga.**
 
@@ -7,7 +7,31 @@ The product goal is unchanged: **one continuous chronological campaign**
 mechanics, bosses, secrets, story, music, endings and cutscenes. This is **not** a
 four-ROM launcher, a framebuffer playback tool or an isolated prototype.
 
-## What actually runs in CP0008
+## CP0009 gameplay speed hotfix (tested in a native NES emulator)
+
+The user's CP0008 capture revealed an unforgiving opening pace, repeated opening
+waves, a black starfield and a provisional text-only HUD. The real MSX source
+rotates E062 once per frame and advances a column every eight frames; the port
+was not double-ticking. Accelerating all scrolling would worsen fidelity.
+
+The 60Hz video/APU now supports controller-selectable gameplay speed:
+
+* **30 logical FPS (default):** deliberately slower accessibility mode.
+* **40 logical FPS:** intermediate.
+* **60 logical FPS:** original-runtime reference, used for source tests.
+
+Press **SELECT** during play or pause to cycle `30 -> 40 -> 60 -> 30`.
+HUD shows `SPD:30`, `SPD:40` or `SPD:60`. Music and video remain 60Hz; input
+edges for A power-up are preserved across skipped simulation frames.
+
+Measured unassisted first collision with the stationary ship: **116 video
+frames at 60Hz** versus **242 at 30Hz**, on the pinned FCEUmm core.
+The graphics still require source-frame comparison and the original power
+bar; this does not complete later levels or the four chapters.
+
+Read `docs/NATIVE_PACING_CP0009.md` and `reports/cp0009/pacing_tests.json`.
+
+## Earlier CP0008 gameplay retained
 
 - Custom scenic title, ascending dark menu, real Gradius II Famicom font,
   START GAME / OPTIONS, sound toggle and native 6502 MMC5 runtime.

@@ -110,7 +110,7 @@ class Counter6502:
   return self.cycles
 
 def main():
- rom=(ROOT/'build/native/Nemesis_Legends_CP0008.nes').read_bytes();results=[]
+ rom=(ROOT/'build/native/Nemesis_Legends_CP0009.nes').read_bytes();results=[]
  cases=[('idle',0,0,0,0),('hud',0,1,0,0),('column_and_deferred_hud',1,1,0,0),
         ('boss_vertical_and_deferred_hud',0,1,11,9),('boss_horizontal_and_deferred_hud',0,1,12,8)]
  for name,col,hud,w,h in cases:
@@ -127,6 +127,6 @@ def main():
  negative=dict(change='oversized twelve-row boss update, outside the production bound',last_video_write_cycle=negative_last,rejected=negative_last>2273)
  assert negative['rejected'], 'Timing negative control was not rejected'
  out=dict(negative_control=negative,assumptions=['NTSC timing','No DMC sample DMA during the measured video transfer','Worst-case OAM DMA charged at 514 cycles'],rom_sha256=hashlib.sha256(rom).hexdigest(),method=__doc__,cases=results,passed=all(x['passed'] for x in results))
- (ROOT/'reports/cp0008/vblank_budget.json').write_text(json.dumps(out,indent=2)+'\n')
+ (ROOT/'reports/cp0009/vblank_budget.json').write_text(json.dumps(out,indent=2)+'\n')
  if not out['passed']:raise SystemExit('Video writes exceed NTSC vblank budget')
 if __name__=='__main__':main()
