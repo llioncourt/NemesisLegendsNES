@@ -7,6 +7,7 @@
 .import TitleInit, TitleFrame
 .import ActorsFrame, ActorsDraw, SpawnCannon, SpawnWaves, ShotsFrame, InitActors
 .import StageEvents
+.import Stage2Init, Stage2Tick, Stage2Draw
 .export Main, DrawColumn, UploadColumn, LoadStage, FrameGame
 .export DrawSprite8
 .export DrawSprite, UpdateHUD, PlayerHit, LoadDataBank, AdvanceStage
@@ -251,6 +252,7 @@ LoadStage:
  lda #$87
  sta $5115
  jsr InitActors
+ jsr Stage2Init
  lda #$50
  sta player_x
  lda #$4a
@@ -577,6 +579,7 @@ FrameGame:
  jsr SpawnCannon
 @noscroll:
  jsr MovePlayer
+ jsr Stage2Tick
  lda phase
  bne :+
  jsr SpawnWaves
@@ -647,6 +650,7 @@ FrameGame:
  jsr DrawSprite
 @actors:
  jsr ActorsDraw
+ jsr Stage2Draw
  jsr UpdateHUD
  lda logic
  and #7

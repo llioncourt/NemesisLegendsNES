@@ -5,6 +5,7 @@
 .include "boss.inc"
 .import DrawSprite, PlayerHit, SourceObjectDefaults, AngleTable, SineTable, AdvanceStage
 .import MidPiece,VolcanoParticle
+.import Stage2RockInit,Stage2RockFrame
 .import TerrainSolid, ProjectileFrame, ProjectileDraw, AimBullet
 .export ActorsFrame,ActorsDraw,SpawnCannon,SpawnWaves,ShotsFrame,InitActors
 .export SpawnMidActor
@@ -150,6 +151,8 @@ SpawnFound:
  jeq @five
  cmp #6
  jeq @six
+ cmp #8
+ jeq @rock
  cmp #$0f
  beq @native_extra
  cmp #$20
@@ -160,6 +163,10 @@ SpawnFound:
  jeq @capsule
  ; Unsupported source handlers remain explicitly observable, not generic motion.
  sta unknown_type
+ clc
+ rts
+@rock:
+ jsr Stage2RockInit
  clc
  rts
 @native_extra:
@@ -577,6 +584,8 @@ ActorsFrame:
  beq @five
  cmp #6
  beq @six
+ cmp #8
+ beq @rock
  cmp #$0f
  beq @volcano
  cmp #$20
@@ -604,6 +613,8 @@ ActorsFrame:
  jmp @move
 @six:jsr TypeSix
  jmp @move
+@rock:jsr Stage2RockFrame
+ jmp @collide
 @capsule:jsr Capsule
  jmp @next
 @explode:jsr Explosion

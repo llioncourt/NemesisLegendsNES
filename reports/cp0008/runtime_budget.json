@@ -1,0 +1,119 @@
+{
+  "checkpoint": "CP0008",
+  "rom_bytes": 262160,
+  "rom_sha256": "770545ae81e8c5d908fd9b727b451bd83843aea09535415ccc2482cca8e9e15d",
+  "nes_mapper": 5,
+  "prg_rom_bytes": 131072,
+  "chr_rom_bytes": 131072,
+  "actor_bank_bytes": 8192,
+  "actor_bank_used": 3456,
+  "actor_bank_free": 4736,
+  "common_bank_bytes": 8192,
+  "common_used": 6612,
+  "common_free": 1580,
+  "stage2_code_bytes": 734,
+  "bss_bytes": 32,
+  "zero_page_campaign_bytes": 2,
+  "compressed_msx_source_bytes": 655360,
+  "msx_source_bank_count": 80,
+  "coverage_status": "Native stage1 and source-derived stage2 branches only; no whole-game budget certification",
+  "actor_allocations": "12 original enemy records, failures observable under saturation; no arbitrary extra actor slots",
+  "game_port_complete": false,
+  "segments": {
+    "GRAPHICS": {
+      "start": 0,
+      "end": 131071,
+      "used_bytes": 131072
+    },
+    "HEADER": {
+      "start": 0,
+      "end": 15,
+      "used_bytes": 16
+    },
+    "ZEROPAGE": {
+      "start": 128,
+      "end": 129,
+      "used_bytes": 2
+    },
+    "BSS": {
+      "start": 1280,
+      "end": 1311,
+      "used_bytes": 32
+    },
+    "BOSSDATA": {
+      "start": 32768,
+      "end": 40959,
+      "used_bytes": 8192
+    },
+    "STAGE0": {
+      "start": 32768,
+      "end": 40959,
+      "used_bytes": 8192
+    },
+    "STAGE1": {
+      "start": 32768,
+      "end": 40959,
+      "used_bytes": 8192
+    },
+    "STAGE2": {
+      "start": 32768,
+      "end": 40959,
+      "used_bytes": 8192
+    },
+    "STAGE3": {
+      "start": 32768,
+      "end": 40959,
+      "used_bytes": 8192
+    },
+    "STAGE4": {
+      "start": 32768,
+      "end": 40959,
+      "used_bytes": 8192
+    },
+    "STAGE5": {
+      "start": 32768,
+      "end": 40959,
+      "used_bytes": 8192
+    },
+    "TITLE": {
+      "start": 32768,
+      "end": 36383,
+      "used_bytes": 3616
+    },
+    "ACTORS": {
+      "start": 40960,
+      "end": 44415,
+      "used_bytes": 3456
+    },
+    "MAPS": {
+      "start": 40960,
+      "end": 49151,
+      "used_bytes": 8192
+    },
+    "CODE": {
+      "start": 49152,
+      "end": 55733,
+      "used_bytes": 6582
+    },
+    "RODATA": {
+      "start": 55734,
+      "end": 55763,
+      "used_bytes": 30
+    },
+    "BOOT": {
+      "start": 57344,
+      "end": 58397,
+      "used_bytes": 1054
+    },
+    "SOUND": {
+      "start": 60446,
+      "end": 65529,
+      "used_bytes": 5084
+    },
+    "VECTORS": {
+      "start": 65530,
+      "end": 65535,
+      "used_bytes": 6
+    }
+  }
+}

@@ -1,6 +1,6 @@
 {
-  "checkpoint": "CP0004",
-  "stage": "native_first_stage_event_route_and_stage_two_entry",
+  "checkpoint": "CP0008",
+  "stage": "native_stage_two_normal_route_and_bonus_stage9_to_stage3",
   "playable_game_rom": true,
   "full_game_complete": false,
   "chapters": [
@@ -18,15 +18,49 @@
       "endings_validated": false,
       "upstream_reassembly_byte_exact": true,
       "native_stage_event_routes_integrated": [
-        1
-      ],
-      "native_stage_entries_tested": [
         1,
         2
       ],
+      "native_stage_entries_tested": [
+        1,
+        2,
+        3,
+        9
+      ],
       "converted_terrain_records": 12,
       "converted_sprite_sheets": 12,
-      "first_stage_unassisted_clear_validated": false
+      "first_stage_unassisted_clear_validated": false,
+      "native_stage_two": {
+        "source": "nemesis_msx",
+        "integrated": [
+          "six_wall_triggers",
+          "type8_rock_growth",
+          "900_frame_rain",
+          "target_at_0190",
+          "bonus_stage9_branch",
+          "source_big_core",
+          "normal_stage3_entry",
+          "bonus9_stage3_entry"
+        ],
+        "tested": [
+          "stage2_wall_events",
+          "rock_allocation_attempts",
+          "900_frame_rain",
+          "64_frame_secret_freeze",
+          "natural_stage_3_via_normal",
+          "natural_stage_3_via_bonus9"
+        ],
+        "run_assistance": "invulnerability injected for the source-driven path",
+        "not_validated": [
+          "sprite_palette_parity",
+          "full_enemy_pattern_parity",
+          "unassisted_stage2_clear",
+          "all_stage9_hazards",
+          "all_sfx",
+          "cutscenes",
+          "real_hardware"
+        ]
+      }
     },
     {
       "chapter": 2,
@@ -84,6 +118,27 @@
     "assisted_stage_one_routes": 2,
     "ppu_transfer_cases": 5,
     "dense_weapon_sample_frames": 2000,
-    "dense_weapon_sample_missed_NMIs": 0
+    "dense_weapon_sample_missed_NMIs": 0,
+    "assisted_stage_two_routes": 2,
+    "assisted_stage_two_checks": 23,
+    "stage_two_rock_wall_triggers": 6,
+    "stage_two_rock_attempts": 74,
+    "stage_two_rain_frames": 900,
+    "stage_two_rock_successes_normal_test": 40,
+    "stage_two_normal_missed_NMI": 0,
+    "stage_two_secret_missed_NMI": 0
+  },
+  "title_menu": {
+    "native": true,
+    "items": [
+      "START GAME",
+      "OPTIONS"
+    ],
+    "silicon_forge_selectable_item": false,
+    "co_op_available": false,
+    "options": [
+      "SOUND ON/OFF"
+    ],
+    "copyright_year": 2026
   }
 }

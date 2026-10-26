@@ -14,7 +14,22 @@
 StageEvents:
  lda stage_id
  cmp #1
+ beq @source_one
+ cmp #2
  bne @notyet
+ ; Stage 2 shares the source type-1 Big Core once its rock-rain phase ends.
+ ; Do not run stage-1 midpiece/volcano/scroll setup for stage 2.
+ lda phase
+ cmp #5
+ jeq @enter
+ cmp #6
+ jeq @fight
+ cmp #7
+ jeq @destroy
+ cmp #8
+ jeq @after
+ rts
+@source_one:
  lda phase
  beq @travel
  cmp #2

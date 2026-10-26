@@ -66,3 +66,22 @@ The native tool binaries require a compatible Linux x64 runtime. Python packages
 are environment dependencies, not bundled wheels or a Windows offline installer.
 
 For native title validation: python tools/test_title_native.py --core PATH
+
+## CP0008 stage-two route test
+
+From inside the unchanged `Nemesis_Legends_CP0001` folder, run the existing
+`python tools/checkpoint.py test` entry point. It now also executes:
+
+```
+python tools/test_stage_two.py --core toolchain/linux-x64/bin/fceumm_libretro.so
+```
+
+The native ROM is `build/native/Nemesis_Legends_CP0008.nes`. The 900-frame rock
+rain and secret stage9 branch are exercised **with invulnerability injected**,
+clearly labelled in `reports/cp0008/stage_two_integration.json`. No other
+stage/timer/position/route writes are injected. The code compiles with cc65 on
+Windows once the private input assets have been recovered. The bundled Linux
+core/tool executables are not Windows PE binaries.
+
+A passing stage-two route test does **not** mean stages3–8, the other three MSX
+chapters, full music and story have been implemented.
