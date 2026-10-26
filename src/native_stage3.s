@@ -4,8 +4,8 @@
 .include "native.inc"
 .include "campaign.inc"
 .include "longbranch.inc"
-.import Flow_State,Flow_Event,LoadStage,DrawSprite
-.export Stage3Init,Stage3Tick,Stage3Draw,S3_State
+.import Flow_State,Flow_Event,LoadStage,DrawSprite,EnterBigCore
+.export Stage3Init,Stage3Tick,Stage3Draw,Stage3MidbossCleared,S3_State
 .segment "BSS"
 S3_State:
 s3_target: .res 1
@@ -13,10 +13,11 @@ s3_target_x: .res 1
 s3_bonus_wait: .res 1
 s3_collected: .res 1
 s3_end_reached: .res 1
+s3_midboss_done: .res 1
 .segment "ACTORS"
 Stage3Init:
  lda #0
- ldx #4
+ ldx #5
 @clear: sta S3_State,x
  dex
  bpl @clear
@@ -25,6 +26,25 @@ Stage3Tick:
  lda stage_id
  cmp #3
  jne @done
+ lda phase
+ cmp #5
+ jcs @boss_or_later
+ lda s3_midboss_done
+ jne @regular
+ lda new_column
+ jeq @regular
+ lda worldhi
+ jne @regular
+ lda worldlo
+ cmp #$60
+ jne @regular
+ jsr EnterBigCore
+ rts
+@boss_or_later:
+ ; Native Big Core phases 5..8 are advanced by StageEvents.
+ cmp #11
+ jcc @done
+@regular:
  lda phase
  cmp #11
  jeq @bonus_wait
@@ -137,3 +157,12 @@ Stage3Draw:
  sta sprite_flags
  jsr DrawSprite
 @done:rts
+
+Stage3MidbossCleared:
+ lda #1
+ sta s3_midboss_done
+ lda #0
+ sta phase
+ sta phase_timer
+ sta phase_hi
+ rts

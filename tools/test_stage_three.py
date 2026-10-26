@@ -19,14 +19,16 @@ for route in ('normal','secret'):
   for _ in range(2):
    n.buttons[0]={2};n.run(1);n.buttons[0]=set();n.run(2)
   n.write(0x53,b'\x01')
-  stage3=None;bonus=None;contact=None;end=None;seen=False;collected=False
+  stage3=None;bonus=None;contact=None;midboss=None;midboss_cleared=False;end=None;seen=False;collected=False
   for step in range(24500):
    st=n.read(0x1d,1)[0];phase=n.read(0x3b,1)[0]
    w=int.from_bytes(n.read(7,2),'little')
-   s3=n.read(state_addr,5)
+   s3=n.read(state_addr,6)
    if st==3:
     if stage3 is None:stage3=step;n.png(OUT/(route+'_stage3_entry.png'))
     seen|=s3[0]==1
+    if phase==5 and midboss is None:midboss=step
+    midboss_cleared|=s3[5]!=0
     collected|=s3[3]!=0
     if phase==11 and contact is None:contact=step
     if route=='secret':
@@ -45,9 +47,9 @@ for route in ('normal','secret'):
    else:n.buttons[0]={0}
    n.run(1)
   if route=='normal':
-   assert stage3 is not None and end and end['world']>=0x19f and seen and not collected,(stage3,end)
+   assert stage3 is not None and end and end['world']>=0x19f and seen and not collected and midboss is not None and midboss_cleared,(stage3,midboss,end)
   else:
-   assert stage3 is not None and bonus is not None and collected and end and end['stage']==4 and bonus-contact==64,(stage3,bonus,contact,end)
-  results[route]={'stage3_frame':stage3,'bonus_frame':bonus,'contact_frame':contact,'end':end,'frames':step}
+   assert stage3 is not None and bonus is not None and collected and end and end['stage']==4 and bonus-contact==64 and midboss is not None and midboss_cleared,(stage3,midboss,bonus,contact,end)
+  results[route]={'stage3_frame':stage3,'midboss_frame':midboss,'midboss_cleared':midboss_cleared,'bonus_frame':bonus,'contact_frame':contact,'end':end,'frames':step}
 (OUT/'stage3_emulation.json').write_text(json.dumps({'rom_sha256':hashlib.sha256(ROM.read_bytes()).hexdigest(),'assisted':True,'source_target':'p03 B09A/B0CB/B0DD/B123','results':results},indent=2)+'\n')
 print(json.dumps(results,indent=2))

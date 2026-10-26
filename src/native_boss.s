@@ -3,6 +3,7 @@
 .include "native.inc"
 .include "actors.inc"
 .include "boss.inc"
+.import Stage3MidbossCleared
 .import SpawnMidActor
 .import SpawnActor,RNG,ObjectPointer,DrawSprite,AdvanceStage,UpdateHUD,StarRows,PlayerHit
 .export StageEvents,EnterBigCore,BuildBossQueue,UploadBossQueue,BossShotHit
@@ -16,7 +17,10 @@ StageEvents:
  cmp #1
  beq @source_one
  cmp #2
+ beq @stage3_shared
+ cmp #3
  bne @notyet
+@stage3_shared:
  ; Stage 2 shares the source type-1 Big Core once its rock-rain phase ends.
  ; Do not run stage-1 midpiece/volcano/scroll setup for stage 2.
  lda phase
@@ -407,6 +411,11 @@ StageEvents:
  dec phase_timer
  jne @breturn
  inc core_cleared
+ lda stage_id
+ cmp #3
+ bne @ordinary_clear
+ jmp Stage3MidbossCleared
+@ordinary_clear:
  jmp AdvanceStage
 
 ; Force blank only at the source's one-off boss graphics load, never per frame.

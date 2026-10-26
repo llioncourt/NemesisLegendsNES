@@ -2,11 +2,11 @@
 
 ## Latest verified baseline
 GitHub parent: `448a342a61c0c4e8b4abea254c9859dfc5115fce` (CP0009).
-Local CP0010 native MMC5 ROM SHA-256: `81d956aff0684ab4e21c26a861b84807c094840214928cf962c1d72edec501c1`.
+Local CP0010 native MMC5 ROM SHA-256: `3017c6cdd5c28318ddb2161dfd2cad8e232f9001228f2250b44a8cefb2888d94`.
 Rebuild from existing private project assets. Do not restart and do not post commercial ROMs/CHR/NSF to public GitHub. Public release format: IPS.
 
 ## Actual game coverage (NOT complete)
-- Nemesis MSX: Partial native first/second stages, first stage boss, second stage rock rain/walls, stage9 bonus route. Stage3 now has source target at $012A, row $30, 8 pixels per column, 64-frame contact freeze, optional bonus10 route that returns at stage4. **The normal stage3 path intentionally halts at source world $019F because its bosses and eight background objects are not yet implemented**. No stage4-8 complete native gameplay.
+- Nemesis MSX: Partial native first/second stages, first stage boss, second stage rock rain/walls, stage9 bonus route. Stage3 also reuses the original type-1 midboss at world $0060 before its source target at $012A, row $30, 8 pixels per column, 64-frame contact freeze, optional bonus10 route that returns at stage4. **The normal stage3 path intentionally halts at source world $019F because its bosses and eight background objects are not yet implemented**. No stage4-8 complete native gameplay.
 - Nemesis 2 MSX: Event router but no full native game.
 - Salamander MSX: Event router/Operation X conditions but no full native game.
 - Nemesis 3 MSX: Event router but no full native game.
@@ -15,10 +15,10 @@ Rebuild from existing private project assets. Do not restart and do not post com
 MMC5 6502 title, native ship/partial actor/weapon/laser system, source-backed terrain column decoder, limited stage scripts, 30/40/60 logical-Hz pacing at 60Hz video/APU and partial source music. Visually incomplete and not user-approved. No complete cutscenes, OST, full Silicon Forge cheat menu, or integrated campaign playthrough.
 
 ## Evidence
-The local CP0010 emulation tests use FCEUmm with controller-started stage1 and explicitly injected QA invulnerability only. Stage3 entry at frame 10664; normal reaches $019F at frame 13732; secret touches at 12956, enters bonus10 at 13020 (64 frames), and reaches stage4 at 15505. CP0009 baseline was rebuilt before the changes. No hardware or full-game playthrough is claimed.
+The local CP0010 emulation tests use FCEUmm with controller-started stage1 and explicitly injected QA invulnerability only. Stage3 entry at frame 10664; type-1 midboss begins at frame 11181. Normal reaches $019F at frame 14760; secret touches at 13989, enters bonus10 at 14053 (64 frames), and reaches stage4 at 16538. CP0009 baseline was rebuilt before the changes. No hardware or full-game playthrough is claimed.
 
 ## Known gaps and immediate next action
-Recover source stage3's eight background objects, enemy patterns, midboss and final boss from `third_party/antxiko__Nemesis-disassembly/src/nemesis_p01.asm` near `final_de_la_fase_3`, and p02 `pared_de_la_fase_3`. Implement actual native scripts instead of generic encounters. Only then enable stage3 normal completion. Continue with stage4/bonus11 and every later level and campaign without shortening the scope.
+Recover source stage3's eight background objects, enemy patterns and distinct final boss from `third_party/antxiko__Nemesis-disassembly/src/nemesis_p01.asm` near `final_de_la_fase_3`, and p02 `pared_de_la_fase_3`. Implement actual native scripts instead of generic encounters. Only then enable stage3 normal completion. Continue with stage4/bonus11 and every later level and campaign without shortening the scope.
 
 ## Build and tests
 ```
