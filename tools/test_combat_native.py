@@ -10,7 +10,7 @@ ROOT=pathlib.Path(__file__).resolve().parents[1]
 
 def main():
  p=argparse.ArgumentParser();p.add_argument('--core',required=True);p.add_argument('--tools',type=pathlib.Path,required=True);a=p.parse_args()
- source=ROOT/'build/native/Nemesis_Legends_CP0009.nes';rom=source.read_bytes()
+ source=ROOT/'build/native/Nemesis_Legends_CP0010.nes';rom=source.read_bytes()
  labels={name:int(value,16) for value,name in re.findall(r'^al ([0-9A-Fa-f]+) \.([A-Za-z_][A-Za-z_0-9]*)$',(ROOT/'build/native/native.lbl').read_text(),re.M)}
  build=ROOT/'build/combat_tests';build.mkdir(parents=True,exist_ok=True)
  required=['InitActors','CollectBomb','CollectCapsule','LaserStep','MovePlayer','Upgrade','UpdateOptions','UpdateHUD','ShieldContact']
