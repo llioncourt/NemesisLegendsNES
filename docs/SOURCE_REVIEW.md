@@ -1,10 +1,13 @@
 # Source evidence review - CP0002
 
 Four upstream MSX disassemblies are pinned in `evidence/source_catalog.json`.
-The complete source snapshot has 912 hash-verified files after fixing the CI
-artifact's initial hidden-file omission. It excludes commercial ROM binaries
-and redundant audiovisual captures, not source files. It is not a Git checkout
-with commit history; the exact upstream commits and archive hashes are recorded.
+The historical CP0002 acquisition contained 912 hash-verified files. The lean
+CP0004 keeps all required bank ASM and annotations, readers, tests, licence
+notices and technical Markdown, while removing upstream website media and
+temporary outputs. It is explicitly a code/text subset, not a complete Git
+checkout. Retained-file hashes, original archive hashes and exact revision pins
+are recorded in `third_party/ACQUISITION.json`. The private selected ROMs are
+stored once in `private_sources/`, not copied into each upstream tree.
 
 `tools/verify_upstream.py` independently invokes Pasmo for all 80 ASM banks,
 checks every bank against its selected input, then checks concatenated originals:
@@ -21,13 +24,13 @@ and execution rather than treating comments as an infallible specification.
 
 ## Sources already usable
 
-- `antxiko/Nemesis-disassembly`: full pinned source, exact reconstruction, local
+- `antxiko/Nemesis-disassembly`: pinned code/text subset, exact reconstruction, local
   corrected terrain/graphics reader, source PSG driver wrapper.
-- `antxiko/Nemesis2-disassembly`: full pinned source, exact reconstruction,
+- `antxiko/Nemesis2-disassembly`: pinned code/text subset, exact reconstruction,
   local compact maps and sprite-variant extraction, PSG/SCC driver wrapper.
-- `antxiko/Salamander-disassembly`: full pinned source, exact reconstruction,
+- `antxiko/Salamander-disassembly`: pinned code/text subset, exact reconstruction,
   source PSG/SCC wrapper; stage/actor/cutscene extraction remains to integrate.
-- `antxiko/Nemesis3-disassembly`: full pinned source, exact reconstruction,
+- `antxiko/Nemesis3-disassembly`: pinned code/text subset, exact reconstruction,
   canonical original recovered from the user's 16-entry archive; gameplay,
   graphics and sound extraction remain separate pending tasks.
 

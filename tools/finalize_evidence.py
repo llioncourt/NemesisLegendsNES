@@ -38,24 +38,34 @@ def main():
     for p in sorted(list((ROOT/'audio').glob('*/*/*.nsf'))+list((ROOT/'audio').glob('*/*/*.kss'))):
         data=p.read_bytes();drivers.append(dict(path=str(p.relative_to(ROOT/'audio')),
             format=p.suffix[1:].upper(),bytes=len(data),sha256=hashlib.sha256(data).hexdigest()))
+    reference_tracks=[]
+    for entry in drivers:
+        index_path=ROOT/'audio'/pathlib.Path(entry['path']).parent/'tracks.json'
+        for row in json.loads(index_path.read_text())['tracks']:
+            reference_tracks.append(dict(row,driver='audio/'+entry['path'],driver_format=entry['format']))
     native=sum(r['driver_format']=='NSF'for r in tracks)
     msx=sum(r['driver_format']=='KSS'for r in tracks)
     duration=sum(r['rendered_seconds']for r in tracks)
     js('audio/metadata.json',dict(album='Nemesis Legends - Source Music Evidence',
         complete_project_soundtrack=False,msx_to_nes_conversion_complete=False,
         missing_game='Nemesis 3',tracks=tracks,drivers=drivers,track_count=len(tracks),
-        native_nes_sequences=native,msx_reference_sequences=msx,duration_seconds=duration))
+        native_nes_sequences=native,msx_reference_sequences=msx,duration_seconds=duration,
+        driver_track_count=len(reference_tracks),mp3_included=bool(tracks),
+        native_nes_driver_sequences=sum(t['driver_format']=='NSF' for t in reference_tracks),
+        msx_reference_driver_sequences=sum(t['driver_format']=='KSS' for t in reference_tracks)))
     columns=['driver','index','source_command_hex','title','title_status',
              'command_mapping_status','driver_format','rendered_seconds','bytes','sha256','mp3']
     with (ROOT/'audio/tracklist.csv').open('w',newline='',encoding='utf-8-sig')as f:
-        writer=csv.DictWriter(f,columns,extrasaction='ignore');writer.writeheader();writer.writerows(tracks)
+        writer=csv.DictWriter(f,columns,extrasaction='ignore');writer.writeheader();writer.writerows(tracks if tracks else reference_tracks)
     for folder in sorted({(ROOT/r['mp3']).parent for r in tracks}):
         rows=[r for r in tracks if (ROOT/r['mp3']).parent==folder]
         (folder.parent/'listen.m3u8').write_text('#EXTM3U\n'+''.join(
             '#EXTINF:%d,%s\nmp3/%s\n'%(round(r['rendered_seconds']),r['title'],pathlib.Path(r['mp3']).name)for r in rows))
-    (ROOT/'audio/listen_all.m3u8').write_text('#EXTM3U\n'+''.join(
+    if tracks:(ROOT/'audio/listen_all.m3u8').write_text('#EXTM3U\n'+''.join(
         '#EXTINF:%d,%s - %s\n%s\n'%(round(r['rendered_seconds']),pathlib.Path(r['driver']).parent.name,
             r['title'],str(pathlib.Path(r['mp3']).relative_to('audio')))for r in tracks))
+    if not tracks:
+        for playlist in (ROOT/'audio').rglob('*.m3u8'):playlist.unlink()
     prompt=(ROOT/'audio/SUNO_STYLE.txt').read_text().strip()
     if not 0<len(prompt)<=1000:raise ValueError('Suno prompt outside 1..1000 characters')
     js('audio/suno_prompt_metadata.json',dict(characters=len(prompt),maximum=1000,language='English'))

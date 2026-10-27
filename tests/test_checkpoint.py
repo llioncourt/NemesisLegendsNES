@@ -3,13 +3,18 @@ import hashlib,json,pathlib,shutil,sys,tempfile,unittest
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'tools'))
 from checkpoint import check_files
-from verify_selected_inputs import verify
+try:
+    from verify_selected_inputs import verify
+except ModuleNotFoundError:
+    verify=None  # private package only; public checkout skips these checks
 
 class CheckpointTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         if not (ROOT/'manifests/checkpoint.json').is_file():
             raise unittest.SkipTest('Lean private packaging profile is not present')
+        if verify is None or not (ROOT/'private_sources').is_dir():
+            raise unittest.SkipTest('Private recovery package (verify_selected_inputs, private_sources) is required')
         cls.profile=json.loads((ROOT/'manifests/checkpoint.json').read_text())
     def test_exact_playable_rom(self):
         data=(ROOT/self.profile['rom']).read_bytes()
