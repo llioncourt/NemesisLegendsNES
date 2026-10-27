@@ -1,5 +1,5 @@
 {
-  "rom_sha256": "4fb1f2007393a4026d60b3b3314dda32caf766e3bffe55800974e9ee3fa39204",
+  "rom_sha256": "6bb2384a040a42ecbfdb46ae3ec00d6ab883f94f2fb8fb2ac4a3f659448546b7",
   "checks": [
     {
       "name": "reveal_all_eight_rows_bottom_up",
