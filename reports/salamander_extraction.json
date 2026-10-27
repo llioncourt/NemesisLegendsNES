@@ -1,0 +1,77 @@
+{
+  "source_sha256": "edbbba820ac67d6a55b9dc5da9309e45979936d5620c07d09793efaf077e86b9",
+  "upstream": "antxiko/Salamander-disassembly@6f166825c6df198f4a3044b7efb90c24b80862d3",
+  "map_records": 7,
+  "horizontal_maps": [
+    1,
+    4,
+    5,
+    7
+  ],
+  "vertical_maps": [
+    2,
+    3,
+    6
+  ],
+  "detour_maps": 3,
+  "terrain_columns_horizontal": 1664,
+  "terrain_rows_vertical": 1344,
+  "source_tile_occurrences": 15360,
+  "unique_source_pixel_tiles": 1534,
+  "sprite_sets": 7,
+  "boss_tile_sets": 8,
+  "compressed_streams": 230,
+  "rle_stream_bytes_sum": 15824,
+  "mirror_records": 114,
+  "tiles_differing_between_thirds": {
+    "1": [
+      0,
+      0
+    ],
+    "2": [
+      0
+    ],
+    "3": [
+      0,
+      0
+    ],
+    "4": [
+      0
+    ],
+    "5": [
+      0
+    ],
+    "6": [
+      0,
+      0,
+      0
+    ],
+    "7": [
+      13,
+      9
+    ]
+  },
+  "nemesis2_rom_used": true,
+  "runtime_integration": false,
+  "source_hardware_vram_comparison": "pending (upstream reports its dibuja/mundo output identical to openMSX VRAM)",
+  "color_counts_per_tile": {
+    "1": 2876,
+    "2": 1667,
+    "6": 1038,
+    "5": 2343,
+    "7": 532,
+    "3": 2675,
+    "4": 4102,
+    "8": 121,
+    "9": 6
+  },
+  "limitations": [
+    "Static terrain and source graphics only: enemies, waves, events, items, boss behaviour, cutscenes and the sound engine are not implemented or decoded.",
+    "Stages 2, 3 and 6 scroll vertically: rows are stored top-to-bottom as they appear on screen (the ROM stores them bottom-up, p00:4A8C) and painted with third 0; tiles_differing_between_thirds says how many used tiles would differ.",
+    "Detour maps (stages 1, 4, 6) are painted with the third of their picture row; on horizontal stages the real third changes as rows scroll.",
+    "Stage 7 tiles are copied at runtime from the Nemesis 2 cartridge; this run used the manifest nemesis2_msx ROM.",
+    "Stars (tiles 0x50/0x51, p00:4B97), animated tiles (p12:A4A9) and the stage-4 one-frame-in-64 scenery dump are rendered in their initial static state.",
+    "Ship sprites (p14:95F7) and enemy frames loaded by enemy routines are not in the per-stage sprite sets; boss tile sets 3/6 are shown fully loaded although painted progressively.",
+    "VRAM snapshots and expanded maps are inspection files, not a proposed ROM representation. No NES palette quantization has been applied."
+  ]
+}

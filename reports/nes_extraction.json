@@ -1,0 +1,2637 @@
+{
+  "schema": 1,
+  "source_manifest": "manifests/selected_sources.json",
+  "games": {
+    "gradius_nes_jp": {
+      "mapper": 3,
+      "prg_bytes": 32768,
+      "chr_bytes": 32768,
+      "chr_type": "CHR-ROM",
+      "banks": [
+        {
+          "bank": 0,
+          "sha256": "fb8c6e3d6e00f6368022d65cab935ea54643c731b9ca780eb96dd1a1aa0e4d12",
+          "tile_occurrences": 512,
+          "exact_unique": 445,
+          "flip_unique": 337
+        },
+        {
+          "bank": 1,
+          "sha256": "da71d34f38f11ca112ba23400edabe7556244e0f056af0ff8deb30d2248e7b97",
+          "tile_occurrences": 512,
+          "exact_unique": 477,
+          "flip_unique": 397
+        },
+        {
+          "bank": 2,
+          "sha256": "6c7a5b26aeb9397abf47d9edad891907221520b3cd568480b8660ebd8a097a86",
+          "tile_occurrences": 512,
+          "exact_unique": 474,
+          "flip_unique": 393
+        },
+        {
+          "bank": 3,
+          "sha256": "688477b7361269b6edc606c7ccb37ed22256d56cc3fa5693900535ebb6f76dd5",
+          "tile_occurrences": 512,
+          "exact_unique": 484,
+          "flip_unique": 442
+        }
+      ],
+      "tiles": {
+        "occurrences": 2048,
+        "exact_unique": 1243,
+        "flip_unique": 976,
+        "flip_duplicates": 267
+      }
+    },
+    "gradius_nes_us": {
+      "mapper": 3,
+      "prg_bytes": 32768,
+      "chr_bytes": 32768,
+      "chr_type": "CHR-ROM",
+      "banks": [
+        {
+          "bank": 0,
+          "sha256": "fb8c6e3d6e00f6368022d65cab935ea54643c731b9ca780eb96dd1a1aa0e4d12",
+          "tile_occurrences": 512,
+          "exact_unique": 445,
+          "flip_unique": 337
+        },
+        {
+          "bank": 1,
+          "sha256": "452a1b3f9982cc068c629e5739542178487d4732585c27f5d69aa87877868d62",
+          "tile_occurrences": 512,
+          "exact_unique": 477,
+          "flip_unique": 397
+        },
+        {
+          "bank": 2,
+          "sha256": "6c7a5b26aeb9397abf47d9edad891907221520b3cd568480b8660ebd8a097a86",
+          "tile_occurrences": 512,
+          "exact_unique": 474,
+          "flip_unique": 393
+        },
+        {
+          "bank": 3,
+          "sha256": "364a9d86a6e4d7189e33492dd8cf46da918369f3434d2ba379faad7bcb2244b0",
+          "tile_occurrences": 512,
+          "exact_unique": 487,
+          "flip_unique": 445
+        }
+      ],
+      "tiles": {
+        "occurrences": 2048,
+        "exact_unique": 1250,
+        "flip_unique": 983,
+        "flip_duplicates": 267
+      }
+    },
+    "gradius2_fc": {
+      "mapper": 25,
+      "prg_bytes": 131072,
+      "chr_bytes": 131072,
+      "chr_type": "CHR-ROM",
+      "banks": [
+        {
+          "bank": 0,
+          "sha256": "1a63b756b399eae76e45970fb72d7fe884c27fea0d21f9f4f1663bb8f796bb77",
+          "tile_occurrences": 512,
+          "exact_unique": 454,
+          "flip_unique": 379
+        },
+        {
+          "bank": 1,
+          "sha256": "a17c5fa0f91b7b11864997953946d2dd143a2e3070159ffc7938513676cbb079",
+          "tile_occurrences": 512,
+          "exact_unique": 444,
+          "flip_unique": 367
+        },
+        {
+          "bank": 2,
+          "sha256": "0d2497797c8e1bdec34493926cc580d2aecc3f37401a4feea395652dc740b98d",
+          "tile_occurrences": 512,
+          "exact_unique": 460,
+          "flip_unique": 364
+        },
+        {
+          "bank": 3,
+          "sha256": "3f167e267e188eba3381796e19fb60eb90a299de5c56a3275639e7a7eecc2423",
+          "tile_occurrences": 512,
+          "exact_unique": 501,
+          "flip_unique": 401
+        },
+        {
+          "bank": 4,
+          "sha256": "5039d591af436e4c9d4c83a5949b3372d4a516cd753f731b87f7267b06e2fd7d",
+          "tile_occurrences": 512,
+          "exact_unique": 493,
+          "flip_unique": 366
+        },
+        {
+          "bank": 5,
+          "sha256": "1504a9e1314d9ca46fcfcbc5b9cf7ba56e3135b50d96449280072d968c9ef36c",
+          "tile_occurrences": 512,
+          "exact_unique": 439,
+          "flip_unique": 305
+        },
+        {
+          "bank": 6,
+          "sha256": "585437802bc833c1204e23562e5560350c01c22dc18aa59c14bd830931004170",
+          "tile_occurrences": 512,
+          "exact_unique": 511,
+          "flip_unique": 408
+        },
+        {
+          "bank": 7,
+          "sha256": "72c57019696579b524e7bcf9231f1d24c69e58d87911a199cdcda81c0884bcf6",
+          "tile_occurrences": 512,
+          "exact_unique": 482,
+          "flip_unique": 287
+        },
+        {
+          "bank": 8,
+          "sha256": "d52c30625ce7a9042a092c7cb0dec044b93c038ef08f3dde218d82ccc50023b3",
+          "tile_occurrences": 512,
+          "exact_unique": 427,
+          "flip_unique": 409
+        },
+        {
+          "bank": 9,
+          "sha256": "cbc21f765663bdf99fefdec83f647152144afea5d0131b762f130b3855d54af9",
+          "tile_occurrences": 512,
+          "exact_unique": 454,
+          "flip_unique": 394
+        },
+        {
+          "bank": 10,
+          "sha256": "ded50b8a25637b4e670ff11c913b3bc476d4f9477beee37f64fa45e05c963f71",
+          "tile_occurrences": 512,
+          "exact_unique": 509,
+          "flip_unique": 400
+        },
+        {
+          "bank": 11,
+          "sha256": "174214f17aa9ba227436a330fe31893f8e6cd9c5ef56a2aafa672f099396c855",
+          "tile_occurrences": 512,
+          "exact_unique": 448,
+          "flip_unique": 395
+        },
+        {
+          "bank": 12,
+          "sha256": "dc85c310a8816d924f83332e4e33dedb27f2e58279c84f48f9269047b31bc6c2",
+          "tile_occurrences": 512,
+          "exact_unique": 452,
+          "flip_unique": 355
+        },
+        {
+          "bank": 13,
+          "sha256": "9dcc5deeea8779c6e2626f8109b694b91086440dce1ff2803ec3f7de44b10c14",
+          "tile_occurrences": 512,
+          "exact_unique": 324,
+          "flip_unique": 321
+        },
+        {
+          "bank": 14,
+          "sha256": "0caef98c1a2b46a6070b742facc4c3d7c61374127a5f45b7e060ec5ad3c58015",
+          "tile_occurrences": 512,
+          "exact_unique": 463,
+          "flip_unique": 399
+        },
+        {
+          "bank": 15,
+          "sha256": "edf6a98fcd72203eaa84640c9789fd910b2da1eeb98814d2dc47470fd79cccd8",
+          "tile_occurrences": 512,
+          "exact_unique": 222,
+          "flip_unique": 173
+        }
+      ],
+      "tiles": {
+        "occurrences": 8192,
+        "exact_unique": 6917,
+        "flip_unique": 5168,
+        "flip_duplicates": 1749
+      }
+    },
+    "salamander_fc": {
+      "mapper": 73,
+      "prg_bytes": 131072,
+      "chr_bytes": 0,
+      "chr_type": "CHR-RAM",
+      "evidence": {
+        "ppu_rle_decoder": {
+          "prg_offset": 126176,
+          "cpu": 60640
+        },
+        "tile_stream_table": {
+          "routine_prg_offset": 125121,
+          "routine_cpu": 59585,
+          "src_table": 59549,
+          "dst_table": 59561,
+          "count_table": 59573
+        },
+        "tile_stream_entries": [
+          {
+            "index": 0,
+            "src": 28672,
+            "ppu": 5648,
+            "tiles": 51,
+            "caller_banks": [
+              0
+            ]
+          },
+          {
+            "index": 1,
+            "src": 28672,
+            "ppu": 5632,
+            "tiles": 77,
+            "caller_banks": [
+              7
+            ]
+          },
+          {
+            "index": 2,
+            "src": 28672,
+            "ppu": 4624,
+            "tiles": 102,
+            "caller_banks": [
+              7
+            ]
+          },
+          {
+            "index": 3,
+            "src": 30304,
+            "ppu": 3168,
+            "tiles": 18,
+            "caller_banks": [
+              7
+            ]
+          },
+          {
+            "index": 4,
+            "src": 28672,
+            "ppu": 4464,
+            "tiles": 54,
+            "caller_banks": [
+              5
+            ]
+          },
+          {
+            "index": 5,
+            "src": 29536,
+            "ppu": 5664,
+            "tiles": 92,
+            "caller_banks": [
+              5
+            ]
+          }
+        ],
+        "wram_block_sizes_expected": [
+          288,
+          816,
+          1232,
+          1472,
+          1920,
+          2336
+        ]
+      },
+      "regions": [
+        {
+          "region": "region_00",
+          "method": "konami_rle_ppu_stream",
+          "prg_offset": 0,
+          "prg_length": 4000,
+          "bank": 0,
+          "cpu": 32768,
+          "decoded_bytes": 4672,
+          "confidence": "high",
+          "decoded_sha256": "9e2d701ebe212e3bd5b7d96406c59708f98f8653ecf0bc5b9e5c56725b498dd7",
+          "ppu_destinations": [
+            2752
+          ],
+          "pointer_referenced": true,
+          "contiguous_with_previous_stream": true,
+          "clipped_at_2000": false,
+          "evidence": "valid Konami RLE grammar, FF-terminated inside its 16 KiB bank, tile-aligned destination, plausible pixels",
+          "plausibility": {
+            "zero_ff_fraction": 0.296,
+            "h_transitions": 20.366,
+            "v_transitions": 20.421,
+            "min_colour_share": 0.075,
+            "colour3_share": 0.18,
+            "mean_colours": 3.301,
+            "blank_edge_fraction": 0.637,
+            "speckle": 0.223
+          },
+          "tile_occurrences": 292,
+          "exact_unique": 249,
+          "flip_unique": 177
+        },
+        {
+          "region": "region_01",
+          "method": "konami_rle_ram_stream",
+          "prg_offset": 4150,
+          "prg_length": 759,
+          "bank": 0,
+          "cpu": 36918,
+          "decoded_bytes": 816,
+          "confidence": "high",
+          "decoded_sha256": "a5eff224a60186fb0fa24657b7ba3057a8fa62f7644b6c32180d20321dee7757",
+          "ram_destination": 28672,
+          "decoder_cpu": 63432,
+          "pointer_table_cpu": 63397,
+          "table_index": 2,
+          "size_matches_tile_table": true,
+          "clipped_at_2000": false,
+          "evidence": "headerless Konami RLE pointed to by the per-stage WRAM table; decoded size equals the tile-stream table block",
+          "plausibility": {
+            "zero_ff_fraction": 0.257,
+            "h_transitions": 17.431,
+            "v_transitions": 20.902,
+            "min_colour_share": 0.119,
+            "colour3_share": 0.119,
+            "mean_colours": 3.627,
+            "blank_edge_fraction": 0.569,
+            "speckle": 0.083
+          },
+          "tile_occurrences": 51,
+          "exact_unique": 51,
+          "flip_unique": 51
+        },
+        {
+          "region": "region_02",
+          "method": "raw_heuristic",
+          "prg_offset": 5568,
+          "prg_length": 256,
+          "bank": 0,
+          "cpu": 38336,
+          "decoded_bytes": 256,
+          "confidence": "low",
+          "decoded_sha256": "8cfd6e9bf3f4496ff5b5700f71f02599e5ba3a60150684bb76ad1d78ef2b75b3",
+          "evidence": "uncovered PRG run whose 8-tile windows all pass the pixel plausibility gate; unconfirmed",
+          "plausibility": {
+            "zero_ff_fraction": 0.559,
+            "h_transitions": 14.125,
+            "v_transitions": 19.062,
+            "min_colour_share": 0.098,
+            "colour3_share": 0.098,
+            "mean_colours": 3.188,
+            "blank_edge_fraction": 0.5,
+            "speckle": 0.11
+          },
+          "tile_occurrences": 16
+        },
+        {
+          "region": "region_03",
+          "method": "konami_rle_ram_stream",
+          "prg_offset": 7716,
+          "prg_length": 1153,
+          "bank": 0,
+          "cpu": 40484,
+          "decoded_bytes": 1232,
+          "confidence": "high",
+          "decoded_sha256": "bb0cac8a7e207188d95b6273b117440c8737f78633371eeddc994b3fc70e3632",
+          "ram_destination": 28672,
+          "decoder_cpu": 63432,
+          "pointer_table_cpu": 63397,
+          "table_index": 4,
+          "size_matches_tile_table": true,
+          "clipped_at_2000": false,
+          "evidence": "headerless Konami RLE pointed to by the per-stage WRAM table; decoded size equals the tile-stream table block",
+          "plausibility": {
+            "zero_ff_fraction": 0.33,
+            "h_transitions": 13.844,
+            "v_transitions": 22.312,
+            "min_colour_share": 0.172,
+            "colour3_share": 0.223,
+            "mean_colours": 3.571,
+            "blank_edge_fraction": 0.416,
+            "speckle": 0.043
+          },
+          "tile_occurrences": 77,
+          "exact_unique": 75,
+          "flip_unique": 75
+        },
+        {
+          "region": "region_04",
+          "method": "konami_rle_ram_stream",
+          "prg_offset": 8869,
+          "prg_length": 1567,
+          "bank": 0,
+          "cpu": 41637,
+          "decoded_bytes": 1904,
+          "confidence": "high",
+          "decoded_sha256": "bc53ad7b480f5bf3e7c0a5d694fa242e03d685fc4a840a12f1ace6be4314dab4",
+          "ram_destination": 28672,
+          "decoder_cpu": 63432,
+          "pointer_table_cpu": 63397,
+          "table_index": 5,
+          "size_matches_tile_table": true,
+          "clipped_at_2000": false,
+          "evidence": "headerless Konami RLE pointed to by the per-stage WRAM table; decoded size equals the tile-stream table block",
+          "plausibility": {
+            "zero_ff_fraction": 0.343,
+            "h_transitions": 15.185,
+            "v_transitions": 15.857,
+            "min_colour_share": 0.068,
+            "colour3_share": 0.141,
+            "mean_colours": 2.798,
+            "blank_edge_fraction": 0.655,
+            "speckle": 0.098
+          },
+          "tile_occurrences": 119,
+          "exact_unique": 116,
+          "flip_unique": 97
+        },
+        {
+          "region": "region_05",
+          "method": "konami_rle_ppu_stream",
+          "prg_offset": 12868,
+          "prg_length": 1258,
+          "bank": 0,
+          "cpu": 45636,
+          "decoded_bytes": 1664,
+          "confidence": "high",
+          "decoded_sha256": "c23e197c4196ea306a74ded4bb1d537ad63a4c0bcfa40580c2622870938a9820",
+          "ppu_destinations": [
+            160
+          ],
+          "pointer_referenced": true,
+          "contiguous_with_previous_stream": false,
+          "clipped_at_2000": false,
+          "evidence": "valid Konami RLE grammar, FF-terminated inside its 16 KiB bank, tile-aligned destination, plausible pixels",
+          "visual_review": "ship and enemy sprites",
+          "plausibility": {
+            "zero_ff_fraction": 0.469,
+            "h_transitions": 14.375,
+            "v_transitions": 15.894,
+            "min_colour_share": 0.116,
+            "colour3_share": 0.149,
+            "mean_colours": 3.25,
+            "blank_edge_fraction": 0.74,
+            "speckle": 0.158
+          },
+          "tile_occurrences": 104,
+          "exact_unique": 97,
+          "flip_unique": 97
+        },
+        {
+          "region": "region_06",
+          "method": "konami_rle_ppu_stream",
+          "prg_offset": 14126,
+          "prg_length": 2148,
+          "bank": 0,
+          "cpu": 46894,
+          "decoded_bytes": 2880,
+          "confidence": "high",
+          "decoded_sha256": "9b020573f2a5d57b5cc6ab3e70f2fe8619a0cb379858f767c9b53cadbaa0dadb",
+          "ppu_destinations": [
+            2624
+          ],
+          "pointer_referenced": true,
+          "contiguous_with_previous_stream": true,
+          "clipped_at_2000": false,
+          "evidence": "valid Konami RLE grammar, FF-terminated inside its 16 KiB bank, tile-aligned destination, plausible pixels",
+          "plausibility": {
+            "zero_ff_fraction": 0.456,
+            "h_transitions": 14.911,
+            "v_transitions": 15.133,
+            "min_colour_share": 0.148,
+            "colour3_share": 0.148,
+            "mean_colours": 2.994,
+            "blank_edge_fraction": 0.639,
+            "speckle": 0.073
+          },
+          "tile_occurrences": 180,
+          "exact_unique": 169,
+          "flip_unique": 169
+        },
+        {
+          "region": "region_07",
+          "method": "konami_rle_ppu_stream",
+          "prg_offset": 16384,
+          "prg_length": 3968,
+          "bank": 1,
+          "cpu": 32768,
+          "decoded_bytes": 4896,
+          "confidence": "high",
+          "decoded_sha256": "d08a6f6f2e2aaabf747cf565d01d3c3a1044e78999109852a7986200fb1d9b68",
+          "ppu_destinations": [
+            2912
+          ],
+          "pointer_referenced": true,
+          "contiguous_with_previous_stream": true,
+          "clipped_at_2000": false,
+          "evidence": "valid Konami RLE grammar, FF-terminated inside its 16 KiB bank, tile-aligned destination, plausible pixels",
+          "visual_review": "Salamander title logo with kana and Konami mark",
+          "plausibility": {
+            "zero_ff_fraction": 0.428,
+            "h_transitions": 11.873,
+            "v_transitions": 17.307,
+            "min_colour_share": 0.1,
+            "colour3_share": 0.183,
+            "mean_colours": 3.029,
+            "blank_edge_fraction": 0.709,
+            "speckle": 0.053
+          },
+          "tile_occurrences": 306,
+          "exact_unique": 291,
+          "flip_unique": 287
+        },
+        {
+          "region": "region_08",
+          "method": "konami_rle_ppu_stream",
+          "prg_offset": 20352,
+          "prg_length": 2022,
+          "bank": 1,
+          "cpu": 36736,
+          "decoded_bytes": 2624,
+          "confidence": "high",
+          "decoded_sha256": "55a8e0162d05159f9c1a7bb9b6d857feecd502158101579f161a2ef04c67dbf9",
+          "ppu_destinations": [
+            0
+          ],
+          "pointer_referenced": true,
+          "contiguous_with_previous_stream": true,
+          "clipped_at_2000": false,
+          "evidence": "valid Konami RLE grammar, FF-terminated inside its 16 KiB bank, tile-aligned destination, plausible pixels",
+          "plausibility": {
+            "zero_ff_fraction": 0.436,
+            "h_transitions": 13.274,
+            "v_transitions": 16.323,
+            "min_colour_share": 0.102,
+            "colour3_share": 0.153,
+            "mean_colours": 3.378,
+            "blank_edge_fraction": 0.848,
+            "speckle": 0.107
+          },
+          "tile_occurrences": 164,
+          "exact_unique": 144,
+          "flip_unique": 135
+        },
+        {
+          "region": "region_09",
+          "method": "konami_rle_ppu_stream",
+          "prg_offset": 22374,
+          "prg_length": 3921,
+          "bank": 1,
+          "cpu": 38758,
+          "decoded_bytes": 4800,
+          "confidence": "high",
+          "decoded_sha256": "4b10341426a49e2ec1b2a65cc86c47bc5eb6404fc2241a7468c8ee1e9b785169",
+          "ppu_destinations": [
+            2624
+          ],
+          "pointer_referenced": true,
+          "contiguous_with_previous_stream": true,
+          "clipped_at_2000": false,
+          "evidence": "valid Konami RLE grammar, FF-terminated inside its 16 KiB bank, tile-aligned destination, plausible pixels",
+          "plausibility": {
+            "zero_ff_fraction": 0.365,
+            "h_transitions": 16.297,
+            "v_transitions": 17.08,
+            "min_colour_share": 0.165,
+            "colour3_share": 0.228,
+            "mean_colours": 3.047,
+            "blank_edge_fraction": 0.493,
+            "speckle": 0.098
+          },
+          "tile_occurrences": 300,
+          "exact_unique": 276,
+          "flip_unique": 209
+        },
+        {
+          "region": "region_10",
+          "method": "konami_rle_ppu_stream",
+          "prg_offset": 26295,
+          "prg_length": 4004,
+          "bank": 1,
+          "cpu": 42679,
+          "decoded_bytes": 4672,
+          "confidence": "high",
+          "decoded_sha256": "17441c47f4f1fa28d3bd85653fe767f8e05d1a448633e2abc085bc5b025ada8d",
+          "ppu_destinations": [
+            2752
+          ],
+          "pointer_referenced": true,
+          "contiguous_with_previous_stream": true,
+          "clipped_at_2000": false,
+          "evidence": "valid Konami RLE grammar, FF-terminated inside its 16 KiB bank, tile-aligned destination, plausible pixels",
+          "plausibility": {
+            "zero_ff_fraction": 0.29,
+            "h_transitions": 18.377,
+            "v_transitions": 18.75,
+            "min_colour_share": 0.095,
+            "colour3_share": 0.226,
+            "mean_colours": 3.24,
+            "blank_edge_fraction": 0.538,
+            "speckle": 0.114
+          },
+          "tile_occurrences": 292,
+          "exact_unique": 269,
+          "flip_unique": 213
+        },
+        {
+          "region": "region_11",
+          "method": "raw_heuristic",
+          "prg_offset": 32464,
+          "prg_length": 128,
+          "bank": 1,
+          "cpu": 48848,
+          "decoded_bytes": 128,
+          "confidence": "low",
+          "decoded_sha256": "ab59c871256866dd9f35635e9c514ea5f99208c2c2367436ebdd5050c53ec5e1",
+          "evidence": "uncovered PRG run whose 8-tile windows all pass the pixel plausibility gate; unconfirmed",
+          "plausibility": {
+            "zero_ff_fraction": 0.562,
+            "h_transitions": 15.25,
+            "v_transitions": 18.125,
+            "min_colour_share": 0.094,
+            "colour3_share": 0.383,
+            "mean_colours": 3.0,
+            "blank_edge_fraction": 0.625,
+            "speckle": 0.19
+          },
+          "tile_occurrences": 8
+        },
+        {
+          "region": "region_12",
+          "method": "konami_rle_ppu_stream",
+          "prg_offset": 32768,
+          "prg_length": 2237,
+          "bank": 2,
+          "cpu": 32768,
+          "decoded_bytes": 2752,
+          "confidence": "high",
+          "decoded_sha256": "8a042c4787029302b5043aa74008abf4457e580ad3ddcc00c97248655820a141",
+          "ppu_destinations": [
+            0
+          ],
+          "pointer_referenced": true,
+          "contiguous_with_previous_stream": true,
+          "clipped_at_2000": false,
+          "evidence": "valid Konami RLE grammar, FF-terminated inside its 16 KiB bank, tile-aligned destination, plausible pixels",
+          "plausibility": {
+            "zero_ff_fraction": 0.328,
+            "h_transitions": 16.756,
+            "v_transitions": 14.36,
+            "min_colour_share": 0.09,
+            "colour3_share": 0.163,
+            "mean_colours": 3.401,
+            "blank_edge_fraction": 0.843,
+            "speckle": 0.111
+          },
+          "tile_occurrences": 172,
+          "exact_unique": 147,
+          "flip_unique": 134
+        },
+        {
+          "region": "region_13",
+          "method": "konami_rle_ppu_stream",
+          "prg_offset": 35005,
+          "prg_length": 1204,
+          "bank": 2,
+          "cpu": 35005,
+          "decoded_bytes": 768,
+          "confidence": "high",
+          "decoded_sha256": "45ecaea709de29ba0481f1759e3ff69d1e999d4cc44fab63ad9ce19c21c2feeb",
+          "ppu_destinations": [
+            7424
+          ],
+          "pointer_referenced": true,
+          "contiguous_with_previous_stream": true,
+          "clipped_at_2000": true,
+          "evidence": "valid Konami RLE grammar, FF-terminated inside its 16 KiB bank, tile-aligned destination, plausible pixels",
+          "visual_review": "HUD font and power-up labels",
+          "plausibility": {
+            "zero_ff_fraction": 0.594,
+            "h_transitions": 15.625,
+            "v_transitions": 26.896,
+            "min_colour_share": 0.0,
+            "colour3_share": 0.0,
+            "mean_colours": 2.521,
+            "blank_edge_fraction": 0.979,
+            "speckle": 0.008
+          },
+          "tile_occurrences": 48,
+          "exact_unique": 47,
+          "flip_unique": 47
+        },
+        {
+          "region": "region_14",
+          "method": "konami_rle_ppu_stream",
+          "prg_offset": 36209,
+          "prg_length": 4185,
+          "bank": 2,
+          "cpu": 36209,
+          "decoded_bytes": 4800,
+          "confidence": "high",
+          "decoded_sha256": "3464334f2466eda0e4a6bed958d591e015d1eea3de79b9d2b155e13936005ea0",
+          "ppu_destinations": [
+            2624
+          ],
+          "pointer_referenced": true,
+          "contiguous_with_previous_stream": true,
+          "clipped_at_2000": false,
+          "evidence": "valid Konami RLE grammar, FF-terminated inside its 16 KiB bank, tile-aligned destination, plausible pixels",
+          "plausibility": {
+            "zero_ff_fraction": 0.264,
+            "h_transitions": 19.623,
+            "v_transitions": 18.137,
+            "min_colour_share": 0.101,
+            "colour3_share": 0.209,
+            "mean_colours": 3.42,
+            "blank_edge_fraction": 0.527,
+            "speckle": 0.104
+          },
+          "tile_occurrences": 300,
+          "exact_unique": 282,
+          "flip_unique": 249
+        },
+        {
+          "region": "region_15",
+          "method": "konami_rle_ppu_stream",
+          "prg_offset": 40394,
+          "prg_length": 4144,
+          "bank": 2,
+          "cpu": 40394,
+          "decoded_bytes": 4672,
+          "confidence": "high",
+          "decoded_sha256": "d3bda0586a68d1a931feb4a3eb64829dced2664ad000aea46325c16af7cc56ce",
+          "ppu_destinations": [
+            2752
+          ],
+          "pointer_referenced": true,
+          "contiguous_with_previous_stream": true,
+          "clipped_at_2000": false,
+          "evidence": "valid Konami RLE grammar, FF-terminated inside its 16 KiB bank, tile-aligned destination, plausible pixels",
+          "plausibility": {
+            "zero_ff_fraction": 0.227,
+            "h_transitions": 22.914,
+            "v_transitions": 19.223,
+            "min_colour_share": 0.129,
+            "colour3_share": 0.219,
+            "mean_colours": 3.459,
+            "blank_edge_fraction": 0.647,
+            "speckle": 0.143
+          },
+          "tile_occurrences": 292,
+          "exact_unique": 282,
+          "flip_unique": 233
+        },
+        {
+          "region": "region_16",
+          "method": "konami_rle_ppu_stream",
+          "prg_offset": 44538,
+          "prg_length": 4402,
+          "bank": 2,
+          "cpu": 44538,
+          "decoded_bytes": 4800,
+          "confidence": "high",
+          "decoded_sha256": "f07170436d84d3fa1c1c45479276e5346aed8e1d5c5f258b026c9f739fdb68cb",
+          "ppu_destinations": [
+            2624
+          ],
+          "pointer_referenced": true,
+          "contiguous_with_previous_stream": true,
+          "clipped_at_2000": false,
+          "evidence": "valid Konami RLE grammar, FF-terminated inside its 16 KiB bank, tile-aligned destination, plausible pixels",
+          "plausibility": {
+            "zero_ff_fraction": 0.253,
+            "h_transitions": 20.087,
+            "v_transitions": 20.477,
+            "min_colour_share": 0.088,
+            "colour3_share": 0.213,
+            "mean_colours": 3.38,
+            "blank_edge_fraction": 0.673,
+            "speckle": 0.158
+          },
+          "tile_occurrences": 300,
+          "exact_unique": 283,
+          "flip_unique": 263
+        },
+        {
+          "region": "region_17",
+          "method": "konami_rle_ppu_stream",
+          "prg_offset": 69031,
+          "prg_length": 70,
+          "bank": 4,
+          "cpu": 36263,
+          "decoded_bytes": 144,
+          "confidence": "low",
+          "decoded_sha256": "6b60fefd6f3dada30d9eb17033376e673fff3c3540683f35dcdee2dca6c9f8a0",
+          "ppu_destinations": [
+            144
+          ],
+          "pointer_referenced": false,
+          "contiguous_with_previous_stream": false,
+          "clipped_at_2000": false,
+          "evidence": "valid Konami RLE grammar, FF-terminated inside its 16 KiB bank, tile-aligned destination, plausible pixels",
+          "plausibility": {
+            "zero_ff_fraction": 0.701,
+            "h_transitions": 9.778,
+            "v_transitions": 15.0,
+            "min_colour_share": 0.047,
+            "colour3_share": 0.059,
+            "mean_colours": 2.333,
+            "blank_edge_fraction": 1.0,
+            "speckle": 0.333
+          },
+          "tile_occurrences": 9
+        },
+        {
+          "region": "region_18",
+          "method": "konami_rle_ram_stream",
+          "prg_offset": 95831,
+          "prg_length": 2242,
+          "bank": 5,
+          "cpu": 46679,
+          "decoded_bytes": 2336,
+          "confidence": "high",
+          "decoded_sha256": "fd1a726889d9e40d2b23ed0e33abaea7a80f033af4ed80a194d07a961f936c85",
+          "ram_destination": 28672,
+          "decoder_cpu": 63432,
+          "pointer_table_cpu": 63397,
+          "table_index": 3,
+          "size_matches_tile_table": true,
+          "clipped_at_2000": false,
+          "evidence": "headerless Konami RLE pointed to by the per-stage WRAM table; decoded size equals the tile-stream table block",
+          "plausibility": {
+            "zero_ff_fraction": 0.187,
+            "h_transitions": 21.055,
+            "v_transitions": 23.192,
+            "min_colour_share": 0.102,
+            "colour3_share": 0.235,
+            "mean_colours": 3.658,
+            "blank_edge_fraction": 0.507,
+            "speckle": 0.116
+          },
+          "tile_occurrences": 146,
+          "exact_unique": 146,
+          "flip_unique": 75
+        },
+        {
+          "region": "region_19",
+          "method": "raw_heuristic",
+          "prg_offset": 121152,
+          "prg_length": 128,
+          "bank": 7,
+          "cpu": 55616,
+          "decoded_bytes": 128,
+          "confidence": "low",
+          "decoded_sha256": "1fa4129f6d1e266611154eecc97aed8f3324fe78b5b72e7c76395b7a8367e3f4",
+          "evidence": "uncovered PRG run whose 8-tile windows all pass the pixel plausibility gate; unconfirmed",
+          "plausibility": {
+            "zero_ff_fraction": 0.844,
+            "h_transitions": 6.25,
+            "v_transitions": 5.75,
+            "min_colour_share": 0.016,
+            "colour3_share": 0.016,
+            "mean_colours": 2.0,
+            "blank_edge_fraction": 0.875,
+            "speckle": 0.231
+          },
+          "tile_occurrences": 8
+        }
+      ],
+      "region_count": 20,
+      "regions_by_confidence": {
+        "high": 16,
+        "low": 4
+      },
+      "region_tiles_by_confidence": {
+        "high": 3143,
+        "low": 41
+      },
+      "rejected_rle_candidates": {
+        "not_tile_aligned": 95,
+        "compressed_too_short": 45,
+        "decoded_too_small": 16,
+        "few_00_ff_bytes": 3
+      },
+      "non_pattern_rle_candidates": {
+        "nametable": 25,
+        "other": 13,
+        "palette": 3
+      },
+      "confidence_notes": [
+        "high: decoder grammar plus a code anchor (pointer reference, bank start, back-to-back stream, caller bank or exact size match).",
+        "medium: grammar-valid and plausible but without a second anchor, or a table entry whose bank could not be resolved.",
+        "low: raw heuristic only; written to disk for inspection, excluded from tile statistics and the dictionary."
+      ],
+      "tiles": {
+        "occurrences": 3143,
+        "exact_unique": 2830,
+        "flip_unique": 2412,
+        "flip_duplicates": 418
+      }
+    },
+    "lifeforce_nes_us": {
+      "mapper": 2,
+      "prg_bytes": 131072,
+      "chr_bytes": 0,
+      "chr_type": "CHR-RAM",
+      "evidence": {
+        "ppu_rle_decoder": {
+          "prg_offset": 127170,
+          "cpu": 61634
+        },
+        "tile_stream_table": {
+          "routine_prg_offset": 126109,
+          "routine_cpu": 60573,
+          "src_table": 60537,
+          "dst_table": 60549,
+          "count_table": 60561
+        },
+        "tile_stream_entries": [
+          {
+            "index": 0,
+            "src": 45517,
+            "ppu": 5648,
+            "tiles": 51,
+            "caller_banks": [
+              4
+            ]
+          },
+          {
+            "index": 1,
+            "src": 36967,
+            "ppu": 5632,
+            "tiles": 77,
+            "caller_banks": [
+              0
+            ]
+          },
+          {
+            "index": 2,
+            "src": 38623,
+            "ppu": 4624,
+            "tiles": 102,
+            "caller_banks": [
+              0
+            ]
+          },
+          {
+            "index": 3,
+            "src": 40255,
+            "ppu": 3168,
+            "tiles": 18,
+            "caller_banks": [
+              0
+            ]
+          },
+          {
+            "index": 4,
+            "src": 46163,
+            "ppu": 4464,
+            "tiles": 54,
+            "caller_banks": [
+              5
+            ]
+          },
+          {
+            "index": 5,
+            "src": 47027,
+            "ppu": 5664,
+            "tiles": 92,
+            "caller_banks": [
+              5
+            ]
+          }
+        ]
+      },
+      "regions": [
+        {
+          "region": "region_00",
+          "method": "konami_rle_ppu_stream",
+          "prg_offset": 1,
+          "prg_length": 4001,
+          "bank": 0,
+          "cpu": 32769,
+          "decoded_bytes": 4672,
+          "confidence": "high",
+          "decoded_sha256": "79af8d75c596f29f7b18e760ec106cdff07844c0a84dadc94da8b1b0192222bd",
+          "ppu_destinations": [
+            2752
+          ],
+          "pointer_referenced": true,
+          "contiguous_with_previous_stream": false,
+          "clipped_at_2000": false,
+          "evidence": "valid Konami RLE grammar, FF-terminated inside its 16 KiB bank, tile-aligned destination, plausible pixels",
+          "plausibility": {
+            "zero_ff_fraction": 0.288,
+            "h_transitions": 20.479,
+            "v_transitions": 20.425,
+            "min_colour_share": 0.075,
+            "colour3_share": 0.182,
+            "mean_colours": 3.301,
+            "blank_edge_fraction": 0.62,
+            "speckle": 0.224
+          },
+          "tile_occurrences": 292,
+          "exact_unique": 249,
+          "flip_unique": 179
+        },
+        {
+          "region": "region_01",
+          "method": "tile_stream_table_raw",
+          "prg_offset": 4199,
+          "prg_length": 1232,
+          "bank": 0,
+          "cpu": 36967,
+          "decoded_bytes": 1232,
+          "confidence": "high",
+          "decoded_sha256": "bb0cac8a7e207188d95b6273b117440c8737f78633371eeddc994b3fc70e3632",
+          "ppu_destinations": [
+            5632
+          ],
+          "table_index": 1,
+          "bank_from_caller": true,
+          "plausibility_gate": false,
+          "evidence": "entry of the per-tile NMI-buffer copy table; bank resolved from LDY #n; JSR callers",
+          "visual_review": "large striped boss sprite",
+          "plausibility": {
+            "zero_ff_fraction": 0.33,
+            "h_transitions": 13.844,
+            "v_transitions": 22.312,
+            "min_colour_share": 0.172,
+            "colour3_share": 0.223,
+            "mean_colours": 3.571,
+            "blank_edge_fraction": 0.416,
+            "speckle": 0.043
+          },
+          "tile_occurrences": 77,
+          "exact_unique": 75,
+          "flip_unique": 75
+        },
+        {
+          "region": "region_02",
+          "method": "tile_stream_table_raw",
+          "prg_offset": 5855,
+          "prg_length": 1632,
+          "bank": 0,
+          "cpu": 38623,
+          "decoded_bytes": 1632,
+          "confidence": "high",
+          "decoded_sha256": "1fc6f10f12126ece942c8d313cad0fede5d62fc4ca6a73f977a7830ea3e69aa2",
+          "ppu_destinations": [
+            4624
+          ],
+          "table_index": 2,
+          "bank_from_caller": true,
+          "plausibility_gate": true,
+          "evidence": "entry of the per-tile NMI-buffer copy table; bank resolved from LDY #n; JSR callers",
+          "visual_review": "scenery silhouettes and ship sprites",
+          "plausibility": {
+            "zero_ff_fraction": 0.314,
+            "h_transitions": 15.578,
+            "v_transitions": 16.294,
+            "min_colour_share": 0.066,
+            "colour3_share": 0.139,
+            "mean_colours": 2.794,
+            "blank_edge_fraction": 0.627,
+            "speckle": 0.082
+          },
+          "tile_occurrences": 102,
+          "exact_unique": 102,
+          "flip_unique": 84
+        },
+        {
+          "region": "region_03",
+          "method": "tile_stream_table_raw",
+          "prg_offset": 7487,
+          "prg_length": 288,
+          "bank": 0,
+          "cpu": 40255,
+          "decoded_bytes": 288,
+          "confidence": "high",
+          "decoded_sha256": "49539a8db2c09bb1e111a3eefd424ea6e8f75cc6a28511dbe691485a0a973efd",
+          "ppu_destinations": [
+            3168
+          ],
+          "table_index": 3,
+          "bank_from_caller": true,
+          "plausibility_gate": true,
+          "evidence": "entry of the per-tile NMI-buffer copy table; bank resolved from LDY #n; JSR callers",
+          "visual_review": "sprite fragments",
+          "plausibility": {
+            "zero_ff_fraction": 0.486,
+            "h_transitions": 13.611,
+            "v_transitions": 13.333,
+            "min_colour_share": 0.047,
+            "colour3_share": 0.16,
+            "mean_colours": 2.889,
+            "blank_edge_fraction": 0.833,
+            "speckle": 0.237
+          },
+          "tile_occurrences": 18,
+          "exact_unique": 15,
+          "flip_unique": 14
+        },
+        {
+          "region": "region_04",
+          "method": "raw_heuristic",
+          "prg_offset": 8848,
+          "prg_length": 240,
+          "bank": 0,
+          "cpu": 41616,
+          "decoded_bytes": 240,
+          "confidence": "low",
+          "decoded_sha256": "d4811906cf428d4358009dc1bd13c80d2cb8ea67dd12566488c0a193867f97de",
+          "evidence": "uncovered PRG run whose 8-tile windows all pass the pixel plausibility gate; unconfirmed",
+          "plausibility": {
+            "zero_ff_fraction": 0.558,
+            "h_transitions": 16.267,
+            "v_transitions": 13.4,
+            "min_colour_share": 0.089,
+            "colour3_share": 0.128,
+            "mean_colours": 3.0,
+            "blank_edge_fraction": 0.933,
+            "speckle": 0.119
+          },
+          "tile_occurrences": 15
+        },
+        {
+          "region": "region_05",
+          "method": "konami_rle_ppu_stream",
+          "prg_offset": 14127,
+          "prg_length": 1340,
+          "bank": 0,
+          "cpu": 46895,
+          "decoded_bytes": 2400,
+          "confidence": "high",
+          "decoded_sha256": "fd7343760efa4c81b0580e096ef0162d0ecd365989ebe872828bfb9510d631f5",
+          "ppu_destinations": [
+            224
+          ],
+          "pointer_referenced": true,
+          "contiguous_with_previous_stream": false,
+          "clipped_at_2000": false,
+          "evidence": "valid Konami RLE grammar, FF-terminated inside its 16 KiB bank, tile-aligned destination, plausible pixels",
+          "plausibility": {
+            "zero_ff_fraction": 0.59,
+            "h_transitions": 9.607,
+            "v_transitions": 11.247,
+            "min_colour_share": 0.076,
+            "colour3_share": 0.099,
+            "mean_colours": 2.66,
+            "blank_edge_fraction": 0.84,
+            "speckle": 0.133
+          },
+          "tile_occurrences": 150,
+          "exact_unique": 92,
+          "flip_unique": 91
+        },
+        {
+          "region": "region_06",
+          "method": "konami_rle_ppu_stream",
+          "prg_offset": 15467,
+          "prg_length": 749,
+          "bank": 0,
+          "cpu": 48235,
+          "decoded_bytes": 1008,
+          "confidence": "high",
+          "decoded_sha256": "6c1ab8daf1ed8ef3d8feca8c7c26e8a1460ec1c7f6ed42f3b2a5fe2c2fab56f6",
+          "ppu_destinations": [
+            4528
+          ],
+          "pointer_referenced": true,
+          "contiguous_with_previous_stream": true,
+          "clipped_at_2000": false,
+          "evidence": "valid Konami RLE grammar, FF-terminated inside its 16 KiB bank, tile-aligned destination, plausible pixels",
+          "visual_review": "planet picture",
+          "plausibility": {
+            "zero_ff_fraction": 0.498,
+            "h_transitions": 14.079,
+            "v_transitions": 13.079,
+            "min_colour_share": 0.098,
+            "colour3_share": 0.172,
+            "mean_colours": 2.841,
+            "blank_edge_fraction": 0.524,
+            "speckle": 0.08
+          },
+          "tile_occurrences": 63,
+          "exact_unique": 63,
+          "flip_unique": 63
+        },
+        {
+          "region": "region_07",
+          "method": "konami_rle_ppu_stream",
+          "prg_offset": 16385,
+          "prg_length": 1985,
+          "bank": 1,
+          "cpu": 32769,
+          "decoded_bytes": 2624,
+          "confidence": "high",
+          "decoded_sha256": "833f5b006c0df31eaf7181d6b7ca853feb2a9988b1d8db494bb98142979c8c88",
+          "ppu_destinations": [
+            4096
+          ],
+          "pointer_referenced": true,
+          "contiguous_with_previous_stream": false,
+          "clipped_at_2000": false,
+          "evidence": "valid Konami RLE grammar, FF-terminated inside its 16 KiB bank, tile-aligned destination, plausible pixels",
+          "visual_review": "font, Konami logo and title lettering",
+          "plausibility": {
+            "zero_ff_fraction": 0.433,
+            "h_transitions": 12.03,
+            "v_transitions": 13.933,
+            "min_colour_share": 0.113,
+            "colour3_share": 0.142,
+            "mean_colours": 2.744,
+            "blank_edge_fraction": 0.732,
+            "speckle": 0.022
+          },
+          "tile_occurrences": 164,
+          "exact_unique": 155,
+          "flip_unique": 154
+        },
+        {
+          "region": "region_08",
+          "method": "konami_rle_ppu_stream",
+          "prg_offset": 18370,
+          "prg_length": 2024,
+          "bank": 1,
+          "cpu": 34754,
+          "decoded_bytes": 2624,
+          "confidence": "high",
+          "decoded_sha256": "c90276806db418f51343f90149b98832bf8f98174bd488d9365abef495549807",
+          "ppu_destinations": [
+            0
+          ],
+          "pointer_referenced": true,
+          "contiguous_with_previous_stream": true,
+          "clipped_at_2000": false,
+          "evidence": "valid Konami RLE grammar, FF-terminated inside its 16 KiB bank, tile-aligned destination, plausible pixels",
+          "plausibility": {
+            "zero_ff_fraction": 0.436,
+            "h_transitions": 13.274,
+            "v_transitions": 16.323,
+            "min_colour_share": 0.102,
+            "colour3_share": 0.16,
+            "mean_colours": 3.378,
+            "blank_edge_fraction": 0.841,
+            "speckle": 0.105
+          },
+          "tile_occurrences": 164,
+          "exact_unique": 145,
+          "flip_unique": 136
+        },
+        {
+          "region": "region_09",
+          "method": "konami_rle_ppu_stream",
+          "prg_offset": 20394,
+          "prg_length": 3921,
+          "bank": 1,
+          "cpu": 36778,
+          "decoded_bytes": 4800,
+          "confidence": "high",
+          "decoded_sha256": "4b10341426a49e2ec1b2a65cc86c47bc5eb6404fc2241a7468c8ee1e9b785169",
+          "ppu_destinations": [
+            2624
+          ],
+          "pointer_referenced": true,
+          "contiguous_with_previous_stream": true,
+          "clipped_at_2000": false,
+          "evidence": "valid Konami RLE grammar, FF-terminated inside its 16 KiB bank, tile-aligned destination, plausible pixels",
+          "visual_review": "organic terrain",
+          "plausibility": {
+            "zero_ff_fraction": 0.365,
+            "h_transitions": 16.297,
+            "v_transitions": 17.08,
+            "min_colour_share": 0.165,
+            "colour3_share": 0.228,
+            "mean_colours": 3.047,
+            "blank_edge_fraction": 0.493,
+            "speckle": 0.098
+          },
+          "tile_occurrences": 300,
+          "exact_unique": 276,
+          "flip_unique": 209
+        },
+        {
+          "region": "region_10",
+          "method": "konami_rle_ppu_stream",
+          "prg_offset": 24315,
+          "prg_length": 4004,
+          "bank": 1,
+          "cpu": 40699,
+          "decoded_bytes": 4672,
+          "confidence": "high",
+          "decoded_sha256": "1bcfdc587b9a6dd93e05e5b122a2c66a8b088ed99cdc29f81ad32f7e54f0f5bf",
+          "ppu_destinations": [
+            2752
+          ],
+          "pointer_referenced": true,
+          "contiguous_with_previous_stream": true,
+          "clipped_at_2000": false,
+          "evidence": "valid Konami RLE grammar, FF-terminated inside its 16 KiB bank, tile-aligned destination, plausible pixels",
+          "plausibility": {
+            "zero_ff_fraction": 0.29,
+            "h_transitions": 18.384,
+            "v_transitions": 18.75,
+            "min_colour_share": 0.095,
+            "colour3_share": 0.226,
+            "mean_colours": 3.24,
+            "blank_edge_fraction": 0.531,
+            "speckle": 0.114
+          },
+          "tile_occurrences": 292,
+          "exact_unique": 269,
+          "flip_unique": 215
+        },
+        {
+          "region": "region_11",
+          "method": "raw_heuristic",
+          "prg_offset": 32176,
+          "prg_length": 144,
+          "bank": 1,
+          "cpu": 48560,
+          "decoded_bytes": 144,
+          "confidence": "low",
+          "decoded_sha256": "7257fe44f62dccd8dd748b329f134738b77c956b75ae91f60323986960e02d32",
+          "evidence": "uncovered PRG run whose 8-tile windows all pass the pixel plausibility gate; unconfirmed",
+          "plausibility": {
+            "zero_ff_fraction": 0.618,
+            "h_transitions": 16.889,
+            "v_transitions": 16.778,
+            "min_colour_share": 0.082,
+            "colour3_share": 0.082,
+            "mean_colours": 2.889,
+            "blank_edge_fraction": 0.889,
+            "speckle": 0.222
+          },
+          "tile_occurrences": 9
+        },
+        {
+          "region": "region_12",
+          "method": "konami_rle_ppu_stream",
+          "prg_offset": 32769,
+          "prg_length": 2239,
+          "bank": 2,
+          "cpu": 32769,
+          "decoded_bytes": 2752,
+          "confidence": "high",
+          "decoded_sha256": "862d116376a5ae7219e8ad4c3a210d426610bd866bb7e825749072992d2cb3d2",
+          "ppu_destinations": [
+            0
+          ],
+          "pointer_referenced": true,
+          "contiguous_with_previous_stream": false,
+          "clipped_at_2000": false,
+          "evidence": "valid Konami RLE grammar, FF-terminated inside its 16 KiB bank, tile-aligned destination, plausible pixels",
+          "plausibility": {
+            "zero_ff_fraction": 0.328,
+            "h_transitions": 16.756,
+            "v_transitions": 14.36,
+            "min_colour_share": 0.09,
+            "colour3_share": 0.169,
+            "mean_colours": 3.401,
+            "blank_edge_fraction": 0.837,
+            "speckle": 0.109
+          },
+          "tile_occurrences": 172,
+          "exact_unique": 148,
+          "flip_unique": 135
+        },
+        {
+          "region": "region_13",
+          "method": "konami_rle_ppu_stream",
+          "prg_offset": 35024,
+          "prg_length": 548,
+          "bank": 2,
+          "cpu": 35024,
+          "decoded_bytes": 768,
+          "confidence": "high",
+          "decoded_sha256": "9553d08b0831f4852012f29c71a3cfb06b7e02a038945c9b3e37b403d6892b3a",
+          "ppu_destinations": [
+            7424
+          ],
+          "pointer_referenced": true,
+          "contiguous_with_previous_stream": true,
+          "clipped_at_2000": false,
+          "evidence": "valid Konami RLE grammar, FF-terminated inside its 16 KiB bank, tile-aligned destination, plausible pixels",
+          "visual_review": "HUD font and power-up labels",
+          "plausibility": {
+            "zero_ff_fraction": 0.581,
+            "h_transitions": 15.042,
+            "v_transitions": 26.792,
+            "min_colour_share": 0.021,
+            "colour3_share": 0.021,
+            "mean_colours": 2.479,
+            "blank_edge_fraction": 0.979,
+            "speckle": 0.018
+          },
+          "tile_occurrences": 48,
+          "exact_unique": 48,
+          "flip_unique": 47
+        },
+        {
+          "region": "region_14",
+          "method": "konami_rle_ppu_stream",
+          "prg_offset": 35572,
+          "prg_length": 4156,
+          "bank": 2,
+          "cpu": 35572,
+          "decoded_bytes": 4800,
+          "confidence": "high",
+          "decoded_sha256": "e1e4627e2d19ac0550f23cb0ec5df81ed8b062caa1f85ae6350802d1c3e2c6de",
+          "ppu_destinations": [
+            2624
+          ],
+          "pointer_referenced": true,
+          "contiguous_with_previous_stream": true,
+          "clipped_at_2000": false,
+          "evidence": "valid Konami RLE grammar, FF-terminated inside its 16 KiB bank, tile-aligned destination, plausible pixels",
+          "plausibility": {
+            "zero_ff_fraction": 0.271,
+            "h_transitions": 19.47,
+            "v_transitions": 17.983,
+            "min_colour_share": 0.101,
+            "colour3_share": 0.207,
+            "mean_colours": 3.407,
+            "blank_edge_fraction": 0.533,
+            "speckle": 0.102
+          },
+          "tile_occurrences": 300,
+          "exact_unique": 281,
+          "flip_unique": 248
+        },
+        {
+          "region": "region_15",
+          "method": "konami_rle_ppu_stream",
+          "prg_offset": 39728,
+          "prg_length": 4114,
+          "bank": 2,
+          "cpu": 39728,
+          "decoded_bytes": 4672,
+          "confidence": "high",
+          "decoded_sha256": "7adfa7fbd605519cf5408e9a0e98c98e80132b3046491b0263672f314cf101b0",
+          "ppu_destinations": [
+            2752
+          ],
+          "pointer_referenced": true,
+          "contiguous_with_previous_stream": true,
+          "clipped_at_2000": false,
+          "evidence": "valid Konami RLE grammar, FF-terminated inside its 16 KiB bank, tile-aligned destination, plausible pixels",
+          "plausibility": {
+            "zero_ff_fraction": 0.232,
+            "h_transitions": 22.788,
+            "v_transitions": 19.086,
+            "min_colour_share": 0.129,
+            "colour3_share": 0.217,
+            "mean_colours": 3.452,
+            "blank_edge_fraction": 0.651,
+            "speckle": 0.143
+          },
+          "tile_occurrences": 292,
+          "exact_unique": 280,
+          "flip_unique": 231
+        },
+        {
+          "region": "region_16",
+          "method": "konami_rle_ppu_stream",
+          "prg_offset": 43842,
+          "prg_length": 4402,
+          "bank": 2,
+          "cpu": 43842,
+          "decoded_bytes": 4800,
+          "confidence": "high",
+          "decoded_sha256": "f07170436d84d3fa1c1c45479276e5346aed8e1d5c5f258b026c9f739fdb68cb",
+          "ppu_destinations": [
+            2624
+          ],
+          "pointer_referenced": true,
+          "contiguous_with_previous_stream": true,
+          "clipped_at_2000": false,
+          "evidence": "valid Konami RLE grammar, FF-terminated inside its 16 KiB bank, tile-aligned destination, plausible pixels",
+          "plausibility": {
+            "zero_ff_fraction": 0.253,
+            "h_transitions": 20.087,
+            "v_transitions": 20.477,
+            "min_colour_share": 0.088,
+            "colour3_share": 0.213,
+            "mean_colours": 3.38,
+            "blank_edge_fraction": 0.673,
+            "speckle": 0.158
+          },
+          "tile_occurrences": 300,
+          "exact_unique": 283,
+          "flip_unique": 263
+        },
+        {
+          "region": "region_17",
+          "method": "konami_rle_ppu_stream",
+          "prg_offset": 65913,
+          "prg_length": 70,
+          "bank": 4,
+          "cpu": 33145,
+          "decoded_bytes": 144,
+          "confidence": "medium",
+          "decoded_sha256": "6b60fefd6f3dada30d9eb17033376e673fff3c3540683f35dcdee2dca6c9f8a0",
+          "ppu_destinations": [
+            144
+          ],
+          "pointer_referenced": true,
+          "contiguous_with_previous_stream": false,
+          "clipped_at_2000": false,
+          "evidence": "valid Konami RLE grammar, FF-terminated inside its 16 KiB bank, tile-aligned destination, plausible pixels",
+          "plausibility": {
+            "zero_ff_fraction": 0.701,
+            "h_transitions": 9.778,
+            "v_transitions": 15.0,
+            "min_colour_share": 0.047,
+            "colour3_share": 0.059,
+            "mean_colours": 2.333,
+            "blank_edge_fraction": 1.0,
+            "speckle": 0.333
+          },
+          "tile_occurrences": 9,
+          "exact_unique": 5,
+          "flip_unique": 5
+        },
+        {
+          "region": "region_18",
+          "method": "raw_heuristic",
+          "prg_offset": 71200,
+          "prg_length": 128,
+          "bank": 4,
+          "cpu": 38432,
+          "decoded_bytes": 128,
+          "confidence": "low",
+          "decoded_sha256": "ea0f48993ef54b618a93340ec87e878324055e24414f9e4580d5cd43b8f760f8",
+          "evidence": "uncovered PRG run whose 8-tile windows all pass the pixel plausibility gate; unconfirmed",
+          "plausibility": {
+            "zero_ff_fraction": 0.641,
+            "h_transitions": 14.25,
+            "v_transitions": 17.75,
+            "min_colour_share": 0.039,
+            "colour3_share": 0.047,
+            "mean_colours": 3.125,
+            "blank_edge_fraction": 1.0,
+            "speckle": 0.246
+          },
+          "tile_occurrences": 8
+        },
+        {
+          "region": "region_19",
+          "method": "raw_heuristic",
+          "prg_offset": 76224,
+          "prg_length": 128,
+          "bank": 4,
+          "cpu": 43456,
+          "decoded_bytes": 128,
+          "confidence": "low",
+          "decoded_sha256": "a5fa13f501014c683371ef0c4b552be9dea91b87639271ea047650169dbf050d",
+          "evidence": "uncovered PRG run whose 8-tile windows all pass the pixel plausibility gate; unconfirmed",
+          "plausibility": {
+            "zero_ff_fraction": 0.43,
+            "h_transitions": 17.25,
+            "v_transitions": 15.5,
+            "min_colour_share": 0.084,
+            "colour3_share": 0.092,
+            "mean_colours": 3.25,
+            "blank_edge_fraction": 1.0,
+            "speckle": 0.149
+          },
+          "tile_occurrences": 8
+        },
+        {
+          "region": "region_20",
+          "method": "tile_stream_table_raw",
+          "prg_offset": 78285,
+          "prg_length": 816,
+          "bank": 4,
+          "cpu": 45517,
+          "decoded_bytes": 816,
+          "confidence": "high",
+          "decoded_sha256": "a5eff224a60186fb0fa24657b7ba3057a8fa62f7644b6c32180d20321dee7757",
+          "ppu_destinations": [
+            5648
+          ],
+          "table_index": 0,
+          "bank_from_caller": true,
+          "plausibility_gate": false,
+          "evidence": "entry of the per-tile NMI-buffer copy table; bank resolved from LDY #n; JSR callers",
+          "visual_review": "large creature sprite",
+          "plausibility": {
+            "zero_ff_fraction": 0.257,
+            "h_transitions": 17.431,
+            "v_transitions": 20.902,
+            "min_colour_share": 0.119,
+            "colour3_share": 0.119,
+            "mean_colours": 3.627,
+            "blank_edge_fraction": 0.569,
+            "speckle": 0.083
+          },
+          "tile_occurrences": 51,
+          "exact_unique": 51,
+          "flip_unique": 51
+        },
+        {
+          "region": "region_21",
+          "method": "raw_heuristic",
+          "prg_offset": 79760,
+          "prg_length": 272,
+          "bank": 4,
+          "cpu": 46992,
+          "decoded_bytes": 272,
+          "confidence": "low",
+          "decoded_sha256": "5765b6ab391f19ca8ce0fa33c5381787a07101bcc825cd7db3318b1119f8109a",
+          "evidence": "uncovered PRG run whose 8-tile windows all pass the pixel plausibility gate; unconfirmed",
+          "plausibility": {
+            "zero_ff_fraction": 0.548,
+            "h_transitions": 15.235,
+            "v_transitions": 19.647,
+            "min_colour_share": 0.108,
+            "colour3_share": 0.108,
+            "mean_colours": 3.235,
+            "blank_edge_fraction": 0.529,
+            "speckle": 0.119
+          },
+          "tile_occurrences": 17
+        },
+        {
+          "region": "region_22",
+          "method": "tile_stream_table_raw",
+          "prg_offset": 95315,
+          "prg_length": 864,
+          "bank": 5,
+          "cpu": 46163,
+          "decoded_bytes": 864,
+          "confidence": "high",
+          "decoded_sha256": "d1068b50d0bf44afabe62f7a067e79afaf8a65fc93237652afd7715872039c34",
+          "ppu_destinations": [
+            4464
+          ],
+          "table_index": 4,
+          "bank_from_caller": true,
+          "plausibility_gate": false,
+          "evidence": "entry of the per-tile NMI-buffer copy table; bank resolved from LDY #n; JSR callers",
+          "plausibility": {
+            "zero_ff_fraction": 0.326,
+            "h_transitions": 15.259,
+            "v_transitions": 22.37,
+            "min_colour_share": 0.057,
+            "colour3_share": 0.23,
+            "mean_colours": 3.37,
+            "blank_edge_fraction": 0.704,
+            "speckle": 0.056
+          },
+          "tile_occurrences": 54,
+          "exact_unique": 54,
+          "flip_unique": 27
+        },
+        {
+          "region": "region_23",
+          "method": "tile_stream_table_raw",
+          "prg_offset": 96179,
+          "prg_length": 1472,
+          "bank": 5,
+          "cpu": 47027,
+          "decoded_bytes": 1472,
+          "confidence": "high",
+          "decoded_sha256": "cea68621ce051424d83b3a245c908efe14e142989324160fa2cf09b840f4c8a9",
+          "ppu_destinations": [
+            5664
+          ],
+          "table_index": 5,
+          "bank_from_caller": true,
+          "plausibility_gate": false,
+          "evidence": "entry of the per-tile NMI-buffer copy table; bank resolved from LDY #n; JSR callers",
+          "plausibility": {
+            "zero_ff_fraction": 0.105,
+            "h_transitions": 24.457,
+            "v_transitions": 23.674,
+            "min_colour_share": 0.128,
+            "colour3_share": 0.238,
+            "mean_colours": 3.826,
+            "blank_edge_fraction": 0.391,
+            "speckle": 0.149
+          },
+          "tile_occurrences": 92,
+          "exact_unique": 92,
+          "flip_unique": 48
+        },
+        {
+          "region": "region_24",
+          "method": "raw_heuristic",
+          "prg_offset": 120048,
+          "prg_length": 144,
+          "bank": 7,
+          "cpu": 54512,
+          "decoded_bytes": 144,
+          "confidence": "low",
+          "decoded_sha256": "3d109a6570b84b5a1c4faa546c3bebd09a192702584516c97999b143a89ecb10",
+          "evidence": "uncovered PRG run whose 8-tile windows all pass the pixel plausibility gate; unconfirmed",
+          "plausibility": {
+            "zero_ff_fraction": 0.438,
+            "h_transitions": 14.667,
+            "v_transitions": 13.556,
+            "min_colour_share": 0.043,
+            "colour3_share": 0.043,
+            "mean_colours": 3.333,
+            "blank_edge_fraction": 0.778,
+            "speckle": 0.203
+          },
+          "tile_occurrences": 9
+        }
+      ],
+      "region_count": 25,
+      "regions_by_confidence": {
+        "high": 18,
+        "low": 6,
+        "medium": 1
+      },
+      "region_tiles_by_confidence": {
+        "high": 2931,
+        "low": 66,
+        "medium": 9
+      },
+      "rejected_rle_candidates": {
+        "not_tile_aligned": 91,
+        "compressed_too_short": 54,
+        "decoded_too_small": 20,
+        "few_00_ff_bytes": 3,
+        "vertical_stripes": 1
+      },
+      "non_pattern_rle_candidates": {
+        "other": 17,
+        "palette": 6,
+        "nametable": 29
+      },
+      "confidence_notes": [
+        "high: decoder grammar plus a code anchor (pointer reference, bank start, back-to-back stream, caller bank or exact size match).",
+        "medium: grammar-valid and plausible but without a second anchor, or a table entry whose bank could not be resolved.",
+        "low: raw heuristic only; written to disk for inspection, excluded from tile statistics and the dictionary."
+      ],
+      "tiles": {
+        "occurrences": 2940,
+        "exact_unique": 2545,
+        "flip_unique": 2136,
+        "flip_duplicates": 409
+      }
+    },
+    "lifeforce_nes_us_rev1": {
+      "mapper": 2,
+      "prg_bytes": 131072,
+      "chr_bytes": 0,
+      "chr_type": "CHR-RAM",
+      "evidence": {
+        "ppu_rle_decoder": {
+          "prg_offset": 127170,
+          "cpu": 61634
+        },
+        "tile_stream_table": {
+          "routine_prg_offset": 126109,
+          "routine_cpu": 60573,
+          "src_table": 60537,
+          "dst_table": 60549,
+          "count_table": 60561
+        },
+        "tile_stream_entries": [
+          {
+            "index": 0,
+            "src": 45517,
+            "ppu": 5648,
+            "tiles": 51,
+            "caller_banks": [
+              4
+            ]
+          },
+          {
+            "index": 1,
+            "src": 36967,
+            "ppu": 5632,
+            "tiles": 77,
+            "caller_banks": [
+              0
+            ]
+          },
+          {
+            "index": 2,
+            "src": 38623,
+            "ppu": 4624,
+            "tiles": 102,
+            "caller_banks": [
+              0
+            ]
+          },
+          {
+            "index": 3,
+            "src": 40255,
+            "ppu": 3168,
+            "tiles": 18,
+            "caller_banks": [
+              0
+            ]
+          },
+          {
+            "index": 4,
+            "src": 46163,
+            "ppu": 4464,
+            "tiles": 54,
+            "caller_banks": [
+              5
+            ]
+          },
+          {
+            "index": 5,
+            "src": 47027,
+            "ppu": 5664,
+            "tiles": 92,
+            "caller_banks": [
+              5
+            ]
+          }
+        ]
+      },
+      "regions": [
+        {
+          "region": "region_00",
+          "method": "konami_rle_ppu_stream",
+          "prg_offset": 1,
+          "prg_length": 4001,
+          "bank": 0,
+          "cpu": 32769,
+          "decoded_bytes": 4672,
+          "confidence": "high",
+          "decoded_sha256": "79af8d75c596f29f7b18e760ec106cdff07844c0a84dadc94da8b1b0192222bd",
+          "ppu_destinations": [
+            2752
+          ],
+          "pointer_referenced": true,
+          "contiguous_with_previous_stream": false,
+          "clipped_at_2000": false,
+          "evidence": "valid Konami RLE grammar, FF-terminated inside its 16 KiB bank, tile-aligned destination, plausible pixels",
+          "plausibility": {
+            "zero_ff_fraction": 0.288,
+            "h_transitions": 20.479,
+            "v_transitions": 20.425,
+            "min_colour_share": 0.075,
+            "colour3_share": 0.182,
+            "mean_colours": 3.301,
+            "blank_edge_fraction": 0.62,
+            "speckle": 0.224
+          },
+          "tile_occurrences": 292,
+          "exact_unique": 249,
+          "flip_unique": 179
+        },
+        {
+          "region": "region_01",
+          "method": "tile_stream_table_raw",
+          "prg_offset": 4199,
+          "prg_length": 1232,
+          "bank": 0,
+          "cpu": 36967,
+          "decoded_bytes": 1232,
+          "confidence": "high",
+          "decoded_sha256": "bb0cac8a7e207188d95b6273b117440c8737f78633371eeddc994b3fc70e3632",
+          "ppu_destinations": [
+            5632
+          ],
+          "table_index": 1,
+          "bank_from_caller": true,
+          "plausibility_gate": false,
+          "evidence": "entry of the per-tile NMI-buffer copy table; bank resolved from LDY #n; JSR callers",
+          "plausibility": {
+            "zero_ff_fraction": 0.33,
+            "h_transitions": 13.844,
+            "v_transitions": 22.312,
+            "min_colour_share": 0.172,
+            "colour3_share": 0.223,
+            "mean_colours": 3.571,
+            "blank_edge_fraction": 0.416,
+            "speckle": 0.043
+          },
+          "tile_occurrences": 77,
+          "exact_unique": 75,
+          "flip_unique": 75
+        },
+        {
+          "region": "region_02",
+          "method": "tile_stream_table_raw",
+          "prg_offset": 5855,
+          "prg_length": 1632,
+          "bank": 0,
+          "cpu": 38623,
+          "decoded_bytes": 1632,
+          "confidence": "high",
+          "decoded_sha256": "1fc6f10f12126ece942c8d313cad0fede5d62fc4ca6a73f977a7830ea3e69aa2",
+          "ppu_destinations": [
+            4624
+          ],
+          "table_index": 2,
+          "bank_from_caller": true,
+          "plausibility_gate": true,
+          "evidence": "entry of the per-tile NMI-buffer copy table; bank resolved from LDY #n; JSR callers",
+          "plausibility": {
+            "zero_ff_fraction": 0.314,
+            "h_transitions": 15.578,
+            "v_transitions": 16.294,
+            "min_colour_share": 0.066,
+            "colour3_share": 0.139,
+            "mean_colours": 2.794,
+            "blank_edge_fraction": 0.627,
+            "speckle": 0.082
+          },
+          "tile_occurrences": 102,
+          "exact_unique": 102,
+          "flip_unique": 84
+        },
+        {
+          "region": "region_03",
+          "method": "tile_stream_table_raw",
+          "prg_offset": 7487,
+          "prg_length": 288,
+          "bank": 0,
+          "cpu": 40255,
+          "decoded_bytes": 288,
+          "confidence": "high",
+          "decoded_sha256": "49539a8db2c09bb1e111a3eefd424ea6e8f75cc6a28511dbe691485a0a973efd",
+          "ppu_destinations": [
+            3168
+          ],
+          "table_index": 3,
+          "bank_from_caller": true,
+          "plausibility_gate": true,
+          "evidence": "entry of the per-tile NMI-buffer copy table; bank resolved from LDY #n; JSR callers",
+          "plausibility": {
+            "zero_ff_fraction": 0.486,
+            "h_transitions": 13.611,
+            "v_transitions": 13.333,
+            "min_colour_share": 0.047,
+            "colour3_share": 0.16,
+            "mean_colours": 2.889,
+            "blank_edge_fraction": 0.833,
+            "speckle": 0.237
+          },
+          "tile_occurrences": 18,
+          "exact_unique": 15,
+          "flip_unique": 14
+        },
+        {
+          "region": "region_04",
+          "method": "raw_heuristic",
+          "prg_offset": 8848,
+          "prg_length": 240,
+          "bank": 0,
+          "cpu": 41616,
+          "decoded_bytes": 240,
+          "confidence": "low",
+          "decoded_sha256": "d4811906cf428d4358009dc1bd13c80d2cb8ea67dd12566488c0a193867f97de",
+          "evidence": "uncovered PRG run whose 8-tile windows all pass the pixel plausibility gate; unconfirmed",
+          "plausibility": {
+            "zero_ff_fraction": 0.558,
+            "h_transitions": 16.267,
+            "v_transitions": 13.4,
+            "min_colour_share": 0.089,
+            "colour3_share": 0.128,
+            "mean_colours": 3.0,
+            "blank_edge_fraction": 0.933,
+            "speckle": 0.119
+          },
+          "tile_occurrences": 15
+        },
+        {
+          "region": "region_05",
+          "method": "konami_rle_ppu_stream",
+          "prg_offset": 14127,
+          "prg_length": 1340,
+          "bank": 0,
+          "cpu": 46895,
+          "decoded_bytes": 2400,
+          "confidence": "high",
+          "decoded_sha256": "fd7343760efa4c81b0580e096ef0162d0ecd365989ebe872828bfb9510d631f5",
+          "ppu_destinations": [
+            224
+          ],
+          "pointer_referenced": true,
+          "contiguous_with_previous_stream": false,
+          "clipped_at_2000": false,
+          "evidence": "valid Konami RLE grammar, FF-terminated inside its 16 KiB bank, tile-aligned destination, plausible pixels",
+          "plausibility": {
+            "zero_ff_fraction": 0.59,
+            "h_transitions": 9.607,
+            "v_transitions": 11.247,
+            "min_colour_share": 0.076,
+            "colour3_share": 0.099,
+            "mean_colours": 2.66,
+            "blank_edge_fraction": 0.84,
+            "speckle": 0.133
+          },
+          "tile_occurrences": 150,
+          "exact_unique": 92,
+          "flip_unique": 91
+        },
+        {
+          "region": "region_06",
+          "method": "konami_rle_ppu_stream",
+          "prg_offset": 15467,
+          "prg_length": 749,
+          "bank": 0,
+          "cpu": 48235,
+          "decoded_bytes": 1008,
+          "confidence": "high",
+          "decoded_sha256": "6c1ab8daf1ed8ef3d8feca8c7c26e8a1460ec1c7f6ed42f3b2a5fe2c2fab56f6",
+          "ppu_destinations": [
+            4528
+          ],
+          "pointer_referenced": true,
+          "contiguous_with_previous_stream": true,
+          "clipped_at_2000": false,
+          "evidence": "valid Konami RLE grammar, FF-terminated inside its 16 KiB bank, tile-aligned destination, plausible pixels",
+          "plausibility": {
+            "zero_ff_fraction": 0.498,
+            "h_transitions": 14.079,
+            "v_transitions": 13.079,
+            "min_colour_share": 0.098,
+            "colour3_share": 0.172,
+            "mean_colours": 2.841,
+            "blank_edge_fraction": 0.524,
+            "speckle": 0.08
+          },
+          "tile_occurrences": 63,
+          "exact_unique": 63,
+          "flip_unique": 63
+        },
+        {
+          "region": "region_07",
+          "method": "konami_rle_ppu_stream",
+          "prg_offset": 16385,
+          "prg_length": 1985,
+          "bank": 1,
+          "cpu": 32769,
+          "decoded_bytes": 2624,
+          "confidence": "high",
+          "decoded_sha256": "833f5b006c0df31eaf7181d6b7ca853feb2a9988b1d8db494bb98142979c8c88",
+          "ppu_destinations": [
+            4096
+          ],
+          "pointer_referenced": true,
+          "contiguous_with_previous_stream": false,
+          "clipped_at_2000": false,
+          "evidence": "valid Konami RLE grammar, FF-terminated inside its 16 KiB bank, tile-aligned destination, plausible pixels",
+          "plausibility": {
+            "zero_ff_fraction": 0.433,
+            "h_transitions": 12.03,
+            "v_transitions": 13.933,
+            "min_colour_share": 0.113,
+            "colour3_share": 0.142,
+            "mean_colours": 2.744,
+            "blank_edge_fraction": 0.732,
+            "speckle": 0.022
+          },
+          "tile_occurrences": 164,
+          "exact_unique": 155,
+          "flip_unique": 154
+        },
+        {
+          "region": "region_08",
+          "method": "konami_rle_ppu_stream",
+          "prg_offset": 18370,
+          "prg_length": 2024,
+          "bank": 1,
+          "cpu": 34754,
+          "decoded_bytes": 2624,
+          "confidence": "high",
+          "decoded_sha256": "c90276806db418f51343f90149b98832bf8f98174bd488d9365abef495549807",
+          "ppu_destinations": [
+            0
+          ],
+          "pointer_referenced": true,
+          "contiguous_with_previous_stream": true,
+          "clipped_at_2000": false,
+          "evidence": "valid Konami RLE grammar, FF-terminated inside its 16 KiB bank, tile-aligned destination, plausible pixels",
+          "plausibility": {
+            "zero_ff_fraction": 0.436,
+            "h_transitions": 13.274,
+            "v_transitions": 16.323,
+            "min_colour_share": 0.102,
+            "colour3_share": 0.16,
+            "mean_colours": 3.378,
+            "blank_edge_fraction": 0.841,
+            "speckle": 0.105
+          },
+          "tile_occurrences": 164,
+          "exact_unique": 145,
+          "flip_unique": 136
+        },
+        {
+          "region": "region_09",
+          "method": "konami_rle_ppu_stream",
+          "prg_offset": 20394,
+          "prg_length": 3921,
+          "bank": 1,
+          "cpu": 36778,
+          "decoded_bytes": 4800,
+          "confidence": "high",
+          "decoded_sha256": "4b10341426a49e2ec1b2a65cc86c47bc5eb6404fc2241a7468c8ee1e9b785169",
+          "ppu_destinations": [
+            2624
+          ],
+          "pointer_referenced": true,
+          "contiguous_with_previous_stream": true,
+          "clipped_at_2000": false,
+          "evidence": "valid Konami RLE grammar, FF-terminated inside its 16 KiB bank, tile-aligned destination, plausible pixels",
+          "plausibility": {
+            "zero_ff_fraction": 0.365,
+            "h_transitions": 16.297,
+            "v_transitions": 17.08,
+            "min_colour_share": 0.165,
+            "colour3_share": 0.228,
+            "mean_colours": 3.047,
+            "blank_edge_fraction": 0.493,
+            "speckle": 0.098
+          },
+          "tile_occurrences": 300,
+          "exact_unique": 276,
+          "flip_unique": 209
+        },
+        {
+          "region": "region_10",
+          "method": "konami_rle_ppu_stream",
+          "prg_offset": 24315,
+          "prg_length": 4004,
+          "bank": 1,
+          "cpu": 40699,
+          "decoded_bytes": 4672,
+          "confidence": "high",
+          "decoded_sha256": "1bcfdc587b9a6dd93e05e5b122a2c66a8b088ed99cdc29f81ad32f7e54f0f5bf",
+          "ppu_destinations": [
+            2752
+          ],
+          "pointer_referenced": true,
+          "contiguous_with_previous_stream": true,
+          "clipped_at_2000": false,
+          "evidence": "valid Konami RLE grammar, FF-terminated inside its 16 KiB bank, tile-aligned destination, plausible pixels",
+          "plausibility": {
+            "zero_ff_fraction": 0.29,
+            "h_transitions": 18.384,
+            "v_transitions": 18.75,
+            "min_colour_share": 0.095,
+            "colour3_share": 0.226,
+            "mean_colours": 3.24,
+            "blank_edge_fraction": 0.531,
+            "speckle": 0.114
+          },
+          "tile_occurrences": 292,
+          "exact_unique": 269,
+          "flip_unique": 215
+        },
+        {
+          "region": "region_11",
+          "method": "raw_heuristic",
+          "prg_offset": 32176,
+          "prg_length": 144,
+          "bank": 1,
+          "cpu": 48560,
+          "decoded_bytes": 144,
+          "confidence": "low",
+          "decoded_sha256": "7257fe44f62dccd8dd748b329f134738b77c956b75ae91f60323986960e02d32",
+          "evidence": "uncovered PRG run whose 8-tile windows all pass the pixel plausibility gate; unconfirmed",
+          "plausibility": {
+            "zero_ff_fraction": 0.618,
+            "h_transitions": 16.889,
+            "v_transitions": 16.778,
+            "min_colour_share": 0.082,
+            "colour3_share": 0.082,
+            "mean_colours": 2.889,
+            "blank_edge_fraction": 0.889,
+            "speckle": 0.222
+          },
+          "tile_occurrences": 9
+        },
+        {
+          "region": "region_12",
+          "method": "konami_rle_ppu_stream",
+          "prg_offset": 32769,
+          "prg_length": 2239,
+          "bank": 2,
+          "cpu": 32769,
+          "decoded_bytes": 2752,
+          "confidence": "high",
+          "decoded_sha256": "862d116376a5ae7219e8ad4c3a210d426610bd866bb7e825749072992d2cb3d2",
+          "ppu_destinations": [
+            0
+          ],
+          "pointer_referenced": true,
+          "contiguous_with_previous_stream": false,
+          "clipped_at_2000": false,
+          "evidence": "valid Konami RLE grammar, FF-terminated inside its 16 KiB bank, tile-aligned destination, plausible pixels",
+          "plausibility": {
+            "zero_ff_fraction": 0.328,
+            "h_transitions": 16.756,
+            "v_transitions": 14.36,
+            "min_colour_share": 0.09,
+            "colour3_share": 0.169,
+            "mean_colours": 3.401,
+            "blank_edge_fraction": 0.837,
+            "speckle": 0.109
+          },
+          "tile_occurrences": 172,
+          "exact_unique": 148,
+          "flip_unique": 135
+        },
+        {
+          "region": "region_13",
+          "method": "konami_rle_ppu_stream",
+          "prg_offset": 35024,
+          "prg_length": 548,
+          "bank": 2,
+          "cpu": 35024,
+          "decoded_bytes": 768,
+          "confidence": "high",
+          "decoded_sha256": "9553d08b0831f4852012f29c71a3cfb06b7e02a038945c9b3e37b403d6892b3a",
+          "ppu_destinations": [
+            7424
+          ],
+          "pointer_referenced": true,
+          "contiguous_with_previous_stream": true,
+          "clipped_at_2000": false,
+          "evidence": "valid Konami RLE grammar, FF-terminated inside its 16 KiB bank, tile-aligned destination, plausible pixels",
+          "plausibility": {
+            "zero_ff_fraction": 0.581,
+            "h_transitions": 15.042,
+            "v_transitions": 26.792,
+            "min_colour_share": 0.021,
+            "colour3_share": 0.021,
+            "mean_colours": 2.479,
+            "blank_edge_fraction": 0.979,
+            "speckle": 0.018
+          },
+          "tile_occurrences": 48,
+          "exact_unique": 48,
+          "flip_unique": 47
+        },
+        {
+          "region": "region_14",
+          "method": "konami_rle_ppu_stream",
+          "prg_offset": 35572,
+          "prg_length": 4156,
+          "bank": 2,
+          "cpu": 35572,
+          "decoded_bytes": 4800,
+          "confidence": "high",
+          "decoded_sha256": "e1e4627e2d19ac0550f23cb0ec5df81ed8b062caa1f85ae6350802d1c3e2c6de",
+          "ppu_destinations": [
+            2624
+          ],
+          "pointer_referenced": true,
+          "contiguous_with_previous_stream": true,
+          "clipped_at_2000": false,
+          "evidence": "valid Konami RLE grammar, FF-terminated inside its 16 KiB bank, tile-aligned destination, plausible pixels",
+          "plausibility": {
+            "zero_ff_fraction": 0.271,
+            "h_transitions": 19.47,
+            "v_transitions": 17.983,
+            "min_colour_share": 0.101,
+            "colour3_share": 0.207,
+            "mean_colours": 3.407,
+            "blank_edge_fraction": 0.533,
+            "speckle": 0.102
+          },
+          "tile_occurrences": 300,
+          "exact_unique": 281,
+          "flip_unique": 248
+        },
+        {
+          "region": "region_15",
+          "method": "konami_rle_ppu_stream",
+          "prg_offset": 39728,
+          "prg_length": 4114,
+          "bank": 2,
+          "cpu": 39728,
+          "decoded_bytes": 4672,
+          "confidence": "high",
+          "decoded_sha256": "7adfa7fbd605519cf5408e9a0e98c98e80132b3046491b0263672f314cf101b0",
+          "ppu_destinations": [
+            2752
+          ],
+          "pointer_referenced": true,
+          "contiguous_with_previous_stream": true,
+          "clipped_at_2000": false,
+          "evidence": "valid Konami RLE grammar, FF-terminated inside its 16 KiB bank, tile-aligned destination, plausible pixels",
+          "plausibility": {
+            "zero_ff_fraction": 0.232,
+            "h_transitions": 22.788,
+            "v_transitions": 19.086,
+            "min_colour_share": 0.129,
+            "colour3_share": 0.217,
+            "mean_colours": 3.452,
+            "blank_edge_fraction": 0.651,
+            "speckle": 0.143
+          },
+          "tile_occurrences": 292,
+          "exact_unique": 280,
+          "flip_unique": 231
+        },
+        {
+          "region": "region_16",
+          "method": "konami_rle_ppu_stream",
+          "prg_offset": 43842,
+          "prg_length": 4402,
+          "bank": 2,
+          "cpu": 43842,
+          "decoded_bytes": 4800,
+          "confidence": "high",
+          "decoded_sha256": "f07170436d84d3fa1c1c45479276e5346aed8e1d5c5f258b026c9f739fdb68cb",
+          "ppu_destinations": [
+            2624
+          ],
+          "pointer_referenced": true,
+          "contiguous_with_previous_stream": true,
+          "clipped_at_2000": false,
+          "evidence": "valid Konami RLE grammar, FF-terminated inside its 16 KiB bank, tile-aligned destination, plausible pixels",
+          "plausibility": {
+            "zero_ff_fraction": 0.253,
+            "h_transitions": 20.087,
+            "v_transitions": 20.477,
+            "min_colour_share": 0.088,
+            "colour3_share": 0.213,
+            "mean_colours": 3.38,
+            "blank_edge_fraction": 0.673,
+            "speckle": 0.158
+          },
+          "tile_occurrences": 300,
+          "exact_unique": 283,
+          "flip_unique": 263
+        },
+        {
+          "region": "region_17",
+          "method": "konami_rle_ppu_stream",
+          "prg_offset": 65913,
+          "prg_length": 70,
+          "bank": 4,
+          "cpu": 33145,
+          "decoded_bytes": 144,
+          "confidence": "medium",
+          "decoded_sha256": "6b60fefd6f3dada30d9eb17033376e673fff3c3540683f35dcdee2dca6c9f8a0",
+          "ppu_destinations": [
+            144
+          ],
+          "pointer_referenced": true,
+          "contiguous_with_previous_stream": false,
+          "clipped_at_2000": false,
+          "evidence": "valid Konami RLE grammar, FF-terminated inside its 16 KiB bank, tile-aligned destination, plausible pixels",
+          "plausibility": {
+            "zero_ff_fraction": 0.701,
+            "h_transitions": 9.778,
+            "v_transitions": 15.0,
+            "min_colour_share": 0.047,
+            "colour3_share": 0.059,
+            "mean_colours": 2.333,
+            "blank_edge_fraction": 1.0,
+            "speckle": 0.333
+          },
+          "tile_occurrences": 9,
+          "exact_unique": 5,
+          "flip_unique": 5
+        },
+        {
+          "region": "region_18",
+          "method": "raw_heuristic",
+          "prg_offset": 71200,
+          "prg_length": 128,
+          "bank": 4,
+          "cpu": 38432,
+          "decoded_bytes": 128,
+          "confidence": "low",
+          "decoded_sha256": "ea0f48993ef54b618a93340ec87e878324055e24414f9e4580d5cd43b8f760f8",
+          "evidence": "uncovered PRG run whose 8-tile windows all pass the pixel plausibility gate; unconfirmed",
+          "plausibility": {
+            "zero_ff_fraction": 0.641,
+            "h_transitions": 14.25,
+            "v_transitions": 17.75,
+            "min_colour_share": 0.039,
+            "colour3_share": 0.047,
+            "mean_colours": 3.125,
+            "blank_edge_fraction": 1.0,
+            "speckle": 0.246
+          },
+          "tile_occurrences": 8
+        },
+        {
+          "region": "region_19",
+          "method": "raw_heuristic",
+          "prg_offset": 76224,
+          "prg_length": 128,
+          "bank": 4,
+          "cpu": 43456,
+          "decoded_bytes": 128,
+          "confidence": "low",
+          "decoded_sha256": "a5fa13f501014c683371ef0c4b552be9dea91b87639271ea047650169dbf050d",
+          "evidence": "uncovered PRG run whose 8-tile windows all pass the pixel plausibility gate; unconfirmed",
+          "plausibility": {
+            "zero_ff_fraction": 0.43,
+            "h_transitions": 17.25,
+            "v_transitions": 15.5,
+            "min_colour_share": 0.084,
+            "colour3_share": 0.092,
+            "mean_colours": 3.25,
+            "blank_edge_fraction": 1.0,
+            "speckle": 0.149
+          },
+          "tile_occurrences": 8
+        },
+        {
+          "region": "region_20",
+          "method": "tile_stream_table_raw",
+          "prg_offset": 78285,
+          "prg_length": 816,
+          "bank": 4,
+          "cpu": 45517,
+          "decoded_bytes": 816,
+          "confidence": "high",
+          "decoded_sha256": "a5eff224a60186fb0fa24657b7ba3057a8fa62f7644b6c32180d20321dee7757",
+          "ppu_destinations": [
+            5648
+          ],
+          "table_index": 0,
+          "bank_from_caller": true,
+          "plausibility_gate": false,
+          "evidence": "entry of the per-tile NMI-buffer copy table; bank resolved from LDY #n; JSR callers",
+          "plausibility": {
+            "zero_ff_fraction": 0.257,
+            "h_transitions": 17.431,
+            "v_transitions": 20.902,
+            "min_colour_share": 0.119,
+            "colour3_share": 0.119,
+            "mean_colours": 3.627,
+            "blank_edge_fraction": 0.569,
+            "speckle": 0.083
+          },
+          "tile_occurrences": 51,
+          "exact_unique": 51,
+          "flip_unique": 51
+        },
+        {
+          "region": "region_21",
+          "method": "raw_heuristic",
+          "prg_offset": 79760,
+          "prg_length": 272,
+          "bank": 4,
+          "cpu": 46992,
+          "decoded_bytes": 272,
+          "confidence": "low",
+          "decoded_sha256": "5765b6ab391f19ca8ce0fa33c5381787a07101bcc825cd7db3318b1119f8109a",
+          "evidence": "uncovered PRG run whose 8-tile windows all pass the pixel plausibility gate; unconfirmed",
+          "plausibility": {
+            "zero_ff_fraction": 0.548,
+            "h_transitions": 15.235,
+            "v_transitions": 19.647,
+            "min_colour_share": 0.108,
+            "colour3_share": 0.108,
+            "mean_colours": 3.235,
+            "blank_edge_fraction": 0.529,
+            "speckle": 0.119
+          },
+          "tile_occurrences": 17
+        },
+        {
+          "region": "region_22",
+          "method": "tile_stream_table_raw",
+          "prg_offset": 95315,
+          "prg_length": 864,
+          "bank": 5,
+          "cpu": 46163,
+          "decoded_bytes": 864,
+          "confidence": "high",
+          "decoded_sha256": "d1068b50d0bf44afabe62f7a067e79afaf8a65fc93237652afd7715872039c34",
+          "ppu_destinations": [
+            4464
+          ],
+          "table_index": 4,
+          "bank_from_caller": true,
+          "plausibility_gate": false,
+          "evidence": "entry of the per-tile NMI-buffer copy table; bank resolved from LDY #n; JSR callers",
+          "plausibility": {
+            "zero_ff_fraction": 0.326,
+            "h_transitions": 15.259,
+            "v_transitions": 22.37,
+            "min_colour_share": 0.057,
+            "colour3_share": 0.23,
+            "mean_colours": 3.37,
+            "blank_edge_fraction": 0.704,
+            "speckle": 0.056
+          },
+          "tile_occurrences": 54,
+          "exact_unique": 54,
+          "flip_unique": 27
+        },
+        {
+          "region": "region_23",
+          "method": "tile_stream_table_raw",
+          "prg_offset": 96179,
+          "prg_length": 1472,
+          "bank": 5,
+          "cpu": 47027,
+          "decoded_bytes": 1472,
+          "confidence": "high",
+          "decoded_sha256": "cea68621ce051424d83b3a245c908efe14e142989324160fa2cf09b840f4c8a9",
+          "ppu_destinations": [
+            5664
+          ],
+          "table_index": 5,
+          "bank_from_caller": true,
+          "plausibility_gate": false,
+          "evidence": "entry of the per-tile NMI-buffer copy table; bank resolved from LDY #n; JSR callers",
+          "plausibility": {
+            "zero_ff_fraction": 0.105,
+            "h_transitions": 24.457,
+            "v_transitions": 23.674,
+            "min_colour_share": 0.128,
+            "colour3_share": 0.238,
+            "mean_colours": 3.826,
+            "blank_edge_fraction": 0.391,
+            "speckle": 0.149
+          },
+          "tile_occurrences": 92,
+          "exact_unique": 92,
+          "flip_unique": 48
+        },
+        {
+          "region": "region_24",
+          "method": "raw_heuristic",
+          "prg_offset": 120048,
+          "prg_length": 144,
+          "bank": 7,
+          "cpu": 54512,
+          "decoded_bytes": 144,
+          "confidence": "low",
+          "decoded_sha256": "3d109a6570b84b5a1c4faa546c3bebd09a192702584516c97999b143a89ecb10",
+          "evidence": "uncovered PRG run whose 8-tile windows all pass the pixel plausibility gate; unconfirmed",
+          "plausibility": {
+            "zero_ff_fraction": 0.438,
+            "h_transitions": 14.667,
+            "v_transitions": 13.556,
+            "min_colour_share": 0.043,
+            "colour3_share": 0.043,
+            "mean_colours": 3.333,
+            "blank_edge_fraction": 0.778,
+            "speckle": 0.203
+          },
+          "tile_occurrences": 9
+        }
+      ],
+      "region_count": 25,
+      "regions_by_confidence": {
+        "high": 18,
+        "low": 6,
+        "medium": 1
+      },
+      "region_tiles_by_confidence": {
+        "high": 2931,
+        "low": 66,
+        "medium": 9
+      },
+      "rejected_rle_candidates": {
+        "not_tile_aligned": 93,
+        "compressed_too_short": 55,
+        "decoded_too_small": 18,
+        "few_00_ff_bytes": 4,
+        "vertical_stripes": 1
+      },
+      "non_pattern_rle_candidates": {
+        "other": 18,
+        "palette": 6,
+        "nametable": 30
+      },
+      "confidence_notes": [
+        "high: decoder grammar plus a code anchor (pointer reference, bank start, back-to-back stream, caller bank or exact size match).",
+        "medium: grammar-valid and plausible but without a second anchor, or a table entry whose bank could not be resolved.",
+        "low: raw heuristic only; written to disk for inspection, excluded from tile statistics and the dictionary."
+      ],
+      "tiles": {
+        "occurrences": 2940,
+        "exact_unique": 2545,
+        "flip_unique": 2136,
+        "flip_duplicates": 409
+      }
+    }
+  },
+  "aggregate": {
+    "tile_occurrences": 21311,
+    "exact_unique": 11087,
+    "flip_unique": 8616,
+    "flip_duplicates": 2471,
+    "dictionary_bytes": 177392,
+    "tiles_shared_by_n_games": {
+      "1": 7309,
+      "2": 1386,
+      "3": 2327,
+      "4": 60,
+      "5": 2,
+      "6": 3
+    },
+    "dictionary_scope": "CHR-ROM banks plus high/medium-confidence CHR-RAM regions; low-confidence raw candidates excluded"
+  },
+  "limitations": [
+    "CHR-ROM banks are raw 8 KiB dumps; which 1 KiB/2 KiB slices a mapper actually maps together is not reconstructed.",
+    "CHR-RAM regions come from decoder grammar, pointer tables and plausibility heuristics, not from emulation traces; completeness is not claimed.",
+    "Tiles written to CHR-RAM by code other than the identified RLE decoders and tile-stream table (e.g. computed or nametable-only updates) are not covered.",
+    "Raw-heuristic candidates are unconfirmed and excluded from the dictionary; some may be map or object data.",
+    "Tile identity is raw 2bpp pixel data only: no palette, attribute or metatile equivalence is implied.",
+    "Konami RLE streams that write nametables or palettes are counted but not extracted."
+  ]
+}

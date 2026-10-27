@@ -1,3 +1,20 @@
+# CP0013 handoff - cheat menu, banked stage code, four-game inventories
+
+Private ROM: `build/native/Nemesis_Legends_CP0013.nes` (hash in
+`manifests/checkpoint.json`). `python tools/checkpoint.py test` now also runs
+`tools/test_cheat_menu.py`. Stage-specific logic goes in the `STAGECODE`
+segment (bank 10 at `$8000`, mapped only while it runs; the `$5114` shadow is
+`bank8000`); common services stay in ACTORS/CODE. Stage 5 code should be added
+there, with its own `tools/test_stage_five.py`.
+
+Inventories: run `python tools/extract_salamander_msx.py`,
+`python tools/extract_nemesis3_msx.py`, `python tools/extract_nes_graphics.py`,
+then `python tools/nemesis_structure.py`, `python tools/asset_manifest.py`,
+`python tools/compare_msx_nes.py`, `python tools/storyboard.py`,
+`python tools/budget.py`. All generated docs say so in their first line.
+
+---
+
 # CP0012 handoff - stage 4 end sequence; anthology remains WIP
 
 Private ROM: `build/native/Nemesis_Legends_CP0012.nes` (hash in

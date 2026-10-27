@@ -92,6 +92,7 @@ COL_TILES=$0300
 COL_ATTRS=$0320
 COL_SOURCE=$0340
 HUD=$0380
+HUD2=$03a0
 OBJECTS=$6d00
 SHOTS=$6600
 ENEMY_SHOTS=$6700
@@ -108,6 +109,12 @@ BTN_RIGHT=$01
 
 player_xf=$77
 player_yf=$78
+; CP0013 cheat menu / debug text row: NMI uploads HUD2 to hud2_addr when hud2_pending.
+hud2_addr=$79
+hud2_pending=$7b
+hud2_exattr=$7c
+cheat_flags=$7d            ; bit0 infinite lives, bit1 debug HUD row
+bank8000=$7e               ; shadow of $5114 (stage data / boss data / title / menu)
 
 ; CP0005 title-only state. Outside all gameplay scratch/telemetry ranges.
 title_page=$07e0

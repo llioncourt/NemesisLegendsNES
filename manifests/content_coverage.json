@@ -1,6 +1,6 @@
 {
-  "checkpoint": "CP0012",
-  "stage": "source-derived N1 stage4 end sequence (eruption, tower, boss 5, Big Core) to stage 5; all other games WIP",
+  "checkpoint": "CP0013",
+  "stage": "CP0012 gameplay plus Silicon Forge cheat menu, banked stage code, four-game extraction inventories and the universal asset manifest; all other games WIP",
   "playable_game_rom": true,
   "full_game_complete": false,
   "chapters": [
@@ -107,7 +107,9 @@
         19,
         21,
         32
-      ]
+      ],
+      "unique_source_tiles": 1169,
+      "structure_inventory": "nemesis_structure.json"
     },
     {
       "chapter": 2,
@@ -121,35 +123,41 @@
       "nes_gameplay_complete": false,
       "cutscenes_integrated": false,
       "endings_validated": false,
-      "upstream_reassembly_byte_exact": true
+      "upstream_reassembly_byte_exact": true,
+      "unique_source_tiles": 1695,
+      "structure_inventory": "nemesis2_structure.json"
     },
     {
       "chapter": 3,
       "source": "salamander_msx",
       "source_available": true,
       "original_hash_verified": true,
-      "static_maps_extracted": 0,
-      "sprite_variants_extracted": 0,
+      "static_maps_extracted": 7,
+      "sprite_variants_extracted": 7,
       "original_audio_driver_ripped": true,
       "nes_music_conversion_complete": false,
       "nes_gameplay_complete": false,
       "cutscenes_integrated": false,
       "endings_validated": false,
-      "upstream_reassembly_byte_exact": true
+      "upstream_reassembly_byte_exact": true,
+      "unique_source_tiles": 1534,
+      "structure_inventory": "salamander_structure.json"
     },
     {
       "chapter": 4,
       "source": "nemesis3_msx",
       "source_available": true,
       "original_hash_verified": true,
-      "static_maps_extracted": 0,
-      "sprite_variants_extracted": 0,
+      "static_maps_extracted": 11,
+      "sprite_variants_extracted": 66,
       "original_audio_driver_ripped": false,
       "nes_music_conversion_complete": false,
       "nes_gameplay_complete": false,
       "cutscenes_integrated": false,
       "endings_validated": false,
-      "upstream_reassembly_byte_exact": true
+      "upstream_reassembly_byte_exact": true,
+      "unique_source_tiles": 6361,
+      "structure_inventory": "nemesis3_structure.json"
     }
   ],
   "custom_title_native_asset": true,
@@ -195,5 +203,57 @@
       "SOUND ON/OFF"
     ],
     "copyright_year": 2026
-  }
+  },
+  "silicon_forge_menu_partial": {
+    "implemented": [
+      "konami_code_title",
+      "konami_code_pause",
+      "invincibility",
+      "infinite_lives",
+      "game_select_nemesis_only",
+      "stage_select",
+      "checkpoint_select",
+      "weapons",
+      "powerups",
+      "ship_speed",
+      "pace",
+      "sound_test",
+      "warp_to_end_zone",
+      "restart_stage",
+      "debug_row_world_phase_missed_actors_sprites_frame"
+    ],
+    "missing": [
+      "continues (no continue system yet)",
+      "cutscene viewer (no cutscenes yet)",
+      "ending viewer",
+      "music player (no converted music yet)",
+      "hitbox overlay",
+      "bank info",
+      "skip cutscene",
+      "transition test",
+      "asset identification",
+      "memory info"
+    ]
+  },
+  "asset_manifest": {
+    "tool": "tools/asset_manifest.py",
+    "resources": {
+      "total": 1727,
+      "identified": 1727,
+      "extracted": 1676,
+      "converted": 238,
+      "integrated": 238,
+      "tested": 59,
+      "validated": 0,
+      "pending": 1489,
+      "reuse": {
+        "CONVERT": 1575,
+        "ADAPT": 2,
+        "UNKNOWN": 19,
+        "NEW": 6,
+        "REUSE": 125
+      }
+    }
+  },
+  "nes_references_extracted": true
 }

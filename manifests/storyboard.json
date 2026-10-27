@@ -1,0 +1,1189 @@
+{
+ "schema": 1,
+ "order": "TITLE, INTRO, NEMESIS, T1, NEMESIS 2, T2, SALAMANDER, T3, NEMESIS 3, FINAL, CREDITS",
+ "sequence": [
+  {
+   "order": 1,
+   "id": "TITLE",
+   "kind": "screen",
+   "game": "nemesis_legends",
+   "title": "Nemesis Legends title and menu",
+   "state": "PLAYABLE",
+   "resources": [
+    "nl.custom_title_artwork_and_menu"
+   ],
+   "music": null,
+   "entry": "power on",
+   "exit_condition": "START GAME",
+   "next": "INTRO",
+   "dependencies": [],
+   "notes": "native; 56 title checks"
+  },
+  {
+   "order": 2,
+   "id": "INTRO",
+   "kind": "cutscene",
+   "game": "nemesis_legends",
+   "title": "Opening narration (new, bridges the four games)",
+   "state": "NOT_STARTED",
+   "resources": [],
+   "music": null,
+   "entry": null,
+   "exit_condition": null,
+   "next": "N1.S01",
+   "dependencies": [],
+   "notes": "text to be authored from the four originals; renderer not written"
+  },
+  {
+   "order": 3,
+   "id": "N1.S01",
+   "kind": "stage",
+   "game": "nemesis",
+   "title": "Nemesis stage 1: Volcano",
+   "state": "PARTIAL",
+   "resources": [
+    "n1.stage01.terrain",
+    "n1.stage01.tiles",
+    "n1.stage01.sprites",
+    "n1.stage01.script"
+   ],
+   "music": [
+    172,
+    175,
+    181
+   ],
+   "entry": "distance $20 or checkpoint 0xf8",
+   "exit_condition": "final_de_la_fase_1 6CEF: p02:8E77 five pieces at $165; at limit $19F tanda mode 1 (450 rocks); E105=$1C0; Big Core kind 0; acaba_la_fase",
+   "next": "N1.S02",
+   "dependencies": [],
+   "notes": "assisted route tested, visuals provisional"
+  },
+  {
+   "order": 4,
+   "id": "N1.S02",
+   "kind": "stage",
+   "game": "nemesis",
+   "title": "Nemesis stage 2: Stonehenge",
+   "state": "PARTIAL",
+   "resources": [
+    "n1.stage02.terrain",
+    "n1.stage02.tiles",
+    "n1.stage02.sprites",
+    "n1.stage02.script"
+   ],
+   "music": [
+    172,
+    150,
+    181
+   ],
+   "entry": "distance $20 or checkpoint 0x100",
+   "exit_condition": "final_de_la_fase_2: target $190 -> stage 9 (E1C0); rock walls $144..$188 and 900-frame rain (p03:AB86); Big Core kind 0 at $1DF",
+   "next": "N1.S09",
+   "dependencies": [],
+   "notes": "assisted route tested, visuals provisional"
+  },
+  {
+   "order": 5,
+   "id": "N1.S09",
+   "kind": "stage",
+   "game": "nemesis",
+   "title": "Nemesis stage 9: Bonus 9 (from 2)",
+   "state": "PARTIAL",
+   "resources": [
+    "n1.stage09.terrain",
+    "n1.stage09.tiles",
+    "n1.stage09.sprites",
+    "n1.stage09.script"
+   ],
+   "music": [
+    164,
+    255
+   ],
+   "entry": "distance $20 or checkpoint 0x100",
+   "exit_condition": "bonus: six instructions, back to stage 3 (table 418F)",
+   "next": "N1.S03",
+   "dependencies": [],
+   "notes": "assisted route tested, visuals provisional"
+  },
+  {
+   "order": 6,
+   "id": "N1.S03",
+   "kind": "stage",
+   "game": "nemesis",
+   "title": "Nemesis stage 3: Moai (no terrain)",
+   "state": "PARTIAL",
+   "resources": [
+    "n1.stage03.terrain",
+    "n1.stage03.tiles",
+    "n1.stage03.sprites",
+    "n1.stage03.script"
+   ],
+   "music": [
+    172,
+    152,
+    181
+   ],
+   "entry": "distance $20 or checkpoint 0xf2",
+   "exit_condition": "final_de_la_fase_3 6DA7: Big Core kind 0 at $60 (first step), scroll to $1AF, Big Core again; target $12A -> stage 10; second loop kind 6 instead of 1 (el_otro_jefe 6DE1)",
+   "next": "N1.S10",
+   "dependencies": [],
+   "notes": "assisted route tested, visuals provisional"
+  },
+  {
+   "order": 7,
+   "id": "N1.S10",
+   "kind": "stage",
+   "game": "nemesis",
+   "title": "Nemesis stage 10: Bonus 10 (from 3)",
+   "state": "PARTIAL",
+   "resources": [
+    "n1.stage10.terrain",
+    "n1.stage10.tiles",
+    "n1.stage10.sprites",
+    "n1.stage10.script"
+   ],
+   "music": [
+    164,
+    255
+   ],
+   "entry": "distance $20 or checkpoint 0x100",
+   "exit_condition": "bonus: back to stage 4",
+   "next": "N1.S04",
+   "dependencies": [],
+   "notes": "assisted route tested, visuals provisional"
+  },
+  {
+   "order": 8,
+   "id": "N1.S04",
+   "kind": "stage",
+   "game": "nemesis",
+   "title": "Nemesis stage 4: Inverted volcano",
+   "state": "PARTIAL",
+   "resources": [
+    "n1.stage04.terrain",
+    "n1.stage04.tiles",
+    "n1.stage04.sprites",
+    "n1.stage04.script"
+   ],
+   "music": [
+    172,
+    154,
+    181
+   ],
+   "entry": "distance $20 or checkpoint 0x100",
+   "exit_condition": "final_de_la_fase_4 6E15: tanda mode 2 at $128; p02:8E77 five pieces at $171; kind 5 at limit $19F; E105=$1C0; Big Core kind 0; targets 3/4 at $C0/$104 -> stage 11",
+   "next": "N1.S11",
+   "dependencies": [],
+   "notes": "assisted route tested, visuals provisional"
+  },
+  {
+   "order": 9,
+   "id": "N1.S11",
+   "kind": "stage",
+   "game": "nemesis",
+   "title": "Nemesis stage 11: Bonus 11 (from 4)",
+   "state": "PARTIAL",
+   "resources": [
+    "n1.stage11.terrain",
+    "n1.stage11.tiles",
+    "n1.stage11.sprites",
+    "n1.stage11.script"
+   ],
+   "music": [
+    164,
+    255
+   ],
+   "entry": "distance $20 or checkpoint 0x100",
+   "exit_condition": "bonus: back to stage 5",
+   "next": "N1.S05",
+   "dependencies": [],
+   "notes": "assisted route tested, visuals provisional"
+  },
+  {
+   "order": 10,
+   "id": "N1.S05",
+   "kind": "stage",
+   "game": "nemesis",
+   "title": "Nemesis stage 5: Tentacles",
+   "state": "ASSETS_READY",
+   "resources": [
+    "n1.stage05.terrain",
+    "n1.stage05.tiles",
+    "n1.stage05.sprites",
+    "n1.stage05.script"
+   ],
+   "music": [
+    172,
+    162,
+    181
+   ],
+   "entry": "distance $20 or checkpoint 0x100",
+   "exit_condition": "final_de_la_fase_5 6EA8: bank-3 encounter p03:B946 at the limit; after death p03:BB95 (E988/E990); E105=$1FF; Big Core kind 0",
+   "next": "N1.S06",
+   "dependencies": [],
+   "notes": "descriptor in ROM; no stage logic, bosses or waves beyond the shared engine"
+  },
+  {
+   "order": 11,
+   "id": "N1.S06",
+   "kind": "stage",
+   "game": "nemesis",
+   "title": "Nemesis stage 6: Cells (no terrain)",
+   "state": "ASSETS_READY",
+   "resources": [
+    "n1.stage06.terrain",
+    "n1.stage06.tiles",
+    "n1.stage06.sprites",
+    "n1.stage06.script"
+   ],
+   "music": [
+    172,
+    156,
+    181
+   ],
+   "entry": "distance $20 or checkpoint 0x100",
+   "exit_condition": "final_de_la_fase_6 6EF0: past $A0 boss kind 2 (p01:7F74); limit stays where it dies",
+   "next": "N1.S07",
+   "dependencies": [],
+   "notes": "descriptor in ROM; no stage logic, bosses or waves beyond the shared engine"
+  },
+  {
+   "order": 12,
+   "id": "N1.S07",
+   "kind": "stage",
+   "game": "nemesis",
+   "title": "Nemesis stage 7: Mechanical base approach",
+   "state": "ASSETS_READY",
+   "resources": [
+    "n1.stage07.terrain",
+    "n1.stage07.tiles",
+    "n1.stage07.sprites",
+    "n1.stage07.script"
+   ],
+   "music": [
+    172,
+    158,
+    181
+   ],
+   "entry": "distance $20 or checkpoint 0xf8",
+   "exit_condition": "final_de_la_fase_7 6F19: target $177 -> stage 12; else boss kind 3 (p01:8719)",
+   "next": "N1.S12",
+   "dependencies": [],
+   "notes": "descriptor in ROM; no stage logic, bosses or waves beyond the shared engine"
+  },
+  {
+   "order": 13,
+   "id": "N1.S12",
+   "kind": "stage",
+   "game": "nemesis",
+   "title": "Nemesis stage 12: Bonus 12 (from 7)",
+   "state": "ASSETS_READY",
+   "resources": [
+    "n1.stage12.terrain",
+    "n1.stage12.tiles",
+    "n1.stage12.sprites",
+    "n1.stage12.script"
+   ],
+   "music": [
+    164,
+    255
+   ],
+   "entry": "distance $20 or checkpoint n/a",
+   "exit_condition": "bonus: back to stage 8",
+   "next": "N1.S08",
+   "dependencies": [],
+   "notes": "descriptor in ROM; no stage logic, bosses or waves beyond the shared engine"
+  },
+  {
+   "order": 14,
+   "id": "N1.S08",
+   "kind": "stage",
+   "game": "nemesis",
+   "title": "Nemesis stage 8: Fortress / final",
+   "state": "ASSETS_READY",
+   "resources": [
+    "n1.stage08.terrain",
+    "n1.stage08.tiles",
+    "n1.stage08.sprites",
+    "n1.stage08.script"
+   ],
+   "music": [
+    172,
+    160,
+    181
+   ],
+   "entry": "distance $20 or checkpoint 0x100",
+   "exit_condition": "final_de_la_fase_8 6F43: at $16E boss kind 4 (p01:87F3); on kill the ending explosion",
+   "next": "N1.ENDING",
+   "dependencies": [],
+   "notes": "descriptor in ROM; no stage logic, bosses or waves beyond the shared engine"
+  },
+  {
+   "order": 15,
+   "id": "N1.ENDING",
+   "kind": "cutscene",
+   "game": "nemesis",
+   "title": "Nemesis ending (after stage 8 boss kind 4)",
+   "state": "NOT_STARTED",
+   "resources": [
+    "n1.ending"
+   ],
+   "music": null,
+   "entry": null,
+   "exit_condition": null,
+   "next": "T1",
+   "dependencies": [],
+   "notes": "location/format UNRESOLVED in the structure inventory"
+  },
+  {
+   "order": 16,
+   "id": "T1",
+   "kind": "transition",
+   "game": "nemesis_legends",
+   "title": "Transition Nemesis -> Nemesis 2 (new)",
+   "state": "NOT_STARTED",
+   "resources": [],
+   "music": null,
+   "entry": null,
+   "exit_condition": null,
+   "next": "N2.S1",
+   "dependencies": [],
+   "notes": "keeps the Nemesis ending, adds the bridge; no original rule"
+  },
+  {
+   "order": 17,
+   "id": "N2.S1",
+   "kind": "stage",
+   "game": "nemesis2",
+   "title": "Nemesis 2 S1",
+   "state": "ASSETS_READY",
+   "resources": [],
+   "music": null,
+   "entry": null,
+   "exit_condition": null,
+   "next": "N2.S2",
+   "dependencies": [],
+   "notes": "structure inventory pending"
+  },
+  {
+   "order": 18,
+   "id": "N2.S2",
+   "kind": "stage",
+   "game": "nemesis2",
+   "title": "Nemesis 2 S2",
+   "state": "ASSETS_READY",
+   "resources": [],
+   "music": null,
+   "entry": null,
+   "exit_condition": null,
+   "next": "N2.S3",
+   "dependencies": [],
+   "notes": "structure inventory pending"
+  },
+  {
+   "order": 19,
+   "id": "N2.S3",
+   "kind": "stage",
+   "game": "nemesis2",
+   "title": "Nemesis 2 S3",
+   "state": "ASSETS_READY",
+   "resources": [],
+   "music": null,
+   "entry": null,
+   "exit_condition": null,
+   "next": "N2.S4",
+   "dependencies": [],
+   "notes": "structure inventory pending"
+  },
+  {
+   "order": 20,
+   "id": "N2.S4",
+   "kind": "stage",
+   "game": "nemesis2",
+   "title": "Nemesis 2 S4",
+   "state": "ASSETS_READY",
+   "resources": [],
+   "music": null,
+   "entry": null,
+   "exit_condition": null,
+   "next": "N2.S5",
+   "dependencies": [],
+   "notes": "structure inventory pending"
+  },
+  {
+   "order": 21,
+   "id": "N2.S5",
+   "kind": "stage",
+   "game": "nemesis2",
+   "title": "Nemesis 2 S5",
+   "state": "ASSETS_READY",
+   "resources": [],
+   "music": null,
+   "entry": null,
+   "exit_condition": null,
+   "next": "N2.S6",
+   "dependencies": [],
+   "notes": "structure inventory pending"
+  },
+  {
+   "order": 22,
+   "id": "N2.S6",
+   "kind": "stage",
+   "game": "nemesis2",
+   "title": "Nemesis 2 S6",
+   "state": "ASSETS_READY",
+   "resources": [],
+   "music": null,
+   "entry": null,
+   "exit_condition": null,
+   "next": "N2.S7",
+   "dependencies": [],
+   "notes": "structure inventory pending"
+  },
+  {
+   "order": 23,
+   "id": "N2.S7",
+   "kind": "stage",
+   "game": "nemesis2",
+   "title": "Nemesis 2 S7",
+   "state": "ASSETS_READY",
+   "resources": [],
+   "music": null,
+   "entry": null,
+   "exit_condition": null,
+   "next": "N2.HALFWAY_ENDING",
+   "dependencies": [],
+   "notes": "structure inventory pending"
+  },
+  {
+   "order": 24,
+   "id": "N2.HALFWAY_ENDING",
+   "kind": "stage",
+   "game": "nemesis2",
+   "title": "Nemesis 2 HALFWAY_ENDING",
+   "state": "ASSETS_READY",
+   "resources": [],
+   "music": null,
+   "entry": null,
+   "exit_condition": null,
+   "next": "N2.R6",
+   "dependencies": [],
+   "notes": "structure inventory pending"
+  },
+  {
+   "order": 25,
+   "id": "N2.R6",
+   "kind": "stage",
+   "game": "nemesis2",
+   "title": "Nemesis 2 R6",
+   "state": "ASSETS_READY",
+   "resources": [],
+   "music": null,
+   "entry": null,
+   "exit_condition": null,
+   "next": "N2.R5",
+   "dependencies": [],
+   "notes": "structure inventory pending"
+  },
+  {
+   "order": 26,
+   "id": "N2.R5",
+   "kind": "stage",
+   "game": "nemesis2",
+   "title": "Nemesis 2 R5",
+   "state": "ASSETS_READY",
+   "resources": [],
+   "music": null,
+   "entry": null,
+   "exit_condition": null,
+   "next": "N2.R4",
+   "dependencies": [],
+   "notes": "structure inventory pending"
+  },
+  {
+   "order": 27,
+   "id": "N2.R4",
+   "kind": "stage",
+   "game": "nemesis2",
+   "title": "Nemesis 2 R4",
+   "state": "ASSETS_READY",
+   "resources": [],
+   "music": null,
+   "entry": null,
+   "exit_condition": null,
+   "next": "N2.R3",
+   "dependencies": [],
+   "notes": "structure inventory pending"
+  },
+  {
+   "order": 28,
+   "id": "N2.R3",
+   "kind": "stage",
+   "game": "nemesis2",
+   "title": "Nemesis 2 R3",
+   "state": "ASSETS_READY",
+   "resources": [],
+   "music": null,
+   "entry": null,
+   "exit_condition": null,
+   "next": "N2.R2",
+   "dependencies": [],
+   "notes": "structure inventory pending"
+  },
+  {
+   "order": 29,
+   "id": "N2.R2",
+   "kind": "stage",
+   "game": "nemesis2",
+   "title": "Nemesis 2 R2",
+   "state": "ASSETS_READY",
+   "resources": [],
+   "music": null,
+   "entry": null,
+   "exit_condition": null,
+   "next": "N2.R1",
+   "dependencies": [],
+   "notes": "structure inventory pending"
+  },
+  {
+   "order": 30,
+   "id": "N2.R1",
+   "kind": "stage",
+   "game": "nemesis2",
+   "title": "Nemesis 2 R1",
+   "state": "ASSETS_READY",
+   "resources": [],
+   "music": null,
+   "entry": null,
+   "exit_condition": null,
+   "next": "N2.R0",
+   "dependencies": [],
+   "notes": "structure inventory pending"
+  },
+  {
+   "order": 31,
+   "id": "N2.R0",
+   "kind": "stage",
+   "game": "nemesis2",
+   "title": "Nemesis 2 R0",
+   "state": "ASSETS_READY",
+   "resources": [],
+   "music": null,
+   "entry": null,
+   "exit_condition": null,
+   "next": "N2.INTERIOR8",
+   "dependencies": [],
+   "notes": "structure inventory pending"
+  },
+  {
+   "order": 32,
+   "id": "N2.INTERIOR8",
+   "kind": "stage",
+   "game": "nemesis2",
+   "title": "Nemesis 2 INTERIOR8",
+   "state": "ASSETS_READY",
+   "resources": [],
+   "music": null,
+   "entry": null,
+   "exit_condition": null,
+   "next": "N2.SECRET9",
+   "dependencies": [],
+   "notes": "structure inventory pending"
+  },
+  {
+   "order": 33,
+   "id": "N2.SECRET9",
+   "kind": "stage",
+   "game": "nemesis2",
+   "title": "Nemesis 2 SECRET9",
+   "state": "ASSETS_READY",
+   "resources": [],
+   "music": null,
+   "entry": null,
+   "exit_condition": null,
+   "next": "N2.SECRET10",
+   "dependencies": [],
+   "notes": "structure inventory pending"
+  },
+  {
+   "order": 34,
+   "id": "N2.SECRET10",
+   "kind": "stage",
+   "game": "nemesis2",
+   "title": "Nemesis 2 SECRET10",
+   "state": "ASSETS_READY",
+   "resources": [],
+   "music": null,
+   "entry": null,
+   "exit_condition": null,
+   "next": "N2.SECRET11",
+   "dependencies": [],
+   "notes": "structure inventory pending"
+  },
+  {
+   "order": 35,
+   "id": "N2.SECRET11",
+   "kind": "stage",
+   "game": "nemesis2",
+   "title": "Nemesis 2 SECRET11",
+   "state": "ASSETS_READY",
+   "resources": [],
+   "music": null,
+   "entry": null,
+   "exit_condition": null,
+   "next": "N2.ENDING",
+   "dependencies": [],
+   "notes": "structure inventory pending"
+  },
+  {
+   "order": 36,
+   "id": "N2.ENDING",
+   "kind": "stage",
+   "game": "nemesis2",
+   "title": "Nemesis 2 ENDING",
+   "state": "ASSETS_READY",
+   "resources": [],
+   "music": null,
+   "entry": null,
+   "exit_condition": null,
+   "next": "T2",
+   "dependencies": [],
+   "notes": "structure inventory pending"
+  },
+  {
+   "order": 37,
+   "id": "T2",
+   "kind": "transition",
+   "game": "nemesis_legends",
+   "title": "Transition Nemesis 2 -> Salamander (new)",
+   "state": "NOT_STARTED",
+   "resources": [],
+   "music": null,
+   "entry": null,
+   "exit_condition": null,
+   "next": "SAL.MAP_01",
+   "dependencies": [],
+   "notes": ""
+  },
+  {
+   "order": 38,
+   "id": "SAL.MAP_01",
+   "kind": "stage",
+   "game": "salamander",
+   "title": "Salamander first stage, always first",
+   "state": "ASSETS_READY",
+   "resources": [],
+   "music": [
+    27,
+    33
+   ],
+   "entry": null,
+   "exit_condition": null,
+   "next": "SAL.MAP_02",
+   "dependencies": [],
+   "notes": ""
+  },
+  {
+   "order": 39,
+   "id": "SAL.MAP_02",
+   "kind": "stage",
+   "game": "salamander",
+   "title": "Salamander second stage, always second",
+   "state": "ASSETS_READY",
+   "resources": [],
+   "music": [
+    28,
+    33
+   ],
+   "entry": null,
+   "exit_condition": null,
+   "next": "SAL.MAP_03",
+   "dependencies": [],
+   "notes": "p13 mapa_fase2_cola: 48 bytes (6 rows) of map after the measured end 0x1F8 have no reader upstream."
+  },
+  {
+   "order": 40,
+   "id": "SAL.MAP_03",
+   "kind": "stage",
+   "game": "salamander",
+   "title": "Salamander planet EIONEUS, one of three picked on the radar (p10:988A, clock p10:9A43)",
+   "state": "ASSETS_READY",
+   "resources": [],
+   "music": [
+    30,
+    33
+   ],
+   "entry": null,
+   "exit_condition": null,
+   "next": "SAL.MAP_04",
+   "dependencies": [],
+   "notes": ""
+  },
+  {
+   "order": 41,
+   "id": "SAL.MAP_04",
+   "kind": "stage",
+   "game": "salamander",
+   "title": "Salamander planet LAVINIA, one of three picked on the radar",
+   "state": "ASSETS_READY",
+   "resources": [],
+   "music": [
+    29,
+    33
+   ],
+   "entry": null,
+   "exit_condition": null,
+   "next": "SAL.MAP_05",
+   "dependencies": [],
+   "notes": "Between scrolls 0x100 and 0x150 the scenery is dumped one frame in 64 (p00:5FC5, p01:6016): the barely-visible base is rendered fully here."
+  },
+  {
+   "order": 42,
+   "id": "SAL.MAP_05",
+   "kind": "stage",
+   "game": "salamander",
+   "title": "Salamander planet KIERKE, one of three picked on the radar",
+   "state": "ASSETS_READY",
+   "resources": [],
+   "music": [
+    31,
+    33
+   ],
+   "entry": null,
+   "exit_condition": null,
+   "next": "SAL.MAP_06",
+   "dependencies": [],
+   "notes": ""
+  },
+  {
+   "order": 43,
+   "id": "SAL.MAP_06",
+   "kind": "stage",
+   "game": "salamander",
+   "title": "Salamander final stage (OPERATION FOUR); boss 6 falling starts the ending (p11:B58D)",
+   "state": "ASSETS_READY",
+   "resources": [],
+   "music": [
+    32,
+    33
+   ],
+   "entry": null,
+   "exit_condition": null,
+   "next": "SAL.MAP_07",
+   "dependencies": [],
+   "notes": ""
+  },
+  {
+   "order": 44,
+   "id": "SAL.MAP_07",
+   "kind": "stage",
+   "game": "salamander",
+   "title": "Salamander OPERATION X secret stage: only with Nemesis 2 in the other slot (p03:B599/B5E3), played before stage 6 (p10:8B7B); its tiles come from that cartridge (p00:5B91)",
+   "state": "ASSETS_READY",
+   "resources": [],
+   "music": [
+    25,
+    33
+   ],
+   "entry": null,
+   "exit_condition": null,
+   "next": "T3",
+   "dependencies": [],
+   "notes": ""
+  },
+  {
+   "order": 45,
+   "id": "T3",
+   "kind": "transition",
+   "game": "nemesis_legends",
+   "title": "Transition Salamander -> Nemesis 3 (new)",
+   "state": "NOT_STARTED",
+   "resources": [],
+   "music": null,
+   "entry": null,
+   "exit_condition": null,
+   "next": "N3.1",
+   "dependencies": [],
+   "notes": ""
+  },
+  {
+   "order": 46,
+   "id": "N3.1",
+   "kind": "stage",
+   "game": "nemesis3",
+   "title": "Nemesis 3 stage_1_no_map_sun_enemies",
+   "state": "ASSETS_READY",
+   "resources": [
+    "nemesis3.map01.terrain"
+   ],
+   "music": [
+    6,
+    5
+   ],
+   "entry": null,
+   "exit_condition": null,
+   "next": "N3.2",
+   "dependencies": [],
+   "notes": "third word of the p19:A90F record (0xE425) is copied with the limits; its use is not described in the docs"
+  },
+  {
+   "order": 47,
+   "id": "N3.2",
+   "kind": "stage",
+   "game": "nemesis3",
+   "title": "Nemesis 3 stage_2",
+   "state": "ASSETS_READY",
+   "resources": [
+    "nemesis3.map02.terrain"
+   ],
+   "music": [
+    7,
+    5
+   ],
+   "entry": null,
+   "exit_condition": null,
+   "next": "N3.3",
+   "dependencies": [],
+   "notes": "third word of the p19:A90F record (0xE425) is copied with the limits; its use is not described in the docs"
+  },
+  {
+   "order": 48,
+   "id": "N3.3",
+   "kind": "stage",
+   "game": "nemesis3",
+   "title": "Nemesis 3 stage_3",
+   "state": "ASSETS_READY",
+   "resources": [
+    "nemesis3.map03.terrain"
+   ],
+   "music": [
+    4,
+    8,
+    5,
+    1
+   ],
+   "entry": null,
+   "exit_condition": null,
+   "next": "N3.4",
+   "dependencies": [],
+   "notes": "third word of the p19:A90F record (0xE425) is copied with the limits; its use is not described in the docs; the p01:6111 entry for stage 3 is 0 (no boss, as docs/THE-BOSSES.md says); the stage-3 end path itself was not traced here"
+  },
+  {
+   "order": 49,
+   "id": "N3.4",
+   "kind": "stage",
+   "game": "nemesis3",
+   "title": "Nemesis 3 stage_4_boss_rush_no_map",
+   "state": "ASSETS_READY",
+   "resources": [
+    "nemesis3.map04.terrain"
+   ],
+   "music": [
+    4,
+    12,
+    5
+   ],
+   "entry": null,
+   "exit_condition": null,
+   "next": "N3.5",
+   "dependencies": [],
+   "notes": "third word of the p19:A90F record (0xE425) is copied with the limits; its use is not described in the docs; stage 4 bosses come from the p01:6243 table in order 0x0B, 1, 3, 4 (docs); the p01:6111 entry for stage 4 is not read on that path"
+  },
+  {
+   "order": 50,
+   "id": "N3.5",
+   "kind": "stage",
+   "game": "nemesis3",
+   "title": "Nemesis 3 stage_5_red_map_entrance",
+   "state": "ASSETS_READY",
+   "resources": [
+    "nemesis3.map05.terrain"
+   ],
+   "music": [
+    4,
+    12,
+    5
+   ],
+   "entry": null,
+   "exit_condition": null,
+   "next": "N3.6",
+   "dependencies": [],
+   "notes": "third word of the p19:A90F record (0xE425) is copied with the limits; its use is not described in the docs"
+  },
+  {
+   "order": 51,
+   "id": "N3.6",
+   "kind": "stage",
+   "game": "nemesis3",
+   "title": "Nemesis 3 stage_6",
+   "state": "ASSETS_READY",
+   "resources": [
+    "nemesis3.map06.terrain"
+   ],
+   "music": [
+    4,
+    68,
+    5
+   ],
+   "entry": null,
+   "exit_condition": null,
+   "next": "N3.7",
+   "dependencies": [],
+   "notes": "third word of the p19:A90F record (0xE425) is copied with the limits; its use is not described in the docs"
+  },
+  {
+   "order": 52,
+   "id": "N3.7",
+   "kind": "stage",
+   "game": "nemesis3",
+   "title": "Nemesis 3 stage_7_map_entrance",
+   "state": "ASSETS_READY",
+   "resources": [
+    "nemesis3.map07.terrain"
+   ],
+   "music": [
+    4,
+    69,
+    5
+   ],
+   "entry": null,
+   "exit_condition": null,
+   "next": "N3.8",
+   "dependencies": [],
+   "notes": "third word of the p19:A90F record (0xE425) is copied with the limits; its use is not described in the docs"
+  },
+  {
+   "order": 53,
+   "id": "N3.8",
+   "kind": "stage",
+   "game": "nemesis3",
+   "title": "Nemesis 3 stage_8_map_entrance",
+   "state": "ASSETS_READY",
+   "resources": [
+    "nemesis3.map08.terrain"
+   ],
+   "music": [
+    4,
+    70,
+    5
+   ],
+   "entry": null,
+   "exit_condition": null,
+   "next": "N3.9",
+   "dependencies": [],
+   "notes": "third word of the p19:A90F record (0xE425) is copied with the limits; its use is not described in the docs"
+  },
+  {
+   "order": 54,
+   "id": "N3.9",
+   "kind": "stage",
+   "game": "nemesis3",
+   "title": "Nemesis 3 stage_9_esp_device_then_computer",
+   "state": "ASSETS_READY",
+   "resources": [
+    "nemesis3.map09.terrain"
+   ],
+   "music": [
+    4,
+    13,
+    5,
+    1
+   ],
+   "entry": null,
+   "exit_condition": null,
+   "next": "N3.10",
+   "dependencies": [],
+   "notes": "third word of the p19:A90F record (0xE425) is copied with the limits; its use is not described in the docs; stages 9-11 do not use the p01:6111 table (p01:611A path is stages 1, 2, 5-8); the code that brings out their boss was not traced here, the boss number comes from docs/THE-BOSSES.md"
+  },
+  {
+   "order": 55,
+   "id": "N3.10",
+   "kind": "stage",
+   "game": "nemesis3",
+   "title": "Nemesis 3 stage_10_needs_all_three_maps",
+   "state": "ASSETS_READY",
+   "resources": [
+    "nemesis3.map10.terrain"
+   ],
+   "music": [
+    71,
+    5
+   ],
+   "entry": null,
+   "exit_condition": null,
+   "next": "N3.11",
+   "dependencies": [],
+   "notes": "third word of the p19:A90F record (0xE425) is copied with the limits; its use is not described in the docs; stages 9-11 do not use the p01:6111 table (p01:611A path is stages 1, 2, 5-8); the code that brings out their boss was not traced here, the boss number comes from docs/THE-BOSSES.md"
+  },
+  {
+   "order": 56,
+   "id": "N3.11",
+   "kind": "stage",
+   "game": "nemesis3",
+   "title": "Nemesis 3 stage_11_final",
+   "state": "ASSETS_READY",
+   "resources": [
+    "nemesis3.map11.terrain"
+   ],
+   "music": [
+    14
+   ],
+   "entry": null,
+   "exit_condition": null,
+   "next": "N3.INTERLUDE.AFTER3",
+   "dependencies": [],
+   "notes": "third word of the p19:A90F record (0xE425) is copied with the limits; its use is not described in the docs; stages 9-11 do not use the p01:6111 table (p01:611A path is stages 1, 2, 5-8); the code that brings out their boss was not traced here, the boss number comes from docs/THE-BOSSES.md"
+  },
+  {
+   "order": 57,
+   "id": "N3.INTERLUDE.AFTER3",
+   "kind": "cutscene",
+   "game": "nemesis3",
+   "title": "Nemesis 3 interlude after stage 3: on_board_computer_radar",
+   "state": "NOT_STARTED",
+   "resources": [],
+   "music": [
+    63
+   ],
+   "entry": null,
+   "exit_condition": null,
+   "next": "N3.INTERLUDE.AFTER4",
+   "dependencies": [],
+   "notes": "p27:814D (0xE321 = 1) -> p27:81F4 graphics p27:8208"
+  },
+  {
+   "order": 58,
+   "id": "N3.INTERLUDE.AFTER4",
+   "kind": "cutscene",
+   "game": "nemesis3",
+   "title": "Nemesis 3 interlude after stage 4: on_board_computer_scene",
+   "state": "NOT_STARTED",
+   "resources": [],
+   "music": null,
+   "entry": null,
+   "exit_condition": null,
+   "next": "N3.INTERLUDE.AFTER9",
+   "dependencies": [],
+   "notes": "p27:814D -> p27:836A"
+  },
+  {
+   "order": 59,
+   "id": "N3.INTERLUDE.AFTER9",
+   "kind": "cutscene",
+   "game": "nemesis3",
+   "title": "Nemesis 3 interlude after stage 9: on_board_computer_map_check",
+   "state": "NOT_STARTED",
+   "resources": [],
+   "music": [
+    63
+   ],
+   "entry": null,
+   "exit_condition": null,
+   "next": "N3.INTERLUDE.AFTER11",
+   "dependencies": [],
+   "notes": "p00:45E3, p26:7EC5; all maps p26:7F7A -> stage 10; missing p26:7FC8 -> stage 5/7/8; marks 0xE393-0xE395 (p26:7E2A)"
+  },
+  {
+   "order": 60,
+   "id": "N3.INTERLUDE.AFTER11",
+   "kind": "cutscene",
+   "game": "nemesis3",
+   "title": "Nemesis 3 interlude after stage 11: ending",
+   "state": "NOT_STARTED",
+   "resources": [],
+   "music": null,
+   "entry": null,
+   "exit_condition": null,
+   "next": "N3.INTERLUDE.AFTERNone",
+   "dependencies": [],
+   "notes": "p00:4599; secret type 0x0B (0xE396) adds a step p27:8786"
+  },
+  {
+   "order": 61,
+   "id": "N3.INTERLUDE.AFTERNone",
+   "kind": "cutscene",
+   "game": "nemesis3",
+   "title": "Nemesis 3 interlude after stage None: state_9",
+   "state": "NOT_STARTED",
+   "resources": [],
+   "music": null,
+   "entry": null,
+   "exit_condition": null,
+   "next": "N3.INTERLUDE.AFTERNone",
+   "dependencies": [],
+   "notes": "p26:6CA4: types 1-7 weapon p26:6E29, 8-0x0A maps p26:7D46, 0x0B p27:80B7, others p27:804A"
+  },
+  {
+   "order": 62,
+   "id": "N3.INTERLUDE.AFTERNone",
+   "kind": "cutscene",
+   "game": "nemesis3",
+   "title": "Nemesis 3 interlude after stage None: None",
+   "state": "NOT_STARTED",
+   "resources": [],
+   "music": null,
+   "entry": null,
+   "exit_condition": null,
+   "next": "N3.INTERLUDE.AFTERNone",
+   "dependencies": [],
+   "notes": ""
+  },
+  {
+   "order": 63,
+   "id": "N3.INTERLUDE.AFTERNone",
+   "kind": "cutscene",
+   "game": "nemesis3",
+   "title": "Nemesis 3 interlude after stage None: None",
+   "state": "NOT_STARTED",
+   "resources": [],
+   "music": null,
+   "entry": null,
+   "exit_condition": null,
+   "next": "FINAL",
+   "dependencies": [],
+   "notes": ""
+  },
+  {
+   "order": 64,
+   "id": "FINAL",
+   "kind": "cutscene",
+   "game": "nemesis_legends",
+   "title": "Final ending of the anthology (new, after Nemesis 3)",
+   "state": "NOT_STARTED",
+   "resources": [],
+   "music": null,
+   "entry": null,
+   "exit_condition": null,
+   "next": "CREDITS",
+   "dependencies": [],
+   "notes": ""
+  },
+  {
+   "order": 65,
+   "id": "CREDITS",
+   "kind": "screen",
+   "game": "nemesis_legends",
+   "title": "Credits (new)",
+   "state": "NOT_STARTED",
+   "resources": [],
+   "music": null,
+   "entry": null,
+   "exit_condition": null,
+   "next": null,
+   "dependencies": [],
+   "notes": ""
+  }
+ ],
+ "state_counts": {
+  "PLAYABLE": 1,
+  "NOT_STARTED": 14,
+  "PARTIAL": 7,
+  "ASSETS_READY": 43
+ },
+ "policy": [
+  "Original endings are kept and played before each transition.",
+  "Nemesis 2 halfway ending is not completion; the return trip follows.",
+  "Salamander bad ending offers a chapter retry (anthology policy).",
+  "Both Nemesis 3 endings are valid finals; the anthology FINAL follows either."
+ ]
+}

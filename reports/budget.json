@@ -1,0 +1,199 @@
+{
+ "schema": 1,
+ "segments": {
+  "GRAPHICS": {
+   "start": 0,
+   "end": 131071,
+   "size": 131072
+  },
+  "HEADER": {
+   "start": 0,
+   "end": 15,
+   "size": 16
+  },
+  "ZEROPAGE": {
+   "start": 128,
+   "end": 129,
+   "size": 2
+  },
+  "BSS": {
+   "start": 1280,
+   "end": 1405,
+   "size": 126
+  },
+  "BOSSDATA": {
+   "start": 32768,
+   "end": 40959,
+   "size": 8192
+  },
+  "STAGE0": {
+   "start": 32768,
+   "end": 40959,
+   "size": 8192
+  },
+  "STAGE1": {
+   "start": 32768,
+   "end": 40959,
+   "size": 8192
+  },
+  "STAGE2": {
+   "start": 32768,
+   "end": 40959,
+   "size": 8192
+  },
+  "STAGE3": {
+   "start": 32768,
+   "end": 40959,
+   "size": 8192
+  },
+  "STAGE4": {
+   "start": 32768,
+   "end": 40959,
+   "size": 8192
+  },
+  "STAGE5": {
+   "start": 32768,
+   "end": 40959,
+   "size": 8192
+  },
+  "TITLE": {
+   "start": 32768,
+   "end": 37385,
+   "size": 4618
+  },
+  "ACTORS": {
+   "start": 40960,
+   "end": 48051,
+   "size": 7092
+  },
+  "MAPS": {
+   "start": 40960,
+   "end": 49151,
+   "size": 8192
+  },
+  "CODE": {
+   "start": 49152,
+   "end": 56360,
+   "size": 7209
+  },
+  "RODATA": {
+   "start": 56361,
+   "end": 56390,
+   "size": 30
+  },
+  "BOOT": {
+   "start": 57344,
+   "end": 58476,
+   "size": 1133
+  },
+  "SOUND": {
+   "start": 60446,
+   "end": 65529,
+   "size": 5084
+  },
+  "VECTORS": {
+   "start": 65530,
+   "end": 65535,
+   "size": 6
+  }
+ },
+ "prg_bank_roles": {
+  "P0_P5_stage_descriptors": 49152,
+  "P6_maps": 8192,
+  "P7_actors": 8192,
+  "P8_bossdata": 8192,
+  "P9_title": 8192,
+  "RES_reserved": 32768,
+  "K_kernel": 8192,
+  "fixed_E000": 8192
+ },
+ "prg_used": {
+  "STAGE_descriptors": 49152,
+  "MAPS": 8192,
+  "ACTORS": 7092,
+  "BOSSDATA": 8192,
+  "TITLE": 4618,
+  "CODE": 7239,
+  "BOOT": 1133,
+  "SOUND": 5084,
+  "VECTORS": 6,
+  "RESERVED": 0
+ },
+ "ram": {
+  "zero_page_bytes": 128,
+  "bss_bytes": 126,
+  "stack_oam_pages": 768,
+  "qa_mirror_bytes": 80,
+  "work_ram_8k_used": {
+   "objects": 544,
+   "shots": 144,
+   "enemy_shots": 160,
+   "history": 128,
+   "boss_queue": 512,
+   "collision_ring": 1024,
+   "actor_globals": 256
+  }
+ },
+ "projection": {
+  "nemesis": {
+   "terrain_scripts": 4284,
+   "metatiles": 6110,
+   "unique_tiles": 1169,
+   "tiles_2bpp_upper_bound": 18704,
+   "sprite_sheets": 98304,
+   "sprite_sheets_dedup_1k_banks": 43,
+   "measured_chr_useful": 95232,
+   "stage_logic_code_estimate": 18432,
+   "note": "measured: current ROM holds all 12 descriptors and CHR for Nemesis"
+  },
+  "nemesis2": {
+   "terrain_scripts": 6288,
+   "metatile_tables": "per map, 16/8-byte blocks (not summed)",
+   "unique_tiles": 1695,
+   "tiles_2bpp_upper_bound": 27120,
+   "sprite_sets": 48,
+   "sprite_sets_bytes": 98304,
+   "stage_logic_code_estimate": 24576,
+   "note": "static data extracted; no code ported"
+  },
+  "salamander": {
+   "unique_tiles": 1534,
+   "tiles_2bpp_upper_bound": 24544,
+   "terrain_columns": null,
+   "sprite_sets": 7,
+   "note": "from extractor report"
+  },
+  "nemesis3": {
+   "unique_tiles": 6361,
+   "tiles_2bpp_upper_bound": 101776,
+   "terrain_columns": 3104,
+   "sprite_sets": 66,
+   "note": "from extractor report"
+  }
+ },
+ "summary": {
+  "current_board": {
+   "mapper": 5,
+   "prg_kib": 128,
+   "chr_kib": 128,
+   "wram_kib": 8,
+   "prg_used_bytes": 90708,
+   "prg_free_bytes": 40364,
+   "chr_used_bytes": 95232,
+   "chr_padding_bytes": 35840
+  },
+  "mmc5_ceiling": {
+   "prg_kib": 1024,
+   "chr_kib": 1024,
+   "exram_bytes": 1024,
+   "wram_kib": 64
+  },
+  "four_game_chr_upper_bound_bytes": 368752,
+  "four_game_chr_upper_bound_kib": 360,
+  "reading": "Upper bound counts every unique MSX tile as one 2bpp NES tile and every sprite set uncompressed; global deduplication (reports/global_dedup.json) and palette merging reduce it. Code, music, cutscenes and tables are not in this bound.",
+  "decision_points": [
+   "CHR-ROM (current) vs CHR-RAM with compressed CHR in PRG: CHR-RAM frees PRG banks for graphics and allows compression; CHR-ROM keeps zero-cost bank switching.",
+   "PRG must grow beyond 128 KiB for chapters 2-4; 512 KiB PRG is the working assumption, 1 MiB the ceiling."
+  ]
+ }
+}

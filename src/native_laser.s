@@ -2,7 +2,7 @@
 .include "longbranch.inc"
 .include "native.inc"
 .include "actors.inc"
-.import TerrainSolid,ActorKilled,ObjectPointer,BossShotHit,DrawSprite8,Stage4LaserHit
+.import TerrainSolid,ActorKilled,ObjectPointer,BossShotHit,DrawSprite8,Stage4LaserHitBanked
 .export LaserStep,LaserDraw
 .segment "CODE"
 ; Native laser record: [3,X,Y,state,owner,length,remaining,...].
@@ -136,7 +136,7 @@ LaserStep:
  ldy #3
  sta (shot_ptr),y
 @boss:
- jsr Stage4LaserHit
+ jsr Stage4LaserHitBanked
  lda phase
  cmp #5
  bcc @actors

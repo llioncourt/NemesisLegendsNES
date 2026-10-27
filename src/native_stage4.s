@@ -40,7 +40,7 @@ s4_b5_killed:   .res 1   ; QA: pieces destroyed by the player
 S4_Pieces:      .res 32  ; eight E780 pieces: step, X, Y, HP (HP 0 = free)
 S4_END:
 
-.segment "ACTORS"
+.segment "STAGECODE"
 Stage4Init:
  lda #0
  ldx #(S4_END-S4_State-1)

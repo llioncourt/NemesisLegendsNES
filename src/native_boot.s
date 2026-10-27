@@ -54,6 +54,7 @@ Reset:
  sta $5104
  lda #$80
  sta $5114
+ sta bank8000
  lda #$87
  sta $5115
  lda #$8e
@@ -113,7 +114,7 @@ NMI:
  lda #2
  sta $4014
  lda hud_pending
- beq @scroll
+ beq @hud2check
  bit $2002
  lda #$a0
  sta $2000
@@ -130,6 +131,47 @@ NMI:
  bne @hud
  lda #0
  sta hud_pending
+ jmp @scroll
+@hud2check:
+ lda hud2_pending
+ beq @scroll
+ bit $2002
+ lda #$a0
+ sta $2000
+ lda hud2_addr+1
+ sta $2006
+ lda hud2_addr
+ sta $2006
+ ldx #0
+@hud2:
+ lda HUD2,x
+ sta $2007
+ inx
+ cpx #32
+ bne @hud2
+ lda hud2_exattr
+ beq @hud2done
+ ; Font bank attribute for the whole row (ExRAM mirror of the nametable row).
+ lda #2
+ sta $5104
+ lda hud2_addr
+ sta nptr
+ lda hud2_addr+1
+ and #3
+ ora #$5c
+ sta nptr+1
+ ldy #0
+ lda #1
+@hud2ex:
+ sta (nptr),y
+ iny
+ cpy #32
+ bne @hud2ex
+ lda #1
+ sta $5104
+@hud2done:
+ lda #0
+ sta hud2_pending
 @scroll:
  bit $2002
  lda camera

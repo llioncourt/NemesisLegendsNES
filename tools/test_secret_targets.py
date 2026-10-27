@@ -5,9 +5,9 @@ Counts recorded in source MSX E06C/E06D semantics; no forced phase/stage/target 
 import argparse,json,pathlib,hashlib
 from nes_test_host import NES
 ROOT=pathlib.Path(__file__).resolve().parents[1]
-ROM=ROOT/'build/native/Nemesis_Legends_CP0012.nes'
+ROM=ROOT/'build/native/Nemesis_Legends_CP0013.nes'
 CORE=ROOT/'toolchain/linux-x64/bin/fceumm_libretro.so'
-OUT=ROOT/'reports/cp0012';OUT.mkdir(exist_ok=True)
+OUT=ROOT/'reports/cp0013';OUT.mkdir(exist_ok=True)
 parser=argparse.ArgumentParser();parser.add_argument('--core',default=str(CORE));args=parser.parse_args()
 labels={}
 for l in (ROOT/'build/native/native.lbl').read_text().splitlines():

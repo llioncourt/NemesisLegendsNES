@@ -1,0 +1,496 @@
+{
+  "schema": 1,
+  "generated_from": [
+    "assets/msx/*",
+    "reports/*_extraction.json",
+    "reports/*_structure.json",
+    "reports/nes_extraction.json",
+    "audio/tracklist.csv",
+    "manifests/content_coverage.json"
+  ],
+  "totals": {
+    "total": 1727,
+    "identified": 1727,
+    "extracted": 1676,
+    "converted": 238,
+    "integrated": 238,
+    "tested": 59,
+    "validated": 0,
+    "pending": 1489,
+    "reuse": {
+      "CONVERT": 1575,
+      "ADAPT": 2,
+      "UNKNOWN": 19,
+      "NEW": 6,
+      "REUSE": 125
+    }
+  },
+  "by_game": {
+    "gradius2_fc": {
+      "total": 33,
+      "identified": 33,
+      "extracted": 33,
+      "converted": 1,
+      "integrated": 1,
+      "tested": 1,
+      "validated": 0,
+      "pending": 32,
+      "reuse": {
+        "REUSE": 33
+      }
+    },
+    "gradius_nes_jp": {
+      "total": 5,
+      "identified": 5,
+      "extracted": 5,
+      "converted": 0,
+      "integrated": 0,
+      "tested": 0,
+      "validated": 0,
+      "pending": 5,
+      "reuse": {
+        "REUSE": 5
+      }
+    },
+    "gradius_nes_us": {
+      "total": 20,
+      "identified": 20,
+      "extracted": 20,
+      "converted": 0,
+      "integrated": 0,
+      "tested": 0,
+      "validated": 0,
+      "pending": 20,
+      "reuse": {
+        "REUSE": 20
+      }
+    },
+    "lifeforce_nes_us": {
+      "total": 26,
+      "identified": 26,
+      "extracted": 25,
+      "converted": 0,
+      "integrated": 0,
+      "tested": 0,
+      "validated": 0,
+      "pending": 26,
+      "reuse": {
+        "REUSE": 19,
+        "UNKNOWN": 7
+      }
+    },
+    "lifeforce_nes_us_rev1": {
+      "total": 26,
+      "identified": 26,
+      "extracted": 25,
+      "converted": 0,
+      "integrated": 0,
+      "tested": 0,
+      "validated": 0,
+      "pending": 26,
+      "reuse": {
+        "REUSE": 19,
+        "UNKNOWN": 7
+      }
+    },
+    "nemesis": {
+      "total": 279,
+      "identified": 279,
+      "extracted": 278,
+      "converted": 232,
+      "integrated": 232,
+      "tested": 53,
+      "validated": 0,
+      "pending": 47,
+      "reuse": {
+        "CONVERT": 276,
+        "ADAPT": 1,
+        "UNKNOWN": 1,
+        "NEW": 1
+      }
+    },
+    "nemesis2": {
+      "total": 262,
+      "identified": 262,
+      "extracted": 243,
+      "converted": 0,
+      "integrated": 0,
+      "tested": 0,
+      "validated": 0,
+      "pending": 262,
+      "reuse": {
+        "CONVERT": 262
+      }
+    },
+    "nemesis3": {
+      "total": 750,
+      "identified": 750,
+      "extracted": 731,
+      "converted": 1,
+      "integrated": 1,
+      "tested": 1,
+      "validated": 0,
+      "pending": 749,
+      "reuse": {
+        "CONVERT": 750
+      }
+    },
+    "nemesis_legends": {
+      "total": 6,
+      "identified": 6,
+      "extracted": 3,
+      "converted": 3,
+      "integrated": 3,
+      "tested": 3,
+      "validated": 0,
+      "pending": 3,
+      "reuse": {
+        "ADAPT": 1,
+        "NEW": 5
+      }
+    },
+    "salamander": {
+      "total": 287,
+      "identified": 287,
+      "extracted": 280,
+      "converted": 1,
+      "integrated": 1,
+      "tested": 1,
+      "validated": 0,
+      "pending": 286,
+      "reuse": {
+        "CONVERT": 287
+      }
+    },
+    "salamander_fc": {
+      "total": 33,
+      "identified": 33,
+      "extracted": 33,
+      "converted": 0,
+      "integrated": 0,
+      "tested": 0,
+      "validated": 0,
+      "pending": 33,
+      "reuse": {
+        "REUSE": 29,
+        "UNKNOWN": 4
+      }
+    }
+  },
+  "by_category": {
+    "behavior": {
+      "total": 4,
+      "identified": 4,
+      "extracted": 0,
+      "converted": 0,
+      "integrated": 0,
+      "tested": 0,
+      "validated": 0,
+      "pending": 4,
+      "reuse": {
+        "CONVERT": 4
+      }
+    },
+    "boss": {
+      "total": 31,
+      "identified": 31,
+      "extracted": 31,
+      "converted": 2,
+      "integrated": 2,
+      "tested": 2,
+      "validated": 0,
+      "pending": 29,
+      "reuse": {
+        "CONVERT": 31
+      }
+    },
+    "compressed_stream": {
+      "total": 1074,
+      "identified": 1074,
+      "extracted": 1074,
+      "converted": 167,
+      "integrated": 167,
+      "tested": 0,
+      "validated": 0,
+      "pending": 907,
+      "reuse": {
+        "CONVERT": 1074
+      }
+    },
+    "cutscene": {
+      "total": 11,
+      "identified": 11,
+      "extracted": 0,
+      "converted": 0,
+      "integrated": 0,
+      "tested": 0,
+      "validated": 0,
+      "pending": 11,
+      "reuse": {
+        "UNKNOWN": 1,
+        "CONVERT": 10
+      }
+    },
+    "cutscene_picture": {
+      "total": 137,
+      "identified": 137,
+      "extracted": 137,
+      "converted": 0,
+      "integrated": 0,
+      "tested": 0,
+      "validated": 0,
+      "pending": 137,
+      "reuse": {
+        "CONVERT": 137
+      }
+    },
+    "encounter": {
+      "total": 6,
+      "identified": 6,
+      "extracted": 6,
+      "converted": 4,
+      "integrated": 4,
+      "tested": 4,
+      "validated": 0,
+      "pending": 2,
+      "reuse": {
+        "CONVERT": 6
+      }
+    },
+    "enemy_type": {
+      "total": 31,
+      "identified": 31,
+      "extracted": 31,
+      "converted": 13,
+      "integrated": 13,
+      "tested": 13,
+      "validated": 0,
+      "pending": 18,
+      "reuse": {
+        "CONVERT": 31
+      }
+    },
+    "font": {
+      "total": 1,
+      "identified": 1,
+      "extracted": 1,
+      "converted": 1,
+      "integrated": 1,
+      "tested": 1,
+      "validated": 0,
+      "pending": 0,
+      "reuse": {
+        "REUSE": 1
+      }
+    },
+    "metatile_table": {
+      "total": 1,
+      "identified": 1,
+      "extracted": 1,
+      "converted": 1,
+      "integrated": 1,
+      "tested": 1,
+      "validated": 0,
+      "pending": 0,
+      "reuse": {
+        "CONVERT": 1
+      }
+    },
+    "music_track": {
+      "total": 98,
+      "identified": 98,
+      "extracted": 98,
+      "converted": 0,
+      "integrated": 0,
+      "tested": 0,
+      "validated": 0,
+      "pending": 98,
+      "reuse": {
+        "CONVERT": 56,
+        "REUSE": 42
+      }
+    },
+    "nes_chr": {
+      "total": 94,
+      "identified": 94,
+      "extracted": 94,
+      "converted": 0,
+      "integrated": 0,
+      "tested": 0,
+      "validated": 0,
+      "pending": 94,
+      "reuse": {
+        "REUSE": 76,
+        "UNKNOWN": 18
+      }
+    },
+    "new_content": {
+      "total": 5,
+      "identified": 5,
+      "extracted": 2,
+      "converted": 2,
+      "integrated": 2,
+      "tested": 2,
+      "validated": 0,
+      "pending": 3,
+      "reuse": {
+        "NEW": 5
+      }
+    },
+    "player": {
+      "total": 1,
+      "identified": 1,
+      "extracted": 1,
+      "converted": 1,
+      "integrated": 1,
+      "tested": 1,
+      "validated": 0,
+      "pending": 0,
+      "reuse": {
+        "CONVERT": 1
+      }
+    },
+    "progression": {
+      "total": 2,
+      "identified": 2,
+      "extracted": 2,
+      "converted": 2,
+      "integrated": 2,
+      "tested": 2,
+      "validated": 0,
+      "pending": 0,
+      "reuse": {
+        "CONVERT": 2
+      }
+    },
+    "screen": {
+      "total": 15,
+      "identified": 15,
+      "extracted": 15,
+      "converted": 0,
+      "integrated": 0,
+      "tested": 0,
+      "validated": 0,
+      "pending": 15,
+      "reuse": {
+        "CONVERT": 15
+      }
+    },
+    "sound_driver": {
+      "total": 8,
+      "identified": 8,
+      "extracted": 5,
+      "converted": 1,
+      "integrated": 1,
+      "tested": 1,
+      "validated": 0,
+      "pending": 7,
+      "reuse": {
+        "REUSE": 6,
+        "CONVERT": 1,
+        "ADAPT": 1
+      }
+    },
+    "sprite_set": {
+      "total": 78,
+      "identified": 78,
+      "extracted": 78,
+      "converted": 12,
+      "integrated": 12,
+      "tested": 8,
+      "validated": 0,
+      "pending": 66,
+      "reuse": {
+        "CONVERT": 78
+      }
+    },
+    "stage_script": {
+      "total": 42,
+      "identified": 42,
+      "extracted": 12,
+      "converted": 7,
+      "integrated": 7,
+      "tested": 8,
+      "validated": 0,
+      "pending": 35,
+      "reuse": {
+        "CONVERT": 42
+      }
+    },
+    "system": {
+      "total": 1,
+      "identified": 1,
+      "extracted": 1,
+      "converted": 0,
+      "integrated": 0,
+      "tested": 0,
+      "validated": 0,
+      "pending": 1,
+      "reuse": {
+        "ADAPT": 1
+      }
+    },
+    "terrain_map": {
+      "total": 42,
+      "identified": 42,
+      "extracted": 42,
+      "converted": 12,
+      "integrated": 12,
+      "tested": 8,
+      "validated": 0,
+      "pending": 30,
+      "reuse": {
+        "CONVERT": 42
+      }
+    },
+    "tile_dictionary": {
+      "total": 2,
+      "identified": 2,
+      "extracted": 2,
+      "converted": 1,
+      "integrated": 1,
+      "tested": 0,
+      "validated": 0,
+      "pending": 1,
+      "reuse": {
+        "CONVERT": 2
+      }
+    },
+    "tile_set": {
+      "total": 42,
+      "identified": 42,
+      "extracted": 42,
+      "converted": 12,
+      "integrated": 12,
+      "tested": 8,
+      "validated": 0,
+      "pending": 30,
+      "reuse": {
+        "CONVERT": 42
+      }
+    },
+    "title_screen": {
+      "total": 1,
+      "identified": 1,
+      "extracted": 1,
+      "converted": 0,
+      "integrated": 0,
+      "tested": 0,
+      "validated": 0,
+      "pending": 1,
+      "reuse": {
+        "NEW": 1
+      }
+    }
+  },
+  "unknown_regions": {
+    "statement": "ROM bytes not attributed to an identified resource are not yet computed per game; extraction reports list stream/script byte sums only.",
+    "nemesis_rle_bytes": 10224,
+    "nemesis2_rle_bytes": 13992
+  },
+  "caveats": [
+    "Counts are resource records, not bytes, frames or gameplay seconds.",
+    "integrated means present in the current native ROM and reachable by its code, not visually or behaviourally validated.",
+    "validated requires comparison against the original; none is claimed yet."
+  ]
+}

@@ -446,6 +446,7 @@ EnterBigCore:
  sta camera
  lda #$88
  sta $5114
+ sta bank8000
  bit $2002
  lda #$20
  sta $2006
