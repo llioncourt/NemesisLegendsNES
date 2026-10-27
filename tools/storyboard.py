@@ -16,6 +16,7 @@ def load(p,d=None):
     p=ROOT/p;return json.loads(p.read_text()) if p.exists() else d
 cov=load('manifests/content_coverage.json');n1=load('reports/nemesis_structure.json',{})
 n2=load('reports/nemesis2_structure.json',{});sal=load('reports/salamander_structure.json',{});n3=load('reports/nemesis3_structure.json',{})
+n2_native=(ROOT/'build/native/n2_assets.json').exists()
 has_assets={'nemesis':True,'nemesis2':(ROOT/'assets/msx/nemesis2/stage_manifest.json').exists(),'salamander':(ROOT/'reports/salamander_extraction.json').exists(),'nemesis3':(ROOT/'reports/nemesis3_extraction.json').exists()}
 seq=[];n=[0]
 def add(sid,kind,game,title,**k):
@@ -41,14 +42,17 @@ def generic(game,label,struct,prefix,fallback_ids):
     stages=struct.get('stages') or struct.get('maps') or []
     if stages:
         for s in stages:
-            sid=s.get('id',s.get('map_id',s.get('stage')));add(f'{prefix}.{str(sid).upper()}','stage',game,f"{label} {s.get('role',s.get('name',sid))}",state='ASSETS_READY' if has_assets[game] else 'NOT_STARTED',
+            sid=s.get('id',s.get('map_id',s.get('stage')));add(f'{prefix}.{str(sid).upper()}','stage',game,f"{label} {s.get('role',s.get('name',sid))}",state=('INTEGRATED' if (game=='nemesis2' and n2_native) else 'ASSETS_READY') if has_assets[game] else 'NOT_STARTED',
                 resources=[f'{game}.map{int(s.get("map_id",s.get("id",0)) or 0):02d}.terrain'] if str(s.get('map_id',s.get('id',''))).isdigit() else [],music=[e.get('tune',e.get('track')) for e in (s.get('music') or {}).get('entries',(s.get('music') or {}).get('records',[]))] if isinstance(s.get('music'),dict) else s.get('music'),exit=s.get('end_sequence',s.get('end_routine')),notes=s.get('unresolved','') if isinstance(s.get('unresolved',''),str) else '; '.join(map(str,s.get('unresolved',[]))))
     else:
         for sid in fallback_ids:add(f'{prefix}.{sid}','stage',game,f'{label} {sid}',state='ASSETS_READY' if has_assets[game] else 'NOT_STARTED',notes='structure inventory pending')
     for it in struct.get('interludes',[]):
         add(f'{prefix}.INTERLUDE.AFTER{it.get("after_stage")}','cutscene',game,f'{label} interlude after stage {it.get("after_stage")}: {it.get("kind")}',music=[it.get('music')] if isinstance(it.get('music'),int) else None,notes=str(it.get('code','')))
-    for c in struct.get('cutscenes',[]):
-        name=c.get('name',str(c));add(f'{prefix}.CUT.'+''.join(ch for ch in name.upper() if ch.isalnum())[:16],'cutscene',game,f'{label} cutscene: {name}',notes=c.get('notes',''))
+    cuts=struct.get('cutscenes',[])
+    items=list(cuts.items()) if isinstance(cuts,dict) else [((c.get('name',str(c)) if isinstance(c,dict) else str(c)),c) for c in cuts]
+    for name,c in items:
+        info=c if isinstance(c,dict) else {}
+        add(f'{prefix}.CUT.'+''.join(ch for ch in str(name).upper() if ch.isalnum())[:16],'cutscene',game,f'{label} cutscene: {name}',notes=str(info.get('notes',info.get('code',info.get('drawing',''))))[:160])
 generic('nemesis2','Nemesis 2',n2,'N2',['S1','S2','S3','S4','S5','S6','S7','HALFWAY_ENDING','R6','R5','R4','R3','R2','R1','R0','INTERIOR8','SECRET9','SECRET10','SECRET11','ENDING'])
 add('T2','transition','nemesis_legends','Transition Nemesis 2 -> Salamander (new)')
 generic('salamander','Salamander',sal,'SAL',['S1','S2','S3','S4','S5','S7_OPERATION_X','S6','ENDING_GOOD','ENDING_BAD'])

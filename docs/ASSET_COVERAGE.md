@@ -4,14 +4,14 @@ States are independent. Numbers are resource records.
 
 | scope | total | extracted | converted | integrated | tested | validated |
 |---|---|---|---|---|---|---|
-| **all** | 1727 | 1676 | 238 | 238 | 59 | 0 |
+| **all** | 1727 | 1676 | 274 | 274 | 83 | 0 |
 | gradius2_fc | 33 | 33 | 1 | 1 | 1 | 0 |
 | gradius_nes_jp | 5 | 5 | 0 | 0 | 0 | 0 |
 | gradius_nes_us | 20 | 20 | 0 | 0 | 0 | 0 |
 | lifeforce_nes_us | 26 | 25 | 0 | 0 | 0 | 0 |
 | lifeforce_nes_us_rev1 | 26 | 25 | 0 | 0 | 0 | 0 |
 | nemesis | 279 | 278 | 232 | 232 | 53 | 0 |
-| nemesis2 | 262 | 243 | 0 | 0 | 0 | 0 |
+| nemesis2 | 262 | 243 | 36 | 36 | 24 | 0 |
 | nemesis3 | 750 | 731 | 1 | 1 | 1 | 0 |
 | nemesis_legends | 6 | 3 | 3 | 3 | 3 | 0 |
 | salamander | 287 | 280 | 1 | 1 | 1 | 0 |
@@ -35,12 +35,12 @@ States are independent. Numbers are resource records.
 | progression | 2 | 2 | 2 | 2 | 2 | 0 |
 | screen | 15 | 15 | 0 | 0 | 0 | 0 |
 | sound_driver | 8 | 5 | 1 | 1 | 1 | 0 |
-| sprite_set | 78 | 78 | 12 | 12 | 8 | 0 |
+| sprite_set | 78 | 78 | 24 | 24 | 8 | 0 |
 | stage_script | 42 | 12 | 7 | 7 | 8 | 0 |
 | system | 1 | 1 | 0 | 0 | 0 | 0 |
-| terrain_map | 42 | 42 | 12 | 12 | 8 | 0 |
+| terrain_map | 42 | 42 | 24 | 24 | 20 | 0 |
 | tile_dictionary | 2 | 2 | 1 | 1 | 0 | 0 |
-| tile_set | 42 | 42 | 12 | 12 | 8 | 0 |
+| tile_set | 42 | 42 | 24 | 24 | 20 | 0 |
 | title_screen | 1 | 1 | 0 | 0 | 0 | 0 |
 
 Reuse classes (all): ADAPT 2, CONVERT 1575, NEW 6, REUSE 125, UNKNOWN 19

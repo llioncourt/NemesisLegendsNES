@@ -7,7 +7,7 @@
 .export AngleTable, SineTable, SpriteCode, SoundRequest, ClearPPU
 .import TitleVBlank
 .segment "HEADER"
-.byte "NES",$1a,8,16,$50,$08,0,0,$07,0,0,0,0,0
+.byte "NES",$1a,32,32,$50,$08,0,0,$07,0,0,0,0,0
 .segment "BOOT"
 Reset:
  sei
@@ -57,9 +57,9 @@ Reset:
  sta bank8000
  lda #$87
  sta $5115
- lda #$8e
+ lda #$be
  sta $5116
- lda #$8f
+ lda #$bf
  sta $5117
  lda #$a7
  sta rseed
@@ -313,6 +313,34 @@ SpriteCode:
 .incbin "build/native/stage_12.bin"
 .segment "MAPS"
 .incbin "build/native/metatiles.bin"
+.segment "N2MAP0"
+.incbin "build/native/n2_map_00.bin"
+.segment "N2MAP1"
+.incbin "build/native/n2_map_01.bin"
+.segment "N2MAP2"
+.incbin "build/native/n2_map_02.bin"
+.segment "N2MAP3"
+.incbin "build/native/n2_map_03.bin"
+.segment "N2MAP4"
+.incbin "build/native/n2_map_04.bin"
+.segment "N2MAP5"
+.incbin "build/native/n2_map_05.bin"
+.segment "N2MAP6"
+.incbin "build/native/n2_map_06.bin"
+.segment "N2MAP7"
+.incbin "build/native/n2_map_07.bin"
+.segment "N2MAP8"
+.incbin "build/native/n2_map_08.bin"
+.segment "N2MAP9"
+.incbin "build/native/n2_map_09.bin"
+.segment "N2MAP10"
+.incbin "build/native/n2_map_10.bin"
+.segment "N2MAP11"
+.incbin "build/native/n2_map_11.bin"
+.segment "N2MAPSA"
+.incbin "build/native/n2_maps_a.bin"
+.segment "N2MAPSB"
+.incbin "build/native/n2_maps_b.bin"
 .segment "BOSSDATA"
 .incbin "build/native/boss.bin"
 .segment "GRAPHICS"

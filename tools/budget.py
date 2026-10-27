@@ -16,10 +16,10 @@ for line in m.split('Segment list:')[1].split('Exports list')[0].splitlines():
     if r:segs[r.group(1)]=dict(start=int(r.group(2),16),end=int(r.group(3),16),size=int(r.group(4),16))
 cfg=(ROOT/'cfg/native.cfg').read_text()
 mem={}
-for r in re.finditer(r'^\s*(\w+):\s*start=\$([0-9a-f]+),size=\$([0-9a-f]+)',cfg,re.M):mem[r.group(1)]=dict(start=int(r.group(2),16),size=int(r.group(3),16))
-prg_banks=dict(P0_P5_stage_descriptors=6*8192,P6_maps=8192,P7_actors=8192,P8_bossdata=8192,P9_title=8192,RES_reserved=mem['RES']['size'],K_kernel=8192,fixed_E000=8192)
-prg_total=sum(prg_banks.values());assert prg_total==128*1024,prg_total
-used=dict(STAGE_descriptors=6*8192,MAPS=segs['MAPS']['size'],ACTORS=segs['ACTORS']['size'],BOSSDATA=segs['BOSSDATA']['size'],TITLE=segs['TITLE']['size'],
+for r in re.finditer(r'^\s*(\w+):\s*start=\$?([0-9a-f]+),size=\$([0-9a-f]+)',cfg,re.M):mem[r.group(1)]=dict(start=int(r.group(2),16),size=int(r.group(3),16))
+prg_banks=dict(P0_P5_stage_descriptors=6*8192,P6_maps=8192,P7_actors=8192,P8_bossdata=8192,P9_title=8192,P10_stagecode=8192,RES_reserved=mem['RES']['size'],N2_maps=12*8192,N2_metatiles=2*8192,RES2_reserved=mem.get('RES2',{}).get('size',0),K_kernel=8192,fixed_E000=8192)
+prg_total=sum(prg_banks.values());assert prg_total in (128*1024,512*1024),prg_total
+used=dict(STAGE_descriptors=6*8192,STAGECODE=segs.get('STAGECODE',{}).get('size',0),N2_maps=12*8192,N2_metatiles=2*8192,MAPS=segs['MAPS']['size'],ACTORS=segs['ACTORS']['size'],BOSSDATA=segs['BOSSDATA']['size'],TITLE=segs['TITLE']['size'],
           CODE=segs['CODE']['size']+segs['RODATA']['size'],BOOT=segs['BOOT']['size'],SOUND=segs['SOUND']['size'],VECTORS=6,RESERVED=segs.get('RESERVED',{}).get('size',0))
 assets=load('build/native/assets_report.json',{})
 ram=dict(zero_page_bytes=0x80,bss_bytes=segs['BSS']['size'],stack_oam_pages=0x300,qa_mirror_bytes=0x50,work_ram_8k_used=dict(objects=17*32,shots=9*16,enemy_shots=10*16,history=128,boss_queue=0x200,collision_ring=0x400,actor_globals=0x100))
@@ -36,7 +36,7 @@ for game,rep in (('salamander',sal),('nemesis3',n3)):
     proj[game]=dict(unique_tiles=rep.get('unique_source_pixel_tiles',rep.get('unique_pixel_tiles')),tiles_2bpp_upper_bound=tiles_2bpp(rep.get('unique_source_pixel_tiles',rep.get('unique_pixel_tiles',0)) or 0),
                     terrain_columns=rep.get('terrain_columns'),sprite_sets=rep.get('sprite_sets'),note='from extractor report' if rep else 'extractor pending')
 chr_upper=sum(v.get('tiles_2bpp_upper_bound',0) or 0 for v in proj.values())+sum((v.get('sprite_sets_bytes') or v.get('sprite_sheets') or 0) for v in proj.values())
-summary=dict(current_board=dict(mapper=5,prg_kib=128,chr_kib=128,wram_kib=8,prg_used_bytes=sum(used.values()),prg_free_bytes=prg_total-sum(used.values()),chr_used_bytes=assets.get('chr_useful_bytes'),chr_padding_bytes=assets.get('chr_allocated_bytes',0)-(assets.get('chr_useful_bytes') or 0)),
+summary=dict(current_board=dict(mapper=5,prg_kib=prg_total//1024,chr_kib=mem['C']['size']//1024,wram_kib=8,prg_used_bytes=sum(used.values()),prg_free_bytes=prg_total-sum(used.values()),chr_used_bytes=assets.get('chr_useful_bytes'),chr_padding_bytes=assets.get('chr_allocated_bytes',0)-(assets.get('chr_useful_bytes') or 0)),
              mmc5_ceiling=dict(prg_kib=1024,chr_kib=1024,exram_bytes=1024,wram_kib=64),
              four_game_chr_upper_bound_bytes=chr_upper,four_game_chr_upper_bound_kib=round(chr_upper/1024),
              reading='Upper bound counts every unique MSX tile as one 2bpp NES tile and every sprite set uncompressed; global deduplication (reports/global_dedup.json) and palette merging reduce it. Code, music, cutscenes and tables are not in this bound.',

@@ -20,57 +20,59 @@ TITLE, INTRO, NEMESIS, T1, NEMESIS 2, T2, SALAMANDER, T3, NEMESIS 3, FINAL, CRED
 | 14 | N1.S08 | stage | nemesis | Nemesis stage 8: Fortress / final | ASSETS_READY | 0xac,0xa0,0xb5 |
 | 15 | N1.ENDING | cutscene | nemesis | Nemesis ending (after stage 8 boss kind 4) | NOT_STARTED |  |
 | 16 | T1 | transition | nemesis_legends | Transition Nemesis -> Nemesis 2 (new) | NOT_STARTED |  |
-| 17 | N2.S1 | stage | nemesis2 | Nemesis 2 S1 | ASSETS_READY |  |
-| 18 | N2.S2 | stage | nemesis2 | Nemesis 2 S2 | ASSETS_READY |  |
-| 19 | N2.S3 | stage | nemesis2 | Nemesis 2 S3 | ASSETS_READY |  |
-| 20 | N2.S4 | stage | nemesis2 | Nemesis 2 S4 | ASSETS_READY |  |
-| 21 | N2.S5 | stage | nemesis2 | Nemesis 2 S5 | ASSETS_READY |  |
-| 22 | N2.S6 | stage | nemesis2 | Nemesis 2 S6 | ASSETS_READY |  |
-| 23 | N2.S7 | stage | nemesis2 | Nemesis 2 S7 | ASSETS_READY |  |
-| 24 | N2.HALFWAY_ENDING | stage | nemesis2 | Nemesis 2 HALFWAY_ENDING | ASSETS_READY |  |
-| 25 | N2.R6 | stage | nemesis2 | Nemesis 2 R6 | ASSETS_READY |  |
-| 26 | N2.R5 | stage | nemesis2 | Nemesis 2 R5 | ASSETS_READY |  |
-| 27 | N2.R4 | stage | nemesis2 | Nemesis 2 R4 | ASSETS_READY |  |
-| 28 | N2.R3 | stage | nemesis2 | Nemesis 2 R3 | ASSETS_READY |  |
-| 29 | N2.R2 | stage | nemesis2 | Nemesis 2 R2 | ASSETS_READY |  |
-| 30 | N2.R1 | stage | nemesis2 | Nemesis 2 R1 | ASSETS_READY |  |
-| 31 | N2.R0 | stage | nemesis2 | Nemesis 2 R0 | ASSETS_READY |  |
-| 32 | N2.INTERIOR8 | stage | nemesis2 | Nemesis 2 INTERIOR8 | ASSETS_READY |  |
-| 33 | N2.SECRET9 | stage | nemesis2 | Nemesis 2 SECRET9 | ASSETS_READY |  |
-| 34 | N2.SECRET10 | stage | nemesis2 | Nemesis 2 SECRET10 | ASSETS_READY |  |
-| 35 | N2.SECRET11 | stage | nemesis2 | Nemesis 2 SECRET11 | ASSETS_READY |  |
-| 36 | N2.ENDING | stage | nemesis2 | Nemesis 2 ENDING | ASSETS_READY |  |
-| 37 | T2 | transition | nemesis_legends | Transition Nemesis 2 -> Salamander (new) | NOT_STARTED |  |
-| 38 | SAL.MAP_01 | stage | salamander | Salamander first stage, always first | ASSETS_READY | 0x1b,0x21 |
-| 39 | SAL.MAP_02 | stage | salamander | Salamander second stage, always second | ASSETS_READY | 0x1c,0x21 |
-| 40 | SAL.MAP_03 | stage | salamander | Salamander planet EIONEUS, one of three picked on the radar (p10:988A, clock p10:9A43) | ASSETS_READY | 0x1e,0x21 |
-| 41 | SAL.MAP_04 | stage | salamander | Salamander planet LAVINIA, one of three picked on the radar | ASSETS_READY | 0x1d,0x21 |
-| 42 | SAL.MAP_05 | stage | salamander | Salamander planet KIERKE, one of three picked on the radar | ASSETS_READY | 0x1f,0x21 |
-| 43 | SAL.MAP_06 | stage | salamander | Salamander final stage (OPERATION FOUR); boss 6 falling starts the ending (p11:B58D) | ASSETS_READY | 0x20,0x21 |
-| 44 | SAL.MAP_07 | stage | salamander | Salamander OPERATION X secret stage: only with Nemesis 2 in the other slot (p03:B599/B5E3), played before stage 6 (p10:8B7B); its tiles come from that cartridge (p00:5B91) | ASSETS_READY | 0x19,0x21 |
-| 45 | T3 | transition | nemesis_legends | Transition Salamander -> Nemesis 3 (new) | NOT_STARTED |  |
-| 46 | N3.1 | stage | nemesis3 | Nemesis 3 stage_1_no_map_sun_enemies | ASSETS_READY | 0x6,0x5 |
-| 47 | N3.2 | stage | nemesis3 | Nemesis 3 stage_2 | ASSETS_READY | 0x7,0x5 |
-| 48 | N3.3 | stage | nemesis3 | Nemesis 3 stage_3 | ASSETS_READY | 0x4,0x8,0x5,0x1 |
-| 49 | N3.4 | stage | nemesis3 | Nemesis 3 stage_4_boss_rush_no_map | ASSETS_READY | 0x4,0xc,0x5 |
-| 50 | N3.5 | stage | nemesis3 | Nemesis 3 stage_5_red_map_entrance | ASSETS_READY | 0x4,0xc,0x5 |
-| 51 | N3.6 | stage | nemesis3 | Nemesis 3 stage_6 | ASSETS_READY | 0x4,0x44,0x5 |
-| 52 | N3.7 | stage | nemesis3 | Nemesis 3 stage_7_map_entrance | ASSETS_READY | 0x4,0x45,0x5 |
-| 53 | N3.8 | stage | nemesis3 | Nemesis 3 stage_8_map_entrance | ASSETS_READY | 0x4,0x46,0x5 |
-| 54 | N3.9 | stage | nemesis3 | Nemesis 3 stage_9_esp_device_then_computer | ASSETS_READY | 0x4,0xd,0x5,0x1 |
-| 55 | N3.10 | stage | nemesis3 | Nemesis 3 stage_10_needs_all_three_maps | ASSETS_READY | 0x47,0x5 |
-| 56 | N3.11 | stage | nemesis3 | Nemesis 3 stage_11_final | ASSETS_READY | 0xe |
-| 57 | N3.INTERLUDE.AFTER3 | cutscene | nemesis3 | Nemesis 3 interlude after stage 3: on_board_computer_radar | NOT_STARTED | 0x3f |
-| 58 | N3.INTERLUDE.AFTER4 | cutscene | nemesis3 | Nemesis 3 interlude after stage 4: on_board_computer_scene | NOT_STARTED |  |
-| 59 | N3.INTERLUDE.AFTER9 | cutscene | nemesis3 | Nemesis 3 interlude after stage 9: on_board_computer_map_check | NOT_STARTED | 0x3f |
-| 60 | N3.INTERLUDE.AFTER11 | cutscene | nemesis3 | Nemesis 3 interlude after stage 11: ending | NOT_STARTED |  |
-| 61 | N3.INTERLUDE.AFTERNone | cutscene | nemesis3 | Nemesis 3 interlude after stage None: state_9 | NOT_STARTED |  |
-| 62 | N3.INTERLUDE.AFTERNone | cutscene | nemesis3 | Nemesis 3 interlude after stage None: None | NOT_STARTED |  |
-| 63 | N3.INTERLUDE.AFTERNone | cutscene | nemesis3 | Nemesis 3 interlude after stage None: None | NOT_STARTED |  |
-| 64 | FINAL | cutscene | nemesis_legends | Final ending of the anthology (new, after Nemesis 3) | NOT_STARTED |  |
-| 65 | CREDITS | screen | nemesis_legends | Credits (new) | NOT_STARTED |  |
+| 17 | N2.0 | stage | nemesis2 | Nemesis 2 final fortress (last stage of the return trip, core instead of boss) | INTEGRATED | None,None |
+| 18 | N2.1 | stage | nemesis2 | Nemesis 2 stage 1 (first planet; also the stage the game starts in, p00:5AD8) | INTEGRATED | None,None,None |
+| 19 | N2.2 | stage | nemesis2 | Nemesis 2 stage 2 | INTEGRATED | None,None,None |
+| 20 | N2.3 | stage | nemesis2 | Nemesis 2 stage 3 (hides the secret entrance to map 9) | INTEGRATED | None,None,None |
+| 21 | N2.4 | stage | nemesis2 | Nemesis 2 stage 4 | INTEGRATED | None,None,None |
+| 22 | N2.5 | stage | nemesis2 | Nemesis 2 stage 5 (hatch corridor event before boss 2) | INTEGRATED | None,None,None |
+| 23 | N2.6 | stage | nemesis2 | Nemesis 2 stage 6 (no boss: two rock-throwing pieces; hides the secret entrance to map 10) | INTEGRATED | None,None,None |
+| 24 | N2.7 | stage | nemesis2 | Nemesis 2 stage 7 (outbound end: boss 3 then the halfway ending) | INTEGRATED | None,None,None |
+| 25 | N2.8 | stage | nemesis2 | Nemesis 2 boss interior (shared by every boss; weapon capture) | INTEGRATED | None,None |
+| 26 | N2.9 | stage | nemesis2 | Nemesis 2 secret stage reached from map 3 | INTEGRATED | None,None |
+| 27 | N2.10 | stage | nemesis2 | Nemesis 2 secret stage reached from map 6 (hides the entrance to map 11) | INTEGRATED | None,None |
+| 28 | N2.11 | stage | nemesis2 | Nemesis 2 secret stage reached from map 10 | INTEGRATED | None,None |
+| 29 | N2.CUT.TEXTENGINE | cutscene | nemesis2 | Nemesis 2 cutscene: text_engine | NOT_STARTED |  |
+| 30 | N2.CUT.LOCALISATION | cutscene | nemesis2 | Nemesis 2 cutscene: localisation | NOT_STARTED |  |
+| 31 | N2.CUT.INTROTITLE | cutscene | nemesis2 | Nemesis 2 cutscene: intro_title | NOT_STARTED |  |
+| 32 | N2.CUT.DEMOSTORY | cutscene | nemesis2 | Nemesis 2 cutscene: demo_story | NOT_STARTED |  |
+| 33 | N2.CUT.GAMESTARTPILOT | cutscene | nemesis2 | Nemesis 2 cutscene: game_start_pilot | NOT_STARTED |  |
+| 34 | N2.CUT.INTERIORCAPTURE | cutscene | nemesis2 | Nemesis 2 cutscene: interior_capture | NOT_STARTED |  |
+| 35 | N2.CUT.HALFWAYENDING | cutscene | nemesis2 | Nemesis 2 cutscene: halfway_ending | NOT_STARTED |  |
+| 36 | N2.CUT.REALENDING | cutscene | nemesis2 | Nemesis 2 cutscene: real_ending | NOT_STARTED |  |
+| 37 | N2.CUT.GAMEOVER | cutscene | nemesis2 | Nemesis 2 cutscene: game_over | NOT_STARTED |  |
+| 38 | N2.CUT.PAUSE | cutscene | nemesis2 | Nemesis 2 cutscene: pause | NOT_STARTED |  |
+| 39 | T2 | transition | nemesis_legends | Transition Nemesis 2 -> Salamander (new) | NOT_STARTED |  |
+| 40 | SAL.MAP_01 | stage | salamander | Salamander first stage, always first | ASSETS_READY | 0x1b,0x21 |
+| 41 | SAL.MAP_02 | stage | salamander | Salamander second stage, always second | ASSETS_READY | 0x1c,0x21 |
+| 42 | SAL.MAP_03 | stage | salamander | Salamander planet EIONEUS, one of three picked on the radar (p10:988A, clock p10:9A43) | ASSETS_READY | 0x1e,0x21 |
+| 43 | SAL.MAP_04 | stage | salamander | Salamander planet LAVINIA, one of three picked on the radar | ASSETS_READY | 0x1d,0x21 |
+| 44 | SAL.MAP_05 | stage | salamander | Salamander planet KIERKE, one of three picked on the radar | ASSETS_READY | 0x1f,0x21 |
+| 45 | SAL.MAP_06 | stage | salamander | Salamander final stage (OPERATION FOUR); boss 6 falling starts the ending (p11:B58D) | ASSETS_READY | 0x20,0x21 |
+| 46 | SAL.MAP_07 | stage | salamander | Salamander OPERATION X secret stage: only with Nemesis 2 in the other slot (p03:B599/B5E3), played before stage 6 (p10:8B7B); its tiles come from that cartridge (p00:5B91) | ASSETS_READY | 0x19,0x21 |
+| 47 | T3 | transition | nemesis_legends | Transition Salamander -> Nemesis 3 (new) | NOT_STARTED |  |
+| 48 | N3.1 | stage | nemesis3 | Nemesis 3 stage_1_no_map_sun_enemies | ASSETS_READY | 0x6,0x5 |
+| 49 | N3.2 | stage | nemesis3 | Nemesis 3 stage_2 | ASSETS_READY | 0x7,0x5 |
+| 50 | N3.3 | stage | nemesis3 | Nemesis 3 stage_3 | ASSETS_READY | 0x4,0x8,0x5,0x1 |
+| 51 | N3.4 | stage | nemesis3 | Nemesis 3 stage_4_boss_rush_no_map | ASSETS_READY | 0x4,0xc,0x5 |
+| 52 | N3.5 | stage | nemesis3 | Nemesis 3 stage_5_red_map_entrance | ASSETS_READY | 0x4,0xc,0x5 |
+| 53 | N3.6 | stage | nemesis3 | Nemesis 3 stage_6 | ASSETS_READY | 0x4,0x44,0x5 |
+| 54 | N3.7 | stage | nemesis3 | Nemesis 3 stage_7_map_entrance | ASSETS_READY | 0x4,0x45,0x5 |
+| 55 | N3.8 | stage | nemesis3 | Nemesis 3 stage_8_map_entrance | ASSETS_READY | 0x4,0x46,0x5 |
+| 56 | N3.9 | stage | nemesis3 | Nemesis 3 stage_9_esp_device_then_computer | ASSETS_READY | 0x4,0xd,0x5,0x1 |
+| 57 | N3.10 | stage | nemesis3 | Nemesis 3 stage_10_needs_all_three_maps | ASSETS_READY | 0x47,0x5 |
+| 58 | N3.11 | stage | nemesis3 | Nemesis 3 stage_11_final | ASSETS_READY | 0xe |
+| 59 | N3.INTERLUDE.AFTER3 | cutscene | nemesis3 | Nemesis 3 interlude after stage 3: on_board_computer_radar | NOT_STARTED | 0x3f |
+| 60 | N3.INTERLUDE.AFTER4 | cutscene | nemesis3 | Nemesis 3 interlude after stage 4: on_board_computer_scene | NOT_STARTED |  |
+| 61 | N3.INTERLUDE.AFTER9 | cutscene | nemesis3 | Nemesis 3 interlude after stage 9: on_board_computer_map_check | NOT_STARTED | 0x3f |
+| 62 | N3.INTERLUDE.AFTER11 | cutscene | nemesis3 | Nemesis 3 interlude after stage 11: ending | NOT_STARTED |  |
+| 63 | N3.INTERLUDE.AFTERNone | cutscene | nemesis3 | Nemesis 3 interlude after stage None: state_9 | NOT_STARTED |  |
+| 64 | N3.INTERLUDE.AFTERNone | cutscene | nemesis3 | Nemesis 3 interlude after stage None: None | NOT_STARTED |  |
+| 65 | N3.INTERLUDE.AFTERNone | cutscene | nemesis3 | Nemesis 3 interlude after stage None: None | NOT_STARTED |  |
+| 66 | FINAL | cutscene | nemesis_legends | Final ending of the anthology (new, after Nemesis 3) | NOT_STARTED |  |
+| 67 | CREDITS | screen | nemesis_legends | Credits (new) | NOT_STARTED |  |
 
-State counts: ASSETS_READY 43, NOT_STARTED 14, PARTIAL 7, PLAYABLE 1
+State counts: ASSETS_READY 23, INTEGRATED 12, NOT_STARTED 24, PARTIAL 7, PLAYABLE 1
 
 - Original endings are kept and played before each transition.
 - Nemesis 2 halfway ending is not completion; the return trip follows.

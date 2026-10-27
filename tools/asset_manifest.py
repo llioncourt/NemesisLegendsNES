@@ -97,16 +97,17 @@ add(id='n1.title',name='Nemesis / Gradius title screen (region logo)',game='neme
     notes='replaced by the Nemesis Legends title; original kept as reference only')
 
 # ---------------------------------------------------------------- Nemesis 2 (MSX)
+N2_NATIVE=(ROOT/'build/native/n2_assets.json').exists()
 n2=load('assets/msx/nemesis2/stage_manifest.json',[]);n2s=load('assets/msx/nemesis2/compressed_streams.json',[]);n2r=load('reports/nemesis2_extraction.json',{})
 N2_ROLE={0:'stage 1',1:'stage 2',2:'stage 3',3:'stage 4',4:'stage 5',5:'stage 6',6:'stage 7',7:'interior 8',8:'secret 9',9:'secret 10',10:'secret 11',11:'return / final'}
 for m in n2:
     st=m['stage_id']
     add(id=f'n2.map{st:02d}.terrain',name=f'Nemesis 2 map {st} terrain ({N2_ROLE.get(st,"?")}, {m["columns"]} columns)',game='nemesis2',platform='msx',rom_slug='nemesis2_msx',
         bank=13+(m['column_script_address']-0x4000)//8192-1 if m['column_script_address']>=0x6000 else 13,offset=m['column_script_rom_offset'],category='terrain_map',format='msx_column_script_6',
-        size_bytes=m['column_script_bytes'],reuse_class='CONVERT',extracted=True,path=f'assets/msx/nemesis2/map_{st:02d}/',notes='map ids are not campaign order; see CAMPAIGN_FLOW.md')
-    add(id=f'n2.map{st:02d}.tiles',name=f'Nemesis 2 map {st} character set',game='nemesis2',platform='msx',rom_slug='nemesis2_msx',category='tile_set',format='tms9918_pattern+colour',reuse_class='CONVERT',extracted=True,path=f'assets/msx/nemesis2/map_{st:02d}/source_vram.bin')
+        size_bytes=m['column_script_bytes'],reuse_class='CONVERT',extracted=True,converted=N2_NATIVE,integrated=N2_NATIVE,tested=N2_NATIVE,path=f'assets/msx/nemesis2/map_{st:02d}/',notes='map ids are not campaign order; see reports/nemesis2_structure.json; native descriptor n2_map_%02d.bin (CP0014)'%st if N2_NATIVE else 'map ids are not campaign order')
+    add(id=f'n2.map{st:02d}.tiles',name=f'Nemesis 2 map {st} character set',game='nemesis2',platform='msx',rom_slug='nemesis2_msx',category='tile_set',format='tms9918_pattern+colour',reuse_class='CONVERT',extracted=True,converted=N2_NATIVE,integrated=N2_NATIVE,tested=N2_NATIVE,path=f'assets/msx/nemesis2/map_{st:02d}/source_vram.bin')
     for var in ('normal','drill','penguin','penguin_drill'):
-        add(id=f'n2.map{st:02d}.sprites.{var}',name=f'Nemesis 2 map {st} sprite set ({var})',game='nemesis2',platform='msx',rom_slug='nemesis2_msx',category='sprite_set',format='tms9918_16x16',reuse_class='CONVERT',extracted=True,path=f'assets/msx/nemesis2/map_{st:02d}/sprites_{var}.bin')
+        add(id=f'n2.map{st:02d}.sprites.{var}',name=f'Nemesis 2 map {st} sprite set ({var})',game='nemesis2',platform='msx',rom_slug='nemesis2_msx',category='sprite_set',format='tms9918_16x16',reuse_class='CONVERT',extracted=True,converted=N2_NATIVE and var=='normal',integrated=N2_NATIVE and var=='normal',path=f'assets/msx/nemesis2/map_{st:02d}/sprites_{var}.bin')
     add(id=f'n2.map{st:02d}.script',name=f'Nemesis 2 map {st} stage logic, enemies, boss',game='nemesis2',platform='msx',rom_slug='nemesis2_msx',category='stage_script',format='z80_code',reuse_class='CONVERT',extracted=False,notes='routing only (campaign module); no native gameplay')
 for i,s in enumerate(n2s):
     add(id=f'n2.rle.{i:03d}',name='Nemesis 2 compressed graphics stream',game='nemesis2',platform='msx',rom_slug='nemesis2_msx',offset=s['rom_offset'],category='compressed_stream',format='konami_rle2',

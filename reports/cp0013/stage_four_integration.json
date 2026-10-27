@@ -1,5 +1,5 @@
 {
- "rom_sha256": "093ab936138f4d88c048d67f5200c9cb9a8cc9af60bd7a3c58b73bce739c813b",
+ "rom_sha256": "c4387d3dd2631be14fc0aa531810a6693478820c67c939c1e8bbc28af459d0d9",
  "assisted": "QA invulnerability only",
  "source": "p01:6E15 final_de_la_fase_4; p01:70D6 tanda; p02:8E77 five pieces; p02:8CE4 boss 5",
  "stage4_frame": 15865,

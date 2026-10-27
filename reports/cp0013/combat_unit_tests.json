@@ -1,6 +1,6 @@
 {
-  "rom_sha256": "093ab936138f4d88c048d67f5200c9cb9a8cc9af60bd7a3c58b73bce739c813b",
-  "harness_sha256": "5994398b648513aa6a84cffe6bc45def95c520f2a7f1049acf22f2580abc03c2",
+  "rom_sha256": "c4387d3dd2631be14fc0aa531810a6693478820c67c939c1e8bbc28af459d0d9",
+  "harness_sha256": "07b3d24a73a7f02744dfc49644ec4f94acd2d1f080c3d6355e7b214aa4bf454e",
   "scope": "Run exact production 6502 combat routines in FCEUmm, with labeled RAM fixtures.\nThe harness occupies unused PRG bank 13; all tested production bytes are kept.\nThis tests mechanics, not acquisition, rendered campaign completion, or hardware.\n",
   "assertions": [
     {
@@ -365,20 +365,20 @@
     }
   ],
   "observed": [
+    165,
     0,
-    0,
-    44,
+    60,
     0
   ],
   "negative_control": {
     "change": "production laser grows 3 rather than 4 characters",
     "observed": [
-      0,
-      0,
-      44,
-      0
+      165,
+      8,
+      52,
+      53
     ],
-    "rejected": false
+    "rejected": true
   },
-  "passed": false
+  "passed": true
 }

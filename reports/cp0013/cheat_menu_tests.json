@@ -1,5 +1,5 @@
 {
- "rom_sha256": "d74c9654fbb88a21515b4b1ce60352209d21fc277410c9c306b12b8410dbb237",
+ "rom_sha256": "c4387d3dd2631be14fc0aa531810a6693478820c67c939c1e8bbc28af459d0d9",
  "checks": {
   "title_konami_opens_menu": true,
   "menu_cursor_on_stage": true,

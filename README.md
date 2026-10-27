@@ -1,4 +1,4 @@
-# Nemesis Legends — CP0013: cheat menu, four-game inventories, stage 4 playable to stage 5
+# Nemesis Legends — CP0014: 512K/256K board, Nemesis 2 maps in the ROM, cheat menu, stage 4 playable
 
 **WIP / playable partial NES/Famicom MMC5 native port, not the completed saga.**
 
@@ -6,6 +6,16 @@ The product goal is unchanged: **one continuous chronological campaign**
 **Nemesis → Nemesis 2 → Salamander → Nemesis 3**, preserving *all* source stages,
 mechanics, bosses, secrets, story, music, endings and cutscenes. This is **not** a
 four-ROM launcher, a framebuffer playback tool or an isolated prototype.
+
+## CP0014: the four-game board and Nemesis 2 maps in the ROM
+
+The cartridge is now MMC5 with 512 KiB PRG and 256 KiB CHR-ROM, kernel and
+boot in the last two banks, and a bank map reserved per chapter. All twelve
+Nemesis 2 maps are converted into native descriptors (terrain, palettes,
+hardware sprites), live in banks 14-27 with their CHR in banks 25-38, and load
+and scroll through the cheat menu (GAME NEMESIS2) with zero missed NMIs.
+This is structural integration only: no Nemesis 2 enemies, bosses, weapons,
+events, endings or music yet. Read `docs/NATIVE_RUNTIME_CP0014.md`.
 
 ## CP0013: Silicon Forge cheat menu and the four-game inventories
 
@@ -120,4 +130,4 @@ and commercial audio are **private recovery material**, not published here.
 Public Silicon Forge game releases use **IPS patches only**. The private ROM
 in the user package is for authorized local testing, not the public release.
 
-Current checkpoint: **CP0013 WIP**. No `Nemesis_Legends_NES_Final.nes` exists.
+Current checkpoint: **CP0014 WIP**. No `Nemesis_Legends_NES_Final.nes` exists.

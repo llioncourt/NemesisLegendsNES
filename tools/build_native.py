@@ -10,11 +10,12 @@ def main():
     # --assets rebuild could silently restore the previously blacked-out title.
     if a.assets:
         subprocess.run([sys.executable,str(ROOT/'tools/compile_title_art.py')],cwd=ROOT,check=True)
+        subprocess.run([sys.executable,str(ROOT/'tools/build_n2_assets.py')],cwd=ROOT,check=True)
         subprocess.run([sys.executable,str(ROOT/'tools/build_native_assets.py')],cwd=ROOT,check=True)
     import hashlib
     bg=(ROOT/'assets/title_art/background.chr').read_bytes()
     full=(ROOT/'build/native/graphics.chr').read_bytes()
-    if len(bg)!=16384 or len(full)!=131072 or full[19*4096:23*4096]!=bg:
+    if len(bg)!=16384 or len(full)!=262144 or full[19*4096:23*4096]!=bg:
         raise SystemExit('Title background CHR bank mismatch; run --assets to regenerate the approved art')
     subprocess.run([sys.executable,str(ROOT/'tools/build_title_panel.py')],cwd=ROOT,check=True)
     def tool(name):
@@ -24,7 +25,7 @@ def main():
     out=ROOT/'build/native';out.mkdir(parents=True,exist_ok=True)
     names=['native_boot','native_title','native_kernel','native_actors','native_projectiles','native_boss','native_laser','campaign','native_stage2','native_pacing','native_stage3','native_stage_targets','native_stage4','native_cheat']
     for n in names:subprocess.run([tool('ca65'),'-g','-I','src','src/'+n+'.s','-o',str(out/(n+'.o'))],cwd=ROOT,check=True)
-    rom=out/'Nemesis_Legends_CP0013.nes'
+    rom=out/'Nemesis_Legends_CP0014.nes'
     subprocess.run([tool('ld65'),'-C','cfg/native.cfg','-o',str(rom),'-m',str(out/'native.map'),'-Ln',str(out/'native.lbl'),*[str(out/(n+'.o')) for n in names]],cwd=ROOT,check=True)
     data=rom.read_bytes();r=dict(file=rom.name,size=len(data),sha256=hashlib.sha256(data).hexdigest(),mapper=5,
                                status='native integration under development; not the complete four-game campaign')

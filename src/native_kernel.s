@@ -181,6 +181,8 @@ Main:
  jmp @loop
 
 NewGame:
+ lda #1
+ sta chapter
  jsr Flow_NewGame
  jsr TargetNewGame
  lda #0
@@ -331,19 +333,34 @@ StageCodeIn:
  rts
 StageCodeOut:
  lda bank8000
+ bne :+
+ lda #$80              ; never seeded (unit fixtures): stage data bank 0
+:
  sta $5114
  rts
+; Hooks run for every shot; only switch banks when stage 4 is actually active.
 Stage4ShotHitBanked:
+ lda stage_id
+ cmp #4
+ bne @none
  jsr StageCodeIn
  jsr Stage4ShotHit
  php
  jsr StageCodeOut
  plp
  rts
+@none:
+ clc
+ rts
 Stage4LaserHitBanked:
+ lda stage_id
+ cmp #4
+ bne @skip
  jsr StageCodeIn
  jsr Stage4LaserHit
  jmp StageCodeOut
+@skip:
+ rts
 
 LoadStage:
  sei
@@ -377,6 +394,9 @@ LoadStage:
 @retain_power:
  lda #0
  sta route_flag
+ lda chapter
+ cmp #2
+ beq @chapter2
  lda stage_id
  sec
  sbc #1
@@ -391,6 +411,19 @@ LoadStage:
 @evenbase: lda #$80
 @base:
  sta stagebase
+ jmp @based
+@chapter2:
+ ; Nemesis 2: one 8 KiB descriptor per map in banks N2_MAP_BANK..+11, at $8000.
+ lda stage_id
+ sec
+ sbc #1
+ clc
+ adc #N2_MAP_BANK
+ sta stage_bank
+ jsr LoadDataBank
+ lda #$80
+ sta stagebase
+@based:
  lda #0
  sta ptr
  lda stagebase
@@ -531,12 +564,13 @@ LoadStage:
 
 ; Construct one column using the original six-metatile script. No full-map RAM.
 DrawColumn:
- lda #$86
- sta $5115
  lda #0
  sta ptr
  lda stagebase
  sta ptr+1
+ ldy #12
+ lda (ptr),y            ; metatile bank ($5115 value) named by the descriptor
+ sta $5115
  lda worldlo
  and #31
  sta column_slot
@@ -785,7 +819,11 @@ UploadColumn:
 
 FrameGame:
  inc logic
+ lda chapter
+ cmp #1
+ bne :+
  jsr StageEvents
+:
  lda #0
  sta new_column
  lda phase
@@ -808,6 +846,9 @@ FrameGame:
  jsr SpawnCannon
 @noscroll:
  jsr MovePlayer
+ lda chapter
+ cmp #1
+ bne @no_chapter1_logic
  jsr Stage2Tick
  jsr Stage3Tick
  jsr StageCodeIn
@@ -815,9 +856,9 @@ FrameGame:
  jsr StageCodeOut
  jsr TargetTick
  lda phase
- bne :+
+ bne @no_chapter1_logic
  jsr SpawnWaves
-:
+@no_chapter1_logic:
  jsr ActorsFrame
  jsr ShotsFrame
  jsr HideSprites

@@ -1,0 +1,211 @@
+{
+  "checkpoint": "CP0008",
+  "scope": "Native stage-two MSX route regression on the unmodified FCEUmm libretro core.\nTwo controller-driven paths run through stage one; only the player's\ninvulnerability is injected (and documented). No phase, boss health, distance,\nrock, timer, target, route, or stage transition is injected. Does NOT validate\nthe incomplete stage-three onward campaign or full source sprite fidelity.\n",
+  "rom_sha256": "c4387d3dd2631be14fc0aa531810a6693478820c67c939c1e8bbc28af459d0d9",
+  "runs": [
+    {
+      "name": "normal",
+      "qa": "Player invulnerability enabled at stage one; no other state injection",
+      "rom_sha256": "c4387d3dd2631be14fc0aa531810a6693478820c67c939c1e8bbc28af459d0d9",
+      "phase_transitions": [
+        {
+          "frame": 5210,
+          "stage": 2,
+          "phase": 0,
+          "world": 3,
+          "rock_attempts": 0,
+          "rock_spawned": 0,
+          "wall_events": 0,
+          "target_hits": 0,
+          "rain_finished": 0
+        },
+        {
+          "frame": 8663,
+          "stage": 2,
+          "phase": 9,
+          "world": 463,
+          "rock_attempts": 30,
+          "rock_spawned": 27,
+          "wall_events": 6,
+          "target_hits": 0,
+          "rain_finished": 0
+        },
+        {
+          "frame": 9563,
+          "stage": 2,
+          "phase": 1,
+          "world": 463,
+          "rock_attempts": 74,
+          "rock_spawned": 41,
+          "wall_events": 6,
+          "target_hits": 0,
+          "rain_finished": 1
+        },
+        {
+          "frame": 9692,
+          "stage": 2,
+          "phase": 5,
+          "world": 479,
+          "rock_attempts": 74,
+          "rock_spawned": 41,
+          "wall_events": 6,
+          "target_hits": 0,
+          "rain_finished": 1
+        },
+        {
+          "frame": 9784,
+          "stage": 2,
+          "phase": 6,
+          "world": 479,
+          "rock_attempts": 74,
+          "rock_spawned": 41,
+          "wall_events": 6,
+          "target_hits": 0,
+          "rain_finished": 1
+        },
+        {
+          "frame": 10504,
+          "stage": 2,
+          "phase": 7,
+          "world": 479,
+          "rock_attempts": 74,
+          "rock_spawned": 41,
+          "wall_events": 6,
+          "target_hits": 0,
+          "rain_finished": 1
+        },
+        {
+          "frame": 10544,
+          "stage": 2,
+          "phase": 8,
+          "world": 479,
+          "rock_attempts": 74,
+          "rock_spawned": 41,
+          "wall_events": 6,
+          "target_hits": 0,
+          "rain_finished": 1
+        },
+        {
+          "frame": 10664,
+          "stage": 3,
+          "phase": 0,
+          "world": 3,
+          "rock_attempts": 74,
+          "rock_spawned": 41,
+          "wall_events": 6,
+          "target_hits": 0,
+          "rain_finished": 1
+        }
+      ],
+      "stage_two_entry": 5210,
+      "stage_three_entry": 10664,
+      "stage_nine_entry": null,
+      "rain_started": 8663,
+      "rain_ended": 9563,
+      "first_bonus": null,
+      "boss_started": 9692,
+      "boss_over": 10504,
+      "rock_counter_at_boss": "000500f8000000014a00290006002101",
+      "rock_counter_at_exit": "000500f8000000014a00290006002101",
+      "secret_rock_counter_at_entry": null,
+      "bonus9_max_world": 0,
+      "max_spawned_rock_count": 41,
+      "missed_NMIs": 0,
+      "checks": {
+        "first_stage_reached_second": true,
+        "second_stage_ran_for_source_content": true,
+        "no_missed_NMI_during_the_assisted_path": true,
+        "source_target_spawned": true,
+        "at_least_one_source_rock_materialized": true,
+        "six_source_rock_wall_events": true,
+        "wall_and_rain_attempts_source_counter": true,
+        "rock_pool_did_not_reject_every_request": true,
+        "natural_rain_phase_reached": true,
+        "original_900_frame_rain_duration": true,
+        "normal_boss_entered": true,
+        "natural_boss_sequence_reached_third_stage": true,
+        "original_target_not_collected": true
+      },
+      "passed": true
+    },
+    {
+      "name": "secret",
+      "qa": "Player invulnerability enabled at stage one; no other state injection",
+      "rom_sha256": "c4387d3dd2631be14fc0aa531810a6693478820c67c939c1e8bbc28af459d0d9",
+      "phase_transitions": [
+        {
+          "frame": 5210,
+          "stage": 2,
+          "phase": 0,
+          "world": 3,
+          "rock_attempts": 0,
+          "rock_spawned": 0,
+          "wall_events": 0,
+          "target_hits": 0,
+          "rain_finished": 0
+        },
+        {
+          "frame": 8319,
+          "stage": 2,
+          "phase": 10,
+          "world": 420,
+          "rock_attempts": 30,
+          "rock_spawned": 0,
+          "wall_events": 6,
+          "target_hits": 1,
+          "rain_finished": 0
+        },
+        {
+          "frame": 8383,
+          "stage": 9,
+          "phase": 0,
+          "world": 3,
+          "rock_attempts": 30,
+          "rock_spawned": 0,
+          "wall_events": 6,
+          "target_hits": 1,
+          "rain_finished": 0
+        },
+        {
+          "frame": 10868,
+          "stage": 3,
+          "phase": 0,
+          "world": 2,
+          "rock_attempts": 0,
+          "rock_spawned": 0,
+          "wall_events": 0,
+          "target_hits": 0,
+          "rain_finished": 0
+        }
+      ],
+      "stage_two_entry": 5210,
+      "stage_three_entry": 10868,
+      "stage_nine_entry": 8383,
+      "rain_started": null,
+      "rain_ended": null,
+      "first_bonus": 8319,
+      "boss_started": null,
+      "boss_over": null,
+      "rock_counter_at_boss": null,
+      "rock_counter_at_exit": "00000000000000000000000000000000",
+      "secret_rock_counter_at_entry": "00050250000000001e00000006011e00",
+      "bonus9_max_world": 341,
+      "max_spawned_rock_count": 0,
+      "missed_NMIs": 0,
+      "checks": {
+        "first_stage_reached_second": true,
+        "second_stage_ran_for_source_content": true,
+        "no_missed_NMI_during_the_assisted_path": true,
+        "source_target_spawned": true,
+        "source_bonus9_terrain_reaches_original_event_distance": true,
+        "secret_stage9_returns_to_stage3_without_injection": true,
+        "contact_causes_64_frame_bonus_freeze": true,
+        "source_target_collided": true,
+        "transition_to_original_bonus_stage9": true,
+        "no_rain_after_secret_interruption": true
+      },
+      "passed": true
+    }
+  ],
+  "passed": true
+}

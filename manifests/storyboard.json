@@ -346,312 +346,409 @@
    "music": null,
    "entry": null,
    "exit_condition": null,
-   "next": "N2.S1",
+   "next": "N2.0",
    "dependencies": [],
    "notes": "keeps the Nemesis ending, adds the bridge; no original rule"
   },
   {
    "order": 17,
-   "id": "N2.S1",
+   "id": "N2.0",
    "kind": "stage",
    "game": "nemesis2",
-   "title": "Nemesis 2 S1",
-   "state": "ASSETS_READY",
-   "resources": [],
-   "music": null,
+   "title": "Nemesis 2 final fortress (last stage of the return trip, core instead of boss)",
+   "state": "INTEGRATED",
+   "resources": [
+    "nemesis2.map00.terrain"
+   ],
+   "music": [
+    null,
+    null
+   ],
    "entry": null,
    "exit_condition": null,
-   "next": "N2.S2",
+   "next": "N2.1",
    "dependencies": [],
-   "notes": "structure inventory pending"
+   "notes": "Stage 0 is only reached on the return trip (0xE20A odd), inbound ordering 6,5,4,3,2,1,0 not verified by play (docs/OPEN-QUESTIONS.md)"
   },
   {
    "order": 18,
-   "id": "N2.S2",
+   "id": "N2.1",
    "kind": "stage",
    "game": "nemesis2",
-   "title": "Nemesis 2 S2",
-   "state": "ASSETS_READY",
-   "resources": [],
-   "music": null,
+   "title": "Nemesis 2 stage 1 (first planet; also the stage the game starts in, p00:5AD8)",
+   "state": "INTEGRATED",
+   "resources": [
+    "nemesis2.map01.terrain"
+   ],
+   "music": [
+    null,
+    null,
+    null
+   ],
    "entry": null,
    "exit_condition": null,
-   "next": "N2.S3",
+   "next": "N2.2",
    "dependencies": [],
-   "notes": "structure inventory pending"
+   "notes": ""
   },
   {
    "order": 19,
-   "id": "N2.S3",
+   "id": "N2.2",
    "kind": "stage",
    "game": "nemesis2",
-   "title": "Nemesis 2 S3",
-   "state": "ASSETS_READY",
-   "resources": [],
-   "music": null,
+   "title": "Nemesis 2 stage 2",
+   "state": "INTEGRATED",
+   "resources": [
+    "nemesis2.map02.terrain"
+   ],
+   "music": [
+    null,
+    null,
+    null
+   ],
    "entry": null,
    "exit_condition": null,
-   "next": "N2.S4",
+   "next": "N2.3",
    "dependencies": [],
-   "notes": "structure inventory pending"
+   "notes": ""
   },
   {
    "order": 20,
-   "id": "N2.S4",
+   "id": "N2.3",
    "kind": "stage",
    "game": "nemesis2",
-   "title": "Nemesis 2 S4",
-   "state": "ASSETS_READY",
-   "resources": [],
-   "music": null,
+   "title": "Nemesis 2 stage 3 (hides the secret entrance to map 9)",
+   "state": "INTEGRATED",
+   "resources": [
+    "nemesis2.map03.terrain"
+   ],
+   "music": [
+    null,
+    null,
+    null
+   ],
    "entry": null,
    "exit_condition": null,
-   "next": "N2.S5",
+   "next": "N2.4",
    "dependencies": [],
-   "notes": "structure inventory pending"
+   "notes": ""
   },
   {
    "order": 21,
-   "id": "N2.S5",
+   "id": "N2.4",
    "kind": "stage",
    "game": "nemesis2",
-   "title": "Nemesis 2 S5",
-   "state": "ASSETS_READY",
-   "resources": [],
-   "music": null,
+   "title": "Nemesis 2 stage 4",
+   "state": "INTEGRATED",
+   "resources": [
+    "nemesis2.map04.terrain"
+   ],
+   "music": [
+    null,
+    null,
+    null
+   ],
    "entry": null,
    "exit_condition": null,
-   "next": "N2.S6",
+   "next": "N2.5",
    "dependencies": [],
-   "notes": "structure inventory pending"
+   "notes": ""
   },
   {
    "order": 22,
-   "id": "N2.S6",
+   "id": "N2.5",
    "kind": "stage",
    "game": "nemesis2",
-   "title": "Nemesis 2 S6",
-   "state": "ASSETS_READY",
-   "resources": [],
-   "music": null,
+   "title": "Nemesis 2 stage 5 (hatch corridor event before boss 2)",
+   "state": "INTEGRATED",
+   "resources": [
+    "nemesis2.map05.terrain"
+   ],
+   "music": [
+    null,
+    null,
+    null
+   ],
    "entry": null,
    "exit_condition": null,
-   "next": "N2.S7",
+   "next": "N2.6",
    "dependencies": [],
-   "notes": "structure inventory pending"
+   "notes": ""
   },
   {
    "order": 23,
-   "id": "N2.S7",
+   "id": "N2.6",
    "kind": "stage",
    "game": "nemesis2",
-   "title": "Nemesis 2 S7",
-   "state": "ASSETS_READY",
-   "resources": [],
-   "music": null,
+   "title": "Nemesis 2 stage 6 (no boss: two rock-throwing pieces; hides the secret entrance to map 10)",
+   "state": "INTEGRATED",
+   "resources": [
+    "nemesis2.map06.terrain"
+   ],
+   "music": [
+    null,
+    null,
+    null
+   ],
    "entry": null,
    "exit_condition": null,
-   "next": "N2.HALFWAY_ENDING",
+   "next": "N2.7",
    "dependencies": [],
-   "notes": "structure inventory pending"
+   "notes": ""
   },
   {
    "order": 24,
-   "id": "N2.HALFWAY_ENDING",
+   "id": "N2.7",
    "kind": "stage",
    "game": "nemesis2",
-   "title": "Nemesis 2 HALFWAY_ENDING",
-   "state": "ASSETS_READY",
-   "resources": [],
-   "music": null,
+   "title": "Nemesis 2 stage 7 (outbound end: boss 3 then the halfway ending)",
+   "state": "INTEGRATED",
+   "resources": [
+    "nemesis2.map07.terrain"
+   ],
+   "music": [
+    null,
+    null,
+    null
+   ],
    "entry": null,
    "exit_condition": null,
-   "next": "N2.R6",
+   "next": "N2.8",
    "dependencies": [],
-   "notes": "structure inventory pending"
+   "notes": ""
   },
   {
    "order": 25,
-   "id": "N2.R6",
+   "id": "N2.8",
    "kind": "stage",
    "game": "nemesis2",
-   "title": "Nemesis 2 R6",
-   "state": "ASSETS_READY",
-   "resources": [],
-   "music": null,
+   "title": "Nemesis 2 boss interior (shared by every boss; weapon capture)",
+   "state": "INTEGRATED",
+   "resources": [
+    "nemesis2.map08.terrain"
+   ],
+   "music": [
+    null,
+    null
+   ],
    "entry": null,
    "exit_condition": null,
-   "next": "N2.R5",
+   "next": "N2.9",
    "dependencies": [],
-   "notes": "structure inventory pending"
+   "notes": "The interior map is one shared map (map 8) for every boss; whether anything else differs per boss was not found in the code"
   },
   {
    "order": 26,
-   "id": "N2.R5",
+   "id": "N2.9",
    "kind": "stage",
    "game": "nemesis2",
-   "title": "Nemesis 2 R5",
-   "state": "ASSETS_READY",
-   "resources": [],
-   "music": null,
+   "title": "Nemesis 2 secret stage reached from map 3",
+   "state": "INTEGRATED",
+   "resources": [
+    "nemesis2.map09.terrain"
+   ],
+   "music": [
+    null,
+    null
+   ],
    "entry": null,
    "exit_condition": null,
-   "next": "N2.R4",
+   "next": "N2.10",
    "dependencies": [],
-   "notes": "structure inventory pending"
+   "notes": ""
   },
   {
    "order": 27,
-   "id": "N2.R4",
+   "id": "N2.10",
    "kind": "stage",
    "game": "nemesis2",
-   "title": "Nemesis 2 R4",
-   "state": "ASSETS_READY",
-   "resources": [],
-   "music": null,
+   "title": "Nemesis 2 secret stage reached from map 6 (hides the entrance to map 11)",
+   "state": "INTEGRATED",
+   "resources": [
+    "nemesis2.map10.terrain"
+   ],
+   "music": [
+    null,
+    null
+   ],
    "entry": null,
    "exit_condition": null,
-   "next": "N2.R3",
+   "next": "N2.11",
    "dependencies": [],
-   "notes": "structure inventory pending"
+   "notes": ""
   },
   {
    "order": 28,
-   "id": "N2.R3",
+   "id": "N2.11",
    "kind": "stage",
    "game": "nemesis2",
-   "title": "Nemesis 2 R3",
-   "state": "ASSETS_READY",
-   "resources": [],
-   "music": null,
+   "title": "Nemesis 2 secret stage reached from map 10",
+   "state": "INTEGRATED",
+   "resources": [
+    "nemesis2.map11.terrain"
+   ],
+   "music": [
+    null,
+    null
+   ],
    "entry": null,
    "exit_condition": null,
-   "next": "N2.R2",
+   "next": "N2.CUT.TEXTENGINE",
    "dependencies": [],
-   "notes": "structure inventory pending"
+   "notes": ""
   },
   {
    "order": 29,
-   "id": "N2.R2",
-   "kind": "stage",
+   "id": "N2.CUT.TEXTENGINE",
+   "kind": "cutscene",
    "game": "nemesis2",
-   "title": "Nemesis 2 R2",
-   "state": "ASSETS_READY",
+   "title": "Nemesis 2 cutscene: text_engine",
+   "state": "NOT_STARTED",
    "resources": [],
    "music": null,
    "entry": null,
    "exit_condition": null,
-   "next": "N2.R1",
+   "next": "N2.CUT.LOCALISATION",
    "dependencies": [],
-   "notes": "structure inventory pending"
+   "notes": ""
   },
   {
    "order": 30,
-   "id": "N2.R1",
-   "kind": "stage",
+   "id": "N2.CUT.LOCALISATION",
+   "kind": "cutscene",
    "game": "nemesis2",
-   "title": "Nemesis 2 R1",
-   "state": "ASSETS_READY",
+   "title": "Nemesis 2 cutscene: localisation",
+   "state": "NOT_STARTED",
    "resources": [],
    "music": null,
    "entry": null,
    "exit_condition": null,
-   "next": "N2.R0",
+   "next": "N2.CUT.INTROTITLE",
    "dependencies": [],
-   "notes": "structure inventory pending"
+   "notes": ""
   },
   {
    "order": 31,
-   "id": "N2.R0",
-   "kind": "stage",
+   "id": "N2.CUT.INTROTITLE",
+   "kind": "cutscene",
    "game": "nemesis2",
-   "title": "Nemesis 2 R0",
-   "state": "ASSETS_READY",
+   "title": "Nemesis 2 cutscene: intro_title",
+   "state": "NOT_STARTED",
    "resources": [],
    "music": null,
    "entry": null,
    "exit_condition": null,
-   "next": "N2.INTERIOR8",
+   "next": "N2.CUT.DEMOSTORY",
    "dependencies": [],
-   "notes": "structure inventory pending"
+   "notes": ""
   },
   {
    "order": 32,
-   "id": "N2.INTERIOR8",
-   "kind": "stage",
+   "id": "N2.CUT.DEMOSTORY",
+   "kind": "cutscene",
    "game": "nemesis2",
-   "title": "Nemesis 2 INTERIOR8",
-   "state": "ASSETS_READY",
+   "title": "Nemesis 2 cutscene: demo_story",
+   "state": "NOT_STARTED",
    "resources": [],
    "music": null,
    "entry": null,
    "exit_condition": null,
-   "next": "N2.SECRET9",
+   "next": "N2.CUT.GAMESTARTPILOT",
    "dependencies": [],
-   "notes": "structure inventory pending"
+   "notes": "historia p10:A000 (31 steps, table p10:A007, step 0xE1D7), empieza_historia p10:A643 (music 0x3F)"
   },
   {
    "order": 33,
-   "id": "N2.SECRET9",
-   "kind": "stage",
+   "id": "N2.CUT.GAMESTARTPILOT",
+   "kind": "cutscene",
    "game": "nemesis2",
-   "title": "Nemesis 2 SECRET9",
-   "state": "ASSETS_READY",
+   "title": "Nemesis 2 cutscene: game_start_pilot",
+   "state": "NOT_STARTED",
    "resources": [],
    "music": null,
    "entry": null,
    "exit_condition": null,
-   "next": "N2.SECRET10",
+   "next": "N2.CUT.INTERIORCAPTURE",
    "dependencies": [],
-   "notes": "structure inventory pending"
+   "notes": "empieza_el_piloto p10:BF9E, escena_del_piloto p10:BDFD (steps p10:BE04)"
   },
   {
    "order": 34,
-   "id": "N2.SECRET10",
-   "kind": "stage",
+   "id": "N2.CUT.INTERIORCAPTURE",
+   "kind": "cutscene",
    "game": "nemesis2",
-   "title": "Nemesis 2 SECRET10",
-   "state": "ASSETS_READY",
+   "title": "Nemesis 2 cutscene: interior_capture",
+   "state": "NOT_STARTED",
    "resources": [],
    "music": null,
    "entry": null,
    "exit_condition": null,
-   "next": "N2.SECRET11",
+   "next": "N2.CUT.HALFWAYENDING",
    "dependencies": [],
-   "notes": "structure inventory pending"
+   "notes": "final_de_fase_8 p01:74A2 (13 steps p01:74AA)"
   },
   {
    "order": 35,
-   "id": "N2.SECRET11",
-   "kind": "stage",
+   "id": "N2.CUT.HALFWAYENDING",
+   "kind": "cutscene",
    "game": "nemesis2",
-   "title": "Nemesis 2 SECRET11",
-   "state": "ASSETS_READY",
+   "title": "Nemesis 2 cutscene: halfway_ending",
+   "state": "NOT_STARTED",
    "resources": [],
    "music": null,
    "entry": null,
    "exit_condition": null,
-   "next": "N2.ENDING",
+   "next": "N2.CUT.REALENDING",
    "dependencies": [],
-   "notes": "structure inventory pending"
+   "notes": ""
   },
   {
    "order": 36,
-   "id": "N2.ENDING",
-   "kind": "stage",
+   "id": "N2.CUT.REALENDING",
+   "kind": "cutscene",
    "game": "nemesis2",
-   "title": "Nemesis 2 ENDING",
-   "state": "ASSETS_READY",
+   "title": "Nemesis 2 cutscene: real_ending",
+   "state": "NOT_STARTED",
+   "resources": [],
+   "music": null,
+   "entry": null,
+   "exit_condition": null,
+   "next": "N2.CUT.GAMEOVER",
+   "dependencies": [],
+   "notes": ""
+  },
+  {
+   "order": 37,
+   "id": "N2.CUT.GAMEOVER",
+   "kind": "cutscene",
+   "game": "nemesis2",
+   "title": "Nemesis 2 cutscene: game_over",
+   "state": "NOT_STARTED",
+   "resources": [],
+   "music": null,
+   "entry": null,
+   "exit_condition": null,
+   "next": "N2.CUT.PAUSE",
+   "dependencies": [],
+   "notes": ""
+  },
+  {
+   "order": 38,
+   "id": "N2.CUT.PAUSE",
+   "kind": "cutscene",
+   "game": "nemesis2",
+   "title": "Nemesis 2 cutscene: pause",
+   "state": "NOT_STARTED",
    "resources": [],
    "music": null,
    "entry": null,
    "exit_condition": null,
    "next": "T2",
    "dependencies": [],
-   "notes": "structure inventory pending"
+   "notes": ""
   },
   {
-   "order": 37,
+   "order": 39,
    "id": "T2",
    "kind": "transition",
    "game": "nemesis_legends",
@@ -666,7 +763,7 @@
    "notes": ""
   },
   {
-   "order": 38,
+   "order": 40,
    "id": "SAL.MAP_01",
    "kind": "stage",
    "game": "salamander",
@@ -684,7 +781,7 @@
    "notes": ""
   },
   {
-   "order": 39,
+   "order": 41,
    "id": "SAL.MAP_02",
    "kind": "stage",
    "game": "salamander",
@@ -702,7 +799,7 @@
    "notes": "p13 mapa_fase2_cola: 48 bytes (6 rows) of map after the measured end 0x1F8 have no reader upstream."
   },
   {
-   "order": 40,
+   "order": 42,
    "id": "SAL.MAP_03",
    "kind": "stage",
    "game": "salamander",
@@ -720,7 +817,7 @@
    "notes": ""
   },
   {
-   "order": 41,
+   "order": 43,
    "id": "SAL.MAP_04",
    "kind": "stage",
    "game": "salamander",
@@ -738,7 +835,7 @@
    "notes": "Between scrolls 0x100 and 0x150 the scenery is dumped one frame in 64 (p00:5FC5, p01:6016): the barely-visible base is rendered fully here."
   },
   {
-   "order": 42,
+   "order": 44,
    "id": "SAL.MAP_05",
    "kind": "stage",
    "game": "salamander",
@@ -756,7 +853,7 @@
    "notes": ""
   },
   {
-   "order": 43,
+   "order": 45,
    "id": "SAL.MAP_06",
    "kind": "stage",
    "game": "salamander",
@@ -774,7 +871,7 @@
    "notes": ""
   },
   {
-   "order": 44,
+   "order": 46,
    "id": "SAL.MAP_07",
    "kind": "stage",
    "game": "salamander",
@@ -792,7 +889,7 @@
    "notes": ""
   },
   {
-   "order": 45,
+   "order": 47,
    "id": "T3",
    "kind": "transition",
    "game": "nemesis_legends",
@@ -807,7 +904,7 @@
    "notes": ""
   },
   {
-   "order": 46,
+   "order": 48,
    "id": "N3.1",
    "kind": "stage",
    "game": "nemesis3",
@@ -827,7 +924,7 @@
    "notes": "third word of the p19:A90F record (0xE425) is copied with the limits; its use is not described in the docs"
   },
   {
-   "order": 47,
+   "order": 49,
    "id": "N3.2",
    "kind": "stage",
    "game": "nemesis3",
@@ -847,7 +944,7 @@
    "notes": "third word of the p19:A90F record (0xE425) is copied with the limits; its use is not described in the docs"
   },
   {
-   "order": 48,
+   "order": 50,
    "id": "N3.3",
    "kind": "stage",
    "game": "nemesis3",
@@ -869,7 +966,7 @@
    "notes": "third word of the p19:A90F record (0xE425) is copied with the limits; its use is not described in the docs; the p01:6111 entry for stage 3 is 0 (no boss, as docs/THE-BOSSES.md says); the stage-3 end path itself was not traced here"
   },
   {
-   "order": 49,
+   "order": 51,
    "id": "N3.4",
    "kind": "stage",
    "game": "nemesis3",
@@ -890,7 +987,7 @@
    "notes": "third word of the p19:A90F record (0xE425) is copied with the limits; its use is not described in the docs; stage 4 bosses come from the p01:6243 table in order 0x0B, 1, 3, 4 (docs); the p01:6111 entry for stage 4 is not read on that path"
   },
   {
-   "order": 50,
+   "order": 52,
    "id": "N3.5",
    "kind": "stage",
    "game": "nemesis3",
@@ -911,7 +1008,7 @@
    "notes": "third word of the p19:A90F record (0xE425) is copied with the limits; its use is not described in the docs"
   },
   {
-   "order": 51,
+   "order": 53,
    "id": "N3.6",
    "kind": "stage",
    "game": "nemesis3",
@@ -932,7 +1029,7 @@
    "notes": "third word of the p19:A90F record (0xE425) is copied with the limits; its use is not described in the docs"
   },
   {
-   "order": 52,
+   "order": 54,
    "id": "N3.7",
    "kind": "stage",
    "game": "nemesis3",
@@ -953,7 +1050,7 @@
    "notes": "third word of the p19:A90F record (0xE425) is copied with the limits; its use is not described in the docs"
   },
   {
-   "order": 53,
+   "order": 55,
    "id": "N3.8",
    "kind": "stage",
    "game": "nemesis3",
@@ -974,7 +1071,7 @@
    "notes": "third word of the p19:A90F record (0xE425) is copied with the limits; its use is not described in the docs"
   },
   {
-   "order": 54,
+   "order": 56,
    "id": "N3.9",
    "kind": "stage",
    "game": "nemesis3",
@@ -996,7 +1093,7 @@
    "notes": "third word of the p19:A90F record (0xE425) is copied with the limits; its use is not described in the docs; stages 9-11 do not use the p01:6111 table (p01:611A path is stages 1, 2, 5-8); the code that brings out their boss was not traced here, the boss number comes from docs/THE-BOSSES.md"
   },
   {
-   "order": 55,
+   "order": 57,
    "id": "N3.10",
    "kind": "stage",
    "game": "nemesis3",
@@ -1016,7 +1113,7 @@
    "notes": "third word of the p19:A90F record (0xE425) is copied with the limits; its use is not described in the docs; stages 9-11 do not use the p01:6111 table (p01:611A path is stages 1, 2, 5-8); the code that brings out their boss was not traced here, the boss number comes from docs/THE-BOSSES.md"
   },
   {
-   "order": 56,
+   "order": 58,
    "id": "N3.11",
    "kind": "stage",
    "game": "nemesis3",
@@ -1035,7 +1132,7 @@
    "notes": "third word of the p19:A90F record (0xE425) is copied with the limits; its use is not described in the docs; stages 9-11 do not use the p01:6111 table (p01:611A path is stages 1, 2, 5-8); the code that brings out their boss was not traced here, the boss number comes from docs/THE-BOSSES.md"
   },
   {
-   "order": 57,
+   "order": 59,
    "id": "N3.INTERLUDE.AFTER3",
    "kind": "cutscene",
    "game": "nemesis3",
@@ -1052,7 +1149,7 @@
    "notes": "p27:814D (0xE321 = 1) -> p27:81F4 graphics p27:8208"
   },
   {
-   "order": 58,
+   "order": 60,
    "id": "N3.INTERLUDE.AFTER4",
    "kind": "cutscene",
    "game": "nemesis3",
@@ -1067,7 +1164,7 @@
    "notes": "p27:814D -> p27:836A"
   },
   {
-   "order": 59,
+   "order": 61,
    "id": "N3.INTERLUDE.AFTER9",
    "kind": "cutscene",
    "game": "nemesis3",
@@ -1084,7 +1181,7 @@
    "notes": "p00:45E3, p26:7EC5; all maps p26:7F7A -> stage 10; missing p26:7FC8 -> stage 5/7/8; marks 0xE393-0xE395 (p26:7E2A)"
   },
   {
-   "order": 60,
+   "order": 62,
    "id": "N3.INTERLUDE.AFTER11",
    "kind": "cutscene",
    "game": "nemesis3",
@@ -1099,7 +1196,7 @@
    "notes": "p00:4599; secret type 0x0B (0xE396) adds a step p27:8786"
   },
   {
-   "order": 61,
+   "order": 63,
    "id": "N3.INTERLUDE.AFTERNone",
    "kind": "cutscene",
    "game": "nemesis3",
@@ -1114,7 +1211,7 @@
    "notes": "p26:6CA4: types 1-7 weapon p26:6E29, 8-0x0A maps p26:7D46, 0x0B p27:80B7, others p27:804A"
   },
   {
-   "order": 62,
+   "order": 64,
    "id": "N3.INTERLUDE.AFTERNone",
    "kind": "cutscene",
    "game": "nemesis3",
@@ -1129,7 +1226,7 @@
    "notes": ""
   },
   {
-   "order": 63,
+   "order": 65,
    "id": "N3.INTERLUDE.AFTERNone",
    "kind": "cutscene",
    "game": "nemesis3",
@@ -1144,7 +1241,7 @@
    "notes": ""
   },
   {
-   "order": 64,
+   "order": 66,
    "id": "FINAL",
    "kind": "cutscene",
    "game": "nemesis_legends",
@@ -1159,7 +1256,7 @@
    "notes": ""
   },
   {
-   "order": 65,
+   "order": 67,
    "id": "CREDITS",
    "kind": "screen",
    "game": "nemesis_legends",
@@ -1176,9 +1273,10 @@
  ],
  "state_counts": {
   "PLAYABLE": 1,
-  "NOT_STARTED": 14,
+  "NOT_STARTED": 24,
   "PARTIAL": 7,
-  "ASSETS_READY": 43
+  "ASSETS_READY": 23,
+  "INTEGRATED": 12
  },
  "policy": [
   "Original endings are kept and played before each transition.",

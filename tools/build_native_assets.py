@@ -105,6 +105,7 @@ def main():
         desc=bytearray(4096);desc[0:6]=struct.pack('<HHH',start,end,event)
         desc[6:8]=struct.pack('<H',0x8ff0 if stage in (5,9,10,12) else 0x8000)
         desc[8:10]=struct.pack('<H',len(rawscript))
+        desc[12]=0x86   # metatile bank ($5115 value) read by DrawColumn
         desc[10:12]=struct.pack('<H',ex.word(0,0x4212+stage*2) if stage<12 else 0xffff)
         for p,pal in enumerate(pals):desc[0x20+p*4:0x24+p*4]=bytes(NEAREST[c] for c in pal)
         changed=total=0
@@ -282,8 +283,16 @@ def main():
     chrdata+=bytes(19*4096-len(chrdata));chrdata+=art
     chrdata+=bytes(23*4096-len(chrdata))
     chrdata+=(title_dir/'cursor.chr').read_bytes()
+    # Bank 24 is the title panel (written by build_title_panel.py at build time).
+    # Chapter 2 graphics (tools/build_n2_assets.py) start at CHR bank 25.
+    chrdata+=bytes(25*4096-len(chrdata))
+    n2=(OUT/'n2_graphics.chr')
+    if not n2.exists():
+        import subprocess,sys as _sys;subprocess.run([_sys.executable,str(ROOT/'tools/build_n2_assets.py')],cwd=ROOT,check=True)
+    chrdata+=n2.read_bytes()
     target=8192
     while target<len(chrdata):target*=2
+    target=max(target,262144)
     useful=len(chrdata);chrdata+=bytes(target-len(chrdata));(OUT/'graphics.chr').write_bytes(chrdata)
     # Bank-independent constants from verified original data.
     tables=bytearray(8192)

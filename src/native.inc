@@ -115,6 +115,8 @@ hud2_pending=$7b
 hud2_exattr=$7c
 cheat_flags=$7d            ; bit0 infinite lives, bit1 debug HUD row
 bank8000=$7e               ; shadow of $5114 (stage data / boss data / title / menu)
+chapter=$7f                ; 1 Nemesis, 2 Nemesis 2, 3 Salamander, 4 Nemesis 3 (mirrors Flow F_CHAPTER)
+N2_MAP_BANK=14             ; first PRG bank of the twelve Nemesis 2 map descriptors
 
 ; CP0005 title-only state. Outside all gameplay scratch/telemetry ranges.
 title_page=$07e0

@@ -44,7 +44,7 @@ def generate():
     (out/'panel_rows.bin').write_bytes(bytes(rows))
     (out/'panel_attrs.bin').write_bytes(bytes(attrs))
     data=(ROOT/'build/native/graphics.chr').read_bytes()
-    if len(data)!=131072:raise ValueError('Unexpected graphics allocation')
+    if len(data)!=262144:raise ValueError('Unexpected graphics allocation')
     current=data[BANK*4096:(BANK+1)*4096]
     old_bank_sha256='cb00520d9d7f0246b4ab293e3574fa52aa36bfea172a4cb6097b42199605a1c5'
     if any(current) and current!=raw and hashlib.sha256(current).hexdigest()!=old_bank_sha256:

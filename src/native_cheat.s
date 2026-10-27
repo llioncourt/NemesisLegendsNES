@@ -117,7 +117,10 @@ CheatOpen:
  lda cheat_flags
  and #1
  sta cheat_vals+1
+ lda chapter
+ bne :+
  lda #1
+:
  sta cheat_vals+2
  lda stage_id
  bne :+
@@ -183,8 +186,8 @@ CheatApply:
  sta GamePace_Phase
  sta GamePace_Edges
  lda cheat_vals+2
- cmp #1
- bne @unsupported_game
+ cmp #3
+ bcs @unsupported_game
  lda cheat_from
  beq @from_title
  lda cheat_action
@@ -192,6 +195,9 @@ CheatApply:
  bne @reload
  lda cheat_vals+3
  cmp stage_id
+ bne @reload
+ lda cheat_vals+2
+ cmp chapter
  bne @reload
  ; Plain resume: powers, then the screen as it was.
  jsr @powers
@@ -210,6 +216,10 @@ CheatApply:
 @from_title:
  jsr NewGame
 @reload:
+ ; Chapter 1 or 2 (Nemesis 2 maps are loadable terrain only, no gameplay yet).
+ lda cheat_vals+2
+ sta chapter
+ sta Flow_State+F_CHAPTER
  lda cheat_vals+3
  sta stage_id
  sta Flow_State+F_STAGE
@@ -419,7 +429,7 @@ TxtMid:      .byte "MIDPOINT"
 TxtPress:    .byte "PRESS A "
 TxtResume:   .byte "RESUME        "
 TxtPace:     .byte "30 FPS  ","40 FPS  ","60 FPS  "
-TxtGames:    .byte "NEMESIS ","N2 WIP  ","SAL WIP ","N3 WIP  "
+TxtGames:    .byte "NEMESIS ","NEMESIS2","SAL WIP ","N3 WIP  "
 
 CheatFrame:
  ; Input first, every frame; pending rows are uploaded one per frame after it.

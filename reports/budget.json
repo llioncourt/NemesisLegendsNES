@@ -3,8 +3,8 @@
  "segments": {
   "GRAPHICS": {
    "start": 0,
-   "end": 131071,
-   "size": 131072
+   "end": 262143,
+   "size": 262144
   },
   "HEADER": {
    "start": 0,
@@ -22,6 +22,66 @@
    "size": 126
   },
   "BOSSDATA": {
+   "start": 32768,
+   "end": 40959,
+   "size": 8192
+  },
+  "N2MAP0": {
+   "start": 32768,
+   "end": 40959,
+   "size": 8192
+  },
+  "N2MAP1": {
+   "start": 32768,
+   "end": 40959,
+   "size": 8192
+  },
+  "N2MAP10": {
+   "start": 32768,
+   "end": 40959,
+   "size": 8192
+  },
+  "N2MAP11": {
+   "start": 32768,
+   "end": 40959,
+   "size": 8192
+  },
+  "N2MAP2": {
+   "start": 32768,
+   "end": 40959,
+   "size": 8192
+  },
+  "N2MAP3": {
+   "start": 32768,
+   "end": 40959,
+   "size": 8192
+  },
+  "N2MAP4": {
+   "start": 32768,
+   "end": 40959,
+   "size": 8192
+  },
+  "N2MAP5": {
+   "start": 32768,
+   "end": 40959,
+   "size": 8192
+  },
+  "N2MAP6": {
+   "start": 32768,
+   "end": 40959,
+   "size": 8192
+  },
+  "N2MAP7": {
+   "start": 32768,
+   "end": 40959,
+   "size": 8192
+  },
+  "N2MAP8": {
+   "start": 32768,
+   "end": 40959,
+   "size": 8192
+  },
+  "N2MAP9": {
    "start": 32768,
    "end": 40959,
    "size": 8192
@@ -56,6 +116,11 @@
    "end": 40959,
    "size": 8192
   },
+  "STAGECODE": {
+   "start": 32768,
+   "end": 34246,
+   "size": 1479
+  },
   "TITLE": {
    "start": 32768,
    "end": 37385,
@@ -63,28 +128,38 @@
   },
   "ACTORS": {
    "start": 40960,
-   "end": 48051,
-   "size": 7092
+   "end": 46593,
+   "size": 5634
   },
   "MAPS": {
    "start": 40960,
    "end": 49151,
    "size": 8192
   },
+  "N2MAPSA": {
+   "start": 40960,
+   "end": 49151,
+   "size": 8192
+  },
+  "N2MAPSB": {
+   "start": 40960,
+   "end": 49151,
+   "size": 8192
+  },
   "CODE": {
    "start": 49152,
-   "end": 56360,
-   "size": 7209
+   "end": 56480,
+   "size": 7329
   },
   "RODATA": {
-   "start": 56361,
-   "end": 56390,
+   "start": 56481,
+   "end": 56510,
    "size": 30
   },
   "BOOT": {
    "start": 57344,
-   "end": 58476,
-   "size": 1133
+   "end": 58478,
+   "size": 1135
   },
   "SOUND": {
    "start": 60446,
@@ -103,18 +178,25 @@
   "P7_actors": 8192,
   "P8_bossdata": 8192,
   "P9_title": 8192,
-  "RES_reserved": 32768,
+  "P10_stagecode": 8192,
+  "RES_reserved": 24576,
+  "N2_maps": 98304,
+  "N2_metatiles": 16384,
+  "RES2_reserved": 278528,
   "K_kernel": 8192,
   "fixed_E000": 8192
  },
  "prg_used": {
   "STAGE_descriptors": 49152,
+  "STAGECODE": 1479,
+  "N2_maps": 98304,
+  "N2_metatiles": 16384,
   "MAPS": 8192,
-  "ACTORS": 7092,
+  "ACTORS": 5634,
   "BOSSDATA": 8192,
   "TITLE": 4618,
-  "CODE": 7239,
-  "BOOT": 1133,
+  "CODE": 7359,
+  "BOOT": 1135,
   "SOUND": 5084,
   "VECTORS": 6,
   "RESERVED": 0
@@ -142,7 +224,7 @@
    "tiles_2bpp_upper_bound": 18704,
    "sprite_sheets": 98304,
    "sprite_sheets_dedup_1k_banks": 43,
-   "measured_chr_useful": 95232,
+   "measured_chr_useful": 159744,
    "stage_logic_code_estimate": 18432,
    "note": "measured: current ROM holds all 12 descriptors and CHR for Nemesis"
   },
@@ -174,13 +256,13 @@
  "summary": {
   "current_board": {
    "mapper": 5,
-   "prg_kib": 128,
-   "chr_kib": 128,
+   "prg_kib": 512,
+   "chr_kib": 256,
    "wram_kib": 8,
-   "prg_used_bytes": 90708,
-   "prg_free_bytes": 40364,
-   "chr_used_bytes": 95232,
-   "chr_padding_bytes": 35840
+   "prg_used_bytes": 205539,
+   "prg_free_bytes": 318749,
+   "chr_used_bytes": 159744,
+   "chr_padding_bytes": 102400
   },
   "mmc5_ceiling": {
    "prg_kib": 1024,

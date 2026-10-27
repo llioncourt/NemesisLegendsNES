@@ -5,17 +5,20 @@
 | segment | bytes |
 |---|---|
 | STAGE_descriptors | 49152 |
+| STAGECODE | 1479 |
+| N2_maps | 98304 |
+| N2_metatiles | 16384 |
 | MAPS | 8192 |
-| ACTORS | 7092 |
+| ACTORS | 5634 |
 | BOSSDATA | 8192 |
 | TITLE | 4618 |
-| CODE | 7239 |
-| BOOT | 1133 |
+| CODE | 7359 |
+| BOOT | 1135 |
 | SOUND | 5084 |
 | VECTORS | 6 |
 | RESERVED | 0 |
 
-PRG used 90708 of 131072; CHR useful 95232 (padding 35840).
+PRG used 205539 of 524288; CHR useful 159744 (padding 102400).
 
 ## Four-game projection (upper bounds from extraction)
 

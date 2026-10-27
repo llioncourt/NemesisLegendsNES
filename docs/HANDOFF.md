@@ -1,3 +1,18 @@
+# CP0014 handoff - 512K/256K board, Nemesis 2 maps loadable
+
+Private ROM: `build/native/Nemesis_Legends_CP0014.nes` (786448 bytes; hash in
+`manifests/checkpoint.json`). Build: `python tools/checkpoint.py build` (runs
+`tools/build_n2_assets.py` and `tools/build_native_assets.py` with `--assets`).
+Tests: `python tools/checkpoint.py test` now includes `tools/test_n2_maps.py`.
+Bank map and decisions: `docs/NATIVE_RUNTIME_CP0014.md`. Chapter dispatch is
+the `chapter` byte (`$7F`); Nemesis 2 descriptors are the Nemesis layout, so
+the next step for chapter 2 is gameplay (reports/nemesis2_structure.json has
+the stage scripts, bosses, 65 enemy types, weapons and music tables), in a new
+STAGECODE-style bank. For Nemesis, stage 5 is next (spec pending from
+`final_de_la_fase_5` p01:$6EA8).
+
+---
+
 # CP0013 handoff - cheat menu, banked stage code, four-game inventories
 
 Private ROM: `build/native/Nemesis_Legends_CP0013.nes` (hash in

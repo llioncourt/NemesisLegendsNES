@@ -1,6 +1,6 @@
 {
-  "checkpoint": "CP0013",
-  "stage": "CP0012 gameplay plus Silicon Forge cheat menu, banked stage code, four-game extraction inventories and the universal asset manifest; all other games WIP",
+  "checkpoint": "CP0014",
+  "stage": "512 KiB PRG / 256 KiB CHR board; twelve Nemesis 2 maps loadable and scrollable (terrain/sprites only); cheat menu; Nemesis stages 1-4 playable; all other gameplay WIP",
   "playable_game_rom": true,
   "full_game_complete": false,
   "chapters": [
@@ -125,7 +125,10 @@
       "endings_validated": false,
       "upstream_reassembly_byte_exact": true,
       "unique_source_tiles": 1695,
-      "structure_inventory": "nemesis2_structure.json"
+      "structure_inventory": "nemesis2_structure.json",
+      "native_maps_structurally_loadable": 12,
+      "native_map_scroll_tested": 12,
+      "note": "terrain, palettes and hardware sprites only; no gameplay"
     },
     {
       "chapter": 3,
@@ -255,5 +258,16 @@
       }
     }
   },
-  "nes_references_extracted": true
+  "nes_references_extracted": true,
+  "board": {
+    "mapper": 5,
+    "prg_kib": 512,
+    "chr_kib": 256,
+    "chr_type": "CHR-ROM",
+    "kernel_bank": 62,
+    "boot_bank": 63,
+    "nemesis2_map_banks": "14-25",
+    "nemesis2_metatile_banks": "26-27",
+    "chapter2_chr_banks": "25-38"
+  }
 }

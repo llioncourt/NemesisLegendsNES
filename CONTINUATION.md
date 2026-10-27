@@ -1,13 +1,13 @@
-# NEMESIS LEGENDS NES — CONTINUATION (CP0013, 2026-10-27)
+# NEMESIS LEGENDS NES — CONTINUATION (CP0014, 2026-10-27)
 
 Repository: https://github.com/llioncourt/NemesisLegendsNES
 GitHub last confirmed baseline before this execution: `47b4b3bcf6708fd7c42032472e53203baec19e9a` (CP0011 plus the lean-tool sync).
-Current tested private ROM: `build/native/Nemesis_Legends_CP0013.nes`; consult `manifests/checkpoint.json` for exact SHA-256. Update this document's remote commit only after server verification. Do not reset or abandon the existing native motor. Public distribution: IPS only; the source ROMs and derived commercial CHR/audio stay private.
+Current tested private ROM: `build/native/Nemesis_Legends_CP0014.nes`; consult `manifests/checkpoint.json` for exact SHA-256. Update this document's remote commit only after server verification. Do not reset or abandon the existing native motor. Public distribution: IPS only; the source ROMs and derived commercial CHR/audio stay private.
 
 ## Actual coverage, not release claims
 
 1. **Nemesis / Gradius MSX**: partial native stages 1 and 2 (rock walls, 900-frame rain, Big Core, bonus9), stage3's two source type-1 Big Core encounters at world `$0060` and `$01AF` and bonus10/normal branches to stage4. Cross-stage MSX target types 2/3/4 persist from stage1 into stage4; three distinct touches activate bonus11 and route to stage5. **CP0012:** stage4's normal route now runs its complete source end sequence (p01:$6E15): ceiling eruption at `$0128`, five-piece tower at `$0171`, "boss 5" eight-piece spawner at the `$019F` scroll limit, scroll release to `$01C0`, type-1 Big Core, stage5. Source enemy type `$0A` and a faithful type 6 hopper were ported; both previously parked on screen and could block the Big Core wait in stages 1, 3 and 4. Stage5 onward contains resource descriptors, not playable faithful level logic. Full Nemesis MSX is **NOT complete**. The screenshot criticism about sparse art and HUD is not resolved.
-2. **Nemesis 2 MSX**: source-extracted maps and campaign event-router metadata; no full native levels, unique weapon system, ending, cutscenes or validated complete campaign.
+2. **Nemesis 2 MSX**: **CP0014:** all twelve maps converted to native descriptors and loadable/scrollable in the ROM (banks 14-27, CHR 25-38) through the cheat menu; structure inventory (`reports/nemesis2_structure.json`) with stage scripts, bosses, enemy types, weapons, cutscenes and music. No native enemies, bosses, weapon system, interior/secret events, endings or music yet.
 3. **Salamander MSX**: campaign router and secret Operation X requirements only; no full native campaign, planet missions, co-op, audiovisual equivalence or validated ending.
 4. **Nemesis 3 MSX**: original validated/decompiled, campaign router metadata, but no native levels, chronology/cutscenes or ending integration.
 
@@ -34,6 +34,7 @@ python tools/test_stage_two.py --core toolchain/linux-x64/bin/fceumm_libretro.so
 python tools/test_stage_three.py
 python tools/test_stage_four.py
 python tools/test_cheat_menu.py
+python tools/test_n2_maps.py
 python tools/test_secret_targets.py
 python tools/test_source_groups.py --core toolchain/linux-x64/bin/fceumm_libretro.so
 python tools/test_combat_native.py --core toolchain/linux-x64/bin/fceumm_libretro.so --tools toolchain/linux-x64/bin

@@ -7175,13 +7175,13 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
-    "tested": false,
+    "converted": true,
+    "integrated": true,
+    "tested": true,
     "validated": false
    },
    "path": "assets/msx/nemesis2/map_00/",
-   "notes": "map ids are not campaign order; see CAMPAIGN_FLOW.md"
+   "notes": "map ids are not campaign order; see reports/nemesis2_structure.json; native descriptor n2_map_00.bin (CP0014)"
   },
   {
    "id": "n2.map00.tiles",
@@ -7202,9 +7202,9 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
-    "tested": false,
+    "converted": true,
+    "integrated": true,
+    "tested": true,
     "validated": false
    },
    "path": "assets/msx/nemesis2/map_00/source_vram.bin",
@@ -7229,8 +7229,8 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
+    "converted": true,
+    "integrated": true,
     "tested": false,
     "validated": false
    },
@@ -7364,13 +7364,13 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
-    "tested": false,
+    "converted": true,
+    "integrated": true,
+    "tested": true,
     "validated": false
    },
    "path": "assets/msx/nemesis2/map_01/",
-   "notes": "map ids are not campaign order; see CAMPAIGN_FLOW.md"
+   "notes": "map ids are not campaign order; see reports/nemesis2_structure.json; native descriptor n2_map_01.bin (CP0014)"
   },
   {
    "id": "n2.map01.tiles",
@@ -7391,9 +7391,9 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
-    "tested": false,
+    "converted": true,
+    "integrated": true,
+    "tested": true,
     "validated": false
    },
    "path": "assets/msx/nemesis2/map_01/source_vram.bin",
@@ -7418,8 +7418,8 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
+    "converted": true,
+    "integrated": true,
     "tested": false,
     "validated": false
    },
@@ -7553,13 +7553,13 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
-    "tested": false,
+    "converted": true,
+    "integrated": true,
+    "tested": true,
     "validated": false
    },
    "path": "assets/msx/nemesis2/map_02/",
-   "notes": "map ids are not campaign order; see CAMPAIGN_FLOW.md"
+   "notes": "map ids are not campaign order; see reports/nemesis2_structure.json; native descriptor n2_map_02.bin (CP0014)"
   },
   {
    "id": "n2.map02.tiles",
@@ -7580,9 +7580,9 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
-    "tested": false,
+    "converted": true,
+    "integrated": true,
+    "tested": true,
     "validated": false
    },
    "path": "assets/msx/nemesis2/map_02/source_vram.bin",
@@ -7607,8 +7607,8 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
+    "converted": true,
+    "integrated": true,
     "tested": false,
     "validated": false
    },
@@ -7742,13 +7742,13 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
-    "tested": false,
+    "converted": true,
+    "integrated": true,
+    "tested": true,
     "validated": false
    },
    "path": "assets/msx/nemesis2/map_03/",
-   "notes": "map ids are not campaign order; see CAMPAIGN_FLOW.md"
+   "notes": "map ids are not campaign order; see reports/nemesis2_structure.json; native descriptor n2_map_03.bin (CP0014)"
   },
   {
    "id": "n2.map03.tiles",
@@ -7769,9 +7769,9 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
-    "tested": false,
+    "converted": true,
+    "integrated": true,
+    "tested": true,
     "validated": false
    },
    "path": "assets/msx/nemesis2/map_03/source_vram.bin",
@@ -7796,8 +7796,8 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
+    "converted": true,
+    "integrated": true,
     "tested": false,
     "validated": false
    },
@@ -7931,13 +7931,13 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
-    "tested": false,
+    "converted": true,
+    "integrated": true,
+    "tested": true,
     "validated": false
    },
    "path": "assets/msx/nemesis2/map_04/",
-   "notes": "map ids are not campaign order; see CAMPAIGN_FLOW.md"
+   "notes": "map ids are not campaign order; see reports/nemesis2_structure.json; native descriptor n2_map_04.bin (CP0014)"
   },
   {
    "id": "n2.map04.tiles",
@@ -7958,9 +7958,9 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
-    "tested": false,
+    "converted": true,
+    "integrated": true,
+    "tested": true,
     "validated": false
    },
    "path": "assets/msx/nemesis2/map_04/source_vram.bin",
@@ -7985,8 +7985,8 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
+    "converted": true,
+    "integrated": true,
     "tested": false,
     "validated": false
    },
@@ -8120,13 +8120,13 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
-    "tested": false,
+    "converted": true,
+    "integrated": true,
+    "tested": true,
     "validated": false
    },
    "path": "assets/msx/nemesis2/map_05/",
-   "notes": "map ids are not campaign order; see CAMPAIGN_FLOW.md"
+   "notes": "map ids are not campaign order; see reports/nemesis2_structure.json; native descriptor n2_map_05.bin (CP0014)"
   },
   {
    "id": "n2.map05.tiles",
@@ -8147,9 +8147,9 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
-    "tested": false,
+    "converted": true,
+    "integrated": true,
+    "tested": true,
     "validated": false
    },
    "path": "assets/msx/nemesis2/map_05/source_vram.bin",
@@ -8174,8 +8174,8 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
+    "converted": true,
+    "integrated": true,
     "tested": false,
     "validated": false
    },
@@ -8309,13 +8309,13 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
-    "tested": false,
+    "converted": true,
+    "integrated": true,
+    "tested": true,
     "validated": false
    },
    "path": "assets/msx/nemesis2/map_06/",
-   "notes": "map ids are not campaign order; see CAMPAIGN_FLOW.md"
+   "notes": "map ids are not campaign order; see reports/nemesis2_structure.json; native descriptor n2_map_06.bin (CP0014)"
   },
   {
    "id": "n2.map06.tiles",
@@ -8336,9 +8336,9 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
-    "tested": false,
+    "converted": true,
+    "integrated": true,
+    "tested": true,
     "validated": false
    },
    "path": "assets/msx/nemesis2/map_06/source_vram.bin",
@@ -8363,8 +8363,8 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
+    "converted": true,
+    "integrated": true,
     "tested": false,
     "validated": false
    },
@@ -8498,13 +8498,13 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
-    "tested": false,
+    "converted": true,
+    "integrated": true,
+    "tested": true,
     "validated": false
    },
    "path": "assets/msx/nemesis2/map_07/",
-   "notes": "map ids are not campaign order; see CAMPAIGN_FLOW.md"
+   "notes": "map ids are not campaign order; see reports/nemesis2_structure.json; native descriptor n2_map_07.bin (CP0014)"
   },
   {
    "id": "n2.map07.tiles",
@@ -8525,9 +8525,9 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
-    "tested": false,
+    "converted": true,
+    "integrated": true,
+    "tested": true,
     "validated": false
    },
    "path": "assets/msx/nemesis2/map_07/source_vram.bin",
@@ -8552,8 +8552,8 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
+    "converted": true,
+    "integrated": true,
     "tested": false,
     "validated": false
    },
@@ -8687,13 +8687,13 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
-    "tested": false,
+    "converted": true,
+    "integrated": true,
+    "tested": true,
     "validated": false
    },
    "path": "assets/msx/nemesis2/map_08/",
-   "notes": "map ids are not campaign order; see CAMPAIGN_FLOW.md"
+   "notes": "map ids are not campaign order; see reports/nemesis2_structure.json; native descriptor n2_map_08.bin (CP0014)"
   },
   {
    "id": "n2.map08.tiles",
@@ -8714,9 +8714,9 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
-    "tested": false,
+    "converted": true,
+    "integrated": true,
+    "tested": true,
     "validated": false
    },
    "path": "assets/msx/nemesis2/map_08/source_vram.bin",
@@ -8741,8 +8741,8 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
+    "converted": true,
+    "integrated": true,
     "tested": false,
     "validated": false
    },
@@ -8876,13 +8876,13 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
-    "tested": false,
+    "converted": true,
+    "integrated": true,
+    "tested": true,
     "validated": false
    },
    "path": "assets/msx/nemesis2/map_09/",
-   "notes": "map ids are not campaign order; see CAMPAIGN_FLOW.md"
+   "notes": "map ids are not campaign order; see reports/nemesis2_structure.json; native descriptor n2_map_09.bin (CP0014)"
   },
   {
    "id": "n2.map09.tiles",
@@ -8903,9 +8903,9 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
-    "tested": false,
+    "converted": true,
+    "integrated": true,
+    "tested": true,
     "validated": false
    },
    "path": "assets/msx/nemesis2/map_09/source_vram.bin",
@@ -8930,8 +8930,8 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
+    "converted": true,
+    "integrated": true,
     "tested": false,
     "validated": false
    },
@@ -9065,13 +9065,13 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
-    "tested": false,
+    "converted": true,
+    "integrated": true,
+    "tested": true,
     "validated": false
    },
    "path": "assets/msx/nemesis2/map_10/",
-   "notes": "map ids are not campaign order; see CAMPAIGN_FLOW.md"
+   "notes": "map ids are not campaign order; see reports/nemesis2_structure.json; native descriptor n2_map_10.bin (CP0014)"
   },
   {
    "id": "n2.map10.tiles",
@@ -9092,9 +9092,9 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
-    "tested": false,
+    "converted": true,
+    "integrated": true,
+    "tested": true,
     "validated": false
    },
    "path": "assets/msx/nemesis2/map_10/source_vram.bin",
@@ -9119,8 +9119,8 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
+    "converted": true,
+    "integrated": true,
     "tested": false,
     "validated": false
    },
@@ -9254,13 +9254,13 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
-    "tested": false,
+    "converted": true,
+    "integrated": true,
+    "tested": true,
     "validated": false
    },
    "path": "assets/msx/nemesis2/map_11/",
-   "notes": "map ids are not campaign order; see CAMPAIGN_FLOW.md"
+   "notes": "map ids are not campaign order; see reports/nemesis2_structure.json; native descriptor n2_map_11.bin (CP0014)"
   },
   {
    "id": "n2.map11.tiles",
@@ -9281,9 +9281,9 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
-    "tested": false,
+    "converted": true,
+    "integrated": true,
+    "tested": true,
     "validated": false
    },
    "path": "assets/msx/nemesis2/map_11/source_vram.bin",
@@ -9308,8 +9308,8 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
+    "converted": true,
+    "integrated": true,
     "tested": false,
     "validated": false
    },
