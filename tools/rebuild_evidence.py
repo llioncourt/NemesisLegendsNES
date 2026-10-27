@@ -33,10 +33,13 @@ def input_reports(archives):
         scope='Input identity and modified-variant comparison only; not implementation status.')
     (ROOT/'reports/nemesis3_input_validation.json').write_text(json.dumps(report,indent=2)+'\n')
 def main():
-    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--render-audio',action='store_true');a=p.parse_args()
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--render-audio',action='store_true');p.add_argument('--archives',action='store_true',help='Re-audit all eight original ZIPs in a separate full-audit workspace');a=p.parse_args()
     archives=sorted((ROOT/'inputs').glob('*.zip'))
-    if not archives:p.error('Place the eight original supplied ZIPs in inputs/. Do not rename the project directory.')
-    run('source_audit.py',*archives);input_reports(archives)
+    if a.archives:
+        if len(archives)!=8:p.error('--archives requires all eight original ZIPs; otherwise omit this flag.')
+        run('source_audit.py',*archives);input_reports(archives)
+    else:
+        run('verify_selected_inputs.py','--write-report')
     for tool in ['extract_nemesis_msx.py','extract_nemesis2_msx.py','rip_gradius_nsf.py',
                  'rip_konami_nsf.py','rip_msx_kss.py','name_audio.py','create_title_asset.py']:
         run(tool)

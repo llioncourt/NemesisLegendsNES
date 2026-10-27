@@ -13,6 +13,7 @@ def check(row):
  return dict(path=row['mp3'],duration_seconds=duration,format_ok=True,sha256_ok=True)
 def main():
  data=json.loads((ROOT/'audio/metadata.json').read_text());rows=data['tracks']
+ if not rows:raise SystemExit('No MP3s are included in this checkpoint. Use the separate source-music package or render audio first.')
  with concurrent.futures.ThreadPoolExecutor(max_workers=6)as pool:result=list(pool.map(check,rows))
  report=dict(files=len(result),passed=len(result),failed=0,scope='MP3 header, sample rate, channels, duration and SHA-256 only',results=result)
  (ROOT/'reports/mp3_integrity.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps({k:v for k,v in report.items()if k!='results'}))

@@ -1,15 +1,10 @@
 {
-  "schema": 1,
-  "inventory_count": 137,
-  "unique_roms": 137,
-  "msx_count": 131,
+  "schema": 2,
+  "scope": "selected-only",
+  "inventory_count": 10,
+  "unique_roms": 10,
+  "msx_count": 4,
   "nes_count": 6,
-  "msx_family_counts": {
-    "nemesis3": 16,
-    "salamander": 26,
-    "nemesis": 19,
-    "nemesis2": 70
-  },
   "selected": {
     "nemesis3_msx": {
       "archive": "Gofer no Yabou Episode 2 - Nemesis 3 The Eve Of Destruction - Konami (1988) [Victor Martinez Enhancement v1.03 alt] [RC-764] [4046].zip",
@@ -184,11 +179,13 @@
   },
   "missing": [],
   "expected_nemesis3_sha1": "7393f677e0fae5fc83071c6b74756117b7d75e2d",
-  "source_total_bytes": 29099460,
+  "source_total_bytes": 1441888,
   "native_nes_raw_chr_tiles": 12288,
   "native_nes_unique_raw_chr_tiles": 8173,
   "raw_chr_dictionary_bytes": 130768,
-  "raw_chr_dedup_limit": "Raw pixels only: no palettes, collision or animation equivalence is implied.",
-  "banks8k_total": 3528,
-  "banks8k_unique": 480
+  "raw_chr_dedup_limit": "Raw pixels only; no palette/collision/event equivalence implied.",
+  "banks8k_total": 152,
+  "banks8k_unique": 141,
+  "original_collection_inventory_count": 137,
+  "original_archives": "Archived separately; names and hashes in manifests/input_archives.json"
 }

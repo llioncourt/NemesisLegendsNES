@@ -257,6 +257,16 @@ def main():
     boss[0x1d0:0x1d8]=bytes(ex.byte(1,0x7e03+j) for j in range(8))
     (OUT/'boss.bin').write_bytes(boss)
     (OUT/'boss.inc').write_text('BossBGbank = '+str(bbank)+'\n')
+    # CP0005: approved title in previously unused CHR allocation. Gameplay
+    # bank indices never move. Fail rather than overwrite a growing game.
+    if len(chrdata) > 19*4096:
+        raise ValueError('Gameplay CHR reached title bank 19; repack explicitly')
+    title_dir=ROOT/'assets/title_art'
+    art=(title_dir/'background.chr').read_bytes()
+    if len(art)>4*4096:raise ValueError('Title art exceeds four CHR banks')
+    chrdata+=bytes(19*4096-len(chrdata));chrdata+=art
+    chrdata+=bytes(23*4096-len(chrdata))
+    chrdata+=(title_dir/'cursor.chr').read_bytes()
     target=8192
     while target<len(chrdata):target*=2
     useful=len(chrdata);chrdata+=bytes(target-len(chrdata));(OUT/'graphics.chr').write_bytes(chrdata)
