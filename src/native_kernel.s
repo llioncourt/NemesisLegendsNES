@@ -397,6 +397,8 @@ LoadStage:
  lda chapter
  cmp #2
  beq @chapter2
+ cmp #4
+ beq @chapter4
  lda stage_id
  sec
  sbc #1
@@ -419,6 +421,18 @@ LoadStage:
  sbc #1
  clc
  adc #N2_MAP_BANK
+ sta stage_bank
+ jsr LoadDataBank
+ lda #$80
+ sta stagebase
+ jmp @based
+@chapter4:
+ ; Nemesis 3: eleven descriptors in banks N3_MAP_BANK..+10.
+ lda stage_id
+ sec
+ sbc #1
+ clc
+ adc #N3_MAP_BANK
  sta stage_bank
  jsr LoadDataBank
  lda #$80
@@ -1223,10 +1237,25 @@ UpdateHUD:
  sta HUD,x
  dex
  bpl @copy
+ ; Stage number: one digit, or two for 10..12 (bonus stages and chapter maps).
+ lda #' '
+ sta HUD+4
  lda stage_id
+ cmp #10
+ bcc @one_digit
+ sec
+ sbc #10
+ ldx #'1'
+ stx HUD+3
+ clc
+ adc #$30
+ sta HUD+4
+ jmp @stage_done
+@one_digit:
  clc
  adc #$30
  sta HUD+3
+@stage_done:
  lda player_lives
  clc
  adc #$30

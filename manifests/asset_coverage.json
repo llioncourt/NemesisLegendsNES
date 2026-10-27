@@ -12,11 +12,11 @@
     "total": 1727,
     "identified": 1727,
     "extracted": 1676,
-    "converted": 274,
-    "integrated": 274,
-    "tested": 83,
+    "converted": 307,
+    "integrated": 307,
+    "tested": 105,
     "validated": 0,
-    "pending": 1453,
+    "pending": 1420,
     "reuse": {
       "CONVERT": 1575,
       "ADAPT": 2,
@@ -126,11 +126,11 @@
       "total": 750,
       "identified": 750,
       "extracted": 731,
-      "converted": 1,
-      "integrated": 1,
-      "tested": 1,
+      "converted": 34,
+      "integrated": 34,
+      "tested": 23,
       "validated": 0,
-      "pending": 749,
+      "pending": 716,
       "reuse": {
         "CONVERT": 750
       }
@@ -395,11 +395,11 @@
       "total": 78,
       "identified": 78,
       "extracted": 78,
-      "converted": 24,
-      "integrated": 24,
+      "converted": 35,
+      "integrated": 35,
       "tested": 8,
       "validated": 0,
-      "pending": 54,
+      "pending": 43,
       "reuse": {
         "CONVERT": 78
       }
@@ -434,11 +434,11 @@
       "total": 42,
       "identified": 42,
       "extracted": 42,
-      "converted": 24,
-      "integrated": 24,
-      "tested": 20,
+      "converted": 35,
+      "integrated": 35,
+      "tested": 31,
       "validated": 0,
-      "pending": 18,
+      "pending": 7,
       "reuse": {
         "CONVERT": 42
       }
@@ -460,11 +460,11 @@
       "total": 42,
       "identified": 42,
       "extracted": 42,
-      "converted": 24,
-      "integrated": 24,
-      "tested": 20,
+      "converted": 35,
+      "integrated": 35,
+      "tested": 31,
       "validated": 0,
-      "pending": 18,
+      "pending": 7,
       "reuse": {
         "CONVERT": 42
       }

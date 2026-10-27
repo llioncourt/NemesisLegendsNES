@@ -7,9 +7,9 @@ claimed. Captures one screenshot per map.
 import argparse,hashlib,json,pathlib
 from nes_test_host import NES
 ROOT=pathlib.Path(__file__).resolve().parents[1]
-ROM=ROOT/'build/native/Nemesis_Legends_CP0014.nes'
+ROM=ROOT/'build/native/Nemesis_Legends_CP0015.nes'
 CORE=ROOT/'toolchain/linux-x64/bin/fceumm_libretro.so'
-OUT=ROOT/'reports/cp0014';OUT.mkdir(parents=True,exist_ok=True)
+OUT=ROOT/'reports/cp0015';OUT.mkdir(parents=True,exist_ok=True)
 parser=argparse.ArgumentParser();parser.add_argument('--core',default=str(CORE));args=parser.parse_args()
 B=NES.BUTTONS
 def tap(n,btn,hold=2,gap=3):

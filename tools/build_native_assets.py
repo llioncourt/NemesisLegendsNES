@@ -290,6 +290,10 @@ def main():
     if not n2.exists():
         import subprocess,sys as _sys;subprocess.run([_sys.executable,str(ROOT/'tools/build_n2_assets.py')],cwd=ROOT,check=True)
     chrdata+=n2.read_bytes()
+    n3=(OUT/'n3_graphics.chr')
+    if not n3.exists():
+        import subprocess,sys as _sys;subprocess.run([_sys.executable,str(ROOT/'tools/build_n3_assets.py')],cwd=ROOT,check=True)
+    chrdata+=n3.read_bytes()
     target=8192
     while target<len(chrdata):target*=2
     target=max(target,262144)

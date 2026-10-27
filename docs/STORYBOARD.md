@@ -51,17 +51,17 @@ TITLE, INTRO, NEMESIS, T1, NEMESIS 2, T2, SALAMANDER, T3, NEMESIS 3, FINAL, CRED
 | 45 | SAL.MAP_06 | stage | salamander | Salamander final stage (OPERATION FOUR); boss 6 falling starts the ending (p11:B58D) | ASSETS_READY | 0x20,0x21 |
 | 46 | SAL.MAP_07 | stage | salamander | Salamander OPERATION X secret stage: only with Nemesis 2 in the other slot (p03:B599/B5E3), played before stage 6 (p10:8B7B); its tiles come from that cartridge (p00:5B91) | ASSETS_READY | 0x19,0x21 |
 | 47 | T3 | transition | nemesis_legends | Transition Salamander -> Nemesis 3 (new) | NOT_STARTED |  |
-| 48 | N3.1 | stage | nemesis3 | Nemesis 3 stage_1_no_map_sun_enemies | ASSETS_READY | 0x6,0x5 |
-| 49 | N3.2 | stage | nemesis3 | Nemesis 3 stage_2 | ASSETS_READY | 0x7,0x5 |
-| 50 | N3.3 | stage | nemesis3 | Nemesis 3 stage_3 | ASSETS_READY | 0x4,0x8,0x5,0x1 |
-| 51 | N3.4 | stage | nemesis3 | Nemesis 3 stage_4_boss_rush_no_map | ASSETS_READY | 0x4,0xc,0x5 |
-| 52 | N3.5 | stage | nemesis3 | Nemesis 3 stage_5_red_map_entrance | ASSETS_READY | 0x4,0xc,0x5 |
-| 53 | N3.6 | stage | nemesis3 | Nemesis 3 stage_6 | ASSETS_READY | 0x4,0x44,0x5 |
-| 54 | N3.7 | stage | nemesis3 | Nemesis 3 stage_7_map_entrance | ASSETS_READY | 0x4,0x45,0x5 |
-| 55 | N3.8 | stage | nemesis3 | Nemesis 3 stage_8_map_entrance | ASSETS_READY | 0x4,0x46,0x5 |
-| 56 | N3.9 | stage | nemesis3 | Nemesis 3 stage_9_esp_device_then_computer | ASSETS_READY | 0x4,0xd,0x5,0x1 |
-| 57 | N3.10 | stage | nemesis3 | Nemesis 3 stage_10_needs_all_three_maps | ASSETS_READY | 0x47,0x5 |
-| 58 | N3.11 | stage | nemesis3 | Nemesis 3 stage_11_final | ASSETS_READY | 0xe |
+| 48 | N3.1 | stage | nemesis3 | Nemesis 3 stage_1_no_map_sun_enemies | INTEGRATED | 0x6,0x5 |
+| 49 | N3.2 | stage | nemesis3 | Nemesis 3 stage_2 | INTEGRATED | 0x7,0x5 |
+| 50 | N3.3 | stage | nemesis3 | Nemesis 3 stage_3 | INTEGRATED | 0x4,0x8,0x5,0x1 |
+| 51 | N3.4 | stage | nemesis3 | Nemesis 3 stage_4_boss_rush_no_map | INTEGRATED | 0x4,0xc,0x5 |
+| 52 | N3.5 | stage | nemesis3 | Nemesis 3 stage_5_red_map_entrance | INTEGRATED | 0x4,0xc,0x5 |
+| 53 | N3.6 | stage | nemesis3 | Nemesis 3 stage_6 | INTEGRATED | 0x4,0x44,0x5 |
+| 54 | N3.7 | stage | nemesis3 | Nemesis 3 stage_7_map_entrance | INTEGRATED | 0x4,0x45,0x5 |
+| 55 | N3.8 | stage | nemesis3 | Nemesis 3 stage_8_map_entrance | INTEGRATED | 0x4,0x46,0x5 |
+| 56 | N3.9 | stage | nemesis3 | Nemesis 3 stage_9_esp_device_then_computer | INTEGRATED | 0x4,0xd,0x5,0x1 |
+| 57 | N3.10 | stage | nemesis3 | Nemesis 3 stage_10_needs_all_three_maps | INTEGRATED | 0x47,0x5 |
+| 58 | N3.11 | stage | nemesis3 | Nemesis 3 stage_11_final | INTEGRATED | 0xe |
 | 59 | N3.INTERLUDE.AFTER3 | cutscene | nemesis3 | Nemesis 3 interlude after stage 3: on_board_computer_radar | NOT_STARTED | 0x3f |
 | 60 | N3.INTERLUDE.AFTER4 | cutscene | nemesis3 | Nemesis 3 interlude after stage 4: on_board_computer_scene | NOT_STARTED |  |
 | 61 | N3.INTERLUDE.AFTER9 | cutscene | nemesis3 | Nemesis 3 interlude after stage 9: on_board_computer_map_check | NOT_STARTED | 0x3f |
@@ -72,7 +72,7 @@ TITLE, INTRO, NEMESIS, T1, NEMESIS 2, T2, SALAMANDER, T3, NEMESIS 3, FINAL, CRED
 | 66 | FINAL | cutscene | nemesis_legends | Final ending of the anthology (new, after Nemesis 3) | NOT_STARTED |  |
 | 67 | CREDITS | screen | nemesis_legends | Credits (new) | NOT_STARTED |  |
 
-State counts: ASSETS_READY 23, INTEGRATED 12, NOT_STARTED 24, PARTIAL 7, PLAYABLE 1
+State counts: ASSETS_READY 12, INTEGRATED 23, NOT_STARTED 24, PARTIAL 7, PLAYABLE 1
 
 - Original endings are kept and played before each transition.
 - Nemesis 2 halfway ending is not completion; the return trip follows.

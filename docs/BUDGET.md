@@ -8,17 +8,19 @@
 | STAGECODE | 1479 |
 | N2_maps | 98304 |
 | N2_metatiles | 16384 |
+| N3_maps | 90112 |
+| N3_metatiles | 16384 |
 | MAPS | 8192 |
 | ACTORS | 5634 |
 | BOSSDATA | 8192 |
 | TITLE | 4618 |
-| CODE | 7359 |
+| CODE | 7383 |
 | BOOT | 1135 |
 | SOUND | 5084 |
 | VECTORS | 6 |
 | RESERVED | 0 |
 
-PRG used 205539 of 524288; CHR useful 159744 (padding 102400).
+PRG used 312059 of 524288; CHR useful 229376 (padding 32768).
 
 ## Four-game projection (upper bounds from extraction)
 

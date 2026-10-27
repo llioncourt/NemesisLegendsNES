@@ -19,6 +19,9 @@ CHR_BASE_BANK=25          # first 4 KiB CHR bank used by chapter 2 (after title 
 MAPS_A_BANK=0x80|26;MAPS_B_BANK=0x80|27   # $5115 values of the two metatile banks (PRG banks 26/27)
 def main():
     manifest=json.loads((SRC/'stage_manifest.json').read_text())
+    # Source map limits and checkpoints (p01:6986, p01:694A) from the structure inventory.
+    structure=json.loads((ROOT/'reports/nemesis2_structure.json').read_text())
+    limits={int(s['map_id']):s for s in structure['stages']}
     chrdata=bytearray();dictionary={}
     def addtile(raw):
         if raw not in dictionary:dictionary[raw]=len(chrdata)//16;chrdata.extend(raw)
@@ -47,7 +50,10 @@ def main():
             for c,count in collections.Counter(rows[y*cols:(y+1)*cols]).items():weights[third*256+c]+=count
         pals=palettes(tiles,weights)
         desc=bytearray(8192)
-        desc[0:6]=struct.pack('<HHH',0,cols-1,cols-1);desc[6:8]=struct.pack('<H',base);desc[8:10]=struct.pack('<H',len(new_script));desc[10:12]=struct.pack('<H',0xffff);desc[12]=bank
+        lim=limits[st]['map_limits_p01_6986'];first=int(lim['first_map_column'],16);last=int(lim['last_map_column'],16);scroll_end=int(lim['scroll_end_column_0xE325'],16)
+        table_last=last;last=first+cols   # map 8 (interior) lists $C0 but holds 160 columns; the script length is authoritative
+        cp=limits[st]['checkpoint'].get('column');cp=int(cp,16) if cp else 0xffff
+        desc[0:6]=struct.pack('<HHH',first,last-1,scroll_end);desc[6:8]=struct.pack('<H',base);desc[8:10]=struct.pack('<H',len(new_script));desc[10:12]=struct.pack('<H',cp);desc[12]=bank
         for p,pal in enumerate(pals):desc[0x20+p*4:0x24+p*4]=bytes(NEAREST[c] for c in pal)
         changed=total=0
         for i,t in enumerate(tiles):
@@ -66,7 +72,7 @@ def main():
             for xx in (0,8):
                 for yy in (0,8):sheet+=encode(pix[yy:yy+8,xx:xx+8])
         sheet+=bytes(8192-len(sheet));sheets.append((st,desc,sheet))
-        report.append(dict(map=st,columns=cols,script_bytes=len(new_script),metatiles=len(blocks),metatile_bank=bank,metatile_base=base,palettes=pals,
+        report.append(dict(map=st,columns=cols,first_column=first,last_column=last,table_last_column=table_last,scroll_end=scroll_end,checkpoint=cp,script_bytes=len(new_script),metatiles=len(blocks),metatile_bank=bank,metatile_base=base,palettes=pals,
                            palette_changed_weighted_pixels=changed,palette_total_weighted_pixels=total))
     chrdata+=bytes((-len(chrdata))%1024)
     banks={};tile_end=len(chrdata)

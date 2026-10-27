@@ -909,7 +909,7 @@
    "kind": "stage",
    "game": "nemesis3",
    "title": "Nemesis 3 stage_1_no_map_sun_enemies",
-   "state": "ASSETS_READY",
+   "state": "INTEGRATED",
    "resources": [
     "nemesis3.map01.terrain"
    ],
@@ -929,7 +929,7 @@
    "kind": "stage",
    "game": "nemesis3",
    "title": "Nemesis 3 stage_2",
-   "state": "ASSETS_READY",
+   "state": "INTEGRATED",
    "resources": [
     "nemesis3.map02.terrain"
    ],
@@ -949,7 +949,7 @@
    "kind": "stage",
    "game": "nemesis3",
    "title": "Nemesis 3 stage_3",
-   "state": "ASSETS_READY",
+   "state": "INTEGRATED",
    "resources": [
     "nemesis3.map03.terrain"
    ],
@@ -971,7 +971,7 @@
    "kind": "stage",
    "game": "nemesis3",
    "title": "Nemesis 3 stage_4_boss_rush_no_map",
-   "state": "ASSETS_READY",
+   "state": "INTEGRATED",
    "resources": [
     "nemesis3.map04.terrain"
    ],
@@ -992,7 +992,7 @@
    "kind": "stage",
    "game": "nemesis3",
    "title": "Nemesis 3 stage_5_red_map_entrance",
-   "state": "ASSETS_READY",
+   "state": "INTEGRATED",
    "resources": [
     "nemesis3.map05.terrain"
    ],
@@ -1013,7 +1013,7 @@
    "kind": "stage",
    "game": "nemesis3",
    "title": "Nemesis 3 stage_6",
-   "state": "ASSETS_READY",
+   "state": "INTEGRATED",
    "resources": [
     "nemesis3.map06.terrain"
    ],
@@ -1034,7 +1034,7 @@
    "kind": "stage",
    "game": "nemesis3",
    "title": "Nemesis 3 stage_7_map_entrance",
-   "state": "ASSETS_READY",
+   "state": "INTEGRATED",
    "resources": [
     "nemesis3.map07.terrain"
    ],
@@ -1055,7 +1055,7 @@
    "kind": "stage",
    "game": "nemesis3",
    "title": "Nemesis 3 stage_8_map_entrance",
-   "state": "ASSETS_READY",
+   "state": "INTEGRATED",
    "resources": [
     "nemesis3.map08.terrain"
    ],
@@ -1076,7 +1076,7 @@
    "kind": "stage",
    "game": "nemesis3",
    "title": "Nemesis 3 stage_9_esp_device_then_computer",
-   "state": "ASSETS_READY",
+   "state": "INTEGRATED",
    "resources": [
     "nemesis3.map09.terrain"
    ],
@@ -1098,7 +1098,7 @@
    "kind": "stage",
    "game": "nemesis3",
    "title": "Nemesis 3 stage_10_needs_all_three_maps",
-   "state": "ASSETS_READY",
+   "state": "INTEGRATED",
    "resources": [
     "nemesis3.map10.terrain"
    ],
@@ -1118,7 +1118,7 @@
    "kind": "stage",
    "game": "nemesis3",
    "title": "Nemesis 3 stage_11_final",
-   "state": "ASSETS_READY",
+   "state": "INTEGRATED",
    "resources": [
     "nemesis3.map11.terrain"
    ],
@@ -1275,8 +1275,8 @@
   "PLAYABLE": 1,
   "NOT_STARTED": 24,
   "PARTIAL": 7,
-  "ASSETS_READY": 23,
-  "INTEGRATED": 12
+  "ASSETS_READY": 12,
+  "INTEGRATED": 23
  },
  "policy": [
   "Original endings are kept and played before each transition.",

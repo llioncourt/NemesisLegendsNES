@@ -98,6 +98,7 @@ add(id='n1.title',name='Nemesis / Gradius title screen (region logo)',game='neme
 
 # ---------------------------------------------------------------- Nemesis 2 (MSX)
 N2_NATIVE=(ROOT/'build/native/n2_assets.json').exists()
+N3_NATIVE=(ROOT/'build/native/n3_assets.json').exists()
 n2=load('assets/msx/nemesis2/stage_manifest.json',[]);n2s=load('assets/msx/nemesis2/compressed_streams.json',[]);n2r=load('reports/nemesis2_extraction.json',{})
 N2_ROLE={0:'stage 1',1:'stage 2',2:'stage 3',3:'stage 4',4:'stage 5',5:'stage 6',6:'stage 7',7:'interior 8',8:'secret 9',9:'secret 10',10:'secret 11',11:'return / final'}
 for m in n2:
@@ -131,10 +132,11 @@ for slug,game,label in (('salamander_msx','salamander','Salamander'),('nemesis3_
         for m in maps:
             mid=m.get('id',m.get('map_id',m.get('stage')));role=m.get('role',m.get('name',''))
             mid=int(re.sub(r'\D','',str(mid)) or 0)
+            nat=(game=='nemesis3' and N3_NATIVE)
             add(id=f'{game}.map{mid:02d}.terrain',name=f'{label} map {mid} terrain ({role})',game=game,platform='msx',rom_slug=slug,offset=m.get('column_script_rom_offset'),
-                category='terrain_map',format=m.get('format','msx_column_script'),size_bytes=m.get('column_script_bytes'),reuse_class='CONVERT',extracted=bool(rep),path=f'assets/msx/{game}/map_{mid:02d}/',notes=m.get('direction',''))
-            add(id=f'{game}.map{mid:02d}.tiles',name=f'{label} map {mid} character set',game=game,platform='msx',rom_slug=slug,category='tile_set',format='tms9918_pattern+colour',reuse_class='CONVERT',extracted=bool(rep))
-            add(id=f'{game}.map{mid:02d}.sprites',name=f'{label} map {mid} sprite set',game=game,platform='msx',rom_slug=slug,category='sprite_set',format='tms9918_16x16',reuse_class='CONVERT',extracted=bool(rep))
+                category='terrain_map',format=m.get('format','msx_column_script'),size_bytes=m.get('column_script_bytes'),reuse_class='CONVERT',extracted=bool(rep),converted=nat,integrated=nat,tested=nat,path=f'assets/msx/{game}/map_{mid:02d}/',notes=(m.get('direction','') or '')+(' native descriptor n3_map_%02d.bin (CP0015)'%mid if nat else ''))
+            add(id=f'{game}.map{mid:02d}.tiles',name=f'{label} map {mid} character set',game=game,platform='msx',rom_slug=slug,category='tile_set',format='tms9918_pattern+colour',reuse_class='CONVERT',extracted=bool(rep),converted=nat,integrated=nat,tested=nat)
+            add(id=f'{game}.map{mid:02d}.sprites',name=f'{label} map {mid} sprite set',game=game,platform='msx',rom_slug=slug,category='sprite_set',format='tms9918_16x16',reuse_class='CONVERT',extracted=bool(rep),converted=nat,integrated=nat)
             add(id=f'{game}.map{mid:02d}.script',name=f'{label} map {mid} stage logic / boss',game=game,platform='msx',rom_slug=slug,category='stage_script',format='z80_code',reuse_class='CONVERT',extracted=False,
                 notes='; '.join((b.get('wiki_name') or ('boss %s'%b.get('number',b.get('boss_id')))) if isinstance(b,dict) else str(b) for b in m.get('bosses',[])) if m.get('bosses') else 'bosses UNRESOLVED')
         for i,s in enumerate(load(f'assets/msx/{game}/compressed_streams.json',[]) or []):

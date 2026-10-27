@@ -187,7 +187,7 @@ CheatApply:
  sta GamePace_Edges
  lda cheat_vals+2
  cmp #3
- bcs @unsupported_game
+ beq @unsupported_game   ; Salamander: vertical stages, no loader yet
  lda cheat_from
  beq @from_title
  lda cheat_action
@@ -429,7 +429,7 @@ TxtMid:      .byte "MIDPOINT"
 TxtPress:    .byte "PRESS A "
 TxtResume:   .byte "RESUME        "
 TxtPace:     .byte "30 FPS  ","40 FPS  ","60 FPS  "
-TxtGames:    .byte "NEMESIS ","NEMESIS2","SAL WIP ","N3 WIP  "
+TxtGames:    .byte "NEMESIS ","NEMESIS2","SAL WIP ","NEMESIS3"
 
 CheatFrame:
  ; Input first, every frame; pending rows are uploaded one per frame after it.

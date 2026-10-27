@@ -86,6 +86,61 @@
    "end": 40959,
    "size": 8192
   },
+  "N3MAP0": {
+   "start": 32768,
+   "end": 40959,
+   "size": 8192
+  },
+  "N3MAP1": {
+   "start": 32768,
+   "end": 40959,
+   "size": 8192
+  },
+  "N3MAP10": {
+   "start": 32768,
+   "end": 40959,
+   "size": 8192
+  },
+  "N3MAP2": {
+   "start": 32768,
+   "end": 40959,
+   "size": 8192
+  },
+  "N3MAP3": {
+   "start": 32768,
+   "end": 40959,
+   "size": 8192
+  },
+  "N3MAP4": {
+   "start": 32768,
+   "end": 40959,
+   "size": 8192
+  },
+  "N3MAP5": {
+   "start": 32768,
+   "end": 40959,
+   "size": 8192
+  },
+  "N3MAP6": {
+   "start": 32768,
+   "end": 40959,
+   "size": 8192
+  },
+  "N3MAP7": {
+   "start": 32768,
+   "end": 40959,
+   "size": 8192
+  },
+  "N3MAP8": {
+   "start": 32768,
+   "end": 40959,
+   "size": 8192
+  },
+  "N3MAP9": {
+   "start": 32768,
+   "end": 40959,
+   "size": 8192
+  },
   "STAGE0": {
    "start": 32768,
    "end": 40959,
@@ -146,14 +201,24 @@
    "end": 49151,
    "size": 8192
   },
+  "N3MAPSA": {
+   "start": 40960,
+   "end": 49151,
+   "size": 8192
+  },
+  "N3MAPSB": {
+   "start": 40960,
+   "end": 49151,
+   "size": 8192
+  },
   "CODE": {
    "start": 49152,
-   "end": 56480,
-   "size": 7329
+   "end": 56504,
+   "size": 7353
   },
   "RODATA": {
-   "start": 56481,
-   "end": 56510,
+   "start": 56505,
+   "end": 56534,
    "size": 30
   },
   "BOOT": {
@@ -182,7 +247,9 @@
   "RES_reserved": 24576,
   "N2_maps": 98304,
   "N2_metatiles": 16384,
-  "RES2_reserved": 278528,
+  "N3_maps": 90112,
+  "N3_metatiles": 16384,
+  "RES2_reserved": 172032,
   "K_kernel": 8192,
   "fixed_E000": 8192
  },
@@ -191,11 +258,13 @@
   "STAGECODE": 1479,
   "N2_maps": 98304,
   "N2_metatiles": 16384,
+  "N3_maps": 90112,
+  "N3_metatiles": 16384,
   "MAPS": 8192,
   "ACTORS": 5634,
   "BOSSDATA": 8192,
   "TITLE": 4618,
-  "CODE": 7359,
+  "CODE": 7383,
   "BOOT": 1135,
   "SOUND": 5084,
   "VECTORS": 6,
@@ -224,7 +293,7 @@
    "tiles_2bpp_upper_bound": 18704,
    "sprite_sheets": 98304,
    "sprite_sheets_dedup_1k_banks": 43,
-   "measured_chr_useful": 159744,
+   "measured_chr_useful": 229376,
    "stage_logic_code_estimate": 18432,
    "note": "measured: current ROM holds all 12 descriptors and CHR for Nemesis"
   },
@@ -259,10 +328,10 @@
    "prg_kib": 512,
    "chr_kib": 256,
    "wram_kib": 8,
-   "prg_used_bytes": 205539,
-   "prg_free_bytes": 318749,
-   "chr_used_bytes": 159744,
-   "chr_padding_bytes": 102400
+   "prg_used_bytes": 312059,
+   "prg_free_bytes": 212229,
+   "chr_used_bytes": 229376,
+   "chr_padding_bytes": 32768
   },
   "mmc5_ceiling": {
    "prg_kib": 1024,

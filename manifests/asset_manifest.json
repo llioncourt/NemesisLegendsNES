@@ -20864,13 +20864,13 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
-    "tested": false,
+    "converted": true,
+    "integrated": true,
+    "tested": true,
     "validated": false
    },
    "path": "assets/msx/nemesis3/map_01/",
-   "notes": ""
+   "notes": " native descriptor n3_map_01.bin (CP0015)"
   },
   {
    "id": "nemesis3.map01.tiles",
@@ -20891,9 +20891,9 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
-    "tested": false,
+    "converted": true,
+    "integrated": true,
+    "tested": true,
     "validated": false
    },
    "path": null,
@@ -20918,8 +20918,8 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
+    "converted": true,
+    "integrated": true,
     "tested": false,
     "validated": false
    },
@@ -20972,13 +20972,13 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
-    "tested": false,
+    "converted": true,
+    "integrated": true,
+    "tested": true,
     "validated": false
    },
    "path": "assets/msx/nemesis3/map_02/",
-   "notes": ""
+   "notes": " native descriptor n3_map_02.bin (CP0015)"
   },
   {
    "id": "nemesis3.map02.tiles",
@@ -20999,9 +20999,9 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
-    "tested": false,
+    "converted": true,
+    "integrated": true,
+    "tested": true,
     "validated": false
    },
    "path": null,
@@ -21026,8 +21026,8 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
+    "converted": true,
+    "integrated": true,
     "tested": false,
     "validated": false
    },
@@ -21080,13 +21080,13 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
-    "tested": false,
+    "converted": true,
+    "integrated": true,
+    "tested": true,
     "validated": false
    },
    "path": "assets/msx/nemesis3/map_03/",
-   "notes": ""
+   "notes": " native descriptor n3_map_03.bin (CP0015)"
   },
   {
    "id": "nemesis3.map03.tiles",
@@ -21107,9 +21107,9 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
-    "tested": false,
+    "converted": true,
+    "integrated": true,
+    "tested": true,
     "validated": false
    },
    "path": null,
@@ -21134,8 +21134,8 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
+    "converted": true,
+    "integrated": true,
     "tested": false,
     "validated": false
    },
@@ -21188,13 +21188,13 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
-    "tested": false,
+    "converted": true,
+    "integrated": true,
+    "tested": true,
     "validated": false
    },
    "path": "assets/msx/nemesis3/map_04/",
-   "notes": ""
+   "notes": " native descriptor n3_map_04.bin (CP0015)"
   },
   {
    "id": "nemesis3.map04.tiles",
@@ -21215,9 +21215,9 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
-    "tested": false,
+    "converted": true,
+    "integrated": true,
+    "tested": true,
     "validated": false
    },
    "path": null,
@@ -21242,8 +21242,8 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
+    "converted": true,
+    "integrated": true,
     "tested": false,
     "validated": false
    },
@@ -21296,13 +21296,13 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
-    "tested": false,
+    "converted": true,
+    "integrated": true,
+    "tested": true,
     "validated": false
    },
    "path": "assets/msx/nemesis3/map_05/",
-   "notes": ""
+   "notes": " native descriptor n3_map_05.bin (CP0015)"
   },
   {
    "id": "nemesis3.map05.tiles",
@@ -21323,9 +21323,9 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
-    "tested": false,
+    "converted": true,
+    "integrated": true,
+    "tested": true,
     "validated": false
    },
    "path": null,
@@ -21350,8 +21350,8 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
+    "converted": true,
+    "integrated": true,
     "tested": false,
     "validated": false
    },
@@ -21404,13 +21404,13 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
-    "tested": false,
+    "converted": true,
+    "integrated": true,
+    "tested": true,
     "validated": false
    },
    "path": "assets/msx/nemesis3/map_06/",
-   "notes": ""
+   "notes": " native descriptor n3_map_06.bin (CP0015)"
   },
   {
    "id": "nemesis3.map06.tiles",
@@ -21431,9 +21431,9 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
-    "tested": false,
+    "converted": true,
+    "integrated": true,
+    "tested": true,
     "validated": false
    },
    "path": null,
@@ -21458,8 +21458,8 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
+    "converted": true,
+    "integrated": true,
     "tested": false,
     "validated": false
    },
@@ -21512,13 +21512,13 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
-    "tested": false,
+    "converted": true,
+    "integrated": true,
+    "tested": true,
     "validated": false
    },
    "path": "assets/msx/nemesis3/map_07/",
-   "notes": ""
+   "notes": " native descriptor n3_map_07.bin (CP0015)"
   },
   {
    "id": "nemesis3.map07.tiles",
@@ -21539,9 +21539,9 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
-    "tested": false,
+    "converted": true,
+    "integrated": true,
+    "tested": true,
     "validated": false
    },
    "path": null,
@@ -21566,8 +21566,8 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
+    "converted": true,
+    "integrated": true,
     "tested": false,
     "validated": false
    },
@@ -21620,13 +21620,13 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
-    "tested": false,
+    "converted": true,
+    "integrated": true,
+    "tested": true,
     "validated": false
    },
    "path": "assets/msx/nemesis3/map_08/",
-   "notes": ""
+   "notes": " native descriptor n3_map_08.bin (CP0015)"
   },
   {
    "id": "nemesis3.map08.tiles",
@@ -21647,9 +21647,9 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
-    "tested": false,
+    "converted": true,
+    "integrated": true,
+    "tested": true,
     "validated": false
    },
    "path": null,
@@ -21674,8 +21674,8 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
+    "converted": true,
+    "integrated": true,
     "tested": false,
     "validated": false
    },
@@ -21728,13 +21728,13 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
-    "tested": false,
+    "converted": true,
+    "integrated": true,
+    "tested": true,
     "validated": false
    },
    "path": "assets/msx/nemesis3/map_09/",
-   "notes": ""
+   "notes": " native descriptor n3_map_09.bin (CP0015)"
   },
   {
    "id": "nemesis3.map09.tiles",
@@ -21755,9 +21755,9 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
-    "tested": false,
+    "converted": true,
+    "integrated": true,
+    "tested": true,
     "validated": false
    },
    "path": null,
@@ -21782,8 +21782,8 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
+    "converted": true,
+    "integrated": true,
     "tested": false,
     "validated": false
    },
@@ -21836,13 +21836,13 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
-    "tested": false,
+    "converted": true,
+    "integrated": true,
+    "tested": true,
     "validated": false
    },
    "path": "assets/msx/nemesis3/map_10/",
-   "notes": ""
+   "notes": " native descriptor n3_map_10.bin (CP0015)"
   },
   {
    "id": "nemesis3.map10.tiles",
@@ -21863,9 +21863,9 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
-    "tested": false,
+    "converted": true,
+    "integrated": true,
+    "tested": true,
     "validated": false
    },
    "path": null,
@@ -21890,8 +21890,8 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
+    "converted": true,
+    "integrated": true,
     "tested": false,
     "validated": false
    },
@@ -21944,13 +21944,13 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
-    "tested": false,
+    "converted": true,
+    "integrated": true,
+    "tested": true,
     "validated": false
    },
    "path": "assets/msx/nemesis3/map_11/",
-   "notes": ""
+   "notes": " native descriptor n3_map_11.bin (CP0015)"
   },
   {
    "id": "nemesis3.map11.tiles",
@@ -21971,9 +21971,9 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
-    "tested": false,
+    "converted": true,
+    "integrated": true,
+    "tested": true,
     "validated": false
    },
    "path": null,
@@ -21998,8 +21998,8 @@
    "states": {
     "identified": true,
     "extracted": true,
-    "converted": false,
-    "integrated": false,
+    "converted": true,
+    "integrated": true,
     "tested": false,
     "validated": false
    },

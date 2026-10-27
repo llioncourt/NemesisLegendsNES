@@ -8,8 +8,8 @@ from __future__ import annotations
 import argparse,hashlib,json,pathlib
 from nes_test_host import NES
 ROOT=pathlib.Path(__file__).resolve().parents[1]
-ROM=ROOT/'build/native/Nemesis_Legends_CP0014.nes'
-OUT=ROOT/'reports/cp0014';OUT.mkdir(exist_ok=True)
+ROM=ROOT/'build/native/Nemesis_Legends_CP0015.nes'
+OUT=ROOT/'reports/cp0015';OUT.mkdir(exist_ok=True)
 
 def main():
  p=argparse.ArgumentParser();p.add_argument('--core',default=str(ROOT/'toolchain/linux-x64/bin/fceumm_libretro.so'));a=p.parse_args()

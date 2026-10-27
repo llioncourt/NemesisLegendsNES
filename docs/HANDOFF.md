@@ -1,3 +1,9 @@
+# CP0015 handoff
+
+Private ROM `build/native/Nemesis_Legends_CP0015.nes`. `checkpoint.py test` now includes `tools/test_n3_maps.py`. Chapter 4 maps: `tools/build_n3_assets.py`, banks 28-40, `N3_MAP_BANK`. See `docs/NATIVE_RUNTIME_CP0015.md`.
+
+---
+
 # CP0014 handoff - 512K/256K board, Nemesis 2 maps loadable
 
 Private ROM: `build/native/Nemesis_Legends_CP0014.nes` (786448 bytes; hash in

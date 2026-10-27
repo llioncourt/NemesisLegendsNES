@@ -11,8 +11,8 @@ OPTS={b'fceumm_overscan':b'disabled',b'fceumm_overscan_v_top':b'0',b'fceumm_over
 
 def main():
     ap=argparse.ArgumentParser();ap.add_argument('--core',required=True);a=ap.parse_args()
-    rom=(ROOT/'build/native/Nemesis_Legends_CP0014.nes').read_bytes()
-    out=ROOT/'reports/cp0014';out.mkdir(parents=True,exist_ok=True)
+    rom=(ROOT/'build/native/Nemesis_Legends_CP0015.nes').read_bytes()
+    out=ROOT/'reports/cp0015';out.mkdir(parents=True,exist_ok=True)
     checks=[];timing=[]
     def check(name,passed,**kw):
         row=dict(name=name,passed=bool(passed),**kw);checks.append(row)
