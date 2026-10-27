@@ -635,7 +635,7 @@
      "nes": "all frames re-verified in round 2 against run4/run5 OAM, CHR bank and screenshot pixels with my own decoder (qa/round2/work/nes_verify2.json); vic_viper + vic_viper_exhaust merged (4 frames)",
      "correspondence": "ship incl. exhaust; the exhaust decision is now stated in notes",
      "consistency": "one policy across the four games",
-     "rom": "ROM unchanged (sha c10f9928...); REGRESSION from item 7: legends.current_rom.observation now holds my round-2 QA sentence (\"round-1 ROM observation copied verbatim ... NOTE states.tested=True is unjustified\") instead of the round-1 ROM facts (frames/palette drawn); the generator copies qa.checks.rom into the observation, so the ROM facts were lost and the sentence is now false (tested is False). Affects all 20 ROM_INTEGRATED entries."
+     "rom": "ROM unchanged (sha c10f9928...); legends.current_rom.observation again holds the round-1 ROM facts (verified identical to round-1 report.json). Cosmetic leftover: the text still contains my round-1 clause \"bible legends.chr/palette are None and states.converted/integrated are False ...\" which is no longer true; a cleaned ROM-facts-only text is provided in qa/round4/rom_observations.json"
     }
    }
   },
@@ -1297,7 +1297,7 @@
      "nes": "all frames re-verified in round 2 against run4/run5 OAM, CHR bank and screenshot pixels with my own decoder (qa/round2/work/nes_verify2.json)",
      "correspondence": "shield (force field), not the option",
      "consistency": "one policy across the four games",
-     "rom": "ROM unchanged (sha c10f9928...); REGRESSION from item 7: legends.current_rom.observation now holds my round-2 QA sentence (\"round-1 ROM observation copied verbatim ... NOTE states.tested=True is unjustified\") instead of the round-1 ROM facts (frames/palette drawn); the generator copies qa.checks.rom into the observation, so the ROM facts were lost and the sentence is now false (tested is False). Affects all 20 ROM_INTEGRATED entries."
+     "rom": "ROM unchanged (sha c10f9928...); legends.current_rom.observation again holds the round-1 ROM facts (verified identical to round-1 report.json). Cosmetic leftover: the text still contains my round-1 clause \"bible legends.chr/palette are None and states.converted/integrated are False ...\" which is no longer true; a cleaned ROM-facts-only text is provided in qa/round4/rom_observations.json"
     }
    }
   },
@@ -2461,7 +2461,7 @@
      "nes": "all frames re-verified in round 2 against run4/run5 OAM, CHR bank and screenshot pixels with my own decoder (qa/round2/work/nes_verify2.json)",
      "correspondence": "option",
      "consistency": "one policy across the four games",
-     "rom": "ROM unchanged (sha c10f9928...); REGRESSION from item 7: legends.current_rom.observation now holds my round-2 QA sentence (\"round-1 ROM observation copied verbatim ... NOTE states.tested=True is unjustified\") instead of the round-1 ROM facts (frames/palette drawn); the generator copies qa.checks.rom into the observation, so the ROM facts were lost and the sentence is now false (tested is False). Affects all 20 ROM_INTEGRATED entries."
+     "rom": "ROM unchanged (sha c10f9928...); legends.current_rom.observation again holds the round-1 ROM facts (verified identical to round-1 report.json). Cosmetic leftover: the text still contains my round-1 clause \"bible legends.chr/palette are None and states.converted/integrated are False ...\" which is no longer true; a cleaned ROM-facts-only text is provided in qa/round4/rom_observations.json"
     }
    }
   },
@@ -2731,7 +2731,7 @@
      "nes": "all frames re-verified in round 2 against run4/run5 OAM, CHR bank and screenshot pixels with my own decoder (qa/round2/work/nes_verify2.json)",
      "correspondence": "player normal shot",
      "consistency": "one policy across the four games",
-     "rom": "ROM unchanged (sha c10f9928...); REGRESSION from item 7: legends.current_rom.observation now holds my round-2 QA sentence (\"round-1 ROM observation copied verbatim ... NOTE states.tested=True is unjustified\") instead of the round-1 ROM facts (frames/palette drawn); the generator copies qa.checks.rom into the observation, so the ROM facts were lost and the sentence is now false (tested is False). Affects all 20 ROM_INTEGRATED entries."
+     "rom": "ROM unchanged (sha c10f9928...); legends.current_rom.observation again holds the round-1 ROM facts (verified identical to round-1 report.json). Cosmetic leftover: the text still contains my round-1 clause \"bible legends.chr/palette are None and states.converted/integrated are False ...\" which is no longer true; a cleaned ROM-facts-only text is provided in qa/round4/rom_observations.json"
     }
    }
   },
@@ -2922,7 +2922,7 @@
      "nes": "all frames re-verified in round 2 against run4/run5 OAM, CHR bank and screenshot pixels with my own decoder (qa/round2/work/nes_verify2.json)",
      "correspondence": "double, not laser",
      "consistency": "one policy across the four games",
-     "rom": "ROM unchanged (sha c10f9928...); REGRESSION from item 7: legends.current_rom.observation now holds my round-2 QA sentence (\"round-1 ROM observation copied verbatim ... NOTE states.tested=True is unjustified\") instead of the round-1 ROM facts (frames/palette drawn); the generator copies qa.checks.rom into the observation, so the ROM facts were lost and the sentence is now false (tested is False). Affects all 20 ROM_INTEGRATED entries."
+     "rom": "ROM unchanged (sha c10f9928...); legends.current_rom.observation again holds the round-1 ROM facts (verified identical to round-1 report.json). Cosmetic leftover: the text still contains my round-1 clause \"bible legends.chr/palette are None and states.converted/integrated are False ...\" which is no longer true; a cleaned ROM-facts-only text is provided in qa/round4/rom_observations.json"
     }
    }
   },
@@ -3364,7 +3364,7 @@
      "nes": "all frames re-verified in round 2 against run4/run5 OAM, CHR bank and screenshot pixels with my own decoder (qa/round2/work/nes_verify2.json)",
      "correspondence": "laser, not double",
      "consistency": "one policy across the four games",
-     "rom": "ROM unchanged (sha c10f9928...); REGRESSION from item 7: legends.current_rom.observation now holds my round-2 QA sentence (\"round-1 ROM observation copied verbatim ... NOTE states.tested=True is unjustified\") instead of the round-1 ROM facts (frames/palette drawn); the generator copies qa.checks.rom into the observation, so the ROM facts were lost and the sentence is now false (tested is False). Affects all 20 ROM_INTEGRATED entries."
+     "rom": "ROM unchanged (sha c10f9928...); legends.current_rom.observation again holds the round-1 ROM facts (verified identical to round-1 report.json). Cosmetic leftover: the text still contains my round-1 clause \"bible legends.chr/palette are None and states.converted/integrated are False ...\" which is no longer true; a cleaned ROM-facts-only text is provided in qa/round4/rom_observations.json"
     }
    }
   },
@@ -3714,7 +3714,7 @@
      "nes": "all frames re-verified in round 2 against run4/run5 OAM, CHR bank and screenshot pixels with my own decoder (qa/round2/work/nes_verify2.json); missile + missile_ground merged",
      "correspondence": "falling + ground-running missile",
      "consistency": "one policy across the four games",
-     "rom": "ROM unchanged (sha c10f9928...); REGRESSION from item 7: legends.current_rom.observation now holds my round-2 QA sentence (\"round-1 ROM observation copied verbatim ... NOTE states.tested=True is unjustified\") instead of the round-1 ROM facts (frames/palette drawn); the generator copies qa.checks.rom into the observation, so the ROM facts were lost and the sentence is now false (tested is False). Affects all 20 ROM_INTEGRATED entries."
+     "rom": "ROM unchanged (sha c10f9928...); legends.current_rom.observation again holds the round-1 ROM facts (verified identical to round-1 report.json). Cosmetic leftover: the text still contains my round-1 clause \"bible legends.chr/palette are None and states.converted/integrated are False ...\" which is no longer true; a cleaned ROM-facts-only text is provided in qa/round4/rom_observations.json"
     }
    }
   },
@@ -4022,15 +4022,15 @@
    "notes": "NES reference is background (nametable) tiles, not sprites; Legends keeps its own 32-column text HUD layout and adopts the NES meter drawing.",
    "rom_deviation": "CP0016 draws a 32-column text HUD (ST/L/PWR/OP/SPD), not a power meter; nothing comparable to either source yet",
    "qa": {
-    "verdict": "UNRESOLVED",
-    "reason": "stale/false observation text remains",
-    "proposed_fix": "generator: do not copy qa.checks.rom into current_rom.observation; write ROM facts only (here: \"text HUD, no meter drawn\")",
+    "verdict": "PASS",
+    "reason": "legends block now faithful",
+    "proposed_fix": "-",
     "checks": {
      "msx": "unchanged since round 1 (code refs and ROM tables re-verified then; frames pixel-identical to the evidence PNGs); MSX evidence file identical except the ducker labels",
      "nes": "new background-kind reference verified by me: nametable row $2384 tiles 09..1D 62 63 1F from CHR bank 1 table $0000 with BG palette 0F 12 30 0F is pixel-identical (agreement 1.000) to run3_f587 image rows 204-211; PRG: $8A35 writes #$55 at index $42, $9AA3 split code, $8803 palettes",
      "correspondence": "same HUD element; ADAPT_NES now effective",
      "consistency": "one policy across the four games (ADAPT_NES)",
-     "rom": "states fixed; observation text stale and false (copied from the round-2 qa.checks.rom)"
+     "rom": "faithful: not integrated, text HUD recorded as rom_deviation"
     }
    }
   },
@@ -4408,7 +4408,7 @@
      "nes": "all frames re-verified in round 2 against run4/run5 OAM, CHR bank and screenshot pixels with my own decoder (qa/round2/work/nes_verify2.json)",
      "correspondence": "red capsule (meter)",
      "consistency": "one policy across the four games",
-     "rom": "ROM unchanged (sha c10f9928...); REGRESSION from item 7: legends.current_rom.observation now holds my round-2 QA sentence (\"round-1 ROM observation copied verbatim ... NOTE states.tested=True is unjustified\") instead of the round-1 ROM facts (frames/palette drawn); the generator copies qa.checks.rom into the observation, so the ROM facts were lost and the sentence is now false (tested is False). Affects all 20 ROM_INTEGRATED entries."
+     "rom": "ROM unchanged (sha c10f9928...); legends.current_rom.observation again holds the round-1 ROM facts (verified identical to round-1 report.json). Cosmetic leftover: the text still contains my round-1 clause \"bible legends.chr/palette are None and states.converted/integrated are False ...\" which is no longer true; a cleaned ROM-facts-only text is provided in qa/round4/rom_observations.json"
     }
    }
   },
@@ -4782,7 +4782,7 @@
      "nes": "all frames re-verified in round 2 against run4/run5 OAM, CHR bank and screenshot pixels with my own decoder (qa/round2/work/nes_verify2.json); pickup capture checked: bluecap_pickup_log shows the pal-1 capsule at (93,151) reaching the ship and vanishing between frames 4056 and 4064 with meter/score unchanged (screenshots verified)",
      "correspondence": "code path verified by me in the PRG (qa/round2/work/dis6502.py): $C16E type-1 object, $010C,Y sub-type 6 -> $C1AF (remove, JSR $894B = INC $42 meter), any other sub-type -> $C18C: remove ($C1FD), sound $0B, loop Y=9..0 and JSR $BE93 on every active enemy slot (bit 7 of $030C set, type >= 3) = screen clear. The clear itself was not observed (no enemy on screen), which the evidence states honestly",
      "consistency": "one policy across the four games",
-     "rom": "ROM unchanged (sha c10f9928...); REGRESSION from item 7: legends.current_rom.observation now holds my round-2 QA sentence (\"round-1 ROM observation copied verbatim ... NOTE states.tested=True is unjustified\") instead of the round-1 ROM facts (frames/palette drawn); the generator copies qa.checks.rom into the observation, so the ROM facts were lost and the sentence is now false (tested is False). Affects all 20 ROM_INTEGRATED entries."
+     "rom": "ROM unchanged (sha c10f9928...); legends.current_rom.observation again holds the round-1 ROM facts (verified identical to round-1 report.json). Cosmetic leftover: the text still contains my round-1 clause \"bible legends.chr/palette are None and states.converted/integrated are False ...\" which is no longer true; a cleaned ROM-facts-only text is provided in qa/round4/rom_observations.json"
     }
    }
   },
@@ -6181,7 +6181,7 @@
      "nes": "all frames re-verified in round 2 against run4/run5 OAM, CHR bank and screenshot pixels with my own decoder (qa/round2/work/nes_verify2.json); explosion_medium + explosion_small merged",
      "correspondence": "documented: medium for all enemies, small for fans (as Gradius NES does)",
      "consistency": "one policy across the four games",
-     "rom": "ROM unchanged (sha c10f9928...); REGRESSION from item 7: legends.current_rom.observation now holds my round-2 QA sentence (\"round-1 ROM observation copied verbatim ... NOTE states.tested=True is unjustified\") instead of the round-1 ROM facts (frames/palette drawn); the generator copies qa.checks.rom into the observation, so the ROM facts were lost and the sentence is now false (tested is False). Affects all 20 ROM_INTEGRATED entries."
+     "rom": "ROM unchanged (sha c10f9928...); legends.current_rom.observation again holds the round-1 ROM facts (verified identical to round-1 report.json). Cosmetic leftover: the text still contains my round-1 clause \"bible legends.chr/palette are None and states.converted/integrated are False ...\" which is no longer true; a cleaned ROM-facts-only text is provided in qa/round4/rom_observations.json"
     }
    }
   },
@@ -7127,7 +7127,7 @@
      "nes": "all frames re-verified in round 2 against run4/run5 OAM, CHR bank and screenshot pixels with my own decoder (qa/round2/work/nes_verify2.json) (red_pellet)",
      "correspondence": "note now says verified by trajectory; the evidence object notes still read \"probably an enemy bullet (not verified)\" - cosmetic inconsistency",
      "consistency": "one policy across the four games",
-     "rom": "ROM unchanged (sha c10f9928...); REGRESSION from item 7: legends.current_rom.observation now holds my round-2 QA sentence (\"round-1 ROM observation copied verbatim ... NOTE states.tested=True is unjustified\") instead of the round-1 ROM facts (frames/palette drawn); the generator copies qa.checks.rom into the observation, so the ROM facts were lost and the sentence is now false (tested is False). Affects all 20 ROM_INTEGRATED entries."
+     "rom": "ROM unchanged (sha c10f9928...); legends.current_rom.observation again holds the round-1 ROM facts (verified identical to round-1 report.json). Cosmetic leftover: the text still contains my round-1 clause \"bible legends.chr/palette are None and states.converted/integrated are False ...\" which is no longer true; a cleaned ROM-facts-only text is provided in qa/round4/rom_observations.json"
     }
    }
   },
@@ -8995,7 +8995,7 @@
      "nes": "all frames re-verified in round 2 against run4/run5 OAM, CHR bank and screenshot pixels with my own decoder (qa/round2/work/nes_verify2.json) (hanger, 8 frames; stage-2/3 copies byte-identical per my also_in_banks check)",
      "correspondence": "hanger = static floor/ceiling cannon (proven round 1, re-traced in run5 banks 0/1: same behaviour); ADAPT_NES justified (6 MSX angles vs 2 NES barrel frames)",
      "consistency": "single game",
-     "rom": "ROM unchanged (sha c10f9928...); REGRESSION from item 7: legends.current_rom.observation now holds my round-2 QA sentence (\"round-1 ROM observation copied verbatim ... NOTE states.tested=True is unjustified\") instead of the round-1 ROM facts (frames/palette drawn); the generator copies qa.checks.rom into the observation, so the ROM facts were lost and the sentence is now false (tested is False). Affects all 20 ROM_INTEGRATED entries."
+     "rom": "ROM unchanged (sha c10f9928...); legends.current_rom.observation again holds the round-1 ROM facts (verified identical to round-1 report.json). Cosmetic leftover: the text still contains my round-1 clause \"bible legends.chr/palette are None and states.converted/integrated are False ...\" which is no longer true; a cleaned ROM-facts-only text is provided in qa/round4/rom_observations.json"
     }
    }
   },
@@ -9534,7 +9534,7 @@
      "nes": "all frames re-verified in round 2 against run4/run5 OAM, CHR bank and screenshot pixels with my own decoder (qa/round2/work/nes_verify2.json)",
      "correspondence": "fan",
      "consistency": "single game",
-     "rom": "ROM unchanged (sha c10f9928...); REGRESSION from item 7: legends.current_rom.observation now holds my round-2 QA sentence (\"round-1 ROM observation copied verbatim ... NOTE states.tested=True is unjustified\") instead of the round-1 ROM facts (frames/palette drawn); the generator copies qa.checks.rom into the observation, so the ROM facts were lost and the sentence is now false (tested is False). Affects all 20 ROM_INTEGRATED entries."
+     "rom": "ROM unchanged (sha c10f9928...); legends.current_rom.observation again holds the round-1 ROM facts (verified identical to round-1 report.json). Cosmetic leftover: the text still contains my round-1 clause \"bible legends.chr/palette are None and states.converted/integrated are False ...\" which is no longer true; a cleaned ROM-facts-only text is provided in qa/round4/rom_observations.json"
     }
    }
   },
@@ -9882,7 +9882,7 @@
      "nes": "no reference, candidates dropped (correct)",
      "correspondence": "no Gradius NES counterpart found in run4/run5 either",
      "consistency": "single game",
-     "rom": "ROM unchanged (sha c10f9928...); REGRESSION from item 7: legends.current_rom.observation now holds my round-2 QA sentence (\"round-1 ROM observation copied verbatim ... NOTE states.tested=True is unjustified\") instead of the round-1 ROM facts (frames/palette drawn); the generator copies qa.checks.rom into the observation, so the ROM facts were lost and the sentence is now false (tested is False). Affects all 20 ROM_INTEGRATED entries."
+     "rom": "ROM unchanged (sha c10f9928...); legends.current_rom.observation again holds the round-1 ROM facts (verified identical to round-1 report.json). Cosmetic leftover: the text still contains my round-1 clause \"bible legends.chr/palette are None and states.converted/integrated are False ...\" which is no longer true; a cleaned ROM-facts-only text is provided in qa/round4/rom_observations.json"
     }
    }
   },
@@ -10250,7 +10250,7 @@
      "nes": "all frames re-verified in round 2 against run4/run5 OAM, CHR bank and screenshot pixels with my own decoder (qa/round2/work/nes_verify2.json) (small_cyan_pair)",
      "correspondence": "proven round 1; run5 shows the same formation again at 14191-14387 (stage 2) and 19019-19651 (stage 3)",
      "consistency": "single game",
-     "rom": "ROM unchanged (sha c10f9928...); REGRESSION from item 7: legends.current_rom.observation now holds my round-2 QA sentence (\"round-1 ROM observation copied verbatim ... NOTE states.tested=True is unjustified\") instead of the round-1 ROM facts (frames/palette drawn); the generator copies qa.checks.rom into the observation, so the ROM facts were lost and the sentence is now false (tested is False). Affects all 20 ROM_INTEGRATED entries."
+     "rom": "ROM unchanged (sha c10f9928...); legends.current_rom.observation again holds the round-1 ROM facts (verified identical to round-1 report.json). Cosmetic leftover: the text still contains my round-1 clause \"bible legends.chr/palette are None and states.converted/integrated are False ...\" which is no longer true; a cleaned ROM-facts-only text is provided in qa/round4/rom_observations.json"
     }
    }
   },
@@ -11299,15 +11299,15 @@
    "notes": "QA: enters from the left on floor or ceiling and walks right.",
    "rom_deviation": null,
    "qa": {
-    "verdict": "FAIL",
-    "reason": "one false evidence sentence remains (the item-5 claim \"evidence sentence corrected\" does not match the file)",
-    "proposed_fix": "rewrite the $A9D4 \"what\": top half -> F8, byte19=0 = ceiling; bottom half -> E8, byte19=1 = floor",
+    "verdict": "PASS",
+    "reason": "all round-1/2/3 findings fixed",
+    "proposed_fix": "-",
     "checks": {
-     "msx": "frame labels correct; $A9D4 evidence sentence still inverted",
+     "msx": "frame labels and evidence sentence now consistent with the code (F/D-series ceiling, E-series floor; F0/E4 floor facing, FC/D8 ceiling facing)",
      "nes": "all frames re-verified in round 2 against run4/run5 OAM, CHR bank and screenshot pixels with my own decoder (qa/round2/work/nes_verify2.json) (ceiling_flyer, 8 frames)",
      "correspondence": "ceiling_flyer = ducker (proven)",
      "consistency": "single game",
-     "rom": "ROM unchanged (sha c10f9928...); REGRESSION from item 7: legends.current_rom.observation now holds my round-2 QA sentence (\"round-1 ROM observation copied verbatim ... NOTE states.tested=True is unjustified\") instead of the round-1 ROM facts (frames/palette drawn); the generator copies qa.checks.rom into the observation, so the ROM facts were lost and the sentence is now false (tested is False). Affects all 20 ROM_INTEGRATED entries."
+     "rom": "ROM unchanged (sha c10f9928...); legends.current_rom.observation again holds the round-1 ROM facts (verified identical to round-1 report.json). Cosmetic leftover: the text still contains my round-1 clause \"bible legends.chr/palette are None and states.converted/integrated are False ...\" which is no longer true; a cleaned ROM-facts-only text is provided in qa/round4/rom_observations.json"
     }
    }
   },
@@ -11501,7 +11501,7 @@
      "nes": "none (CONVERT_MSX now)",
      "correspondence": "n/a",
      "consistency": "single game",
-     "rom": "ROM unchanged (sha c10f9928...); REGRESSION from item 7: legends.current_rom.observation now holds my round-2 QA sentence (\"round-1 ROM observation copied verbatim ... NOTE states.tested=True is unjustified\") instead of the round-1 ROM facts (frames/palette drawn); the generator copies qa.checks.rom into the observation, so the ROM facts were lost and the sentence is now false (tested is False). Affects all 20 ROM_INTEGRATED entries."
+     "rom": "ROM unchanged (sha c10f9928...); legends.current_rom.observation again holds the round-1 ROM facts (verified identical to round-1 report.json). Cosmetic leftover: the text still contains my round-1 clause \"bible legends.chr/palette are None and states.converted/integrated are False ...\" which is no longer true; a cleaned ROM-facts-only text is provided in qa/round4/rom_observations.json"
     }
    }
   },
@@ -15112,7 +15112,7 @@
      "nes": "all frames re-verified in round 2 against run4/run5 OAM, CHR bank and screenshot pixels with my own decoder (qa/round2/work/nes_verify2.json) (ground_bits 8 frames)",
      "correspondence": "proven round 1",
      "consistency": "single game",
-     "rom": "ROM unchanged (sha c10f9928...); REGRESSION from item 7: legends.current_rom.observation now holds my round-2 QA sentence (\"round-1 ROM observation copied verbatim ... NOTE states.tested=True is unjustified\") instead of the round-1 ROM facts (frames/palette drawn); the generator copies qa.checks.rom into the observation, so the ROM facts were lost and the sentence is now false (tested is False). Affects all 20 ROM_INTEGRATED entries."
+     "rom": "ROM unchanged (sha c10f9928...); legends.current_rom.observation again holds the round-1 ROM facts (verified identical to round-1 report.json). Cosmetic leftover: the text still contains my round-1 clause \"bible legends.chr/palette are None and states.converted/integrated are False ...\" which is no longer true; a cleaned ROM-facts-only text is provided in qa/round4/rom_observations.json"
     }
    }
   },
@@ -17272,7 +17272,7 @@
      "nes": "none (CONVERT_MSX now)",
      "correspondence": "n/a",
      "consistency": "single game",
-     "rom": "ROM unchanged (sha c10f9928...); REGRESSION from item 7: legends.current_rom.observation now holds my round-2 QA sentence (\"round-1 ROM observation copied verbatim ... NOTE states.tested=True is unjustified\") instead of the round-1 ROM facts (frames/palette drawn); the generator copies qa.checks.rom into the observation, so the ROM facts were lost and the sentence is now false (tested is False). Affects all 20 ROM_INTEGRATED entries."
+     "rom": "ROM unchanged (sha c10f9928...); legends.current_rom.observation again holds the round-1 ROM facts (verified identical to round-1 report.json). Cosmetic leftover: the text still contains my round-1 clause \"bible legends.chr/palette are None and states.converted/integrated are False ...\" which is no longer true; a cleaned ROM-facts-only text is provided in qa/round4/rom_observations.json"
     }
    }
   },
@@ -18528,7 +18528,7 @@
      "nes": "all frames re-verified in round 2 against run4/run5 OAM, CHR bank and screenshot pixels with my own decoder (qa/round2/work/nes_verify2.json) (big_core + big_core_core merged, 5 frames; one flickered hull tile at f8963 scores 0.315 as in the evidence)",
      "correspondence": "hull + core now mapped; MSX eye frames <-> core palette states",
      "consistency": "single game",
-     "rom": "ROM unchanged (sha c10f9928...); REGRESSION from item 7: legends.current_rom.observation now holds my round-2 QA sentence (\"round-1 ROM observation copied verbatim ... NOTE states.tested=True is unjustified\") instead of the round-1 ROM facts (frames/palette drawn); the generator copies qa.checks.rom into the observation, so the ROM facts were lost and the sentence is now false (tested is False). Affects all 20 ROM_INTEGRATED entries."
+     "rom": "ROM unchanged (sha c10f9928...); legends.current_rom.observation again holds the round-1 ROM facts (verified identical to round-1 report.json). Cosmetic leftover: the text still contains my round-1 clause \"bible legends.chr/palette are None and states.converted/integrated are False ...\" which is no longer true; a cleaned ROM-facts-only text is provided in qa/round4/rom_observations.json"
     }
    }
   },

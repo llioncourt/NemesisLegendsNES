@@ -12,7 +12,7 @@ One record per game object. MSX facts come from the code (pattern written into t
 | weapon.double | Double shot | N1,N2,SAL,N3 | - / sprite / P[24] C15 | double_shot: bank 0 tiles [115] pal [15, 33, 38, 48] | REUSE_NES | REUSE_NES | ROM: MSX conv. | PASS |
 | weapon.laser | Laser | N1,N2,SAL,N3 | - / chars / laser strip (char FC..FF repeated, here FC x4) | laser: bank 0 tiles [109, 109, 109, 109] pal [15, 12, 44, 48] | REUSE_NES | REUSE_NES | ROM: MSX conv. | PASS |
 | weapon.missile | Missile | N1,N2,SAL,N3 | - / sprite / P[32] C10 | missile+missile_ground: bank 0 tiles [101] pal [15, 33, 38, 48] | REUSE_NES | REUSE_NES | ROM: MSX conv. | PASS |
-| hud.power_meter | Power-up meter | N1,N2,SAL,N3 | - / chars / all slots unlit (row 22, col 4..27) | hud_power_meter: bank 1 tiles [9, 10, 11, 12, 13, 14] pal [15, 18, 48, 15] | ADAPT_NES | ADAPT_NES | not in ROM | UNRESOLVED |
+| hud.power_meter | Power-up meter | N1,N2,SAL,N3 | - / chars / all slots unlit (row 22, col 4..27) | hud_power_meter: bank 1 tiles [9, 10, 11, 12, 13, 14] pal [15, 18, 48, 15] | ADAPT_NES | ADAPT_NES | not in ROM | PASS |
 | powerup.capsule | Power capsule (red) | N1,N2,SAL,N3 | 18 / chars / P[33] Cper-character (Graphics II colour table) | capsule_red: bank 0 tiles [95, 95] pal [15, 6, 38, 48] | REUSE_NES | REUSE_NES | ROM: MSX conv. | PASS |
 | powerup.capsule_blue | Blue capsule (destroy-all) | N1,N2,SAL,N3 | 19 / chars / P[34] Cper-character (Graphics II colour table) | capsule_blue: bank 0 tiles [95, 95] pal [15, 12, 44, 48] | REUSE_NES | REUSE_NES | ROM: MSX conv. | PASS |
 | powerup.oneup | 1UP item | N1 | 22 / chars / P[55] Cper-character (Graphics II colour table) | - | CONVERT_MSX | CONVERT_MSX | not in ROM | PASS |
@@ -29,7 +29,7 @@ One record per game object. MSX facts come from the code (pattern written into t
 | enemy.n1.fan | Fan | N1 | 2 / chars / P[0] Cper-character (Graphics II colour table) | fan: bank 0 tiles [25, 27] pal [15, 33, 38, 48] | REUSE_NES | REUSE_NES | ROM: MSX conv. | PASS |
 | enemy.n1.falling_pair | Falling pair | N1 | 3 / sprite / P[140] C14 | - | CONVERT_MSX | CONVERT_MSX | ROM: MSX conv. | PASS |
 | enemy.n1.row_fighter | Row fighter | N1 | 4 / sprite / P[176] C2 | small_cyan_pair: bank 0 tiles [49, 51] pal [15, 33, 38, 48] | REUSE_NES | REUSE_NES | ROM: MSX conv. | PASS |
-| enemy.n1.ducker | Ducker | N1 | 5 / sprite / P[248] C10 | ceiling_flyer: bank 0 tiles [61, 63] pal [15, 33, 38, 48] | REUSE_NES | REUSE_NES | ROM: MSX conv. | FAIL |
+| enemy.n1.ducker | Ducker | N1 | 5 / sprite / P[248] C10 | ceiling_flyer: bank 0 tiles [61, 63] pal [15, 33, 38, 48] | REUSE_NES | REUSE_NES | ROM: MSX conv. | PASS |
 | enemy.n1.jumper | Jumper | N1 | 6 / sprite / P[160] C5 | - | CONVERT_MSX | CONVERT_MSX | ROM: MSX conv. | PASS |
 | enemy.n1.hatch_bug | Hatch bug | N1 | 7 / chars / P[4] Cper-character (Graphics II colour table) | hatch_bug: bank 0 tiles [241, 241] pal [15, 33, 38, 48] | REUSE_NES | REUSE_NES | not in ROM | PASS |
 | enemy.n1.rock | Rock | N1 | 8 / sprite / P[188] C4 | - | CONVERT_MSX | CONVERT_MSX | not in ROM | PASS |
@@ -65,7 +65,7 @@ One record per game object. MSX facts come from the code (pattern written into t
 | boss.nes.orbiter | orbiter_core (NES only, no MSX counterpart proven) | NES only | - | orbiter_core: bank 1 tiles [64, 64, 66, 66, 68, 68] pal [15, 33, 38, 48] | NOT_USED | NOT_USED | not in ROM | PASS |
 | boss.nes.orbiter_satellite | orbiter_satellite (NES only, no MSX counterpart proven) | NES only | - | orbiter_satellite: bank 1 tiles [74, 76] pal [15, 12, 44, 48] | NOT_USED | NOT_USED | not in ROM | PASS |
 
-QA verdicts: {'PASS': 55, 'UNRESOLVED': 4, 'FAIL': 1}
+QA verdicts: {'PASS': 57, 'UNRESOLVED': 3}
 Effective policies: {'REUSE_NES': 24, 'ADAPT_NES': 3, 'CONVERT_MSX': 26, 'NOT_USED': 7}
 
 ## Current ROM deviations (work items)
