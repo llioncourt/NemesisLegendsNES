@@ -5,9 +5,9 @@ Does not claim stage-3 boss/content fidelity. Tests stage3 -> bonus10 -> stage4.
 import argparse,json,hashlib,pathlib,sys
 from nes_test_host import NES
 ROOT=pathlib.Path(__file__).resolve().parents[1]
-ROM=ROOT/'build/native/Nemesis_Legends_CP0011.nes'
+ROM=ROOT/'build/native/Nemesis_Legends_CP0012.nes'
 CORE=ROOT/'toolchain/linux-x64/bin/fceumm_libretro.so'
-OUT=ROOT/'reports/cp0011';OUT.mkdir(parents=True,exist_ok=True)
+OUT=ROOT/'reports/cp0012';OUT.mkdir(parents=True,exist_ok=True)
 parser=argparse.ArgumentParser();parser.add_argument('--core',default=str(CORE));args=parser.parse_args()
 labels={}
 for line in (ROOT/'build/native/native.lbl').read_text().splitlines():

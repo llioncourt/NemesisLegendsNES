@@ -1,4 +1,4 @@
-# Nemesis Legends — CP0009: selectable gameplay speed + preserved stage-two routes
+# Nemesis Legends — CP0012: Nemesis stage 4 end sequence playable to stage 5
 
 **WIP / playable partial NES/Famicom MMC5 native port, not the completed saga.**
 
@@ -6,6 +6,19 @@ The product goal is unchanged: **one continuous chronological campaign**
 **Nemesis → Nemesis 2 → Salamander → Nemesis 3**, preserving *all* source stages,
 mechanics, bosses, secrets, story, music, endings and cutscenes. This is **not** a
 four-ROM launcher, a framebuffer playback tool or an isolated prototype.
+
+## CP0012: stage 4 plays through to stage 5 (tested in a native NES emulator)
+
+Stage 4 no longer halts at world `$0128`. Its original end sequence is ported
+from the Z80 source (`final_de_la_fase_4`, p01:$6E15): the ceiling eruption at
+`$0128`, the five-piece tower at `$0171`, the "boss 5" piece spawner once the
+scroll stops at `$019F`, the scroll release to `$01C0`, the Big Core and the
+transition to stage 5. Two source enemy types were also ported: type `$0A`
+(stage 3/4/5 opening waves) and a faithful type 6 hopper; both previously
+parked on screen and could block every boss wait. The assisted route (QA
+invulnerability only) reaches stage 5 with zero missed NMIs inside stage 4.
+Read `docs/NATIVE_RUNTIME_CP0012.md` and `reports/cp0012/stage_four_integration.json`.
+Stage 5 onward is still not playable; the other three games remain WIP.
 
 ## CP0009 gameplay speed hotfix (tested in a native NES emulator)
 
@@ -94,4 +107,4 @@ and commercial audio are **private recovery material**, not published here.
 Public Silicon Forge game releases use **IPS patches only**. The private ROM
 in the user package is for authorized local testing, not the public release.
 
-Current checkpoint: **CP0008 WIP**. No `Nemesis_Legends_NES_Final.nes` exists.
+Current checkpoint: **CP0012 WIP**. No `Nemesis_Legends_NES_Final.nes` exists.

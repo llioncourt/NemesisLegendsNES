@@ -7,6 +7,7 @@
 .import SpawnMidActor
 .import SpawnActor,RNG,ObjectPointer,DrawSprite,AdvanceStage,UpdateHUD,StarRows,PlayerHit
 .export StageEvents,EnterBigCore,BuildBossQueue,UploadBossQueue,BossShotHit
+.export SpawnTower,VolcanoSpeeds
 .export MidPiece,VolcanoParticle,EmitLinearBullet
 
 .segment "CODE"
@@ -19,7 +20,14 @@ StageEvents:
  cmp #2
  beq @stage3_shared
  cmp #3
+ beq @stage3_shared
+ cmp #4
  bne @notyet
+ ; Stage 4 (p01:$6EA0 enciende_al_jefe_4 -> L_6D43): clear the screen, then the
+ ; same type-1 Big Core. Earlier stage-4 encounters live in native_stage4.s.
+ lda phase
+ cmp #4
+ jeq @waitclear
 @stage3_shared:
  ; Stage 2 shares the source type-1 Big Core once its rock-rain phase ends.
  ; Do not run stage-1 midpiece/volcano/scroll setup for stage 2.
@@ -61,44 +69,7 @@ StageEvents:
  lda mid_seen
  bne @endcheck
  inc mid_seen
- lda #5
- sta mid_parts
-@mid:
- ldx mid_parts
- dex
- lda MidX,x
- sta sprite_x
- lda MidY,x
- sta sprite_y
- lda #0
- sta sprite_pal
- lda #$20
- jsr SpawnMidActor
- bcs @endcheck
- ldy #O_TYPE
- lda #$20
- sta (objptr),y
- ldy #O_DRAW
- lda #1
- sta (objptr),y
- ldx mid_parts
- dex
- txa
- clc
- adc #35
- ldy #O_FRAME
- sta (objptr),y
- ldy #O_HP
- lda #10
- sta (objptr),y
- ldy #O_FLAGS
- lda #3
- sta (objptr),y
- ldy #O_FIRE
- lda #92
- sta (objptr),y
- dec mid_parts
- bne @mid
+ jsr SpawnTower
 @endcheck:
  lda worldlo
  cmp #$9f
@@ -421,6 +392,48 @@ StageEvents:
 @ordinary_clear:
  jmp AdvanceStage
 
+; monta_las_cinco_piezas p02:$8E77: five source pieces, shared by stages 1 and 4.
+SpawnTower:
+ lda #5
+ sta mid_parts
+@mid:
+ ldx mid_parts
+ dex
+ lda MidX,x
+ sta sprite_x
+ lda MidY,x
+ sta sprite_y
+ lda #0
+ sta sprite_pal
+ lda #$20
+ jsr SpawnMidActor
+ bcs @spawned
+ ldy #O_TYPE
+ lda #$20
+ sta (objptr),y
+ ldy #O_DRAW
+ lda #1
+ sta (objptr),y
+ ldx mid_parts
+ dex
+ txa
+ clc
+ adc #35
+ ldy #O_FRAME
+ sta (objptr),y
+ ldy #O_HP
+ lda #10
+ sta (objptr),y
+ ldy #O_FLAGS
+ lda #3
+ sta (objptr),y
+ ldy #O_FIRE
+ lda #92
+ sta (objptr),y
+ dec mid_parts
+ bne @mid
+@spawned:
+ rts
 ; Force blank only at the source's one-off boss graphics load, never per frame.
 EnterBigCore:
  sei
@@ -1001,15 +1014,21 @@ MidPiece:
  jsr EmitLinearBullet
 @done:rts
 
+; p02:$953C: vertical velocity += the record's own acceleration (stage 1 $0088,
+; stage 4 $FF78), kept in O_AYL/O_AYH by the emitter.
 VolcanoParticle:
  ldy #O_VYL
  lda (objptr),y
+ ldy #O_AYL
  clc
- adc #$88
+ adc (objptr),y
+ ldy #O_VYL
  sta (objptr),y
- iny
+ ldy #O_VYH
  lda (objptr),y
- adc #0
+ ldy #O_AYH
+ adc (objptr),y
+ ldy #O_VYH
  sta (objptr),y
  rts
 

@@ -193,7 +193,8 @@ def main():
         # Stage-one five-piece encounter: source character table p02:905C.
         # Source software frames 35..39 are blank in this stage and explicitly
         # reserved here, without altering any other stage's frame set.
-        if stage == 1:
+        if stage in (1,4):
+            # Stage 4 calls the same source five-piece encounter at $0171 (p01:6E62).
             for part in range(5):
                 source_slot = 5 - part
                 codes=[ex.byte(2,0x905c+source_slot*4+j) for j in range(4)]
@@ -204,6 +205,20 @@ def main():
                 ix=DIST[pix][:,:,(0,15,8,4)].argmin(2)
                 raw=b''.join(encode(ix[yy:yy+8,xx:xx+8]) for xx in (0,8) for yy in (0,8))
                 sheet[(99+part)*64:(100+part)*64]=raw
+        if stage == 4:
+            # Stage-4 "boss 5" pieces (p02:8CE4): 4x3 source characters BA..C5 per
+            # piece, drawn in two alternating halves (p02:8E5F/8E6B). Packed as
+            # 8x16 columns into sheet frames that are blank in this stage only.
+            pieces={104:(0xba,0xbb,0xbd,0xbe),109:(0xba,0xbb,0xc3,0xc4),
+                    110:(0xbc,0xbf,0,0),111:(0xc2,0xc5,0,0),112:(0xc0,0xc1,0,0)}
+            for slot,codes in pieces.items():
+                assert not any(sheet[slot*64:(slot+1)*64]),slot
+                pix=np.zeros((16,16),dtype=np.uint8)
+                for j,c in enumerate(codes):
+                    if c:pix[(j//2)*8:(j//2+1)*8,(j%2)*8:(j%2+1)*8]=np.array(msxtile(v,c,0)).reshape(8,8)
+                ix=DIST[pix][:,:,(0,15,8,4)].argmin(2)
+                raw=b''.join(encode(ix[yy:yy+8,xx:xx+8]) for xx in (0,8) for yy in (0,8))
+                sheet[slot*64:(slot+1)*64]=raw
         assert len(sheet)==8192,len(sheet)
         stage_data.append(desc);spr_sheets.append(sheet)
         stats.append(dict(stage=stage,terrain_script_bytes=len(rawscript),cannon_records=len(cannon)//3,

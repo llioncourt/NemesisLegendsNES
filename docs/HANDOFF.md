@@ -1,3 +1,21 @@
+# CP0012 handoff - stage 4 end sequence; anthology remains WIP
+
+Private ROM: `build/native/Nemesis_Legends_CP0012.nes` (hash in
+`manifests/checkpoint.json`). Build with `python tools/checkpoint.py build`;
+test with `python tools/checkpoint.py test`, which now includes
+`tools/test_stage_four.py`.
+
+New in CP0012: `src/native_stage4.s` (eruption, tower, boss 5, Big Core hand-off
+for stage 4), source enemy type `$0A` and a faithful type 6 in
+`src/native_actors.s`, stage-4 sprite frames 99..104 and 109..112 generated from
+the stage-4 character set, and a read-only QA mirror of the actor records at
+`$0780..$07CF` for the emulator tests. The phase-13 stage-4 halt is gone.
+
+Next: stage 5 (`final_de_la_fase_5` p01:$6EA8, two bank-3 calls, limit `$1FF`),
+then stages 6..8 and the Nemesis ending, before the other three chapters.
+
+---
+
 # CP0009 handoff - selectable speed; anthology remains WIP
 
 ## Resume without restarting the existing port

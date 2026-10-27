@@ -76,13 +76,14 @@ def main() -> int:
     run('test_stage_one.py','--core',core)
     run('test_stage_two.py','--core',core)
     run('test_stage_three.py','--core',core)
+    run('test_stage_four.py','--core',core)
     run('test_secret_targets.py','--core',core)
     run('test_source_groups.py','--core',core)
     run('test_pacing_native.py','--core',core)
     run('test_vblank_budget.py')
     run('test_title_native.py','--core',core)
     rom_check(profile)
-    print('Scoped CP0011 tests passed. Not a complete-game or hardware certification.')
+    print('Scoped CP0012 tests passed. Not a complete-game or hardware certification.')
     return 0
 
 if __name__=='__main__':

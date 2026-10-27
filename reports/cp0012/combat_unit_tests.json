@@ -1,0 +1,384 @@
+{
+  "rom_sha256": "f185984ff198c7edb4da55ca22506b78fd96fbd2e7fefb1c7b777f438621e342",
+  "harness_sha256": "17fcea906aaa65e882be551b0c1eda52fd2b1ccad499b7ebc4fbaf5fd09c0ddd",
+  "scope": "Run exact production 6502 combat routines in FCEUmm, with labeled RAM fixtures.\nThe harness occupies unused PRG bank 13; all tested production bytes are kept.\nThis tests mechanics, not acquisition, rendered campaign completion, or hardware.\n",
+  "assertions": [
+    {
+      "index": 1,
+      "name": "base_speed_first_integer_step",
+      "address": "0020",
+      "expected": 81
+    },
+    {
+      "index": 2,
+      "name": "base_speed_keeps_half_pixel",
+      "address": "0077",
+      "expected": 128
+    },
+    {
+      "index": 3,
+      "name": "base_speed_two_frames_are_three_pixels",
+      "address": "0020",
+      "expected": 83
+    },
+    {
+      "index": 4,
+      "name": "fraction_carries_into_position",
+      "address": "0077",
+      "expected": 0
+    },
+    {
+      "index": 5,
+      "name": "opposing_horizontal_directions_cancel",
+      "address": "0020",
+      "expected": 83
+    },
+    {
+      "index": 6,
+      "name": "speed_eight_caps_velocity_at_five_pixels",
+      "address": "0020",
+      "expected": 88
+    },
+    {
+      "index": 7,
+      "name": "left_boundary_clamps",
+      "address": "0020",
+      "expected": 8
+    },
+    {
+      "index": 8,
+      "name": "boundary_clears_fraction",
+      "address": "0077",
+      "expected": 0
+    },
+    {
+      "index": 9,
+      "name": "option_fifo_advances_on_even_frame",
+      "address": "690A",
+      "expected": 1
+    },
+    {
+      "index": 10,
+      "name": "option_fifo_advances_on_odd_frame",
+      "address": "690A",
+      "expected": 2
+    },
+    {
+      "index": 11,
+      "name": "stationary_options_preserve_spacing",
+      "address": "690A",
+      "expected": 2
+    },
+    {
+      "index": 12,
+      "name": "opposing_directions_do_not_push_option_fifo",
+      "address": "690A",
+      "expected": 2
+    },
+    {
+      "index": 13,
+      "name": "power_label_colon_is_not_overwritten",
+      "address": "038E",
+      "expected": 58
+    },
+    {
+      "index": 14,
+      "name": "power_digit_has_own_cell",
+      "address": "038F",
+      "expected": 52
+    },
+    {
+      "index": 15,
+      "name": "option_label_colon_is_not_overwritten",
+      "address": "0394",
+      "expected": 58
+    },
+    {
+      "index": 16,
+      "name": "option_digit_has_own_cell",
+      "address": "0395",
+      "expected": 50
+    },
+    {
+      "index": 17,
+      "name": "shield_grants_ten_hits",
+      "address": "002C",
+      "expected": 10
+    },
+    {
+      "index": 18,
+      "name": "shield_consumes_selected_slot",
+      "address": "0027",
+      "expected": 0
+    },
+    {
+      "index": 19,
+      "name": "installed_shield_keeps_selected_slot",
+      "address": "0027",
+      "expected": 6
+    },
+    {
+      "index": 20,
+      "name": "speed_does_not_overflow_limit",
+      "address": "0022",
+      "expected": 8
+    },
+    {
+      "index": 21,
+      "name": "maximum_speed_keeps_selected_slot",
+      "address": "0027",
+      "expected": 1
+    },
+    {
+      "index": 22,
+      "name": "laser_first_level",
+      "address": "002A",
+      "expected": 1
+    },
+    {
+      "index": 23,
+      "name": "laser_disables_double",
+      "address": "0029",
+      "expected": 0
+    },
+    {
+      "index": 24,
+      "name": "laser_second_level",
+      "address": "002A",
+      "expected": 2
+    },
+    {
+      "index": 25,
+      "name": "maximum_laser_keeps_selected_slot",
+      "address": "0027",
+      "expected": 4
+    },
+    {
+      "index": 26,
+      "name": "enemy_contact_consumes_one_shield_hit",
+      "address": "002C",
+      "expected": 9
+    },
+    {
+      "index": 27,
+      "name": "field_destroys_intercepted_enemy",
+      "address": "6D00",
+      "expected": 21
+    },
+    {
+      "index": 28,
+      "name": "last_hit_removes_field",
+      "address": "002C",
+      "expected": 0
+    },
+    {
+      "index": 29,
+      "name": "last_hit_still_destroys_enemy",
+      "address": "6D00",
+      "expected": 21
+    },
+    {
+      "index": 30,
+      "name": "no_field_does_not_destroy_enemy",
+      "address": "6D00",
+      "expected": 3
+    },
+    {
+      "index": 31,
+      "name": "outside_field_keeps_strength",
+      "address": "002C",
+      "expected": 10
+    },
+    {
+      "index": 32,
+      "name": "outside_field_keeps_enemy",
+      "address": "6D00",
+      "expected": 3
+    },
+    {
+      "index": 33,
+      "name": "blue_capsule_is_consumed",
+      "address": "6D00",
+      "expected": 0
+    },
+    {
+      "index": 34,
+      "name": "blue_bomb_explodes_regular_enemy",
+      "address": "6D20",
+      "expected": 21
+    },
+    {
+      "index": 35,
+      "name": "blue_bomb_explodes_dedicated_mid_part",
+      "address": "6E80",
+      "expected": 21
+    },
+    {
+      "index": 36,
+      "name": "blue_bomb_preserves_red_capsule",
+      "address": "6D40",
+      "expected": 18
+    },
+    {
+      "index": 37,
+      "name": "blue_bomb_does_not_erase_separate_enemy_bullets",
+      "address": "6700",
+      "expected": 1
+    },
+    {
+      "index": 38,
+      "name": "blue_bomb_does_not_damage_big_core",
+      "address": "0054",
+      "expected": 22
+    },
+    {
+      "index": 39,
+      "name": "blue_capsule_does_not_advance_power_bar",
+      "address": "0027",
+      "expected": 4
+    },
+    {
+      "index": 40,
+      "name": "blue_bomb_counter",
+      "address": "6915",
+      "expected": 1
+    },
+    {
+      "index": 41,
+      "name": "bomb_awards_actual_kills",
+      "address": "690E",
+      "expected": 2
+    },
+    {
+      "index": 42,
+      "name": "red_capsule_wraps_six_to_one",
+      "address": "0027",
+      "expected": 1
+    },
+    {
+      "index": 43,
+      "name": "red_capsule_adds_five_score_units",
+      "address": "002D",
+      "expected": 3
+    },
+    {
+      "index": 44,
+      "name": "score_addition_carries",
+      "address": "002E",
+      "expected": 1
+    },
+    {
+      "index": 45,
+      "name": "short_laser_grows_four_chars",
+      "address": "6605",
+      "expected": 4
+    },
+    {
+      "index": 46,
+      "name": "short_laser_remaining_four",
+      "address": "6606",
+      "expected": 4
+    },
+    {
+      "index": 47,
+      "name": "short_laser_still_attached",
+      "address": "6603",
+      "expected": 0
+    },
+    {
+      "index": 48,
+      "name": "short_laser_reaches_eight_chars",
+      "address": "6605",
+      "expected": 8
+    },
+    {
+      "index": 49,
+      "name": "short_laser_detaches_at_eight",
+      "address": "6603",
+      "expected": 1
+    },
+    {
+      "index": 50,
+      "name": "detached_laser_moves_thirty_two_pixels",
+      "address": "6601",
+      "expected": 128
+    },
+    {
+      "index": 51,
+      "name": "long_laser_reaches_fifteen_chars",
+      "address": "6605",
+      "expected": 15
+    },
+    {
+      "index": 52,
+      "name": "long_laser_consumes_growth_budget",
+      "address": "6606",
+      "expected": 0
+    },
+    {
+      "index": 53,
+      "name": "long_laser_detaches",
+      "address": "6603",
+      "expected": 1
+    },
+    {
+      "index": 54,
+      "name": "wall_clips_laser_at_exact_source_tile",
+      "address": "6605",
+      "expected": 4
+    },
+    {
+      "index": 55,
+      "name": "wall_changes_laser_to_shrinking_state",
+      "address": "6603",
+      "expected": 2
+    },
+    {
+      "index": 56,
+      "name": "four_char_tail_disappears_after_wall",
+      "address": "6600",
+      "expected": 0
+    },
+    {
+      "index": 57,
+      "name": "laser_kills_vulnerable_enemy_without_normal_shot_hp_loop",
+      "address": "6D00",
+      "expected": 21
+    },
+    {
+      "index": 58,
+      "name": "same_laser_kills_second_intersected_actor",
+      "address": "6D20",
+      "expected": 21
+    },
+    {
+      "index": 59,
+      "name": "source_type_0b_resists_laser",
+      "address": "6D40",
+      "expected": 11
+    },
+    {
+      "index": 60,
+      "name": "laser_kill_counter_is_exact",
+      "address": "690E",
+      "expected": 2
+    }
+  ],
+  "observed": [
+    165,
+    0,
+    60,
+    0
+  ],
+  "negative_control": {
+    "change": "production laser grows 3 rather than 4 characters",
+    "observed": [
+      165,
+      8,
+      52,
+      53
+    ],
+    "rejected": true
+  },
+  "passed": true
+}

@@ -9,6 +9,7 @@
 .import StageEvents
 .import Stage2Init, Stage2Tick, Stage2Draw
 .import Stage3Init, Stage3Tick, Stage3Draw
+.import Stage4Init, Stage4Tick, Stage4Draw
 .import TargetNewGame,TargetInit,TargetTick,TargetDraw
 .export Main, DrawColumn, UploadColumn, LoadStage, FrameGame
 .export DrawSprite8
@@ -308,6 +309,7 @@ LoadStage:
  jsr InitActors
  jsr Stage2Init
  jsr Stage3Init
+ jsr Stage4Init
  jsr TargetInit
  lda #$50
  sta player_x
@@ -639,6 +641,7 @@ FrameGame:
  jsr MovePlayer
  jsr Stage2Tick
  jsr Stage3Tick
+ jsr Stage4Tick
  jsr TargetTick
  lda phase
  bne :+
@@ -712,6 +715,7 @@ FrameGame:
  jsr ActorsDraw
  jsr Stage2Draw
  jsr Stage3Draw
+ jsr Stage4Draw
  jsr TargetDraw
  jsr UpdateHUD
  lda logic
@@ -737,6 +741,73 @@ FrameGame:
  sta $07c4
  lda $6919
  sta $07c5
+ ; Read-only QA mirror of the 17 actor records (type, X, Y, frame) at
+ ; $0780..$07C3 and the ten enemy-shot flags at $07C6..$07CF, refreshed with
+ ; the snapshot above. Tests inspect it; gameplay never reads it.
+ lda logic
+ and #7
+ bne @mirror_done
+ ldx #0
+ ldy #0
+@mirror:
+ lda OBJECTS,x
+ sta $0780,y
+ lda OBJECTS+6,x
+ sta $0781,y
+ lda OBJECTS+4,x
+ sta $0782,y
+ lda OBJECTS+12,x
+ sta $0783,y
+ iny
+ iny
+ iny
+ iny
+ txa
+ clc
+ adc #32
+ tax
+ bne @mirror
+ ldx #0
+ ldy #0
+@mirror_hi:
+ lda OBJECTS+256,x
+ sta $07a0,y
+ lda OBJECTS+256+6,x
+ sta $07a1,y
+ lda OBJECTS+256+4,x
+ sta $07a2,y
+ lda OBJECTS+256+12,x
+ sta $07a3,y
+ iny
+ iny
+ iny
+ iny
+ txa
+ clc
+ adc #32
+ tax
+ bne @mirror_hi
+ lda OBJECTS+512
+ sta $07c0
+ lda OBJECTS+512+6
+ sta $07c1
+ lda OBJECTS+512+4
+ sta $07c2
+ lda OBJECTS+512+12
+ sta $07c3
+ ldx #0
+ ldy #0
+@mirror_shots:
+ lda ENEMY_SHOTS,x
+ sta $07c6,y
+ iny
+ txa
+ clc
+ adc #16
+ tax
+ cpx #160
+ bne @mirror_shots
+@mirror_done:
  rts
 
 MovePlayer:

@@ -1,6 +1,6 @@
 {
-  "checkpoint": "CP0011",
-  "stage": "source-derived N1 stage3 2-core normal and stage4 cross-stage bonus11; all other games WIP",
+  "checkpoint": "CP0012",
+  "stage": "source-derived N1 stage4 end sequence (eruption, tower, boss 5, Big Core) to stage 5; all other games WIP",
   "playable_game_rom": true,
   "full_game_complete": false,
   "chapters": [
@@ -82,11 +82,32 @@
         "source_target_types_3_and_4": "integrated and assisted route tested",
         "cross_stage_secret_types_2_3_4": "integrated and assisted route tested",
         "bonus_stage11": "secret branch reaches stage5",
-        "source_mixed_group": "integrated, scoped isolated fixture tested only",
-        "source_two_bosses": "NOT integrated",
-        "normal_stage4_clear": "NOT available",
+        "source_mixed_group": "integrated; type 6 hopper now source-faithful",
+        "source_eruption_at_0128": "integrated and assisted route tested",
+        "source_five_piece_tower_at_0171": "integrated and assisted route tested",
+        "source_boss5_piece_spawner_at_019F": "integrated and assisted route tested",
+        "source_big_core_at_01C0": "integrated and assisted route tested",
+        "normal_stage4_clear": "assisted route reaches stage5",
+        "unassisted_clear": "NOT tested",
+        "visuals": "NOT approved",
         "stage5_content": "NOT integrated"
-      }
+      },
+      "native_enemy_types_ported": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        8,
+        9,
+        10,
+        15,
+        18,
+        19,
+        21,
+        32
+      ]
     },
     {
       "chapter": 2,
@@ -156,7 +177,11 @@
     "stage_three_assisted_routes": 2,
     "inter_stage_target_assisted_routes": 2,
     "source_wave_type9_natural_seen": true,
-    "source_wave_mixed_fixture_only": true
+    "source_wave_mixed_fixture_only": true,
+    "stage_four_assisted_routes": 1,
+    "stage_four_checks": 14,
+    "stage_four_boss5_pieces_spawned": 8,
+    "stage_four_missed_NMI": 0
   },
   "title_menu": {
     "native": true,
