@@ -8,8 +8,8 @@
 .include "longbranch.inc"
 .include "actors.inc"
 .import HideSprites, ClearPPU, NewGame, LoadStage, RestoreGameScreen, LoadDataBank
-.import Flow_State, GamePace_Mode, GamePace_Phase, GamePace_Edges
-.export CheatCode, CheatOpen, CheatFrame, CheatDebugRow, Cheat_State
+.import Flow_State, Flow_Event, GamePace_Mode, GamePace_Phase, GamePace_Edges, Title
+.export CheatCode, CheatOpen, CheatFrame, CheatDebugRow, Cheat_State, SceneOpen, SceneFrame
 
 ITEMS=17
 ROW_TITLE=3
@@ -33,6 +33,8 @@ cheat_draw:     .res 1   ; next row to upload (0..ITEMS), ITEMS+1 = idle
 cheat_action:   .res 1
 cheat_vals:     .res ITEMS ; one value byte per item
 cheat_opened:   .res 1   ; QA counter
+scene_draw:     .res 1
+scene_shown:    .res 1   ; QA counter
 CHEAT_END:
 
 ; ------------------------------------------------------- game-time code (bank 7)
@@ -83,27 +85,7 @@ CheatOpen:
  sta cheat_draw
  sta cheat_action
  sta camera
- lda #$89
- sta $5114
- sta bank8000
- jsr HideSprites
- jsr ClearPPU
- bit $2002
- lda #$3f
- sta $2006
- lda #0
- sta $2006
- ldx #0
-@pal:
- lda #$0f
- cpx #3
- bne :+
- lda #$30
-:
- sta $2007
- inx
- cpx #32
- bne @pal
+ jsr TextScreenOpen
  ; Seed the menu from the live game when opened from pause.
  ldx #ITEMS-1
  lda #0
@@ -123,6 +105,13 @@ CheatOpen:
 :
  sta cheat_vals+2
  lda stage_id
+ ldx chapter
+ cpx #2
+ bne :+
+ clc
+ adc #1
+:
+ cmp #0
  bne :+
  lda #1
 :
@@ -152,6 +141,33 @@ CheatOpen:
  lda #1
 :
  sta cheat_vals+13
+ jmp TextScreenOn
+
+; Shared text-screen setup: title bank mapped at $8000, blank nametable, white font palette.
+TextScreenOpen:
+ lda #$89
+ sta $5114
+ sta bank8000
+ jsr HideSprites
+ jsr ClearPPU
+ bit $2002
+ lda #$3f
+ sta $2006
+ lda #0
+ sta $2006
+ ldx #0
+@pal:
+ lda #$0f
+ cpx #3
+ bne :+
+ lda #$30
+:
+ sta $2007
+ inx
+ cpx #32
+ bne @pal
+ rts
+TextScreenOn:
  lda #0
  sta $2005
  sta $2005
@@ -163,6 +179,54 @@ CheatOpen:
  sta $2001
  cli
  rts
+
+; Scene placeholder (mode 4): the campaign module asked for a cutscene that is
+; not ported yet. Shows which one and continues on START through the real
+; EVENT_SCENE_DONE path, so the four-chapter progression is already exercised.
+SceneOpen:
+ sei
+ inc scene_shown
+ lda #4
+ sta mode
+ lda #0
+ sta screenon
+ sta $2000
+ sta $2001
+ sta $5204
+ sta column_pending
+ sta hud_pending
+ sta hud2_pending
+ sta scene_draw
+ sta camera
+ jsr TextScreenOpen
+ jmp TextScreenOn
+SceneApply:
+ pla
+ pla
+ lda #EVENT_SCENE_DONE
+ ldx #0
+ jsr Flow_Event
+ cmp #ACTION_LOAD
+ bne @leave
+ lda Flow_State+F_CHAPTER
+ clc
+ adc #1
+ sta chapter
+ lda Flow_State+F_STAGE
+ sta stage_id
+ lda #1
+ sta route_flag
+ lda #$20
+ sta worldlo
+ lda #0
+ sta worldhi
+ jsr LoadStage
+ lda #1
+ sta mode
+ rts
+@leave:
+ ; finished campaign, retry request or planet choice: back to the title for now
+ jmp Title
 
 ; Apply the menu and leave. Entered by jmp from the bank-9 frame code; returns
 ; to Main's caller. A = action (1 start/resume, 2 warp to end zone, 3 restart).
@@ -193,11 +257,17 @@ CheatApply:
  lda cheat_action
  cmp #1
  bne @reload
- lda cheat_vals+3
- cmp stage_id
- bne @reload
  lda cheat_vals+2
  cmp chapter
+ bne @reload
+ lda cheat_vals+3
+ ldx chapter
+ cpx #2
+ bne :+
+ sec
+ sbc #1
+:
+ cmp stage_id
  bne @reload
  ; Plain resume: powers, then the screen as it was.
  jsr @powers
@@ -216,11 +286,20 @@ CheatApply:
 @from_title:
  jsr NewGame
 @reload:
- ; Chapter 1 or 2 (Nemesis 2 maps are loadable terrain only, no gameplay yet).
+ ; Chapter 1, 2 or 4 (chapter 2/4 maps are loadable terrain only, no gameplay yet).
  lda cheat_vals+2
  sta chapter
- sta Flow_State+F_CHAPTER
+ lda cheat_vals+2
+ sec
+ sbc #1
+ sta Flow_State+F_CHAPTER   ; campaign module chapters are 0-based
  lda cheat_vals+3
+ ldx cheat_vals+2
+ cpx #2
+ bne :+
+ sec
+ sbc #1              ; Nemesis 2 menu 1..12 -> source map ids 0..11
+:
  sta stage_id
  sta Flow_State+F_STAGE
  lda #1
@@ -430,6 +509,118 @@ TxtPress:    .byte "PRESS A "
 TxtResume:   .byte "RESUME        "
 TxtPace:     .byte "30 FPS  ","40 FPS  ","60 FPS  "
 TxtGames:    .byte "NEMESIS ","NEMESIS2","SAL WIP ","NEMESIS3"
+SceneNames:  .byte "NEMESIS ENDING  ","NEMESIS 2 TURN  ","NEMESIS 2 ENDING","SALAMANDER BAD  ","SALAMANDER GOOD ","N3 COMPUTER A   ","N3 COMPUTER B   ","N3 MAP CHECK    ","NEMESIS 3 ENDING","N3 SECRET ENDING"
+SceneLine1:  .byte "        NEMESIS LEGENDS         "
+SceneLine3:  .byte "    CUTSCENE NOT PORTED YET     "
+SceneLine4:  .byte "          PRESS START           "
+SceneFrame:
+ lda pressed
+ and #BTN_START
+ beq :+
+ jmp SceneApply
+:
+ lda hud2_pending
+ jne @rts
+ lda scene_draw
+ cmp #4
+ jcs @rts
+ ldx #31
+ lda #' '
+@blank:
+ sta HUD2,x
+ dex
+ bpl @blank
+ lda scene_draw
+ bne @not_first
+ ldx #0
+@l1: lda SceneLine1,x
+ sta HUD2,x
+ inx
+ cpx #32
+ bne @l1
+ lda #8
+ bne @send
+@not_first:
+ cmp #1
+ bne @not_second
+ ; "SCENE: " + name
+ lda #'S'
+ sta HUD2+6
+ lda #'C'
+ sta HUD2+7
+ lda #'E'
+ sta HUD2+8
+ lda #'N'
+ sta HUD2+9
+ lda #'E'
+ sta HUD2+10
+ lda #':'
+ sta HUD2+11
+ lda Flow_State+F_SCENE
+ beq @unknown
+ cmp #11
+ bcs @unknown
+ sec
+ sbc #1
+ asl a
+ asl a
+ asl a
+ asl a
+ tay
+ ldx #0
+@name: lda SceneNames,y
+ sta HUD2+13,x
+ iny
+ inx
+ cpx #16
+ bne @name
+@unknown:
+ lda #11
+ bne @send
+@not_second:
+ cmp #2
+ bne @fourth
+ ldx #0
+@l3: lda SceneLine3,x
+ sta HUD2,x
+ inx
+ cpx #32
+ bne @l3
+ lda #13
+ bne @send
+@fourth:
+ ldx #0
+@l4: lda SceneLine4,x
+ sta HUD2,x
+ inx
+ cpx #32
+ bne @l4
+ lda #16
+@send:
+ jsr SendHud2Row
+ inc scene_draw
+@rts: rts
+; A = nametable row; HUD2 holds the 32 characters.
+SendHud2Row:
+ sta s2
+ lsr a
+ lsr a
+ lsr a
+ clc
+ adc #$20
+ sta hud2_addr+1
+ lda s2
+ and #7
+ asl a
+ asl a
+ asl a
+ asl a
+ asl a
+ sta hud2_addr
+ lda #1
+ sta hud2_exattr
+ sta hud2_pending
+ rts
 
 CheatFrame:
  ; Input first, every frame; pending rows are uploaded one per frame after it.

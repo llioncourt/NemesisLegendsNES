@@ -7,9 +7,9 @@ claimed. Captures one screenshot per map.
 import argparse,hashlib,json,pathlib
 from nes_test_host import NES
 ROOT=pathlib.Path(__file__).resolve().parents[1]
-ROM=ROOT/'build/native/Nemesis_Legends_CP0015.nes'
+ROM=ROOT/'build/native/Nemesis_Legends_CP0016.nes'
 CORE=ROOT/'toolchain/linux-x64/bin/fceumm_libretro.so'
-OUT=ROOT/'reports/cp0015';OUT.mkdir(parents=True,exist_ok=True)
+OUT=ROOT/'reports/cp0016';OUT.mkdir(parents=True,exist_ok=True)
 parser=argparse.ArgumentParser();parser.add_argument('--core',default=str(CORE));args=parser.parse_args()
 B=NES.BUTTONS
 def tap(n,btn,hold=2,gap=3):
@@ -31,7 +31,7 @@ with NES(args.core,ROM.read_bytes(),True) as n:
   w1=int.from_bytes(n.read(7,2),'little');miss1=n.read(0x1c,1)[0]
   n.png(OUT/f'n2_map_{m:02d}.png')
   results.append(dict(map=m,mode=mode,chapter=chapter,stage_id=stage,stage_bank=bank,world_start=w0,world_after_600=w1,missed_nmi=miss1-miss0,
-                      ok=mode==1 and chapter==2 and stage==m+1 and bank==14+m and w1>=w0+30 and miss1==miss0))
+                      ok=mode==1 and chapter==2 and stage==m and bank==14+m and w1>=w0+30 and miss1==miss0))
   print(results[-1],flush=True)
   # back to the menu for the next map
   tap(n,'START');n.run(5);code(n);n.run(40)

@@ -10,7 +10,7 @@ ROOT=pathlib.Path(__file__).resolve().parents[1]
 
 def main():
  p=argparse.ArgumentParser();p.add_argument('--core',required=True);p.add_argument('--tools',type=pathlib.Path,required=True);a=p.parse_args()
- source=ROOT/'build/native/Nemesis_Legends_CP0015.nes';rom=source.read_bytes()
+ source=ROOT/'build/native/Nemesis_Legends_CP0016.nes';rom=source.read_bytes()
  labels={name:int(value,16) for value,name in re.findall(r'^al ([0-9A-Fa-f]+) \.([A-Za-z_][A-Za-z_0-9]*)$',(ROOT/'build/native/native.lbl').read_text(),re.M)}
  build=ROOT/'build/combat_tests';build.mkdir(parents=True,exist_ok=True)
  required=['InitActors','CollectBomb','CollectCapsule','LaserStep','MovePlayer','Upgrade','UpdateOptions','UpdateHUD','ShieldContact']
@@ -106,7 +106,7 @@ def main():
  mutation[spot+1]=3;negative=run(mutation)
  passed=result==[0xa5,0,len(expected),0] and negative[0]==0xa5 and negative[1]>0
  report=dict(rom_sha256=hashlib.sha256(rom).hexdigest(),harness_sha256=hashlib.sha256(test).hexdigest(),scope=__doc__,assertions=expected,observed=result,negative_control=dict(change='production laser grows 3 rather than 4 characters',observed=negative,rejected=negative[1]>0),passed=passed)
- (ROOT/'reports/cp0015/combat_unit_tests.json').write_text(json.dumps(report,indent=2)+'\n')
+ (ROOT/'reports/cp0016/combat_unit_tests.json').write_text(json.dumps(report,indent=2)+'\n')
  print('COMBAT',result,'ASSERTIONS',len(expected),'NEGATIVE',negative,'PASS',passed)
  if not passed:
   if result[3]:print('LAST FAILURE:',expected[result[3]-1])

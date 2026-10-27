@@ -6,9 +6,9 @@ lives and the debug row all go through the real loaders.
 import argparse,hashlib,json,pathlib
 from nes_test_host import NES
 ROOT=pathlib.Path(__file__).resolve().parents[1]
-ROM=ROOT/'build/native/Nemesis_Legends_CP0015.nes'
+ROM=ROOT/'build/native/Nemesis_Legends_CP0016.nes'
 CORE=ROOT/'toolchain/linux-x64/bin/fceumm_libretro.so'
-OUT=ROOT/'reports/cp0015';OUT.mkdir(parents=True,exist_ok=True)
+OUT=ROOT/'reports/cp0016';OUT.mkdir(parents=True,exist_ok=True)
 parser=argparse.ArgumentParser();parser.add_argument('--core',default=str(CORE));args=parser.parse_args()
 labels={}
 for l in (ROOT/'build/native/native.lbl').read_text().splitlines():

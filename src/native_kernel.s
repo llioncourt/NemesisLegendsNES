@@ -16,7 +16,8 @@
 .export DrawSprite8
  .export DrawSprite, UpdateHUD, PlayerHit, LoadDataBank, AdvanceStage
 .import GamePace_Mode, GamePace_Phase, GamePace_Edges
-.import CheatCode, CheatOpen, CheatFrame, CheatDebugRow
+.import CheatCode, CheatOpen, CheatFrame, CheatDebugRow, SceneOpen, SceneFrame
+.export Title
 .export NewGame, RestoreGameScreen
 .segment "CODE"
 Main:
@@ -45,6 +46,11 @@ Main:
  jsr CheatFrame
  jmp @finish
 @not_menu:
+ cmp #4
+ bne @not_scene
+ jsr SceneFrame
+ jmp @finish
+@not_scene:
  cmp #2
  bne @no_code
  ; Konami Code while paused opens the cheat menu (not during the boss screen).
@@ -179,6 +185,25 @@ Main:
  lda #1
  sta ready
  jmp @loop
+
+; Map end for chapters 2-4: descriptor scroll end reached on a new column.
+ChapterMapEnd:
+ lda new_column
+ beq @done
+ lda #4
+ sta ptr
+ lda stagebase
+ sta ptr+1
+ ldy #0
+ lda worldlo
+ cmp (ptr),y
+ bne @done
+ iny
+ lda worldhi
+ cmp (ptr),y
+ bne @done
+ jmp AdvanceStage
+@done: rts
 
 NewGame:
  lda #1
@@ -415,10 +440,9 @@ LoadStage:
  sta stagebase
  jmp @based
 @chapter2:
- ; Nemesis 2: one 8 KiB descriptor per map in banks N2_MAP_BANK..+11, at $8000.
+ ; Nemesis 2: stage_id is the source map id 0..11 (campaign module numbering),
+ ; one 8 KiB descriptor per map in banks N2_MAP_BANK..+11, at $8000.
  lda stage_id
- sec
- sbc #1
  clc
  adc #N2_MAP_BANK
  sta stage_bank
@@ -862,7 +886,12 @@ FrameGame:
  jsr MovePlayer
  lda chapter
  cmp #1
- bne @no_chapter1_logic
+ beq @chapter1_logic
+ ; Chapters without ported stage logic yet: the map ends at the source scroll
+ ; end and the campaign module decides the next map (structural progression).
+ jsr ChapterMapEnd
+ jmp @no_chapter1_logic
+@chapter1_logic:
  jsr Stage2Tick
  jsr Stage3Tick
  jsr StageCodeIn
@@ -1295,6 +1324,10 @@ AdvanceStage:
  bne @scene
  lda #1
  sta route_flag
+ lda Flow_State+F_CHAPTER
+ clc
+ adc #1              ; campaign module chapters are 0-based
+ sta chapter
  lda Flow_State+F_STAGE
  sta stage_id
  lda #$20
@@ -1303,8 +1336,6 @@ AdvanceStage:
  sta worldhi
  jmp LoadStage
 @scene:
- lda #4
- sta mode
- rts
+ jmp SceneOpen
 SpritePalette: .byte $0f,$30,$16,$12,$0f,$16,$30,$26,$0f,$28,$30,$16,$0f,$30,$1c,$26
 HUDTemplate: .byte "ST:1  L:3  PWR:0  OP:0   SPD:30 "

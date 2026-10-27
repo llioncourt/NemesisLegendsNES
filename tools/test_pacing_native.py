@@ -15,8 +15,8 @@ def tap(n, button):
 
 def main():
     ap=argparse.ArgumentParser();ap.add_argument('--core',required=True);a=ap.parse_args()
-    rom=(ROOT/'build/native/Nemesis_Legends_CP0015.nes').read_bytes()
-    output=ROOT/'reports/cp0015';output.mkdir(parents=True,exist_ok=True)
+    rom=(ROOT/'build/native/Nemesis_Legends_CP0016.nes').read_bytes()
+    output=ROOT/'reports/cp0016';output.mkdir(parents=True,exist_ok=True)
     checks=[]
     def check(name, ok, **detail):
         checks.append(dict(name=name,passed=bool(ok),**detail))
