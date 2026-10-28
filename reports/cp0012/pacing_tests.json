@@ -1,0 +1,134 @@
+{
+  "checkpoint": "CP0009",
+  "rom_sha256": "f185984ff198c7edb4da55ca22506b78fd96fbd2e7fefb1c7b777f438621e342",
+  "mode_selector": "SELECT in gameplay or pause; 30 -> 40 -> 60 -> 30",
+  "video_rate": "60 Hz independent of game logic",
+  "source_reference_mode": 60,
+  "default": "30Hz accessibility mode; non-original cadence",
+  "controller_real": true,
+  "first_collision_unassisted_frames": {
+    "0": 242,
+    "2": 116
+  },
+  "QA_injection_only": "invulnerability for deterministic cadence; one selected power-slot for edge test",
+  "checks": [
+    {
+      "name": "starts_on_gameplay_with_slow30_without_qa",
+      "passed": true
+    },
+    {
+      "name": "visible_hud_identifies_30",
+      "passed": true
+    },
+    {
+      "name": "controller_changed_rate_to_30",
+      "passed": true
+    },
+    {
+      "name": "video_120_frames_at_mode_30",
+      "passed": true,
+      "display_frames": 120
+    },
+    {
+      "name": "logic_rate_30_hz",
+      "passed": true,
+      "logic_frames": 60,
+      "video_frames": 120
+    },
+    {
+      "name": "HUD_rate_30",
+      "passed": true
+    },
+    {
+      "name": "no_missed_NMI_at_30",
+      "passed": true
+    },
+    {
+      "name": "controller_changed_rate_to_40",
+      "passed": true
+    },
+    {
+      "name": "video_120_frames_at_mode_40",
+      "passed": true,
+      "display_frames": 120
+    },
+    {
+      "name": "logic_rate_40_hz",
+      "passed": true,
+      "logic_frames": 80,
+      "video_frames": 120
+    },
+    {
+      "name": "HUD_rate_40",
+      "passed": true
+    },
+    {
+      "name": "no_missed_NMI_at_40",
+      "passed": true
+    },
+    {
+      "name": "controller_changed_rate_to_60",
+      "passed": true
+    },
+    {
+      "name": "video_120_frames_at_mode_60",
+      "passed": true,
+      "display_frames": 120
+    },
+    {
+      "name": "logic_rate_60_hz",
+      "passed": true,
+      "logic_frames": 120,
+      "video_frames": 120
+    },
+    {
+      "name": "HUD_rate_60",
+      "passed": true
+    },
+    {
+      "name": "no_missed_NMI_at_60",
+      "passed": true
+    },
+    {
+      "name": "mode_cycles_back_to30",
+      "passed": true
+    },
+    {
+      "name": "press_occurs_on_skipped_simulation_frame",
+      "passed": true
+    },
+    {
+      "name": "buffered_A_still_applies_power",
+      "passed": true
+    },
+    {
+      "name": "pause_freezes_simulation",
+      "passed": true
+    },
+    {
+      "name": "select_changes_speed_while_paused",
+      "passed": true
+    },
+    {
+      "name": "start_resumes_after_speed_adjustment",
+      "passed": true
+    },
+    {
+      "name": "normal_play_without_injected_qa_0",
+      "passed": true
+    },
+    {
+      "name": "normal_play_without_injected_qa_2",
+      "passed": true
+    },
+    {
+      "name": "first_collision_delayed_in_slow_mode",
+      "passed": true,
+      "survival_video_frames": {
+        "0": 242,
+        "2": 116
+      }
+    }
+  ],
+  "passed": true
+}

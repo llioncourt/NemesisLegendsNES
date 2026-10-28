@@ -7,7 +7,7 @@
 .export AngleTable, SineTable, SpriteCode, SoundRequest, ClearPPU
 .import TitleVBlank
 .segment "HEADER"
-.byte "NES",$1a,8,16,$50,$08,0,0,$07,0,0,0,0,0
+.byte "NES",$1a,32,32,$50,$08,0,0,$07,0,0,0,0,0
 .segment "BOOT"
 Reset:
  sei
@@ -54,11 +54,12 @@ Reset:
  sta $5104
  lda #$80
  sta $5114
+ sta bank8000
  lda #$87
  sta $5115
- lda #$8e
+ lda #$be
  sta $5116
- lda #$8f
+ lda #$bf
  sta $5117
  lda #$a7
  sta rseed
@@ -113,7 +114,7 @@ NMI:
  lda #2
  sta $4014
  lda hud_pending
- beq @scroll
+ beq @hud2check
  bit $2002
  lda #$a0
  sta $2000
@@ -130,6 +131,47 @@ NMI:
  bne @hud
  lda #0
  sta hud_pending
+ jmp @scroll
+@hud2check:
+ lda hud2_pending
+ beq @scroll
+ bit $2002
+ lda #$a0
+ sta $2000
+ lda hud2_addr+1
+ sta $2006
+ lda hud2_addr
+ sta $2006
+ ldx #0
+@hud2:
+ lda HUD2,x
+ sta $2007
+ inx
+ cpx #32
+ bne @hud2
+ lda hud2_exattr
+ beq @hud2done
+ ; Font bank attribute for the whole row (ExRAM mirror of the nametable row).
+ lda #2
+ sta $5104
+ lda hud2_addr
+ sta nptr
+ lda hud2_addr+1
+ and #3
+ ora #$5c
+ sta nptr+1
+ ldy #0
+ lda #1
+@hud2ex:
+ sta (nptr),y
+ iny
+ cpy #32
+ bne @hud2ex
+ lda #1
+ sta $5104
+@hud2done:
+ lda #0
+ sta hud2_pending
 @scroll:
  bit $2002
  lda camera
@@ -271,6 +313,60 @@ SpriteCode:
 .incbin "build/native/stage_12.bin"
 .segment "MAPS"
 .incbin "build/native/metatiles.bin"
+.segment "N2MAP0"
+.incbin "build/native/n2_map_00.bin"
+.segment "N2MAP1"
+.incbin "build/native/n2_map_01.bin"
+.segment "N2MAP2"
+.incbin "build/native/n2_map_02.bin"
+.segment "N2MAP3"
+.incbin "build/native/n2_map_03.bin"
+.segment "N2MAP4"
+.incbin "build/native/n2_map_04.bin"
+.segment "N2MAP5"
+.incbin "build/native/n2_map_05.bin"
+.segment "N2MAP6"
+.incbin "build/native/n2_map_06.bin"
+.segment "N2MAP7"
+.incbin "build/native/n2_map_07.bin"
+.segment "N2MAP8"
+.incbin "build/native/n2_map_08.bin"
+.segment "N2MAP9"
+.incbin "build/native/n2_map_09.bin"
+.segment "N2MAP10"
+.incbin "build/native/n2_map_10.bin"
+.segment "N2MAP11"
+.incbin "build/native/n2_map_11.bin"
+.segment "N2MAPSA"
+.incbin "build/native/n2_maps_a.bin"
+.segment "N2MAPSB"
+.incbin "build/native/n2_maps_b.bin"
+.segment "N3MAP0"
+.incbin "build/native/n3_map_01.bin"
+.segment "N3MAP1"
+.incbin "build/native/n3_map_02.bin"
+.segment "N3MAP2"
+.incbin "build/native/n3_map_03.bin"
+.segment "N3MAP3"
+.incbin "build/native/n3_map_04.bin"
+.segment "N3MAP4"
+.incbin "build/native/n3_map_05.bin"
+.segment "N3MAP5"
+.incbin "build/native/n3_map_06.bin"
+.segment "N3MAP6"
+.incbin "build/native/n3_map_07.bin"
+.segment "N3MAP7"
+.incbin "build/native/n3_map_08.bin"
+.segment "N3MAP8"
+.incbin "build/native/n3_map_09.bin"
+.segment "N3MAP9"
+.incbin "build/native/n3_map_10.bin"
+.segment "N3MAP10"
+.incbin "build/native/n3_map_11.bin"
+.segment "N3MAPSA"
+.incbin "build/native/n3_maps_a.bin"
+.segment "N3MAPSB"
+.incbin "build/native/n3_maps_b.bin"
 .segment "BOSSDATA"
 .incbin "build/native/boss.bin"
 .segment "GRAPHICS"

@@ -1,0 +1,41 @@
+{
+  "rom_sha256": "4fb1f2007393a4026d60b3b3314dda32caf766e3bffe55800974e9ee3fa39204",
+  "assisted": true,
+  "source_target": "p03 B09A/B0CB/B0DD/B123",
+  "results": {
+    "normal": {
+      "stage3_frame": 10664,
+      "midboss_frame": 11182,
+      "midboss_cleared": true,
+      "second_boss_frame": 14888,
+      "bonus_frame": null,
+      "contact_frame": null,
+      "end": {
+        "frame": 15864,
+        "stage": 4,
+        "bonus_entry": null,
+        "world": 3,
+        "target_seen": true,
+        "collected": false
+      },
+      "frames": 15864
+    },
+    "secret": {
+      "stage3_frame": 10664,
+      "midboss_frame": 11182,
+      "midboss_cleared": true,
+      "second_boss_frame": null,
+      "bonus_frame": 14155,
+      "contact_frame": 14091,
+      "end": {
+        "frame": 16640,
+        "stage": 4,
+        "bonus_entry": 14155,
+        "world": 2,
+        "target_seen": true,
+        "collected": true
+      },
+      "frames": 16640
+    }
+  }
+}

@@ -105,6 +105,7 @@ def main():
         desc=bytearray(4096);desc[0:6]=struct.pack('<HHH',start,end,event)
         desc[6:8]=struct.pack('<H',0x8ff0 if stage in (5,9,10,12) else 0x8000)
         desc[8:10]=struct.pack('<H',len(rawscript))
+        desc[12]=0x86   # metatile bank ($5115 value) read by DrawColumn
         desc[10:12]=struct.pack('<H',ex.word(0,0x4212+stage*2) if stage<12 else 0xffff)
         for p,pal in enumerate(pals):desc[0x20+p*4:0x24+p*4]=bytes(NEAREST[c] for c in pal)
         changed=total=0
@@ -193,7 +194,8 @@ def main():
         # Stage-one five-piece encounter: source character table p02:905C.
         # Source software frames 35..39 are blank in this stage and explicitly
         # reserved here, without altering any other stage's frame set.
-        if stage == 1:
+        if stage in (1,4):
+            # Stage 4 calls the same source five-piece encounter at $0171 (p01:6E62).
             for part in range(5):
                 source_slot = 5 - part
                 codes=[ex.byte(2,0x905c+source_slot*4+j) for j in range(4)]
@@ -204,6 +206,20 @@ def main():
                 ix=DIST[pix][:,:,(0,15,8,4)].argmin(2)
                 raw=b''.join(encode(ix[yy:yy+8,xx:xx+8]) for xx in (0,8) for yy in (0,8))
                 sheet[(99+part)*64:(100+part)*64]=raw
+        if stage == 4:
+            # Stage-4 "boss 5" pieces (p02:8CE4): 4x3 source characters BA..C5 per
+            # piece, drawn in two alternating halves (p02:8E5F/8E6B). Packed as
+            # 8x16 columns into sheet frames that are blank in this stage only.
+            pieces={104:(0xba,0xbb,0xbd,0xbe),109:(0xba,0xbb,0xc3,0xc4),
+                    110:(0xbc,0xbf,0,0),111:(0xc2,0xc5,0,0),112:(0xc0,0xc1,0,0)}
+            for slot,codes in pieces.items():
+                assert not any(sheet[slot*64:(slot+1)*64]),slot
+                pix=np.zeros((16,16),dtype=np.uint8)
+                for j,c in enumerate(codes):
+                    if c:pix[(j//2)*8:(j//2+1)*8,(j%2)*8:(j%2+1)*8]=np.array(msxtile(v,c,0)).reshape(8,8)
+                ix=DIST[pix][:,:,(0,15,8,4)].argmin(2)
+                raw=b''.join(encode(ix[yy:yy+8,xx:xx+8]) for xx in (0,8) for yy in (0,8))
+                sheet[slot*64:(slot+1)*64]=raw
         assert len(sheet)==8192,len(sheet)
         stage_data.append(desc);spr_sheets.append(sheet)
         stats.append(dict(stage=stage,terrain_script_bytes=len(rawscript),cannon_records=len(cannon)//3,
@@ -267,8 +283,20 @@ def main():
     chrdata+=bytes(19*4096-len(chrdata));chrdata+=art
     chrdata+=bytes(23*4096-len(chrdata))
     chrdata+=(title_dir/'cursor.chr').read_bytes()
+    # Bank 24 is the title panel (written by build_title_panel.py at build time).
+    # Chapter 2 graphics (tools/build_n2_assets.py) start at CHR bank 25.
+    chrdata+=bytes(25*4096-len(chrdata))
+    n2=(OUT/'n2_graphics.chr')
+    if not n2.exists():
+        import subprocess,sys as _sys;subprocess.run([_sys.executable,str(ROOT/'tools/build_n2_assets.py')],cwd=ROOT,check=True)
+    chrdata+=n2.read_bytes()
+    n3=(OUT/'n3_graphics.chr')
+    if not n3.exists():
+        import subprocess,sys as _sys;subprocess.run([_sys.executable,str(ROOT/'tools/build_n3_assets.py')],cwd=ROOT,check=True)
+    chrdata+=n3.read_bytes()
     target=8192
     while target<len(chrdata):target*=2
+    target=max(target,262144)
     useful=len(chrdata);chrdata+=bytes(target-len(chrdata));(OUT/'graphics.chr').write_bytes(chrdata)
     # Bank-independent constants from verified original data.
     tables=bytearray(8192)

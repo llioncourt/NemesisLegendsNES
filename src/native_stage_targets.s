@@ -175,25 +175,7 @@ TargetTick:
  sta tg_type
  rts
 @stage_gate:
- ; Stage4 has not yet ported its two distinct scripted bosses. The original
- ; first boss warning occurs at $0128; do not let unimplemented gameplay
- ; silently scroll through it. The secret route at $0104 remains reachable.
- lda stage_id
- cmp #4
- jne @done
- lda new_column
- beq @done
- lda worldhi
- cmp #1
- jcc @done
- jne @gate
- lda worldlo
- cmp #$28
- bcc @done
-@gate:
- inc tg_gate
- lda #13
- sta phase
+ ; Stage-4 end encounters now run in native_stage4.s; no artificial halt.
  rts
 @bonus_wait:
  dec tg_wait

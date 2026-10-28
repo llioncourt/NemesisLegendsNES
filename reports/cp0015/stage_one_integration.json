@@ -1,0 +1,176 @@
+{
+  "rom_sha256": "4fb1f2007393a4026d60b3b3314dda32caf766e3bffe55800974e9ee3fa39204",
+  "scope": "Controller-driven first-stage integration runs on the unmodified FCEUmm core.\nInvulnerability is explicitly injected. No stage, world-distance, boss-health,\nspawn, timer, or clear event is injected. Separate post-kill power-state fixture\nchecks transfer to stage two. This does NOT establish four-game completion.\n",
+  "runs": [
+    {
+      "name": "destroy_core",
+      "qa": [
+        "invulnerability",
+        "post-kill powerup transfer fixture"
+      ],
+      "trace": [
+        {
+          "frame": 0,
+          "phase": 0,
+          "world": 34,
+          "boss_hp": 0,
+          "face": 0
+        },
+        {
+          "frame": 3043,
+          "phase": 2,
+          "world": 415,
+          "boss_hp": 0,
+          "face": 0
+        },
+        {
+          "frame": 3943,
+          "phase": 3,
+          "world": 415,
+          "boss_hp": 0,
+          "face": 0
+        },
+        {
+          "frame": 4207,
+          "phase": 4,
+          "world": 448,
+          "boss_hp": 0,
+          "face": 0
+        },
+        {
+          "frame": 4238,
+          "phase": 5,
+          "world": 448,
+          "boss_hp": 22,
+          "face": 1
+        },
+        {
+          "frame": 4330,
+          "phase": 6,
+          "world": 448,
+          "boss_hp": 22,
+          "face": 1
+        },
+        {
+          "frame": 4557,
+          "phase": 7,
+          "world": 448,
+          "boss_hp": 0,
+          "face": 2
+        },
+        {
+          "frame": 4597,
+          "phase": 8,
+          "world": 448,
+          "boss_hp": 0,
+          "face": 2
+        },
+        {
+          "frame": 4717,
+          "phase": 0,
+          "world": 3,
+          "boss_hp": 0,
+          "face": 2
+        }
+      ],
+      "stage_two_frame": 4721,
+      "volcano_particles_created": 270,
+      "missed_NMIs": 0,
+      "checks": {
+        "reached_stage_two": true,
+        "mid_encounter_spawned": true,
+        "volcano_emitted_source_particles": true,
+        "core_entered_with_22_hp": true,
+        "initially_closed_core_did_not_take_damage": true,
+        "core_defeated_by_projectile_damage": true,
+        "powerups_survive_chapter_one_stage_transition": true
+      },
+      "passed": true
+    },
+    {
+      "name": "source_timeout",
+      "qa": [
+        "invulnerability"
+      ],
+      "trace": [
+        {
+          "frame": 0,
+          "phase": 0,
+          "world": 34,
+          "boss_hp": 0,
+          "face": 0
+        },
+        {
+          "frame": 3043,
+          "phase": 2,
+          "world": 415,
+          "boss_hp": 0,
+          "face": 0
+        },
+        {
+          "frame": 3943,
+          "phase": 3,
+          "world": 415,
+          "boss_hp": 0,
+          "face": 0
+        },
+        {
+          "frame": 4207,
+          "phase": 4,
+          "world": 448,
+          "boss_hp": 0,
+          "face": 0
+        },
+        {
+          "frame": 4238,
+          "phase": 5,
+          "world": 448,
+          "boss_hp": 22,
+          "face": 1
+        },
+        {
+          "frame": 4330,
+          "phase": 6,
+          "world": 448,
+          "boss_hp": 22,
+          "face": 1
+        },
+        {
+          "frame": 5050,
+          "phase": 7,
+          "world": 448,
+          "boss_hp": 22,
+          "face": 2
+        },
+        {
+          "frame": 5090,
+          "phase": 8,
+          "world": 448,
+          "boss_hp": 22,
+          "face": 2
+        },
+        {
+          "frame": 5210,
+          "phase": 0,
+          "world": 3,
+          "boss_hp": 0,
+          "face": 2
+        }
+      ],
+      "stage_two_frame": 5214,
+      "volcano_particles_created": 270,
+      "missed_NMIs": 0,
+      "checks": {
+        "reached_stage_two": true,
+        "mid_encounter_spawned": true,
+        "volcano_emitted_source_particles": true,
+        "core_entered_with_22_hp": true,
+        "initially_closed_core_did_not_take_damage": true,
+        "no_shooting_keeps_full_core_hp": true,
+        "original_720_frame_timeout_is_preserved": true
+      },
+      "passed": true
+    }
+  ],
+  "passed": true
+}

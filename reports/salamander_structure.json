@@ -1,0 +1,1011 @@
+{
+  "source": "salamander_msx",
+  "source_sha256": "edbbba820ac67d6a55b9dc5da9309e45979936d5620c07d09793efaf077e86b9",
+  "upstream": "antxiko/Salamander-disassembly@6f166825c6df198f4a3044b7efb90c24b80862d3",
+  "cartridge": {
+    "mapper": "Konami SCC, 16 x 8 KB banks",
+    "bank_sets": {
+      "game": "1-2-3",
+      "sound": "4-5-6",
+      "graphics": "7-8-9",
+      "maps": "13-14-15",
+      "intro_cutscenes_endings": "10 at 0x8000",
+      "bosses": "11 at 0xA000",
+      "special_enemies_items": "12 at 0xA000"
+    },
+    "screen": "TMS9918 SCREEN 2: patterns 0x2000, colours 0x0000, names 0x3800, sprite patterns 0x1800, sprite attributes 0x3B00; 21 play rows + 3 status rows"
+  },
+  "progression": {
+    "order": "1, 2, then 3/4/5 in the order picked on the radar (p10:988A; clock p10:9A43), then 6; stage 7 before 6 only with Nemesis 2 (p10:8B7B)",
+    "stage_dispatch_table": "p02:8517",
+    "route_table": "p02:88F2 (6 bytes per stage: start, end, first scroll stop)",
+    "direction_table": "p02:8921 (also bit mask 0x26 at p00:4835)",
+    "restart_scroll_table": "p02:88E8: at stage (re)start the scroll resumes at this value if it had passed it, else at 0x20 (p02:88BC-88CE)"
+  },
+  "formats": {
+    "rle": "p00:4D16",
+    "tile_list": "p00:4546",
+    "vram_copies": "p00:44F9",
+    "stage_tiles": "p00:44B7",
+    "sprites": "p00:438C",
+    "map_column": "p00:49BF",
+    "map_row": "p00:4A8C",
+    "detour": "p00:4BE6",
+    "mid_stage_change": "p00:5C77/5CCB",
+    "tile_animation": "p12:A4A9",
+    "boss_tiles": "p00:4DC8",
+    "boss_dispatch": "p01:6E89"
+  },
+  "bosses": {
+    "1": {
+      "code_address": "p11:A870",
+      "dispatch_index": 0,
+      "wiki_name": "Golem"
+    },
+    "2": {
+      "code_address": "p11:A68D",
+      "dispatch_index": 1,
+      "wiki_name": "Cruiser Tetran"
+    },
+    "3": {
+      "code_address": "p11:ACC8",
+      "dispatch_index": 2,
+      "wiki_name": "Dead End"
+    },
+    "4": {
+      "code_address": "p11:AB03",
+      "dispatch_index": 3,
+      "wiki_name": "Seducer"
+    },
+    "5": {
+      "code_address": "p11:B154",
+      "dispatch_index": 4,
+      "wiki_name": "Enigma"
+    },
+    "6": {
+      "code_address": "p11:AEB4",
+      "dispatch_index": 5,
+      "wiki_name": "Metal Slave"
+    },
+    "7": {
+      "code_address": "p11:AE9C",
+      "dispatch_index": 6,
+      "wiki_name": "Outer Limits"
+    },
+    "8": {
+      "code_address": "p11:B405",
+      "dispatch_index": 7,
+      "wiki_name": "Center Core"
+    }
+  },
+  "maps": [
+    {
+      "map_id": "map_01",
+      "stage_id": 1,
+      "card": "OPERATION ONE",
+      "subtitle": "-TOP FLIGHT SPEED TO LATIS-",
+      "planet": null,
+      "role": "first stage, always first",
+      "direction": "horizontal",
+      "length": {
+        "columns": 384,
+        "block_steps": 96
+      },
+      "route": {
+        "start_scroll": 128,
+        "end_scroll": 512,
+        "first_scroll_stop": 287,
+        "initial_scroll": 32,
+        "record_address": 35064,
+        "record_rom_offset": 18680
+      },
+      "map_script": {
+        "cpu_address": "p13:6F5C",
+        "rom_offset": 110428,
+        "bytes": 576
+      },
+      "metatile_table": {
+        "cpu_address": "p13:604E",
+        "rom_offset": 106574,
+        "bytes": 624,
+        "blocks": 39,
+        "blocks_used_including_common": 42
+      },
+      "graphics": {
+        "window": "banks_7_8_9",
+        "common_list": "p07:6C63",
+        "direction_list": "p07:6C8E",
+        "stage_list": "p07:6C9C",
+        "mirror_copies": "p07:6DEC",
+        "flip_copies": "p07:6E82",
+        "star_tiles_rle3": "p00:4868/486B -> VRAM 0x2280/0x0280 (tiles 0x50-0x51, animated by p00:4B97)"
+      },
+      "sprites": {
+        "window": "banks_7_8_9",
+        "stream_list": "p08:8B36",
+        "copy_list": "p08:8BE3",
+        "common_streams": "p09:A130->0x1880, A06F->0x1960, A042->0x18C0, A0D8->0x1900, A113->0x18A0",
+        "file": "sprites_stage.bin",
+        "ship_sprites": "not included: p01:6060 writes the ship posture (p14:95F7) to 0x1800-0x183F every frame"
+      },
+      "tile_changes": [
+        {
+          "at_scroll": 400,
+          "table": "p00:5CFA",
+          "tile_list": "p07:9495",
+          "mirror_copies": "p07:94EC",
+          "flip_copies": "p07:9507",
+          "snapshot": "source_vram_after_190.bin"
+        }
+      ],
+      "tile_animation": null,
+      "detour": {
+        "address": 33020,
+        "rom_offset": 114940,
+        "bytes": 96,
+        "format": "row",
+        "blocks_per_unit": 8,
+        "block_steps": 12,
+        "rows": 48,
+        "columns": 32,
+        "segments": [
+          {
+            "kind": "down",
+            "counter_from": 24,
+            "counter_to": 0,
+            "main_scroll_parked_at": 287
+          },
+          {
+            "kind": "down",
+            "counter_from": 48,
+            "counter_to": 24,
+            "main_scroll_parked_at": 511
+          }
+        ],
+        "reader": "p00:4C8D",
+        "files": [
+          "detour_rows.bin",
+          "detour_script.bin",
+          "detour.png"
+        ],
+        "uses_stage_metatile_table": true,
+        "third_note": "horizontal stages: third taken from the picture row, the real third changes as the rows scroll up"
+      },
+      "script": [
+        [
+          "h",
+          287
+        ],
+        [
+          "down",
+          24,
+          0
+        ],
+        [
+          "h",
+          511
+        ],
+        [
+          "down",
+          48,
+          24
+        ],
+        [
+          "h",
+          543
+        ],
+        [
+          "boss",
+          1
+        ]
+      ],
+      "script_code": "p02:8525",
+      "bosses": [
+        {
+          "code_address": "p11:A870",
+          "dispatch_index": 0,
+          "wiki_name": "Golem",
+          "boss_id": 1
+        }
+      ],
+      "music": {
+        "list_address": "p02:877A",
+        "stage_track": 27,
+        "boss_track": 33,
+        "records": [
+          {
+            "until_scroll": 496,
+            "track": 27
+          },
+          {
+            "until_scroll": 65535,
+            "track": 33
+          }
+        ]
+      },
+      "unresolved": []
+    },
+    {
+      "map_id": "map_02",
+      "stage_id": 2,
+      "card": "OPERATION TWO",
+      "subtitle": "-CONDUCT TO SPACE STATION ZOT-",
+      "planet": null,
+      "role": "second stage, always second",
+      "direction": "vertical",
+      "length": {
+        "rows": 432,
+        "block_steps": 108
+      },
+      "route": {
+        "start_scroll": 72,
+        "end_scroll": 504,
+        "first_scroll_stop": 527,
+        "initial_scroll": 32,
+        "record_address": 35070,
+        "record_rom_offset": 18686
+      },
+      "map_script": {
+        "cpu_address": "p13:719C",
+        "rom_offset": 111004,
+        "bytes": 864
+      },
+      "metatile_table": {
+        "cpu_address": "p13:62BE",
+        "rom_offset": 107198,
+        "bytes": 272,
+        "blocks": 17,
+        "blocks_used_including_common": 21
+      },
+      "graphics": {
+        "window": "banks_7_8_9",
+        "common_list": "p07:6C63",
+        "direction_list": "p07:6C95",
+        "stage_list": "p07:6CD9",
+        "mirror_copies": "p07:6DF1",
+        "flip_copies": "p07:6EA3",
+        "star_tiles_rle3": "p00:4876/4879 -> VRAM 0x2280/0x0280 (tiles 0x50-0x51, animated by p00:4B97)"
+      },
+      "sprites": {
+        "window": "banks_7_8_9",
+        "stream_list": "p08:8B43",
+        "copy_list": "p08:8BF0",
+        "common_streams": "p09:A130->0x1880, A06F->0x1960, A009->0x18C0, A0F3->0x1900, A122->0x18A0",
+        "file": "sprites_stage.bin",
+        "ship_sprites": "not included: p01:6060 writes the ship posture (p14:95F7) to 0x1800-0x183F every frame"
+      },
+      "tile_changes": [],
+      "tile_animation": null,
+      "detour": null,
+      "script": [
+        [
+          "h",
+          527
+        ],
+        [
+          "boss",
+          2
+        ]
+      ],
+      "script_code": "p02:85A5",
+      "bosses": [
+        {
+          "code_address": "p11:A68D",
+          "dispatch_index": 1,
+          "wiki_name": "Cruiser Tetran",
+          "boss_id": 2
+        }
+      ],
+      "music": {
+        "list_address": "p02:8780",
+        "stage_track": 28,
+        "boss_track": 33,
+        "records": [
+          {
+            "until_scroll": 496,
+            "track": 28
+          },
+          {
+            "until_scroll": 65535,
+            "track": 33
+          }
+        ]
+      },
+      "unresolved": [
+        "p13 mapa_fase2_cola: 48 bytes (6 rows) of map after the measured end 0x1F8 have no reader upstream."
+      ]
+    },
+    {
+      "map_id": "map_03",
+      "stage_id": 3,
+      "card": "OPERATION THREE",
+      "subtitle": "-SET THE CRUSH BLOW SYSTEM-",
+      "planet": "EIONEUS",
+      "role": "planet EIONEUS, one of three picked on the radar (p10:988A, clock p10:9A43)",
+      "direction": "vertical",
+      "length": {
+        "rows": 432,
+        "block_steps": 108
+      },
+      "route": {
+        "start_scroll": 96,
+        "end_scroll": 528,
+        "first_scroll_stop": 527,
+        "initial_scroll": 32,
+        "record_address": 35076,
+        "record_rom_offset": 18692
+      },
+      "map_script": {
+        "cpu_address": "p13:752C",
+        "rom_offset": 111916,
+        "bytes": 864
+      },
+      "metatile_table": {
+        "cpu_address": "p13:63CE",
+        "rom_offset": 107470,
+        "bytes": 512,
+        "blocks": 32,
+        "blocks_used_including_common": 33
+      },
+      "graphics": {
+        "window": "banks_7_8_9",
+        "common_list": "p07:6C63",
+        "direction_list": "p07:6C95",
+        "stage_list": "p07:6D04",
+        "mirror_copies": "p07:6E06",
+        "flip_copies": "p07:6EB8",
+        "star_tiles_rle3": "p00:4876/4879 -> VRAM 0x2280/0x0280 (tiles 0x50-0x51, animated by p00:4B97)"
+      },
+      "sprites": {
+        "window": "banks_7_8_9",
+        "stream_list": "p08:8B5C",
+        "copy_list": "p08:8BF1",
+        "common_streams": "p09:A130->0x1880, A06F->0x1960, A009->0x18C0, A0F3->0x1900, A122->0x18A0",
+        "file": "sprites_stage.bin",
+        "ship_sprites": "not included: p01:6060 writes the ship posture (p14:95F7) to 0x1800-0x183F every frame"
+      },
+      "tile_changes": [
+        {
+          "at_scroll": 527,
+          "table": "p00:5D00",
+          "tile_list": "p07:949C",
+          "mirror_copies": "p07:94F6",
+          "flip_copies": "p07:950B",
+          "snapshot": "source_vram_after_20F.bin"
+        }
+      ],
+      "tile_animation": null,
+      "detour": null,
+      "script": [
+        [
+          "h",
+          527
+        ],
+        [
+          "boss",
+          8
+        ],
+        [
+          "boss",
+          3
+        ]
+      ],
+      "script_code": "p02:85B5",
+      "bosses": [
+        {
+          "code_address": "p11:B405",
+          "dispatch_index": 7,
+          "wiki_name": "Center Core",
+          "boss_id": 8
+        },
+        {
+          "code_address": "p11:ACC8",
+          "dispatch_index": 2,
+          "wiki_name": "Dead End",
+          "boss_id": 3
+        }
+      ],
+      "music": {
+        "list_address": "p02:8786",
+        "stage_track": 30,
+        "boss_track": 33,
+        "records": [
+          {
+            "until_scroll": 506,
+            "track": 30
+          },
+          {
+            "until_scroll": 65535,
+            "track": 33
+          }
+        ]
+      },
+      "unresolved": []
+    },
+    {
+      "map_id": "map_04",
+      "stage_id": 4,
+      "card": "OPERATION THREE",
+      "subtitle": "-SET THE CRUSH BLOW SYSTEM-",
+      "planet": "LAVINIA",
+      "role": "planet LAVINIA, one of three picked on the radar",
+      "direction": "horizontal",
+      "length": {
+        "columns": 480,
+        "block_steps": 120
+      },
+      "route": {
+        "start_scroll": 128,
+        "end_scroll": 608,
+        "first_scroll_stop": 447,
+        "initial_scroll": 32,
+        "record_address": 35082,
+        "record_rom_offset": 18698
+      },
+      "map_script": {
+        "cpu_address": "p13:788C",
+        "rom_offset": 112780,
+        "bytes": 720
+      },
+      "metatile_table": {
+        "cpu_address": "p13:65CE",
+        "rom_offset": 107982,
+        "bytes": 208,
+        "blocks": 13,
+        "blocks_used_including_common": 14
+      },
+      "graphics": {
+        "window": "banks_7_8_9",
+        "common_list": "p07:6C63",
+        "direction_list": "p07:6C8E",
+        "stage_list": "p07:6D3B",
+        "mirror_copies": "p07:6E2F",
+        "flip_copies": "p07:6EC9",
+        "star_tiles_rle3": "p00:4868/486B -> VRAM 0x2280/0x0280 (tiles 0x50-0x51, animated by p00:4B97)"
+      },
+      "sprites": {
+        "window": "banks_7_8_9",
+        "stream_list": "p08:8B78",
+        "copy_list": "p08:8C02",
+        "common_streams": "p09:A130->0x1880, A06F->0x1960, A042->0x18C0, A0D8->0x1900, A113->0x18A0",
+        "file": "sprites_stage.bin",
+        "ship_sprites": "not included: p01:6060 writes the ship posture (p14:95F7) to 0x1800-0x183F every frame"
+      },
+      "tile_changes": [],
+      "tile_animation": {
+        "address": 42303,
+        "rom_offset": 99647,
+        "bytes": 31,
+        "steps": 3,
+        "writes_colours": false,
+        "period_frames": 16,
+        "steps_detail": [
+          {
+            "tile": 82,
+            "thirds": 7,
+            "data": "0000001818000000"
+          },
+          {
+            "tile": 82,
+            "thirds": 7,
+            "data": "0024421818422400"
+          },
+          {
+            "tile": 82,
+            "thirds": 7,
+            "data": "1800009999000018"
+          }
+        ]
+      },
+      "detour": {
+        "address": 33116,
+        "rom_offset": 115036,
+        "bytes": 48,
+        "format": "row",
+        "blocks_per_unit": 8,
+        "block_steps": 6,
+        "rows": 24,
+        "columns": 32,
+        "segments": [
+          {
+            "kind": "down",
+            "counter_from": 24,
+            "counter_to": 0,
+            "main_scroll_parked_at": 447
+          }
+        ],
+        "reader": "p00:4C8D",
+        "files": [
+          "detour_rows.bin",
+          "detour_script.bin",
+          "detour.png"
+        ],
+        "uses_stage_metatile_table": true,
+        "third_note": "horizontal stages: third taken from the picture row, the real third changes as the rows scroll up"
+      },
+      "script": [
+        [
+          "h",
+          447
+        ],
+        [
+          "down",
+          24,
+          0
+        ],
+        [
+          "h",
+          607
+        ],
+        [
+          "wave",
+          "p11:BD3E/BD53"
+        ],
+        [
+          "boss",
+          4
+        ]
+      ],
+      "script_code": "p02:85D2",
+      "bosses": [
+        {
+          "code_address": "p11:AB03",
+          "dispatch_index": 3,
+          "wiki_name": "Seducer",
+          "boss_id": 4
+        }
+      ],
+      "music": {
+        "list_address": "p02:878C",
+        "stage_track": 29,
+        "boss_track": 33,
+        "records": [
+          {
+            "until_scroll": 576,
+            "track": 29
+          },
+          {
+            "until_scroll": 65535,
+            "track": 33
+          }
+        ]
+      },
+      "unresolved": [
+        "Between scrolls 0x100 and 0x150 the scenery is dumped one frame in 64 (p00:5FC5, p01:6016): the barely-visible base is rendered fully here."
+      ]
+    },
+    {
+      "map_id": "map_05",
+      "stage_id": 5,
+      "card": "OPERATION THREE",
+      "subtitle": "-SET THE CRUSH BLOW SYSTEM-",
+      "planet": "KIERKE",
+      "role": "planet KIERKE, one of three picked on the radar",
+      "direction": "horizontal",
+      "length": {
+        "columns": 320,
+        "block_steps": 80
+      },
+      "route": {
+        "start_scroll": 128,
+        "end_scroll": 448,
+        "first_scroll_stop": 479,
+        "initial_scroll": 32,
+        "record_address": 35088,
+        "record_rom_offset": 18704
+      },
+      "map_script": {
+        "cpu_address": "p13:7B5C",
+        "rom_offset": 113500,
+        "bytes": 480
+      },
+      "metatile_table": {
+        "cpu_address": "p13:669E",
+        "rom_offset": 108190,
+        "bytes": 672,
+        "blocks": 42,
+        "blocks_used_including_common": 43
+      },
+      "graphics": {
+        "window": "banks_7_8_9",
+        "common_list": "p07:6C63",
+        "direction_list": "p07:6C8E",
+        "stage_list": "p07:6D7E",
+        "mirror_copies": "p07:6E54",
+        "flip_copies": "p07:6EE2",
+        "star_tiles_rle3": "p00:4868/486B -> VRAM 0x2280/0x0280 (tiles 0x50-0x51, animated by p00:4B97)"
+      },
+      "sprites": {
+        "window": "banks_7_8_9",
+        "stream_list": "p08:8B94",
+        "copy_list": "p08:8C13",
+        "common_streams": "p09:A130->0x1880, A06F->0x1960, A042->0x18C0, A0D8->0x1900, A113->0x18A0",
+        "file": "sprites_stage.bin",
+        "ship_sprites": "not included: p01:6060 writes the ship posture (p14:95F7) to 0x1800-0x183F every frame"
+      },
+      "tile_changes": [],
+      "tile_animation": {
+        "address": 42334,
+        "rom_offset": 99678,
+        "bytes": 81,
+        "steps": 8,
+        "writes_colours": false,
+        "period_frames": 4,
+        "steps_detail": [
+          {
+            "tile": 106,
+            "thirds": 7,
+            "data": "0102041020200040"
+          },
+          {
+            "tile": 107,
+            "thirds": 7,
+            "data": "8040200804040002"
+          },
+          {
+            "tile": 108,
+            "thirds": 7,
+            "data": "0101020404020001"
+          },
+          {
+            "tile": 109,
+            "thirds": 7,
+            "data": "8080402020400080"
+          },
+          {
+            "tile": 106,
+            "thirds": 7,
+            "data": "011c204080800080"
+          },
+          {
+            "tile": 107,
+            "thirds": 7,
+            "data": "8038040201010001"
+          },
+          {
+            "tile": 108,
+            "thirds": 7,
+            "data": "0106081018040001"
+          },
+          {
+            "tile": 109,
+            "thirds": 7,
+            "data": "8060100818200080"
+          }
+        ]
+      },
+      "detour": null,
+      "script": [
+        [
+          "h",
+          479
+        ],
+        [
+          "boss",
+          5
+        ]
+      ],
+      "script_code": "p02:8626",
+      "bosses": [
+        {
+          "code_address": "p11:B154",
+          "dispatch_index": 4,
+          "wiki_name": "Enigma",
+          "boss_id": 5
+        }
+      ],
+      "music": {
+        "list_address": "p02:8792",
+        "stage_track": 31,
+        "boss_track": 33,
+        "records": [
+          {
+            "until_scroll": 432,
+            "track": 31
+          },
+          {
+            "until_scroll": 65535,
+            "track": 33
+          }
+        ]
+      },
+      "unresolved": []
+    },
+    {
+      "map_id": "map_06",
+      "stage_id": 6,
+      "card": "OPERATION FOUR",
+      "subtitle": "-CRUSH SALAMANDER-",
+      "planet": null,
+      "role": "final stage (OPERATION FOUR); boss 6 falling starts the ending (p11:B58D)",
+      "direction": "vertical",
+      "length": {
+        "rows": 480,
+        "block_steps": 120
+      },
+      "route": {
+        "start_scroll": 72,
+        "end_scroll": 552,
+        "first_scroll_stop": 335,
+        "initial_scroll": 32,
+        "record_address": 35094,
+        "record_rom_offset": 18710
+      },
+      "map_script": {
+        "cpu_address": "p13:7D3C",
+        "rom_offset": 113980,
+        "bytes": 960
+      },
+      "metatile_table": {
+        "cpu_address": "p13:693E",
+        "rom_offset": 108862,
+        "bytes": 736,
+        "blocks": 46,
+        "blocks_used_including_common": 46
+      },
+      "graphics": {
+        "window": "banks_7_8_9",
+        "common_list": "p07:6C63",
+        "direction_list": "p07:6C95",
+        "stage_list": "p07:6DB5",
+        "mirror_copies": "p07:6E69",
+        "flip_copies": "p07:6EFB",
+        "star_tiles_rle3": "p00:4876/4879 -> VRAM 0x2280/0x0280 (tiles 0x50-0x51, animated by p00:4B97)"
+      },
+      "sprites": {
+        "window": "banks_7_8_9",
+        "stream_list": "p08:8BAD",
+        "copy_list": "p08:8C1C",
+        "common_streams": "p09:A130->0x1880, A06F->0x1960, A009->0x18C0, A0F3->0x1900, A122->0x18A0",
+        "file": "sprites_stage.bin",
+        "ship_sprites": "not included: p01:6060 writes the ship posture (p14:95F7) to 0x1800-0x183F every frame"
+      },
+      "tile_changes": [
+        {
+          "at_scroll": 184,
+          "table": "p00:5D06",
+          "tile_list": "p07:94A9",
+          "mirror_copies": "p07:94DC",
+          "flip_copies": "p07:950C",
+          "snapshot": "source_vram_after_0B8.bin"
+        },
+        {
+          "at_scroll": 416,
+          "table": "p00:5D0C",
+          "tile_list": "p07:94B6",
+          "mirror_copies": "p07:94ED",
+          "flip_copies": "p07:9514",
+          "snapshot": "source_vram_after_1A0.bin"
+        }
+      ],
+      "tile_animation": {
+        "address": 42415,
+        "rom_offset": 99759,
+        "bytes": 31,
+        "steps": 3,
+        "writes_colours": false,
+        "period_frames": 4,
+        "steps_detail": [
+          {
+            "tile": 90,
+            "thirds": 7,
+            "data": "00002a002a000000"
+          },
+          {
+            "tile": 90,
+            "thirds": 7,
+            "data": "002a0000002a0000"
+          },
+          {
+            "tile": 90,
+            "thirds": 7,
+            "data": "1c00002a00001c00"
+          }
+        ]
+      },
+      "detour": {
+        "address": 33164,
+        "rom_offset": 115084,
+        "bytes": 96,
+        "format": "column",
+        "blocks_per_unit": 6,
+        "block_steps": 16,
+        "rows": 24,
+        "columns": 64,
+        "segments": [
+          {
+            "kind": "left",
+            "counter_from": 32,
+            "counter_to": 0,
+            "main_scroll_parked_at": 335
+          },
+          {
+            "kind": "right",
+            "counter_from": 31,
+            "counter_to": 63,
+            "main_scroll_parked_at": 359
+          }
+        ],
+        "reader": "p00:4C3D",
+        "files": [
+          "detour_rows.bin",
+          "detour_script.bin",
+          "detour.png"
+        ],
+        "uses_stage_metatile_table": true,
+        "third_note": "horizontal stages: third taken from the picture row, the real third changes as the rows scroll up"
+      },
+      "script": [
+        [
+          "h",
+          335
+        ],
+        [
+          "left",
+          32,
+          0
+        ],
+        [
+          "h",
+          359
+        ],
+        [
+          "right",
+          31,
+          63
+        ],
+        [
+          "h",
+          551
+        ],
+        [
+          "boss",
+          7
+        ],
+        [
+          "boss",
+          6
+        ]
+      ],
+      "script_code": "p02:8636",
+      "bosses": [
+        {
+          "code_address": "p11:AE9C",
+          "dispatch_index": 6,
+          "wiki_name": "Outer Limits",
+          "boss_id": 7
+        },
+        {
+          "code_address": "p11:AEB4",
+          "dispatch_index": 5,
+          "wiki_name": "Metal Slave",
+          "boss_id": 6
+        }
+      ],
+      "music": {
+        "list_address": "p02:8798",
+        "stage_track": 32,
+        "boss_track": 33,
+        "records": [
+          {
+            "until_scroll": 520,
+            "track": 32
+          },
+          {
+            "until_scroll": 65535,
+            "track": 33
+          }
+        ]
+      },
+      "unresolved": []
+    },
+    {
+      "map_id": "map_07",
+      "stage_id": 7,
+      "card": "OPERATION X",
+      "subtitle": "-WRATH OF VENOM-",
+      "planet": null,
+      "role": "OPERATION X secret stage: only with Nemesis 2 in the other slot (p03:B599/B5E3), played before stage 6 (p10:8B7B); its tiles come from that cartridge (p00:5B91)",
+      "direction": "horizontal",
+      "length": {
+        "columns": 480,
+        "block_steps": 120
+      },
+      "route": {
+        "start_scroll": 0,
+        "end_scroll": 480,
+        "first_scroll_stop": 447,
+        "initial_scroll": 32,
+        "record_address": 35100,
+        "record_rom_offset": 18716
+      },
+      "map_script": {
+        "cpu_address": "p14:81EC",
+        "rom_offset": 115180,
+        "bytes": 720
+      },
+      "metatile_table": {
+        "cpu_address": "p13:6C1E",
+        "rom_offset": 109598,
+        "bytes": 816,
+        "blocks": 51,
+        "blocks_used_including_common": 55
+      },
+      "graphics": {
+        "window": "banks_7_8_9+nemesis2_ram_copy",
+        "common_list": "p07:6C63",
+        "direction_list": "p07:6C8E",
+        "stage_list": "p07:6000",
+        "mirror_copies": "p07:6037",
+        "flip_copies": "p07:6046",
+        "star_tiles_rle3": "p00:4868/486B -> VRAM 0x2280/0x0280 (tiles 0x50-0x51, animated by p00:4B97)"
+      },
+      "sprites": {
+        "window": "banks_7_8_9+nemesis2_ram_copy",
+        "stream_list": "p07:6066",
+        "copy_list": "p08:8C2C",
+        "common_streams": "p09:A130->0x1880, A06F->0x1960, A042->0x18C0, A0D8->0x1900, A113->0x18A0",
+        "file": "sprites_stage.bin",
+        "ship_sprites": "not included: p01:6060 writes the ship posture (p14:95F7) to 0x1800-0x183F every frame"
+      },
+      "tile_changes": [
+        {
+          "at_scroll": 448,
+          "table": "p00:5D12",
+          "tile_list": "p07:94C3",
+          "mirror_copies": "p07:9506",
+          "flip_copies": "p07:9515",
+          "snapshot": "source_vram_after_1C0.bin"
+        }
+      ],
+      "tile_animation": null,
+      "detour": null,
+      "script": [
+        [
+          "h",
+          447
+        ],
+        [
+          "core"
+        ],
+        [
+          "h",
+          479
+        ],
+        [
+          "core"
+        ]
+      ],
+      "script_code": "p02:86B4",
+      "bosses": [
+        {
+          "role": "fixed core object at p12:A000 (0xE6C8), two parts; wiki names Venom / True Venom, UNRESOLVED mapping to code"
+        }
+      ],
+      "music": {
+        "list_address": "p02:879E",
+        "stage_track": 25,
+        "boss_track": 33,
+        "records": [
+          {
+            "until_scroll": 730,
+            "track": 25
+          },
+          {
+            "until_scroll": 65535,
+            "track": 33
+          }
+        ]
+      },
+      "unresolved": []
+    }
+  ],
+  "unresolved_global": [
+    "Enemy spawn/wave/event tables (p14:84BA events, p14:8560 waves, p14:85D1/85DF appearances, p01:6C5D 65 enemy records) are not decoded here.",
+    "Which item sits at each place in stages 3, 5 and 6 (0xE350-0xE359) and what results 2-4 change (p01:7B33): open upstream.",
+    "Enemy 0x06 (stage 4) and 0x30/0x38/0x40 (stage 6) use sprite patterns 0x40-0x6F not loaded at stage start: open upstream.",
+    "p14:80FC-81EC is labelled in the upstream p14 notes as stage-6 map tail with no reader, but p00:4C90/4C96/4C4A read it as the three detour maps; this extractor follows the code.",
+    "Boss names are Gradius Wiki names; the cartridge names no boss. Stage 7 core wiki names (Venom / True Venom) are not matched to code.",
+    "Music track numbers come from p02:876A; the sound engine itself (bank 4) is out of scope."
+  ]
+}

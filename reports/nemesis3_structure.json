@@ -1,0 +1,1201 @@
+{
+  "source": "Nemesis 3 - The Eve of Destruction (MSX, RC-764), third_party/antxiko__Nemesis3-disassembly",
+  "source_sha256": "fb4f66bcc3eabaf7eea6b91d1e2f5a15aa2f80a31a056af41d948b32646877a9",
+  "stages": [
+    {
+      "map_id": 1,
+      "role": "stage_1_no_map_sun_enemies",
+      "has_terrain_map": false,
+      "length_columns": 0,
+      "scroll_limits": {
+        "record_address": 43285,
+        "rom_offset": 157973,
+        "map_start": 65535,
+        "map_end": 65535,
+        "word_e425": 367
+      },
+      "column_script": {
+        "address": null,
+        "rom_offset": null,
+        "bytes": null
+      },
+      "graphics_list": {
+        "address": 24692,
+        "rom_offset": 131188,
+        "banks": [
+          16,
+          17,
+          18
+        ]
+      },
+      "mid_stage_changes": 0,
+      "self_animating_character_sets": 0,
+      "boss_table_p01_6111_entry": 6,
+      "bosses": [
+        {
+          "number": 6,
+          "name": "UNRESOLVED (names are not in the ROM; docs/THE-BOSSES.md lists them by number)",
+          "code": {
+            "address": 42232,
+            "bank": 5,
+            "rom_offset": 42232
+          },
+          "source": "docs/THE-BOSSES.md"
+        }
+      ],
+      "music": {
+        "table": 22418,
+        "entries": [
+          {
+            "tune": 6,
+            "until_scroll": 360,
+            "entry_address": 22442
+          },
+          {
+            "tune": 5,
+            "until_scroll": 34823,
+            "entry_address": 22445
+          }
+        ],
+        "source": "p00:5759 reads [tune][scroll]; docs/THE-STAGES.md table agrees"
+      },
+      "secret_entrances": {
+        "list_address": 41968,
+        "entries": [],
+        "note": "one of the four places is used per game (0xE381 = frame counter & 3, p26:6819)"
+      },
+      "enemy_appearance_records": {
+        "list_address": 33463,
+        "records": 0,
+        "banks": [
+          1,
+          6,
+          7
+        ]
+      },
+      "unresolved": [
+        "third word of the p19:A90F record (0xE425) is copied with the limits; its use is not described in the docs"
+      ]
+    },
+    {
+      "map_id": 2,
+      "role": "stage_2",
+      "has_terrain_map": true,
+      "length_columns": 352,
+      "scroll_limits": {
+        "record_address": 43291,
+        "rom_offset": 157979,
+        "map_start": 32,
+        "map_end": 384,
+        "word_e425": 413
+      },
+      "column_script": {
+        "address": 38023,
+        "rom_offset": 201863,
+        "bytes": 528
+      },
+      "graphics_list": {
+        "address": 24840,
+        "rom_offset": 131336,
+        "banks": [
+          16,
+          17,
+          18
+        ]
+      },
+      "mid_stage_changes": 1,
+      "self_animating_character_sets": 1,
+      "boss_table_p01_6111_entry": 7,
+      "bosses": [
+        {
+          "number": 7,
+          "name": "UNRESOLVED (names are not in the ROM; docs/THE-BOSSES.md lists them by number)",
+          "code": {
+            "address": 42768,
+            "bank": 5,
+            "rom_offset": 42768
+          },
+          "source": "docs/THE-BOSSES.md"
+        }
+      ],
+      "music": {
+        "table": 22418,
+        "entries": [
+          {
+            "tune": 7,
+            "until_scroll": 392,
+            "entry_address": 22446
+          },
+          {
+            "tune": 5,
+            "until_scroll": 32772,
+            "entry_address": 22449
+          }
+        ],
+        "source": "p00:5759 reads [tune][scroll]; docs/THE-STAGES.md table agrees"
+      },
+      "secret_entrances": {
+        "list_address": 41952,
+        "entries": [
+          {
+            "scroll": 145,
+            "type": 1,
+            "place": 0,
+            "y": 2
+          },
+          {
+            "scroll": 145,
+            "type": 1,
+            "place": 2,
+            "y": 2
+          },
+          {
+            "scroll": 157,
+            "type": 1,
+            "place": 1,
+            "y": 172
+          },
+          {
+            "scroll": 157,
+            "type": 1,
+            "place": 3,
+            "y": 172
+          }
+        ],
+        "note": "one of the four places is used per game (0xE381 = frame counter & 3, p26:6819)"
+      },
+      "enemy_appearance_records": {
+        "list_address": 32790,
+        "records": 14,
+        "banks": [
+          1,
+          6,
+          7
+        ]
+      },
+      "unresolved": [
+        "third word of the p19:A90F record (0xE425) is copied with the limits; its use is not described in the docs"
+      ]
+    },
+    {
+      "map_id": 3,
+      "role": "stage_3",
+      "has_terrain_map": true,
+      "length_columns": 224,
+      "scroll_limits": {
+        "record_address": 43297,
+        "rom_offset": 157985,
+        "map_start": 128,
+        "map_end": 352,
+        "word_e425": 479
+      },
+      "column_script": {
+        "address": 38551,
+        "rom_offset": 202391,
+        "bytes": 336
+      },
+      "graphics_list": {
+        "address": 25008,
+        "rom_offset": 131504,
+        "banks": [
+          16,
+          17,
+          18
+        ]
+      },
+      "mid_stage_changes": 3,
+      "self_animating_character_sets": 1,
+      "boss_table_p01_6111_entry": 0,
+      "bosses": [],
+      "music": {
+        "table": 22418,
+        "entries": [
+          {
+            "tune": 4,
+            "until_scroll": 128,
+            "entry_address": 22450
+          },
+          {
+            "tune": 8,
+            "until_scroll": 392,
+            "entry_address": 22453
+          },
+          {
+            "tune": 5,
+            "until_scroll": 472,
+            "entry_address": 22456
+          },
+          {
+            "tune": 1,
+            "until_scroll": 32772,
+            "entry_address": 22459
+          }
+        ],
+        "source": "p00:5759 reads [tune][scroll]; docs/THE-STAGES.md table agrees"
+      },
+      "secret_entrances": {
+        "list_address": 41970,
+        "entries": [
+          {
+            "scroll": 389,
+            "type": 2,
+            "place": 0,
+            "y": 48
+          },
+          {
+            "scroll": 409,
+            "type": 2,
+            "place": 1,
+            "y": 144
+          },
+          {
+            "scroll": 429,
+            "type": 2,
+            "place": 2,
+            "y": 136
+          },
+          {
+            "scroll": 435,
+            "type": 2,
+            "place": 3,
+            "y": 40
+          }
+        ],
+        "note": "one of the four places is used per game (0xE381 = frame counter & 3, p26:6819)"
+      },
+      "enemy_appearance_records": {
+        "list_address": 32834,
+        "records": 10,
+        "banks": [
+          1,
+          6,
+          7
+        ]
+      },
+      "unresolved": [
+        "third word of the p19:A90F record (0xE425) is copied with the limits; its use is not described in the docs",
+        "the p01:6111 entry for stage 3 is 0 (no boss, as docs/THE-BOSSES.md says); the stage-3 end path itself was not traced here"
+      ]
+    },
+    {
+      "map_id": 4,
+      "role": "stage_4_boss_rush_no_map",
+      "has_terrain_map": false,
+      "length_columns": 0,
+      "scroll_limits": {
+        "record_address": 43303,
+        "rom_offset": 157991,
+        "map_start": 65535,
+        "map_end": 65535,
+        "word_e425": 65535
+      },
+      "column_script": {
+        "address": null,
+        "rom_offset": null,
+        "bytes": null
+      },
+      "graphics_list": {
+        "address": 25228,
+        "rom_offset": 131724,
+        "banks": [
+          16,
+          17,
+          18
+        ]
+      },
+      "mid_stage_changes": 0,
+      "self_animating_character_sets": 0,
+      "boss_table_p01_6111_entry": 0,
+      "bosses": [
+        {
+          "number": 11,
+          "name": "UNRESOLVED (names are not in the ROM; docs/THE-BOSSES.md lists them by number)",
+          "code": {
+            "address": 43549,
+            "bank": 5,
+            "rom_offset": 43549
+          },
+          "source": "docs/THE-BOSSES.md"
+        },
+        {
+          "number": 1,
+          "name": "UNRESOLVED (names are not in the ROM; docs/THE-BOSSES.md lists them by number)",
+          "code": {
+            "address": 41200,
+            "bank": 5,
+            "rom_offset": 41200
+          },
+          "source": "docs/THE-BOSSES.md"
+        },
+        {
+          "number": 3,
+          "name": "UNRESOLVED (names are not in the ROM; docs/THE-BOSSES.md lists them by number)",
+          "code": {
+            "address": 41690,
+            "bank": 5,
+            "rom_offset": 41690
+          },
+          "source": "docs/THE-BOSSES.md"
+        },
+        {
+          "number": 4,
+          "name": "UNRESOLVED (names are not in the ROM; docs/THE-BOSSES.md lists them by number)",
+          "code": {
+            "address": 41966,
+            "bank": 5,
+            "rom_offset": 41966
+          },
+          "source": "docs/THE-BOSSES.md"
+        }
+      ],
+      "music": {
+        "table": 22418,
+        "entries": [
+          {
+            "tune": 4,
+            "until_scroll": 128,
+            "entry_address": 22460
+          },
+          {
+            "tune": 12,
+            "until_scroll": 488,
+            "entry_address": 22463
+          },
+          {
+            "tune": 5,
+            "until_scroll": 24580,
+            "entry_address": 22466
+          }
+        ],
+        "source": "p00:5759 returns for stage 4; its tunes come from the boss code (docs/THE-MUSIC.md: 0x0A, 0x09, 0x0B)"
+      },
+      "secret_entrances": {
+        "list_address": 41968,
+        "entries": [],
+        "note": "one of the four places is used per game (0xE381 = frame counter & 3, p26:6819)"
+      },
+      "enemy_appearance_records": {
+        "list_address": 33463,
+        "records": 0,
+        "banks": [
+          1,
+          6,
+          7
+        ]
+      },
+      "unresolved": [
+        "third word of the p19:A90F record (0xE425) is copied with the limits; its use is not described in the docs",
+        "stage 4 bosses come from the p01:6243 table in order 0x0B, 1, 3, 4 (docs); the p01:6111 entry for stage 4 is not read on that path"
+      ]
+    },
+    {
+      "map_id": 5,
+      "role": "stage_5_red_map_entrance",
+      "has_terrain_map": true,
+      "length_columns": 352,
+      "scroll_limits": {
+        "record_address": 43309,
+        "rom_offset": 157997,
+        "map_start": 128,
+        "map_end": 480,
+        "word_e425": 511
+      },
+      "column_script": {
+        "address": 38887,
+        "rom_offset": 202727,
+        "bytes": 528
+      },
+      "graphics_list": {
+        "address": 25230,
+        "rom_offset": 131726,
+        "banks": [
+          16,
+          17,
+          18
+        ]
+      },
+      "mid_stage_changes": 2,
+      "self_animating_character_sets": 0,
+      "boss_table_p01_6111_entry": 8,
+      "bosses": [
+        {
+          "number": 8,
+          "name": "UNRESOLVED (names are not in the ROM; docs/THE-BOSSES.md lists them by number)",
+          "code": {
+            "address": 45687,
+            "bank": 5,
+            "rom_offset": 45687
+          },
+          "source": "docs/THE-BOSSES.md"
+        }
+      ],
+      "music": {
+        "table": 22418,
+        "entries": [
+          {
+            "tune": 4,
+            "until_scroll": 128,
+            "entry_address": 22460
+          },
+          {
+            "tune": 12,
+            "until_scroll": 488,
+            "entry_address": 22463
+          },
+          {
+            "tune": 5,
+            "until_scroll": 24580,
+            "entry_address": 22466
+          }
+        ],
+        "source": "p00:5759 reads [tune][scroll]; docs/THE-STAGES.md table agrees"
+      },
+      "secret_entrances": {
+        "list_address": 41988,
+        "entries": [
+          {
+            "scroll": 169,
+            "type": 3,
+            "place": 3,
+            "y": 40
+          },
+          {
+            "scroll": 181,
+            "type": 3,
+            "place": 2,
+            "y": 144
+          },
+          {
+            "scroll": 212,
+            "type": 3,
+            "place": 0,
+            "y": 48
+          },
+          {
+            "scroll": 212,
+            "type": 3,
+            "place": 1,
+            "y": 88
+          },
+          {
+            "scroll": 393,
+            "type": 8,
+            "place": 0,
+            "y": 144
+          },
+          {
+            "scroll": 393,
+            "type": 8,
+            "place": 1,
+            "y": 144
+          },
+          {
+            "scroll": 446,
+            "type": 8,
+            "place": 2,
+            "y": 144
+          },
+          {
+            "scroll": 446,
+            "type": 8,
+            "place": 3,
+            "y": 144
+          }
+        ],
+        "note": "one of the four places is used per game (0xE381 = frame counter & 3, p26:6819)"
+      },
+      "enemy_appearance_records": {
+        "list_address": 32866,
+        "records": 31,
+        "banks": [
+          1,
+          6,
+          7
+        ]
+      },
+      "unresolved": [
+        "third word of the p19:A90F record (0xE425) is copied with the limits; its use is not described in the docs"
+      ]
+    },
+    {
+      "map_id": 6,
+      "role": "stage_6",
+      "has_terrain_map": true,
+      "length_columns": 288,
+      "scroll_limits": {
+        "record_address": 43315,
+        "rom_offset": 158003,
+        "map_start": 96,
+        "map_end": 384,
+        "word_e425": 415
+      },
+      "column_script": {
+        "address": 39415,
+        "rom_offset": 203255,
+        "bytes": 432
+      },
+      "graphics_list": {
+        "address": 25586,
+        "rom_offset": 132082,
+        "banks": [
+          16,
+          17,
+          18
+        ]
+      },
+      "mid_stage_changes": 0,
+      "self_animating_character_sets": 1,
+      "boss_table_p01_6111_entry": 9,
+      "bosses": [
+        {
+          "number": 9,
+          "name": "UNRESOLVED (names are not in the ROM; docs/THE-BOSSES.md lists them by number)",
+          "code": {
+            "address": 45056,
+            "bank": 5,
+            "rom_offset": 45056
+          },
+          "source": "docs/THE-BOSSES.md"
+        }
+      ],
+      "music": {
+        "table": 22418,
+        "entries": [
+          {
+            "tune": 4,
+            "until_scroll": 96,
+            "entry_address": 22467
+          },
+          {
+            "tune": 68,
+            "until_scroll": 392,
+            "entry_address": 22470
+          },
+          {
+            "tune": 5,
+            "until_scroll": 24580,
+            "entry_address": 22473
+          }
+        ],
+        "source": "p00:5759 reads [tune][scroll]; docs/THE-STAGES.md table agrees"
+      },
+      "secret_entrances": {
+        "list_address": 42022,
+        "entries": [
+          {
+            "scroll": 177,
+            "type": 4,
+            "place": 0,
+            "y": 152
+          },
+          {
+            "scroll": 189,
+            "type": 4,
+            "place": 1,
+            "y": 16
+          },
+          {
+            "scroll": 209,
+            "type": 4,
+            "place": 2,
+            "y": 152
+          },
+          {
+            "scroll": 245,
+            "type": 4,
+            "place": 3,
+            "y": 16
+          }
+        ],
+        "note": "one of the four places is used per game (0xE381 = frame counter & 3, p26:6819)"
+      },
+      "enemy_appearance_records": {
+        "list_address": 33463,
+        "records": 0,
+        "banks": [
+          1,
+          6,
+          7
+        ]
+      },
+      "unresolved": [
+        "third word of the p19:A90F record (0xE425) is copied with the limits; its use is not described in the docs"
+      ]
+    },
+    {
+      "map_id": 7,
+      "role": "stage_7_map_entrance",
+      "has_terrain_map": true,
+      "length_columns": 320,
+      "scroll_limits": {
+        "record_address": 43321,
+        "rom_offset": 158009,
+        "map_start": 96,
+        "map_end": 416,
+        "word_e425": 415
+      },
+      "column_script": {
+        "address": 39847,
+        "rom_offset": 203687,
+        "bytes": 480
+      },
+      "graphics_list": {
+        "address": 25684,
+        "rom_offset": 132180,
+        "banks": [
+          16,
+          17,
+          18
+        ]
+      },
+      "mid_stage_changes": 0,
+      "self_animating_character_sets": 1,
+      "boss_table_p01_6111_entry": 14,
+      "bosses": [
+        {
+          "number": 14,
+          "name": "UNRESOLVED (names are not in the ROM; docs/THE-BOSSES.md lists them by number)",
+          "code": {
+            "address": 47765,
+            "bank": 5,
+            "rom_offset": 47765
+          },
+          "source": "docs/THE-BOSSES.md"
+        }
+      ],
+      "music": {
+        "table": 22418,
+        "entries": [
+          {
+            "tune": 4,
+            "until_scroll": 96,
+            "entry_address": 22474
+          },
+          {
+            "tune": 69,
+            "until_scroll": 392,
+            "entry_address": 22477
+          },
+          {
+            "tune": 5,
+            "until_scroll": 24580,
+            "entry_address": 22480
+          }
+        ],
+        "source": "p00:5759 reads [tune][scroll]; docs/THE-STAGES.md table agrees"
+      },
+      "secret_entrances": {
+        "list_address": 42040,
+        "entries": [
+          {
+            "scroll": 195,
+            "type": 9,
+            "place": 0,
+            "y": 144
+          },
+          {
+            "scroll": 195,
+            "type": 9,
+            "place": 1,
+            "y": 144
+          },
+          {
+            "scroll": 195,
+            "type": 9,
+            "place": 2,
+            "y": 144
+          },
+          {
+            "scroll": 195,
+            "type": 9,
+            "place": 3,
+            "y": 144
+          },
+          {
+            "scroll": 249,
+            "type": 5,
+            "place": 0,
+            "y": 3
+          },
+          {
+            "scroll": 269,
+            "type": 5,
+            "place": 1,
+            "y": 171
+          },
+          {
+            "scroll": 301,
+            "type": 5,
+            "place": 2,
+            "y": 3
+          },
+          {
+            "scroll": 313,
+            "type": 5,
+            "place": 3,
+            "y": 171
+          }
+        ],
+        "note": "one of the four places is used per game (0xE381 = frame counter & 3, p26:6819)"
+      },
+      "enemy_appearance_records": {
+        "list_address": 32961,
+        "records": 51,
+        "banks": [
+          1,
+          6,
+          7
+        ]
+      },
+      "unresolved": [
+        "third word of the p19:A90F record (0xE425) is copied with the limits; its use is not described in the docs"
+      ]
+    },
+    {
+      "map_id": 8,
+      "role": "stage_8_map_entrance",
+      "has_terrain_map": true,
+      "length_columns": 416,
+      "scroll_limits": {
+        "record_address": 43327,
+        "rom_offset": 158015,
+        "map_start": 96,
+        "map_end": 512,
+        "word_e425": 543
+      },
+      "column_script": {
+        "address": 40327,
+        "rom_offset": 204167,
+        "bytes": 624
+      },
+      "graphics_list": {
+        "address": 25818,
+        "rom_offset": 132314,
+        "banks": [
+          16,
+          17,
+          18
+        ]
+      },
+      "mid_stage_changes": 1,
+      "self_animating_character_sets": 3,
+      "boss_table_p01_6111_entry": 12,
+      "bosses": [
+        {
+          "number": 12,
+          "name": "UNRESOLVED (names are not in the ROM; docs/THE-BOSSES.md lists them by number)",
+          "code": {
+            "address": 44145,
+            "bank": 5,
+            "rom_offset": 44145
+          },
+          "source": "docs/THE-BOSSES.md"
+        }
+      ],
+      "music": {
+        "table": 22418,
+        "entries": [
+          {
+            "tune": 4,
+            "until_scroll": 96,
+            "entry_address": 22481
+          },
+          {
+            "tune": 70,
+            "until_scroll": 504,
+            "entry_address": 22484
+          },
+          {
+            "tune": 5,
+            "until_scroll": 16388,
+            "entry_address": 22487
+          }
+        ],
+        "source": "p00:5759 reads [tune][scroll]; docs/THE-STAGES.md table agrees"
+      },
+      "secret_entrances": {
+        "list_address": 42074,
+        "entries": [
+          {
+            "scroll": 198,
+            "type": 10,
+            "place": 0,
+            "y": 2
+          },
+          {
+            "scroll": 198,
+            "type": 10,
+            "place": 2,
+            "y": 2
+          },
+          {
+            "scroll": 222,
+            "type": 10,
+            "place": 1,
+            "y": 160
+          },
+          {
+            "scroll": 222,
+            "type": 10,
+            "place": 3,
+            "y": 160
+          }
+        ],
+        "note": "one of the four places is used per game (0xE381 = frame counter & 3, p26:6819)"
+      },
+      "enemy_appearance_records": {
+        "list_address": 33463,
+        "records": 0,
+        "banks": [
+          1,
+          6,
+          7
+        ]
+      },
+      "unresolved": [
+        "third word of the p19:A90F record (0xE425) is copied with the limits; its use is not described in the docs"
+      ]
+    },
+    {
+      "map_id": 9,
+      "role": "stage_9_esp_device_then_computer",
+      "has_terrain_map": true,
+      "length_columns": 480,
+      "scroll_limits": {
+        "record_address": 43333,
+        "rom_offset": 158021,
+        "map_start": 64,
+        "map_end": 544,
+        "word_e425": 575
+      },
+      "column_script": {
+        "address": 40951,
+        "rom_offset": 204791,
+        "bytes": 720
+      },
+      "graphics_list": {
+        "address": 25972,
+        "rom_offset": 132468,
+        "banks": [
+          16,
+          17,
+          18
+        ]
+      },
+      "mid_stage_changes": 2,
+      "self_animating_character_sets": 2,
+      "boss_table_p01_6111_entry": null,
+      "bosses": [
+        {
+          "number": 13,
+          "name": "UNRESOLVED (names are not in the ROM; docs/THE-BOSSES.md lists them by number)",
+          "code": {
+            "address": 44816,
+            "bank": 5,
+            "rom_offset": 44816
+          },
+          "source": "docs/THE-BOSSES.md"
+        }
+      ],
+      "music": {
+        "table": 22418,
+        "entries": [
+          {
+            "tune": 4,
+            "until_scroll": 64,
+            "entry_address": 22488
+          },
+          {
+            "tune": 13,
+            "until_scroll": 432,
+            "entry_address": 22491
+          },
+          {
+            "tune": 5,
+            "until_scroll": 572,
+            "entry_address": 22494
+          },
+          {
+            "tune": 1,
+            "until_scroll": 16455,
+            "entry_address": 22497
+          }
+        ],
+        "source": "p00:5759 reads [tune][scroll]; docs/THE-STAGES.md table agrees"
+      },
+      "secret_entrances": {
+        "list_address": 42092,
+        "entries": [
+          {
+            "scroll": 373,
+            "type": 12,
+            "place": 0,
+            "y": 80
+          },
+          {
+            "scroll": 373,
+            "type": 12,
+            "place": 1,
+            "y": 80
+          },
+          {
+            "scroll": 373,
+            "type": 12,
+            "place": 2,
+            "y": 80
+          },
+          {
+            "scroll": 373,
+            "type": 12,
+            "place": 3,
+            "y": 80
+          }
+        ],
+        "note": "one of the four places is used per game (0xE381 = frame counter & 3, p26:6819)"
+      },
+      "enemy_appearance_records": {
+        "list_address": 33116,
+        "records": 46,
+        "banks": [
+          1,
+          6,
+          7
+        ]
+      },
+      "unresolved": [
+        "third word of the p19:A90F record (0xE425) is copied with the limits; its use is not described in the docs",
+        "stages 9-11 do not use the p01:6111 table (p01:611A path is stages 1, 2, 5-8); the code that brings out their boss was not traced here, the boss number comes from docs/THE-BOSSES.md"
+      ]
+    },
+    {
+      "map_id": 10,
+      "role": "stage_10_needs_all_three_maps",
+      "has_terrain_map": true,
+      "length_columns": 544,
+      "scroll_limits": {
+        "record_address": 43339,
+        "rom_offset": 158027,
+        "map_start": 32,
+        "map_end": 576,
+        "word_e425": 607
+      },
+      "column_script": {
+        "address": 41671,
+        "rom_offset": 205511,
+        "bytes": 816
+      },
+      "graphics_list": {
+        "address": 26322,
+        "rom_offset": 132818,
+        "banks": [
+          16,
+          17,
+          18
+        ]
+      },
+      "mid_stage_changes": 1,
+      "self_animating_character_sets": 1,
+      "boss_table_p01_6111_entry": null,
+      "bosses": [
+        {
+          "number": 15,
+          "name": "UNRESOLVED (names are not in the ROM; docs/THE-BOSSES.md lists them by number)",
+          "code": {
+            "address": 46453,
+            "bank": 5,
+            "rom_offset": 46453
+          },
+          "source": "docs/THE-BOSSES.md"
+        }
+      ],
+      "music": {
+        "table": 22418,
+        "entries": [
+          {
+            "tune": 71,
+            "until_scroll": 576,
+            "entry_address": 22498
+          },
+          {
+            "tune": 5,
+            "until_scroll": 40206,
+            "entry_address": 22501
+          }
+        ],
+        "source": "p00:5759 reads [tune][scroll]; docs/THE-STAGES.md table agrees"
+      },
+      "secret_entrances": {
+        "list_address": 42110,
+        "entries": [
+          {
+            "scroll": 118,
+            "type": 11,
+            "place": 0,
+            "y": 80
+          },
+          {
+            "scroll": 125,
+            "type": 11,
+            "place": 1,
+            "y": 80
+          },
+          {
+            "scroll": 265,
+            "type": 11,
+            "place": 2,
+            "y": 32
+          },
+          {
+            "scroll": 277,
+            "type": 11,
+            "place": 3,
+            "y": 32
+          }
+        ],
+        "note": "one of the four places is used per game (0xE381 = frame counter & 3, p26:6819)"
+      },
+      "enemy_appearance_records": {
+        "list_address": 33256,
+        "records": 69,
+        "banks": [
+          1,
+          6,
+          7
+        ]
+      },
+      "unresolved": [
+        "third word of the p19:A90F record (0xE425) is copied with the limits; its use is not described in the docs",
+        "stages 9-11 do not use the p01:6111 table (p01:611A path is stages 1, 2, 5-8); the code that brings out their boss was not traced here, the boss number comes from docs/THE-BOSSES.md"
+      ]
+    },
+    {
+      "map_id": 11,
+      "role": "stage_11_final",
+      "has_terrain_map": true,
+      "length_columns": 128,
+      "scroll_limits": {
+        "record_address": 43345,
+        "rom_offset": 158033,
+        "map_start": 0,
+        "map_end": 128,
+        "word_e425": 95
+      },
+      "column_script": {
+        "address": 42487,
+        "rom_offset": 206327,
+        "bytes": 192
+      },
+      "graphics_list": {
+        "address": 26456,
+        "rom_offset": 132952,
+        "banks": [
+          16,
+          17,
+          18
+        ]
+      },
+      "mid_stage_changes": 0,
+      "self_animating_character_sets": 0,
+      "boss_table_p01_6111_entry": null,
+      "bosses": [
+        {
+          "number": 16,
+          "name": "UNRESOLVED (names are not in the ROM; docs/THE-BOSSES.md lists them by number)",
+          "code": {
+            "address": 48525,
+            "bank": 5,
+            "rom_offset": 48525
+          },
+          "source": "docs/THE-BOSSES.md"
+        }
+      ],
+      "music": {
+        "table": 22418,
+        "entries": [
+          {
+            "tune": 14,
+            "until_scroll": 157,
+            "entry_address": 22502
+          }
+        ],
+        "source": "p00:5759 reads [tune][scroll]; docs/THE-STAGES.md table agrees"
+      },
+      "secret_entrances": {
+        "list_address": 41968,
+        "entries": [],
+        "note": "one of the four places is used per game (0xE381 = frame counter & 3, p26:6819)"
+      },
+      "enemy_appearance_records": {
+        "list_address": 33463,
+        "records": 0,
+        "banks": [
+          1,
+          6,
+          7
+        ]
+      },
+      "unresolved": [
+        "third word of the p19:A90F record (0xE425) is copied with the limits; its use is not described in the docs",
+        "stages 9-11 do not use the p01:6111 table (p01:611A path is stages 1, 2, 5-8); the code that brings out their boss was not traced here, the boss number comes from docs/THE-BOSSES.md"
+      ]
+    }
+  ],
+  "interludes": [
+    {
+      "after_stage": 3,
+      "kind": "on_board_computer_radar",
+      "code": "p27:814D (0xE321 = 1) -> p27:81F4 graphics p27:8208",
+      "music": 63,
+      "source": "docs/THE-STAGES.md, docs/THE-SEQUENCES.md, docs/THE-MUSIC.md (p27:817B)"
+    },
+    {
+      "after_stage": 4,
+      "kind": "on_board_computer_scene",
+      "code": "p27:814D -> p27:836A",
+      "music": "UNRESOLVED",
+      "source": "docs/THE-STAGES.md"
+    },
+    {
+      "after_stage": 9,
+      "kind": "on_board_computer_map_check",
+      "code": "p00:45E3, p26:7EC5; all maps p26:7F7A -> stage 10; missing p26:7FC8 -> stage 5/7/8; marks 0xE393-0xE395 (p26:7E2A)",
+      "music": 63,
+      "source": "docs/THE-STAGES.md, docs/THE-MUSIC.md (p26:7EFE)"
+    },
+    {
+      "after_stage": 11,
+      "kind": "ending",
+      "code": "p00:4599; secret type 0x0B (0xE396) adds a step p27:8786",
+      "music": [
+        66,
+        64,
+        65
+      ],
+      "source": "docs/THE-SEQUENCES.md, docs/THE-MUSIC.md"
+    },
+    {
+      "trigger": "secret entrance",
+      "kind": "state_9",
+      "code": "p26:6CA4: types 1-7 weapon p26:6E29, 8-0x0A maps p26:7D46, 0x0B p27:80B7, others p27:804A",
+      "music": [
+        63,
+        79
+      ],
+      "source": "src/p26.notes 0x6CA4, docs/THE-MUSIC.md"
+    },
+    {
+      "routing": "stages 1,2,5,6,7,8,10 -> next (p00:45B3); 3,4 -> computer then next (p00:45CA, p27:814D); 9 -> computer (p00:45E3, p26:7EC5); 11 -> ending (p00:4599)",
+      "source": "docs/THE-STAGES.md"
+    },
+    {
+      "note": "The \"three maps\" are collectible marks (0xE393 red, 0xE394 blue, 0xE395 green) set by secret entrance types 8, 9, 0x0A of stages 5, 7, 8 (p26:7D46); they are not terrain maps."
+    }
+  ],
+  "secret_entrance_table": 41928,
+  "notes": [
+    "Map ids equal stage numbers 1-11; stages 1 and 2 share one map pointer and so do 4 and 5 (p24:946F), but 1 and 4 never draw it (limits 0xFFFF).",
+    "Boss code addresses come from the p04:9D9E dispatcher (index 0xE440 - 1, p01:7D40) with banks 4-5 mapped; entries at 0x9DC0 are the empty handler.",
+    "Music tune numbers are the sound engine requests of p00:5792; tune names follow docs/THE-MUSIC.md.",
+    "Everything marked UNRESOLVED was not verified in the listing or its docs."
+  ]
+}

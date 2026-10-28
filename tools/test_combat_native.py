@@ -10,7 +10,7 @@ ROOT=pathlib.Path(__file__).resolve().parents[1]
 
 def main():
  p=argparse.ArgumentParser();p.add_argument('--core',required=True);p.add_argument('--tools',type=pathlib.Path,required=True);a=p.parse_args()
- source=ROOT/'build/native/Nemesis_Legends_CP0011.nes';rom=source.read_bytes()
+ source=ROOT/'build/native/Nemesis_Legends_CP0016.nes';rom=source.read_bytes()
  labels={name:int(value,16) for value,name in re.findall(r'^al ([0-9A-Fa-f]+) \.([A-Za-z_][A-Za-z_0-9]*)$',(ROOT/'build/native/native.lbl').read_text(),re.M)}
  build=ROOT/'build/combat_tests';build.mkdir(parents=True,exist_ok=True)
  required=['InitActors','CollectBomb','CollectCapsule','LaserStep','MovePlayer','Upgrade','UpdateOptions','UpdateHUD','ShieldContact']
@@ -84,28 +84,29 @@ def main():
  # p01:72AE-72C2: one laser kills multiple vulnerable actors; immunity is explicit.
  init();laser(8);obj(0,3,hp=10,x=104);obj(1,0x20,hp=10,x=112);obj(2,0x0b,hp=255,x=104)
  call('LaserStep');check(0x6d00,0x15,'laser_kills_vulnerable_enemy_without_normal_shot_hp_loop');check(0x6d20,0x15,'same_laser_kills_second_intersected_actor');check(0x6d40,0x0b,'source_type_0b_resists_laser');check(0x690e,2,'laser_kill_counter_is_exact')
- code+=['lda #$a5','sta $0780','Stop: jmp Stop','.segment "TRAMP"','sei','cld','ldx #$ff','txs','lda #0','sta $2000','sta $2001','sta $4015','sta $5204','lda #$40','sta $4017','lda #3','sta $5100','lda #2','sta $5102','lda #1','sta $5103','lda #0','sta $5113','lda #$8d','sta $5114','lda #$87','sta $5115','lda #$8e','sta $5116','lda #$8f','sta $5117','jmp Start']
+ code+=['lda #$a5','sta $0780','Stop: jmp Stop','.segment "TRAMP"','sei','cld','ldx #$ff','txs','lda #0','sta $2000','sta $2001','sta $4015','sta $5204','lda #$40','sta $4017','lda #3','sta $5100','lda #2','sta $5102','lda #1','sta $5103','lda #0','sta $5113','lda #$8d','sta $5114','lda #$87','sta $5115','lda #$%02x'%(0x80|(rom[4]*2-2)),'sta $5116','lda #$%02x'%(0x80|(rom[4]*2-1)),'sta $5117','jmp Start']
  asm=build/'driver.s';asm.write_text('\n'.join(code)+'\n')
  cfg=build/'driver.cfg';cfg.write_text('MEMORY { C:start=$8000,size=$2000,file=%O,fill=yes; T:start=$E900,size=$100,file=%O,fill=yes; } SEGMENTS { CODE:load=C,type=ro; TRAMP:load=T,type=ro; }\n')
  subprocess.run([str(a.tools/'ca65'),str(asm),'-o',str(build/'driver.o')],check=True)
  subprocess.run([str(a.tools/'ld65'),'-C',str(cfg),str(build/'driver.o'),'-o',str(build/'driver.bin')],check=True)
  data=(build/'driver.bin').read_bytes();test=bytearray(rom)
- assert test[16+13*8192:16+14*8192]==bytes([255])*8192,'Fixture bank is no longer free'
- assert test[16+15*8192+0x900:16+15*8192+0xa00]==bytes([255])*256,'Fixture trampoline space is no longer free'
- test[16+13*8192:16+14*8192]=data[:8192];test[16+15*8192+0x900:16+15*8192+0xa00]=data[8192:]
- test[16+128*1024-4:16+128*1024-2]=bytes.fromhex('00e9')
+ prg=test[4]*16384;last=16+prg-8192;fixture=16+13*8192
+ assert test[fixture:fixture+8192]==bytes([255])*8192,'Fixture bank is no longer free'
+ assert test[last+0x900:last+0xa00]==bytes([255])*256,'Fixture trampoline space is no longer free'
+ test[fixture:fixture+8192]=data[:8192];test[last+0x900:last+0xa00]=data[8192:]
+ test[16+prg-4:16+prg-2]=bytes.fromhex('00e9')
  def run(image):
   with NES(a.core,bytes(image)) as n:
    n.run(15);return list(n.read(0x780,4))
  result=run(test)
  # Negative control mutates only the production growth instruction, not the oracle.
- mutation=bytearray(test);lo=labels['LaserStep'];hi=labels['LaserDraw'];base=16+14*8192-0xc000
+ mutation=bytearray(test);lo=labels['LaserStep'];hi=labels['LaserDraw'];base=16+prg-16384-0xc000
  needle=bytes.fromhex('a204a005b138');spot=mutation.find(needle,base+lo,base+hi)
  assert spot>=0,'Production growth instruction signature changed; review negative control'
  mutation[spot+1]=3;negative=run(mutation)
  passed=result==[0xa5,0,len(expected),0] and negative[0]==0xa5 and negative[1]>0
  report=dict(rom_sha256=hashlib.sha256(rom).hexdigest(),harness_sha256=hashlib.sha256(test).hexdigest(),scope=__doc__,assertions=expected,observed=result,negative_control=dict(change='production laser grows 3 rather than 4 characters',observed=negative,rejected=negative[1]>0),passed=passed)
- (ROOT/'reports/cp0009/combat_unit_tests.json').write_text(json.dumps(report,indent=2)+'\n')
+ (ROOT/'reports/cp0016/combat_unit_tests.json').write_text(json.dumps(report,indent=2)+'\n')
  print('COMBAT',result,'ASSERTIONS',len(expected),'NEGATIVE',negative,'PASS',passed)
  if not passed:
   if result[3]:print('LAST FAILURE:',expected[result[3]-1])

@@ -1,0 +1,2015 @@
+{
+ "schema": "nemesis2_structure/1",
+ "game": "Nemesis 2 (Konami 1987, MSX1 MegaROM RC-751, Konami SCC mapper, 16 x 8 KB banks)",
+ "sources": {
+  "disassembly": "third_party/antxiko__Nemesis2-disassembly (docs/*.md, src/nemesis2_pNN.asm, src/pNN.notes, src/sitios.txt, tools/*.py)",
+  "stage_lengths": "assets/msx/nemesis2/stage_manifest.json (columns per map id)",
+  "notation": "pNN:ADDR = bank NN at its mapped Z80 address (bank 0 fixed at 0x4000-0x5FFF, bank 1 at 0x6000, bank 2 at 0x8000, bank 3/10/11 at 0xA000); RAM 0xE000-0xEFFF",
+  "no_raw_rom_bytes": true,
+  "verification": "everything below is read from the listing and its comments or from docs/*.md; nothing was verified by playing (see docs/OPEN-QUESTIONS.md)"
+ },
+ "key_ram": {
+  "0xE201": "current stage/map 0-11",
+  "0xE203": "scroll column (16 bit)",
+  "0xE205": "stage script step",
+  "0xE206": "highest stage reached",
+  "0xE20A": "loop/direction (bit 0 odd = inbound return trip)",
+  "0xE20F": "captured weapons 0-7",
+  "0xE22A": "stage after the interior / secret stage",
+  "0xE22B": "ship entered the boss -> interior",
+  "0xE22C": "return to the stage computed by p01:7C59",
+  "0xE227": "difficulty level (16 bit, max 0x0FFF)",
+  "0xE325": "scroll end column",
+  "0xE327": "scroll reached the end",
+  "0xE340": "boss type 1-5 (0 none)",
+  "0xE341": "boss step",
+  "0xE342": "boss finished (beaten)",
+  "0xE345": "boss core destroyed",
+  "0xE346": "boss fight frames",
+  "0xE3D0": "secret run: 1 scroll stopped, 2 one column per frame",
+  "0xE1D6": "ending with texts (real ending)",
+  "0xE1E6": "ending step (state 10)",
+  "0xE400": "ship form"
+ },
+ "campaign": {
+  "state_machine": "p00:5615 (11 game states): 0 intro, 1 title, 2 demo, 3 game start (pilot scene), 4 new life, 5 play, 6 death, 7 GAME OVER / CONTINUE F5, 8 return after interior or ending (calls siguiente_fase p01:7C1C), 9 pause, 10 ending",
+  "start": "stage 1 with 3 lives (p00:5AD8); stage of a new life = highest reached 0xE206, or the one computed by p01:7C59 when 0xE22C is set, or 0xE22A from stage 8 on (empieza_la_fase p01:60FD)",
+  "next_stage_rule": "fase_que_sigue_a p01:7C59: outbound (0xE20A even) A+1 up to 7, then 6 and 0xE20A += 1 (odd = inbound); inbound A-1 down to 0, then 1 and 0xE20A += 1 (even again: a second loop)",
+  "siguiente_fase": "p01:7C1C: with 0xE22B (ship entered the boss) -> 0xE1DB = 1, 0xE22A = next stage, go to map 8; from map 8 -> 0xE1DB = 2, 0xE206 + 1, level + 0x80, go to 0xE22A; from maps 9-11 -> same without 0xE1DB; otherwise 0xE206 + 1, level + 0x80, go to fase_que_sigue",
+  "outbound": "1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 (each boss stage optionally via map 8)",
+  "halfway_ending": "after the stage 7 boss (final_del_juego p01:7BEA, 0xE1D6 = 0): game state 10 runs p10:B993 steps 1 -> 2 -> 8 -> 9 (outside Japan) and returns to play through state 8",
+  "inbound": "6 -> 5 -> 4 -> 3 -> 2 -> 1 -> 0 with 0xE20A odd (code says: more enemies / shots in many places, e.g. stage 5 event 900 frames, boss 1 fires earlier p11:AA3B, type 0x0B shoots p03:A662, generador_5 p01:71EA, class 1 boxes p03:B4B9, map objects with bit 7 only inbound p02:87C1)",
+  "secret_routes": "3 -> 9 -> (4 outbound | 2 inbound); 6 -> 10 -> (7 outbound | 5 inbound); 10 -> 11 -> 0xE22A (a_la_subfase p01:7AC2, guion_fase_10 p01:7BFD)",
+  "real_ending": "after the stage 0 core (guion_fase_0, 0xE1D6 = 1): p10:BBAC final_de_verdad; then p00:5955 shows THE END / EXTEND F5 text (p03:B2AF); F5 + space -> LET'S START -> state 8 -> stage 1 again (second loop); without F5 for 600 frames -> SEE YOU NEXT!!!! -> lives 0 -> other player or title",
+  "cheats_q_bert": "only with Q*bert in another slot (0xF0F5 bit 0): pause typing p03:BD7C; LARS18TH full power (p03:BDD8), NEMESIS skips to the next stage (p03:BE87), METALION invulnerable (p03:BE90)",
+  "verified_by_play": false,
+  "unresolved": [
+   "The return trip and the second loop are read from the code only (docs/OPEN-QUESTIONS.md)",
+   "Japanese-MSX ending paths (BIOS 0x002B) take extra text steps; texts not decoded here"
+  ]
+ },
+ "stages": [
+  {
+   "map_id": 0,
+   "map_id_is_0xE201_value": true,
+   "role": "final fortress (last stage of the return trip, core instead of boss)",
+   "scroll": {
+    "direction": "horizontal, right to left (one new column at the right edge)",
+    "engine": "paso_de_scroll p00:4845: normal pace = one 8-pixel column every 8 frames (bit rotating in 0xE202); 0xE3D0 = 1 scroll stopped, 0xE3D0 = 2 one column every frame (secret-stage run)",
+    "vertical_scroll": "none in the code"
+   },
+   "length_columns_from_stage_manifest": 448,
+   "map_limits_p01_6986": {
+    "first_map_column": "0x0",
+    "last_map_column": "0x1C0",
+    "scroll_end_column_0xE325": "0x1BF",
+    "note": "6 bytes per stage copied to 0xE321-0xE326 at stage start (p01:6908); outside first..last the column painter p00:4889 draws stars; 0xE327 is set when the scroll column reaches 0xE325"
+   },
+   "scroll_end_overrides": [],
+   "checkpoint": {
+    "table": "p01:694A (12 words, one per stage)",
+    "column": "0x110",
+    "semantics": "on a new life (datos_de_la_fase p01:68E4): if the scroll column had reached the checkpoint, play resumes at the checkpoint column; otherwise at column 0x20 (0x60 in the demo). 0x0FFF = no checkpoint (never reached)",
+    "none": false
+   },
+   "stage_byte_0xE305": {
+    "table": "p01:697A",
+    "value": "0xC5",
+    "meaning": "UNRESOLVED (named only 'dato de la fase'; type 0x32 rocks vanish on map below it, p01:7461)"
+   },
+   "end_of_stage": {
+    "routine": "p01:7A4C",
+    "name": "guion_fase_0",
+    "dispatcher": "guion_de_la_fase p01:7A2E, table p01:7A34 indexed by 0xE201, step counter 0xE205",
+    "steps": [
+     "step 0: when the scroll reaches 0xE325 (0xE327 set), start the stage-0 core sequence (0xEA98 = 1, p01:781C final_de_fase_0: 100-hit core at p01:782F, core fires every 18 frames / 12 below 32 hits (p01:78AE), destroyed -> 0x0500 points, screen shakes 0xEA9D frames, dissolve p11:A2A2, ship flies out p01:7666)",
+     "step 1: when the ship has left (0xE348), set 0xE1E6 = 1 and 0xE1D6 = 1 -> game state 10 = the real ending with texts"
+    ]
+   },
+   "music": {
+    "list": "p01:7CFE",
+    "entries": [
+     {
+      "while_scroll_column_below": "0x1B0",
+      "sound": "0x29"
+     },
+     {
+      "while_scroll_column_below": "end",
+      "sound": "0x35"
+     }
+    ]
+   },
+   "spawn_lists": {
+    "turrets_p14_9554": "p14:956C",
+    "enemies_p14_9A67": "p14:9A79",
+    "filler_generators_p14_99C7": "p14:99D9",
+    "character_objects_p12_BA12": "p12:BA2A",
+    "position_waves_p12_BB72": "p12:BB8A",
+    "breakable_blocks_p01_7248": "none",
+    "group_wave_p01_6E1D": {
+     "trigger_column": "0x0",
+     "enemy_type": "0xB",
+     "count": 6,
+     "note": "one every 4 or 6 frames; shooting the whole group leaves a capsule (p02:8988)"
+    }
+   },
+   "triggers": [
+    "core appears at scroll end (0xEA98 = 1); 100 hits (0xEA12, p01:782F); not an interior (0xE34D = 3 gives no prize, p02:9229)"
+   ],
+   "unresolved": [
+    "Stage 0 is only reached on the return trip (0xE20A odd), inbound ordering 6,5,4,3,2,1,0 not verified by play (docs/OPEN-QUESTIONS.md)"
+   ]
+  },
+  {
+   "map_id": 1,
+   "map_id_is_0xE201_value": true,
+   "role": "stage 1 (first planet; also the stage the game starts in, p00:5AD8)",
+   "scroll": {
+    "direction": "horizontal, right to left (one new column at the right edge)",
+    "engine": "paso_de_scroll p00:4845: normal pace = one 8-pixel column every 8 frames (bit rotating in 0xE202); 0xE3D0 = 1 scroll stopped, 0xE3D0 = 2 one column every frame (secret-stage run)",
+    "vertical_scroll": "none in the code"
+   },
+   "length_columns_from_stage_manifest": 320,
+   "map_limits_p01_6986": {
+    "first_map_column": "0x80",
+    "last_map_column": "0x1C0",
+    "scroll_end_column_0xE325": "0x1DF",
+    "note": "6 bytes per stage copied to 0xE321-0xE326 at stage start (p01:6908); outside first..last the column painter p00:4889 draws stars; 0xE327 is set when the scroll column reaches 0xE325"
+   },
+   "scroll_end_overrides": [],
+   "checkpoint": {
+    "table": "p01:694A (12 words, one per stage)",
+    "column": "0x110",
+    "semantics": "on a new life (datos_de_la_fase p01:68E4): if the scroll column had reached the checkpoint, play resumes at the checkpoint column; otherwise at column 0x20 (0x60 in the demo). 0x0FFF = no checkpoint (never reached)",
+    "none": false
+   },
+   "stage_byte_0xE305": {
+    "table": "p01:697A",
+    "value": "0xBD",
+    "meaning": "UNRESOLVED (named only 'dato de la fase'; type 0x32 rocks vanish on map below it, p01:7461)"
+   },
+   "end_of_stage": {
+    "routine": "p01:7A70",
+    "name": "guion_fase_1",
+    "dispatcher": "guion_de_la_fase p01:7A2E, table p01:7A34 indexed by 0xE201, step counter 0xE205",
+    "steps": [
+     "step 0: at scroll end summon boss 1 (sale_el_jefe p01:7A81 with L=1)",
+     "step 1: jefe_vencido p01:7BE3: when 0xE342 (boss beaten/finished) -> a_la_siguiente (state 8). If the ship entered the boss (0xE22B) the next stage is the interior 8, else the next planet"
+    ]
+   },
+   "music": {
+    "list": "p01:7D04",
+    "entries": [
+     {
+      "while_scroll_column_below": "0x80",
+      "sound": "0x2B"
+     },
+     {
+      "while_scroll_column_below": "0x1A0",
+      "sound": "0x2C"
+     },
+     {
+      "while_scroll_column_below": "end",
+      "sound": "0x34"
+     }
+    ]
+   },
+   "spawn_lists": {
+    "turrets_p14_9554": "p14:966D",
+    "enemies_p14_9A67": "p14:9ABB",
+    "filler_generators_p14_99C7": "p14:99E9",
+    "character_objects_p12_BA12": "p12:BA53",
+    "position_waves_p12_BB72": "p12:BBB7",
+    "breakable_blocks_p01_7248": "none",
+    "group_wave_p01_6E1D": {
+     "trigger_column": "0x80",
+     "enemy_type": "0xB",
+     "count": 6,
+     "note": "one every 4 or 6 frames; shooting the whole group leaves a capsule (p02:8988)"
+    }
+   },
+   "triggers": [
+    "after the boss: jefe_vencido_abre p11:A93F opens the mouth for 300 frames; entering (nave_entra_al_jefe p02:92A4 -> 0xE22B = 1) leads to map 8; otherwise the boss explodes and the next planet follows directly (siguiente_fase p01:7C1C)"
+   ],
+   "unresolved": []
+  },
+  {
+   "map_id": 2,
+   "map_id_is_0xE201_value": true,
+   "role": "stage 2",
+   "scroll": {
+    "direction": "horizontal, right to left (one new column at the right edge)",
+    "engine": "paso_de_scroll p00:4845: normal pace = one 8-pixel column every 8 frames (bit rotating in 0xE202); 0xE3D0 = 1 scroll stopped, 0xE3D0 = 2 one column every frame (secret-stage run)",
+    "vertical_scroll": "none in the code"
+   },
+   "length_columns_from_stage_manifest": 352,
+   "map_limits_p01_6986": {
+    "first_map_column": "0x80",
+    "last_map_column": "0x1E0",
+    "scroll_end_column_0xE325": "0x1FF",
+    "note": "6 bytes per stage copied to 0xE321-0xE326 at stage start (p01:6908); outside first..last the column painter p00:4889 draws stars; 0xE327 is set when the scroll column reaches 0xE325"
+   },
+   "scroll_end_overrides": [],
+   "checkpoint": {
+    "table": "p01:694A (12 words, one per stage)",
+    "column": "0x100",
+    "semantics": "on a new life (datos_de_la_fase p01:68E4): if the scroll column had reached the checkpoint, play resumes at the checkpoint column; otherwise at column 0x20 (0x60 in the demo). 0x0FFF = no checkpoint (never reached)",
+    "none": false
+   },
+   "stage_byte_0xE305": {
+    "table": "p01:697A",
+    "value": "0xB3",
+    "meaning": "UNRESOLVED (named only 'dato de la fase'; type 0x32 rocks vanish on map below it, p01:7461)"
+   },
+   "end_of_stage": {
+    "routine": "p01:7AA0",
+    "name": "guion_fase_2",
+    "dispatcher": "guion_de_la_fase p01:7A2E, table p01:7A34 indexed by 0xE201, step counter 0xE205",
+    "steps": [
+     "step 0: at scroll end summon boss 4",
+     "step 1: jefe_vencido -> next"
+    ]
+   },
+   "music": {
+    "list": "p01:7D0D",
+    "entries": [
+     {
+      "while_scroll_column_below": "0x84",
+      "sound": "0x2B"
+     },
+     {
+      "while_scroll_column_below": "0x1DE",
+      "sound": "0x2D"
+     },
+     {
+      "while_scroll_column_below": "end",
+      "sound": "0x34"
+     }
+    ]
+   },
+   "spawn_lists": {
+    "turrets_p14_9554": "p14:969A",
+    "enemies_p14_9A67": "p14:9AF3",
+    "filler_generators_p14_99C7": "p14:99F9",
+    "character_objects_p12_BA12": "p12:BA61",
+    "position_waves_p12_BB72": "p12:BBB7",
+    "breakable_blocks_p01_7248": "none",
+    "group_wave_p01_6E1D": {
+     "trigger_column": "0x80",
+     "enemy_type": "0xB",
+     "count": 6,
+     "note": "one every 4 or 6 frames; shooting the whole group leaves a capsule (p02:8988)"
+    }
+   },
+   "triggers": [
+    "after the boss: jefe_vencido_abre p11:A93F opens the mouth for 300 frames; entering (nave_entra_al_jefe p02:92A4 -> 0xE22B = 1) leads to map 8; otherwise the boss explodes and the next planet follows directly (siguiente_fase p01:7C1C)"
+   ],
+   "unresolved": []
+  },
+  {
+   "map_id": 3,
+   "map_id_is_0xE201_value": true,
+   "role": "stage 3 (hides the secret entrance to map 9)",
+   "scroll": {
+    "direction": "horizontal, right to left (one new column at the right edge)",
+    "engine": "paso_de_scroll p00:4845: normal pace = one 8-pixel column every 8 frames (bit rotating in 0xE202); 0xE3D0 = 1 scroll stopped, 0xE3D0 = 2 one column every frame (secret-stage run)",
+    "vertical_scroll": "none in the code"
+   },
+   "length_columns_from_stage_manifest": 384,
+   "map_limits_p01_6986": {
+    "first_map_column": "0x60",
+    "last_map_column": "0x1E0",
+    "scroll_end_column_0xE325": "0x1FF",
+    "note": "6 bytes per stage copied to 0xE321-0xE326 at stage start (p01:6908); outside first..last the column painter p00:4889 draws stars; 0xE327 is set when the scroll column reaches 0xE325"
+   },
+   "scroll_end_overrides": [
+    "0x1FF when the secret entrance is touched (p03:BFDB)"
+   ],
+   "checkpoint": {
+    "table": "p01:694A (12 words, one per stage)",
+    "column": "0x100",
+    "semantics": "on a new life (datos_de_la_fase p01:68E4): if the scroll column had reached the checkpoint, play resumes at the checkpoint column; otherwise at column 0x20 (0x60 in the demo). 0x0FFF = no checkpoint (never reached)",
+    "none": false
+   },
+   "stage_byte_0xE305": {
+    "table": "p01:697A",
+    "value": "0xA1",
+    "meaning": "UNRESOLVED (named only 'dato de la fase'; type 0x32 rocks vanish on map below it, p01:7461)"
+   },
+   "end_of_stage": {
+    "routine": "p01:7AB4",
+    "name": "guion_fase_3",
+    "dispatcher": "guion_de_la_fase p01:7A2E, table p01:7A34 indexed by 0xE201, step counter 0xE205",
+    "steps": [
+     "if 0xE3D0 (secret entrance touched, p03:BF3A): at scroll end a_la_subfase p01:7AC2 with B=4,C=9: 0xE22A = 4 (2 when 0xE20A odd, i.e. inbound) and jump to map 9",
+     "else step 0: at scroll end summon boss 4",
+     "else step 1: jefe_vencido -> next"
+    ]
+   },
+   "music": {
+    "list": "p01:7D16",
+    "entries": [
+     {
+      "while_scroll_column_below": "0x60",
+      "sound": "0x2B"
+     },
+     {
+      "while_scroll_column_below": "0x1FA",
+      "sound": "0x2E"
+     },
+     {
+      "while_scroll_column_below": "end",
+      "sound": "0x34"
+     }
+    ]
+   },
+   "spawn_lists": {
+    "turrets_p14_9554": "p14:969C",
+    "enemies_p14_9A67": "p14:9AF5",
+    "filler_generators_p14_99C7": "p14:9A09",
+    "character_objects_p12_BA12": "p12:BAC6",
+    "position_waves_p12_BB72": "p12:BB93",
+    "breakable_blocks_p01_7248": "none",
+    "group_wave_p01_6E1D": {
+     "trigger_column": "0x60",
+     "enemy_type": "0x31",
+     "count": 6,
+     "note": "one every 4 or 6 frames; shooting the whole group leaves a capsule (p02:8988)"
+    }
+   },
+   "triggers": [
+    {
+     "secret_entrance": "fase_secreta p03:BF3A / aparece_la_entrada p03:BF62: appears when the scroll column == 0x174, at Y 0x90, X 0xF0; touching it (nave_en_la_entrada p03:BFB2, ship within +-8 Y / 16 X) sets scroll end 0xE325 = 0x1FF, stops the scroll 64 frames (0xE3D0 = 1), destroys every enemy (p02:8FA2), silence (sound 0x43); then 0xE3D0 = 2 (one column per frame) and sound 0x3C; at the scroll end guion_fase_3 jumps to map 9 with 0xE22A = 4 (2 inbound)"
+    },
+    "after the boss: jefe_vencido_abre p11:A93F opens the mouth for 300 frames; entering (nave_entra_al_jefe p02:92A4 -> 0xE22B = 1) leads to map 8; otherwise the boss explodes and the next planet follows directly (siguiente_fase p01:7C1C)"
+   ],
+   "unresolved": []
+  },
+  {
+   "map_id": 4,
+   "map_id_is_0xE201_value": true,
+   "role": "stage 4",
+   "scroll": {
+    "direction": "horizontal, right to left (one new column at the right edge)",
+    "engine": "paso_de_scroll p00:4845: normal pace = one 8-pixel column every 8 frames (bit rotating in 0xE202); 0xE3D0 = 1 scroll stopped, 0xE3D0 = 2 one column every frame (secret-stage run)",
+    "vertical_scroll": "none in the code"
+   },
+   "length_columns_from_stage_manifest": 384,
+   "map_limits_p01_6986": {
+    "first_map_column": "0x80",
+    "last_map_column": "0x200",
+    "scroll_end_column_0xE325": "0x1FF",
+    "note": "6 bytes per stage copied to 0xE321-0xE326 at stage start (p01:6908); outside first..last the column painter p00:4889 draws stars; 0xE327 is set when the scroll column reaches 0xE325"
+   },
+   "scroll_end_overrides": [
+    "after the 600-frame wait the scroll end is set to 0x220 (p01:7B0D)"
+   ],
+   "checkpoint": {
+    "table": "p01:694A (12 words, one per stage)",
+    "column": "0x100",
+    "semantics": "on a new life (datos_de_la_fase p01:68E4): if the scroll column had reached the checkpoint, play resumes at the checkpoint column; otherwise at column 0x20 (0x60 in the demo). 0x0FFF = no checkpoint (never reached)",
+    "none": false
+   },
+   "stage_byte_0xE305": {
+    "table": "p01:697A",
+    "value": "0xAA",
+    "meaning": "UNRESOLVED (named only 'dato de la fase'; type 0x32 rocks vanish on map below it, p01:7461)"
+   },
+   "end_of_stage": {
+    "routine": "p01:7AE6",
+    "name": "guion_fase_4",
+    "dispatcher": "guion_de_la_fase p01:7A2E, table p01:7A34 indexed by 0xE201, step counter 0xE205",
+    "steps": [
+     "step 0: at scroll end start a 600-frame wait (0xE3A8 = 0x258)",
+     "step 1: count the wait; when done extend the scroll end to column 0x220 (0xE325)",
+     "step 2: at the new scroll end summon boss 5 (10 pieces)",
+     "step 3: when boss 5 is beaten (0xE342) summon boss 2",
+     "step 4: jefe_vencido (boss 2) -> next"
+    ]
+   },
+   "music": {
+    "list": "p01:7D28",
+    "entries": [
+     {
+      "while_scroll_column_below": "0x85",
+      "sound": "0x2B"
+     },
+     {
+      "while_scroll_column_below": "0x1FA",
+      "sound": "0x31"
+     },
+     {
+      "while_scroll_column_below": "end",
+      "sound": "0x34"
+     }
+    ]
+   },
+   "spawn_lists": {
+    "turrets_p14_9554": "p14:96DD",
+    "enemies_p14_9A67": "p14:9B45",
+    "filler_generators_p14_99C7": "p14:9A29",
+    "character_objects_p12_BA12": "p12:BAEE",
+    "position_waves_p12_BB72": "p12:BB9C",
+    "breakable_blocks_p01_7248": "none",
+    "group_wave_p01_6E1D": {
+     "trigger_column": "0x60",
+     "enemy_type": "0x31",
+     "count": 6,
+     "note": "one every 4 or 6 frames; shooting the whole group leaves a capsule (p02:8988)"
+    }
+   },
+   "triggers": [
+    "after the boss: jefe_vencido_abre p11:A93F opens the mouth for 300 frames; entering (nave_entra_al_jefe p02:92A4 -> 0xE22B = 1) leads to map 8; otherwise the boss explodes and the next planet follows directly (siguiente_fase p01:7C1C)"
+   ],
+   "unresolved": []
+  },
+  {
+   "map_id": 5,
+   "map_id_is_0xE201_value": true,
+   "role": "stage 5 (hatch corridor event before boss 2)",
+   "scroll": {
+    "direction": "horizontal, right to left (one new column at the right edge)",
+    "engine": "paso_de_scroll p00:4845: normal pace = one 8-pixel column every 8 frames (bit rotating in 0xE202); 0xE3D0 = 1 scroll stopped, 0xE3D0 = 2 one column every frame (secret-stage run)",
+    "vertical_scroll": "none in the code"
+   },
+   "length_columns_from_stage_manifest": 288,
+   "map_limits_p01_6986": {
+    "first_map_column": "0x80",
+    "last_map_column": "0x1A0",
+    "scroll_end_column_0xE325": "0x19F",
+    "note": "6 bytes per stage copied to 0xE321-0xE326 at stage start (p01:6908); outside first..last the column painter p00:4889 draws stars; 0xE327 is set when the scroll column reaches 0xE325"
+   },
+   "scroll_end_overrides": [
+    "+32 columns after the hatch event (p01:7B50)"
+   ],
+   "checkpoint": {
+    "table": "p01:694A (12 words, one per stage)",
+    "column": "0xF4",
+    "semantics": "on a new life (datos_de_la_fase p01:68E4): if the scroll column had reached the checkpoint, play resumes at the checkpoint column; otherwise at column 0x20 (0x60 in the demo). 0x0FFF = no checkpoint (never reached)",
+    "none": false
+   },
+   "stage_byte_0xE305": {
+    "table": "p01:697A",
+    "value": "0xA0",
+    "meaning": "UNRESOLVED (named only 'dato de la fase'; type 0x32 rocks vanish on map below it, p01:7461)"
+   },
+   "end_of_stage": {
+    "routine": "p01:7B2D",
+    "name": "guion_fase_5",
+    "dispatcher": "guion_de_la_fase p01:7A2E, table p01:7A34 indexed by 0xE201, step counter 0xE205",
+    "steps": [
+     "step 0: at scroll end 0xE348 = 0 and run suceso_de_fase_5 p03:A017: 600 frames (900 when 0xE20A odd) of class-7 hatches that open and release type 0x25 enemies",
+     "step 1: when the event ends (0xE348) extend the scroll end by 32 columns (alarga_el_scroll p01:7BDB)",
+     "step 2: at the new scroll end summon boss 2",
+     "step 3: jefe_vencido -> next"
+    ]
+   },
+   "music": {
+    "list": "p01:7D1F",
+    "entries": [
+     {
+      "while_scroll_column_below": "0x85",
+      "sound": "0x2B"
+     },
+     {
+      "while_scroll_column_below": "0x19A",
+      "sound": "0x30"
+     },
+     {
+      "while_scroll_column_below": "end",
+      "sound": "0x34"
+     }
+    ]
+   },
+   "spawn_lists": {
+    "turrets_p14_9554": "p14:96DB",
+    "enemies_p14_9A67": "p14:9B45",
+    "filler_generators_p14_99C7": "p14:9A19",
+    "character_objects_p12_BA12": "p12:BAD4",
+    "position_waves_p12_BB72": "p12:BBB7",
+    "breakable_blocks_p01_7248": "none",
+    "group_wave_p01_6E1D": {
+     "trigger_column": "0x80",
+     "enemy_type": "0x31",
+     "count": 6,
+     "note": "one every 4 or 6 frames; shooting the whole group leaves a capsule (p02:8988)"
+    }
+   },
+   "triggers": [
+    "after the boss: jefe_vencido_abre p11:A93F opens the mouth for 300 frames; entering (nave_entra_al_jefe p02:92A4 -> 0xE22B = 1) leads to map 8; otherwise the boss explodes and the next planet follows directly (siguiente_fase p01:7C1C)"
+   ],
+   "unresolved": []
+  },
+  {
+   "map_id": 6,
+   "map_id_is_0xE201_value": true,
+   "role": "stage 6 (no boss: two rock-throwing pieces; hides the secret entrance to map 10)",
+   "scroll": {
+    "direction": "horizontal, right to left (one new column at the right edge)",
+    "engine": "paso_de_scroll p00:4845: normal pace = one 8-pixel column every 8 frames (bit rotating in 0xE202); 0xE3D0 = 1 scroll stopped, 0xE3D0 = 2 one column every frame (secret-stage run)",
+    "vertical_scroll": "none in the code"
+   },
+   "length_columns_from_stage_manifest": 352,
+   "map_limits_p01_6986": {
+    "first_map_column": "0x60",
+    "last_map_column": "0x1C0",
+    "scroll_end_column_0xE325": "0x1BF",
+    "note": "6 bytes per stage copied to 0xE321-0xE326 at stage start (p01:6908); outside first..last the column painter p00:4889 draws stars; 0xE327 is set when the scroll column reaches 0xE325"
+   },
+   "scroll_end_overrides": [
+    "0x1DF when the secret entrance is touched (p03:BFD6)"
+   ],
+   "checkpoint": {
+    "table": "p01:694A (12 words, one per stage)",
+    "column": "0xE8",
+    "semantics": "on a new life (datos_de_la_fase p01:68E4): if the scroll column had reached the checkpoint, play resumes at the checkpoint column; otherwise at column 0x20 (0x60 in the demo). 0x0FFF = no checkpoint (never reached)",
+    "none": false
+   },
+   "stage_byte_0xE305": {
+    "table": "p01:697A",
+    "value": "0x90",
+    "meaning": "UNRESOLVED (named only 'dato de la fase'; type 0x32 rocks vanish on map below it, p01:7461)"
+   },
+   "end_of_stage": {
+    "routine": "p01:7B67",
+    "name": "guion_fase_6",
+    "dispatcher": "guion_de_la_fase p01:7A2E, table p01:7A34 indexed by 0xE201, step counter 0xE205",
+    "steps": [
+     "if 0xE3D0 (secret entrance touched): at scroll end a_la_subfase with B=7,C=10: 0xE22A = 7 (5 when inbound) and jump to map 10",
+     "else step 0: at scroll end start event 0xE34B = 1 (suceso_e34b p01:72D6, 4 steps p01:72DF: two 8-byte pieces at 0xEA70/0xEA78 animate and every 2 frames throw a type 0x32 rock with random speed (p01:73B8); when both are destroyed 0x0100 points, wait 0xE349 frames, dissolve p11:A2A2, then 0xE348 = 1)",
+     "else step 1: when the event is over (0xE348) -> a_la_siguiente: state 8 -> next stage WITHOUT boss or interior (0xE22B never set)"
+    ]
+   },
+   "music": {
+    "list": "p01:7D31",
+    "entries": [
+     {
+      "while_scroll_column_below": "0x60",
+      "sound": "0x2B"
+     },
+     {
+      "while_scroll_column_below": "0x1BA",
+      "sound": "0x32"
+     },
+     {
+      "while_scroll_column_below": "end",
+      "sound": "0x34"
+     }
+    ]
+   },
+   "spawn_lists": {
+    "turrets_p14_9554": "p14:976C",
+    "enemies_p14_9A67": "p14:9B45",
+    "filler_generators_p14_99C7": "p14:9A39",
+    "character_objects_p12_BA12": "pointer not transcribed (table p12:BA12 has 12 entries)",
+    "position_waves_p12_BB72": "pointer not transcribed (table p12:BB72 has 12 entries)",
+    "breakable_blocks_p01_7248": "none",
+    "group_wave_p01_6E1D": {
+     "trigger_column": "0x60",
+     "enemy_type": "0xB",
+     "count": 6,
+     "note": "one every 4 or 6 frames; shooting the whole group leaves a capsule (p02:8988)"
+    }
+   },
+   "triggers": [
+    {
+     "secret_entrance": "same mechanism as stage 3: column 0x164, Y 0x88; scroll end becomes 0x1DF; at scroll end jump to map 10 with 0xE22A = 7 (5 inbound)"
+    }
+   ],
+   "unresolved": []
+  },
+  {
+   "map_id": 7,
+   "map_id_is_0xE201_value": true,
+   "role": "stage 7 (outbound end: boss 3 then the halfway ending)",
+   "scroll": {
+    "direction": "horizontal, right to left (one new column at the right edge)",
+    "engine": "paso_de_scroll p00:4845: normal pace = one 8-pixel column every 8 frames (bit rotating in 0xE202); 0xE3D0 = 1 scroll stopped, 0xE3D0 = 2 one column every frame (secret-stage run)",
+    "vertical_scroll": "none in the code"
+   },
+   "length_columns_from_stage_manifest": 640,
+   "map_limits_p01_6986": {
+    "first_map_column": "0x60",
+    "last_map_column": "0x2E0",
+    "scroll_end_column_0xE325": "0x2DF",
+    "note": "6 bytes per stage copied to 0xE321-0xE326 at stage start (p01:6908); outside first..last the column painter p00:4889 draws stars; 0xE327 is set when the scroll column reaches 0xE325"
+   },
+   "scroll_end_overrides": [
+    "+32 columns after a class 6/15 object is destroyed (p01:7BBB)"
+   ],
+   "checkpoint": {
+    "table": "p01:694A (12 words, one per stage)",
+    "column": "0x1DF",
+    "semantics": "on a new life (datos_de_la_fase p01:68E4): if the scroll column had reached the checkpoint, play resumes at the checkpoint column; otherwise at column 0x20 (0x60 in the demo). 0x0FFF = no checkpoint (never reached)",
+    "none": false
+   },
+   "stage_byte_0xE305": {
+    "table": "p01:697A",
+    "value": "0xC7",
+    "meaning": "UNRESOLVED (named only 'dato de la fase'; type 0x32 rocks vanish on map below it, p01:7461)"
+   },
+   "end_of_stage": {
+    "routine": "p01:7B9A",
+    "name": "guion_fase_7",
+    "dispatcher": "guion_de_la_fase p01:7A2E, table p01:7A34 indexed by 0xE201, step counter 0xE205",
+    "steps": [
+     "step 0: at scroll end set 0xE3BE = 1 (stage-7 flag: generador_2 fillers stop, enemies never leave by scroll, see p01:6333/p01:6D63)",
+     "step 1: wait for 0xE38D (set by p02:8B3D when a class 6 or class 15 character object is destroyed); then 0xE3BE = 0 and extend the scroll end by 32 columns",
+     "step 2: at the new scroll end summon boss 3 (55 hits); in stage 7 the beaten boss opens for only 1 frame and the ship cannot enter (p11:A94F, p11:A95B), so it always explodes",
+     "step 3: final_del_juego p01:7BEA: with the boss beaten and the ship alive, 0xE1E6 = 1 and 0xE1D6 = 0 -> game state 10 = the halfway ending; afterwards state 8 -> siguiente_fase -> fase_que_sigue_a (7 -> 6, 0xE20A becomes odd = return trip)"
+    ]
+   },
+   "music": {
+    "list": "p01:7D3A",
+    "entries": [
+     {
+      "while_scroll_column_below": "0x60",
+      "sound": "0x2B"
+     },
+     {
+      "while_scroll_column_below": "0x2DA",
+      "sound": "0x33"
+     },
+     {
+      "while_scroll_column_below": "end",
+      "sound": "0x34"
+     }
+    ]
+   },
+   "spawn_lists": {
+    "turrets_p14_9554": "p14:97D1",
+    "enemies_p14_9A67": "p14:9B47",
+    "filler_generators_p14_99C7": "p14:9A49",
+    "character_objects_p12_BA12": "pointer not transcribed (table p12:BA12 has 12 entries)",
+    "position_waves_p12_BB72": "pointer not transcribed (table p12:BB72 has 12 entries)",
+    "breakable_blocks_p01_7248": "p15:A0B7",
+    "group_wave_p01_6E1D": {
+     "trigger_column": "0x48",
+     "enemy_type": "0xB",
+     "count": 6,
+     "note": "one every 4 or 6 frames; shooting the whole group leaves a capsule (p02:8988)"
+    }
+   },
+   "triggers": [],
+   "unresolved": []
+  },
+  {
+   "map_id": 8,
+   "map_id_is_0xE201_value": true,
+   "role": "boss interior (shared by every boss; weapon capture)",
+   "scroll": {
+    "direction": "horizontal, right to left (one new column at the right edge)",
+    "engine": "paso_de_scroll p00:4845: normal pace = one 8-pixel column every 8 frames (bit rotating in 0xE202); 0xE3D0 = 1 scroll stopped, 0xE3D0 = 2 one column every frame (secret-stage run)",
+    "vertical_scroll": "none in the code"
+   },
+   "length_columns_from_stage_manifest": 160,
+   "map_limits_p01_6986": {
+    "first_map_column": "0x0",
+    "last_map_column": "0xC0",
+    "scroll_end_column_0xE325": "0x9F",
+    "note": "6 bytes per stage copied to 0xE321-0xE326 at stage start (p01:6908); outside first..last the column painter p00:4889 draws stars; 0xE327 is set when the scroll column reaches 0xE325"
+   },
+   "scroll_end_overrides": [],
+   "checkpoint": {
+    "table": "p01:694A (12 words, one per stage)",
+    "column": null,
+    "semantics": "on a new life (datos_de_la_fase p01:68E4): if the scroll column had reached the checkpoint, play resumes at the checkpoint column; otherwise at column 0x20 (0x60 in the demo). 0x0FFF = no checkpoint (never reached)",
+    "none": true
+   },
+   "stage_byte_0xE305": {
+    "table": "p01:697A",
+    "value": "0x9D",
+    "meaning": "UNRESOLVED (named only 'dato de la fase'; type 0x32 rocks vanish on map below it, p01:7461)"
+   },
+   "end_of_stage": {
+    "routine": "p01:7BCF",
+    "name": "guion_fase_8",
+    "dispatcher": "guion_de_la_fase p01:7A2E, table p01:7A34 indexed by 0xE201, step counter 0xE205",
+    "steps": [
+     "single step: when the ship has flown out of the interior (0xE3C1 set at the end of the 13-step capture sequence p01:74A2) clear 0xE3C0/0xE3C1 and a_la_siguiente (state 8); siguiente_fase sees stage 8 -> 0xE1DB = 2, 0xE206 (highest stage) + 1, level + 0x80, jump to 0xE22A"
+    ]
+   },
+   "music": {
+    "list": "p01:7D43",
+    "entries": [
+     {
+      "while_scroll_column_below": "0x90",
+      "sound": "0x35"
+     },
+     {
+      "while_scroll_column_below": "end",
+      "sound": "0x43"
+     }
+    ]
+   },
+   "spawn_lists": {
+    "turrets_p14_9554": "p14:98C3",
+    "enemies_p14_9A67": "p14:9B99",
+    "filler_generators_p14_99C7": "p14:9A61",
+    "character_objects_p12_BA12": "pointer not transcribed (table p12:BA12 has 12 entries)",
+    "position_waves_p12_BB72": "pointer not transcribed (table p12:BB72 has 12 entries)",
+    "breakable_blocks_p01_7248": "none",
+    "group_wave_p01_6E1D": "none (stages 0-7 only)"
+   },
+   "triggers": [
+    "aparece_el_nucleo p02:8570: at scroll column 0x7F the interior core (record 0xEA90) appears at Y 0x40, X 0xE0 with 24 hits; destroying it -> jefe_vencido_premio p02:9218 computes the prize from the boss fight frames 0xE346 (< 300 frames: 2 weapons, < 900: 1, else none; with 6 captured at most 1, with 7 none) and sets 0xE22C = 1; when the ship passes the core X the 13-step capture sequence final_de_fase_8 p01:74A2 starts (table p01:74AA: ship to centre, YOU CAPTURED (letters p11:B77F), prize labels p01:7690 / NOTHING p01:7731, meter box blink, dissolve p11:A2A2, ship accelerates out p01:7666)"
+   ],
+   "unresolved": [
+    "The interior map is one shared map (map 8) for every boss; whether anything else differs per boss was not found in the code"
+   ]
+  },
+  {
+   "map_id": 9,
+   "map_id_is_0xE201_value": true,
+   "role": "secret stage reached from map 3",
+   "scroll": {
+    "direction": "horizontal, right to left (one new column at the right edge)",
+    "engine": "paso_de_scroll p00:4845: normal pace = one 8-pixel column every 8 frames (bit rotating in 0xE202); 0xE3D0 = 1 scroll stopped, 0xE3D0 = 2 one column every frame (secret-stage run)",
+    "vertical_scroll": "none in the code"
+   },
+   "length_columns_from_stage_manifest": 288,
+   "map_limits_p01_6986": {
+    "first_map_column": "0x20",
+    "last_map_column": "0x140",
+    "scroll_end_column_0xE325": "0x15F",
+    "note": "6 bytes per stage copied to 0xE321-0xE326 at stage start (p01:6908); outside first..last the column painter p00:4889 draws stars; 0xE327 is set when the scroll column reaches 0xE325"
+   },
+   "scroll_end_overrides": [],
+   "checkpoint": {
+    "table": "p01:694A (12 words, one per stage)",
+    "column": null,
+    "semantics": "on a new life (datos_de_la_fase p01:68E4): if the scroll column had reached the checkpoint, play resumes at the checkpoint column; otherwise at column 0x20 (0x60 in the demo). 0x0FFF = no checkpoint (never reached)",
+    "none": true
+   },
+   "stage_byte_0xE305": {
+    "table": "p01:697A",
+    "value": "0xA1",
+    "meaning": "UNRESOLVED (named only 'dato de la fase'; type 0x32 rocks vanish on map below it, p01:7461)"
+   },
+   "end_of_stage": {
+    "routine": "p01:7C0C",
+    "name": "guion_fase_9_11",
+    "dispatcher": "guion_de_la_fase p01:7A2E, table p01:7A34 indexed by 0xE201, step counter 0xE205",
+    "steps": [
+     "single step: at scroll end a_la_siguiente (state 8); siguiente_fase: stage > 8 -> 0xE206 + 1, level + 0x80, jump to 0xE22A (saved by a_la_subfase)"
+    ]
+   },
+   "music": {
+    "list": "p01:7D49",
+    "entries": [
+     {
+      "while_scroll_column_below": "0x14F",
+      "sound": "0x36"
+     },
+     {
+      "while_scroll_column_below": "end",
+      "sound": "0x2A"
+     }
+    ]
+   },
+   "spawn_lists": {
+    "turrets_p14_9554": "p14:991C",
+    "enemies_p14_9A67": "none (table has 9 entries, stages 0-8)",
+    "filler_generators_p14_99C7": "none (stages 0-8 only)",
+    "character_objects_p12_BA12": "pointer not transcribed (table p12:BA12 has 12 entries)",
+    "position_waves_p12_BB72": "pointer not transcribed (table p12:BB72 has 12 entries)",
+    "breakable_blocks_p01_7248": "p15:A0DB",
+    "group_wave_p01_6E1D": "none (stages 0-7 only)"
+   },
+   "triggers": [
+    "made of breakable blocks (character 0xA0, p02:8481) whose list carries capsules (lista_de_bloques p01:7248)"
+   ],
+   "unresolved": []
+  },
+  {
+   "map_id": 10,
+   "map_id_is_0xE201_value": true,
+   "role": "secret stage reached from map 6 (hides the entrance to map 11)",
+   "scroll": {
+    "direction": "horizontal, right to left (one new column at the right edge)",
+    "engine": "paso_de_scroll p00:4845: normal pace = one 8-pixel column every 8 frames (bit rotating in 0xE202); 0xE3D0 = 1 scroll stopped, 0xE3D0 = 2 one column every frame (secret-stage run)",
+    "vertical_scroll": "none in the code"
+   },
+   "length_columns_from_stage_manifest": 288,
+   "map_limits_p01_6986": {
+    "first_map_column": "0x20",
+    "last_map_column": "0x140",
+    "scroll_end_column_0xE325": "0x15F",
+    "note": "6 bytes per stage copied to 0xE321-0xE326 at stage start (p01:6908); outside first..last the column painter p00:4889 draws stars; 0xE327 is set when the scroll column reaches 0xE325"
+   },
+   "scroll_end_overrides": [
+    "0x17F when the secret entrance is touched (p03:BFD1)"
+   ],
+   "checkpoint": {
+    "table": "p01:694A (12 words, one per stage)",
+    "column": null,
+    "semantics": "on a new life (datos_de_la_fase p01:68E4): if the scroll column had reached the checkpoint, play resumes at the checkpoint column; otherwise at column 0x20 (0x60 in the demo). 0x0FFF = no checkpoint (never reached)",
+    "none": true
+   },
+   "stage_byte_0xE305": {
+    "table": "p01:697A",
+    "value": "0xA1",
+    "meaning": "UNRESOLVED (named only 'dato de la fase'; type 0x32 rocks vanish on map below it, p01:7461)"
+   },
+   "end_of_stage": {
+    "routine": "p01:7BFD",
+    "name": "guion_fase_10",
+    "dispatcher": "guion_de_la_fase p01:7A2E, table p01:7A34 indexed by 0xE201, step counter 0xE205",
+    "steps": [
+     "if 0xE3D0 (secret entrance at column 0xDF touched): at scroll end jump straight to map 11 (0xE22A unchanged)",
+     "else: at scroll end a_la_siguiente -> stage 0xE22A"
+    ]
+   },
+   "music": {
+    "list": "p01:7D49",
+    "entries": [
+     {
+      "while_scroll_column_below": "0x14F",
+      "sound": "0x36"
+     },
+     {
+      "while_scroll_column_below": "end",
+      "sound": "0x2A"
+     }
+    ]
+   },
+   "spawn_lists": {
+    "turrets_p14_9554": "p14:9951",
+    "enemies_p14_9A67": "none (table has 9 entries, stages 0-8)",
+    "filler_generators_p14_99C7": "none (stages 0-8 only)",
+    "character_objects_p12_BA12": "pointer not transcribed (table p12:BA12 has 12 entries)",
+    "position_waves_p12_BB72": "pointer not transcribed (table p12:BB72 has 12 entries)",
+    "breakable_blocks_p01_7248": "p15:A14D",
+    "group_wave_p01_6E1D": "none (stages 0-7 only)"
+   },
+   "triggers": [
+    {
+     "secret_entrance": "column 0xDF, Y 0x30; scroll end becomes 0x17F; at scroll end jump to map 11"
+    },
+    "made of breakable blocks (character 0xA0, p02:8481) whose list carries capsules (lista_de_bloques p01:7248)"
+   ],
+   "unresolved": []
+  },
+  {
+   "map_id": 11,
+   "map_id_is_0xE201_value": true,
+   "role": "secret stage reached from map 10",
+   "scroll": {
+    "direction": "horizontal, right to left (one new column at the right edge)",
+    "engine": "paso_de_scroll p00:4845: normal pace = one 8-pixel column every 8 frames (bit rotating in 0xE202); 0xE3D0 = 1 scroll stopped, 0xE3D0 = 2 one column every frame (secret-stage run)",
+    "vertical_scroll": "none in the code"
+   },
+   "length_columns_from_stage_manifest": 288,
+   "map_limits_p01_6986": {
+    "first_map_column": "0x20",
+    "last_map_column": "0x140",
+    "scroll_end_column_0xE325": "0x15F",
+    "note": "6 bytes per stage copied to 0xE321-0xE326 at stage start (p01:6908); outside first..last the column painter p00:4889 draws stars; 0xE327 is set when the scroll column reaches 0xE325"
+   },
+   "scroll_end_overrides": [],
+   "checkpoint": {
+    "table": "p01:694A (12 words, one per stage)",
+    "column": null,
+    "semantics": "on a new life (datos_de_la_fase p01:68E4): if the scroll column had reached the checkpoint, play resumes at the checkpoint column; otherwise at column 0x20 (0x60 in the demo). 0x0FFF = no checkpoint (never reached)",
+    "none": true
+   },
+   "stage_byte_0xE305": {
+    "table": "p01:697A",
+    "value": "0xA1",
+    "meaning": "UNRESOLVED (named only 'dato de la fase'; type 0x32 rocks vanish on map below it, p01:7461)"
+   },
+   "end_of_stage": {
+    "routine": "p01:7C0C",
+    "name": "guion_fase_9_11",
+    "dispatcher": "guion_de_la_fase p01:7A2E, table p01:7A34 indexed by 0xE201, step counter 0xE205",
+    "steps": [
+     "single step: at scroll end a_la_siguiente -> stage 0xE22A"
+    ]
+   },
+   "music": {
+    "list": "p01:7D49",
+    "entries": [
+     {
+      "while_scroll_column_below": "0x14F",
+      "sound": "0x36"
+     },
+     {
+      "while_scroll_column_below": "end",
+      "sound": "0x2A"
+     }
+    ]
+   },
+   "spawn_lists": {
+    "turrets_p14_9554": "p14:9980",
+    "enemies_p14_9A67": "none (table has 9 entries, stages 0-8)",
+    "filler_generators_p14_99C7": "none (stages 0-8 only)",
+    "character_objects_p12_BA12": "pointer not transcribed (table p12:BA12 has 12 entries)",
+    "position_waves_p12_BB72": "pointer not transcribed (table p12:BB72 has 12 entries)",
+    "breakable_blocks_p01_7248": "p15:A1E0",
+    "group_wave_p01_6E1D": "none (stages 0-7 only)"
+   },
+   "triggers": [
+    "made of breakable blocks (character 0xA0, p02:8481) whose list carries capsules (lista_de_bloques p01:7248)"
+   ],
+   "unresolved": []
+  }
+ ],
+ "bosses": [
+  {
+   "id": 1,
+   "name": "boss 1 (jefe_1)",
+   "code": "p11:A8B5 (step table p11:A8BF: sale A8CD, entra A90A, dispara A928, pelea A931, espera A95B, estalla A98E, se deshace A99F)",
+   "record": "p11:A900 (10 bytes copied to 0xEA00 by ficha_del_jefe p11:A8E1)",
+   "hp": 17,
+   "stages": [
+    1
+   ],
+   "behaviour": "descends to Y 0x40, then alternates standing still / moving (random direction, 3 of 4 towards the ship, p11:AA3B) / firing 6 type-0x23 bullets in a fan from the points of p11:ABBA (sound 0x16); core 32 below and 16 right of its position; when inbound (0xE20A) it fires first",
+   "dispatcher": "jefe_por_tipo p01:67AC, table p01:67AF indexed by 0xE340-1; boss frame counter 0xE346"
+  },
+  {
+   "id": 2,
+   "name": "boss 2 (jefe_2)",
+   "code": "p11:AC1D (table p11:AC27)",
+   "record": "p11:AC49",
+   "hp": 34,
+   "stages": [
+    4,
+    5
+   ],
+   "behaviour": "descends to Y 0x40, releases two type-0x38 four-sprite enemies (p11:AD0F), then moves left to X 8 / right to X 0x80 and charges (embiste) every IX+18 frames; core 40 below, 40 right",
+   "notes": "docs/FINDINGS.md: the intended lower limit 0x68 for boss 2 is never applied (p11:AB41/AB44)"
+  },
+  {
+   "id": 3,
+   "name": "boss 3 (jefe_3)",
+   "code": "p11:AE29 (table p11:AE33)",
+   "record": "p11:AE58",
+   "hp": 55,
+   "stages": [
+    7
+   ],
+   "behaviour": "descends to Y 0x20; every 40 frames throws a growing tongue (type 0x24, grows 8 px/frame to the left, p11:AF36) from its mouth (sound 0x18); moves up/down towards the ship's height, turning at Y < 0x60 / >= 0xD8; core 56 below, 24 right. In stage 7 the ship cannot enter it (p11:A95B)"
+  },
+  {
+   "id": 4,
+   "name": "boss 4 (jefe_4)",
+   "code": "p11:AD29 (table p11:AD33)",
+   "record": "p11:AD53",
+   "hp": 26,
+   "stages": [
+    2,
+    3
+   ],
+   "behaviour": "descends to Y 0x18; moves and, in its firing pause, releases 4 beams (types 0x39/0x3A, rows of characters growing left, p11:AE1F, sound 0x19); core 56 below, 24 right"
+  },
+  {
+   "id": 5,
+   "name": "boss 5 (jefe_5, ten pieces)",
+   "code": "p11:AF72 (table p11:AF78: empieza AF7E, pelea AF94, acaba AFAE)",
+   "record": "p11:AFFE (per piece)",
+   "hp": "23 hits per piece, 10 pieces (0xE3D6), two at a time in 0xEA00 / 0xEA20",
+   "stages": [
+    4
+   ],
+   "behaviour": "every 144 frames a new piece enters top (Y 0x20) or bottom (Y 0x68); each advances 8 px left every IX+02 frames, fires 4 type-0x23 bullets every 10 steps (p11:B0F9), at X 0x10 climbs or dives out; destroyed piece = 0x30 points; when none remain, 30 frames and beaten (0xE342 = 1). No mouth/interior: beaten boss 5 hands over to boss 2 in stage 4",
+   "shapes": "characters from p15:B3AF (p00:4C84)"
+  },
+  {
+   "id": "interior_core",
+   "name": "interior core (map 8)",
+   "code": "aparece_el_nucleo p02:8570",
+   "hp": 24,
+   "stages": [
+    8
+   ],
+   "behaviour": "static core at Y 0x40, X 0xE0 appearing at scroll column 0x7F; destroying it ends the interior and awards the captured weapons (p02:9218)"
+  },
+  {
+   "id": "stage0_core",
+   "name": "final fortress core (map 0)",
+   "code": "final_de_fase_0 p01:781C (table p01:7825: 782F empieza, 7872 nucleo, 78CD tiembla, 78E3 sale, 790B nave_sale)",
+   "hp": 100,
+   "stages": [
+    0
+   ],
+   "behaviour": "fires a bullet every 18 frames (12 below 32 hits) from p09:9C38/9C63, blinks below 32 hits; destroyed: 0x0500 points, sound 0x39, screen shake, dissolve, ship leaves -> real ending"
+  },
+  {
+   "id": "stage6_pieces",
+   "name": "stage 6 rock-throwing pieces (no boss)",
+   "code": "suceso_e34b p01:72D6",
+   "hp": "UNRESOLVED (pieces at 0xEA70/0xEA78 are 8-byte records; hit count not read)",
+   "stages": [
+    6
+   ],
+   "behaviour": "two pieces throw type-0x32 rocks with random speed every 2 frames until both are destroyed (0x0100 points)"
+  },
+  {
+   "id": "mid_stage5",
+   "name": "stage 5 hatch corridor (mid encounter)",
+   "code": "suceso_de_fase_5 p03:A017",
+   "hp": "n/a",
+   "stages": [
+    5
+   ],
+   "behaviour": "600 frames (900 inbound) of class-7 hatches releasing type 0x25 enemies before boss 2"
+  }
+ ],
+ "boss_common": {
+  "records_vs_shapes": "the 10-byte boss records live in bank 11 next to each boss; p09:BB01 is a 32-pointer table of 10-byte shape records ([rows][cols] + characters) read by p01:681E to draw boss parts by hit count (docs call it the boss record table)",
+  "after_beaten": "jefe_vencido_abre p11:A93F: broken shape 0x15, 300 frames (1 in stage 7) to enter; jefe_espera_a_la_nave p11:A95B; explode -> jefe_estalla p11:A9C8 (sound 0x3B); entered -> screen dissolves p11:A2A2 then jefe_acabado p11:A993 (0xE340 = 0, 0xE342 = 1)",
+  "boss_characters": "p00:4B20 caracteres_de_jefe (bosses 1-4 from p00:556F, sprites p09:BF6D)"
+ },
+ "enemy_types": {
+  "count": 65,
+  "spawn_table": {
+   "address": "p00:4DF3",
+   "entries": 65,
+   "indexed_by": "type - 1 (dispatcher p00:4DF0 inside crea_enemigo p00:4D1E)",
+   "bank_note": "addresses 0xA000-0xBFFF belong to bank 3 except types 35, 36, 64, 65 which are bank 11 (src/sitios.txt); 0x6000-0x7FFF bank 1, 0x8000-0x9FFF bank 2"
+  },
+  "mover_table": {
+   "address": "p01:63CD",
+   "entries": 65,
+   "indexed_by": "type - 1 (lo_del_tipo p01:63AE, called each frame; with 0xE3D0 only type 0x26 moves; with E.SLOW (capsule 5) every other frame)",
+   "bank_11_trampolines": "p01:647D, 6474, 646B, 6462, 6450, 6459 switch bank 11 in for types 2, 35, 36, 56, 62/64, 65"
+  },
+  "start_record_table": {
+   "address": "p00:4F4C",
+   "entries": 65,
+   "record_bytes": 7,
+   "indexing": "p00:4F45 + 7 x type (type 0 would fall in code)",
+   "field_layout_from_crea_enemigo_p00_4D42": [
+    "byte 0 -> IX+0B: bit 6 = made of characters (uses no sprites); low bits = sprites used (max 12 enemy sprites in total, 0xE355); bit 7 meaning UNRESOLVED",
+    "byte 1 -> IX+0D: hits (decremented at p02:8924)",
+    "byte 2 -> IX+0E: box (UNRESOLVED: height or second box dimension)",
+    "byte 3 -> IX+0F: width in pixels (p02:97A8)",
+    "byte 4 -> IX+30: sprite drawing / pattern",
+    "byte 5 -> IX+31: colour",
+    "byte 6 -> IX+32: character (character-made enemies)"
+   ],
+   "records_not_transcribed": "values are in src/nemesis2_p00.asm 0x4F4C-0x5113 (not copied here: no raw ROM bytes)"
+  },
+  "enemy_ram": "12 records of 64 bytes at 0xE600 (IX+00 type, IX+04 Y, IX+06 X, IX+0C creation data C, IX+19 creation data B, IX+15 random by level)",
+  "types": [
+   {
+    "type": 1,
+    "type_hex": "0x1",
+    "spawn_routine": "p01:65B1",
+    "mover_routine": "p01:6624",
+    "label": "tipo_1",
+    "summary": "2x2 turret-like shooter: every 4 frames aims at the ship and fires if nobody else did (0xE307); different look in stage 6"
+   },
+   {
+    "type": 2,
+    "type_hex": "0x2",
+    "spawn_routine": "p00:4E76",
+    "mover_routine": "p01:647D",
+    "label": "tipo_02 (p11:B8F4/B9A0 via trampoline)",
+    "summary": "comes out of a hatch at the right edge towards the centre, blinks, stops and fires 6 bullets in a fan (p11:BABB), returns to its hatch"
+   },
+   {
+    "type": 3,
+    "type_hex": "0x3",
+    "spawn_routine": "p02:9867",
+    "mover_routine": "p02:988A",
+    "label": "tipo_03",
+    "summary": "walker: walks on floor or ceiling, hops steps, turns round and fires (p11:BB44)"
+   },
+   {
+    "type": 4,
+    "type_hex": "0x4",
+    "spawn_routine": "p03:A2EE",
+    "mover_routine": "p03:A2FA",
+    "label": "tipo_04",
+    "summary": "flies left; if at the ship's height goes for it, else diagonally; fires (filler generador_1)"
+   },
+   {
+    "type": 5,
+    "type_hex": "0x5",
+    "spawn_routine": "p02:9D6D",
+    "mover_routine": "p02:9D97",
+    "label": "tipo_05",
+    "summary": "top/bottom crawler moving right (vx 0x200), stops and fires, leaves (filler generador_2)"
+   },
+   {
+    "type": 6,
+    "type_hex": "0x6",
+    "spawn_routine": "p00:4E75 (default: ret)",
+    "mover_routine": "p01:644F (default: ret)",
+    "label": null,
+    "summary": "no spawn/mover routine (ret)"
+   },
+   {
+    "type": 7,
+    "type_hex": "0x7",
+    "spawn_routine": "p03:A54A",
+    "mover_routine": "p03:A593",
+    "label": "tipo_07",
+    "summary": "snake formation: first one goes straight to the ship's height then zig-zags, the rest copy the leader's trail"
+   },
+   {
+    "type": 8,
+    "type_hex": "0x8",
+    "spawn_routine": "p02:99A0",
+    "mover_routine": "p02:9A13",
+    "label": "tipo_08",
+    "summary": "blinks, bounces up/down, splits into two type 8 and dashes at the ship repeatedly (filler generador_11)"
+   },
+   {
+    "type": 9,
+    "type_hex": "0x9",
+    "spawn_routine": "p02:9B4C",
+    "mover_routine": "p02:9B59",
+    "label": "tipo_09",
+    "summary": "animated, fires, closes in vertically on the ship (filler generador_3)"
+   },
+   {
+    "type": 10,
+    "type_hex": "0xA",
+    "spawn_routine": "p00:4E75 (default: ret)",
+    "mover_routine": "p01:644F (default: ret)",
+    "label": null,
+    "summary": "no routine"
+   },
+   {
+    "type": 11,
+    "type_hex": "0xB",
+    "spawn_routine": "p03:A63C",
+    "mover_routine": "p03:A662",
+    "label": "tipo_0b",
+    "summary": "4-segment route (right, left, diagonal...) by X; fires when inbound (0xE20A). Group-wave type for stages 0,1,2,6,7"
+   },
+   {
+    "type": 12,
+    "type_hex": "0xC",
+    "spawn_routine": "p02:9A04",
+    "mover_routine": "p02:9AF9",
+    "label": "tipo_0c",
+    "summary": "waits 32 frames, drifts left with the scroll, then darts in random directions (filler generador_10)"
+   },
+   {
+    "type": 13,
+    "type_hex": "0xD",
+    "spawn_routine": "p02:9BA6",
+    "mover_routine": "p02:9BC5",
+    "label": "tipo_0d",
+    "summary": "homes on the ship at a level-dependent speed, 6-frame animation (filler generador_4 column of 6)"
+   },
+   {
+    "type": 14,
+    "type_hex": "0xE",
+    "spawn_routine": "p03:A340",
+    "mover_routine": "p03:A365",
+    "label": "tipo_0e",
+    "summary": "approaches the ship alternating vertical / horizontal moves"
+   },
+   {
+    "type": 15,
+    "type_hex": "0xF",
+    "spawn_routine": "p02:9BF7",
+    "mover_routine": "p02:9C0C",
+    "label": "tipo_0f",
+    "summary": "oscillates around Y 0x48; from level 6 fires (inbound filler generador_5)"
+   },
+   {
+    "type": 16,
+    "type_hex": "0x10",
+    "spawn_routine": "p03:B7BC",
+    "mover_routine": "p03:B7E7",
+    "label": "tipo_10",
+    "summary": "jumps up/down, brakes back to its origin, then dashes at the ship and fires"
+   },
+   {
+    "type": 17,
+    "type_hex": "0x11",
+    "spawn_routine": "p02:9C8D",
+    "mover_routine": "p02:9CBF",
+    "label": "tipo_11",
+    "summary": "advances, loops (16 directions) at the X of p02:9D6B, accelerates left; fires (filler generador_6)"
+   },
+   {
+    "type": 18,
+    "type_hex": "0x12",
+    "spawn_routine": "p00:4E75 (default: ret)",
+    "mover_routine": "p01:644F (default: ret)",
+    "label": null,
+    "summary": "no routine"
+   },
+   {
+    "type": 19,
+    "type_hex": "0x13",
+    "spawn_routine": "p00:4E75 (default: ret)",
+    "mover_routine": "p01:644F (default: ret)",
+    "label": null,
+    "summary": "no routine"
+   },
+   {
+    "type": 20,
+    "type_hex": "0x14",
+    "spawn_routine": "p02:9C50",
+    "mover_routine": "p02:9C5B",
+    "label": "tipo_14",
+    "summary": "harmless 32 frames (blinking) then homing (filler generador_7: ring of 8 around the ship)"
+   },
+   {
+    "type": 21,
+    "type_hex": "0x15",
+    "spawn_routine": "p00:4E75 (default: ret)",
+    "mover_routine": "p01:644F (default: ret)",
+    "label": null,
+    "summary": "no routine"
+   },
+   {
+    "type": 22,
+    "type_hex": "0x16",
+    "spawn_routine": "p03:BBF6",
+    "mover_routine": "p03:BC0F",
+    "label": "tipo_16",
+    "summary": "flies left, brakes, fires 3 bullets in a fan (p03:BC5D), accelerates away (filler generador_8)"
+   },
+   {
+    "type": 23,
+    "type_hex": "0x17",
+    "spawn_routine": "p00:4E75 (default: ret)",
+    "mover_routine": "p01:644F (default: ret)",
+    "label": null,
+    "summary": "no routine"
+   },
+   {
+    "type": 24,
+    "type_hex": "0x18",
+    "spawn_routine": "p00:4E75 (default: ret)",
+    "mover_routine": "p01:644F (default: ret)",
+    "label": null,
+    "summary": "no routine"
+   },
+   {
+    "type": 25,
+    "type_hex": "0x19",
+    "spawn_routine": "p03:A447",
+    "mover_routine": "p03:A495",
+    "label": "tipo_19",
+    "summary": "random wait, then flies straight or at the ship; blinks and animates, dies on the map (filler generador_9)"
+   },
+   {
+    "type": 26,
+    "type_hex": "0x1A",
+    "spawn_routine": "p00:4E75 (default: ret)",
+    "mover_routine": "p01:644F (default: ret)",
+    "label": null,
+    "summary": "no routine"
+   },
+   {
+    "type": 27,
+    "type_hex": "0x1B",
+    "spawn_routine": "p03:A4E0",
+    "mover_routine": "p03:A50B",
+    "label": "tipo_1b",
+    "summary": "2x2 character enemy: blinks 10 times then launches left or right firing"
+   },
+   {
+    "type": 28,
+    "type_hex": "0x1C",
+    "spawn_routine": "p00:4E75 (default: ret)",
+    "mover_routine": "p01:644F (default: ret)",
+    "label": null,
+    "summary": "no routine"
+   },
+   {
+    "type": 29,
+    "type_hex": "0x1D",
+    "spawn_routine": "p03:B6E1",
+    "mover_routine": "p03:B6FA",
+    "label": "tipo_1d",
+    "summary": "flies at the ship, immune to shots, collides with the map after 12 frames"
+   },
+   {
+    "type": 30,
+    "type_hex": "0x1E",
+    "spawn_routine": "p00:4E75 (default: ret)",
+    "mover_routine": "p01:644F (default: ret)",
+    "label": null,
+    "summary": "no routine"
+   },
+   {
+    "type": 31,
+    "type_hex": "0x1F",
+    "spawn_routine": "p03:B8FC",
+    "mover_routine": "p03:B91A",
+    "label": "tipo_1f",
+    "summary": "static 24 frames, opens and launches up or down braking"
+   },
+   {
+    "type": 32,
+    "type_hex": "0x20",
+    "spawn_routine": "p03:BA56",
+    "mover_routine": "p03:BA81",
+    "label": "tipo_20",
+    "summary": "4x2 character enemy: waits until X < 0xD8 then hops up/down bouncing on the map"
+   },
+   {
+    "type": 33,
+    "type_hex": "0x21",
+    "spawn_routine": "p00:4E75 (default: ret)",
+    "mover_routine": "p01:644F (default: ret)",
+    "label": null,
+    "summary": "no routine"
+   },
+   {
+    "type": 34,
+    "type_hex": "0x22",
+    "spawn_routine": "p03:BA47",
+    "mover_routine": "p03:B6FA",
+    "label": "tipo_22",
+    "summary": "flies left (vx 0xFC00), 12 frames without map collision, shares mover with 0x1D"
+   },
+   {
+    "type": 35,
+    "type_hex": "0x23",
+    "spawn_routine": "p11:ABD2",
+    "mover_routine": "p01:6474",
+    "label": "tipo_23 (bank 11)",
+    "summary": "boss / boss-5-piece bullet moving left, speed by level; removed at the left edge"
+   },
+   {
+    "type": 36,
+    "type_hex": "0x24",
+    "spawn_routine": "p11:AF20",
+    "mover_routine": "p01:646B",
+    "label": "tipo_24 (bank 11)",
+    "summary": "boss 3 growing tongue: 4x1 characters growing 8 px per frame to the left at the boss height"
+   },
+   {
+    "type": 37,
+    "type_hex": "0x25",
+    "spawn_routine": "p02:9F9D",
+    "mover_routine": "p02:9FED",
+    "label": "tipo_25",
+    "summary": "hatch enemy (stage 5 event): random speed from p02:9FCD, accelerates sideways"
+   },
+   {
+    "type": 38,
+    "type_hex": "0x26",
+    "spawn_routine": "p02:9629",
+    "mover_routine": "p02:9644",
+    "label": "tipo_26",
+    "summary": "EXPLOSION left by destroyed enemies: 8 drawings, then by IX+0C nothing, a 0x29 or a 0x2A capsule (deja_capsula p02:9660)"
+   },
+   {
+    "type": 39,
+    "type_hex": "0x27",
+    "spawn_routine": "p00:4E75 (default: ret)",
+    "mover_routine": "p01:644F (default: ret)",
+    "label": null,
+    "summary": "no routine"
+   },
+   {
+    "type": 40,
+    "type_hex": "0x28",
+    "spawn_routine": "p00:4E75 (default: ret)",
+    "mover_routine": "p01:644F (default: ret)",
+    "label": null,
+    "summary": "no routine"
+   },
+   {
+    "type": 41,
+    "type_hex": "0x29",
+    "spawn_routine": "p02:9694",
+    "mover_routine": "p01:644F (default: ret)",
+    "label": "tipo_29",
+    "summary": "red power-meter capsule (2x2, IX+10 = 9)"
+   },
+   {
+    "type": 42,
+    "type_hex": "0x2A",
+    "spawn_routine": "p02:9694",
+    "mover_routine": "p01:644F (default: ret)",
+    "label": "tipo_2a",
+    "summary": "blue destroy-everything capsule"
+   },
+   {
+    "type": 43,
+    "type_hex": "0x2B",
+    "spawn_routine": "p02:96AA",
+    "mover_routine": "p01:644F (default: ret)",
+    "label": "tipo_2b",
+    "summary": "extra life pickup (characters from 0x37, 2x2)"
+   },
+   {
+    "type": 44,
+    "type_hex": "0x2C",
+    "spawn_routine": "p02:96B6",
+    "mover_routine": "p02:96A1",
+    "label": "tipo_2c",
+    "summary": "points pickup (once)"
+   },
+   {
+    "type": 45,
+    "type_hex": "0x2D",
+    "spawn_routine": "p02:96B2",
+    "mover_routine": "p02:96A1",
+    "label": "tipo_2d",
+    "summary": "points pickup (8 times)"
+   },
+   {
+    "type": 46,
+    "type_hex": "0x2E",
+    "spawn_routine": "p02:96A2",
+    "mover_routine": "p01:644F (default: ret)",
+    "label": "tipo_2e",
+    "summary": "invisible marker (no drawing, IX+10 = 0x0B)"
+   },
+   {
+    "type": 47,
+    "type_hex": "0x2F",
+    "spawn_routine": "p02:970C",
+    "mover_routine": "p02:96DE",
+    "label": "tipo_2f",
+    "summary": "collected pickup rising animation; becomes 0x2D again or vanishes"
+   },
+   {
+    "type": 48,
+    "type_hex": "0x30",
+    "spawn_routine": "p03:A71B",
+    "mover_routine": "p02:9FED",
+    "label": "tipo_30",
+    "summary": "random speed+acceleration from one of 4 records p03:A741"
+   },
+   {
+    "type": 49,
+    "type_hex": "0x31",
+    "spawn_routine": "p03:BACB",
+    "mover_routine": "p03:BAEC",
+    "label": "tipo_31",
+    "summary": "oscillates around its Y, turns at the left edge in a direction from p03:BB84 and fires. Group-wave type for stages 3,4,5"
+   },
+   {
+    "type": 50,
+    "type_hex": "0x32",
+    "spawn_routine": "p01:744F",
+    "mover_routine": "p01:7461",
+    "label": "tipo_32",
+    "summary": "stage-6 event rock: blinks (colour 3/9), destroyed on map contact (p01:744F/7461, bank 1)"
+   },
+   {
+    "type": 51,
+    "type_hex": "0x33",
+    "spawn_routine": "p02:9629",
+    "mover_routine": "p02:9644",
+    "label": "tipo_33",
+    "summary": "explosion variant sharing tipo_26 animation"
+   },
+   {
+    "type": 52,
+    "type_hex": "0x34",
+    "spawn_routine": "p02:933D",
+    "mover_routine": "p02:9359",
+    "label": "tipo_rumbo_50 / tipo_contra_el_mapa",
+    "summary": "homes at the ship with speed 0x50; removed on map contact"
+   },
+   {
+    "type": 53,
+    "type_hex": "0x35",
+    "spawn_routine": "p00:4E75 (default: ret)",
+    "mover_routine": "p01:644F (default: ret)",
+    "label": null,
+    "summary": "no routine"
+   },
+   {
+    "type": 54,
+    "type_hex": "0x36",
+    "spawn_routine": "p02:9629",
+    "mover_routine": "p02:9632",
+    "label": "tipo_36",
+    "summary": "small 4-frame burst (dropped by the type-6 napalm missile explosion)"
+   },
+   {
+    "type": 55,
+    "type_hex": "0x37",
+    "spawn_routine": "p00:4E75 (default: ret)",
+    "mover_routine": "p01:644F (default: ret)",
+    "label": null,
+    "summary": "no routine"
+   },
+   {
+    "type": 56,
+    "type_hex": "0x38",
+    "spawn_routine": "p00:4E7F",
+    "mover_routine": "p01:6462",
+    "label": "tipo_38 (bank 11)",
+    "summary": "boss 2's four-sprite serpent: opens, releases up to 4 sprites following a path towards the ship (p11:A5F0/A644)"
+   },
+   {
+    "type": 57,
+    "type_hex": "0x39",
+    "spawn_routine": "p02:9720",
+    "mover_routine": "p02:974E",
+    "label": "tipo_39",
+    "summary": "boss 4 beam A: row of characters growing left until it touches the map, then shrinks"
+   },
+   {
+    "type": 58,
+    "type_hex": "0x3A",
+    "spawn_routine": "p02:970D",
+    "mover_routine": "p02:974E",
+    "label": "tipo_3a",
+    "summary": "boss 4 beam B (character 0xC6 on the 8-grid)"
+   },
+   {
+    "type": 59,
+    "type_hex": "0x3B",
+    "spawn_routine": "p02:9809",
+    "mover_routine": "p02:9811",
+    "label": "tipo_3b",
+    "summary": "row growing 4 characters per frame then shrinking"
+   },
+   {
+    "type": 60,
+    "type_hex": "0x3C",
+    "spawn_routine": "p02:985F",
+    "mover_routine": "p02:9811",
+    "label": "tipo_3c",
+    "summary": "row variant (character 0xF1)"
+   },
+   {
+    "type": 61,
+    "type_hex": "0x3D",
+    "spawn_routine": "p00:4E75 (default: ret)",
+    "mover_routine": "p01:644F (default: ret)",
+    "label": null,
+    "summary": "no routine"
+   },
+   {
+    "type": 62,
+    "type_hex": "0x3E",
+    "spawn_routine": "p00:4E75 (default: ret)",
+    "mover_routine": "p01:6450",
+    "label": "(mover only) tipo_40 via p11:BF10",
+    "summary": "spawn entry is the default ret; mover shared with type 0x40"
+   },
+   {
+    "type": 63,
+    "type_hex": "0x3F",
+    "spawn_routine": "p00:4E75 (default: ret)",
+    "mover_routine": "p01:644F (default: ret)",
+    "label": null,
+    "summary": "no routine"
+   },
+   {
+    "type": 64,
+    "type_hex": "0x40",
+    "spawn_routine": "p11:BEE6",
+    "mover_routine": "p01:6450",
+    "label": "tipo_40 (bank 11)",
+    "summary": "released by class-14 objects: rises to Y 8 then homes on the ship (p11:BEE6/BF10)"
+   },
+   {
+    "type": 65,
+    "type_hex": "0x41",
+    "spawn_routine": "p11:BC10",
+    "mover_routine": "p01:6459",
+    "label": "tipo_41 (bank 11)",
+    "summary": "column released by class-16 objects: grows 4 characters per frame up/down until it touches the map, then shrinks (p11:BC10/BC24)"
+   }
+  ],
+  "character_object_classes": "map-embedded objects (hatches, heads, towers) are a separate system: shapes p15:B661, classes 1-16 handled in banks 1/3/11 (e.g. clase_11 p11:A3C5, clase_12 p11:A4E2, clase_13 p11:A82E, clase_14 p11:BE62, clase_16 p11:BB06); boxes p15:B2F9 (p02:8A87); class 6/15 destruction ends stage 7"
+ },
+ "weapons": {
+  "pre_game_selection": "NONE in this game: the title (p01:61C1, cursor p01:61EC) only offers 1PLAYER / 2PLAYERS (0xE1D2). Weapons are gained by capturing them in the boss interior (0xE20F = captured count 0-7). The demo starts with 7 captured (equipo_de_demo p02:8196)",
+  "captured_weapons": {
+   "counter": "0xE20F (0-7)",
+   "order_from_docs": [
+    "UP LASER",
+    "DOWN LASER",
+    "NAPALM MISSILE",
+    "REFLEX RING",
+    "EXTEND LASER",
+    "BACK BEAM",
+    "FIRE BLASTER"
+   ],
+   "label_number_per_capture_p01_77A8": [
+    10,
+    12,
+    5,
+    8,
+    16,
+    6,
+    9
+   ],
+   "label_pairing_note": "capture n uses label p01:77A8[n] drawn from p14:9BD3; the English names are the docs' order (THE-GAME.md) paired positionally - not verified against the label graphics",
+   "capture_routine": "captura_armas p02:80BD (+A captured, max 7, rebuilds the meter p02:80D8)",
+   "backup": "with Maze of Galious in another slot (0xF0F5 bit 3) nave_cae p02:8E7C saves meter/weapons/shield/speed/options to 0xE210 and the BACK UP box (label 1, casilla_velocidad p01:7DD9 with 0xE20B) restores them"
+  },
+  "power_meter": {
+   "use": "usa_el_medidor p01:7D4F: second button (0xE1C8 bit 5) uses the lit box 0xE330 unless it is spent (0xFF in 0xE334+slot); sound 6; red capsule (type 0x29) advances the lit box",
+   "slot_count_by_captures_p02_806D": {
+    "0": 7,
+    "1": 8,
+    "2": 9,
+    "3": 9,
+    "4": 9,
+    "5": 9,
+    "6": 10,
+    "7": 10
+   },
+   "slot_routine_tables_p01_7D8D": "8 pointers (one per 0xE20F) to dispatch tables 0x7D9B (0 captured), 0x7DA7 (1), 0x7DB5 (2-5), 0x7DC5 (6-7); index = slot 0xE33D (1-based)",
+   "slots_by_captures": {
+    "0": [
+     "1 speed (casilla_velocidad p01:7DD9, up to 7, also BACK UP)",
+     "2 missile (casilla_misil p01:7E32, 0xE433)",
+     "3 double/varia (casilla_varia p01:7E6B: level 1 = normal+diagonal shot, 2 = weapon 5 (0xE432=5), 3+ = weapon 6)",
+     "4 weapon/laser (casilla_arma p01:7F3F, 0xE432 = level)",
+     "5 option (casilla_opcion p01:7F66, up to 2 options 0xE40B, p03:AA43)",
+     "6 shield (casilla_escudo p01:7F87 -> pon_escudo p01:7F98: 0xE400 = 2, 10 hits 0xE401)",
+     "7th box present (p02:806D) but table p02:8074 cap 0 - UNRESOLVED"
+    ],
+    "1": [
+     "1 speed",
+     "2 missile",
+     "3 varia",
+     "4 up shot (casilla_arriba p01:7ED9, 0xE434)",
+     "5 weapon",
+     "6 option",
+     "7 shield"
+    ],
+    "2-5": [
+     "1 speed",
+     "2 missile",
+     "3 varia",
+     "4 up shot",
+     "5 down shot (casilla_abajo p01:7F0B, 0xE435)",
+     "6 weapon",
+     "7 option",
+     "8 shield"
+    ],
+    "6-7": [
+     "1 speed",
+     "2 missile",
+     "3 back beam / return to normal shot (vuelve_al_disparo p01:7E4F: 0xE430 = 1, 0xE436 = 1 rear shot)",
+     "4 varia",
+     "5 up shot",
+     "6 down shot",
+     "7 weapon",
+     "8 option",
+     "9 shield"
+    ]
+   },
+   "per_slot_max_levels": "tope_de_casilla p02:804A reads p02:8074 (8 rows of 9 by 0xE20F x slot)",
+   "labels": {
+    "table": "p14:9BD3 (26 pointers to label graphics, 8 characters each, drawn by pon_rotulo p00:53F6)",
+    "selection": "p00:5462 (per captured count -> per slot -> per level label index); 0xFF spent -> label 21; 0xE20B -> label 1 (BACK UP)",
+    "known_numbers": {
+     "1": "BACK UP (p00:53C5)",
+     "21": "spent box",
+     "22": "R.DRILL",
+     "23": "VECTOR",
+     "24": "E.SLOW",
+     "25": "D.VARRIOR"
+    },
+    "text_of_the_other_labels": "UNRESOLVED (graphics, see docs image rotulos.png)"
+   },
+   "level_up": "each use adds 0x80 to the difficulty level 0xE227-0xE228 (0x40 for the weapon box), max 0x0FFF (sube_el_nivel p01:7FA4)"
+  },
+  "ship_state": {
+   "0xE400": "ship form: 1 normal, 2 shield, 3 R.DRILL, 0xFF dead/none",
+   "0xE401": "shield hits left (10 from pon_escudo; se_va_el_escudo p02:8E38 at 0)",
+   "0xE402": "speed (1-7)",
+   "0xE40B": "options (0-2; records 0xE410 / 0xE420 following the 16-slot trail 0xE450, p03:AA2F)",
+   "0xE430-0xE436": "weapon flags: 0xE430 normal shot, 0xE431 diagonal-up, 0xE432 weapon (1-2 shot type 7, 3 type 8, 5 type 14, 6 type 15), 0xE433 missile 1-3, 0xE434 up shot (2 = long), 0xE435 down shot (2 = long), 0xE436 rear shot"
+  },
+  "shots": {
+   "records": "9 shot records of 16 bytes at 0xE470 (IY)",
+   "type_dispatch": "p03:ABBF, table p03:ABC2 (15 shot types)",
+   "types": {
+    "1": "avanza_12 p03:ACD4 (normal shot, +12 px/frame)",
+    "2": "retrocede_12 p03:ACE0 (rear shot)",
+    "3": "avanza_en_diagonal p03:AD1F",
+    "4-5": "disparo_misil p03:B0FB (missile: falls to the floor then crawls; straight in stage 5)",
+    "6": "disparo_tipo_6 p03:B1AF (napalm missile 3 bursting into type 0x36)",
+    "7": "disparo_tipo_7 p03:AE07 (laser: grows 4 steps then 32 px/frame)",
+    "8": "disparo_tipo_8 p03:AE85 (laser from the grid)",
+    "9": "disparo_tipo_9 p03:AF37 (rises 8 every 4 frames, grows)",
+    "10": "disparo_sube p03:AEB7 (up shot)",
+    "11": "disparo_baja p03:AECB (down shot)",
+    "12": "disparo_tipo_12 p03:AEDB (up, growing left)",
+    "13": "disparo_tipo_13 p03:AEFE (down, growing left)",
+    "14": "disparo_tipo_14 p03:AFA7 (goes out to 0x60 and comes back: reflex ring)",
+    "15": "disparo_tipo_15 p03:B029 (grows 8 frames, shrinks; button re-grows: fire blaster)"
+   },
+   "name_mapping_to_weapon_names": "UNRESOLVED (docs/OPEN-QUESTIONS.md: shot behaviour known, drawings and names not tied in the disassembly)"
+  },
+  "special_capsules": {
+   "routine": "recoge_capsula_especial p02:9034 (map capsule 0xEA60-0xEA62, class >= 2; sound 0x1F, 0x30 points)",
+   "placement": "pon_capsula p00:5157 from the map object lists; none while a boss is on screen",
+   "duration": "15 seconds countdown (0xE439 capsule, 0xE43A seconds BCD, 0xE43B frames)",
+   "kinds": {
+    "3": "D.VARRIOR (label 25, sound 0x0F): the options circle the ship",
+    "4": "R.DRILL (label 22, p02:90A1): ship form 3, breaks breakable walls (p02:8481), only dies on other map",
+    "5": "E.SLOW (label 24): enemies move every other frame (p01:63BA)",
+    "7": "VECTOR (label 23): changes the shot (UNRESOLVED exact shot change)"
+   },
+   "pickups_from_explosions": "deja_capsula p02:9660: type 0x29 red meter capsule, 0x2A blue destroy-all; 0x2B extra life, 0x2C/0x2D points"
+  },
+  "options": "up to 2 options (sprites p08:93C0) following the trail; dos_opciones p01:7E13; with D.VARRIOR they circle the ship",
+  "shield": "10 hits (pon_escudo p01:7F98); second ship sprite drawn 8 px ahead (p11:A000); flashes while hit count low (p03:A7C1)"
+ },
+ "cutscenes": {
+  "text_engine": "escribe_texto p00:4A6B draws lists [VRAM address][character codes] (0xFE new address, 0xFF end) into the name table; letters are font characters (fuente_tres_tercios p11:B6CD). Pictures are compressed character images (pinta_imagen p10:A67B: n literal, 0x80+n repeat, 0x80 run; descomprime_a_ram p10:A6EB) plus fades (empieza_fundido p10:A717, 4 fade types) and sprites for small details",
+  "localisation": "BIOS byte 0x002B (& 0x0F == 0 = Japan): GRADIUS logo and Japanese story/ending texts (p01:6173, p10:A0A7, p10:BBB1)",
+  "intro_title": {
+   "state": "estado_0_intro p00:562B then estado_1_titulo p00:567D",
+   "steps": "Konami logo (logo_de_konami p01:6237, compressed p09:B79F), title screen p01:615B + logo_del_titulo p10:B64F (NEMESIS p10:B7A1 / GRADIUS p10:B832, 26 columns) revealed by fades (titulo_aparece p10:B737), texts p01:61C1 (KONAMI 1987, PLAY SELECT, 1PLAYER/2PLAYERS, SAGA CONTINUES... p10:B959); title sprites p10:B8FC"
+  },
+  "demo_story": {
+   "state": "estado_2_demo p00:5699",
+   "code": "historia p10:A000 (31 steps, table p10:A007, step 0xE1D7), empieza_historia p10:A643 (music 0x3F)",
+   "content": "escena_1 DR.VENOM ... COUP D'ETAT (image p10:ACAB); escena_2 ... EXILED DR.VENOM TO PLANET SARD (p10:ADBD); escena_3 three images, COSMIC YEAR ... ESCAPED FROM PLANET SARD; escena_4 HE WAS NOT FOUND ... (p10:AFE6); escena_5 ship (p10:A432); escena_6 THE INVADER WAS DR.VENOM; escena_7 big image p10:AEBD revealed row by row; DR.VENOM ATTEMPTED TO INVADE PLANET NEMESIS; escena_8 COSMIC YEAR ... DISPATCH METALION (ship image p10:AF6D); escena_9/10 ship lights animation; escena_11 pilot JAMES BURTON WAS CHOSEN TO FLY METALION (p10:B586); escena_12 MR.JAMES BURTON SPECIAL CAPTAIN OF I.S.F. EX-VIC VIPER PILOT (image p10:B06F); then a self-played stage (p00:5EF6)",
+   "timing": "frame-count waits up to 0x1FEB (historia_espera_14)",
+   "length": "about 0x1FEB frames (~136 s at 60 Hz) before the demo stage; exact text bytes not transcribed"
+  },
+  "game_start_pilot": {
+   "state": "estado_3_empieza p00:5727",
+   "code": "empieza_el_piloto p10:BF9E, escena_del_piloto p10:BDFD (steps p10:BE04)",
+   "content": "music 0x3E, 1PLAYER/2PLAYERS blinks, pilot image p10:B586 appears row by row, eyes blink, sprites p10:B5EC/B5F8/B604/B60A/B610/B621",
+   "length": "UNRESOLVED frames (step waits: 60, 15 frames... not summed)"
+  },
+  "interior_capture": {
+   "code": "final_de_fase_8 p01:74A2 (13 steps p01:74AA)",
+   "content": "ship to centre; door opens (4+4 characters p01:7738); blinking 4x4 p01:7758; 4-frame animation p01:7565; YOU CAPTURED (letters p11:B77F, text p01:7725) or NOTHING (p01:7731); 1 or 2 weapon labels from p14:9BD3; meter box blinks; dissolve p11:A2A2; ship accelerates out p01:7666",
+   "drawn_with": "characters in the RAM screen 0xED00 + meter label graphics"
+  },
+  "halfway_ending": {
+   "trigger": "stage 7 boss beaten: 0xE1E6 = 1, 0xE1D6 = 0 (p01:7BEA) -> game state 10 (p00:5A05) -> final p10:B993 (14 steps p10:B99A)",
+   "steps_outside_japan": [
+    "1 final_empieza p10:BB7B: frame counter 0, blank, music 0x40, image p14:91A8 (imagen_del_final_1, characters p12:A000, at VRAM 0x38A7), warning p14:94C4 with sound 0x28 (aviso_parpadea)",
+    "2 final_vuelve p10:BA9C: while music 0x40 plays, warning p14:94C4 every 8 frames and DR.VENOM IS FAST APPROACHING NEMESIS, RETURN IMMEDIATELY! (p14:94D1) blinking (vuelve_ya p10:BA8C)",
+    "8 final_luces_encendidas p10:BA70: lights on, fade out",
+    "9 final_a_jugar p10:BACD -> vuelve_a_jugar p10:BAD0: ships to centre, enemy RAM cleared, 0xE1E6 = 0 -> state 8 -> stage 6 inbound"
+   ],
+   "steps_japan": "step 2 then 3 final_textos_1 (5 texts p14:9222 every 300 frames), 4 final_aviso, 5 final_textos_2 (6 texts p14:9281, 7th: ship scene p14:9317, 1740 frames), 6 final_luces (then text p14:9361), 7 final_luces_b, 8, 9",
+   "length": "music 0x40 is >75 s per THE-MUSIC.md; exact frame count UNRESOLVED"
+  },
+  "real_ending": {
+   "trigger": "stage 0 core destroyed and ship gone: 0xE1E6 = 1, 0xE1D6 = 1 (p01:7A69)",
+   "steps_outside_japan": [
+    "1 final_empieza -> final_de_verdad p10:BBAC: music 0x41, step 11",
+    "11 final_creditos / L_BBBD: pilot scene (escena_piloto_b p10:A56F) + text p10:BC23 OPERATIONS TO ERADICATE VENOM WERE ACHIEVED BY METALION..., 1080 frames",
+    "12 final_fundido p10:BB3F: fade (funde_tres_tercios)",
+    "13 final_paz p10:BB4B: blank, characters p00:5E0C, text p10:BD1A COSMIC YEAR ... NEMESIS IS COMPLETELY RESTORED",
+    "14 final_espera p10:BB6F: until frame 0x1518 (~90 s from the ending start), then vuelve_a_jugar (0xE1E6 = 0)",
+    "then p00:5955 (state 10 step 1): wait for music end, blank, text p03:B2AF (THE END / EXTEND F5; digit decoding UNRESOLVED); F5 (tecla_f5) -> PUSH SPACE KEY (p03:B2CA); space -> LET'S START (p03:B2EE), 120 frames, ship at Y 0x4A X 0x50 -> state 8 (play continues: stage 1, second loop); no F5 within 600 frames -> SEE YOU NEXT!!!! (p03:B2DB) -> lives 0 -> other player or title (p00:588C)"
+   ],
+   "steps_japan": "step 9 image p10:B06F (imagen_del_final_2), 10 final_textos_3 (8 texts p14:93B4 every 480 frames with images p14:91A8 / p10:B06F), 11 pilot + Japanese text p14:950F, 12, 13 (p10:BC85), 14",
+   "text_decoding_note": "ending option texts decoded with letter code A = 0x07 (consistent across 5 strings); the title/marker fonts use other code bases"
+  },
+  "game_over": "estado_7_game_over p00:5842: GAME OVER and CONTINUE F5 (0xE20C); music 0x42 on last death (p00:5817)",
+  "pause": "estado_9_pausa p00:58FD: F1 (sound 0xF3 save / 0xF2 restore channels); Q*bert cheat typing p11:BD7C"
+ },
+ "music": {
+  "driver": "sonido p00:4AE4 -> p04:6480 with banks 4-5-6; < 0x28 effects, >= 0x28 music; 0x43 = silence; 0xF0/0xF1/0xF2/0xF3 control commands (p04:65A1, 65DE)",
+  "stage_track_table": {
+   "address": "p01:7CE6 (musica_por_fase: 12 pointers, one per 0xE201)",
+   "reader": "musica_de_la_zona p01:7C90: each frame, when no boss/event/secret-run/interior-ending is active, walks the stage list [column lo, hi][sound]: the first entry whose column is above the scroll column gives the track to play (unless already playing, 0xE0A0, or 0xFF); exactly at an entry column it sends 0xF1; a new track is followed by command 0xF0",
+   "per_stage": {
+    "0": {
+     "list": "p01:7CFE",
+     "entries": [
+      {
+       "while_scroll_column_below": "0x1B0",
+       "track": "0x29"
+      },
+      {
+       "while_scroll_column_below": "end of stage",
+       "track": "0x35"
+      }
+     ]
+    },
+    "1": {
+     "list": "p01:7D04",
+     "entries": [
+      {
+       "while_scroll_column_below": "0x80",
+       "track": "0x2B"
+      },
+      {
+       "while_scroll_column_below": "0x1A0",
+       "track": "0x2C"
+      },
+      {
+       "while_scroll_column_below": "end of stage",
+       "track": "0x34"
+      }
+     ]
+    },
+    "2": {
+     "list": "p01:7D0D",
+     "entries": [
+      {
+       "while_scroll_column_below": "0x84",
+       "track": "0x2B"
+      },
+      {
+       "while_scroll_column_below": "0x1DE",
+       "track": "0x2D"
+      },
+      {
+       "while_scroll_column_below": "end of stage",
+       "track": "0x34"
+      }
+     ]
+    },
+    "3": {
+     "list": "p01:7D16",
+     "entries": [
+      {
+       "while_scroll_column_below": "0x60",
+       "track": "0x2B"
+      },
+      {
+       "while_scroll_column_below": "0x1FA",
+       "track": "0x2E"
+      },
+      {
+       "while_scroll_column_below": "end of stage",
+       "track": "0x34"
+      }
+     ]
+    },
+    "4": {
+     "list": "p01:7D28",
+     "entries": [
+      {
+       "while_scroll_column_below": "0x85",
+       "track": "0x2B"
+      },
+      {
+       "while_scroll_column_below": "0x1FA",
+       "track": "0x31"
+      },
+      {
+       "while_scroll_column_below": "end of stage",
+       "track": "0x34"
+      }
+     ]
+    },
+    "5": {
+     "list": "p01:7D1F",
+     "entries": [
+      {
+       "while_scroll_column_below": "0x85",
+       "track": "0x2B"
+      },
+      {
+       "while_scroll_column_below": "0x19A",
+       "track": "0x30"
+      },
+      {
+       "while_scroll_column_below": "end of stage",
+       "track": "0x34"
+      }
+     ]
+    },
+    "6": {
+     "list": "p01:7D31",
+     "entries": [
+      {
+       "while_scroll_column_below": "0x60",
+       "track": "0x2B"
+      },
+      {
+       "while_scroll_column_below": "0x1BA",
+       "track": "0x32"
+      },
+      {
+       "while_scroll_column_below": "end of stage",
+       "track": "0x34"
+      }
+     ]
+    },
+    "7": {
+     "list": "p01:7D3A",
+     "entries": [
+      {
+       "while_scroll_column_below": "0x60",
+       "track": "0x2B"
+      },
+      {
+       "while_scroll_column_below": "0x2DA",
+       "track": "0x33"
+      },
+      {
+       "while_scroll_column_below": "end of stage",
+       "track": "0x34"
+      }
+     ]
+    },
+    "8": {
+     "list": "p01:7D43",
+     "entries": [
+      {
+       "while_scroll_column_below": "0x90",
+       "track": "0x35"
+      },
+      {
+       "while_scroll_column_below": "end of stage",
+       "track": "0x43"
+      }
+     ]
+    },
+    "9": {
+     "list": "p01:7D49",
+     "entries": [
+      {
+       "while_scroll_column_below": "0x14F",
+       "track": "0x36"
+      },
+      {
+       "while_scroll_column_below": "end of stage",
+       "track": "0x2A"
+      }
+     ]
+    },
+    "10": {
+     "list": "p01:7D49",
+     "entries": [
+      {
+       "while_scroll_column_below": "0x14F",
+       "track": "0x36"
+      },
+      {
+       "while_scroll_column_below": "end of stage",
+       "track": "0x2A"
+      }
+     ]
+    },
+    "11": {
+     "list": "p01:7D49",
+     "entries": [
+      {
+       "while_scroll_column_below": "0x14F",
+       "track": "0x36"
+      },
+      {
+       "while_scroll_column_below": "end of stage",
+       "track": "0x2A"
+      }
+     ]
+    }
+   },
+   "notes": [
+    "0x2B is the common opening track of stages 1-7 (first 0x60-0x85 columns); 0x34 plays in the final stretch of stages 1-7 (from 0x1A0-0x2DA on, i.e. the boss zone); stage 0 switches to 0x35 at 0x1B0; interior (8) plays 0x35 then silence 0x43 from column 0x90; secret stages 9-11 play 0x36 then 0x2A",
+    "track names: THE-MUSIC.md only names 0x3E (game start), 0x3F (story), 0x40 (halfway ending), 0x41 (real ending), 0x3B (boss explodes), 0x28 (warning), 0x3A (boss beaten, p02:9218), 0x3D (ship lost), 0x42 (game over); the stage tracks are 'table tracks' with durations (0x29 48 s, 0x2B 66 s, 0x2C 64 s, 0x2D 59 s, 0x2E 19 s, 0x30 >75 s, 0x31 57 s, 0x32 64 s, 0x33 43 s, 0x34 26 s, 0x35 13 s, 0x36 51 s, 0x5B 56 s)",
+    "0x5B is in THE-MUSIC.md as a table track but not in p01:7CE6: its caller UNRESOLVED"
+   ]
+  },
+  "event_sounds": {
+   "secret_entrance_run": "0x3C (p03:BF4F), silence 0x43 when touched",
+   "boss_beaten": "0x3A (p02:9218)",
+   "boss_explodes": "0x3B (p11:A9C8)",
+   "stage_0_core_destroyed": "0x39",
+   "interior_capture": "0xF0 then 0x37 (p01:74C4), weapon 0x22",
+   "new_stage": "silence 0x43 (a_la_fase p01:7C81)"
+  }
+ },
+ "player_variants": {
+  "normal": {
+   "0xE400": 1,
+   "record": "p03:A889 (4-byte sprite records by up/down input, dibujo_de_la_nave p03:A78C)",
+   "sprites": "p08:936F / p08:942B to VRAM 0x1800 / 0x1960 (p00:4368)"
+  },
+  "shield": {
+   "0xE400": 2,
+   "record": "p03:A895 (+12 flashing with 0xE1C3 bit 2); second sprite 8 px ahead (p11:A000)",
+   "when": "shield box used (pon_escudo p01:7F98) or restored BACK UP; 10 hits in 0xE401; gone at 0 (p02:8E38)"
+  },
+  "drill_R_DRILL": {
+   "0xE400": 3,
+   "record": "p03:A8AD + 4 x 0xE441 (6 frames, one every 3 frames, p03:A846)",
+   "sprites": "p08:9D17 / p08:9D68 (sprites_r_drill p00:42F5)",
+   "when": "picking up special map capsule 4 (p02:90A1): 15-second countdown (0xE439 = 4), label 22; breaks breakable map (p02:8481, nave_contra_el_mapa p02:8413) and only dies on other walls; the shield box then only sets 0xE445 (p01:7F87); reverts to normal (or shield if 0xE401 > 0) when the countdown ends and on state 8 (estado_8_vuelve p00:58DC)",
+   "applies_in": "any stage where a class >= 2 special capsule object with value 4 is in the map lists (p12:BA12) - per-stage list UNRESOLVED"
+  },
+  "penguin": {
+   "when": "Penguin Adventure cartridge in another slot (0xF0F5 bit 2, slot check p03:BCB1 (docs) / que_cartucho_hay p03:BCF0)",
+   "record": "p03:A879 (player 1, blue) / p03:A881 (player 2, magenta) by 0xE1C2 bit 7, +4 with 0xE1C3 bit 3 (ficha_de_la_nave p03:A82E -> p03:A862)",
+   "sprites": "p12:BF19 / p12:BF82 (p00:4381); characters p11:BF63 (caracteres_del_pinguino p00:43B4); options animate every 4 frames instead of 2 (p03:AA93)",
+   "applies": "whole game, both players; replaces normal and shield looks (shield shown as the second sprite colour 2/6/9, R.DRILL colour 10, dibujo_del_pinguino p03:A7F8)"
+  },
+  "two_players": "alternating play (0xE1C2 bit 5 two players, bit 7 which one); each keeps a copy of 0xE200-0xE23F at 0xE240 (p00:582E)",
+  "explosion": "nave_explota p03:A993: 0xE400 = 0xFF, 4 explosion sprites (p11:A079)"
+ },
+ "unresolved_summary": [
+  "Routing and the return trip are read from the code only; no emulator play-through verified them (docs/OPEN-QUESTIONS.md)",
+  "Meaning of the per-stage byte table p01:697A (0xE305) and of enemy record byte 2 (IX+0E) / byte 0 bit 7",
+  "Text of the 25 power-meter labels (graphics in p14:9BD3) beyond the 6 numbers the code names; English weapon names paired to capture labels only through the docs' order",
+  "Which shot type corresponds to which named weapon (docs leave it open)",
+  "What VECTOR changes in the shot; which stages carry which special capsules (per-stage object lists p12:BA12 not decoded)",
+  "Exact frame lengths of the cutscenes (only the final waits are known) and the full text bytes of story/ending lists (p14:9222, 9281, 93B4, Japanese p14:950F)",
+  "Digit code in THE END / EXTEND F5 text (p03:B2AF)",
+  "Hit points of the stage-6 event pieces; the 7th power-meter box shown with 0 captured weapons",
+  "Track 0x5B's caller; names/roles of the stage tracks beyond their columns",
+  "Character-object lists for maps 6-11 (pointers not transcribed) and the semantics of p12:BB72 (asm header: position-triggered enemy waves; docs: special capsules)"
+ ]
+}

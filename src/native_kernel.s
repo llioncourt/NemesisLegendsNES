@@ -9,11 +9,16 @@
 .import StageEvents
 .import Stage2Init, Stage2Tick, Stage2Draw
 .import Stage3Init, Stage3Tick, Stage3Draw
+.import Stage4Init, Stage4Tick, Stage4Draw, Stage4ShotHit, Stage4LaserHit
+.export Stage4ShotHitBanked, Stage4LaserHitBanked
 .import TargetNewGame,TargetInit,TargetTick,TargetDraw
 .export Main, DrawColumn, UploadColumn, LoadStage, FrameGame
 .export DrawSprite8
  .export DrawSprite, UpdateHUD, PlayerHit, LoadDataBank, AdvanceStage
 .import GamePace_Mode, GamePace_Phase, GamePace_Edges
+.import CheatCode, CheatOpen, CheatFrame, CheatDebugRow, SceneOpen, SceneFrame
+.export Title
+.export NewGame, RestoreGameScreen
 .segment "CODE"
 Main:
  jsr Title
@@ -23,27 +28,43 @@ Main:
  jsr PollPad
  lda mode
  bne @playing
+ ; Konami Code on the title opens the Silicon Forge cheat menu (CP0013).
+ jsr CheatCode
+ bcc @title_ordinary
+ jsr CheatOpen
+ jmp @finish
+@title_ordinary:
  jsr TitleFrame
  bcc @titleidle
- jsr Flow_NewGame
- jsr TargetNewGame
- lda #0
- sta score_lo
- sta score_hi
- sta route_flag
- lda #3
- sta player_lives
- lda #1
- sta stage_id
- lda #$20
- sta worldlo
- lda #0
- sta worldhi
- jsr LoadStage
+ jsr NewGame
  jmp @finish
 @titleidle:
  jmp @finish
 @playing:
+ cmp #5
+ bne @not_menu
+ jsr CheatFrame
+ jmp @finish
+@not_menu:
+ cmp #4
+ bne @not_scene
+ jsr SceneFrame
+ jmp @finish
+@not_scene:
+ cmp #2
+ bne @no_code
+ ; Konami Code while paused opens the cheat menu (not during the boss screen).
+ lda phase
+ cmp #4
+ bcc @code_ok
+ cmp #9
+ bcc @no_code
+@code_ok:
+ jsr CheatCode
+ bcc @no_code
+ jsr CheatOpen
+ jmp @finish
+@no_code:
  ; SELECT toggles comfortable/original cadence in game and while paused.
  ; This is a presentation-rate option, never a speed-up of the NES clock.
  lda pressed
@@ -121,7 +142,11 @@ Main:
  bne @finish
  lda player_lives
  beq @gameover
+ lda cheat_flags
+ and #1
+ bne :+
  dec player_lives
+:
  ; Original checkpoints: restart $20 before midpoint, otherwise the midpoint.
  lda #10
  sta ptr
@@ -161,6 +186,152 @@ Main:
  sta ready
  jmp @loop
 
+; Map end for chapters 2-4: descriptor scroll end reached on a new column.
+ChapterMapEnd:
+ lda new_column
+ beq @done
+ lda #4
+ sta ptr
+ lda stagebase
+ sta ptr+1
+ ldy #0
+ lda worldlo
+ cmp (ptr),y
+ bne @done
+ iny
+ lda worldhi
+ cmp (ptr),y
+ bne @done
+ jmp AdvanceStage
+@done: rts
+
+NewGame:
+ lda #1
+ sta chapter
+ jsr Flow_NewGame
+ jsr TargetNewGame
+ lda #0
+ sta score_lo
+ sta score_hi
+ sta route_flag
+ lda #3
+ sta player_lives
+ lda #1
+ sta stage_id
+ lda #$20
+ sta worldlo
+ lda #0
+ sta worldhi
+ jmp LoadStage
+
+; Redraw the current stage window, palettes, sprite banks and HUD font rows
+; without touching game state (cheat menu resume). Same sequence as LoadStage.
+RestoreGameScreen:
+ sei
+ lda camera
+ pha
+ lda #0
+ sta screenon
+ sta $2000
+ sta $2001
+ sta $5204
+ sta column_pending
+ jsr LoadDataBank
+ lda #0
+ sta ptr
+ lda stagebase
+ sta ptr+1
+ ldy #$10
+ ldx #0
+@rsprites:
+ lda (ptr),y
+ sta $5120,x
+ iny
+ inx
+ cpx #8
+ bne @rsprites
+ lda #$86
+ sta $5115
+ jsr ClearPPU
+ ; Per-stage background palettes and four fixed sprite palettes.
+ bit $2002
+ lda #$3f
+ sta $2006
+ lda #0
+ sta $2006
+ ldy #$20
+@rpal:
+ lda (ptr),y
+ sta $2007
+ iny
+ cpy #$30
+ bne @rpal
+ ldx #0
+@rspal:
+ lda SpritePalette,x
+ sta $2007
+ inx
+ cpx #16
+ bne @rspal
+ ; Initial window consists of previous 32 source columns.
+ lda worldlo
+ sec
+ sbc #32
+ sta worldlo
+ lda worldhi
+ sbc #0
+ sta worldhi
+ lda worldlo
+ asl a
+ asl a
+ asl a
+ sta camera
+ lda #32
+ sta work
+@rwindow:
+ jsr DrawColumn
+ jsr UploadColumn
+ inc worldlo
+ bne :+
+ inc worldhi
+:
+ dec work
+ bne @rwindow
+ lda worldlo
+ bne :+
+ dec worldhi
+:
+ dec worldlo
+ lda #0
+ sta column_pending
+ ; HUD has its own bitmap bank in ExRAM; this is not a split CHR hack.
+ lda #2
+ sta $5104
+ ldx #0
+ lda #1
+@rfont:
+ sta $5f20,x
+ sta $5f40,x
+ inx
+ cpx #32
+ bne @rfont
+ lda #1
+ sta $5104
+ lda #$87
+ sta $5115
+ lda #1
+ sta hud_pending
+ pla
+ sta camera
+ lda #1
+ sta screenon
+ lda #$a0
+ sta $2000
+ lda #$1c
+ sta $2001
+ cli
+ rts
+
 Title:
  lda #0
  sta $2000
@@ -169,12 +340,51 @@ Title:
  sta $5204
  lda #$89
  sta $5114
+ sta bank8000
  jmp TitleInit
 
 LoadDataBank:
  lda stage_bank
  ora #$80
  sta $5114
+ sta bank8000
+ rts
+
+; Stage-specific logic lives in the STAGECODE bank (10), mapped at $8000 only
+; while it runs; the $8000 slot otherwise holds stage/boss/title data.
+StageCodeIn:
+ lda #$8a
+ sta $5114
+ rts
+StageCodeOut:
+ lda bank8000
+ bne :+
+ lda #$80              ; never seeded (unit fixtures): stage data bank 0
+:
+ sta $5114
+ rts
+; Hooks run for every shot; only switch banks when stage 4 is actually active.
+Stage4ShotHitBanked:
+ lda stage_id
+ cmp #4
+ bne @none
+ jsr StageCodeIn
+ jsr Stage4ShotHit
+ php
+ jsr StageCodeOut
+ plp
+ rts
+@none:
+ clc
+ rts
+Stage4LaserHitBanked:
+ lda stage_id
+ cmp #4
+ bne @skip
+ jsr StageCodeIn
+ jsr Stage4LaserHit
+ jmp StageCodeOut
+@skip:
  rts
 
 LoadStage:
@@ -209,6 +419,11 @@ LoadStage:
 @retain_power:
  lda #0
  sta route_flag
+ lda chapter
+ cmp #2
+ beq @chapter2
+ cmp #4
+ beq @chapter4
  lda stage_id
  sec
  sbc #1
@@ -223,6 +438,30 @@ LoadStage:
 @evenbase: lda #$80
 @base:
  sta stagebase
+ jmp @based
+@chapter2:
+ ; Nemesis 2: stage_id is the source map id 0..11 (campaign module numbering),
+ ; one 8 KiB descriptor per map in banks N2_MAP_BANK..+11, at $8000.
+ lda stage_id
+ clc
+ adc #N2_MAP_BANK
+ sta stage_bank
+ jsr LoadDataBank
+ lda #$80
+ sta stagebase
+ jmp @based
+@chapter4:
+ ; Nemesis 3: eleven descriptors in banks N3_MAP_BANK..+10.
+ lda stage_id
+ sec
+ sbc #1
+ clc
+ adc #N3_MAP_BANK
+ sta stage_bank
+ jsr LoadDataBank
+ lda #$80
+ sta stagebase
+@based:
  lda #0
  sta ptr
  lda stagebase
@@ -308,6 +547,9 @@ LoadStage:
  jsr InitActors
  jsr Stage2Init
  jsr Stage3Init
+ jsr StageCodeIn
+ jsr Stage4Init
+ jsr StageCodeOut
  jsr TargetInit
  lda #$50
  sta player_x
@@ -360,12 +602,13 @@ LoadStage:
 
 ; Construct one column using the original six-metatile script. No full-map RAM.
 DrawColumn:
- lda #$86
- sta $5115
  lda #0
  sta ptr
  lda stagebase
  sta ptr+1
+ ldy #12
+ lda (ptr),y            ; metatile bank ($5115 value) named by the descriptor
+ sta $5115
  lda worldlo
  and #31
  sta column_slot
@@ -614,7 +857,11 @@ UploadColumn:
 
 FrameGame:
  inc logic
+ lda chapter
+ cmp #1
+ bne :+
  jsr StageEvents
+:
  lda #0
  sta new_column
  lda phase
@@ -637,13 +884,24 @@ FrameGame:
  jsr SpawnCannon
 @noscroll:
  jsr MovePlayer
+ lda chapter
+ cmp #1
+ beq @chapter1_logic
+ ; Chapters without ported stage logic yet: the map ends at the source scroll
+ ; end and the campaign module decides the next map (structural progression).
+ jsr ChapterMapEnd
+ jmp @no_chapter1_logic
+@chapter1_logic:
  jsr Stage2Tick
  jsr Stage3Tick
+ jsr StageCodeIn
+ jsr Stage4Tick
+ jsr StageCodeOut
  jsr TargetTick
  lda phase
- bne :+
+ bne @no_chapter1_logic
  jsr SpawnWaves
-:
+@no_chapter1_logic:
  jsr ActorsFrame
  jsr ShotsFrame
  jsr HideSprites
@@ -712,6 +970,9 @@ FrameGame:
  jsr ActorsDraw
  jsr Stage2Draw
  jsr Stage3Draw
+ jsr StageCodeIn
+ jsr Stage4Draw
+ jsr StageCodeOut
  jsr TargetDraw
  jsr UpdateHUD
  lda logic
@@ -737,6 +998,78 @@ FrameGame:
  sta $07c4
  lda $6919
  sta $07c5
+ lda cheat_flags
+ and #2
+ beq :+
+ jsr CheatDebugRow
+:
+ ; Read-only QA mirror of the 17 actor records (type, X, Y, frame) at
+ ; $0780..$07C3 and the ten enemy-shot flags at $07C6..$07CF, refreshed with
+ ; the snapshot above. Tests inspect it; gameplay never reads it.
+ lda logic
+ and #7
+ bne @mirror_done
+ ldx #0
+ ldy #0
+@mirror:
+ lda OBJECTS,x
+ sta $0780,y
+ lda OBJECTS+6,x
+ sta $0781,y
+ lda OBJECTS+4,x
+ sta $0782,y
+ lda OBJECTS+12,x
+ sta $0783,y
+ iny
+ iny
+ iny
+ iny
+ txa
+ clc
+ adc #32
+ tax
+ bne @mirror
+ ldx #0
+ ldy #0
+@mirror_hi:
+ lda OBJECTS+256,x
+ sta $07a0,y
+ lda OBJECTS+256+6,x
+ sta $07a1,y
+ lda OBJECTS+256+4,x
+ sta $07a2,y
+ lda OBJECTS+256+12,x
+ sta $07a3,y
+ iny
+ iny
+ iny
+ iny
+ txa
+ clc
+ adc #32
+ tax
+ bne @mirror_hi
+ lda OBJECTS+512
+ sta $07c0
+ lda OBJECTS+512+6
+ sta $07c1
+ lda OBJECTS+512+4
+ sta $07c2
+ lda OBJECTS+512+12
+ sta $07c3
+ ldx #0
+ ldy #0
+@mirror_shots:
+ lda ENEMY_SHOTS,x
+ sta $07c6,y
+ iny
+ txa
+ clc
+ adc #16
+ tax
+ cpx #160
+ bne @mirror_shots
+@mirror_done:
  rts
 
 MovePlayer:
@@ -933,10 +1266,25 @@ UpdateHUD:
  sta HUD,x
  dex
  bpl @copy
+ ; Stage number: one digit, or two for 10..12 (bonus stages and chapter maps).
+ lda #' '
+ sta HUD+4
  lda stage_id
+ cmp #10
+ bcc @one_digit
+ sec
+ sbc #10
+ ldx #'1'
+ stx HUD+3
+ clc
+ adc #$30
+ sta HUD+4
+ jmp @stage_done
+@one_digit:
  clc
  adc #$30
  sta HUD+3
+@stage_done:
  lda player_lives
  clc
  adc #$30
@@ -976,6 +1324,10 @@ AdvanceStage:
  bne @scene
  lda #1
  sta route_flag
+ lda Flow_State+F_CHAPTER
+ clc
+ adc #1              ; campaign module chapters are 0-based
+ sta chapter
  lda Flow_State+F_STAGE
  sta stage_id
  lda #$20
@@ -984,8 +1336,6 @@ AdvanceStage:
  sta worldhi
  jmp LoadStage
 @scene:
- lda #4
- sta mode
- rts
+ jmp SceneOpen
 SpritePalette: .byte $0f,$30,$16,$12,$0f,$16,$30,$26,$0f,$28,$30,$16,$0f,$30,$1c,$26
 HUDTemplate: .byte "ST:1  L:3  PWR:0  OP:0   SPD:30 "

@@ -11,7 +11,7 @@ ROOT=pathlib.Path(__file__).resolve().parents[1]
 
 def main():
  p=argparse.ArgumentParser();p.add_argument('--core',required=True);a=p.parse_args()
- rom=(ROOT/'build/native/Nemesis_Legends_CP0011.nes').read_bytes();out=ROOT/'reports/cp0009';out.mkdir(parents=True,exist_ok=True)
+ rom=(ROOT/'build/native/Nemesis_Legends_CP0016.nes').read_bytes();out=ROOT/'reports/cp0016';out.mkdir(parents=True,exist_ok=True)
  runs=[]
  for kind in ('destroy_core','source_timeout'):
   trace=[];closed_hp=[];hits=[];cleared=False;lastphase=-1;lastmiss=0;missed=0;injected=False;carry=None;seen_mid=False;volcano=0;stage2frame=None

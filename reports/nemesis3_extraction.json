@@ -1,0 +1,42 @@
+{
+  "source_sha256": "fb4f66bcc3eabaf7eea6b91d1e2f5a15aa2f80a31a056af41d948b32646877a9",
+  "maps": 11,
+  "maps_with_terrain": 9,
+  "terrain_columns": 3104,
+  "vram_segments": 21,
+  "source_tile_occurrences": 39936,
+  "unique_source_pixel_tiles": 6361,
+  "sprite_sets": 66,
+  "boss_graphics_sets": 16,
+  "sequence_pictures": 117,
+  "sequence_picture_slots": 137,
+  "sequence_pictures_rendered": 117,
+  "screens": 15,
+  "compressed_streams": 529,
+  "compressed_stream_bytes": 54766,
+  "mirror_copy_records": 291,
+  "color_counts_per_tile": {
+    "1": 20300,
+    "2": 5189,
+    "3": 4636,
+    "4": 4824,
+    "5": 3549,
+    "6": 934,
+    "7": 386,
+    "8": 112,
+    "9": 6
+  },
+  "runtime_integration": false,
+  "source_hardware_vram_comparison": "pending (the upstream disassembly reports its own openMSX checks; none were run here)",
+  "limitations": [
+    "Static graphics, terrain and inventory only. Enemies, bosses, collisions, scrolling events and cutscene logic are not implemented.",
+    "Stages 1 and 4 have no terrain map in the ROM (scroll limits 0xFFFF): the stage 1 sun and the stage 4 boss rush are drawn by code from enemy/boss records.",
+    "Terrain previews use the character set in force at each column (mid-stage changes p00:51EE) and step 0 of the self-animating characters (p02:835A); objects, pieces and enemies made of characters are not drawn.",
+    "Sprite sets are the stage-start state (p00:4F82) with the ship variants of p00:5019; sprites loaded later by object code are not included.",
+    "Boss graphics sets are decoded onto a blank VRAM for inspection; in the game they overlay the stage set.",
+    "Sequence pictures are rendered standalone with their p26:62D3 colour (0xF1 substituted where the code uses colour 0 and lets a fade-in routine colour them); the frames, portraits and animations around them are not composed, except the static on-board computer frame and the initial title buffer.",
+    "The title logo animation (p30:85BD-870F) and every state-machine composition of the story and ending are not replicated; the Konami logo is shown in its final faded-in state.",
+    "MSX2 palettes (p00:4B94) are ignored: the TMS9918 palette is used.",
+    "No NES palette quantisation has been applied."
+  ]
+}

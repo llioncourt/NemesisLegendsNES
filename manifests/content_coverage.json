@@ -1,6 +1,6 @@
 {
-  "checkpoint": "CP0011",
-  "stage": "source-derived N1 stage3 2-core normal and stage4 cross-stage bonus11; all other games WIP",
+  "checkpoint": "CP0015",
+  "stage": "512 KiB PRG / 256 KiB CHR board; Nemesis stages 1-4 playable; twelve Nemesis 2 and eleven Nemesis 3 maps loadable and scrollable (terrain/sprites only); cheat menu; all other gameplay WIP",
   "playable_game_rom": true,
   "full_game_complete": false,
   "chapters": [
@@ -82,11 +82,34 @@
         "source_target_types_3_and_4": "integrated and assisted route tested",
         "cross_stage_secret_types_2_3_4": "integrated and assisted route tested",
         "bonus_stage11": "secret branch reaches stage5",
-        "source_mixed_group": "integrated, scoped isolated fixture tested only",
-        "source_two_bosses": "NOT integrated",
-        "normal_stage4_clear": "NOT available",
+        "source_mixed_group": "integrated; type 6 hopper now source-faithful",
+        "source_eruption_at_0128": "integrated and assisted route tested",
+        "source_five_piece_tower_at_0171": "integrated and assisted route tested",
+        "source_boss5_piece_spawner_at_019F": "integrated and assisted route tested",
+        "source_big_core_at_01C0": "integrated and assisted route tested",
+        "normal_stage4_clear": "assisted route reaches stage5",
+        "unassisted_clear": "NOT tested",
+        "visuals": "NOT approved",
         "stage5_content": "NOT integrated"
-      }
+      },
+      "native_enemy_types_ported": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        8,
+        9,
+        10,
+        15,
+        18,
+        19,
+        21,
+        32
+      ],
+      "unique_source_tiles": 1169,
+      "structure_inventory": "nemesis_structure.json"
     },
     {
       "chapter": 2,
@@ -100,35 +123,47 @@
       "nes_gameplay_complete": false,
       "cutscenes_integrated": false,
       "endings_validated": false,
-      "upstream_reassembly_byte_exact": true
+      "upstream_reassembly_byte_exact": true,
+      "unique_source_tiles": 1695,
+      "structure_inventory": "nemesis2_structure.json",
+      "native_maps_structurally_loadable": 12,
+      "native_map_scroll_tested": 12,
+      "note": "terrain, palettes and hardware sprites only; no gameplay"
     },
     {
       "chapter": 3,
       "source": "salamander_msx",
       "source_available": true,
       "original_hash_verified": true,
-      "static_maps_extracted": 0,
-      "sprite_variants_extracted": 0,
+      "static_maps_extracted": 7,
+      "sprite_variants_extracted": 7,
       "original_audio_driver_ripped": true,
       "nes_music_conversion_complete": false,
       "nes_gameplay_complete": false,
       "cutscenes_integrated": false,
       "endings_validated": false,
-      "upstream_reassembly_byte_exact": true
+      "upstream_reassembly_byte_exact": true,
+      "unique_source_tiles": 1534,
+      "structure_inventory": "salamander_structure.json"
     },
     {
       "chapter": 4,
       "source": "nemesis3_msx",
       "source_available": true,
       "original_hash_verified": true,
-      "static_maps_extracted": 0,
-      "sprite_variants_extracted": 0,
+      "static_maps_extracted": 11,
+      "sprite_variants_extracted": 66,
       "original_audio_driver_ripped": false,
       "nes_music_conversion_complete": false,
       "nes_gameplay_complete": false,
       "cutscenes_integrated": false,
       "endings_validated": false,
-      "upstream_reassembly_byte_exact": true
+      "upstream_reassembly_byte_exact": true,
+      "unique_source_tiles": 6361,
+      "structure_inventory": "nemesis3_structure.json",
+      "native_maps_structurally_loadable": 11,
+      "native_map_scroll_tested": 11,
+      "note": "terrain, palettes and hardware sprites only; no gameplay"
     }
   ],
   "custom_title_native_asset": true,
@@ -156,7 +191,11 @@
     "stage_three_assisted_routes": 2,
     "inter_stage_target_assisted_routes": 2,
     "source_wave_type9_natural_seen": true,
-    "source_wave_mixed_fixture_only": true
+    "source_wave_mixed_fixture_only": true,
+    "stage_four_assisted_routes": 1,
+    "stage_four_checks": 14,
+    "stage_four_boss5_pieces_spawned": 8,
+    "stage_four_missed_NMI": 0
   },
   "title_menu": {
     "native": true,
@@ -170,5 +209,71 @@
       "SOUND ON/OFF"
     ],
     "copyright_year": 2026
+  },
+  "silicon_forge_menu_partial": {
+    "implemented": [
+      "konami_code_title",
+      "konami_code_pause",
+      "invincibility",
+      "infinite_lives",
+      "game_select_nemesis_only",
+      "stage_select",
+      "checkpoint_select",
+      "weapons",
+      "powerups",
+      "ship_speed",
+      "pace",
+      "sound_test",
+      "warp_to_end_zone",
+      "restart_stage",
+      "debug_row_world_phase_missed_actors_sprites_frame"
+    ],
+    "missing": [
+      "continues (no continue system yet)",
+      "cutscene viewer (no cutscenes yet)",
+      "ending viewer",
+      "music player (no converted music yet)",
+      "hitbox overlay",
+      "bank info",
+      "skip cutscene",
+      "transition test",
+      "asset identification",
+      "memory info"
+    ]
+  },
+  "asset_manifest": {
+    "tool": "tools/asset_manifest.py",
+    "resources": {
+      "total": 1727,
+      "identified": 1727,
+      "extracted": 1676,
+      "converted": 238,
+      "integrated": 238,
+      "tested": 59,
+      "validated": 0,
+      "pending": 1489,
+      "reuse": {
+        "CONVERT": 1575,
+        "ADAPT": 2,
+        "UNKNOWN": 19,
+        "NEW": 6,
+        "REUSE": 125
+      }
+    }
+  },
+  "nes_references_extracted": true,
+  "board": {
+    "mapper": 5,
+    "prg_kib": 512,
+    "chr_kib": 256,
+    "chr_type": "CHR-ROM",
+    "kernel_bank": 62,
+    "boot_bank": 63,
+    "nemesis2_map_banks": "14-25",
+    "nemesis2_metatile_banks": "26-27",
+    "chapter2_chr_banks": "25-38",
+    "nemesis3_map_banks": "28-38",
+    "nemesis3_metatile_banks": "39-40",
+    "chapter4_chr_banks": "39-55"
   }
 }

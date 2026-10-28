@@ -3,7 +3,7 @@
 .include "native.inc"
 .include "actors.inc"
 .import LaserStep,LaserDraw
-.import BossShotHit
+.import BossShotHit,Stage4ShotHitBanked
 .import DrawSprite8
 .import DrawSprite,PlayerHit,ActorKilled,ObjectPointer,AngleTable,SineTable
 .export ProjectileFrame,ProjectileDraw,TerrainSolid,AimBullet
@@ -167,6 +167,8 @@ ProjectileFrame:
  jcs @erase
 @hit:
  jsr BossShotHit
+ jcs @erase
+ jsr Stage4ShotHitBanked
  jcs @erase
  ldy #1
  lda (shot_ptr),y

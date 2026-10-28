@@ -140,11 +140,11 @@ SpawnFound:
  ldy #O_TYPE
  lda (objptr),y
  cmp #1
- beq @cannon
+ jeq @cannon
  cmp #2
- beq @two
+ jeq @two
  cmp #3
- beq @three
+ jeq @three
  cmp #4
  jeq @four
  cmp #5
@@ -163,8 +163,58 @@ SpawnFound:
  jeq @capsule
  cmp #$13
  jeq @capsule
+ cmp #$0a
+ beq @ten
  ; Unsupported source handlers remain explicitly observable, not generic motion.
  sta unknown_type
+ clc
+ rts
+@ten:
+ ; remata_el_tipo_0A p03:$AD6E: group members alternate the curve. Odd remaining
+ ; count: aY +$0080 with vY -4; even: aY -$0080 with vY +4. The horizontal
+ ; "acceleration" bytes hold the |vY| turning threshold 4.0 (p02:$9530 stores
+ ; its absolute value); horizontal velocity is three pixels left.
+ lda wave_count
+ and #1
+ beq @ten_down
+ lda #$80
+ ldy #O_AYL
+ sta (objptr),y
+ lda #0
+ iny
+ sta (objptr),y
+ ldy #O_VYL
+ sta (objptr),y
+ lda #$fc
+ iny
+ sta (objptr),y
+ bne @ten_common
+@ten_down:
+ lda #$80
+ ldy #O_AYL
+ sta (objptr),y
+ lda #$ff
+ iny
+ sta (objptr),y
+ lda #0
+ ldy #O_VYL
+ sta (objptr),y
+ lda #4
+ iny
+ sta (objptr),y
+@ten_common:
+ lda #0
+ ldy #O_AXL
+ sta (objptr),y
+ lda #4
+ iny
+ sta (objptr),y
+ lda #0
+ ldy #O_VXL
+ sta (objptr),y
+ lda #$fd
+ iny
+ sta (objptr),y
  clc
  rts
 @nine:
@@ -708,6 +758,8 @@ ActorsFrame:
  beq @rock
  cmp #9
  beq @nine
+ cmp #$0a
+ beq @ten
  cmp #$0f
  beq @volcano
  cmp #$20
@@ -738,6 +790,8 @@ ActorsFrame:
 @rock:jsr Stage2RockFrame
  jmp @collide
 @nine:jsr TypeNine
+ jmp @move
+@ten:jsr TypeTen
  jmp @move
 @capsule:jsr Capsule
  jmp @next
@@ -1297,6 +1351,11 @@ TypeFive:
  sta (objptr),y
 @done:rts
 
+; mueve_el_tipo_6 p03:$A95A: a hopper. Step 0 lasts a $78-frame rope (also
+; shortened every 32 frames, p02:$95A6); on ground it jumps again (vY -6) with
+; two pixels per frame toward the ship's column. Step 1: on ground, two pixels
+; left and step 2. Step 2: keeps hopping left until it leaves. Ground means a
+; map wall $10 below while falling between rows $58 and $9F, or row $9F itself.
 TypeSix:
  jsr FireAtPlayer
  lda logic
@@ -1309,30 +1368,96 @@ TypeSix:
  adc #$a0
  ldy #O_FRAME
  sta (objptr),y
+ ldy #O_STATE
+ lda (objptr),y
+ beq @step0
+ cmp #1
+ beq @step1
+ jsr SixGround
+ bcc @gravity
+ bcs @jump
+@step0:
+ ldy #O_LIFE
+ lda (objptr),y
+ sec
+ sbc #1
+ sta (objptr),y
+ beq @advance
+ lda logic
+ and #$1f
+ bne @toward
+ lda (objptr),y
+ sec
+ sbc #1
+ sta (objptr),y
+ bne @toward
+@advance:
+ ldy #O_STATE
+ lda (objptr),y
+ clc
+ adc #1
+ sta (objptr),y
+@toward:
+ jsr SixGround
+ bcc @gravity
+ ldy #O_X
+ lda player_x
+ cmp (objptr),y
+ lda #2
+ bcs :+
+ lda #$fe
+:
+ bne @setvx
+@step1:
+ jsr SixGround
+ bcc @gravity
+ ldy #O_STATE
+ lda (objptr),y
+ clc
+ adc #1
+ sta (objptr),y
+ lda #$fe
+@setvx:
+ ldy #O_VXH
+ sta (objptr),y
+ lda #0
+ dey
+ sta (objptr),y
+@jump:
+ ; pon_la_velocidad_horizontal_desde_la_aceleracion p02:$9577 reloads vY = -6.
+ lda #0
+ ldy #O_VYL
+ sta (objptr),y
+ lda #$fa
+ iny
+ sta (objptr),y
+ rts
+@gravity:jmp AddAY
+
+; tiene_suelo_debajo p03:$A9AE. C set when there is ground.
+SixGround:
  ldy #O_VYH
  lda (objptr),y
- bmi @gravity
+ bmi @no
  ldy #O_Y
  lda (objptr),y
- cmp #159
- bcs @bounce
+ cmp #$58
+ bcc @no
+ cmp #$9f
+ bcs @yes
  clc
- adc #16
+ adc #$10
  sta sprite_y
  ldy #O_X
  lda (objptr),y
  sta sprite_x
- jsr TerrainSolid
- bcc @gravity
-@bounce:
- lda #0
- ldy #O_VYL
- sta (objptr),y
- iny
- lda #$fa
- sta (objptr),y
+ jmp TerrainSolid
+@yes:
+ sec
  rts
-@gravity:jmp AddAY
+@no:
+ clc
+ rts
 
 TypeNine:
  jsr FireAtPlayer
@@ -1374,6 +1499,96 @@ TypeNine:
 @setvy:
  ldy #O_VYH
  sta (objptr),y
+@done:rts
+
+; mueve_el_tipo_0A p03:$AD92: unaimed fire, six frames every four, vertical
+; acceleration reversed each time |vY| meets the 4.0 threshold, and the
+; horizontal velocity reversed below column $30 (returns the way it came).
+TypeTen:
+ jsr FireAtPlayer
+ ldy #O_CLOCK
+ lda (objptr),y
+ clc
+ adc #1
+ cmp #24
+ bcc :+
+ lda #0
+:
+ sta (objptr),y
+ lsr a
+ lsr a
+ tax
+ lda TenFrames,x
+ ldy #O_FRAME
+ sta (objptr),y
+ ; suma_la_aceleracion_vertical p02:$953C
+ ldy #O_VYL
+ lda (objptr),y
+ ldy #O_AYL
+ clc
+ adc (objptr),y
+ ldy #O_VYL
+ sta (objptr),y
+ sta s0
+ ldy #O_VYH
+ lda (objptr),y
+ ldy #O_AYH
+ adc (objptr),y
+ ldy #O_VYH
+ sta (objptr),y
+ sta s1
+ ; compara_velocidad_y_aceleracion p02:$9564: |vY| against the stored threshold
+ bpl :+
+ lda #0
+ sec
+ sbc s0
+ sta s0
+ lda #0
+ sbc s1
+ sta s1
+:
+ ldy #O_AXL
+ lda (objptr),y
+ cmp s0
+ bne @turned
+ iny
+ lda (objptr),y
+ cmp s1
+ bne @turned
+ ; pon_la_aceleracion_al_reves p02:$9519
+ ldy #O_AYL
+ lda #0
+ sec
+ sbc (objptr),y
+ sta (objptr),y
+ iny
+ lda #0
+ sbc (objptr),y
+ sta (objptr),y
+@turned:
+ ldy #O_X
+ lda (objptr),y
+ cmp #$30
+ bcs @right
+ ; cambia_el_signo_de_la_velocidad_horizontal p02:$9580
+ ldy #O_VXL
+ lda #0
+ sec
+ sbc (objptr),y
+ sta (objptr),y
+ iny
+ lda #0
+ sbc (objptr),y
+ sta (objptr),y
+ rts
+@right:
+ ; Returning units leave through the right edge (source frees at X >= $F9).
+ cmp #$f0
+ bcc @done
+ ldy #O_VXH
+ lda (objptr),y
+ bmi @done
+ jmp Despawn
 @done:rts
 
 FireAtPlayer:
@@ -1638,5 +1853,6 @@ Marks:.byte 0,0,0,1,0,0,0,1,0,0,0,2,0,0,0,1
 StreamY:.byte 32,128,64,112
 LeftY:.byte 8,144,8,8,144,8,144,144
 NineFrames:.byte $ec,$f0,$f4,$f8,$f4,$f0
+TenFrames:.byte $bc,$c0,$c4,$c8,$c4,$c0
 CurveFrames:.byte $8c,$90,$94,$98,$9c,$98,$94,$90
 WalkerFrames:.byte $d0,$d4,$f4,$f8,$dc,$e0,$e8,$ec

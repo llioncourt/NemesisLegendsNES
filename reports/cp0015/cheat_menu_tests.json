@@ -1,0 +1,21 @@
+{
+ "rom_sha256": "6bb2384a040a42ecbfdb46ae3ec00d6ab883f94f2fb8fb2ac4a3f659448546b7",
+ "checks": {
+  "title_konami_opens_menu": true,
+  "menu_cursor_on_stage": true,
+  "start_from_menu_loads_selected_stage": true,
+  "invincible_and_infinite_lives_applied": true,
+  "stage_four_scrolls": true,
+  "pause_before_code": true,
+  "pause_konami_opens_menu": true,
+  "cursor_reached_debug_item": true,
+  "resume_returns_to_pause_with_world_kept": true,
+  "game_continues_after_resume": true,
+  "debug_row_live": true,
+  "warp_to_end_zone": true,
+  "invincible_cleared_from_menu": true,
+  "death_observed_without_invincibility": true,
+  "infinite_lives_keep_count": true
+ },
+ "qa": "menu-driven only; no RAM writes"
+}

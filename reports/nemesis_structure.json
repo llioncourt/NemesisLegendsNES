@@ -1,0 +1,934 @@
+{
+ "source_sha256": "3210f8a0f2309dd4b9a89fc2b24d0f178ce4393a0a1f2854fbce545c361261bc",
+ "campaign_order": [
+  1,
+  2,
+  9,
+  3,
+  10,
+  4,
+  11,
+  5,
+  6,
+  7,
+  12,
+  8
+ ],
+ "bonus_return_table_418F": [
+  3,
+  4,
+  5,
+  8
+ ],
+ "stage_record_table": "p00:4499 (start,end,limit) x6 bytes",
+ "checkpoint_table": "p00:4212",
+ "end_routine_table": "p01:6CD7",
+ "music_table": "p01:7056 (per stage: rows of distance limit + track command, FFFF last)",
+ "stages": [
+  {
+   "stage": 1,
+   "name": "Volcano",
+   "campaign_position": 1,
+   "bonus": false,
+   "terrain_script_start": 128,
+   "terrain_script_end": 416,
+   "initial_scroll_limit": 415,
+   "terrain_script_address": 38904,
+   "checkpoint_distance": 248,
+   "cannon_record_count": 18,
+   "cannon_table_address": 37500,
+   "wave_group_bits_address": 41912,
+   "wave_group_bits": [
+    0,
+    0,
+    0,
+    2,
+    1,
+    4,
+    6,
+    10,
+    3,
+    10,
+    5,
+    14,
+    0,
+    0,
+    0,
+    0
+   ],
+   "opening_wave_types": 34,
+   "end_routine_address": 27887,
+   "end_sequence": "final_de_la_fase_1 6CEF: p02:8E77 five pieces at $165; at limit $19F tanda mode 1 (450 rocks); E105=$1C0; Big Core kind 0; acaba_la_fase",
+   "music": {
+    "table_address": 28784,
+    "rows": [
+     {
+      "below_distance": 100,
+      "track_command": 172
+     },
+     {
+      "below_distance": 384,
+      "track_command": 175
+     },
+     {
+      "below_distance": 65535,
+      "track_command": 181
+     }
+    ]
+   },
+   "native_state": "playable (assisted)"
+  },
+  {
+   "stage": 2,
+   "name": "Stonehenge",
+   "campaign_position": 2,
+   "bonus": false,
+   "terrain_script_start": 128,
+   "terrain_script_end": 416,
+   "initial_scroll_limit": 463,
+   "terrain_script_address": 39336,
+   "checkpoint_distance": 256,
+   "cannon_record_count": 44,
+   "cannon_table_address": 37556,
+   "wave_group_bits_address": 41928,
+   "wave_group_bits": [
+    0,
+    1,
+    1,
+    1,
+    0,
+    2,
+    2,
+    0,
+    0,
+    2,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "opening_wave_types": 34,
+   "end_routine_address": 28006,
+   "end_sequence": "final_de_la_fase_2: target $190 -> stage 9 (E1C0); rock walls $144..$188 and 900-frame rain (p03:AB86); Big Core kind 0 at $1DF",
+   "music": {
+    "table_address": 28793,
+    "rows": [
+     {
+      "below_distance": 100,
+      "track_command": 172
+     },
+     {
+      "below_distance": 423,
+      "track_command": 150
+     },
+     {
+      "below_distance": 65535,
+      "track_command": 181
+     }
+    ]
+   },
+   "native_state": "playable (assisted)"
+  },
+  {
+   "stage": 3,
+   "name": "Moai (no terrain)",
+   "campaign_position": 4,
+   "bonus": false,
+   "terrain_script_start": 65535,
+   "terrain_script_end": 65535,
+   "initial_scroll_limit": 415,
+   "terrain_script_address": 38904,
+   "checkpoint_distance": 242,
+   "cannon_record_count": 14,
+   "cannon_table_address": 37690,
+   "wave_group_bits_address": 41944,
+   "wave_group_bits": [
+    0,
+    16,
+    16,
+    16,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "opening_wave_types": 42,
+   "end_routine_address": 28071,
+   "end_sequence": "final_de_la_fase_3 6DA7: Big Core kind 0 at $60 (first step), scroll to $1AF, Big Core again; target $12A -> stage 10; second loop kind 6 instead of 1 (el_otro_jefe 6DE1)",
+   "music": {
+    "table_address": 28802,
+    "rows": [
+     {
+      "below_distance": 96,
+      "track_command": 172
+     },
+     {
+      "below_distance": 380,
+      "track_command": 152
+     },
+     {
+      "below_distance": 65535,
+      "track_command": 181
+     }
+    ]
+   },
+   "native_state": "playable (assisted)"
+  },
+  {
+   "stage": 4,
+   "name": "Inverted volcano",
+   "campaign_position": 6,
+   "bonus": false,
+   "terrain_script_start": 128,
+   "terrain_script_end": 416,
+   "initial_scroll_limit": 415,
+   "terrain_script_address": 39768,
+   "checkpoint_distance": 256,
+   "cannon_record_count": 11,
+   "cannon_table_address": 37734,
+   "wave_group_bits_address": 41960,
+   "wave_group_bits": [
+    1,
+    1,
+    2,
+    2,
+    1,
+    5,
+    6,
+    14,
+    3,
+    5,
+    15,
+    6,
+    32,
+    0,
+    0,
+    0
+   ],
+   "opening_wave_types": 42,
+   "end_routine_address": 28181,
+   "end_sequence": "final_de_la_fase_4 6E15: tanda mode 2 at $128; p02:8E77 five pieces at $171; kind 5 at limit $19F; E105=$1C0; Big Core kind 0; targets 3/4 at $C0/$104 -> stage 11",
+   "music": {
+    "table_address": 28811,
+    "rows": [
+     {
+      "below_distance": 100,
+      "track_command": 172
+     },
+     {
+      "below_distance": 383,
+      "track_command": 154
+     },
+     {
+      "below_distance": 65535,
+      "track_command": 181
+     }
+    ]
+   },
+   "native_state": "playable (assisted) since CP0012"
+  },
+  {
+   "stage": 5,
+   "name": "Tentacles",
+   "campaign_position": 8,
+   "bonus": false,
+   "terrain_script_start": 128,
+   "terrain_script_end": 480,
+   "initial_scroll_limit": 479,
+   "terrain_script_address": 40200,
+   "checkpoint_distance": 256,
+   "cannon_record_count": 14,
+   "cannon_table_address": 37769,
+   "wave_group_bits_address": 41976,
+   "wave_group_bits": [
+    0,
+    1,
+    3,
+    3,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "opening_wave_types": 42,
+   "end_routine_address": 28328,
+   "end_sequence": "final_de_la_fase_5 6EA8: bank-3 encounter p03:B946 at the limit; after death p03:BB95 (E988/E990); E105=$1FF; Big Core kind 0",
+   "music": {
+    "table_address": 28820,
+    "rows": [
+     {
+      "below_distance": 100,
+      "track_command": 172
+     },
+     {
+      "below_distance": 439,
+      "track_command": 162
+     },
+     {
+      "below_distance": 65535,
+      "track_command": 181
+     }
+    ]
+   },
+   "native_state": "descriptor only, no stage logic"
+  },
+  {
+   "stage": 6,
+   "name": "Cells (no terrain)",
+   "campaign_position": 9,
+   "bonus": false,
+   "terrain_script_start": 65535,
+   "terrain_script_end": 65535,
+   "initial_scroll_limit": 65535,
+   "terrain_script_address": 40728,
+   "checkpoint_distance": 256,
+   "cannon_record_count": 0,
+   "cannon_table_address": 37813,
+   "wave_group_bits_address": 41992,
+   "wave_group_bits": [
+    0,
+    1,
+    1,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "opening_wave_types": 202,
+   "end_routine_address": 28400,
+   "end_sequence": "final_de_la_fase_6 6EF0: past $A0 boss kind 2 (p01:7F74); limit stays where it dies",
+   "music": {
+    "table_address": 28829,
+    "rows": [
+     {
+      "below_distance": 128,
+      "track_command": 172
+     },
+     {
+      "below_distance": 344,
+      "track_command": 156
+     },
+     {
+      "below_distance": 65535,
+      "track_command": 181
+     }
+    ]
+   },
+   "native_state": "descriptor only, no stage logic"
+  },
+  {
+   "stage": 7,
+   "name": "Mechanical base approach",
+   "campaign_position": 10,
+   "bonus": false,
+   "terrain_script_start": 128,
+   "terrain_script_end": 384,
+   "initial_scroll_limit": 383,
+   "terrain_script_address": 40728,
+   "checkpoint_distance": 248,
+   "cannon_record_count": 15,
+   "cannon_table_address": 37815,
+   "wave_group_bits_address": 42008,
+   "wave_group_bits": [
+    1,
+    3,
+    2,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "opening_wave_types": 34,
+   "end_routine_address": 28441,
+   "end_sequence": "final_de_la_fase_7 6F19: target $177 -> stage 12; else boss kind 3 (p01:8719)",
+   "music": {
+    "table_address": 28838,
+    "rows": [
+     {
+      "below_distance": 100,
+      "track_command": 172
+     },
+     {
+      "below_distance": 345,
+      "track_command": 158
+     },
+     {
+      "below_distance": 65535,
+      "track_command": 181
+     }
+    ]
+   },
+   "native_state": "descriptor only, no stage logic"
+  },
+  {
+   "stage": 8,
+   "name": "Fortress / final",
+   "campaign_position": 12,
+   "bonus": false,
+   "terrain_script_start": 64,
+   "terrain_script_end": 448,
+   "initial_scroll_limit": 385,
+   "terrain_script_address": 41112,
+   "checkpoint_distance": 256,
+   "cannon_record_count": 31,
+   "cannon_table_address": 37862,
+   "wave_group_bits_address": 42024,
+   "wave_group_bits": [
+    1,
+    3,
+    2,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    6,
+    2,
+    0,
+    0,
+    0,
+    0
+   ],
+   "opening_wave_types": 34,
+   "end_routine_address": 28483,
+   "end_sequence": "final_de_la_fase_8 6F43: at $16E boss kind 4 (p01:87F3); on kill the ending explosion",
+   "music": {
+    "table_address": 28847,
+    "rows": [
+     {
+      "below_distance": 56,
+      "track_command": 172
+     },
+     {
+      "below_distance": 378,
+      "track_command": 160
+     },
+     {
+      "below_distance": 65535,
+      "track_command": 181
+     }
+    ]
+   },
+   "native_state": "descriptor only, no stage logic"
+  },
+  {
+   "stage": 9,
+   "name": "Bonus 9 (from 2)",
+   "campaign_position": 3,
+   "bonus": true,
+   "terrain_script_start": 32,
+   "terrain_script_end": 256,
+   "initial_scroll_limit": 287,
+   "terrain_script_address": 41688,
+   "checkpoint_distance": 256,
+   "cannon_record_count": 25,
+   "cannon_table_address": 37957,
+   "wave_group_bits_address": null,
+   "wave_group_bits": null,
+   "opening_wave_types": null,
+   "end_routine_address": 28567,
+   "end_sequence": "bonus: six instructions, back to stage 3 (table 418F)",
+   "music": {
+    "table_address": 28856,
+    "rows": [
+     {
+      "below_distance": 247,
+      "track_command": 164
+     },
+     {
+      "below_distance": 65535,
+      "track_command": 255
+     }
+    ]
+   },
+   "native_state": "bonus route tested"
+  },
+  {
+   "stage": 10,
+   "name": "Bonus 10 (from 3)",
+   "campaign_position": 5,
+   "bonus": true,
+   "terrain_script_start": 32,
+   "terrain_script_end": 256,
+   "initial_scroll_limit": 287,
+   "terrain_script_address": 42024,
+   "checkpoint_distance": 256,
+   "cannon_record_count": 23,
+   "cannon_table_address": 38034,
+   "wave_group_bits_address": null,
+   "wave_group_bits": null,
+   "opening_wave_types": null,
+   "end_routine_address": 28576,
+   "end_sequence": "bonus: back to stage 4",
+   "music": {
+    "table_address": 28856,
+    "rows": [
+     {
+      "below_distance": 247,
+      "track_command": 164
+     },
+     {
+      "below_distance": 65535,
+      "track_command": 255
+     }
+    ]
+   },
+   "native_state": "bonus route tested"
+  },
+  {
+   "stage": 11,
+   "name": "Bonus 11 (from 4)",
+   "campaign_position": 7,
+   "bonus": true,
+   "terrain_script_start": 32,
+   "terrain_script_end": 192,
+   "initial_scroll_limit": 223,
+   "terrain_script_address": 42360,
+   "checkpoint_distance": 256,
+   "cannon_record_count": 10,
+   "cannon_table_address": 38105,
+   "wave_group_bits_address": null,
+   "wave_group_bits": null,
+   "opening_wave_types": null,
+   "end_routine_address": 28585,
+   "end_sequence": "bonus: back to stage 5",
+   "music": {
+    "table_address": 28862,
+    "rows": [
+     {
+      "below_distance": 183,
+      "track_command": 164
+     },
+     {
+      "below_distance": 65535,
+      "track_command": 255
+     }
+    ]
+   },
+   "native_state": "bonus route tested"
+  },
+  {
+   "stage": 12,
+   "name": "Bonus 12 (from 7)",
+   "campaign_position": 11,
+   "bonus": true,
+   "terrain_script_start": 32,
+   "terrain_script_end": 384,
+   "initial_scroll_limit": 415,
+   "terrain_script_address": 42600,
+   "checkpoint_distance": null,
+   "cannon_record_count": 7,
+   "cannon_table_address": 38137,
+   "wave_group_bits_address": null,
+   "wave_group_bits": null,
+   "opening_wave_types": null,
+   "end_routine_address": 28594,
+   "end_sequence": "bonus: back to stage 8",
+   "music": {
+    "table_address": 28868,
+    "rows": [
+     {
+      "below_distance": 375,
+      "track_command": 164
+     },
+     {
+      "below_distance": 65535,
+      "track_command": 255
+     }
+    ]
+   },
+   "native_state": "descriptor only, no stage logic"
+  }
+ ],
+ "boss_kinds": {
+  "0": {
+   "name": "Big Core nucleus",
+   "address": "p01:7C8D",
+   "notes": "HP 22, 720-frame window, face opens/closes"
+  },
+  "1": {
+   "name": "kind 1",
+   "address": "p01:839F",
+   "notes": "UNRESOLVED behaviour"
+  },
+  "2": {
+   "name": "stage 5/6 boss",
+   "address": "p01:7F74",
+   "notes": "UNRESOLVED behaviour"
+  },
+  "3": {
+   "name": "stage 7 boss",
+   "address": "p01:8719",
+   "notes": "UNRESOLVED behaviour"
+  },
+  "4": {
+   "name": "stage 8 final boss",
+   "address": "p01:87F3",
+   "notes": "UNRESOLVED behaviour"
+  },
+  "5": {
+   "name": "piece spawner (stage 4)",
+   "address": "p02:8CE4",
+   "notes": "8 type-6 pieces HP $28, 600-frame window"
+  },
+  "6": {
+   "name": "second-loop replacement of kind 1",
+   "address": "p01:83A5",
+   "notes": "UNRESOLVED behaviour"
+  }
+ },
+ "targets": [
+  {
+   "stage": 1,
+   "type": 2,
+   "distance": 252,
+   "row": 136,
+   "effect": "counts toward the three-touch bonus 11 (E06C/E06D)"
+  },
+  {
+   "stage": 2,
+   "type": "single",
+   "distance": 400,
+   "row": 136,
+   "effect": "bonus stage 9"
+  },
+  {
+   "stage": 3,
+   "type": "single",
+   "distance": 298,
+   "row": 48,
+   "effect": "bonus stage 10"
+  },
+  {
+   "stage": 4,
+   "type": 3,
+   "distance": 192,
+   "row": 16,
+   "effect": "three-touch counter"
+  },
+  {
+   "stage": 4,
+   "type": 4,
+   "distance": 260,
+   "row": 16,
+   "effect": "three-touch counter -> bonus 11"
+  },
+  {
+   "stage": 7,
+   "type": 1,
+   "distance": 375,
+   "row": 56,
+   "effect": "bonus stage 12"
+  }
+ ],
+ "object_types": [
+  {
+   "type": 0,
+   "draw_mode": 26,
+   "pattern": 24,
+   "colour": 20,
+   "hp": 16,
+   "mover": null
+  },
+  {
+   "type": 1,
+   "draw_mode": 1,
+   "pattern": 0,
+   "colour": 0,
+   "hp": 1,
+   "mover": "9119"
+  },
+  {
+   "type": 2,
+   "draw_mode": 1,
+   "pattern": 0,
+   "colour": 0,
+   "hp": 1,
+   "mover": "A8B2"
+  },
+  {
+   "type": 3,
+   "draw_mode": 0,
+   "pattern": 140,
+   "colour": 14,
+   "hp": 1,
+   "mover": "A836"
+  },
+  {
+   "type": 4,
+   "draw_mode": 0,
+   "pattern": 176,
+   "colour": 2,
+   "hp": 1,
+   "mover": "A863"
+  },
+  {
+   "type": 5,
+   "draw_mode": 0,
+   "pattern": 232,
+   "colour": 10,
+   "hp": 1,
+   "mover": "A9FB"
+  },
+  {
+   "type": 6,
+   "draw_mode": 0,
+   "pattern": 164,
+   "colour": 5,
+   "hp": 1,
+   "mover": "A95A"
+  },
+  {
+   "type": 7,
+   "draw_mode": 1,
+   "pattern": 4,
+   "colour": 0,
+   "hp": 1,
+   "mover": "5EE7"
+  },
+  {
+   "type": 8,
+   "draw_mode": 0,
+   "pattern": 188,
+   "colour": 4,
+   "hp": 1,
+   "mover": "ACBD"
+  },
+  {
+   "type": 9,
+   "draw_mode": 0,
+   "pattern": 220,
+   "colour": 10,
+   "hp": 1,
+   "mover": "AD33"
+  },
+  {
+   "type": 10,
+   "draw_mode": 0,
+   "pattern": 188,
+   "colour": 2,
+   "hp": 1,
+   "mover": "AD92"
+  },
+  {
+   "type": 11,
+   "draw_mode": 0,
+   "pattern": 236,
+   "colour": 2,
+   "hp": 255,
+   "mover": "ADE5"
+  },
+  {
+   "type": 12,
+   "draw_mode": 1,
+   "pattern": 41,
+   "colour": 0,
+   "hp": 1,
+   "mover": "AE1B"
+  },
+  {
+   "type": 13,
+   "draw_mode": 0,
+   "pattern": 224,
+   "colour": 4,
+   "hp": 5,
+   "mover": "AFBD"
+  },
+  {
+   "type": 14,
+   "draw_mode": 0,
+   "pattern": 252,
+   "colour": 8,
+   "hp": 1,
+   "mover": "5F4F"
+  },
+  {
+   "type": 15,
+   "draw_mode": 0,
+   "pattern": 204,
+   "colour": 0,
+   "hp": 1,
+   "mover": "71AD"
+  },
+  {
+   "type": 16,
+   "draw_mode": 0,
+   "pattern": 136,
+   "colour": 8,
+   "hp": 1,
+   "mover": "71B0"
+  },
+  {
+   "type": 17,
+   "draw_mode": 1,
+   "pattern": 0,
+   "colour": 0,
+   "hp": 5,
+   "mover": "5E3B"
+  },
+  {
+   "type": 18,
+   "draw_mode": 0,
+   "pattern": 0,
+   "colour": 0,
+   "hp": 0,
+   "mover": "5E3B"
+  },
+  {
+   "type": 19,
+   "draw_mode": 0,
+   "pattern": 0,
+   "colour": 0,
+   "hp": 0,
+   "mover": "5E3B"
+  },
+  {
+   "type": 20,
+   "draw_mode": 0,
+   "pattern": 0,
+   "colour": 0,
+   "hp": 0,
+   "mover": "5EC8"
+  },
+  {
+   "type": 21,
+   "draw_mode": 0,
+   "pattern": 0,
+   "colour": 0,
+   "hp": 0,
+   "mover": "5E3E"
+  },
+  {
+   "type": 22,
+   "draw_mode": 1,
+   "pattern": 55,
+   "colour": 0,
+   "hp": 1,
+   "mover": "5E3B"
+  },
+  {
+   "type": 23,
+   "draw_mode": 1,
+   "pattern": 56,
+   "colour": 0,
+   "hp": 1,
+   "mover": "A7D9"
+  },
+  {
+   "type": 24,
+   "draw_mode": 1,
+   "pattern": 56,
+   "colour": 0,
+   "hp": 1,
+   "mover": "A7D9"
+  },
+  {
+   "type": 25,
+   "draw_mode": 1,
+   "pattern": 0,
+   "colour": 0,
+   "hp": 1,
+   "mover": "5E3B"
+  },
+  {
+   "type": 26,
+   "draw_mode": 1,
+   "pattern": 0,
+   "colour": 0,
+   "hp": 1,
+   "mover": "A7DF"
+  },
+  {
+   "type": 27,
+   "draw_mode": 0,
+   "pattern": 240,
+   "colour": 15,
+   "hp": 10,
+   "mover": "B915"
+  },
+  {
+   "type": 28,
+   "draw_mode": 0,
+   "pattern": 204,
+   "colour": 9,
+   "hp": 1,
+   "mover": "5F4F"
+  },
+  {
+   "type": 29,
+   "draw_mode": 0,
+   "pattern": 160,
+   "colour": 6,
+   "hp": 1,
+   "mover": "B9FF"
+  },
+  {
+   "type": 30,
+   "draw_mode": 0,
+   "pattern": 208,
+   "colour": 7,
+   "hp": 5,
+   "mover": "BCE3"
+  },
+  {
+   "type": 31,
+   "draw_mode": 0,
+   "pattern": 232,
+   "colour": 7,
+   "hp": 1,
+   "mover": "BD7D"
+  }
+ ],
+ "player": {
+  "speed_formula": "p02:9B0D base $0080 x (3+min(speed,7))",
+  "power_meter": "E130..E136, capsule table 7563",
+  "shield": "two states"
+ },
+ "cheats": {
+  "pause_keyboard": "p01:51BF words HYPER SHIELD LASER MISSILE DOUBLE OPTION DOWN BAKA AHO; per-stage names 5163"
+ },
+ "unresolved": [
+  "boss kinds 1,2,3,4,6 behaviour not yet transcribed",
+  "ending sequence location/format",
+  "stage 5 bank-3 encounters p03:B946/BB95 content",
+  "second-loop difficulty differences beyond E06A boss swap"
+ ]
+}

@@ -1,0 +1,62 @@
+{
+  "rom_sha256": "f185984ff198c7edb4da55ca22506b78fd96fbd2e7fefb1c7b777f438621e342",
+  "checks": [
+    {
+      "name": "title_boot",
+      "passed": true
+    },
+    {
+      "name": "start_enters_gameplay",
+      "passed": true
+    },
+    {
+      "name": "right_moves_ship",
+      "passed": true
+    },
+    {
+      "name": "pause_freezes_world",
+      "passed": true
+    },
+    {
+      "name": "resume_advances_world",
+      "passed": true
+    },
+    {
+      "name": "original_60hz_mode_for_stress",
+      "passed": true
+    },
+    {
+      "name": "native_shots_destroy_source_wave_enemies",
+      "passed": true,
+      "qa": "invulnerability only",
+      "kills": 30
+    },
+    {
+      "name": "whole_wave_drops_collectible_capsule",
+      "passed": true,
+      "qa": "invulnerability only",
+      "collected": 2
+    },
+    {
+      "name": "speed_powerup_requires_A_and_consumes_slot",
+      "passed": true,
+      "qa": "one selected powerup slot"
+    },
+    {
+      "name": "double_missile_two_options_stress_remains_live",
+      "passed": true,
+      "qa": "powerups and invulnerability injected",
+      "logic_frames": 2000,
+      "missed_NMIs": 0,
+      "worst_100_frames": 0
+    },
+    {
+      "name": "ordinary_gameplay_can_die_and_respawn",
+      "passed": true,
+      "qa": "none",
+      "lives_before": 3,
+      "lives_after": 2
+    }
+  ],
+  "scope": "Native Nemesis integration; not full campaign validation"
+}
