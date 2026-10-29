@@ -1,3 +1,11 @@
+# CP0020 handoff (2026-10-29) - Phase 1.1, stages and rules; Phase 1 complete
+
+Every stage of the four MSX games in play order (71 stage records, 2876 spawn entries
+decoded and checked in emulator runs, events, music, graphics, bosses, routes, secrets) and
+each game's rules: `manifests/stages_msx.json`, `docs/STAGES_AND_RULES.md`. With CP0017-0019
+Phase 1 is complete: objects, screens, music and stages of all ten ROMs. ROM unchanged (CP0016).
+Next: Phase 2 (MSX vs NES comparison and choice).
+
 # CP0019 handoff (2026-10-29) - Phase 1c, music and sound catalogue
 
 Every music, jingle and effect request of the eight source games logged at each game's

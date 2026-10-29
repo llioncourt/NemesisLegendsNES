@@ -1,7 +1,7 @@
 {
   "schema": 1,
-  "checkpoint": "CP0019",
-  "edition": "PHASE1C_MUSIC_AND_SOUND_CATALOGUE",
+  "checkpoint": "CP0020",
+  "edition": "PHASE1_1_STAGES_AND_RULES",
   "gameplay_changed": true,
   "project_directory": "Nemesis_Legends_CP0001",
   "rom": "build/native/Nemesis_Legends_CP0016.nes",
@@ -36,7 +36,7 @@
     "src/native_title.s": "0b1be108125be223341e3938e62accd426fb645e0c7540eb91da16a19e88d35e"
   },
   "cleanup_published_to_github": true,
-  "scope": "Phase 1c of docs/DECISIONS.md: every music, jingle and sound-effect request of the eight source games logged in play (manifests/catalog_music.json, docs/CATALOG_MUSIC.md: 111 music, 52 jingles, 284 effects); rip titles corrected by role; new original-driver rips of Life Force (NSF, 40 songs) and Nemesis 3 (KSS, 83 tracks). Catalogues of phases 1a/1b in manifests/catalog_msx.json and catalog_nes.json. The playable ROM is the CP0016 ROM, unchanged.",
+  "scope": "Phase 1.1 of docs/DECISIONS.md: every stage of the four MSX games in play order (spawns, events, music, graphics, bosses, routes, secrets) and each game's rules (manifests/stages_msx.json, docs/STAGES_AND_RULES.md). Phase 1 complete with the object, screen and music catalogues (catalog_msx.json, catalog_nes.json, catalog_music.json). The playable ROM is the CP0016 ROM, unchanged.",
   "ui_changed": true,
   "baseline_runtime_commit": "0833559",
   "checkpoint_changed_sources": {
@@ -78,7 +78,8 @@
     "tools/apply_music_catalogue.py": "8338b20069e0577250795c1734aab8b11f511c9ac73552f18ad08a38a5f8fce7",
     "tools/rip_lifeforce_nsf.py": "a183bcbfe7c83135935117f17ef529a4cb9d0a639d9b6718fad21b5a60296d27",
     "tools/rip_nemesis3_kss.py": "e779ce446d1d5b5c9d301cf817099c2dfbde22a9c25b41fb1661c5f354fe1452",
-    "tests/test_evidence.py": "d30eddb5bdf34d054ce2d23faf6138c2fa88f7eca217f1135bef9bf830d14c33"
+    "tests/test_evidence.py": "d30eddb5bdf34d054ce2d23faf6138c2fa88f7eca217f1135bef9bf830d14c33",
+    "tools/stages_msx.py": "f37d96ba29b6f79093a509156ae0a0d5455bb1f5e6a46d70d60b44453810f08f"
   },
   "source_speed_preservation": "60Hz source-reference selectable; default 30Hz is a deliberately non-original accessibility mode",
   "stage3_normal_to_stage4_tested": true,
@@ -92,5 +93,6 @@
   "rom_changed_in_this_checkpoint": false,
   "msx_asset_catalogue": true,
   "nes_asset_catalogue": true,
-  "music_catalogue": true
+  "music_catalogue": true,
+  "stages_and_rules": true
 }

@@ -1,7 +1,7 @@
-# NEMESIS LEGENDS NES - CONTINUATION (CP0019, 2026-10-29)
+# NEMESIS LEGENDS NES - CONTINUATION (CP0020, 2026-10-29)
 
 Repository: https://github.com/llioncourt/NemesisLegendsNES (`main`).
-Last pinned checkpoint: **CP0019** (Phase 1c, music and sound catalogue). The playable ROM is
+Last pinned checkpoint: **CP0020** (Phase 1.1, stages and rules; Phase 1 complete). The playable ROM is
 still `build/native/Nemesis_Legends_CP0016.nes` (sha256 in `manifests/checkpoint.json`). Do not reset or abandon the native
 motor. Public distribution: IPS only; source ROMs and derived graphics/audio
 stay private.
@@ -51,9 +51,14 @@ segments.
   unused), the Nemesis rip listed 6 channel parts as tracks, Nemesis 2's 15 unidentified cues are
   named. New rips: Life Force NSF (40 songs) and Nemesis 3 KSS (83 tracks), both identical to the
   games frame by frame. The Nemesis "stage start" jingles 0x32/0x13 are the volcano eruptions.
-- **1.1, stage map and rules (CP0020, in progress):** brief in the evidence folder
-  (`BRIEF_STAGES.md`): every stage in play order with spawns, events, music, graphics, bosses,
-  routes and secrets, plus each game's rules (weapon system, lives, two players, loops).
+- **1.1, stages and rules (CP0020, done):** `manifests/stages_msx.json`, `docs/STAGES_AND_RULES.md`.
+  Play order: Nemesis 13 visits (1-2-9-3-10-4-11-5-6-7-12-8, ending), Nemesis 2 32 records (stages
+  1-7, 11 boss interiors, return 6-1, stage 0, secret stages 9-11), Salamander 7 (planets 3/4/5 in
+  radar order, Operation X only with the crystal), Nemesis 3 19 (stages 1-11, computer scenes,
+  return visits, two endings). 2876 spawn entries decoded and checked against emulator runs.
+  New facts: R.DRILL appears only in stages 4, 6 and 10 of Nemesis 2; Nemesis 3 has a type-6
+  weapon entrance in stage 8 and a big-beam capsule in stage 10 that the catalogue had missed;
+  Salamander's second-round flag 0xE305 is never written (its second-round variants never play).
 
 ## Extractor findings to apply when the stage graphics are rebuilt (phase 7)
 
@@ -94,6 +99,8 @@ core (NES) were used on 2026-10-28 to capture the player ships in game.
 
 ## Next concrete action
 
-Finish Phase 1: CP0018 (NES catalogue), CP0019 (music and sound of all ten ROMs),
-CP0020 (1.1: every stage of the four MSX games with its assets, events, routes, weapon
-systems, Salamander's vertical stages and the secrets). Then Phase 2 (NES vs MSX match).
+Phase 2 (comparison and choice), see the plan posted with CP0020: for every MSX object,
+screen, stage graphic and music, find the same asset in the NES games (Gradius, Gradius II,
+Life Force, Salamander FC) using the two catalogues; when several NES games have it, choose
+the most detailed; record the decision per asset (REUSE_NES, ADAPT_NES, CONVERT_MSX) with
+the evidence.

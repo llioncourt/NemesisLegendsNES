@@ -64,3 +64,15 @@ the earlier rips had been titled by album order or upstream configuration. New r
 original drivers: `tools/rip_lifeforce_nsf.py` (Life Force, NSF, driver RAM identical to the
 game on every frame) and `tools/rip_nemesis3_kss.py` (Nemesis 3, KSS, PSG/SCC writes identical
 to the game on every frame of all 83 tracks).
+
+## Stages and rules (Phase 1.1, CP0020)
+
+Every stage of the four MSX games in the order a player meets it (branches, return trips,
+boss interiors, bonus and secret stages), with the spawn and wave tables decoded entry by
+entry, events, music, graphics loads, bosses, routes and secrets, plus each game's rules
+(weapon system, lives and extends, continue, two players, scoring, loops and rank, secrets).
+Spawn tables were checked against new emulator runs (first appearance of each entry at its
+scroll position). `tools/stages_msx.py` publishes a summary (`manifests/stages_msx.json`,
+`docs/STAGES_AND_RULES.md`): per stage how many of each object it spawns, the events, music,
+bosses, routes and secrets, and the full rules. The positions and timings of every spawn
+are level data from the ROMs and stay in the private evidence (`stage_map.json`).
