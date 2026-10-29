@@ -1,7 +1,7 @@
 {
   "schema": 1,
-  "checkpoint": "CP0023",
-  "edition": "PHASE2C_MUSIC_CHOICE",
+  "checkpoint": "CP0024",
+  "edition": "PHASE3_LEGENDS_ASSET_REGISTRY",
   "gameplay_changed": true,
   "project_directory": "Nemesis_Legends_CP0001",
   "rom": "build/native/Nemesis_Legends_CP0016.nes",
@@ -36,7 +36,7 @@
     "src/native_title.s": "0b1be108125be223341e3938e62accd426fb645e0c7540eb91da16a19e88d35e"
   },
   "cleanup_published_to_github": true,
-  "scope": "Phase 2c of docs/DECISIONS.md: every MSX music and jingle compared by notes with the NES music and the NES version chosen where the composition exists (manifests/music_choice.json, docs/MUSIC_CHOICE.md). Phase 2 complete with asset_choice.json and stage_gfx_choice.json. The playable ROM is the CP0016 ROM, unchanged.",
+  "scope": "Phase 3 of docs/DECISIONS.md: 474 Legends assets, one visual or tune each, shared by every MSX object, screen, stage tile set and music code that is the same thing (manifests/legends_assets.json, docs/LEGENDS_ASSETS.md). The playable ROM is the CP0016 ROM, unchanged.",
   "ui_changed": true,
   "baseline_runtime_commit": "0833559",
   "checkpoint_changed_sources": {
@@ -82,7 +82,8 @@
     "tools/stages_msx.py": "f37d96ba29b6f79093a509156ae0a0d5455bb1f5e6a46d70d60b44453810f08f",
     "tools/asset_choice.py": "ea0a117bfb51a2c535a2fa42d10c227c6a62f767e3fa66057b402b1c6976d2b5",
     "tools/stage_gfx_choice.py": "78400c4ff66e252314736864eb8a8f25211b231b204f52a833c6521784c0f2f7",
-    "tools/music_choice.py": "f07eec36c04a62c02862057dc8e7756ff6a32cf727ac2a76cc9bf8dd1e53653d"
+    "tools/music_choice.py": "f07eec36c04a62c02862057dc8e7756ff6a32cf727ac2a76cc9bf8dd1e53653d",
+    "tools/legends_assets.py": "de962b7bcb57d3d3df106c8f13775a4064c9fc48d16af88528d77e2865a266c7"
   },
   "source_speed_preservation": "60Hz source-reference selectable; default 30Hz is a deliberately non-original accessibility mode",
   "stage3_normal_to_stage4_tested": true,
@@ -100,5 +101,6 @@
   "stages_and_rules": true,
   "asset_choice": true,
   "stage_gfx_choice": true,
-  "music_choice": true
+  "music_choice": true,
+  "legends_assets": true
 }

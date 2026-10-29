@@ -1,3 +1,9 @@
+# CP0024 handoff (2026-10-29) - Phase 3, Legends asset registry
+
+Every MSX object, screen, stage tile set and music code grouped into 474 Legends assets with
+one visual (or tune) each, members keeping their game's behaviour: `manifests/legends_assets.json`,
+`docs/LEGENDS_ASSETS.md`. ROM unchanged (CP0016). Next: Phase 4 (Gradius II art direction).
+
 # CP0023 handoff (2026-10-29) - Phase 2c, music vs NES; Phase 2 complete
 
 Every MSX music and jingle compared note by note with the NES music (each game's own driver):

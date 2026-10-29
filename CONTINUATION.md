@@ -1,7 +1,7 @@
-# NEMESIS LEGENDS NES - CONTINUATION (CP0023, 2026-10-29)
+# NEMESIS LEGENDS NES - CONTINUATION (CP0024, 2026-10-29)
 
 Repository: https://github.com/llioncourt/NemesisLegendsNES (`main`).
-Last pinned checkpoint: **CP0023** (Phase 2c, music vs NES; Phase 2 complete). The playable ROM is
+Last pinned checkpoint: **CP0024** (Phase 3, Legends asset registry). The playable ROM is
 still `build/native/Nemesis_Legends_CP0016.nes` (sha256 in `manifests/checkpoint.json`). Do not reset or abandon the native
 motor. Public distribution: IPS only; source ROMs and derived graphics/audio
 stay private.
@@ -124,11 +124,22 @@ core (NES) were used on 2026-10-28 to capture the player ships in game.
   0x74 everywhere; the Salamander boss theme to Gradius II 0x78. Life Force and Salamander FC
   play bit-identical music.
 
+## Phase 3 (CP0024, done)
+
+`manifests/legends_assets.json`, `docs/LEGENDS_ASSETS.md` (`tools/legends_assets.py`): 474 Legends
+assets. 340 object/screen assets with 540 MSX members (40 merged across games), 44 stage tile-set
+assets (one shared: Nemesis 2 map 0 = Salamander stage 7), 90 music assets for 98 codes (7 across
+games). Visuals: 135 NES, 2 owner ships, 337 to convert from the MSX. Pixel comparison found
+reuse phase 2 had missed: Nemesis 2 boss 5 is the Nemesis Big Core; Nemesis 3 stage-4 bosses
+0x01/0x03 are Nemesis 2 bosses 3/4; the snake, the Salamander stage-7 walker and the vent rock
+reuse earlier drawings. Doubtful merges to confirm by eye: battleship hulls, core walls,
+capsule family as palette variants, two core lasers, weapons drawn differently (screw, meteor,
+fire blaster, napalm burst), one star for all star fields, the Konami logo / game over /
+continue / THE END screens.
+
 ## Next concrete action
 
-Phase 3 (consistency): every asset that appears in more than one MSX game (enemy, boss,
-stage element, music) becomes ONE Legends asset with one visual, keeping each game's own
-behaviour. Start from the shared NES choices of phase 2 (same chosen NES object or tune =
-same asset), add the MSX-only assets shared between games (identical or near-identical MSX
-drawings, e.g. Nemesis 2 data reused by Salamander stage 7), and publish the Legends asset
-registry. Then Phase 4 (Gradius II art direction).
+Phase 4 (art direction): the Gradius II style guide (palettes per object class, shading,
+outlines, sprite sizes, BG palette structure), measured from the Gradius II evidence; recolour
+the chosen non-Gradius II NES visuals (incl. the Salamander FC ships, owner decision) to it; a
+style sample before the mass conversion of phase 5.
