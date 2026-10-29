@@ -1,7 +1,7 @@
 {
   "schema": 1,
-  "checkpoint": "CP0021",
-  "edition": "PHASE2A_ASSET_CHOICE",
+  "checkpoint": "CP0022",
+  "edition": "PHASE2B_STAGE_GRAPHICS_CHOICE",
   "gameplay_changed": true,
   "project_directory": "Nemesis_Legends_CP0001",
   "rom": "build/native/Nemesis_Legends_CP0016.nes",
@@ -36,7 +36,7 @@
     "src/native_title.s": "0b1be108125be223341e3938e62accd426fb645e0c7540eb91da16a19e88d35e"
   },
   "cleanup_published_to_github": true,
-  "scope": "Phase 2a of docs/DECISIONS.md: every MSX object and screen compared with the four NES catalogues and the NES version chosen (manifests/asset_choice.json, docs/ASSET_CHOICE.md); shared assets reconciled to one NES version. The playable ROM is the CP0016 ROM, unchanged.",
+  "scope": "Phase 2b of docs/DECISIONS.md: for every stage of the four MSX games, the NES stage graphics chosen to draw its layout (manifests/stage_gfx_choice.json, docs/STAGE_GFX_CHOICE.md). Phase 2a object choice in asset_choice.json. The playable ROM is the CP0016 ROM, unchanged.",
   "ui_changed": true,
   "baseline_runtime_commit": "0833559",
   "checkpoint_changed_sources": {
@@ -80,7 +80,8 @@
     "tools/rip_nemesis3_kss.py": "e779ce446d1d5b5c9d301cf817099c2dfbde22a9c25b41fb1661c5f354fe1452",
     "tests/test_evidence.py": "d30eddb5bdf34d054ce2d23faf6138c2fa88f7eca217f1135bef9bf830d14c33",
     "tools/stages_msx.py": "f37d96ba29b6f79093a509156ae0a0d5455bb1f5e6a46d70d60b44453810f08f",
-    "tools/asset_choice.py": "ea0a117bfb51a2c535a2fa42d10c227c6a62f767e3fa66057b402b1c6976d2b5"
+    "tools/asset_choice.py": "ea0a117bfb51a2c535a2fa42d10c227c6a62f767e3fa66057b402b1c6976d2b5",
+    "tools/stage_gfx_choice.py": "78400c4ff66e252314736864eb8a8f25211b231b204f52a833c6521784c0f2f7"
   },
   "source_speed_preservation": "60Hz source-reference selectable; default 30Hz is a deliberately non-original accessibility mode",
   "stage3_normal_to_stage4_tested": true,
@@ -96,5 +97,6 @@
   "nes_asset_catalogue": true,
   "music_catalogue": true,
   "stages_and_rules": true,
-  "asset_choice": true
+  "asset_choice": true,
+  "stage_gfx_choice": true
 }

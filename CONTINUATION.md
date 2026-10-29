@@ -1,7 +1,7 @@
-# NEMESIS LEGENDS NES - CONTINUATION (CP0021, 2026-10-29)
+# NEMESIS LEGENDS NES - CONTINUATION (CP0022, 2026-10-29)
 
 Repository: https://github.com/llioncourt/NemesisLegendsNES (`main`).
-Last pinned checkpoint: **CP0021** (Phase 2a, MSX objects vs NES, choice per object). The playable ROM is
+Last pinned checkpoint: **CP0022** (Phase 2b, stage graphics vs NES). The playable ROM is
 still `build/native/Nemesis_Legends_CP0016.nes` (sha256 in `manifests/checkpoint.json`). Do not reset or abandon the native
 motor. Public distribution: IPS only; source ROMs and derived graphics/audio
 stay private.
@@ -108,8 +108,13 @@ core (NES) were used on 2026-10-28 to capture the player ships in game.
   assets and player weapons from the Salamander FC / Life Force set (matches the owner's ship,
   only set with vertical-stage drawings, most frames), HUD, font, large explosion, enemy
   bullet and screens from Gradius II. The Gradius II catalogue's "jumper" is the Ducker design.
-- **2b, stage graphics (CP0022, next):** each MSX stage's background (tile sets, char-drawn
-  objects) against the NES stages of the same theme.
+- **2b, stage graphics (CP0022, done):** `manifests/stage_gfx_choice.json`, `docs/STAGE_GFX_CHOICE.md`
+  (`tools/stage_gfx_choice.py`). 74 stage records: the MSX layout stays, the NES stage that
+  draws it is chosen. Reuse 5, adapt 57, convert 12 (Nemesis stage 5 bone graveyard,
+  Salamander stage 5 Kierke, Nemesis 3 water stage 3, sand stage 7, computer interludes,
+  ending, secret room; Nemesis 2 interlude and ending). Shared themes agree across games:
+  every fortress uses Gradius II stage 6, Moai Gradius II stage 4, cell stages Salamander FC
+  stage 1, Nemesis volcano stages the Gradius II volcano section.
 - **2c, music (CP0023):** each MSX tune against the NES tunes (same compositions).
 
 ## Next concrete action

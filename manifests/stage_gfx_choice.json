@@ -1,0 +1,3814 @@
+{
+ "schema": 1,
+ "generated": "2026-10-29",
+ "games": {
+  "nemesis": {
+   "title": "Nemesis",
+   "status": "compared",
+   "stages": [
+    {
+     "stage_id": "n1.stage_01",
+     "name": null,
+     "theme": "volcano planet: rock floor and ceiling, small volcanoes, plants, a floating rock, erupting vents at the end",
+     "same_as": null,
+     "decision": "ADAPT_NES_TILESET",
+     "chosen": {
+      "nes_game": "gradius2_fc",
+      "nes_stage": 3,
+      "tile_source": "CHR sets of the stage (BG = the last 4 KiB of each): sprgen/pt_40_41_47_48_23_24_25_26.bin, sprgen/pt_40_41_47_48_27_28_25_26.bin, sprgen/pt_40_41_47_48_29_2A_25_26.bin"
+     },
+     "why_chosen": "Gradius NES stage 1 has the same layout ideas, but the Gradius II volcano section (stage 3) has every element of the MSX stage (rock floor and ceiling, volcanoes, plants, floating rocks) drawn with more detail (shaded rock, more tiles and colours); Gradius II is also the art direction.",
+     "missing": "Volcano and floor/ceiling metatiles cut to the MSX shapes and heights; the five vent pieces; the twinkling star.",
+     "confidence": "medium",
+     "candidates": [
+      {
+       "nes_game": "gradius_nes",
+       "nes_stage": 1,
+       "verdict": "same",
+       "evidence": "Stage 1 (volcano): the same rock floor and ceiling, small volcanoes, plants and floating rock in the same places. [tiles: CHR bank 0, BG pattern table $0000 (sprgen/us_chr_bank0.chr); BG palettes 2/3 [[15, 25, 42, 48], [15, 7, 23, 38]]]"
+      },
+      {
+       "nes_game": "gradius2_fc",
+       "nes_stage": 3,
+       "verdict": "similar",
+       "evidence": "Volcano - Crystal: shaded volcanoes, rock floor and ceiling, plants and floating rocks in the first part; crystals later. [tiles: CHR sets of the stage (BG = the last 4 KiB of each): sprgen/pt_40_41_47_48_23_24_25_26.bin, sprgen/pt_40_41_47_48_27_28_25_26.bin, sprgen/pt_40_41_47_48_29_2A_25_26.bin; 3 CHR set(s), 14 BG palette set(s) seen]"
+      },
+      {
+       "nes_game": "lifeforce_nes",
+       "nes_stage": 2,
+       "verdict": "similar",
+       "evidence": "Volcano and mechanical base, a vertical stage: rock mountains drawn for vertical scrolling. [tiles: BG pattern tables sprgen/stage2_bg_start.bin; vertical stage]"
+      },
+      {
+       "nes_game": "salamander_fc",
+       "nes_stage": 2,
+       "verdict": "similar",
+       "evidence": "Same map and tiles as Life Force stage 2 (vertical). [tiles: CHR-RAM after stage init sprgen/stage2_chr_after_init.bin; vertical stage]"
+      }
+     ],
+     "elements": [
+      {
+       "msx": "rock floor and ceiling (map chars, red)",
+       "nes": "g2 stage 3 rock floor and ceiling",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "small volcanoes on the floor (map chars)",
+       "nes": "g2 stage 3 volcano mountains (larger: redraw at the MSX size)",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "plants on the floor (map chars, green)",
+       "nes": "g2 stage 3 green bushes",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "floating rock near the end (map chars)",
+       "nes": "g2 stage 3 floating rock",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "erupting vents (n1.scenery.eb00_vents)",
+       "nes": "phase 2a: CONVERT_MSX",
+       "decision": "CONVERT"
+      },
+      {
+       "msx": "star field (one-pixel twinkle chars F6/F7, n1.scenery.star)",
+       "nes": "none: NES stars are static map dots",
+       "decision": "CONVERT"
+      }
+     ]
+    },
+    {
+     "stage_id": "n1.stage_02",
+     "name": null,
+     "theme": "Stonehenge: white stone blocks and pink spheres, rock rain, pink sphere masses at the end",
+     "same_as": null,
+     "decision": "REUSE_NES_TILESET",
+     "chosen": {
+      "nes_game": "gradius_nes",
+      "nes_stage": 2,
+      "tile_source": "CHR bank 0, BG pattern table $0000 (sprgen/us_chr_bank0.chr)"
+     },
+     "why_chosen": "Only Gradius NES has this stage, with the same blocks and spheres and the same layout ideas.",
+     "missing": "Only the twinkling star; the larger sphere masses at the end of the MSX map are built from the same tiles.",
+     "confidence": "high",
+     "candidates": [
+      {
+       "nes_game": "gradius_nes",
+       "nes_stage": 2,
+       "verdict": "same",
+       "evidence": "Stage 2 (Stonehenge): white blocks and pink spheres in the same arrangement. [tiles: CHR bank 0, BG pattern table $0000 (sprgen/us_chr_bank0.chr); BG palettes 2/3 [[15, 21, 48, 16], [15, 5, 25, 48]]]"
+      },
+      {
+       "nes_game": "lifeforce_nes",
+       "nes_stage": 2,
+       "verdict": "different",
+       "evidence": "Rock pillars and asteroids (vertical). [tiles: BG pattern tables sprgen/stage2_bg_start.bin; vertical stage]"
+      },
+      {
+       "nes_game": "salamander_fc",
+       "nes_stage": 2,
+       "verdict": "different",
+       "evidence": "Rock pillars and asteroids (vertical). [tiles: CHR-RAM after stage init sprgen/stage2_chr_after_init.bin; vertical stage]"
+      }
+     ],
+     "elements": [
+      {
+       "msx": "white stone blocks (map chars)",
+       "nes": "gr stage 2 white blocks",
+       "decision": "REUSE"
+      },
+      {
+       "msx": "pink spheres, destructible (n1.scenery.destructible_cells)",
+       "nes": "gr stage 2 pink spheres (gr.scenery.destructible_block_stage2)",
+       "decision": "REUSE"
+      },
+      {
+       "msx": "pink sphere masses at the end (map chars)",
+       "nes": "gr stage 2 pink sphere blocks",
+       "decision": "REUSE"
+      },
+      {
+       "msx": "star field (one-pixel twinkle chars F6/F7, n1.scenery.star)",
+       "nes": "none: NES stars are static map dots",
+       "decision": "CONVERT"
+      }
+     ]
+    },
+    {
+     "stage_id": "n1.stage_09",
+     "name": null,
+     "theme": "bonus stage: maze of white blocks and green cell blocks",
+     "same_as": null,
+     "decision": "ADAPT_NES_TILESET",
+     "chosen": {
+      "nes_game": "gradius_nes",
+      "nes_stage": 2,
+      "tile_source": "CHR bank 0, BG pattern table $0000 (sprgen/us_chr_bank0.chr)"
+     },
+     "why_chosen": "No NES game has the bonus stages; their building blocks are the Stonehenge blocks and spheres of Gradius NES stage 2 (the MSX bonus stages use the same white blocks with coloured cells).",
+     "missing": "A green BG palette for the cell blocks; the layout is MSX-only.",
+     "confidence": "high",
+     "candidates": [
+      {
+       "nes_game": "gradius_nes",
+       "nes_stage": 2,
+       "verdict": "similar",
+       "evidence": "White blocks and pink spheres, the tiles the bonus mazes are made of. [tiles: CHR bank 0, BG pattern table $0000 (sprgen/us_chr_bank0.chr); BG palettes 2/3 [[15, 21, 48, 16], [15, 5, 25, 48]]]"
+      }
+     ],
+     "elements": [
+      {
+       "msx": "white stone blocks (map chars)",
+       "nes": "gr stage 2 white blocks (CHR bank 0)",
+       "decision": "REUSE"
+      },
+      {
+       "msx": "green cell blocks, destructible (n1.scenery.destructible_cells)",
+       "nes": "gr stage 2 pink spheres (gr.scenery.destructible_block_stage2) in a green BG palette",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "1UP and bonus capsules, hidden bonus (n1.item.*)",
+       "nes": "phase 2a choices (Salamander capsules)",
+       "decision": "REUSE"
+      },
+      {
+       "msx": "star field (one-pixel twinkle chars F6/F7, n1.scenery.star)",
+       "nes": "none: NES stars are static map dots",
+       "decision": "CONVERT"
+      }
+     ]
+    },
+    {
+     "stage_id": "n1.stage_03",
+     "name": null,
+     "theme": "Moai heads on floating rock strips, no terrain",
+     "same_as": null,
+     "decision": "ADAPT_NES_TILESET",
+     "chosen": {
+      "nes_game": "gradius2_fc",
+      "nes_stage": 4,
+      "tile_source": "CHR sets of the stage (BG = the last 4 KiB of each): sprgen/pt_40_41_47_64_2C_2D_2E_2F.bin, sprgen/pt_40_41_47_64_2C_2D_30_2F.bin, sprgen/pt_40_41_47_64_5F_60_61_62.bin, sprgen/pt_40_41_47_64_5F_60_63_62.bin"
+     },
+     "why_chosen": "Gradius NES stage 3 has the same heads on rock islands, but the Gradius II Moai section (stage 4) has the same composition (heads standing on horizontal rock strips) drawn with more detail; it is the phase 2a choice for the heads (g2.enemy.moai).",
+     "missing": "Heads in the four MSX orientations with idle / firing / after-firing mouths, cut from the g2 stage-4 nametables.",
+     "confidence": "medium",
+     "candidates": [
+      {
+       "nes_game": "gradius_nes",
+       "nes_stage": 3,
+       "verdict": "same",
+       "evidence": "Stage 3 (Moai): heads on rock islands facing left, up and diagonal. [tiles: CHR bank 1, BG pattern table $0000 (sprgen/us_chr_bank1.chr); BG palettes 2/3 [[15, 5, 25, 15], [15, 6, 24, 39]]]"
+      },
+      {
+       "nes_game": "gradius2_fc",
+       "nes_stage": 4,
+       "verdict": "similar",
+       "evidence": "Moai: heads standing on rock strips, then red Moai and the big Moai. [tiles: CHR sets of the stage (BG = the last 4 KiB of each): sprgen/pt_40_41_47_64_2C_2D_2E_2F.bin, sprgen/pt_40_41_47_64_2C_2D_30_2F.bin, sprgen/pt_40_41_47_64_5F_60_61_62.bin, sprgen/pt_40_41_47_64_5F_60_63_62.bin; 4 CHR set(s), 9 BG palette set(s) seen]"
+      }
+     ],
+     "elements": [
+      {
+       "msx": "heads, 4 orientations (n1.enemy.stage3_head, E700 types 3-6)",
+       "nes": "g2 stage 4 Moai heads (g2.enemy.moai)",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "10x1 floating-island strip under each head",
+       "nes": "g2 stage 4 rock strip",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "star field (one-pixel twinkle chars F6/F7, n1.scenery.star)",
+       "nes": "none: NES stars are static map dots",
+       "decision": "CONVERT"
+      }
+     ]
+    },
+    {
+     "stage_id": "n1.stage_10",
+     "name": null,
+     "theme": "bonus stage: maze of white blocks and yellow cell blocks",
+     "same_as": null,
+     "decision": "ADAPT_NES_TILESET",
+     "chosen": {
+      "nes_game": "gradius_nes",
+      "nes_stage": 2,
+      "tile_source": "CHR bank 0, BG pattern table $0000 (sprgen/us_chr_bank0.chr)"
+     },
+     "why_chosen": "Same reason as n1.stage_09.",
+     "missing": "A yellow BG palette for the cell blocks; the layout is MSX-only.",
+     "confidence": "high",
+     "candidates": [
+      {
+       "nes_game": "gradius_nes",
+       "nes_stage": 2,
+       "verdict": "similar",
+       "evidence": "White blocks and pink spheres, the tiles the bonus mazes are made of. [tiles: CHR bank 0, BG pattern table $0000 (sprgen/us_chr_bank0.chr); BG palettes 2/3 [[15, 21, 48, 16], [15, 5, 25, 48]]]"
+      }
+     ],
+     "elements": [
+      {
+       "msx": "white stone blocks (map chars)",
+       "nes": "gr stage 2 white blocks (CHR bank 0)",
+       "decision": "REUSE"
+      },
+      {
+       "msx": "yellow cell blocks, destructible (n1.scenery.destructible_cells)",
+       "nes": "gr stage 2 pink spheres (gr.scenery.destructible_block_stage2) in a yellow BG palette",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "1UP and bonus capsules, hidden bonus (n1.item.*)",
+       "nes": "phase 2a choices (Salamander capsules)",
+       "decision": "REUSE"
+      },
+      {
+       "msx": "star field (one-pixel twinkle chars F6/F7, n1.scenery.star)",
+       "nes": "none: NES stars are static map dots",
+       "decision": "CONVERT"
+      }
+     ]
+    },
+    {
+     "stage_id": "n1.stage_04",
+     "name": null,
+     "theme": "inverted volcano: rock ceiling with hanging volcanoes and plants, rock floor, erupting vents",
+     "same_as": null,
+     "decision": "ADAPT_NES_TILESET",
+     "chosen": {
+      "nes_game": "gradius2_fc",
+      "nes_stage": 3,
+      "tile_source": "CHR sets of the stage (BG = the last 4 KiB of each): sprgen/pt_40_41_47_48_23_24_25_26.bin, sprgen/pt_40_41_47_48_27_28_25_26.bin, sprgen/pt_40_41_47_48_29_2A_25_26.bin"
+     },
+     "why_chosen": "Same choice as stage 1: the Gradius II volcano section has rock ceiling and floor, volcanoes and plants with more detail; the hanging volcanoes are its mountains flipped.",
+     "missing": "Flipped volcano and plant metatiles at the MSX sizes; the vents; the twinkling star.",
+     "confidence": "medium",
+     "candidates": [
+      {
+       "nes_game": "gradius_nes",
+       "nes_stage": 4,
+       "verdict": "same",
+       "evidence": "Stage 4 (inverted volcano): the same ceiling volcanoes, plants and floor. [tiles: CHR bank 0, BG pattern table $0000 (sprgen/us_chr_bank0.chr); BG palettes 2/3 [[15, 25, 42, 48], [15, 7, 23, 38]]]"
+      },
+      {
+       "nes_game": "gradius2_fc",
+       "nes_stage": 3,
+       "verdict": "similar",
+       "evidence": "Volcano - Crystal: volcano section with rock floor and ceiling. [tiles: CHR sets of the stage (BG = the last 4 KiB of each): sprgen/pt_40_41_47_48_23_24_25_26.bin, sprgen/pt_40_41_47_48_27_28_25_26.bin, sprgen/pt_40_41_47_48_29_2A_25_26.bin; 3 CHR set(s), 14 BG palette set(s) seen]"
+      },
+      {
+       "nes_game": "lifeforce_nes",
+       "nes_stage": 2,
+       "verdict": "similar",
+       "evidence": "Volcano and mechanical base (vertical). [tiles: BG pattern tables sprgen/stage2_bg_start.bin; vertical stage]"
+      }
+     ],
+     "elements": [
+      {
+       "msx": "rock ceiling and floor (map chars)",
+       "nes": "g2 stage 3 rock ceiling and floor",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "hanging volcanoes (map chars)",
+       "nes": "g2 stage 3 volcano mountains, vertically flipped",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "plants on the ceiling (map chars)",
+       "nes": "g2 stage 3 green bushes, flipped",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "erupting vents (n1.scenery.eb00_vents)",
+       "nes": "phase 2a: CONVERT_MSX",
+       "decision": "CONVERT"
+      },
+      {
+       "msx": "star field (one-pixel twinkle chars F6/F7, n1.scenery.star)",
+       "nes": "none: NES stars are static map dots",
+       "decision": "CONVERT"
+      }
+     ]
+    },
+    {
+     "stage_id": "n1.stage_11",
+     "name": null,
+     "theme": "bonus stage: maze of white blocks and blue cell blocks",
+     "same_as": null,
+     "decision": "ADAPT_NES_TILESET",
+     "chosen": {
+      "nes_game": "gradius_nes",
+      "nes_stage": 2,
+      "tile_source": "CHR bank 0, BG pattern table $0000 (sprgen/us_chr_bank0.chr)"
+     },
+     "why_chosen": "Same reason as n1.stage_09.",
+     "missing": "A blue BG palette for the cell blocks; the layout is MSX-only.",
+     "confidence": "high",
+     "candidates": [
+      {
+       "nes_game": "gradius_nes",
+       "nes_stage": 2,
+       "verdict": "similar",
+       "evidence": "White blocks and pink spheres, the tiles the bonus mazes are made of. [tiles: CHR bank 0, BG pattern table $0000 (sprgen/us_chr_bank0.chr); BG palettes 2/3 [[15, 21, 48, 16], [15, 5, 25, 48]]]"
+      }
+     ],
+     "elements": [
+      {
+       "msx": "white stone blocks (map chars)",
+       "nes": "gr stage 2 white blocks (CHR bank 0)",
+       "decision": "REUSE"
+      },
+      {
+       "msx": "blue cell blocks, destructible (n1.scenery.destructible_cells)",
+       "nes": "gr stage 2 pink spheres (gr.scenery.destructible_block_stage2) in a blue BG palette",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "1UP and bonus capsules, hidden bonus (n1.item.*)",
+       "nes": "phase 2a choices (Salamander capsules)",
+       "decision": "REUSE"
+      },
+      {
+       "msx": "star field (one-pixel twinkle chars F6/F7, n1.scenery.star)",
+       "nes": "none: NES stars are static map dots",
+       "decision": "CONVERT"
+      }
+     ]
+    },
+    {
+     "stage_id": "n1.stage_05",
+     "name": null,
+     "theme": "bone graveyard: bone floor and ceiling, floating bone pieces, skull pods, skeleton turret bases",
+     "same_as": null,
+     "decision": "CONVERT_MSX",
+     "chosen": null,
+     "why_chosen": "No NES stage has the bone theme: Gradius NES stage 5 is open space, the Life Force and Salamander organic stages are flesh and rib cages, their stage 5 a temple.",
+     "missing": "The whole stage set: bones, skulls and skeletons in the NES style.",
+     "confidence": "high",
+     "candidates": [
+      {
+       "nes_game": "gradius_nes",
+       "nes_stage": 5,
+       "verdict": "different",
+       "evidence": "Tentacles in open space, no terrain. [tiles: CHR bank 1, BG pattern table $0000 (sprgen/us_chr_bank1.chr); BG palettes 2/3 [[15, 25, 42, 48], [15, 7, 23, 38]]]"
+      },
+      {
+       "nes_game": "lifeforce_nes",
+       "nes_stage": 4,
+       "verdict": "different",
+       "evidence": "Organic flesh and rib cage (vertical). [tiles: BG pattern tables sprgen/stage4_bg_start.bin, sprgen/stage4_bg_boss.bin; vertical stage]"
+      },
+      {
+       "nes_game": "salamander_fc",
+       "nes_stage": 4,
+       "verdict": "different",
+       "evidence": "Organic flesh and rib cage (vertical). [tiles: CHR-RAM after stage init sprgen/stage4_chr_after_init.bin; vertical stage]"
+      },
+      {
+       "nes_game": "lifeforce_nes",
+       "nes_stage": 5,
+       "verdict": "different",
+       "evidence": "Temple with crystals and moving stone blocks. [tiles: BG pattern tables sprgen/stage5_bg_start.bin, sprgen/stage5_bg_boss.bin; horizontal stage]"
+      },
+      {
+       "nes_game": "gradius2_fc",
+       "nes_stage": 2,
+       "verdict": "different",
+       "evidence": "Alien base: green plants and a skull boss drawn in the background. [tiles: CHR sets of the stage (BG = the last 4 KiB of each): sprgen/pt_40_41_44_45_1B_1C_1D_1E.bin, sprgen/pt_40_41_44_46_1B_1C_1D_1E.bin, sprgen/pt_40_41_44_46_1F_20_1D_1E.bin, sprgen/pt_40_41_44_46_21_20_1D_22.bin; 4 CHR set(s), 14 BG palette set(s) seen]"
+      }
+     ],
+     "elements": [
+      {
+       "msx": "bone floor and ceiling, floating bone pieces (map chars, stage-5 background engine)",
+       "nes": "none",
+       "decision": "CONVERT"
+      },
+      {
+       "msx": "skull pods (n1.enemy.stage5_pod)",
+       "nes": "phase 2a: CONVERT_MSX",
+       "decision": "CONVERT"
+      },
+      {
+       "msx": "skeleton turret bases and skull turrets (n1.scenery.stage5_turret_base, n1.enemy.stage5_turret)",
+       "nes": "phase 2a: CONVERT_MSX",
+       "decision": "CONVERT"
+      },
+      {
+       "msx": "star field (one-pixel twinkle chars F6/F7, n1.scenery.star)",
+       "nes": "none: NES stars are static map dots",
+       "decision": "CONVERT"
+      }
+     ]
+    },
+    {
+     "stage_id": "n1.stage_06",
+     "name": null,
+     "theme": "open space: star field only, chain-armed boss",
+     "same_as": null,
+     "decision": "REUSE_NES_TILESET",
+     "chosen": {
+      "nes_game": "gradius_nes",
+      "nes_stage": 5,
+      "tile_source": "CHR bank 1, BG pattern table $0000 (sprgen/us_chr_bank1.chr)"
+     },
+     "why_chosen": "Same stage: open space with no terrain and the same boss (tentacle, phase 2a); only the star field is background.",
+     "missing": "Nothing for the background.",
+     "confidence": "high",
+     "candidates": [
+      {
+       "nes_game": "gradius_nes",
+       "nes_stage": 5,
+       "verdict": "same",
+       "evidence": "Tentacles (open space): star field only, tentacle boss. [tiles: CHR bank 1, BG pattern table $0000 (sprgen/us_chr_bank1.chr); BG palettes 2/3 [[15, 25, 42, 48], [15, 7, 23, 38]]]"
+      },
+      {
+       "nes_game": "gradius2_fc",
+       "nes_stage": 5,
+       "verdict": "similar",
+       "evidence": "Boss rush in open space. [tiles: CHR sets of the stage (BG = the last 4 KiB of each): sprgen/pt_40_41_49_4A_31_32_33_34.bin, sprgen/pt_40_41_49_4A_35_32_33_34.bin, sprgen/pt_40_41_49_4A_35_36_37_38.bin, sprgen/pt_40_41_49_4A_39_4B_3E_3F.bin, sprgen/pt_40_41_49_4A_39_3A_3B_3C.bin, sprgen/pt_40_41_49_4A_39_3D_3B_3C.bin, sprgen/pt_40_41_49_4A_39_3D_3E_3F.bin; 7 CHR set(s), 16 BG palette set(s) seen]"
+      }
+     ],
+     "elements": [
+      {
+       "msx": "star field",
+       "nes": "gr stage 5 star field",
+       "decision": "REUSE"
+      },
+      {
+       "msx": "boss bodies and arms (n1.boss.stage6)",
+       "nes": "phase 2a: gr.boss.tentacle, gr.boss_part.tentacle_arm",
+       "decision": "ADAPT"
+      }
+     ]
+    },
+    {
+     "stage_id": "n1.stage_07",
+     "name": null,
+     "theme": "cells: wavy membrane floor and ceiling, blue lattice cells, capsule-shaped cells, spitter boss at the end",
+     "same_as": null,
+     "decision": "REUSE_NES_TILESET",
+     "chosen": {
+      "nes_game": "gradius_nes",
+      "nes_stage": 6,
+      "tile_source": "CHR bank 2, BG pattern table $0000 (sprgen/us_chr_bank2.chr)"
+     },
+     "why_chosen": "Gradius NES stage 6 has the same membranes, lattice cells and capsule-shaped cells in the same layout; the organic stages of the other games are flesh with none of these elements.",
+     "missing": "The end structure around the spitter boss (two chars of its own, phase 2a CONVERT_MSX).",
+     "confidence": "high",
+     "candidates": [
+      {
+       "nes_game": "gradius_nes",
+       "nes_stage": 6,
+       "verdict": "same",
+       "evidence": "Stage 6 (cells / DNA): the same wavy membranes, lattice cells and capsule cells. [tiles: CHR bank 2, BG pattern table $0000 (sprgen/us_chr_bank2.chr); BG palettes 2/3 [[15, 4, 44, 52], [15, 12, 18, 33]]]"
+      },
+      {
+       "nes_game": "gradius2_fc",
+       "nes_stage": 7,
+       "verdict": "similar",
+       "evidence": "Organic brain tissue and the Gofer head; no membranes or lattice cells. [tiles: CHR sets of the stage (BG = the last 4 KiB of each): sprgen/pt_40_41_70_43_55_56_57_58.bin, sprgen/pt_40_41_70_43_59_5A_57_5B.bin; 2 CHR set(s), 8 BG palette set(s) seen]"
+      },
+      {
+       "nes_game": "lifeforce_nes",
+       "nes_stage": 1,
+       "verdict": "similar",
+       "evidence": "Organic flesh with a blue membrane section; no lattice cells. [tiles: BG pattern tables sprgen/stage1_bg_start.bin, sprgen/stage1_bg_boss.bin; horizontal stage]"
+      },
+      {
+       "nes_game": "salamander_fc",
+       "nes_stage": 1,
+       "verdict": "similar",
+       "evidence": "Same map and tiles as Life Force stage 1. [tiles: CHR-RAM after stage init sprgen/stage1_chr_after_init.bin; horizontal stage]"
+      }
+     ],
+     "elements": [
+      {
+       "msx": "wavy membrane floor and ceiling (map chars)",
+       "nes": "gr stage 6 membranes",
+       "decision": "REUSE"
+      },
+      {
+       "msx": "blue lattice cells, destructible (n1.scenery.destructible_cells)",
+       "nes": "gr stage 6 lattice (gr.scenery.destructible_cell_stage6)",
+       "decision": "REUSE"
+      },
+      {
+       "msx": "capsule-shaped cells near the end (map chars)",
+       "nes": "gr stage 6 capsule cells",
+       "decision": "REUSE"
+      },
+      {
+       "msx": "end structure with the spitter boss (n1.boss.stage7_spitter)",
+       "nes": "gr stage 6 ends with the cell nucleus instead",
+       "decision": "CONVERT"
+      },
+      {
+       "msx": "star field (one-pixel twinkle chars F6/F7, n1.scenery.star)",
+       "nes": "none: NES stars are static map dots",
+       "decision": "CONVERT"
+      }
+     ]
+    },
+    {
+     "stage_id": "n1.stage_12",
+     "name": null,
+     "theme": "bonus stage: maze of white blocks and pink cell blocks",
+     "same_as": null,
+     "decision": "ADAPT_NES_TILESET",
+     "chosen": {
+      "nes_game": "gradius_nes",
+      "nes_stage": 2,
+      "tile_source": "CHR bank 0, BG pattern table $0000 (sprgen/us_chr_bank0.chr)"
+     },
+     "why_chosen": "Same reason as n1.stage_09; the pink cells are the Gradius NES stage-2 spheres as they are.",
+     "missing": "Nothing beyond the layout (pink is the Gradius NES sphere colour).",
+     "confidence": "high",
+     "candidates": [
+      {
+       "nes_game": "gradius_nes",
+       "nes_stage": 2,
+       "verdict": "similar",
+       "evidence": "White blocks and pink spheres, the tiles the bonus mazes are made of. [tiles: CHR bank 0, BG pattern table $0000 (sprgen/us_chr_bank0.chr); BG palettes 2/3 [[15, 21, 48, 16], [15, 5, 25, 48]]]"
+      }
+     ],
+     "elements": [
+      {
+       "msx": "white stone blocks (map chars)",
+       "nes": "gr stage 2 white blocks (CHR bank 0)",
+       "decision": "REUSE"
+      },
+      {
+       "msx": "pink cell blocks, destructible (n1.scenery.destructible_cells)",
+       "nes": "gr stage 2 pink spheres (gr.scenery.destructible_block_stage2) in a pink BG palette",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "1UP and bonus capsules, hidden bonus (n1.item.*)",
+       "nes": "phase 2a choices (Salamander capsules)",
+       "decision": "REUSE"
+      },
+      {
+       "msx": "star field (one-pixel twinkle chars F6/F7, n1.scenery.star)",
+       "nes": "none: NES stars are static map dots",
+       "decision": "CONVERT"
+      }
+     ]
+    },
+    {
+     "stage_id": "n1.stage_08",
+     "name": null,
+     "theme": "fortress: blocky pipe walls on floor and ceiling, final boss",
+     "same_as": null,
+     "decision": "ADAPT_NES_TILESET",
+     "chosen": {
+      "nes_game": "gradius2_fc",
+      "nes_stage": 6,
+      "tile_source": "CHR sets of the stage (BG = the last 4 KiB of each): sprgen/pt_40_41_65_4A_4C_4D_4E_4F.bin, sprgen/pt_40_41_66_4A_4C_4D_50_4F.bin, sprgen/pt_40_41_65_4A_4C_4D_50_4F.bin, sprgen/pt_40_41_65_4A_51_52_50_4F.bin"
+     },
+     "why_chosen": "Gradius NES stage 7 has the same pipe walls and layout; the Gradius II fortress (stage 6) has mechanical walls with much more detail (grey machinery, lights, green tubes) and is the art direction.",
+     "missing": "Wall metatiles in the MSX blocky shapes (steps and pillars) built from the g2 machinery tiles; the legs of the end brain.",
+     "confidence": "medium",
+     "candidates": [
+      {
+       "nes_game": "gradius_nes",
+       "nes_stage": 7,
+       "verdict": "same",
+       "evidence": "Stage 7 (fortress): the same blocky pipe walls in the same layout, brain at the end. [tiles: CHR bank 3, BG pattern table $0000 (sprgen/us_chr_bank3.chr); BG palettes 2/3 [[15, 33, 43, 37], [15, 6, 23, 54]]]"
+      },
+      {
+       "nes_game": "gradius2_fc",
+       "nes_stage": 6,
+       "verdict": "similar",
+       "evidence": "Enemy base: green tube corridors and grey machinery walls. [tiles: CHR sets of the stage (BG = the last 4 KiB of each): sprgen/pt_40_41_65_4A_4C_4D_4E_4F.bin, sprgen/pt_40_41_66_4A_4C_4D_50_4F.bin, sprgen/pt_40_41_65_4A_4C_4D_50_4F.bin, sprgen/pt_40_41_65_4A_51_52_50_4F.bin; 4 CHR set(s), 18 BG palette set(s) seen]"
+      },
+      {
+       "nes_game": "lifeforce_nes",
+       "nes_stage": 6,
+       "verdict": "similar",
+       "evidence": "Fortress (vertical): green section then mechanical walls. [tiles: BG pattern tables sprgen/stage6_bg_start.bin, sprgen/stage6_bg_boss.bin; vertical stage]"
+      },
+      {
+       "nes_game": "salamander_fc",
+       "nes_stage": 6,
+       "verdict": "similar",
+       "evidence": "Same map and tiles as Life Force stage 6. [tiles: CHR-RAM after stage init sprgen/stage6_chr_after_init.bin; vertical stage]"
+      }
+     ],
+     "elements": [
+      {
+       "msx": "pipe walls on floor and ceiling (map chars, blue)",
+       "nes": "g2 stage 6 mechanical walls",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "brain with legs at the end of the map (map chars)",
+       "nes": "gr stage 7 brain at the end of the fortress (gr.boss.brain); the MSX one has legs",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "final boss pieces (n1.boss.stage8_final and parts)",
+       "nes": "phase 2a: CONVERT_MSX",
+       "decision": "CONVERT"
+      },
+      {
+       "msx": "star field (one-pixel twinkle chars F6/F7, n1.scenery.star)",
+       "nes": "none: NES stars are static map dots",
+       "decision": "CONVERT"
+      }
+     ]
+    },
+    {
+     "stage_id": "n1.ending",
+     "name": null,
+     "theme": "ending: star field with the char-drawn ending pictures",
+     "same_as": null,
+     "decision": "REUSE_NES_TILESET",
+     "chosen": {
+      "nes_game": "gradius_nes",
+      "nes_stage": "ending",
+      "tile_source": "CHR bank 3 (sprgen/us_chr_bank3.chr), screen gr.screen.ending_us"
+     },
+     "why_chosen": "Same moment and the same kind of background (stars); the ending pictures are objects decided in phase 2a.",
+     "missing": "Nothing for the background.",
+     "confidence": "medium",
+     "candidates": [
+      {
+       "nes_game": "gradius_nes",
+       "nes_stage": "ending",
+       "verdict": "same",
+       "evidence": "Ending: star field, mothership and the ship approaching, message. [tiles: CHR bank 3 (sprgen/us_chr_bank3.chr), screen gr.screen.ending_us]"
+      },
+      {
+       "nes_game": "gradius2_fc",
+       "nes_stage": "ending",
+       "verdict": "similar",
+       "evidence": "Escape from the exploding base, then the staff roll over Earth. [tiles: screen g2.screen.ending_escape]"
+      },
+      {
+       "nes_game": "lifeforce_nes",
+       "nes_stage": "ending",
+       "verdict": "similar",
+       "evidence": "The planet is destroyed. [tiles: screen lf.screen.ending]"
+      },
+      {
+       "nes_game": "salamander_fc",
+       "nes_stage": "ending",
+       "verdict": "similar",
+       "evidence": "Ships fly away from the planet, which explodes. [tiles: screen sfc.screen.ending_planet]"
+      }
+     ],
+     "elements": [
+      {
+       "msx": "star field",
+       "nes": "gr ending star field (CHR bank 3)",
+       "decision": "REUSE"
+      },
+      {
+       "msx": "4x4 drawing (n1.scenery.ending_4x4_drawing)",
+       "nes": "phase 2a: gr.effect.ending_mothership",
+       "decision": "REUSE"
+      },
+      {
+       "msx": "six ship drawings (n1.effect.ending_meter_drawings)",
+       "nes": "phase 2a: OWNER_SHIP sfc.ending.p1_ship",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "debris and explosion (n1.effect.ending_debris, n1.effect.background_explosion)",
+       "nes": "phase 2a: CONVERT_MSX and gr.effect.explosion_large",
+       "decision": "ADAPT"
+      }
+     ]
+    }
+   ],
+   "counts": {
+    "records": 13,
+    "by_decision": {
+     "REUSE_NES_TILESET": 4,
+     "ADAPT_NES_TILESET": 8,
+     "CONVERT_MSX": 1
+    },
+    "nes_sources": {
+     "Gradius stage 2": 5,
+     "Gradius II stage 3": 2,
+     "Gradius II stage 4": 1,
+     "Gradius stage 5": 1,
+     "Gradius stage 6": 1,
+     "Gradius II stage 6": 1,
+     "Gradius stage ending": 1
+    }
+   }
+  },
+  "nemesis2": {
+   "title": "Nemesis 2",
+   "status": "compared",
+   "stages": [
+    {
+     "stage_id": "n2.map_01",
+     "name": "Stage 1",
+     "theme": "rocky planet: blue boulder floor and ceiling, stacks of green carved idol heads, alien gates and spiked blocks",
+     "same_as": null,
+     "decision": "ADAPT_NES_TILESET",
+     "chosen": {
+      "nes_game": "gradius2_fc",
+      "nes_stage": 4,
+      "tile_source": "Gradius II CHR-ROM 1 KiB BG banks of stage 4: $2C $2D $2E $2F / $2C $2D $30 $2F / $5F $60 $61 $62 / $5F $60 $63 $62 (gradius2_fc/stages.json chr_bank_sets_seen; pattern tables in gradius2_fc/sprgen/)"
+     },
+     "why_chosen": "Closest NES theme (rubble ledges with carved stone heads); Gradius II is more detailed than Gradius NES (shaded rubble, 3-4 colours per tile) and the art direction.",
+     "missing": "idol heads and their stacks, gates and spiked blocks; rubble slopes and corners that follow the MSX outline; a blue palette for the rubble",
+     "confidence": "medium",
+     "candidates": [
+      {
+       "nes_game": "gradius2_fc",
+       "nes_stage": 4,
+       "verdict": "similar",
+       "evidence": "stone rubble ledges along floor and ceiling and carved stone heads (Moai); 3-4 colour shading"
+      },
+      {
+       "nes_game": "gradius_nes",
+       "nes_stage": 3,
+       "verdict": "similar",
+       "evidence": "Moai heads on brown rubble ledges; fewer tiles and colours than Gradius II"
+      },
+      {
+       "nes_game": "gradius_nes",
+       "nes_stage": 1,
+       "verdict": "different",
+       "evidence": "red rock floor with grass and volcanoes, no carved heads"
+      },
+      {
+       "nes_game": "salamander_fc",
+       "nes_stage": 5,
+       "verdict": "different",
+       "evidence": "crystal cavern then Egyptian temple"
+      }
+     ],
+     "elements": [
+      {
+       "msx": "blue boulder floor/ceiling (stage chars)",
+       "nes": "g2 stage 4 stone rubble ledge tiles, recoloured blue",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "green idol heads stacked in the map",
+       "nes": "none (Moai are another design; use their stone shading as reference)",
+       "decision": "CONVERT"
+      },
+      {
+       "msx": "rotating idol column turret (n2.object.stage1_rotator)",
+       "nes": "none",
+       "decision": "CONVERT"
+      },
+      {
+       "msx": "alien gates of the gate hopper and spiked tech blocks",
+       "nes": "none",
+       "decision": "CONVERT"
+      },
+      {
+       "msx": "star field (n2.scenery.stars)",
+       "nes": "none (2a: CONVERT_MSX)",
+       "decision": "CONVERT"
+      }
+     ]
+    },
+    {
+     "stage_id": "n2.map_08@1",
+     "name": "Boss interior after stage 1",
+     "theme": "boss interior: grey/white mechanical blocks with blue trim and red inserts on floor and ceiling, the exit gate and the core",
+     "same_as": null,
+     "decision": "ADAPT_NES_TILESET",
+     "chosen": {
+      "nes_game": "gradius2_fc",
+      "nes_stage": 6,
+      "tile_source": "Gradius II CHR-ROM 1 KiB BG banks of stage 6: $4C $4D $4E $4F / $4C $4D $50 $4F / $51 $52 $50 $4F (gradius2_fc/stages.json chr_bank_sets_seen; pattern tables in gradius2_fc/sprgen/)"
+     },
+     "why_chosen": "Mechanical interior in grey, white and blue: the Gradius II enemy-base tiles are the closest in colour and the most detailed (art direction); Gradius NES stage 7 is red and has fewer tiles.",
+     "missing": "gate, core frame",
+     "confidence": "medium",
+     "candidates": [
+      {
+       "nes_game": "gradius2_fc",
+       "nes_stage": 6,
+       "verdict": "similar",
+       "evidence": "enemy base: grey/blue mechanical walls, pipes, panels; most shaded fortress tiles"
+      },
+      {
+       "nes_game": "gradius_nes",
+       "nes_stage": 7,
+       "verdict": "similar",
+       "evidence": "red/orange circuit fortress walls with cyan edges; few tiles"
+      }
+     ],
+     "elements": [
+      {
+       "msx": "grey/white mechanical blocks",
+       "nes": "g2 stage 6 wall and panel tiles",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "red inserts and blue trim",
+       "nes": "g2 stage 6 red lights and blue panel tiles",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "exit gate and its animation (n2.scenery.interior_gate)",
+       "nes": "none (2a: CONVERT_MSX)",
+       "decision": "CONVERT"
+      },
+      {
+       "msx": "animated lights (n2.scenery.anim_map00)",
+       "nes": "none",
+       "decision": "CONVERT"
+      }
+     ]
+    },
+    {
+     "stage_id": "n2.map_02",
+     "name": "Stage 2",
+     "theme": "jungle planet: leafy green vegetation on floor, ceiling and floating platforms, red coral trees of ring cells (breakable), growing vegetation walls",
+     "same_as": null,
+     "decision": "ADAPT_NES_TILESET",
+     "chosen": {
+      "nes_game": "gradius2_fc",
+      "nes_stage": 2,
+      "tile_source": "Gradius II CHR-ROM 1 KiB BG banks of stage 2: $1B $1C $1D $1E / $1F $20 $1D $1E / $21 $20 $1D $22 (gradius2_fc/stages.json chr_bank_sets_seen; pattern tables in gradius2_fc/sprgen/)"
+     },
+     "why_chosen": "Gradius II stage 2 is the NES stage of the same kind (an overgrown alien zone with green terrain and red structures) and the art direction; its terrain is more mechanical than the MSX foliage, so the leaf texture is taken from the Gradius II stage-3 vegetation.",
+     "missing": "red coral ring-cell clusters and their breaking steps; the ragged leafy outline of the MSX floor and ceiling",
+     "confidence": "medium",
+     "candidates": [
+      {
+       "nes_game": "gradius2_fc",
+       "nes_stage": 2,
+       "verdict": "similar",
+       "evidence": "alien plant base: green organic ledges, plant pods and ribbed tubes, red lattice columns"
+      },
+      {
+       "nes_game": "gradius2_fc",
+       "nes_stage": 3,
+       "verdict": "similar",
+       "evidence": "leafy green vegetation hanging from and growing on the floating islands (the closest NES leaf texture)"
+      },
+      {
+       "nes_game": "gradius_nes",
+       "nes_stage": 1,
+       "verdict": "different",
+       "evidence": "only a strip of grass on red rock"
+      },
+      {
+       "nes_game": "salamander_fc",
+       "nes_stage": 4,
+       "verdict": "different",
+       "evidence": "pink organic walls"
+      }
+     ],
+     "elements": [
+      {
+       "msx": "leafy floor, ceiling and floating platforms",
+       "nes": "g2 stage 3 leafy vegetation tiles (texture) on g2 stage 2 ledge shapes",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "red coral trees of ring cells (n2.scenery.breakable)",
+       "nes": "g2 stage 2 red lattice is another drawing",
+       "decision": "CONVERT"
+      },
+      {
+       "msx": "growing vegetation wall (n2.object.c11)",
+       "nes": "g2 stage 2 vegetation tiles as the base",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "spiral-shell dome launchers (n2.object.c01)",
+       "nes": "none (2a: CONVERT_MSX)",
+       "decision": "CONVERT"
+      },
+      {
+       "msx": "animated background characters (n2.scenery.anim_map02)",
+       "nes": "none",
+       "decision": "CONVERT"
+      }
+     ]
+    },
+    {
+     "stage_id": "n2.map_08@2",
+     "name": "Boss interior after stage 2",
+     "theme": "boss interior: grey/white mechanical blocks with blue trim and red inserts on floor and ceiling, the exit gate and the core",
+     "same_as": "n2.map_08@1",
+     "decision": "ADAPT_NES_TILESET",
+     "chosen": {
+      "nes_game": "gradius2_fc",
+      "nes_stage": 6,
+      "tile_source": "Gradius II CHR-ROM 1 KiB BG banks of stage 6: $4C $4D $4E $4F / $4C $4D $50 $4F / $51 $52 $50 $4F (gradius2_fc/stages.json chr_bank_sets_seen; pattern tables in gradius2_fc/sprgen/)"
+     },
+     "why_chosen": "Same map (map_08) and tiles as n2.map_08@1.",
+     "missing": "gate, core frame",
+     "confidence": "medium",
+     "candidates": [
+      {
+       "nes_game": "gradius2_fc",
+       "nes_stage": 6,
+       "verdict": "similar",
+       "evidence": "enemy base: grey/blue mechanical walls, pipes, panels; most shaded fortress tiles"
+      },
+      {
+       "nes_game": "gradius_nes",
+       "nes_stage": 7,
+       "verdict": "similar",
+       "evidence": "red/orange circuit fortress walls with cyan edges; few tiles"
+      }
+     ],
+     "elements": [
+      {
+       "msx": "grey/white mechanical blocks",
+       "nes": "g2 stage 6 wall and panel tiles",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "red inserts and blue trim",
+       "nes": "g2 stage 6 red lights and blue panel tiles",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "exit gate and its animation (n2.scenery.interior_gate)",
+       "nes": "none (2a: CONVERT_MSX)",
+       "decision": "CONVERT"
+      },
+      {
+       "msx": "animated lights (n2.scenery.anim_map00)",
+       "nes": "none",
+       "decision": "CONVERT"
+      }
+     ]
+    },
+    {
+     "stage_id": "n2.map_03",
+     "name": "Stage 3",
+     "theme": "ancient ruins: broken white marble columns and lintels along floor and ceiling; falling columns",
+     "same_as": null,
+     "decision": "ADAPT_NES_TILESET",
+     "chosen": {
+      "nes_game": "salamander_fc",
+      "nes_stage": 5,
+      "tile_source": "Salamander FC stage 5 CHR-RAM set (salamander_fc/sprgen/stage5_chr_after_init.bin, streams in stages.json tile_set_source)"
+     },
+     "why_chosen": "Most detailed ruins on the NES: the Salamander FC temple (blocks, pillars, rubble) against the few white stones of Gradius stage 2; Life Force has the identical art (Salamander FC kept by the tie rule of nes_match.md). No Gradius II stage has ruins.",
+     "missing": "Greek column capitals, fluted shafts and broken lintels in the temple style; a marble palette",
+     "confidence": "medium",
+     "candidates": [
+      {
+       "nes_game": "salamander_fc",
+       "nes_stage": 5,
+       "verdict": "similar",
+       "evidence": "ancient temple: stone blocks, pillars and rubble floors (Egyptian, gold); many tiles, 3-colour shading"
+      },
+      {
+       "nes_game": "lifeforce_nes",
+       "nes_stage": 5,
+       "verdict": "similar",
+       "evidence": "same art as Salamander FC stage 5"
+      },
+      {
+       "nes_game": "gradius_nes",
+       "nes_stage": 2,
+       "verdict": "similar",
+       "evidence": "Stonehenge: white stone blocks and pink sphere blocks; few tiles (white ovals)"
+      }
+     ],
+     "elements": [
+      {
+       "msx": "marble ruins along floor and ceiling (stage chars)",
+       "nes": "sfc stage 5 temple blocks and pillar tops, recoloured white/grey marble",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "falling columns and lintels (n2.object.falling_piece)",
+       "nes": "sfc stage 5 pillars as style reference (2a: CONVERT_MSX)",
+       "decision": "CONVERT"
+      }
+     ]
+    },
+    {
+     "stage_id": "n2.map_09@3",
+     "name": "Secret stage 9 (from stage 3)",
+     "theme": "secret stage: the stage-3 ruins along floor and ceiling (same character set as map_03) and walls of red ball blocks that break (hidden capsules, bonus, 1UP)",
+     "same_as": null,
+     "decision": "ADAPT_NES_TILESET",
+     "chosen": {
+      "nes_game": "salamander_fc",
+      "nes_stage": 5,
+      "tile_source": "Salamander FC stage 5 CHR-RAM set (salamander_fc/sprgen/stage5_chr_after_init.bin, streams in stages.json tile_set_source)"
+     },
+     "why_chosen": "Same character set as stage 3 (p07:6000[9] = p07:$6106), so the same ruins choice; the ball-block walls are the Gradius stage-2 pink sphere blocks.",
+     "missing": "as map_03",
+     "confidence": "medium",
+     "candidates": [
+      {
+       "nes_game": "salamander_fc",
+       "nes_stage": 5,
+       "verdict": "similar",
+       "evidence": "ancient temple: stone blocks, pillars and rubble floors (Egyptian, gold); many tiles, 3-colour shading"
+      },
+      {
+       "nes_game": "lifeforce_nes",
+       "nes_stage": 5,
+       "verdict": "similar",
+       "evidence": "same art as Salamander FC stage 5"
+      },
+      {
+       "nes_game": "gradius_nes",
+       "nes_stage": 2,
+       "verdict": "similar",
+       "evidence": "white stones and walls of pink sphere blocks that break under fire: the same block element as the MSX red ball walls"
+      }
+     ],
+     "elements": [
+      {
+       "msx": "marble ruins along floor and ceiling",
+       "nes": "sfc stage 5 temple tiles (as map_03)",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "walls of red ball blocks (n2.scenery.breakable, hidden items)",
+       "nes": "gr stage 2 pink sphere blocks (gr.scenery.destructible_block_stage2), the same breakable ball block",
+       "decision": "REUSE"
+      },
+      {
+       "msx": "falling blocks (n2.object.falling_piece)",
+       "nes": "none (2a: CONVERT_MSX)",
+       "decision": "CONVERT"
+      }
+     ]
+    },
+    {
+     "stage_id": "n2.map_08@3",
+     "name": "Boss interior after stage 3",
+     "theme": "boss interior: grey/white mechanical blocks with blue trim and red inserts on floor and ceiling, the exit gate and the core",
+     "same_as": "n2.map_08@1",
+     "decision": "ADAPT_NES_TILESET",
+     "chosen": {
+      "nes_game": "gradius2_fc",
+      "nes_stage": 6,
+      "tile_source": "Gradius II CHR-ROM 1 KiB BG banks of stage 6: $4C $4D $4E $4F / $4C $4D $50 $4F / $51 $52 $50 $4F (gradius2_fc/stages.json chr_bank_sets_seen; pattern tables in gradius2_fc/sprgen/)"
+     },
+     "why_chosen": "Same map (map_08) and tiles as n2.map_08@1.",
+     "missing": "gate, core frame",
+     "confidence": "medium",
+     "candidates": [
+      {
+       "nes_game": "gradius2_fc",
+       "nes_stage": 6,
+       "verdict": "similar",
+       "evidence": "enemy base: grey/blue mechanical walls, pipes, panels; most shaded fortress tiles"
+      },
+      {
+       "nes_game": "gradius_nes",
+       "nes_stage": 7,
+       "verdict": "similar",
+       "evidence": "red/orange circuit fortress walls with cyan edges; few tiles"
+      }
+     ],
+     "elements": [
+      {
+       "msx": "grey/white mechanical blocks",
+       "nes": "g2 stage 6 wall and panel tiles",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "red inserts and blue trim",
+       "nes": "g2 stage 6 red lights and blue panel tiles",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "exit gate and its animation (n2.scenery.interior_gate)",
+       "nes": "none (2a: CONVERT_MSX)",
+       "decision": "CONVERT"
+      },
+      {
+       "msx": "animated lights (n2.scenery.anim_map00)",
+       "nes": "none",
+       "decision": "CONVERT"
+      }
+     ]
+    },
+    {
+     "stage_id": "n2.map_04",
+     "name": "Stage 4",
+     "theme": "floating islands of boulders in space with snowy mountain peaks and pine trees",
+     "same_as": null,
+     "decision": "ADAPT_NES_TILESET",
+     "chosen": {
+      "nes_game": "gradius2_fc",
+      "nes_stage": 3,
+      "tile_source": "Gradius II CHR-ROM 1 KiB BG banks of stage 3: $23 $24 $25 $26 / $27 $28 $25 $26 / $29 $2A $25 $26 (gradius2_fc/stages.json chr_bank_sets_seen; pattern tables in gradius2_fc/sprgen/)"
+     },
+     "why_chosen": "Same layout idea (floating islands with mountains); Gradius II has the islands and is more detailed than the Gradius volcanoes.",
+     "missing": "pine trees; snow caps; a white/blue palette for the rock",
+     "confidence": "medium",
+     "candidates": [
+      {
+       "nes_game": "gradius2_fc",
+       "nes_stage": 3,
+       "verdict": "similar",
+       "evidence": "floating rock islands with plants on top and big mountains (volcanoes) in space"
+      },
+      {
+       "nes_game": "gradius_nes",
+       "nes_stage": 1,
+       "verdict": "similar",
+       "evidence": "volcanoes on a rocky floor; mountains but no floating islands"
+      },
+      {
+       "nes_game": "gradius_nes",
+       "nes_stage": 4,
+       "verdict": "different",
+       "evidence": "inverted volcanoes on the ceiling"
+      }
+     ],
+     "elements": [
+      {
+       "msx": "floating island boulders and their hanging roots",
+       "nes": "g2 stage 3 floating island rock and underside",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "snowy mountain peaks",
+       "nes": "g2 stage 3 mountain (volcano) slopes recoloured to snow and ice",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "pine trees on the islands",
+       "nes": "g2 stage 3 island plants are bushes, not pines",
+       "decision": "CONVERT"
+      },
+      {
+       "msx": "animated background characters (n2.scenery.anim_map04)",
+       "nes": "none",
+       "decision": "CONVERT"
+      }
+     ]
+    },
+    {
+     "stage_id": "n2.map_08@4",
+     "name": "Boss interior after stage 4",
+     "theme": "boss interior: grey/white mechanical blocks with blue trim and red inserts on floor and ceiling, the exit gate and the core",
+     "same_as": "n2.map_08@1",
+     "decision": "ADAPT_NES_TILESET",
+     "chosen": {
+      "nes_game": "gradius2_fc",
+      "nes_stage": 6,
+      "tile_source": "Gradius II CHR-ROM 1 KiB BG banks of stage 6: $4C $4D $4E $4F / $4C $4D $50 $4F / $51 $52 $50 $4F (gradius2_fc/stages.json chr_bank_sets_seen; pattern tables in gradius2_fc/sprgen/)"
+     },
+     "why_chosen": "Same map (map_08) and tiles as n2.map_08@1.",
+     "missing": "gate, core frame",
+     "confidence": "medium",
+     "candidates": [
+      {
+       "nes_game": "gradius2_fc",
+       "nes_stage": 6,
+       "verdict": "similar",
+       "evidence": "enemy base: grey/blue mechanical walls, pipes, panels; most shaded fortress tiles"
+      },
+      {
+       "nes_game": "gradius_nes",
+       "nes_stage": 7,
+       "verdict": "similar",
+       "evidence": "red/orange circuit fortress walls with cyan edges; few tiles"
+      }
+     ],
+     "elements": [
+      {
+       "msx": "grey/white mechanical blocks",
+       "nes": "g2 stage 6 wall and panel tiles",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "red inserts and blue trim",
+       "nes": "g2 stage 6 red lights and blue panel tiles",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "exit gate and its animation (n2.scenery.interior_gate)",
+       "nes": "none (2a: CONVERT_MSX)",
+       "decision": "CONVERT"
+      },
+      {
+       "msx": "animated lights (n2.scenery.anim_map00)",
+       "nes": "none",
+       "decision": "CONVERT"
+      }
+     ]
+    },
+    {
+     "stage_id": "n2.map_05",
+     "name": "Stage 5",
+     "theme": "fire planet: flame walls on floor and ceiling with vertical flame pillars between them; crushing flame pieces",
+     "same_as": null,
+     "decision": "ADAPT_NES_TILESET",
+     "chosen": {
+      "nes_game": "gradius2_fc",
+      "nes_stage": 1,
+      "tile_source": "Gradius II CHR-ROM 1 KiB BG banks of stage 1: $00 $01 $02 $03 / $00 $04 $05 $03 / $00 $06 $07 $03 / $00 $08 $09 $03 / $11 $12 $0A $0B / $11 $13 $0A $0B / $11 $14 $0A $0B / $11 $15 $0A $0B / $16 $17 $18 $19 (gradius2_fc/stages.json chr_bank_sets_seen; pattern tables in gradius2_fc/sprgen/)"
+     },
+     "why_chosen": "The Gradius II flame surfaces are the most detailed fire tiles (larger shapes, 4 shades) and the art direction; the vertical flame columns that only Salamander/Life Force have are taken as an element.",
+     "missing": "the jagged MSX flame outline (draw edge tiles from the Gradius II surface)",
+     "confidence": "medium",
+     "candidates": [
+      {
+       "nes_game": "gradius2_fc",
+       "nes_stage": 1,
+       "verdict": "similar",
+       "evidence": "artificial sun: prominence flame surfaces and arcs on floor and ceiling, 4 shades"
+      },
+      {
+       "nes_game": "salamander_fc",
+       "nes_stage": 3,
+       "verdict": "same",
+       "evidence": "prominence stage: flame walls on floor and ceiling and vertical flame columns, the same layout idea"
+      },
+      {
+       "nes_game": "lifeforce_nes",
+       "nes_stage": 3,
+       "verdict": "same",
+       "evidence": "same art as Salamander FC stage 3"
+      }
+     ],
+     "elements": [
+      {
+       "msx": "flame walls on floor and ceiling",
+       "nes": "g2 stage 1 prominence surface",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "vertical flame pillars in the map",
+       "nes": "sfc stage 3 flame columns (same element)",
+       "decision": "REUSE"
+      },
+      {
+       "msx": "crushing flame pieces (n2.object.stage5_piece)",
+       "nes": "none (2a: CONVERT_MSX)",
+       "decision": "CONVERT"
+      },
+      {
+       "msx": "stage-5 hatch (n2.object.c07)",
+       "nes": "none (2a: CONVERT_MSX)",
+       "decision": "CONVERT"
+      }
+     ]
+    },
+    {
+     "stage_id": "n2.map_08@5",
+     "name": "Boss interior after stage 5",
+     "theme": "boss interior: grey/white mechanical blocks with blue trim and red inserts on floor and ceiling, the exit gate and the core",
+     "same_as": "n2.map_08@1",
+     "decision": "ADAPT_NES_TILESET",
+     "chosen": {
+      "nes_game": "gradius2_fc",
+      "nes_stage": 6,
+      "tile_source": "Gradius II CHR-ROM 1 KiB BG banks of stage 6: $4C $4D $4E $4F / $4C $4D $50 $4F / $51 $52 $50 $4F (gradius2_fc/stages.json chr_bank_sets_seen; pattern tables in gradius2_fc/sprgen/)"
+     },
+     "why_chosen": "Same map (map_08) and tiles as n2.map_08@1.",
+     "missing": "gate, core frame",
+     "confidence": "medium",
+     "candidates": [
+      {
+       "nes_game": "gradius2_fc",
+       "nes_stage": 6,
+       "verdict": "similar",
+       "evidence": "enemy base: grey/blue mechanical walls, pipes, panels; most shaded fortress tiles"
+      },
+      {
+       "nes_game": "gradius_nes",
+       "nes_stage": 7,
+       "verdict": "similar",
+       "evidence": "red/orange circuit fortress walls with cyan edges; few tiles"
+      }
+     ],
+     "elements": [
+      {
+       "msx": "grey/white mechanical blocks",
+       "nes": "g2 stage 6 wall and panel tiles",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "red inserts and blue trim",
+       "nes": "g2 stage 6 red lights and blue panel tiles",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "exit gate and its animation (n2.scenery.interior_gate)",
+       "nes": "none (2a: CONVERT_MSX)",
+       "decision": "CONVERT"
+      },
+      {
+       "msx": "animated lights (n2.scenery.anim_map00)",
+       "nes": "none",
+       "decision": "CONVERT"
+      }
+     ]
+    },
+    {
+     "stage_id": "n2.map_06",
+     "name": "Stage 6",
+     "theme": "organic interior: pink/orange fleshy ridges with blue membrane edges on floor, ceiling and middle, blue cell masses with green nuclei, regrowing cells",
+     "same_as": null,
+     "decision": "ADAPT_NES_TILESET",
+     "chosen": {
+      "nes_game": "gradius2_fc",
+      "nes_stage": 7,
+      "tile_source": "Gradius II CHR-ROM 1 KiB BG banks of stage 7: $55 $56 $57 $58 / $59 $5A $57 $5B (gradius2_fc/stages.json chr_bank_sets_seen; pattern tables in gradius2_fc/sprgen/)"
+     },
+     "why_chosen": "Several organic NES stages; the Gradius II and Salamander FC brain walls are equally detailed, so Gradius II (art direction) wins; the blue membrane edges of Salamander FC stage 4 are the closest match for the MSX blue edges.",
+     "missing": "blue cell masses; ridge edges in the MSX outline",
+     "confidence": "medium",
+     "candidates": [
+      {
+       "nes_game": "gradius2_fc",
+       "nes_stage": 7,
+       "verdict": "similar",
+       "evidence": "Gofer's lair: pink brain-textured walls and red vein lattice, 3-4 shades"
+      },
+      {
+       "nes_game": "salamander_fc",
+       "nes_stage": 4,
+       "verdict": "similar",
+       "evidence": "pink brain walls with dark blue membrane channels (vertical stage)"
+      },
+      {
+       "nes_game": "salamander_fc",
+       "nes_stage": 1,
+       "verdict": "similar",
+       "evidence": "pink and blue cell walls"
+      },
+      {
+       "nes_game": "gradius_nes",
+       "nes_stage": 6,
+       "verdict": "similar",
+       "evidence": "blue cell lattice walls and cell blocks; few tiles"
+      }
+     ],
+     "elements": [
+      {
+       "msx": "fleshy ridges of floor, ceiling and middle",
+       "nes": "g2 stage 7 brain-wall tiles, recoloured pink/orange",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "blue membrane edges",
+       "nes": "sfc stage 4 blue membrane channel tiles",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "blue cell masses with green nuclei (S-shaped)",
+       "nes": "none (gr stage 6 lattice and sfc stage 1 mesh are other drawings)",
+       "decision": "CONVERT"
+      },
+      {
+       "msx": "regrowing cells (n2.object.c12)",
+       "nes": "none (2a: CONVERT_MSX)",
+       "decision": "CONVERT"
+      },
+      {
+       "msx": "animated background characters (n2.scenery.anim_map06)",
+       "nes": "none",
+       "decision": "CONVERT"
+      },
+      {
+       "msx": "rock throwers of the end event (n2.object.stage6_thrower)",
+       "nes": "none (2a: CONVERT_MSX)",
+       "decision": "CONVERT"
+      }
+     ]
+    },
+    {
+     "stage_id": "n2.map_10@6",
+     "name": "Secret stage 10 (from stage 6)",
+     "theme": "secret stage: the stage-3 ruins along floor and ceiling (same character set as map_03) and walls of red ball blocks that break (hidden capsules, bonus, 1UP)",
+     "same_as": null,
+     "decision": "ADAPT_NES_TILESET",
+     "chosen": {
+      "nes_game": "salamander_fc",
+      "nes_stage": 5,
+      "tile_source": "Salamander FC stage 5 CHR-RAM set (salamander_fc/sprgen/stage5_chr_after_init.bin, streams in stages.json tile_set_source)"
+     },
+     "why_chosen": "Same character set as stage 3 (p07:6000[10] = p07:$6106), so the same ruins choice; the ball-block walls are the Gradius stage-2 pink sphere blocks.",
+     "missing": "as map_03",
+     "confidence": "medium",
+     "candidates": [
+      {
+       "nes_game": "salamander_fc",
+       "nes_stage": 5,
+       "verdict": "similar",
+       "evidence": "ancient temple: stone blocks, pillars and rubble floors (Egyptian, gold); many tiles, 3-colour shading"
+      },
+      {
+       "nes_game": "lifeforce_nes",
+       "nes_stage": 5,
+       "verdict": "similar",
+       "evidence": "same art as Salamander FC stage 5"
+      },
+      {
+       "nes_game": "gradius_nes",
+       "nes_stage": 2,
+       "verdict": "similar",
+       "evidence": "white stones and walls of pink sphere blocks that break under fire: the same block element as the MSX red ball walls"
+      }
+     ],
+     "elements": [
+      {
+       "msx": "marble ruins along floor and ceiling",
+       "nes": "sfc stage 5 temple tiles (as map_03)",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "walls of red ball blocks (n2.scenery.breakable, hidden items)",
+       "nes": "gr stage 2 pink sphere blocks (gr.scenery.destructible_block_stage2), the same breakable ball block",
+       "decision": "REUSE"
+      },
+      {
+       "msx": "falling blocks (n2.object.falling_piece)",
+       "nes": "none (2a: CONVERT_MSX)",
+       "decision": "CONVERT"
+      }
+     ]
+    },
+    {
+     "stage_id": "n2.map_11@10",
+     "name": "Secret stage 11 (from stage 10)",
+     "theme": "secret stage: the stage-3 ruins along floor and ceiling (same character set as map_03) and walls of red ball blocks that break (hidden capsules, bonus, 1UP)",
+     "same_as": null,
+     "decision": "ADAPT_NES_TILESET",
+     "chosen": {
+      "nes_game": "salamander_fc",
+      "nes_stage": 5,
+      "tile_source": "Salamander FC stage 5 CHR-RAM set (salamander_fc/sprgen/stage5_chr_after_init.bin, streams in stages.json tile_set_source)"
+     },
+     "why_chosen": "Same character set as stage 3 (p07:6000[11] = p07:$6106), so the same ruins choice; the ball-block walls are the Gradius stage-2 pink sphere blocks.",
+     "missing": "as map_03",
+     "confidence": "medium",
+     "candidates": [
+      {
+       "nes_game": "salamander_fc",
+       "nes_stage": 5,
+       "verdict": "similar",
+       "evidence": "ancient temple: stone blocks, pillars and rubble floors (Egyptian, gold); many tiles, 3-colour shading"
+      },
+      {
+       "nes_game": "lifeforce_nes",
+       "nes_stage": 5,
+       "verdict": "similar",
+       "evidence": "same art as Salamander FC stage 5"
+      },
+      {
+       "nes_game": "gradius_nes",
+       "nes_stage": 2,
+       "verdict": "similar",
+       "evidence": "white stones and walls of pink sphere blocks that break under fire: the same block element as the MSX red ball walls"
+      }
+     ],
+     "elements": [
+      {
+       "msx": "marble ruins along floor and ceiling",
+       "nes": "sfc stage 5 temple tiles (as map_03)",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "walls of red ball blocks (n2.scenery.breakable, hidden items)",
+       "nes": "gr stage 2 pink sphere blocks (gr.scenery.destructible_block_stage2), the same breakable ball block",
+       "decision": "REUSE"
+      },
+      {
+       "msx": "falling blocks (n2.object.falling_piece)",
+       "nes": "none (2a: CONVERT_MSX)",
+       "decision": "CONVERT"
+      }
+     ]
+    },
+    {
+     "stage_id": "n2.map_07",
+     "name": "Stage 7",
+     "theme": "fortress: green mechanical circuit walls on floor and ceiling and pink/red pillar blocks that break in steps",
+     "same_as": null,
+     "decision": "ADAPT_NES_TILESET",
+     "chosen": {
+      "nes_game": "gradius2_fc",
+      "nes_stage": 6,
+      "tile_source": "Gradius II CHR-ROM 1 KiB BG banks of stage 6: $4C $4D $4E $4F / $4C $4D $50 $4F / $51 $52 $50 $4F (gradius2_fc/stages.json chr_bank_sets_seen; pattern tables in gradius2_fc/sprgen/)"
+     },
+     "why_chosen": "All four fortress stages are similar; Gradius II has the most detailed mechanical tiles and is the art direction.",
+     "missing": "pillar blocks and their damage steps",
+     "confidence": "medium",
+     "candidates": [
+      {
+       "nes_game": "gradius2_fc",
+       "nes_stage": 6,
+       "verdict": "similar",
+       "evidence": "enemy base: grey/blue mechanical walls, pipes, panels; most shaded fortress tiles"
+      },
+      {
+       "nes_game": "gradius_nes",
+       "nes_stage": 7,
+       "verdict": "similar",
+       "evidence": "red/orange circuit fortress walls with cyan edges; few tiles"
+      },
+      {
+       "nes_game": "salamander_fc",
+       "nes_stage": 6,
+       "verdict": "similar",
+       "evidence": "red/grey mechanical walls and green plates (vertical stage)"
+      },
+      {
+       "nes_game": "salamander_fc",
+       "nes_stage": 2,
+       "verdict": "similar",
+       "evidence": "blue fortress at the end of the stage (vertical)"
+      }
+     ],
+     "elements": [
+      {
+       "msx": "green mechanical walls (stage chars)",
+       "nes": "g2 stage 6 wall and pipe tiles, green palette",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "pink/red pillar blocks breaking in steps (n2.scenery.breakable)",
+       "nes": "none",
+       "decision": "CONVERT"
+      },
+      {
+       "msx": "shell launcher and end turret (n2.object.c05, c06)",
+       "nes": "none (2a: CONVERT_MSX)",
+       "decision": "CONVERT"
+      }
+     ]
+    },
+    {
+     "stage_id": "n2.interlude_7",
+     "name": "Interlude after stage 7 (EMERGENCY, return to Nemesis)",
+     "theme": "cutscene, not a map",
+     "same_as": null,
+     "decision": "CONVERT_MSX",
+     "chosen": null,
+     "why_chosen": "No stage background: its screens are decided in nes_match.json (n2.screen.return_order, all CONVERT_MSX).",
+     "missing": "",
+     "confidence": "high",
+     "candidates": [],
+     "elements": []
+    },
+    {
+     "stage_id": "n2.map_06r",
+     "name": "Stage 6 (return trip)",
+     "theme": "organic interior: pink/orange fleshy ridges with blue membrane edges on floor, ceiling and middle, blue cell masses with green nuclei, regrowing cells",
+     "same_as": "n2.map_06",
+     "decision": "ADAPT_NES_TILESET",
+     "chosen": {
+      "nes_game": "gradius2_fc",
+      "nes_stage": 7,
+      "tile_source": "Gradius II CHR-ROM 1 KiB BG banks of stage 7: $55 $56 $57 $58 / $59 $5A $57 $5B (gradius2_fc/stages.json chr_bank_sets_seen; pattern tables in gradius2_fc/sprgen/)"
+     },
+     "why_chosen": "Same map (map_06) and tiles as n2.map_06.",
+     "missing": "blue cell masses; ridge edges in the MSX outline",
+     "confidence": "medium",
+     "candidates": [
+      {
+       "nes_game": "gradius2_fc",
+       "nes_stage": 7,
+       "verdict": "similar",
+       "evidence": "Gofer's lair: pink brain-textured walls and red vein lattice, 3-4 shades"
+      },
+      {
+       "nes_game": "salamander_fc",
+       "nes_stage": 4,
+       "verdict": "similar",
+       "evidence": "pink brain walls with dark blue membrane channels (vertical stage)"
+      },
+      {
+       "nes_game": "salamander_fc",
+       "nes_stage": 1,
+       "verdict": "similar",
+       "evidence": "pink and blue cell walls"
+      },
+      {
+       "nes_game": "gradius_nes",
+       "nes_stage": 6,
+       "verdict": "similar",
+       "evidence": "blue cell lattice walls and cell blocks; few tiles"
+      }
+     ],
+     "elements": [
+      {
+       "msx": "fleshy ridges of floor, ceiling and middle",
+       "nes": "g2 stage 7 brain-wall tiles, recoloured pink/orange",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "blue membrane edges",
+       "nes": "sfc stage 4 blue membrane channel tiles",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "blue cell masses with green nuclei (S-shaped)",
+       "nes": "none (gr stage 6 lattice and sfc stage 1 mesh are other drawings)",
+       "decision": "CONVERT"
+      },
+      {
+       "msx": "regrowing cells (n2.object.c12)",
+       "nes": "none (2a: CONVERT_MSX)",
+       "decision": "CONVERT"
+      },
+      {
+       "msx": "animated background characters (n2.scenery.anim_map06)",
+       "nes": "none",
+       "decision": "CONVERT"
+      },
+      {
+       "msx": "rock throwers of the end event (n2.object.stage6_thrower)",
+       "nes": "none (2a: CONVERT_MSX)",
+       "decision": "CONVERT"
+      }
+     ]
+    },
+    {
+     "stage_id": "n2.map_10@6r",
+     "name": "Secret stage 10 (from stage 6, return trip)",
+     "theme": "secret stage: the stage-3 ruins along floor and ceiling (same character set as map_03) and walls of red ball blocks that break (hidden capsules, bonus, 1UP)",
+     "same_as": "n2.map_10@6",
+     "decision": "ADAPT_NES_TILESET",
+     "chosen": {
+      "nes_game": "salamander_fc",
+      "nes_stage": 5,
+      "tile_source": "Salamander FC stage 5 CHR-RAM set (salamander_fc/sprgen/stage5_chr_after_init.bin, streams in stages.json tile_set_source)"
+     },
+     "why_chosen": "Same map (map_10) and tiles as n2.map_10@6.",
+     "missing": "as map_03",
+     "confidence": "medium",
+     "candidates": [
+      {
+       "nes_game": "salamander_fc",
+       "nes_stage": 5,
+       "verdict": "similar",
+       "evidence": "ancient temple: stone blocks, pillars and rubble floors (Egyptian, gold); many tiles, 3-colour shading"
+      },
+      {
+       "nes_game": "lifeforce_nes",
+       "nes_stage": 5,
+       "verdict": "similar",
+       "evidence": "same art as Salamander FC stage 5"
+      },
+      {
+       "nes_game": "gradius_nes",
+       "nes_stage": 2,
+       "verdict": "similar",
+       "evidence": "white stones and walls of pink sphere blocks that break under fire: the same block element as the MSX red ball walls"
+      }
+     ],
+     "elements": [
+      {
+       "msx": "marble ruins along floor and ceiling",
+       "nes": "sfc stage 5 temple tiles (as map_03)",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "walls of red ball blocks (n2.scenery.breakable, hidden items)",
+       "nes": "gr stage 2 pink sphere blocks (gr.scenery.destructible_block_stage2), the same breakable ball block",
+       "decision": "REUSE"
+      },
+      {
+       "msx": "falling blocks (n2.object.falling_piece)",
+       "nes": "none (2a: CONVERT_MSX)",
+       "decision": "CONVERT"
+      }
+     ]
+    },
+    {
+     "stage_id": "n2.map_11@10r",
+     "name": "Secret stage 11 (from stage 10, return trip)",
+     "theme": "secret stage: the stage-3 ruins along floor and ceiling (same character set as map_03) and walls of red ball blocks that break (hidden capsules, bonus, 1UP)",
+     "same_as": "n2.map_11@10",
+     "decision": "ADAPT_NES_TILESET",
+     "chosen": {
+      "nes_game": "salamander_fc",
+      "nes_stage": 5,
+      "tile_source": "Salamander FC stage 5 CHR-RAM set (salamander_fc/sprgen/stage5_chr_after_init.bin, streams in stages.json tile_set_source)"
+     },
+     "why_chosen": "Same map (map_11) and tiles as n2.map_11@10.",
+     "missing": "as map_03",
+     "confidence": "medium",
+     "candidates": [
+      {
+       "nes_game": "salamander_fc",
+       "nes_stage": 5,
+       "verdict": "similar",
+       "evidence": "ancient temple: stone blocks, pillars and rubble floors (Egyptian, gold); many tiles, 3-colour shading"
+      },
+      {
+       "nes_game": "lifeforce_nes",
+       "nes_stage": 5,
+       "verdict": "similar",
+       "evidence": "same art as Salamander FC stage 5"
+      },
+      {
+       "nes_game": "gradius_nes",
+       "nes_stage": 2,
+       "verdict": "similar",
+       "evidence": "white stones and walls of pink sphere blocks that break under fire: the same block element as the MSX red ball walls"
+      }
+     ],
+     "elements": [
+      {
+       "msx": "marble ruins along floor and ceiling",
+       "nes": "sfc stage 5 temple tiles (as map_03)",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "walls of red ball blocks (n2.scenery.breakable, hidden items)",
+       "nes": "gr stage 2 pink sphere blocks (gr.scenery.destructible_block_stage2), the same breakable ball block",
+       "decision": "REUSE"
+      },
+      {
+       "msx": "falling blocks (n2.object.falling_piece)",
+       "nes": "none (2a: CONVERT_MSX)",
+       "decision": "CONVERT"
+      }
+     ]
+    },
+    {
+     "stage_id": "n2.map_05r",
+     "name": "Stage 5 (return trip)",
+     "theme": "fire planet: flame walls on floor and ceiling with vertical flame pillars between them; crushing flame pieces",
+     "same_as": "n2.map_05",
+     "decision": "ADAPT_NES_TILESET",
+     "chosen": {
+      "nes_game": "gradius2_fc",
+      "nes_stage": 1,
+      "tile_source": "Gradius II CHR-ROM 1 KiB BG banks of stage 1: $00 $01 $02 $03 / $00 $04 $05 $03 / $00 $06 $07 $03 / $00 $08 $09 $03 / $11 $12 $0A $0B / $11 $13 $0A $0B / $11 $14 $0A $0B / $11 $15 $0A $0B / $16 $17 $18 $19 (gradius2_fc/stages.json chr_bank_sets_seen; pattern tables in gradius2_fc/sprgen/)"
+     },
+     "why_chosen": "Same map (map_05) and tiles as n2.map_05.",
+     "missing": "the jagged MSX flame outline (draw edge tiles from the Gradius II surface)",
+     "confidence": "medium",
+     "candidates": [
+      {
+       "nes_game": "gradius2_fc",
+       "nes_stage": 1,
+       "verdict": "similar",
+       "evidence": "artificial sun: prominence flame surfaces and arcs on floor and ceiling, 4 shades"
+      },
+      {
+       "nes_game": "salamander_fc",
+       "nes_stage": 3,
+       "verdict": "same",
+       "evidence": "prominence stage: flame walls on floor and ceiling and vertical flame columns, the same layout idea"
+      },
+      {
+       "nes_game": "lifeforce_nes",
+       "nes_stage": 3,
+       "verdict": "same",
+       "evidence": "same art as Salamander FC stage 3"
+      }
+     ],
+     "elements": [
+      {
+       "msx": "flame walls on floor and ceiling",
+       "nes": "g2 stage 1 prominence surface",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "vertical flame pillars in the map",
+       "nes": "sfc stage 3 flame columns (same element)",
+       "decision": "REUSE"
+      },
+      {
+       "msx": "crushing flame pieces (n2.object.stage5_piece)",
+       "nes": "none (2a: CONVERT_MSX)",
+       "decision": "CONVERT"
+      },
+      {
+       "msx": "stage-5 hatch (n2.object.c07)",
+       "nes": "none (2a: CONVERT_MSX)",
+       "decision": "CONVERT"
+      }
+     ]
+    },
+    {
+     "stage_id": "n2.map_08@5r",
+     "name": "Boss interior after stage 5 (return trip)",
+     "theme": "boss interior: grey/white mechanical blocks with blue trim and red inserts on floor and ceiling, the exit gate and the core",
+     "same_as": "n2.map_08@1",
+     "decision": "ADAPT_NES_TILESET",
+     "chosen": {
+      "nes_game": "gradius2_fc",
+      "nes_stage": 6,
+      "tile_source": "Gradius II CHR-ROM 1 KiB BG banks of stage 6: $4C $4D $4E $4F / $4C $4D $50 $4F / $51 $52 $50 $4F (gradius2_fc/stages.json chr_bank_sets_seen; pattern tables in gradius2_fc/sprgen/)"
+     },
+     "why_chosen": "Same map (map_08) and tiles as n2.map_08@1.",
+     "missing": "gate, core frame",
+     "confidence": "medium",
+     "candidates": [
+      {
+       "nes_game": "gradius2_fc",
+       "nes_stage": 6,
+       "verdict": "similar",
+       "evidence": "enemy base: grey/blue mechanical walls, pipes, panels; most shaded fortress tiles"
+      },
+      {
+       "nes_game": "gradius_nes",
+       "nes_stage": 7,
+       "verdict": "similar",
+       "evidence": "red/orange circuit fortress walls with cyan edges; few tiles"
+      }
+     ],
+     "elements": [
+      {
+       "msx": "grey/white mechanical blocks",
+       "nes": "g2 stage 6 wall and panel tiles",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "red inserts and blue trim",
+       "nes": "g2 stage 6 red lights and blue panel tiles",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "exit gate and its animation (n2.scenery.interior_gate)",
+       "nes": "none (2a: CONVERT_MSX)",
+       "decision": "CONVERT"
+      },
+      {
+       "msx": "animated lights (n2.scenery.anim_map00)",
+       "nes": "none",
+       "decision": "CONVERT"
+      }
+     ]
+    },
+    {
+     "stage_id": "n2.map_04r",
+     "name": "Stage 4 (return trip)",
+     "theme": "floating islands of boulders in space with snowy mountain peaks and pine trees",
+     "same_as": "n2.map_04",
+     "decision": "ADAPT_NES_TILESET",
+     "chosen": {
+      "nes_game": "gradius2_fc",
+      "nes_stage": 3,
+      "tile_source": "Gradius II CHR-ROM 1 KiB BG banks of stage 3: $23 $24 $25 $26 / $27 $28 $25 $26 / $29 $2A $25 $26 (gradius2_fc/stages.json chr_bank_sets_seen; pattern tables in gradius2_fc/sprgen/)"
+     },
+     "why_chosen": "Same map (map_04) and tiles as n2.map_04.",
+     "missing": "pine trees; snow caps; a white/blue palette for the rock",
+     "confidence": "medium",
+     "candidates": [
+      {
+       "nes_game": "gradius2_fc",
+       "nes_stage": 3,
+       "verdict": "similar",
+       "evidence": "floating rock islands with plants on top and big mountains (volcanoes) in space"
+      },
+      {
+       "nes_game": "gradius_nes",
+       "nes_stage": 1,
+       "verdict": "similar",
+       "evidence": "volcanoes on a rocky floor; mountains but no floating islands"
+      },
+      {
+       "nes_game": "gradius_nes",
+       "nes_stage": 4,
+       "verdict": "different",
+       "evidence": "inverted volcanoes on the ceiling"
+      }
+     ],
+     "elements": [
+      {
+       "msx": "floating island boulders and their hanging roots",
+       "nes": "g2 stage 3 floating island rock and underside",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "snowy mountain peaks",
+       "nes": "g2 stage 3 mountain (volcano) slopes recoloured to snow and ice",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "pine trees on the islands",
+       "nes": "g2 stage 3 island plants are bushes, not pines",
+       "decision": "CONVERT"
+      },
+      {
+       "msx": "animated background characters (n2.scenery.anim_map04)",
+       "nes": "none",
+       "decision": "CONVERT"
+      }
+     ]
+    },
+    {
+     "stage_id": "n2.map_08@4r",
+     "name": "Boss interior after stage 4 (return trip)",
+     "theme": "boss interior: grey/white mechanical blocks with blue trim and red inserts on floor and ceiling, the exit gate and the core",
+     "same_as": "n2.map_08@1",
+     "decision": "ADAPT_NES_TILESET",
+     "chosen": {
+      "nes_game": "gradius2_fc",
+      "nes_stage": 6,
+      "tile_source": "Gradius II CHR-ROM 1 KiB BG banks of stage 6: $4C $4D $4E $4F / $4C $4D $50 $4F / $51 $52 $50 $4F (gradius2_fc/stages.json chr_bank_sets_seen; pattern tables in gradius2_fc/sprgen/)"
+     },
+     "why_chosen": "Same map (map_08) and tiles as n2.map_08@1.",
+     "missing": "gate, core frame",
+     "confidence": "medium",
+     "candidates": [
+      {
+       "nes_game": "gradius2_fc",
+       "nes_stage": 6,
+       "verdict": "similar",
+       "evidence": "enemy base: grey/blue mechanical walls, pipes, panels; most shaded fortress tiles"
+      },
+      {
+       "nes_game": "gradius_nes",
+       "nes_stage": 7,
+       "verdict": "similar",
+       "evidence": "red/orange circuit fortress walls with cyan edges; few tiles"
+      }
+     ],
+     "elements": [
+      {
+       "msx": "grey/white mechanical blocks",
+       "nes": "g2 stage 6 wall and panel tiles",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "red inserts and blue trim",
+       "nes": "g2 stage 6 red lights and blue panel tiles",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "exit gate and its animation (n2.scenery.interior_gate)",
+       "nes": "none (2a: CONVERT_MSX)",
+       "decision": "CONVERT"
+      },
+      {
+       "msx": "animated lights (n2.scenery.anim_map00)",
+       "nes": "none",
+       "decision": "CONVERT"
+      }
+     ]
+    },
+    {
+     "stage_id": "n2.map_03r",
+     "name": "Stage 3 (return trip)",
+     "theme": "ancient ruins: broken white marble columns and lintels along floor and ceiling; falling columns",
+     "same_as": "n2.map_03",
+     "decision": "ADAPT_NES_TILESET",
+     "chosen": {
+      "nes_game": "salamander_fc",
+      "nes_stage": 5,
+      "tile_source": "Salamander FC stage 5 CHR-RAM set (salamander_fc/sprgen/stage5_chr_after_init.bin, streams in stages.json tile_set_source)"
+     },
+     "why_chosen": "Same map (map_03) and tiles as n2.map_03.",
+     "missing": "Greek column capitals, fluted shafts and broken lintels in the temple style; a marble palette",
+     "confidence": "medium",
+     "candidates": [
+      {
+       "nes_game": "salamander_fc",
+       "nes_stage": 5,
+       "verdict": "similar",
+       "evidence": "ancient temple: stone blocks, pillars and rubble floors (Egyptian, gold); many tiles, 3-colour shading"
+      },
+      {
+       "nes_game": "lifeforce_nes",
+       "nes_stage": 5,
+       "verdict": "similar",
+       "evidence": "same art as Salamander FC stage 5"
+      },
+      {
+       "nes_game": "gradius_nes",
+       "nes_stage": 2,
+       "verdict": "similar",
+       "evidence": "Stonehenge: white stone blocks and pink sphere blocks; few tiles (white ovals)"
+      }
+     ],
+     "elements": [
+      {
+       "msx": "marble ruins along floor and ceiling (stage chars)",
+       "nes": "sfc stage 5 temple blocks and pillar tops, recoloured white/grey marble",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "falling columns and lintels (n2.object.falling_piece)",
+       "nes": "sfc stage 5 pillars as style reference (2a: CONVERT_MSX)",
+       "decision": "CONVERT"
+      }
+     ]
+    },
+    {
+     "stage_id": "n2.map_09@3r",
+     "name": "Secret stage 9 (from stage 3, return trip)",
+     "theme": "secret stage: the stage-3 ruins along floor and ceiling (same character set as map_03) and walls of red ball blocks that break (hidden capsules, bonus, 1UP)",
+     "same_as": "n2.map_09@3",
+     "decision": "ADAPT_NES_TILESET",
+     "chosen": {
+      "nes_game": "salamander_fc",
+      "nes_stage": 5,
+      "tile_source": "Salamander FC stage 5 CHR-RAM set (salamander_fc/sprgen/stage5_chr_after_init.bin, streams in stages.json tile_set_source)"
+     },
+     "why_chosen": "Same map (map_09) and tiles as n2.map_09@3.",
+     "missing": "as map_03",
+     "confidence": "medium",
+     "candidates": [
+      {
+       "nes_game": "salamander_fc",
+       "nes_stage": 5,
+       "verdict": "similar",
+       "evidence": "ancient temple: stone blocks, pillars and rubble floors (Egyptian, gold); many tiles, 3-colour shading"
+      },
+      {
+       "nes_game": "lifeforce_nes",
+       "nes_stage": 5,
+       "verdict": "similar",
+       "evidence": "same art as Salamander FC stage 5"
+      },
+      {
+       "nes_game": "gradius_nes",
+       "nes_stage": 2,
+       "verdict": "similar",
+       "evidence": "white stones and walls of pink sphere blocks that break under fire: the same block element as the MSX red ball walls"
+      }
+     ],
+     "elements": [
+      {
+       "msx": "marble ruins along floor and ceiling",
+       "nes": "sfc stage 5 temple tiles (as map_03)",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "walls of red ball blocks (n2.scenery.breakable, hidden items)",
+       "nes": "gr stage 2 pink sphere blocks (gr.scenery.destructible_block_stage2), the same breakable ball block",
+       "decision": "REUSE"
+      },
+      {
+       "msx": "falling blocks (n2.object.falling_piece)",
+       "nes": "none (2a: CONVERT_MSX)",
+       "decision": "CONVERT"
+      }
+     ]
+    },
+    {
+     "stage_id": "n2.map_08@3r",
+     "name": "Boss interior after stage 3 (return trip)",
+     "theme": "boss interior: grey/white mechanical blocks with blue trim and red inserts on floor and ceiling, the exit gate and the core",
+     "same_as": "n2.map_08@1",
+     "decision": "ADAPT_NES_TILESET",
+     "chosen": {
+      "nes_game": "gradius2_fc",
+      "nes_stage": 6,
+      "tile_source": "Gradius II CHR-ROM 1 KiB BG banks of stage 6: $4C $4D $4E $4F / $4C $4D $50 $4F / $51 $52 $50 $4F (gradius2_fc/stages.json chr_bank_sets_seen; pattern tables in gradius2_fc/sprgen/)"
+     },
+     "why_chosen": "Same map (map_08) and tiles as n2.map_08@1.",
+     "missing": "gate, core frame",
+     "confidence": "medium",
+     "candidates": [
+      {
+       "nes_game": "gradius2_fc",
+       "nes_stage": 6,
+       "verdict": "similar",
+       "evidence": "enemy base: grey/blue mechanical walls, pipes, panels; most shaded fortress tiles"
+      },
+      {
+       "nes_game": "gradius_nes",
+       "nes_stage": 7,
+       "verdict": "similar",
+       "evidence": "red/orange circuit fortress walls with cyan edges; few tiles"
+      }
+     ],
+     "elements": [
+      {
+       "msx": "grey/white mechanical blocks",
+       "nes": "g2 stage 6 wall and panel tiles",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "red inserts and blue trim",
+       "nes": "g2 stage 6 red lights and blue panel tiles",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "exit gate and its animation (n2.scenery.interior_gate)",
+       "nes": "none (2a: CONVERT_MSX)",
+       "decision": "CONVERT"
+      },
+      {
+       "msx": "animated lights (n2.scenery.anim_map00)",
+       "nes": "none",
+       "decision": "CONVERT"
+      }
+     ]
+    },
+    {
+     "stage_id": "n2.map_02r",
+     "name": "Stage 2 (return trip)",
+     "theme": "jungle planet: leafy green vegetation on floor, ceiling and floating platforms, red coral trees of ring cells (breakable), growing vegetation walls",
+     "same_as": "n2.map_02",
+     "decision": "ADAPT_NES_TILESET",
+     "chosen": {
+      "nes_game": "gradius2_fc",
+      "nes_stage": 2,
+      "tile_source": "Gradius II CHR-ROM 1 KiB BG banks of stage 2: $1B $1C $1D $1E / $1F $20 $1D $1E / $21 $20 $1D $22 (gradius2_fc/stages.json chr_bank_sets_seen; pattern tables in gradius2_fc/sprgen/)"
+     },
+     "why_chosen": "Same map (map_02) and tiles as n2.map_02.",
+     "missing": "red coral ring-cell clusters and their breaking steps; the ragged leafy outline of the MSX floor and ceiling",
+     "confidence": "medium",
+     "candidates": [
+      {
+       "nes_game": "gradius2_fc",
+       "nes_stage": 2,
+       "verdict": "similar",
+       "evidence": "alien plant base: green organic ledges, plant pods and ribbed tubes, red lattice columns"
+      },
+      {
+       "nes_game": "gradius2_fc",
+       "nes_stage": 3,
+       "verdict": "similar",
+       "evidence": "leafy green vegetation hanging from and growing on the floating islands (the closest NES leaf texture)"
+      },
+      {
+       "nes_game": "gradius_nes",
+       "nes_stage": 1,
+       "verdict": "different",
+       "evidence": "only a strip of grass on red rock"
+      },
+      {
+       "nes_game": "salamander_fc",
+       "nes_stage": 4,
+       "verdict": "different",
+       "evidence": "pink organic walls"
+      }
+     ],
+     "elements": [
+      {
+       "msx": "leafy floor, ceiling and floating platforms",
+       "nes": "g2 stage 3 leafy vegetation tiles (texture) on g2 stage 2 ledge shapes",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "red coral trees of ring cells (n2.scenery.breakable)",
+       "nes": "g2 stage 2 red lattice is another drawing",
+       "decision": "CONVERT"
+      },
+      {
+       "msx": "growing vegetation wall (n2.object.c11)",
+       "nes": "g2 stage 2 vegetation tiles as the base",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "spiral-shell dome launchers (n2.object.c01)",
+       "nes": "none (2a: CONVERT_MSX)",
+       "decision": "CONVERT"
+      },
+      {
+       "msx": "animated background characters (n2.scenery.anim_map02)",
+       "nes": "none",
+       "decision": "CONVERT"
+      }
+     ]
+    },
+    {
+     "stage_id": "n2.map_08@2r",
+     "name": "Boss interior after stage 2 (return trip)",
+     "theme": "boss interior: grey/white mechanical blocks with blue trim and red inserts on floor and ceiling, the exit gate and the core",
+     "same_as": "n2.map_08@1",
+     "decision": "ADAPT_NES_TILESET",
+     "chosen": {
+      "nes_game": "gradius2_fc",
+      "nes_stage": 6,
+      "tile_source": "Gradius II CHR-ROM 1 KiB BG banks of stage 6: $4C $4D $4E $4F / $4C $4D $50 $4F / $51 $52 $50 $4F (gradius2_fc/stages.json chr_bank_sets_seen; pattern tables in gradius2_fc/sprgen/)"
+     },
+     "why_chosen": "Same map (map_08) and tiles as n2.map_08@1.",
+     "missing": "gate, core frame",
+     "confidence": "medium",
+     "candidates": [
+      {
+       "nes_game": "gradius2_fc",
+       "nes_stage": 6,
+       "verdict": "similar",
+       "evidence": "enemy base: grey/blue mechanical walls, pipes, panels; most shaded fortress tiles"
+      },
+      {
+       "nes_game": "gradius_nes",
+       "nes_stage": 7,
+       "verdict": "similar",
+       "evidence": "red/orange circuit fortress walls with cyan edges; few tiles"
+      }
+     ],
+     "elements": [
+      {
+       "msx": "grey/white mechanical blocks",
+       "nes": "g2 stage 6 wall and panel tiles",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "red inserts and blue trim",
+       "nes": "g2 stage 6 red lights and blue panel tiles",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "exit gate and its animation (n2.scenery.interior_gate)",
+       "nes": "none (2a: CONVERT_MSX)",
+       "decision": "CONVERT"
+      },
+      {
+       "msx": "animated lights (n2.scenery.anim_map00)",
+       "nes": "none",
+       "decision": "CONVERT"
+      }
+     ]
+    },
+    {
+     "stage_id": "n2.map_01r",
+     "name": "Stage 1 (return trip)",
+     "theme": "rocky planet: blue boulder floor and ceiling, stacks of green carved idol heads, alien gates and spiked blocks",
+     "same_as": "n2.map_01",
+     "decision": "ADAPT_NES_TILESET",
+     "chosen": {
+      "nes_game": "gradius2_fc",
+      "nes_stage": 4,
+      "tile_source": "Gradius II CHR-ROM 1 KiB BG banks of stage 4: $2C $2D $2E $2F / $2C $2D $30 $2F / $5F $60 $61 $62 / $5F $60 $63 $62 (gradius2_fc/stages.json chr_bank_sets_seen; pattern tables in gradius2_fc/sprgen/)"
+     },
+     "why_chosen": "Same map (map_01) and tiles as n2.map_01.",
+     "missing": "idol heads and their stacks, gates and spiked blocks; rubble slopes and corners that follow the MSX outline; a blue palette for the rubble",
+     "confidence": "medium",
+     "candidates": [
+      {
+       "nes_game": "gradius2_fc",
+       "nes_stage": 4,
+       "verdict": "similar",
+       "evidence": "stone rubble ledges along floor and ceiling and carved stone heads (Moai); 3-4 colour shading"
+      },
+      {
+       "nes_game": "gradius_nes",
+       "nes_stage": 3,
+       "verdict": "similar",
+       "evidence": "Moai heads on brown rubble ledges; fewer tiles and colours than Gradius II"
+      },
+      {
+       "nes_game": "gradius_nes",
+       "nes_stage": 1,
+       "verdict": "different",
+       "evidence": "red rock floor with grass and volcanoes, no carved heads"
+      },
+      {
+       "nes_game": "salamander_fc",
+       "nes_stage": 5,
+       "verdict": "different",
+       "evidence": "crystal cavern then Egyptian temple"
+      }
+     ],
+     "elements": [
+      {
+       "msx": "blue boulder floor/ceiling (stage chars)",
+       "nes": "g2 stage 4 stone rubble ledge tiles, recoloured blue",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "green idol heads stacked in the map",
+       "nes": "none (Moai are another design; use their stone shading as reference)",
+       "decision": "CONVERT"
+      },
+      {
+       "msx": "rotating idol column turret (n2.object.stage1_rotator)",
+       "nes": "none",
+       "decision": "CONVERT"
+      },
+      {
+       "msx": "alien gates of the gate hopper and spiked tech blocks",
+       "nes": "none",
+       "decision": "CONVERT"
+      },
+      {
+       "msx": "star field (n2.scenery.stars)",
+       "nes": "none (2a: CONVERT_MSX)",
+       "decision": "CONVERT"
+      }
+     ]
+    },
+    {
+     "stage_id": "n2.map_08@1r",
+     "name": "Boss interior after stage 1 (return trip)",
+     "theme": "boss interior: grey/white mechanical blocks with blue trim and red inserts on floor and ceiling, the exit gate and the core",
+     "same_as": "n2.map_08@1",
+     "decision": "ADAPT_NES_TILESET",
+     "chosen": {
+      "nes_game": "gradius2_fc",
+      "nes_stage": 6,
+      "tile_source": "Gradius II CHR-ROM 1 KiB BG banks of stage 6: $4C $4D $4E $4F / $4C $4D $50 $4F / $51 $52 $50 $4F (gradius2_fc/stages.json chr_bank_sets_seen; pattern tables in gradius2_fc/sprgen/)"
+     },
+     "why_chosen": "Same map (map_08) and tiles as n2.map_08@1.",
+     "missing": "gate, core frame",
+     "confidence": "medium",
+     "candidates": [
+      {
+       "nes_game": "gradius2_fc",
+       "nes_stage": 6,
+       "verdict": "similar",
+       "evidence": "enemy base: grey/blue mechanical walls, pipes, panels; most shaded fortress tiles"
+      },
+      {
+       "nes_game": "gradius_nes",
+       "nes_stage": 7,
+       "verdict": "similar",
+       "evidence": "red/orange circuit fortress walls with cyan edges; few tiles"
+      }
+     ],
+     "elements": [
+      {
+       "msx": "grey/white mechanical blocks",
+       "nes": "g2 stage 6 wall and panel tiles",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "red inserts and blue trim",
+       "nes": "g2 stage 6 red lights and blue panel tiles",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "exit gate and its animation (n2.scenery.interior_gate)",
+       "nes": "none (2a: CONVERT_MSX)",
+       "decision": "CONVERT"
+      },
+      {
+       "msx": "animated lights (n2.scenery.anim_map00)",
+       "nes": "none",
+       "decision": "CONVERT"
+      }
+     ]
+    },
+    {
+     "stage_id": "n2.map_00",
+     "name": "Stage 0 (final fortress)",
+     "theme": "final fortress: green mechanical pillars with red cores and floors, a huge battleship hull at the start, shutters and the final core at the end",
+     "same_as": null,
+     "decision": "ADAPT_NES_TILESET",
+     "chosen": {
+      "nes_game": "gradius2_fc",
+      "nes_stage": 6,
+      "tile_source": "Gradius II CHR-ROM 1 KiB BG banks of stage 6: $4C $4D $4E $4F / $4C $4D $50 $4F / $51 $52 $50 $4F (gradius2_fc/stages.json chr_bank_sets_seen; pattern tables in gradius2_fc/sprgen/)"
+     },
+     "why_chosen": "Same fortress family as stage 7; Gradius II enemy-base tiles (most detailed, art direction).",
+     "missing": "battleship hull, red core lights of the pillars, shutters",
+     "confidence": "medium",
+     "candidates": [
+      {
+       "nes_game": "gradius2_fc",
+       "nes_stage": 6,
+       "verdict": "similar",
+       "evidence": "enemy base: grey/blue mechanical walls, pipes, panels; most shaded fortress tiles"
+      },
+      {
+       "nes_game": "gradius_nes",
+       "nes_stage": 7,
+       "verdict": "similar",
+       "evidence": "red/orange circuit fortress walls with cyan edges; few tiles"
+      },
+      {
+       "nes_game": "salamander_fc",
+       "nes_stage": 6,
+       "verdict": "similar",
+       "evidence": "red/grey mechanical walls and green plates (vertical stage)"
+      },
+      {
+       "nes_game": "salamander_fc",
+       "nes_stage": 2,
+       "verdict": "similar",
+       "evidence": "blue fortress at the end of the stage (vertical)"
+      }
+     ],
+     "elements": [
+      {
+       "msx": "green mechanical pillars and floors",
+       "nes": "g2 stage 6 wall tiles, green palette",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "battleship hull drawn in the map at the start",
+       "nes": "none (the Nemesis 2 battleships are original, 2a)",
+       "decision": "CONVERT"
+      },
+      {
+       "msx": "opening shutters (n2.object.c13)",
+       "nes": "none (2a: CONVERT_MSX)",
+       "decision": "CONVERT"
+      },
+      {
+       "msx": "final core (n2.boss.final_core)",
+       "nes": "none (2a: CONVERT_MSX)",
+       "decision": "CONVERT"
+      },
+      {
+       "msx": "animated lights (n2.scenery.anim_map00)",
+       "nes": "none",
+       "decision": "CONVERT"
+      }
+     ]
+    },
+    {
+     "stage_id": "n2.ending",
+     "name": "Ending, THE END and the next loop",
+     "theme": "cutscene, not a map",
+     "same_as": null,
+     "decision": "CONVERT_MSX",
+     "chosen": null,
+     "why_chosen": "No stage background: its screens are decided in nes_match.json (n2.screen.ending, n2.screen.the_end, n2.screen.extend_f5, all CONVERT_MSX).",
+     "missing": "",
+     "confidence": "high",
+     "candidates": [],
+     "elements": []
+    }
+   ],
+   "counts": {
+    "records": 32,
+    "by_decision": {
+     "REUSE_NES_TILESET": 0,
+     "ADAPT_NES_TILESET": 30,
+     "CONVERT_MSX": 2
+    },
+    "nes_sources": {
+     "Salamander FC stage 5": 4,
+     "Gradius II stage 6": 3,
+     "Gradius II stage 4": 1,
+     "Gradius II stage 2": 1,
+     "Gradius II stage 3": 1,
+     "Gradius II stage 1": 1,
+     "Gradius II stage 7": 1
+    }
+   }
+  },
+  "salamander": {
+   "title": "Salamander",
+   "status": "compared",
+   "stages": [
+    {
+     "stage_id": "sal.map_01",
+     "name": "OPERATION ONE -TOP FLIGHT SPEED TO LATIS-",
+     "theme": "Latis, organic zone (horizontal): red cell-flesh floor and ceiling with floating flesh islands; a section of two waving bands of blue spheres (after the tile change at scroll 0x190); an orange cell maze before the boss and in the shaft detour; black star field",
+     "same_as": null,
+     "decision": "ADAPT_NES_TILESET",
+     "chosen": {
+      "nes_game": "salamander_fc",
+      "nes_stage": 1,
+      "tile_source": "CHR-RAM stage set X=$08 (bank 2 $8D71-$9DCA) -> PPU $0A40; BG table $1000 of captures/chrr/03aff12eb857.bin, captures/chrr/ce03bc2ea65e.bin"
+     },
+     "why_chosen": "same stage of the arcade original with every MSX element; Life Force uses the same stage set (86-92 % of the Salamander (Famicom) BG tiles of each stage are in the Life Force CHR dumps); Salamander (Famicom) is named by the tie rule; Gradius II has no cell stage of this design",
+     "missing": "The NES stage draws a blue hexagon mesh behind the flesh; the MSX background is black with stars, so the mesh is left out and star tiles come from the stage-3/5 field. The orange maze colour is a palette choice.",
+     "confidence": "high",
+     "candidates": [
+      {
+       "nes_game": "salamander_fc",
+       "nes_stage": 1,
+       "verdict": "same",
+       "evidence": "the cell stage of the arcade Salamander: cell-flesh floor and ceiling, a band section of blue bubbles waving top and bottom, a cell maze before the brain boss: the same three elements in the same order; NES: horizontal, 282 distinct BG tiles in the stage set"
+      },
+      {
+       "nes_game": "lifeforce_nes",
+       "nes_stage": 1,
+       "verdict": "same",
+       "evidence": "same stage and tiles as Salamander (Famicom) stage 1; NES: horizontal, 282 distinct BG tiles in the stage set"
+      },
+      {
+       "nes_game": "gradius2_fc",
+       "nes_stage": 7,
+       "verdict": "similar",
+       "evidence": "organic lair of Gofer: red flesh, other design; NES: horizontal, 415 distinct BG tiles in the stage set"
+      },
+      {
+       "nes_game": "gradius_nes",
+       "nes_stage": 6,
+       "verdict": "similar",
+       "evidence": "cell stage: blue cell walls, other design; NES: horizontal, 237 distinct BG tiles in the stage set"
+      }
+     ],
+     "elements": [
+      {
+       "msx": "red cell-flesh floor, ceiling and islands (stage chars p07:$6C9C)",
+       "nes": "flesh walls of Salamander (Famicom) stage 1",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "two waving bands of blue spheres (after the tile change at 0x190, p00:$5CFA)",
+       "nes": "blue bubble-band section of Salamander (Famicom) stage 1",
+       "decision": "REUSE"
+      },
+      {
+       "msx": "orange cell maze (end of the stage and shaft detour)",
+       "nes": "destructible cell maze before the stage-1 boss (sfc.common.bg_hitbox cells)",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "black star field",
+       "nes": "star tiles of Salamander (Famicom) stages 3/5",
+       "decision": "REUSE"
+      }
+     ]
+    },
+    {
+     "stage_id": "sal.map_01.detour",
+     "name": "shaft detour of stage 1 (scroll stop 0x11F and 0x1FF): flesh walls and the orange cell maze",
+     "theme": "shaft detour of stage 1 (scroll stop 0x11F and 0x1FF): flesh walls and the orange cell maze",
+     "same_as": null,
+     "decision": "ADAPT_NES_TILESET",
+     "chosen": {
+      "nes_game": "salamander_fc",
+      "nes_stage": 1,
+      "tile_source": "CHR-RAM stage set X=$08 (bank 2 $8D71-$9DCA) -> PPU $0A40; BG table $1000 of captures/chrr/03aff12eb857.bin, captures/chrr/ce03bc2ea65e.bin"
+     },
+     "why_chosen": "part of sal.map_01: same stage chars, so the same NES set",
+     "missing": "as sal.map_01",
+     "confidence": "high",
+     "candidates": [],
+     "elements": []
+    },
+    {
+     "stage_id": "sal.map_02",
+     "name": "OPERATION TWO -CONDUCT TO SPACE STATION ZOT-",
+     "theme": "Approach to space station Zot (vertical): open space with floating orange asteroid clusters and diagonal lattices of blue spheres; no side walls; star field",
+     "same_as": null,
+     "decision": "ADAPT_NES_TILESET",
+     "chosen": {
+      "nes_game": "salamander_fc",
+      "nes_stage": 2,
+      "tile_source": "CHR-RAM stage set X=$0A (bank 2 $9DCA-$ADFA) -> PPU $0AC0; BG table $1000 of captures/chrr/f20a0078c9a5.bin"
+     },
+     "why_chosen": "only NES vertical space stage with floating rock clusters; Life Force uses the same stage set (86-92 % of the Salamander (Famicom) BG tiles of each stage are in the Life Force CHR dumps); Salamander (Famicom) is named by the tie rule",
+     "missing": "The diagonal sphere lattice must be laid out with the bubble tiles (the NES has waving bands only); cluster colour from the MSX (orange) or the NES (blue-green) to be set in phase 4.",
+     "confidence": "medium",
+     "candidates": [
+      {
+       "nes_game": "salamander_fc",
+       "nes_stage": 2,
+       "verdict": "similar",
+       "evidence": "vertical rock stage: floating rock clusters between red rock walls, then a mechanical base; the MSX keeps only the floating clusters; NES: vertical, 252 distinct BG tiles in the stage set"
+      },
+      {
+       "nes_game": "lifeforce_nes",
+       "nes_stage": 2,
+       "verdict": "similar",
+       "evidence": "same stage and tiles as Salamander (Famicom) stage 2; NES: vertical, 251 distinct BG tiles in the stage set"
+      },
+      {
+       "nes_game": "salamander_fc",
+       "nes_stage": 1,
+       "verdict": "similar",
+       "evidence": "the blue sphere tiles of the stage-1 bubble bands match the MSX sphere lattices; NES: horizontal, 282 distinct BG tiles in the stage set"
+      },
+      {
+       "nes_game": "gradius_nes",
+       "nes_stage": 2,
+       "verdict": "different",
+       "evidence": "white block formations and pink spheres (horizontal); NES: horizontal, 217 distinct BG tiles in the stage set"
+      }
+     ],
+     "elements": [
+      {
+       "msx": "floating orange asteroid clusters",
+       "nes": "floating rock clusters of Salamander (Famicom) stage 2",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "diagonal lattices of blue spheres",
+       "nes": "blue bubble tiles of Salamander (Famicom) stage 1",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "star field",
+       "nes": "star tiles of Salamander (Famicom)",
+       "decision": "REUSE"
+      }
+     ]
+    },
+    {
+     "stage_id": "sal.map_03",
+     "name": "OPERATION THREE planet EIONEUS",
+     "theme": "Planet Eioneus (vertical): canyon of pink rock walls with rock islands, grids of cyan spheres; boss area after the tile change at 0x20F",
+     "same_as": null,
+     "decision": "ADAPT_NES_TILESET",
+     "chosen": {
+      "nes_game": "salamander_fc",
+      "nes_stage": 2,
+      "tile_source": "CHR-RAM stage set X=$0A (bank 2 $9DCA-$ADFA) -> PPU $0AC0; BG table $1000 of captures/chrr/f20a0078c9a5.bin"
+     },
+     "why_chosen": "rock canyon drawn for vertical scrolling (walls and pillars); Gradius II rocks are mountains for a horizontal floor; Life Force uses the same stage set (86-92 % of the Salamander (Famicom) BG tiles of each stage are in the Life Force CHR dumps); Salamander (Famicom) is named by the tie rule",
+     "missing": "Rock colour (MSX pink) and the sphere grid layout.",
+     "confidence": "medium",
+     "candidates": [
+      {
+       "nes_game": "salamander_fc",
+       "nes_stage": 2,
+       "verdict": "similar",
+       "evidence": "vertical canyon of red jagged rock walls and rock pillars; NES: vertical, 252 distinct BG tiles in the stage set"
+      },
+      {
+       "nes_game": "lifeforce_nes",
+       "nes_stage": 2,
+       "verdict": "similar",
+       "evidence": "same tiles as Salamander (Famicom) stage 2; NES: vertical, 251 distinct BG tiles in the stage set"
+      },
+      {
+       "nes_game": "gradius2_fc",
+       "nes_stage": 3,
+       "verdict": "similar",
+       "evidence": "orange rock mountains of the volcano/crystal stage, horizontal; NES: horizontal, 494 distinct BG tiles in the stage set"
+      },
+      {
+       "nes_game": "gradius_nes",
+       "nes_stage": 1,
+       "verdict": "different",
+       "evidence": "volcano mountains, flat colours; NES: horizontal, 217 distinct BG tiles in the stage set"
+      }
+     ],
+     "elements": [
+      {
+       "msx": "pink rock canyon walls and islands",
+       "nes": "red rock walls and pillars of Salamander (Famicom) stage 2",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "grids of cyan spheres",
+       "nes": "blue bubble tiles of Salamander (Famicom) stage 1",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "boss area chars (tile change 0x20F)",
+       "nes": "boss drawings (phase 2a: Dead End, Center Core)",
+       "decision": "CONVERT"
+      }
+     ]
+    },
+    {
+     "stage_id": "sal.map_04",
+     "name": "OPERATION THREE planet LAVINIA",
+     "theme": "Planet Lavinia (horizontal): green mechanical base; rails along floor and ceiling, pillar blocks with round ports, closed chambers; shaft detour; dark section (scenery blinking)",
+     "same_as": null,
+     "decision": "ADAPT_NES_TILESET",
+     "chosen": {
+      "nes_game": "gradius2_fc",
+      "nes_stage": 6,
+      "tile_source": "CHR-ROM 1 KiB BG banks per set (stages.json chr_bank_sets_seen): $4C $4D $4E $4F; $4C $4D $50 $4F; $51 $52 $50 $4F"
+     },
+     "why_chosen": "mechanical base theme; the most detailed horizontal machine set (most BG tiles, shaded) and the art direction; the Salamander fortresses are drawn for vertical scrolling",
+     "missing": "The round-port blocks and the MSX green colour; the dark section is a behaviour of the MSX code (p01:$6016).",
+     "confidence": "low",
+     "candidates": [
+      {
+       "nes_game": "gradius2_fc",
+       "nes_stage": 6,
+       "verdict": "similar",
+       "evidence": "enemy base: bevelled plates and machinery, shaded, horizontal; NES: horizontal, 445 distinct BG tiles in the stage set"
+      },
+      {
+       "nes_game": "gradius_nes",
+       "nes_stage": 7,
+       "verdict": "similar",
+       "evidence": "orange machine fortress, flat colours, horizontal; NES: horizontal, 249 distinct BG tiles in the stage set"
+      },
+      {
+       "nes_game": "salamander_fc",
+       "nes_stage": 6,
+       "verdict": "similar",
+       "evidence": "tech fortress walls, vertical scrolling; NES: vertical, 319 distinct BG tiles in the stage set"
+      },
+      {
+       "nes_game": "salamander_fc",
+       "nes_stage": 2,
+       "verdict": "similar",
+       "evidence": "blue mechanical base at the end of stage 2 (vertical); NES: vertical, 252 distinct BG tiles in the stage set"
+      }
+     ],
+     "elements": [
+      {
+       "msx": "rails along floor and ceiling",
+       "nes": "Gradius II stage 6 wall plates",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "pillar blocks with round ports, chambers",
+       "nes": "Gradius II stage 6 machinery",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "star field",
+       "nes": "Gradius II star field",
+       "decision": "REUSE"
+      }
+     ]
+    },
+    {
+     "stage_id": "sal.map_04.detour",
+     "name": "detour of stage 4 (stop 0x1BF): green base chambers",
+     "theme": "detour of stage 4 (stop 0x1BF): green base chambers",
+     "same_as": null,
+     "decision": "ADAPT_NES_TILESET",
+     "chosen": {
+      "nes_game": "gradius2_fc",
+      "nes_stage": 6,
+      "tile_source": "CHR-ROM 1 KiB BG banks per set (stages.json chr_bank_sets_seen): $4C $4D $4E $4F; $4C $4D $50 $4F; $51 $52 $50 $4F"
+     },
+     "why_chosen": "part of sal.map_04: same stage chars, so the same NES set",
+     "missing": "as sal.map_04",
+     "confidence": "low",
+     "candidates": [],
+     "elements": []
+    },
+    {
+     "stage_id": "sal.map_05",
+     "name": "OPERATION THREE planet KIERKE",
+     "theme": "Planet Kierke (horizontal): blue swirling rock floor and ceiling with ramps, a background network of thin blue cracks, green ring pods on the rock",
+     "same_as": null,
+     "decision": "CONVERT_MSX",
+     "chosen": null,
+     "why_chosen": "no NES stage has the swirling blue rock or the crack network",
+     "missing": "The whole stage set (rock, cracks) in the NES style.",
+     "confidence": "low",
+     "candidates": [
+      {
+       "nes_game": "gradius_nes",
+       "nes_stage": 6,
+       "verdict": "similar",
+       "evidence": "blue wavy cell walls and blue lattice, flat colours; other design; NES: horizontal, 237 distinct BG tiles in the stage set"
+      },
+      {
+       "nes_game": "salamander_fc",
+       "nes_stage": 1,
+       "verdict": "similar",
+       "evidence": "vein strands section (thick red strands) of stage 1; NES: horizontal, 282 distinct BG tiles in the stage set"
+      },
+      {
+       "nes_game": "salamander_fc",
+       "nes_stage": 5,
+       "verdict": "different",
+       "evidence": "green crystal mountains, then a temple; NES: horizontal, 316 distinct BG tiles in the stage set"
+      },
+      {
+       "nes_game": "gradius2_fc",
+       "nes_stage": 3,
+       "verdict": "different",
+       "evidence": "crystal and volcano stage; NES: horizontal, 494 distinct BG tiles in the stage set"
+      }
+     ],
+     "elements": [
+      {
+       "msx": "blue swirling rock floor, ceiling and ramps",
+       "nes": null,
+       "decision": "CONVERT"
+      },
+      {
+       "msx": "network of thin blue cracks",
+       "nes": "Salamander (Famicom) stage-1 veins are thick strands, not this",
+       "decision": "CONVERT"
+      },
+      {
+       "msx": "star field",
+       "nes": "star tiles of Salamander (Famicom)",
+       "decision": "REUSE"
+      }
+     ]
+    },
+    {
+     "stage_id": "sal.map_07",
+     "name": "OPERATION X -WRATH OF VENOM-",
+     "theme": "Operation X, wrath of Venom (horizontal): green fortress with rails, pillars with red mesh panels, a battleship hull at the start and the core chambers (tile change at 0x1C0); part of the chars are copied from the Nemesis 2 cartridge (p00:$5BE1)",
+     "same_as": null,
+     "decision": "ADAPT_NES_TILESET",
+     "chosen": {
+      "nes_game": "gradius2_fc",
+      "nes_stage": 6,
+      "tile_source": "CHR-ROM 1 KiB BG banks per set (stages.json chr_bank_sets_seen): $4C $4D $4E $4F; $4C $4D $50 $4F; $51 $52 $50 $4F"
+     },
+     "why_chosen": "fortress theme; most detailed horizontal machine set and the art direction",
+     "missing": "Hull and core chambers; reconcile with the Nemesis 2 stage whose pieces this map copies (phase 3).",
+     "confidence": "low",
+     "candidates": [
+      {
+       "nes_game": "gradius2_fc",
+       "nes_stage": 6,
+       "verdict": "similar",
+       "evidence": "enemy base machinery, shaded, horizontal; NES: horizontal, 445 distinct BG tiles in the stage set"
+      },
+      {
+       "nes_game": "gradius_nes",
+       "nes_stage": 7,
+       "verdict": "similar",
+       "evidence": "orange machine fortress, flat; NES: horizontal, 249 distinct BG tiles in the stage set"
+      },
+      {
+       "nes_game": "salamander_fc",
+       "nes_stage": 6,
+       "verdict": "similar",
+       "evidence": "vertical tech fortress; NES: vertical, 319 distinct BG tiles in the stage set"
+      }
+     ],
+     "elements": [
+      {
+       "msx": "rails and pillars with red mesh panels",
+       "nes": "Gradius II stage 6 machinery",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "battleship hull at the start",
+       "nes": null,
+       "decision": "CONVERT"
+      },
+      {
+       "msx": "core chambers (tile change 0x1C0)",
+       "nes": "stage-7 core is MSX-only (phase 2a)",
+       "decision": "CONVERT"
+      }
+     ]
+    },
+    {
+     "stage_id": "sal.map_06",
+     "name": "OPERATION FOUR -CRUSH SALAMANDER-",
+     "theme": "Operation Four, crush Salamander (vertical): organic entrance (red flesh walls, thin blue diagonal lines), then the blue pipe fortress (tile changes at 0x0B8 and 0x1A0) with left and right detours; ends with the sphere boss",
+     "same_as": null,
+     "decision": "ADAPT_NES_TILESET",
+     "chosen": {
+      "nes_game": "salamander_fc",
+      "nes_stage": 6,
+      "tile_source": "CHR-RAM stage set X=$12 (bank 0 $8000-$8FA0) -> PPU $0AC0; BG table $1000 of captures/chrr/6e9a9cf73c16.bin, captures/chrr/d641ea717ac8.bin"
+     },
+     "why_chosen": "same final stage of the arcade original, vertical; Life Force uses the same stage set (86-92 % of the Salamander (Famicom) BG tiles of each stage are in the Life Force CHR dumps); Salamander (Famicom) is named by the tie rule",
+     "missing": "The MSX pipes are drawn as pipes; the NES walls are panels: pipe pieces to draw or panels to accept (phase 4).",
+     "confidence": "medium",
+     "candidates": [
+      {
+       "nes_game": "salamander_fc",
+       "nes_stage": 6,
+       "verdict": "same",
+       "evidence": "final vertical fortress of the arcade Salamander: space entrance with thin blue lines, then tech fortress walls, ending with the eye sphere (the MSX ends with the same sphere boss); NES: vertical, 319 distinct BG tiles in the stage set"
+      },
+      {
+       "nes_game": "lifeforce_nes",
+       "nes_stage": 6,
+       "verdict": "same",
+       "evidence": "same stage and tiles; its stitched map is twice as long; NES: vertical, 320 distinct BG tiles in the stage set"
+      },
+      {
+       "nes_game": "salamander_fc",
+       "nes_stage": 4,
+       "verdict": "similar",
+       "evidence": "vertical organic walls (cell flesh) for the MSX organic entrance; NES: vertical, 386 distinct BG tiles in the stage set"
+      },
+      {
+       "nes_game": "gradius2_fc",
+       "nes_stage": 6,
+       "verdict": "similar",
+       "evidence": "horizontal machine base; NES: horizontal, 445 distinct BG tiles in the stage set"
+      }
+     ],
+     "elements": [
+      {
+       "msx": "organic entrance: red flesh walls",
+       "nes": "vertical flesh walls of Salamander (Famicom) stage 4",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "thin blue diagonal lines",
+       "nes": "thin blue lines of the Salamander (Famicom) stage-6 entrance",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "blue pipe fortress walls and blocks (detours too)",
+       "nes": "tech fortress walls of Salamander (Famicom) stage 6",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "cyan dot marks / star field",
+       "nes": "star tiles of Salamander (Famicom)",
+       "decision": "REUSE"
+      }
+     ]
+    },
+    {
+     "stage_id": "sal.map_06.detours",
+     "name": "left and right detours of stage 6 (stops 0x14F and 0x167): pipe fortress",
+     "theme": "left and right detours of stage 6 (stops 0x14F and 0x167): pipe fortress",
+     "same_as": null,
+     "decision": "ADAPT_NES_TILESET",
+     "chosen": {
+      "nes_game": "salamander_fc",
+      "nes_stage": 6,
+      "tile_source": "CHR-RAM stage set X=$12 (bank 0 $8000-$8FA0) -> PPU $0AC0; BG table $1000 of captures/chrr/6e9a9cf73c16.bin, captures/chrr/d641ea717ac8.bin"
+     },
+     "why_chosen": "part of sal.map_06: same stage chars, so the same NES set",
+     "missing": "as sal.map_06",
+     "confidence": "medium",
+     "candidates": [],
+     "elements": []
+    }
+   ],
+   "counts": {
+    "records": 10,
+    "by_decision": {
+     "REUSE_NES_TILESET": 0,
+     "ADAPT_NES_TILESET": 9,
+     "CONVERT_MSX": 1
+    },
+    "nes_sources": {
+     "Gradius II stage 6": 3,
+     "Salamander FC stage 1": 2,
+     "Salamander FC stage 2": 2,
+     "Salamander FC stage 6": 2
+    }
+   }
+  },
+  "nemesis3": {
+   "title": "Nemesis 3",
+   "status": "compared",
+   "stages": [
+    {
+     "stage_id": "n3.map_01",
+     "name": "Stage 1 (no terrain map)",
+     "theme": "sun stage: no terrain map, star field, a giant sun (piece 0x06) that walks on flame legs across the screen",
+     "same_as": null,
+     "decision": "ADAPT_NES_TILESET",
+     "chosen": {
+      "nes_game": "gradius2_fc",
+      "nes_stage": 1,
+      "nes_stage_name": "Artificial Sun",
+      "tile_source": "CHR-ROM BG banks $00/$01/$02/$03 at the stage start (sprgen/pt_40_41_42_43_00_01_02_03.bin), 9 BG bank sets during the stage (stages.json chr_bank_sets_seen)"
+     },
+     "why_chosen": "Gradius II stage 1 has the sun itself and the star field; Life Force/Salamander only have fire walls, which Nemesis 3 stage 1 does not have",
+     "missing": "the flare and the four stepping flame legs of the MSX sun (the Gradius II sun is a still disc)",
+     "confidence": "medium",
+     "candidates": [
+      {
+       "nes_game": "gradius2_fc",
+       "nes_stage": 1,
+       "verdict": "similar",
+       "evidence": "Artificial Sun: star field and a giant sun with prominence arcs drawn in BG tiles; same sun-stage idea (Gradius II boss is the Phoenix, as in Nemesis 3)"
+      },
+      {
+       "nes_game": "lifeforce_nes",
+       "nes_stage": 3,
+       "verdict": "similar",
+       "evidence": "prominence stage: fire floor and ceiling, no big sun"
+      },
+      {
+       "nes_game": "salamander_fc",
+       "nes_stage": 3,
+       "verdict": "similar",
+       "evidence": "same art as Life Force stage 3"
+      }
+     ],
+     "elements": [
+      {
+       "msx": "star field (chars 0x1E/0x1F twinkling, p00:5461)",
+       "nes": "Gradius II star field (BG stars of every Gradius II stage)",
+       "decision": "REUSE"
+      },
+      {
+       "msx": "walking sun with flaring edge and four flame legs (piece 0x06, 45 drawings)",
+       "nes": "g2.scenery.sun (Gradius II BG sun) + g2.scenery.prominence_flame",
+       "decision": "ADAPT"
+      }
+     ]
+    },
+    {
+     "stage_id": "n3.map_02",
+     "name": "Stage 2",
+     "theme": "alien jungle: green foliage floor and ceiling, curtains of hanging vines, a red lattice block, a pink flower, plant pods and tentacles",
+     "same_as": null,
+     "decision": "ADAPT_NES_TILESET",
+     "chosen": {
+      "nes_game": "gradius2_fc",
+      "nes_stage": 2,
+      "nes_stage_name": "Alien base (NES stage 2)",
+      "tile_source": "CHR-ROM BG banks $1B/$1C/$1D/$1E at the stage start (sprgen/pt_40_41_44_45_1B_1C_1D_1E.bin), 3 BG bank sets during the stage (stages.json chr_bank_sets_seen)"
+     },
+     "why_chosen": "only NES stage with alien vegetation and the same red lattice; Gradius II is the art direction",
+     "missing": "vine curtains, the pink flower drawn into the map, plant pods and tentacles (pieces), the green palette of the foliage",
+     "confidence": "medium",
+     "candidates": [
+      {
+       "nes_game": "gradius2_fc",
+       "nes_stage": 2,
+       "verdict": "similar",
+       "evidence": "Alien base: green organic platforms and growths, a red lattice structure, hanging pods, the purple flower enemy (g2.enemy.flower); same alien-vegetation stage with a red lattice"
+      },
+      {
+       "nes_game": "gradius_nes",
+       "nes_stage": 1,
+       "verdict": "different",
+       "evidence": "volcano stage with green grass tufts only"
+      },
+      {
+       "nes_game": "lifeforce_nes",
+       "nes_stage": 1,
+       "verdict": "different",
+       "evidence": "cell stage (red/blue tissue)"
+      }
+     ],
+     "elements": [
+      {
+       "msx": "green foliage floor/ceiling (map chars of map_02)",
+       "nes": "Gradius II stage 2 green organic platform tiles",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "red lattice block (map chars)",
+       "nes": "Gradius II stage 2 red lattice",
+       "decision": "REUSE"
+      },
+      {
+       "msx": "hanging vine curtains (chars, background layer)",
+       "nes": "none",
+       "decision": "CONVERT"
+      },
+      {
+       "msx": "pink flower in the map and plant pieces 0x01/0x02/0x04/0x07",
+       "nes": "g2.enemy.flower (purple flower creature, sprite)",
+       "decision": "CONVERT"
+      },
+      {
+       "msx": "self-animating chars of stage 2 (n3.scenery.animchars_stage02)",
+       "nes": "none",
+       "decision": "CONVERT"
+      }
+     ]
+    },
+    {
+     "stage_id": "n3.map_03",
+     "name": "Stage 3 (water: currents and whirlpools, no boss)",
+     "theme": "water: star sky, horizontal current lines, blue swirling coral rocks, whirlpools (pieces 0x0B/0x0C) and planet spheres (piece 0x0F)",
+     "same_as": null,
+     "decision": "CONVERT_MSX",
+     "chosen": null,
+     "why_chosen": "no NES stage has water currents, coral rocks or whirlpools",
+     "missing": "every water element: current lines, coral rocks, whirlpools, planet spheres",
+     "confidence": "high",
+     "candidates": [
+      {
+       "nes_game": "gradius2_fc",
+       "nes_stage": 3,
+       "verdict": "different",
+       "evidence": "volcano and crystal stage, no water"
+      },
+      {
+       "nes_game": "salamander_fc",
+       "nes_stage": 2,
+       "verdict": "different",
+       "evidence": "asteroid/rock pillars (vertical)"
+      },
+      {
+       "nes_game": "gradius_nes",
+       "nes_stage": 5,
+       "verdict": "different",
+       "evidence": "open space with tentacles"
+      }
+     ],
+     "elements": [
+      {
+       "msx": "star field",
+       "nes": "Gradius II star field (BG stars of every Gradius II stage)",
+       "decision": "REUSE"
+      },
+      {
+       "msx": "current lines and coral rocks (map chars, 3 mid-stage char changes)",
+       "nes": "none",
+       "decision": "CONVERT"
+      },
+      {
+       "msx": "whirlpools and planet spheres (pieces 0x0B/0x0C/0x0F)",
+       "nes": "none",
+       "decision": "CONVERT"
+      }
+     ]
+    },
+    {
+     "stage_id": "n3.interlude_after_stage_03",
+     "name": "On-board computer after stage 3 (radar)",
+     "theme": "on-board computer picture (radar) between stages, no scrolling map",
+     "same_as": null,
+     "decision": "CONVERT_MSX",
+     "chosen": null,
+     "why_chosen": "no NES game has the on-board computer pictures (n3.screen.computer_after_stage3)",
+     "missing": "the computer picture",
+     "confidence": "high",
+     "candidates": [],
+     "elements": [
+      {
+       "msx": "computer frame and radar picture (sequence glyphs)",
+       "nes": "none",
+       "decision": "CONVERT"
+      }
+     ]
+    },
+    {
+     "stage_id": "n3.map_04",
+     "name": "Stage 4 (no map: a row of four bosses)",
+     "theme": "boss row in open space: no map, star field only, four bosses one after another",
+     "same_as": null,
+     "decision": "REUSE_NES_TILESET",
+     "chosen": {
+      "nes_game": "gradius2_fc",
+      "nes_stage": 5,
+      "nes_stage_name": "Boss rush",
+      "tile_source": "CHR-ROM BG banks $31/$32/$33/$34 at the stage start (sprgen/pt_40_41_49_4A_31_32_33_34.bin), 7 BG bank sets during the stage (stages.json chr_bank_sets_seen)"
+     },
+     "why_chosen": "same kind of stage (boss rush in space); the background is only the star field",
+     "missing": "nothing for the background (the bosses are objects, see nes_match.json)",
+     "confidence": "high",
+     "candidates": [
+      {
+       "nes_game": "gradius2_fc",
+       "nes_stage": 5,
+       "verdict": "same",
+       "evidence": "Boss rush: no terrain, star field, a row of bosses (Big Core MK II, Tetran ... as in Nemesis 3 stage 4)"
+      },
+      {
+       "nes_game": "gradius_nes",
+       "nes_stage": 5,
+       "verdict": "similar",
+       "evidence": "open-space stage, star field"
+      }
+     ],
+     "elements": [
+      {
+       "msx": "star field",
+       "nes": "Gradius II star field (BG stars of every Gradius II stage)",
+       "decision": "REUSE"
+      }
+     ]
+    },
+    {
+     "stage_id": "n3.interlude_after_stage_04",
+     "name": "On-board computer after stage 4 (counter going back)",
+     "theme": "on-board computer picture (counter) between stages",
+     "same_as": null,
+     "decision": "CONVERT_MSX",
+     "chosen": null,
+     "why_chosen": "no NES game has the on-board computer pictures (n3.screen.computer_after_stage4)",
+     "missing": "the computer picture",
+     "confidence": "high",
+     "candidates": [],
+     "elements": [
+      {
+       "msx": "computer frame and counter picture",
+       "nes": "none",
+       "decision": "CONVERT"
+      }
+     ]
+    },
+    {
+     "stage_id": "n3.map_05",
+     "name": "Stage 5",
+     "theme": "Moai stage in space: star field, thin rock/machine platforms with gold rubble, Moai heads on machine bases (pieces) that fire rings",
+     "same_as": null,
+     "decision": "ADAPT_NES_TILESET",
+     "chosen": {
+      "nes_game": "gradius2_fc",
+      "nes_stage": 4,
+      "nes_stage_name": "Moai",
+      "tile_source": "CHR-ROM BG banks $2C/$2D/$2E/$2F at the stage start (sprgen/pt_40_41_47_64_2C_2D_2E_2F.bin), 4 BG bank sets during the stage (stages.json chr_bank_sets_seen)"
+     },
+     "why_chosen": "both NES Moai stages fit; Gradius II has more Moai orientations and more detailed rock platforms, and is the art direction",
+     "missing": "the machine bases of the Moai and the machine parts of the platforms; grey/blue palette",
+     "confidence": "medium",
+     "candidates": [
+      {
+       "nes_game": "gradius2_fc",
+       "nes_stage": 4,
+       "verdict": "similar",
+       "evidence": "Moai stage: star field, grey rock platforms with Moai heads (upright, inverted, diagonal) firing ion rings, then the Big Moai"
+      },
+      {
+       "nes_game": "gradius_nes",
+       "nes_stage": 3,
+       "verdict": "similar",
+       "evidence": "Moai stage: Moai heads on rock strips (floor/ceiling/diagonal)"
+      }
+     ],
+     "elements": [
+      {
+       "msx": "star field",
+       "nes": "Gradius II star field (BG stars of every Gradius II stage)",
+       "decision": "REUSE"
+      },
+      {
+       "msx": "thin rock/machine platforms with gold rubble (map chars, 2 mid-stage char changes)",
+       "nes": "Gradius II stage 4 grey rock platforms",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "Moai heads on machine bases (pieces 0x1C/0x26/0x27/0x28)",
+       "nes": "g2.enemy.moai (Gradius II BG Moai)",
+       "decision": "ADAPT"
+      }
+     ]
+    },
+    {
+     "stage_id": "n3.map_06",
+     "name": "Stage 6",
+     "theme": "red flesh cave: hairy red floor and ceiling growths, a red honeycomb mesh in the background, flesh nests and mouths (pieces)",
+     "same_as": null,
+     "decision": "ADAPT_NES_TILESET",
+     "chosen": {
+      "nes_game": "gradius2_fc",
+      "nes_stage": 7,
+      "nes_stage_name": "Gofer's lair",
+      "tile_source": "CHR-ROM BG banks $55/$56/$57/$58 at the stage start (sprgen/pt_40_41_70_43_55_56_57_58.bin), 2 BG bank sets during the stage (stages.json chr_bank_sets_seen)"
+     },
+     "why_chosen": "the Gradius II red lattice is the nearest NES drawing to the MSX honeycomb mesh and Gradius II is the art direction; Life Force/Salamander stage 4 is vertical and built from ribs",
+     "missing": "the hairy flesh floor and ceiling and every flesh piece; the lattice must be redrawn as a honeycomb",
+     "confidence": "low",
+     "candidates": [
+      {
+       "nes_game": "gradius2_fc",
+       "nes_stage": 7,
+       "verdict": "similar",
+       "evidence": "Gofer's lair: pink brain flesh walls and a red diamond lattice in the background"
+      },
+      {
+       "nes_game": "lifeforce_nes",
+       "nes_stage": 4,
+       "verdict": "similar",
+       "evidence": "red organic stage (vertical): rib cages, red tissue mesh, vein walls"
+      },
+      {
+       "nes_game": "salamander_fc",
+       "nes_stage": 4,
+       "verdict": "similar",
+       "evidence": "same art as Life Force stage 4"
+      },
+      {
+       "nes_game": "gradius_nes",
+       "nes_stage": 6,
+       "verdict": "different",
+       "evidence": "blue cell stage"
+      }
+     ],
+     "elements": [
+      {
+       "msx": "red honeycomb mesh background (map chars)",
+       "nes": "Gradius II stage 7 red lattice",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "hairy red floor/ceiling growths (map chars)",
+       "nes": "none (Gradius II flesh is lumpy brain tissue)",
+       "decision": "CONVERT"
+      },
+      {
+       "msx": "flesh nests, mouths, scaled creature head, hair columns (pieces 0x03/0x20-0x24)",
+       "nes": "none",
+       "decision": "CONVERT"
+      }
+     ]
+    },
+    {
+     "stage_id": "n3.map_07",
+     "name": "Stage 7",
+     "theme": "egg-rock desert: yellow sand floor and ceiling, clusters of white egg-shaped rocks, red/blue streak background, golden hives and sand walls (pieces)",
+     "same_as": null,
+     "decision": "CONVERT_MSX",
+     "chosen": null,
+     "why_chosen": "no NES stage has sand and egg-rock clusters",
+     "missing": "the whole stage set",
+     "confidence": "medium",
+     "candidates": [
+      {
+       "nes_game": "salamander_fc",
+       "nes_stage": 2,
+       "verdict": "different",
+       "evidence": "rock pillars and asteroids, other rock drawing, vertical"
+      },
+      {
+       "nes_game": "lifeforce_nes",
+       "nes_stage": 2,
+       "verdict": "different",
+       "evidence": "same as Salamander stage 2"
+      },
+      {
+       "nes_game": "gradius2_fc",
+       "nes_stage": 3,
+       "verdict": "different",
+       "evidence": "orange volcanic rock islands"
+      },
+      {
+       "nes_game": "gradius_nes",
+       "nes_stage": 2,
+       "verdict": "different",
+       "evidence": "Stonehenge: white stone blocks, not egg rocks"
+      }
+     ],
+     "elements": [
+      {
+       "msx": "sand floor/ceiling, egg rocks, streak background (map chars)",
+       "nes": "none",
+       "decision": "CONVERT"
+      },
+      {
+       "msx": "golden hives, growing sand walls, rock columns (pieces 0x05/0x2D/0x2E/0x2F/0x37)",
+       "nes": "none",
+       "decision": "CONVERT"
+      }
+     ]
+    },
+    {
+     "stage_id": "n3.map_08",
+     "name": "Stage 8",
+     "theme": "cell stage: walls of blue bubbles, purple vein mesh, then a red dotted field with white crosses, cell pieces",
+     "same_as": null,
+     "decision": "ADAPT_NES_TILESET",
+     "chosen": {
+      "nes_game": "salamander_fc",
+      "nes_stage": 1,
+      "nes_stage_name": "Stage 1 - cell (horizontal)",
+      "tile_source": "CHR-RAM stage set stream X=$08 bank 2 $8D71 (sprgen/stage1_chr_after_init.bin)"
+     },
+     "why_chosen": "Gradius NES stage 6 has the closest bubble walls, but Salamander/Life Force stage 1 is far more detailed (textured membrane, bead chains, more colours); Gradius II has no cell stage",
+     "missing": "the red dotted field and white crosses; purple/blue palette",
+     "confidence": "low",
+     "candidates": [
+      {
+       "nes_game": "salamander_fc",
+       "nes_stage": 1,
+       "verdict": "similar",
+       "evidence": "cell stage: tissue walls, chains of blue beads, membrane background"
+      },
+      {
+       "nes_game": "lifeforce_nes",
+       "nes_stage": 1,
+       "verdict": "similar",
+       "evidence": "same art as Salamander stage 1"
+      },
+      {
+       "nes_game": "gradius_nes",
+       "nes_stage": 6,
+       "verdict": "similar",
+       "evidence": "cell stage: wavy walls of blue bubbles and a blue cross lattice"
+      }
+     ],
+     "elements": [
+      {
+       "msx": "blue bubble walls (map chars)",
+       "nes": "Salamander stage 1 blue bead chains / Gradius stage 6 bubble walls",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "purple vein mesh background (map chars)",
+       "nes": "Salamander stage 1 membrane background",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "red dotted field and white crosses after scroll 0x110 (char change)",
+       "nes": "none",
+       "decision": "CONVERT"
+      },
+      {
+       "msx": "cell pieces 0x10/0x15/0x17",
+       "nes": "none",
+       "decision": "CONVERT"
+      }
+     ]
+    },
+    {
+     "stage_id": "n3.map_09",
+     "name": "Stage 9 (boss while scrolling)",
+     "theme": "green mechanical fortress: corridors of green machine walls, blue dash background, wall machines and chain belts (pieces); boss while scrolling",
+     "same_as": null,
+     "decision": "ADAPT_NES_TILESET",
+     "chosen": {
+      "nes_game": "gradius2_fc",
+      "nes_stage": 6,
+      "nes_stage_name": "Enemy base (fortress, high speed)",
+      "tile_source": "CHR-ROM BG banks $4C/$4D/$4E/$4F at the stage start (sprgen/pt_40_41_65_4A_4C_4D_4E_4F.bin), 3 BG bank sets during the stage (stages.json chr_bank_sets_seen)"
+     },
+     "why_chosen": "horizontal mechanical fortress with corridor walls like the MSX map; Gradius II is the art direction",
+     "missing": "green palette for the walls; the chain belts and wall machines",
+     "confidence": "medium",
+     "candidates": [
+      {
+       "nes_game": "gradius2_fc",
+       "nes_stage": 6,
+       "verdict": "similar",
+       "evidence": "Enemy base: mechanical fortress walls and corridors (grey/blue)"
+      },
+      {
+       "nes_game": "gradius_nes",
+       "nes_stage": 7,
+       "verdict": "similar",
+       "evidence": "fortress: circuit walls (red/orange with teal edges)"
+      },
+      {
+       "nes_game": "salamander_fc",
+       "nes_stage": 6,
+       "verdict": "similar",
+       "evidence": "fortress (vertical): red/grey mechanical walls"
+      },
+      {
+       "nes_game": "lifeforce_nes",
+       "nes_stage": 6,
+       "verdict": "similar",
+       "evidence": "same art as Salamander stage 6"
+      }
+     ],
+     "elements": [
+      {
+       "msx": "green machine walls and corridors (map chars, changes at 0x0C0 and 0x1C0)",
+       "nes": "Gradius II stage 6 fortress wall tiles",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "blue dash background",
+       "nes": "Gradius II stage 6 background",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "wall machines, chain belts, bars (pieces 0x0E/0x12/0x1D/0x1E/0x2B/0x2C)",
+       "nes": "none",
+       "decision": "CONVERT"
+      }
+     ]
+    },
+    {
+     "stage_id": "n3.computer_after_stage_09",
+     "name": "On-board computer: the three maps",
+     "theme": "on-board computer: the three maps",
+     "same_as": null,
+     "decision": "CONVERT_MSX",
+     "chosen": null,
+     "why_chosen": "no NES game has the on-board computer pictures (n3.screen.computer_after_stage9)",
+     "missing": "the computer pictures",
+     "confidence": "high",
+     "candidates": [],
+     "elements": [
+      {
+       "msx": "computer frame and map pictures",
+       "nes": "none",
+       "decision": "CONVERT"
+      }
+     ]
+    },
+    {
+     "stage_id": "n3.map_05.return",
+     "name": "Stage 5 again (to get the red map)",
+     "theme": "Moai stage in space: star field, thin rock/machine platforms with gold rubble, Moai heads on machine bases (pieces) that fire rings",
+     "same_as": "n3.map_05",
+     "decision": "ADAPT_NES_TILESET",
+     "chosen": {
+      "nes_game": "gradius2_fc",
+      "nes_stage": 4,
+      "nes_stage_name": "Moai",
+      "tile_source": "CHR-ROM BG banks $2C/$2D/$2E/$2F at the stage start (sprgen/pt_40_41_47_64_2C_2D_2E_2F.bin), 4 BG bank sets during the stage (stages.json chr_bank_sets_seen)"
+     },
+     "why_chosen": "return visit: same map and graphics as n3.map_05 (stage_map.json graphics \"same as n3.map_05\")",
+     "missing": "the machine bases of the Moai and the machine parts of the platforms; grey/blue palette",
+     "confidence": "medium",
+     "candidates": [
+      {
+       "nes_game": "gradius2_fc",
+       "nes_stage": 4,
+       "verdict": "similar",
+       "evidence": "Moai stage: star field, grey rock platforms with Moai heads (upright, inverted, diagonal) firing ion rings, then the Big Moai"
+      },
+      {
+       "nes_game": "gradius_nes",
+       "nes_stage": 3,
+       "verdict": "similar",
+       "evidence": "Moai stage: Moai heads on rock strips (floor/ceiling/diagonal)"
+      }
+     ],
+     "elements": [
+      {
+       "msx": "star field",
+       "nes": "Gradius II star field (BG stars of every Gradius II stage)",
+       "decision": "REUSE"
+      },
+      {
+       "msx": "thin rock/machine platforms with gold rubble (map chars, 2 mid-stage char changes)",
+       "nes": "Gradius II stage 4 grey rock platforms",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "Moai heads on machine bases (pieces 0x1C/0x26/0x27/0x28)",
+       "nes": "g2.enemy.moai (Gradius II BG Moai)",
+       "decision": "ADAPT"
+      }
+     ]
+    },
+    {
+     "stage_id": "n3.map_07.return",
+     "name": "Stage 7 again (to get the blue map)",
+     "theme": "egg-rock desert: yellow sand floor and ceiling, clusters of white egg-shaped rocks, red/blue streak background, golden hives and sand walls (pieces)",
+     "same_as": "n3.map_07",
+     "decision": "CONVERT_MSX",
+     "chosen": null,
+     "why_chosen": "return visit: same map and graphics as n3.map_07 (stage_map.json graphics \"same as n3.map_07\")",
+     "missing": "the whole stage set",
+     "confidence": "medium",
+     "candidates": [
+      {
+       "nes_game": "salamander_fc",
+       "nes_stage": 2,
+       "verdict": "different",
+       "evidence": "rock pillars and asteroids, other rock drawing, vertical"
+      },
+      {
+       "nes_game": "lifeforce_nes",
+       "nes_stage": 2,
+       "verdict": "different",
+       "evidence": "same as Salamander stage 2"
+      },
+      {
+       "nes_game": "gradius2_fc",
+       "nes_stage": 3,
+       "verdict": "different",
+       "evidence": "orange volcanic rock islands"
+      },
+      {
+       "nes_game": "gradius_nes",
+       "nes_stage": 2,
+       "verdict": "different",
+       "evidence": "Stonehenge: white stone blocks, not egg rocks"
+      }
+     ],
+     "elements": [
+      {
+       "msx": "sand floor/ceiling, egg rocks, streak background (map chars)",
+       "nes": "none",
+       "decision": "CONVERT"
+      },
+      {
+       "msx": "golden hives, growing sand walls, rock columns (pieces 0x05/0x2D/0x2E/0x2F/0x37)",
+       "nes": "none",
+       "decision": "CONVERT"
+      }
+     ]
+    },
+    {
+     "stage_id": "n3.map_08.return",
+     "name": "Stage 8 again (to get the green map)",
+     "theme": "cell stage: walls of blue bubbles, purple vein mesh, then a red dotted field with white crosses, cell pieces",
+     "same_as": "n3.map_08",
+     "decision": "ADAPT_NES_TILESET",
+     "chosen": {
+      "nes_game": "salamander_fc",
+      "nes_stage": 1,
+      "nes_stage_name": "Stage 1 - cell (horizontal)",
+      "tile_source": "CHR-RAM stage set stream X=$08 bank 2 $8D71 (sprgen/stage1_chr_after_init.bin)"
+     },
+     "why_chosen": "return visit: same map and graphics as n3.map_08 (stage_map.json graphics \"same as n3.map_08\")",
+     "missing": "the red dotted field and white crosses; purple/blue palette",
+     "confidence": "low",
+     "candidates": [
+      {
+       "nes_game": "salamander_fc",
+       "nes_stage": 1,
+       "verdict": "similar",
+       "evidence": "cell stage: tissue walls, chains of blue beads, membrane background"
+      },
+      {
+       "nes_game": "lifeforce_nes",
+       "nes_stage": 1,
+       "verdict": "similar",
+       "evidence": "same art as Salamander stage 1"
+      },
+      {
+       "nes_game": "gradius_nes",
+       "nes_stage": 6,
+       "verdict": "similar",
+       "evidence": "cell stage: wavy walls of blue bubbles and a blue cross lattice"
+      }
+     ],
+     "elements": [
+      {
+       "msx": "blue bubble walls (map chars)",
+       "nes": "Salamander stage 1 blue bead chains / Gradius stage 6 bubble walls",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "purple vein mesh background (map chars)",
+       "nes": "Salamander stage 1 membrane background",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "red dotted field and white crosses after scroll 0x110 (char change)",
+       "nes": "none",
+       "decision": "CONVERT"
+      },
+      {
+       "msx": "cell pieces 0x10/0x15/0x17",
+       "nes": "none",
+       "decision": "CONVERT"
+      }
+     ]
+    },
+    {
+     "stage_id": "n3.map_10",
+     "name": "Stage 10 (two bosses)",
+     "theme": "white/blue block fortress: grey machine blocks with blue trim, bead arms and chains (pieces), two bosses",
+     "same_as": null,
+     "decision": "ADAPT_NES_TILESET",
+     "chosen": {
+      "nes_game": "gradius2_fc",
+      "nes_stage": 6,
+      "nes_stage_name": "Enemy base (fortress, high speed)",
+      "tile_source": "CHR-ROM BG banks $4C/$4D/$4E/$4F at the stage start (sprgen/pt_40_41_65_4A_4C_4D_4E_4F.bin), 3 BG bank sets during the stage (stages.json chr_bank_sets_seen)"
+     },
+     "why_chosen": "Gradius II stage 6 has the same grey-with-blue machine blocks; art direction",
+     "missing": "the MSX block shapes not in the Gradius II set; the bead pieces",
+     "confidence": "medium",
+     "candidates": [
+      {
+       "nes_game": "gradius2_fc",
+       "nes_stage": 6,
+       "verdict": "similar",
+       "evidence": "Enemy base: grey/blue mechanical blocks and walls"
+      },
+      {
+       "nes_game": "gradius_nes",
+       "nes_stage": 7,
+       "verdict": "similar",
+       "evidence": "fortress circuit walls"
+      },
+      {
+       "nes_game": "salamander_fc",
+       "nes_stage": 6,
+       "verdict": "similar",
+       "evidence": "fortress (vertical)"
+      },
+      {
+       "nes_game": "lifeforce_nes",
+       "nes_stage": 6,
+       "verdict": "similar",
+       "evidence": "same art as Salamander stage 6"
+      }
+     ],
+     "elements": [
+      {
+       "msx": "grey/blue machine blocks (map chars, change at 0x1A0)",
+       "nes": "Gradius II stage 6 fortress blocks",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "bead neck, stretching arms, blocks (pieces 0x0D/0x30/0x2B/0x36/0x1A)",
+       "nes": "none",
+       "decision": "CONVERT"
+      }
+     ]
+    },
+    {
+     "stage_id": "n3.map_11",
+     "name": "Stage 11 (final boss)",
+     "theme": "Gofer's lair: machine walls at the ends, red flesh and brain mass, cables from the ceiling, the giant Gofer head",
+     "same_as": null,
+     "decision": "ADAPT_NES_TILESET",
+     "chosen": {
+      "nes_game": "gradius2_fc",
+      "nes_stage": 7,
+      "nes_stage_name": "Gofer's lair",
+      "tile_source": "CHR-ROM BG banks $55/$56/$57/$58 at the stage start (sprgen/pt_40_41_70_43_55_56_57_58.bin), 2 BG bank sets during the stage (stages.json chr_bank_sets_seen)"
+     },
+     "why_chosen": "same stage (Gofer, the final boss of both games)",
+     "missing": "the machine walls inside the lair set; the yellow/red vines",
+     "confidence": "medium",
+     "candidates": [
+      {
+       "nes_game": "gradius2_fc",
+       "nes_stage": 7,
+       "verdict": "same",
+       "evidence": "Gofer's lair: brain flesh, cables, the giant Gofer head of the final boss (same final stage of the series)"
+      }
+     ],
+     "elements": [
+      {
+       "msx": "red flesh, brain mass and cables (map chars)",
+       "nes": "Gradius II stage 7 flesh and cables",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "giant Gofer head (map chars)",
+       "nes": "g2.boss.gofer (BG head)",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "machine walls at both ends (map chars)",
+       "nes": "Gradius II stage 6 fortress tiles",
+       "decision": "ADAPT"
+      },
+      {
+       "msx": "vines (piece 0x35)",
+       "nes": "none",
+       "decision": "CONVERT"
+      }
+     ]
+    },
+    {
+     "stage_id": "n3.ending",
+     "name": "Ending (state 0x0A)",
+     "theme": "ending pictures (on-board computer, planet, Venom, FIN)",
+     "same_as": null,
+     "decision": "CONVERT_MSX",
+     "chosen": null,
+     "why_chosen": "no NES game has this ending (see the screens in nes_match.json)",
+     "missing": "all ending pictures",
+     "confidence": "high",
+     "candidates": [
+      {
+       "nes_game": "lifeforce_nes",
+       "nes_stage": null,
+       "verdict": "different",
+       "evidence": "Life Force ending: a green planet destroyed by a beam (lf.screen.ending)"
+      },
+      {
+       "nes_game": "salamander_fc",
+       "nes_stage": null,
+       "verdict": "different",
+       "evidence": "planet explosion (sfc.screen.ending_planet_explosion)"
+      }
+     ],
+     "elements": [
+      {
+       "msx": "computer frame, planet, Venom, FIN pictures",
+       "nes": "none",
+       "decision": "CONVERT"
+      }
+     ]
+    },
+    {
+     "stage_id": "n3.secret_room",
+     "name": "Secret entrance screen (state 9, any stage)",
+     "theme": "secret entrance screen (computer frame with the item found)",
+     "same_as": null,
+     "decision": "CONVERT_MSX",
+     "chosen": null,
+     "why_chosen": "no NES game has secret rooms",
+     "missing": "the secret room pictures",
+     "confidence": "high",
+     "candidates": [],
+     "elements": [
+      {
+       "msx": "computer frame and item pictures",
+       "nes": "none",
+       "decision": "CONVERT"
+      }
+     ]
+    }
+   ],
+   "counts": {
+    "records": 19,
+    "by_decision": {
+     "REUSE_NES_TILESET": 1,
+     "ADAPT_NES_TILESET": 10,
+     "CONVERT_MSX": 8
+    },
+    "nes_sources": {
+     "Gradius II stage 7": 2,
+     "Gradius II stage 6": 2,
+     "Gradius II stage 1": 1,
+     "Gradius II stage 2": 1,
+     "Gradius II stage 5": 1,
+     "Gradius II stage 4": 1,
+     "Salamander FC stage 1": 1
+    }
+   }
+  }
+ }
+}

@@ -1,4 +1,4 @@
-# Nemesis Legends - CP0021: Phase 2a, every MSX object matched to the NES games
+# Nemesis Legends - CP0022: Phase 2b, the NES graphics for every MSX stage
 
 **WIP / playable partial NES/Famicom MMC5 native port, not the completed saga.**
 
@@ -149,4 +149,4 @@ and commercial audio are **private recovery material**, not published here.
 Public Silicon Forge game releases use **IPS patches only**. The private ROM
 in the user package is for authorized local testing, not the public release.
 
-Current checkpoint: **CP0021**. No `Nemesis_Legends_NES_Final.nes` exists.
+Current checkpoint: **CP0022**. No `Nemesis_Legends_NES_Final.nes` exists.

@@ -1,3 +1,9 @@
+# CP0022 handoff (2026-10-29) - Phase 2b, stage graphics vs NES
+
+For every stage record of the four MSX games, the NES stage whose tiles, palettes and
+background objects will draw the MSX layout, with the elements to re-cut or draw new:
+`manifests/stage_gfx_choice.json`, `docs/STAGE_GFX_CHOICE.md`. ROM unchanged (CP0016).
+
 # CP0021 handoff (2026-10-29) - Phase 2a, MSX objects vs NES
 
 Every object and screen of the four MSX games compared with Gradius, Gradius II, Life Force
