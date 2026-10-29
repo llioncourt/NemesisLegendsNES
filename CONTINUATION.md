@@ -1,53 +1,58 @@
-# NEMESIS LEGENDS NES — CONTINUATION (CP0015, 2026-10-27)
+# NEMESIS LEGENDS NES - CONTINUATION (CP0016, 2026-10-28)
 
-Repository: https://github.com/llioncourt/NemesisLegendsNES
-GitHub last confirmed baseline before this execution: `47b4b3bcf6708fd7c42032472e53203baec19e9a` (CP0011 plus the lean-tool sync).
-Current tested private ROM: `build/native/Nemesis_Legends_CP0015.nes`; consult `manifests/checkpoint.json` for exact SHA-256. Update this document's remote commit only after server verification. Do not reset or abandon the existing native motor. Public distribution: IPS only; the source ROMs and derived commercial CHR/audio stay private.
+Repository: https://github.com/llioncourt/NemesisLegendsNES (`main`).
+Last pinned checkpoint: **CP0016**, `build/native/Nemesis_Legends_CP0016.nes`
+(sha256 in `manifests/checkpoint.json`). Do not reset or abandon the native
+motor. Public distribution: IPS only; source ROMs and derived graphics/audio
+stay private.
+
+**Read `docs/DECISIONS.md` first.** It holds the owner's scope of 2026-10-28
+(ten phases, asset rules, art direction, player ships, music, secrets, delivery
+rhythm) and overrides older orderings in this file and in HANDOFF.
 
 ## Actual coverage, not release claims
 
-1. **Nemesis / Gradius MSX**: partial native stages 1 and 2 (rock walls, 900-frame rain, Big Core, bonus9), stage3's two source type-1 Big Core encounters at world `$0060` and `$01AF` and bonus10/normal branches to stage4. Cross-stage MSX target types 2/3/4 persist from stage1 into stage4; three distinct touches activate bonus11 and route to stage5. **CP0012:** stage4's normal route now runs its complete source end sequence (p01:$6E15): ceiling eruption at `$0128`, five-piece tower at `$0171`, "boss 5" eight-piece spawner at the `$019F` scroll limit, scroll release to `$01C0`, type-1 Big Core, stage5. Source enemy type `$0A` and a faithful type 6 hopper were ported; both previously parked on screen and could block the Big Core wait in stages 1, 3 and 4. Stage5 onward contains resource descriptors, not playable faithful level logic. Full Nemesis MSX is **NOT complete**. The screenshot criticism about sparse art and HUD is not resolved.
-2. **Nemesis 2 MSX**: **CP0014:** all twelve maps converted to native descriptors and loadable/scrollable in the ROM (banks 14-27, CHR 25-38) through the cheat menu; structure inventory (`reports/nemesis2_structure.json`) with stage scripts, bosses, enemy types, weapons, cutscenes and music. No native enemies, bosses, weapon system, interior/secret events, endings or music yet.
-3. **Salamander MSX**: campaign router and secret Operation X requirements only; no full native campaign, planet missions, co-op, audiovisual equivalence or validated ending.
-4. **Nemesis 3 MSX**: **CP0015:** all eleven maps converted to native descriptors and loadable/scrollable in the ROM (banks 28-40, CHR 39-55) through the cheat menu; extractor covers 117 sequence pictures, 15 screens and 16 boss sets (`reports/nemesis3_structure.json`). No native enemies, bosses, interludes, pictures, endings or music yet.
+1. **Nemesis (MSX):** native stages 1-4 with the normal and bonus routes
+   (bonus 9, 10, 11), Big Cores, cross-stage targets; stage 4 reaches stage 5.
+   Stage 5 onward: map descriptors only. Every sprite and tile is still an MSX
+   conversion.
+2. **Nemesis 2 (MSX):** twelve maps loadable and scrollable, chained through
+   the campaign module with scene placeholders. No enemies, bosses, weapons,
+   events, endings or music.
+3. **Salamander (MSX):** campaign router only; no maps in the ROM.
+4. **Nemesis 3 (MSX):** eleven maps loadable and scrollable, chained with scene
+   placeholders. No enemies, bosses, interludes, endings or music.
 
-## Working native systems
+Cheat menu (Konami Code), 30/40/60 logical-FPS pacing, 512 KiB PRG / 256 KiB
+CHR MMC5 board. Free space in the CP0016 ROM: 24 PRG banks (192 KiB), 46 KiB of
+CHR; the kernel bank has 733 bytes left, so new shared code goes to banked
+segments.
 
-**CP0013:** Silicon Forge cheat menu (Konami Code; real loaders; debug row), banked STAGECODE bank for stage logic, extractors for all four MSX games and six NES references, universal asset manifest (`manifests/asset_manifest.json`, 1727 records), MSX x NES matrix, master storyboard (`manifests/storyboard.json`), memory budget. The brief's Frentes B-E and G have their first measured deliverables; F (whole-campaign ROM structure) and H (stages 5-8, chapters 2-4) are next.
+## Known gaps found on 2026-10-28
 
-MMC5 6502 title/menu (not user-approved art), native 8x8 source columns, stage-specific enemy/weapon/laser/boss support, cross-stage target memory, bonus router, 30/40/60 logical-FPS option with NTSC video and APU at 60Hz, source driver references; no complete native OST. Compact source tile data and decomp resources remain in their original private source directory, not inflated per-frame playback.
+- `tools/extract_nemesis_msx.py` loads only the common sprite block ($86BB):
+  the two per-stage blocks of p00:$42AD, the stage-5 block $8FCB and the
+  second-cartridge block $9963 are missing (47 of 117 unique sprite patterns).
+- MSX bosses drawn with characters, intro/cutscene/ending sprites of Nemesis,
+  Nemesis 2 and Salamander, and Nemesis 2 bosses are not extracted yet.
+- Salamander (Famicom) and Life Force use CHR-RAM; their graphics come from a
+  static decoder pass and may be incomplete.
+- The asset bible covers Nemesis vs Gradius (US) only; the final QA round's
+  report file is missing from the evidence zip.
 
-## Critical missing systems and visual quality
-
-- Stage5 (`final_de_la_fase_5` p01:$6EA8: two bank-3 encounters, limit `$1FF`), stages 6-8 scripted combat, bonus12 and the Nemesis ending. The normal route must not bypass unfinished bosses. Enemy types `$0B`, `$0C`, `$0D`, `$0E` and later source types are still unported (type `$0C` appears in stage-6 opening waves).
-- Full original enemy actor types/patterns, sprites, scenic layers and collision parity. The CP0008 user's screenshot showed black void, repeated sprites and poor HUD; **these visuals are still NOT fixed**.
-- All Nemesis 2 / Salamander / Nemesis 3 mechanics, cutscenes and endings, native music conversion, global deduplication and total CPU/ROM budget certification, full stage playthrough without QA help, Konami Code + Silicon Forge cheat menu.
-- The normal-to-next-stage tests are *assisted*, injection only of QA invulnerability. The cross-stage three-target test is controller-driven. The source wave bit5 test **injects world/phase/camera each frame** as a *unit fixture*, not a stage4 route.
-
-## Verified tests / build
-
-Build private ROM: `python tools/build_native.py --tools toolchain/linux-x64/bin --assets` (hash checked source assets); repeat without `--assets` to confirm deterministic output. Run `python tools/checkpoint.py test` for full scoped tests; or individually:
+## Build and test
 
 ```
-python tools/test_stage_one.py --core toolchain/linux-x64/bin/fceumm_libretro.so
-python tools/test_stage_two.py --core toolchain/linux-x64/bin/fceumm_libretro.so
-python tools/test_stage_three.py
-python tools/test_stage_four.py
-python tools/test_cheat_menu.py
-python tools/test_n2_maps.py
-python tools/test_n3_maps.py
-python tools/test_secret_targets.py
-python tools/test_source_groups.py --core toolchain/linux-x64/bin/fceumm_libretro.so
-python tools/test_combat_native.py --core toolchain/linux-x64/bin/fceumm_libretro.so --tools toolchain/linux-x64/bin
-python tools/test_pacing_native.py --core toolchain/linux-x64/bin/fceumm_libretro.so
-python tools/test_title_native.py --core toolchain/linux-x64/bin/fceumm_libretro.so
-python tools/test_vblank_budget.py
-python tools/test_campaign_native.py --core toolchain/linux-x64/bin/fceumm_libretro.so --tool-dir toolchain/linux-x64/bin
-python -m unittest discover -s tests -p 'test_*.py'
+python tools/checkpoint.py build      # add --assets to regenerate from the originals
+python tools/checkpoint.py test
 ```
 
-All new source transformations are locally built and tested for their *documented narrow scope*; see reports `reports/cp0012` (and `reports/cp0011` for the previous checkpoint). The FCEUmm tests are not hardware tests and do not certify a completed game.
+Reference captures: openMSX with the free C-BIOS (MSX) and the bundled FCEUmm
+core (NES) were used on 2026-10-28 to capture the player ships in game.
 
-## Next concrete engineering action
+## Next concrete action
 
-Port stage 5 from the MSX Z80 deasm: `final_de_la_fase_5` (p01:$6EA8) calls bank 3 twice (`$B946` mounts the first encounter, `$BB95` the second, flags E988/E990), releases the scroll to `$01FF`, then the ordinary Big Core. Port the stage-5 enemy types its waves use (check the opening-wave byte and group bits in `build/native/stage_05.bin`), keep the wait-for-clear source behaviour, add `tools/test_stage_five.py` on the same controller-driven pattern, and only then remove any remaining halt. Then stages 6-8 (type `$0C` first), the Nemesis ending, and the specialized chapters 2-4. Do not invent source events or declare phase transitions as finished gameplay.
+Phase 1 of `docs/DECISIONS.md`: extract every asset of the four MSX games and the
+six NES ROMs (sprites, characters, bosses, cutscenes, fonts, palettes, music),
+fix the Nemesis sprite extractor, extend the universal asset manifest, and map
+every stage (1.1) with its assets and rules.

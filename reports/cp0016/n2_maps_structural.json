@@ -1,0 +1,138 @@
+{
+ "rom_sha256": "c10f9928e49b9612aad51f9fc75fe79e8f94eafeeaae56e422b44f9f8f2eb45b",
+ "scope": "chapter-2 map descriptors load and scroll; terrain/sprite conversion only",
+ "maps": [
+  {
+   "map": 0,
+   "mode": 1,
+   "chapter": 2,
+   "stage_id": 0,
+   "stage_bank": 14,
+   "world_start": 33,
+   "world_after_600": 70,
+   "missed_nmi": 0,
+   "ok": true
+  },
+  {
+   "map": 1,
+   "mode": 1,
+   "chapter": 2,
+   "stage_id": 1,
+   "stage_bank": 15,
+   "world_start": 33,
+   "world_after_600": 71,
+   "missed_nmi": 0,
+   "ok": true
+  },
+  {
+   "map": 2,
+   "mode": 1,
+   "chapter": 2,
+   "stage_id": 2,
+   "stage_bank": 16,
+   "world_start": 33,
+   "world_after_600": 71,
+   "missed_nmi": 0,
+   "ok": true
+  },
+  {
+   "map": 3,
+   "mode": 1,
+   "chapter": 2,
+   "stage_id": 3,
+   "stage_bank": 17,
+   "world_start": 33,
+   "world_after_600": 71,
+   "missed_nmi": 0,
+   "ok": true
+  },
+  {
+   "map": 4,
+   "mode": 1,
+   "chapter": 2,
+   "stage_id": 4,
+   "stage_bank": 18,
+   "world_start": 33,
+   "world_after_600": 71,
+   "missed_nmi": 0,
+   "ok": true
+  },
+  {
+   "map": 5,
+   "mode": 1,
+   "chapter": 2,
+   "stage_id": 5,
+   "stage_bank": 19,
+   "world_start": 33,
+   "world_after_600": 71,
+   "missed_nmi": 0,
+   "ok": true
+  },
+  {
+   "map": 6,
+   "mode": 1,
+   "chapter": 2,
+   "stage_id": 6,
+   "stage_bank": 20,
+   "world_start": 33,
+   "world_after_600": 71,
+   "missed_nmi": 0,
+   "ok": true
+  },
+  {
+   "map": 7,
+   "mode": 1,
+   "chapter": 2,
+   "stage_id": 7,
+   "stage_bank": 21,
+   "world_start": 33,
+   "world_after_600": 71,
+   "missed_nmi": 0,
+   "ok": true
+  },
+  {
+   "map": 8,
+   "mode": 1,
+   "chapter": 2,
+   "stage_id": 8,
+   "stage_bank": 22,
+   "world_start": 33,
+   "world_after_600": 71,
+   "missed_nmi": 0,
+   "ok": true
+  },
+  {
+   "map": 9,
+   "mode": 1,
+   "chapter": 2,
+   "stage_id": 9,
+   "stage_bank": 23,
+   "world_start": 33,
+   "world_after_600": 71,
+   "missed_nmi": 0,
+   "ok": true
+  },
+  {
+   "map": 10,
+   "mode": 1,
+   "chapter": 2,
+   "stage_id": 10,
+   "stage_bank": 24,
+   "world_start": 33,
+   "world_after_600": 71,
+   "missed_nmi": 0,
+   "ok": true
+  },
+  {
+   "map": 11,
+   "mode": 1,
+   "chapter": 2,
+   "stage_id": 11,
+   "stage_bank": 25,
+   "world_start": 33,
+   "world_after_600": 71,
+   "missed_nmi": 0,
+   "ok": true
+  }
+ ]
+}

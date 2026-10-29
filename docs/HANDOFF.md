@@ -1,3 +1,14 @@
+# CP0016 handoff (2026-10-28) - pinned; owner's scope fixed
+
+- CP0016 is pinned: the WIP ROM of 2026-10-27 was rebuilt byte-identical from
+  the CP0014 private package plus `main` and `checkpoint.py test` passed.
+- PR #2 (CP0012-CP0016) was merged into `main` by the owner's decision; work
+  continues on `main`.
+- `docs/DECISIONS.md` holds the owner's scope and rules. Next: Phase 1
+  (extraction of every MSX and NES asset, stage mapping 1.1).
+
+---
+
 # Handoff after CP0015 (session of 2026-10-27, stopped for lack of credits)
 
 ## State of the branch `claude/repo-review-d7tp9q` (PR #2)

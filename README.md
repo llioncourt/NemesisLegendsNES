@@ -1,6 +1,19 @@
-# Nemesis Legends — CP0015: four-game board with Nemesis 2 and Nemesis 3 maps in the ROM, cheat menu, stage 4 playable
+# Nemesis Legends - CP0016: chapter flow through the campaign module, owner's scope fixed
 
 **WIP / playable partial NES/Famicom MMC5 native port, not the completed saga.**
+
+The owner's scope of 2026-10-28 is in `docs/DECISIONS.md`: ten phases (extract,
+compare and choose, consistency, Gradius II Famicom art direction, complete the
+missing assets, graphics QA, rebuild the stages, chronological campaign with
+cutscenes, QoL and cheat menu, playable ROM), Salamander (Famicom) player ships,
+NES music where it exists and APU + MMC5 arrangements where it does not.
+
+## CP0016: chapters advance map to map
+
+The campaign module now drives chapters 2-4 from map to map (scroll end, return
+trip, scene requests), with a scene placeholder screen until the real cutscenes
+exist. The Nemesis asset bible (60 objects) is part of the repository. Read
+`docs/NATIVE_RUNTIME_CP0016.md`.
 
 The product goal is unchanged: **one continuous chronological campaign**
 **Nemesis → Nemesis 2 → Salamander → Nemesis 3**, preserving *all* source stages,
@@ -136,4 +149,4 @@ and commercial audio are **private recovery material**, not published here.
 Public Silicon Forge game releases use **IPS patches only**. The private ROM
 in the user package is for authorized local testing, not the public release.
 
-Current checkpoint: **CP0015 WIP**. No `Nemesis_Legends_NES_Final.nes` exists.
+Current checkpoint: **CP0016 WIP**. No `Nemesis_Legends_NES_Final.nes` exists.

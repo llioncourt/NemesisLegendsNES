@@ -1,0 +1,17 @@
+{
+  "rom_sha256": "c10f9928e49b9612aad51f9fc75fe79e8f94eafeeaae56e422b44f9f8f2eb45b",
+  "scope": "NES/FCEUmm source wave groups 4/5, with separate scoped test fixture.\nNatural type-9 flock observed in stage 3; mixed group from stage 4 sampled\nat an original group-bits segment using explicit *fixture-only* scroll override.\nThe latter is NOT a natural stage4 playthrough or source fidelity approval.\n",
+  "natural_stage3": {
+    "type9_spawned_at_least": 28,
+    "type9_first_slot_snapshot_frames": 241,
+    "stage4_reached": true,
+    "assistance": "QA invulnerability"
+  },
+  "fixture_stage4": {
+    "mixed_spawned_at_least": 8,
+    "world_pinned": "$0180/frame",
+    "phase_pinned": 0,
+    "camera_pinned": "$02/frame",
+    "is_full_stage_playthrough": false
+  }
+}
