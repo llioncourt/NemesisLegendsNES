@@ -1,7 +1,7 @@
 {
   "schema": 1,
-  "checkpoint": "CP0025",
-  "edition": "PHASE4_ART_DIRECTION",
+  "checkpoint": "CP0026",
+  "edition": "PHASE5_MUSIC_ARRANGEMENTS",
   "gameplay_changed": true,
   "project_directory": "Nemesis_Legends_CP0001",
   "rom": "build/native/Nemesis_Legends_CP0016.nes",
@@ -36,7 +36,7 @@
     "src/native_title.s": "0b1be108125be223341e3938e62accd426fb645e0c7540eb91da16a19e88d35e"
   },
   "cleanup_published_to_github": true,
-  "scope": "Phase 4 of docs/DECISIONS.md: the Gradius II art direction measured from the game (docs/ART_DIRECTION.md), the recolour plan of the NES visuals from other games (manifests/recolour_plan.json) and a first conversion sample of MSX-only drawings. The playable ROM is the CP0016 ROM, unchanged.",
+  "scope": "Phase 5 of docs/DECISIONS.md, music: the 70 MSX-only music assets arranged for the plain APU and for APU + MMC5 (docs/MUSIC_ARRANGEMENTS.md, docs/MUSIC_FORMAT.md; data private). The playable ROM is the CP0016 ROM, unchanged.",
   "ui_changed": true,
   "baseline_runtime_commit": "0833559",
   "checkpoint_changed_sources": {
@@ -103,5 +103,6 @@
   "stage_gfx_choice": true,
   "music_choice": true,
   "legends_assets": true,
-  "art_direction": true
+  "art_direction": true,
+  "music_arrangements": true
 }

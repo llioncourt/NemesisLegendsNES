@@ -1,3 +1,9 @@
+# CP0026 handoff (2026-10-29) - Phase 5, music arrangements
+
+The 70 MSX-only music assets arranged twice (plain APU remix and APU + MMC5), with voice maps
+and checks in `docs/MUSIC_ARRANGEMENTS.md` and the data format in `docs/MUSIC_FORMAT.md`; data and
+renders private. ROM unchanged (CP0016). Phase 5 art production lots started.
+
 # CP0025 handoff (2026-10-29) - Phase 4, Gradius II art direction
 
 The Gradius II style measured from the game (`docs/ART_DIRECTION.md`), the recolour plan of the

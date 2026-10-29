@@ -1,7 +1,7 @@
-# NEMESIS LEGENDS NES - CONTINUATION (CP0025, 2026-10-29)
+# NEMESIS LEGENDS NES - CONTINUATION (CP0026, 2026-10-29)
 
 Repository: https://github.com/llioncourt/NemesisLegendsNES (`main`).
-Last pinned checkpoint: **CP0025** (Phase 4, Gradius II art direction). The playable ROM is
+Last pinned checkpoint: **CP0026** (Phase 5, music: MSX-only tunes arranged). The playable ROM is
 still `build/native/Nemesis_Legends_CP0016.nes` (sha256 in `manifests/checkpoint.json`). Do not reset or abandon the native
 motor. Public distribution: IPS only; source ROMs and derived graphics/audio
 stay private.
@@ -147,9 +147,18 @@ The Salamander FC ships already use the Gradius II Vic Viper ramps: the owner's 
 identity. First MSX-to-NES conversion sample: good first pass for compact craft and round
 organic sprites, not enough alone for line-drawn sprites, spiky bosses and stage art.
 
+## Phase 5 progress
+
+- **Music (CP0026, done):** the 70 MSX-only music assets arranged for the plain APU (a real remix:
+  lead, bass, drums whole, counter-melody and harmony folded into pulse 2 by rests and fast
+  arpeggios) and for APU + MMC5 (each MSX voice on its own channel where possible). Report:
+  `docs/MUSIC_ARRANGEMENTS.md`; engine-neutral data format: `docs/MUSIC_FORMAT.md`. Pitch matches
+  the MSX on 100 % of the voices with their own MMC5 channel; the APU remix keeps 97 % of the
+  musical voices' notes on average (7 voices under 70 %, listed). Data and renders are private.
+- **Art (in progress):** four production lots (Nemesis + Nemesis 2, Nemesis 3, Salamander, the
+  NES visuals with recolour and adapt work) under `BRIEF_ART_PRODUCTION.md` in the evidence folder.
+
 ## Next concrete action
 
-Phase 5: convert the 337 MSX-only visuals and arrange the 70 MSX-only tunes (plain APU and
-MMC5 versions). Art in two tiers: converter output plus review for compact objects; a pixel-art
-pass per asset (agents editing the pixel grids against Gradius II references) for line-drawn
-sprites, bosses and stage art. Music: decode each MSX score and write the two NES arrangements.
+Finish the Phase 5 art lots, then the MSX-only stage tile sets; then Phase 6 (graphics QA and the
+cartridge space measure with global deduplication and RLE) and Phase 7 (rebuild the stages).

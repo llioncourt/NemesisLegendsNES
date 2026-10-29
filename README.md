@@ -1,4 +1,4 @@
-# Nemesis Legends - CP0025: Phase 4, the Gradius II art direction, measured
+# Nemesis Legends - CP0026: Phase 5, the MSX-only music arranged for APU and MMC5
 
 **WIP / playable partial NES/Famicom MMC5 native port, not the completed saga.**
 
@@ -149,4 +149,4 @@ and commercial audio are **private recovery material**, not published here.
 Public Silicon Forge game releases use **IPS patches only**. The private ROM
 in the user package is for authorized local testing, not the public release.
 
-Current checkpoint: **CP0025**. No `Nemesis_Legends_NES_Final.nes` exists.
+Current checkpoint: **CP0026**. No `Nemesis_Legends_NES_Final.nes` exists.
