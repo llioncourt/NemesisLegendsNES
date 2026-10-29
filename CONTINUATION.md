@@ -158,6 +158,11 @@ organic sprites, not enough alone for line-drawn sprites, spiky bosses and stage
 - **Art (in progress):** four production lots (Nemesis + Nemesis 2, Nemesis 3, Salamander, the
   NES visuals with recolour and adapt work) under `BRIEF_ART_PRODUCTION.md` in the evidence folder.
 
+## Session stopped (credits, 2026-10-29)
+
+See `docs/SESSION_STATE.md`: what is done, what was stopped mid-way (art lots n1n2 and sal,
+the sprite WIP ROM) and how to resume from the private packages sent in the chat.
+
 ## Next concrete action
 
 Finish the Phase 5 art lots, then the MSX-only stage tile sets; then Phase 6 (graphics QA and the
