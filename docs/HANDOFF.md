@@ -1,3 +1,12 @@
+# CP0017 handoff (2026-10-29) - Phase 1a, MSX asset catalogue
+
+Every object and screen of the four MSX games catalogued from the code and checked in
+openMSX runs of every stage (0 unmapped drawings): `manifests/catalog_msx.json`,
+`docs/CATALOG_MSX.md`, `docs/CATALOG_METHOD.md`. The Nemesis extractor now loads the
+per-stage sprite blocks (47 -> 107 drawings; TwinBee's 10 excluded). New capture tools:
+`tools/msx_capture.py`, `tools/nes_ppu_state.py`. ROM unchanged (CP0016). Extractor
+findings for phase 7 are in CONTINUATION.md.
+
 # CP0016 handoff (2026-10-28) - pinned; owner's scope fixed
 
 - CP0016 is pinned: the WIP ROM of 2026-10-27 was rebuilt byte-identical from

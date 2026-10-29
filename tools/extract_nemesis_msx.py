@@ -83,12 +83,30 @@ class Extractor:
             self.mirrors.append(dict(stage=stage,record_address=addr,vertical=vertical,source=source,destination=dest,flags=flags,count=count))
             addr+=4
         raise ValueError('Mirror table missing terminator')
+    def sprites(self,v,stage,twinbee=False):
+        # p00:4249: common block 0x86BB -> 0x1800, then two per-stage blocks from
+        # graficos_por_fase (base 0x42AD + 6*stage; stage 1 is at 0x42B3): source
+        # word and first sprite char (VRAM 0x1800 + 8*char). Stages 9-12 use the
+        # empty stream at p00:42FB as the second block. Stage 5 adds 0x8FCB -> 0x1D00
+        # (p00:427A). With F0F4 set (TwinBee cartridge, not used by Legends) 0x9963
+        # is loaded over 0x1800 (p00:428A).
+        self.rle(v,5,0x86bb,0x1800)
+        for i in range(2):
+            a=0x42ad+6*stage+3*i;src=self.word(0,a);char=self.byte(0,a+2)
+            self.rle(v,GFX[src&0xe000],src,0x1800+char*8)
+        if stage==5:self.rle(v,5,0x8fcb,0x1d00)
+        if twinbee:self.rle(v,5,0x9963,0x1800)
     def stage_vram(self,stage):
         v=bytearray(0x4000)
         self.load_records(v,0x932d)
         self.load_records(v,self.word(5,0x92e3+2*stage))
         self.mirror_table(v,0x92fb,stage,False);self.mirror_table(v,0x9313,stage,True)
-        self.rle(v,5,0x86bb,0x1800)
+        self.sprites(v,stage)
+        # Star characters: p00:475B blinks row 0 of chars F6 and F7 (VRAM 0x27B0 and
+        # 0x27B8) in the three thirds; a lit row is stored here. KNOWN BUG kept on
+        # purpose: F8 (first normal-shot char, real row 0 = 0xE7) is also overwritten.
+        # Fixing it changes the CP0016 ROM's shot tile, so the fix waits for the
+        # stage-graphics rebuild (phase 7). The asset catalogue uses the real F8.
         for tile in [0xf6,0xf7,0xf8]:
             for third in range(3):v[0x2000+third*0x800+tile*8]=0x10
         return v

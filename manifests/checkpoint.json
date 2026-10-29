@@ -1,7 +1,7 @@
 {
   "schema": 1,
-  "checkpoint": "CP0016",
-  "edition": "CHAPTER_FLOW_SCENE_PLACEHOLDER_AND_ASSET_BIBLE",
+  "checkpoint": "CP0017",
+  "edition": "PHASE1A_MSX_ASSET_CATALOGUE",
   "gameplay_changed": true,
   "project_directory": "Nemesis_Legends_CP0001",
   "rom": "build/native/Nemesis_Legends_CP0016.nes",
@@ -16,7 +16,7 @@
   "complete_game": false,
   "private_package": true,
   "source_repository": "llioncourt/NemesisLegendsNES",
-  "runtime_source_commit": "LOCAL_PENDING_PUBLICATION",
+  "runtime_source_commit": "acc58c2",
   "archived_recovery": "Nemesis_Legends_CP0004_Private_Recovery.zip",
   "archived_music": "Nemesis_Legends_Source_Music_CP0001.zip",
   "unchanged_game_sources": {
@@ -36,7 +36,7 @@
     "src/native_title.s": "0b1be108125be223341e3938e62accd426fb645e0c7540eb91da16a19e88d35e"
   },
   "cleanup_published_to_github": true,
-  "scope": "Campaign chapter index fixed (0-based module, 1-based runtime) so chapters 2-4 advance map to map through the real campaign module; mode 4 is a scene placeholder screen continuing through EVENT_SCENE_DONE; asset bible for Nemesis (60 objects, QA 57 PASS / 3 UNRESOLVED). Same ROM as the CP0016 work-in-progress build of 2026-10-27, now reproduced and pinned.",
+  "scope": "Phase 1a of docs/DECISIONS.md: code-proven, emulator-checked catalogue of every object and screen of the four MSX games (manifests/catalog_msx.json, docs/CATALOG_MSX.md: 511 objects, 3537 frames, 101 screens, 0 unmapped drawings in the openMSX runs). Nemesis extractor now loads the per-stage sprite blocks (47 -> 107 drawings). The playable ROM is the CP0016 ROM, unchanged.",
   "ui_changed": true,
   "baseline_runtime_commit": "0833559",
   "checkpoint_changed_sources": {
@@ -68,7 +68,11 @@
     "tools/test_vblank_budget.py": "29e9ae6330db3e4bb2b58385ec5df26771fc23aeda7f033650affbeafea0e7bc",
     "src/native_stage2.s": "750c050fe7cd94c50c96f3682f4580dc5630bf747716d8e2ad4ed2d6b9e7a99b",
     "tools/test_chapter_flow.py": "dc2f5ffcc654ae9a6208f5d2d51be6a1fd423c10883641b07b513c0f693591ab",
-    "tools/asset_bible.py": "4bce616af3a2e031646d7f97fac46a434973c0109ff555d161957637e5f4c56f"
+    "tools/asset_bible.py": "4bce616af3a2e031646d7f97fac46a434973c0109ff555d161957637e5f4c56f",
+    "tools/extract_nemesis_msx.py": "499927a9323e00b0f0f2df2f673d63e6d1a8a1218adb2e7b07dbb285f52ec119",
+    "tools/catalog_msx.py": "044623ba4ba8cb9bb284dba1150ca55301ba32bc00339415114b28cdf92b3244",
+    "tools/msx_capture.py": "447950ec1f0b9a46c2385b009b085be0bb221c3f327622b637928cb8caeac6d7",
+    "tools/nes_ppu_state.py": "e53aae37d59d41fa1c938f35769286891c98e3a71ca9c87e86c6caf09f321168"
   },
   "source_speed_preservation": "60Hz source-reference selectable; default 30Hz is a deliberately non-original accessibility mode",
   "stage3_normal_to_stage4_tested": true,
@@ -78,5 +82,7 @@
   "cheat_menu_tested": true,
   "nemesis2_maps_structurally_loadable": true,
   "nemesis3_maps_structurally_loadable": true,
-  "chapter_flow_structurally_tested": true
+  "chapter_flow_structurally_tested": true,
+  "rom_changed_in_this_checkpoint": false,
+  "msx_asset_catalogue": true
 }

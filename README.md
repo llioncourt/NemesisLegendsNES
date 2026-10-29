@@ -1,4 +1,4 @@
-# Nemesis Legends - CP0016: chapter flow through the campaign module, owner's scope fixed
+# Nemesis Legends - CP0017: Phase 1a, catalogue of every MSX asset
 
 **WIP / playable partial NES/Famicom MMC5 native port, not the completed saga.**
 
@@ -149,4 +149,4 @@ and commercial audio are **private recovery material**, not published here.
 Public Silicon Forge game releases use **IPS patches only**. The private ROM
 in the user package is for authorized local testing, not the public release.
 
-Current checkpoint: **CP0016 WIP**. No `Nemesis_Legends_NES_Final.nes` exists.
+Current checkpoint: **CP0017**. No `Nemesis_Legends_NES_Final.nes` exists.
