@@ -1,0 +1,1399 @@
+{
+ "schema": 1,
+ "generated": "2026-10-29",
+ "rule": "docs/DECISIONS.md, Music",
+ "counts": {
+  "nemesis": {
+   "codes": 23,
+   "CONVERT_MSX": 10,
+   "USE_NES": 12,
+   "SILENT_SLOT": 1
+  },
+  "nemesis2": {
+   "codes": 27,
+   "CONVERT_MSX": 25,
+   "SILENT_SLOT": 2
+  },
+  "salamander": {
+   "codes": 21,
+   "CONVERT_MSX": 15,
+   "USE_NES": 6
+  },
+  "nemesis3": {
+   "codes": 30,
+   "CONVERT_MSX": 26,
+   "USE_NES": 4
+  }
+ },
+ "chosen_from": {
+  "Gradius": 12,
+  "Gradius II": 5,
+  "Salamander FC": 5
+ },
+ "entries": [
+  {
+   "msx_game": "nemesis",
+   "msx_code": "0x13",
+   "msx_name": "Stage-4 eruption",
+   "kind": "jingle",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "effect-like sound with no melodic line: no NES tune has a significant aligned line or onset match (nearest: Gradius (NES) 0xF7 \"Player destroyed\", similarity 0.00)."
+  },
+  {
+   "msx_game": "nemesis",
+   "msx_code": "0x16",
+   "msx_name": "Stage 2 BGM",
+   "kind": "music",
+   "decision": "USE_NES",
+   "chosen": {
+    "nes_game": "gradius_nes",
+    "nes_code": "0x59"
+   },
+   "best_candidates": [
+    {
+     "nes_game": "gradius_nes",
+     "nes_code": "0x59",
+     "nes_title": "Beat Back (Stage 2)",
+     "similarity": 0.973,
+     "verdict": "same"
+    }
+   ],
+   "notes": "Same composition found in 1 NES tune(s). Chosen Gradius (NES) 0x59 \"Beat Back (Stage 2)\": same, 2 channels in use, MSX material present 0.96."
+  },
+  {
+   "msx_game": "nemesis",
+   "msx_code": "0x18",
+   "msx_name": "Stage 3 BGM",
+   "kind": "music",
+   "decision": "USE_NES",
+   "chosen": {
+    "nes_game": "gradius_nes",
+    "nes_code": "0x5B"
+   },
+   "best_candidates": [
+    {
+     "nes_game": "gradius_nes",
+     "nes_code": "0x5B",
+     "nes_title": "Blank Mask (Stage 3)",
+     "similarity": 1.0,
+     "verdict": "same"
+    }
+   ],
+   "notes": "Same composition found in 1 NES tune(s). Chosen Gradius (NES) 0x5B \"Blank Mask (Stage 3)\": same, 2 channels in use, MSX material present 1.00."
+  },
+  {
+   "msx_game": "nemesis",
+   "msx_code": "0x1A",
+   "msx_name": "Stage 4 BGM",
+   "kind": "music",
+   "decision": "USE_NES",
+   "chosen": {
+    "nes_game": "gradius_nes",
+    "nes_code": "0x5D"
+   },
+   "best_candidates": [
+    {
+     "nes_game": "gradius_nes",
+     "nes_code": "0x5D",
+     "nes_title": "Free Flyer (Stage 4)",
+     "similarity": 1.0,
+     "verdict": "same"
+    }
+   ],
+   "notes": "Same composition found in 1 NES tune(s). Chosen Gradius (NES) 0x5D \"Free Flyer (Stage 4)\": same, 2 channels in use, MSX material present 1.00."
+  },
+  {
+   "msx_game": "nemesis",
+   "msx_code": "0x1C",
+   "msx_name": "Stage 6 BGM",
+   "kind": "music",
+   "decision": "USE_NES",
+   "chosen": {
+    "nes_game": "gradius_nes",
+    "nes_code": "0x5F"
+   },
+   "best_candidates": [
+    {
+     "nes_game": "gradius_nes",
+     "nes_code": "0x5F",
+     "nes_title": "Mazed Music (Stage 5)",
+     "similarity": 0.98,
+     "verdict": "same"
+    }
+   ],
+   "notes": "Same composition found in 1 NES tune(s). Chosen Gradius (NES) 0x5F \"Mazed Music (Stage 5)\": same, 2 channels in use, MSX material present 0.97."
+  },
+  {
+   "msx_game": "nemesis",
+   "msx_code": "0x1E",
+   "msx_name": "Stage 7 BGM",
+   "kind": "music",
+   "decision": "USE_NES",
+   "chosen": {
+    "nes_game": "gradius_nes",
+    "nes_code": "0x61"
+   },
+   "best_candidates": [
+    {
+     "nes_game": "gradius_nes",
+     "nes_code": "0x61",
+     "nes_title": "Mechanical Globule (Stage 6)",
+     "similarity": 0.998,
+     "verdict": "same"
+    }
+   ],
+   "notes": "Same composition found in 1 NES tune(s). Chosen Gradius (NES) 0x61 \"Mechanical Globule (Stage 6)\": same, 2 channels in use, MSX material present 1.00."
+  },
+  {
+   "msx_game": "nemesis",
+   "msx_code": "0x20",
+   "msx_name": "Stage 8 BGM",
+   "kind": "music",
+   "decision": "USE_NES",
+   "chosen": {
+    "nes_game": "gradius_nes",
+    "nes_code": "0x63"
+   },
+   "best_candidates": [
+    {
+     "nes_game": "gradius_nes",
+     "nes_code": "0x63",
+     "nes_title": "Final Attack (Stage 7)",
+     "similarity": 1.0,
+     "verdict": "same"
+    }
+   ],
+   "notes": "Same composition found in 1 NES tune(s). Chosen Gradius (NES) 0x63 \"Final Attack (Stage 7)\": same, 2 channels in use, MSX material present 1.00."
+  },
+  {
+   "msx_game": "nemesis",
+   "msx_code": "0x22",
+   "msx_name": "Stage 5 BGM",
+   "kind": "music",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "MSX-only composition: no NES tune has a significant aligned line or onset match (nearest: Life Force (NES) 0x2B \"stage 3 theme\", similarity 0.21)."
+  },
+  {
+   "msx_game": "nemesis",
+   "msx_code": "0x24",
+   "msx_name": "Bonus stage BGM",
+   "kind": "music",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "MSX-only composition: no NES tune has a significant aligned line or onset match (nearest: Gradius (NES) 0x93 \"Beginning Of The History (Air Battle)\", similarity 0.15)."
+  },
+  {
+   "msx_game": "nemesis",
+   "msx_code": "0x26",
+   "msx_name": "Presentation tune",
+   "kind": "music",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "MSX-only composition: no NES tune has a significant aligned line or onset match (nearest: Life Force (NES) 0x3A \"boss theme\", similarity 0.22)."
+  },
+  {
+   "msx_game": "nemesis",
+   "msx_code": "0x29",
+   "msx_name": "Ending text tune",
+   "kind": "music",
+   "decision": "USE_NES",
+   "chosen": {
+    "nes_game": "gradius_nes",
+    "nes_code": "0xB2"
+   },
+   "best_candidates": [
+    {
+     "nes_game": "gradius_nes",
+     "nes_code": "0xB2",
+     "nes_title": "All Pattern Clear (Ending)",
+     "similarity": 0.631,
+     "verdict": "arrangement"
+    }
+   ],
+   "notes": "Same composition found in 1 NES tune(s). Chosen Gradius (NES) 0xB2 \"All Pattern Clear (Ending)\": arrangement, 3 channels in use, MSX material present 0.56."
+  },
+  {
+   "msx_game": "nemesis",
+   "msx_code": "0x2C",
+   "msx_name": "Stage opening BGM",
+   "kind": "music",
+   "decision": "USE_NES",
+   "chosen": {
+    "nes_game": "gradius_nes",
+    "nes_code": "0x93"
+   },
+   "best_candidates": [
+    {
+     "nes_game": "gradius_nes",
+     "nes_code": "0x93",
+     "nes_title": "Beginning Of The History (Air Battle)",
+     "similarity": 0.729,
+     "verdict": "arrangement"
+    }
+   ],
+   "notes": "Same composition found in 1 NES tune(s). Chosen Gradius (NES) 0x93 \"Beginning Of The History (Air Battle)\": arrangement, 3 channels in use, MSX material present 0.79."
+  },
+  {
+   "msx_game": "nemesis",
+   "msx_code": "0x2F",
+   "msx_name": "Stage 1 BGM",
+   "kind": "music",
+   "decision": "USE_NES",
+   "chosen": {
+    "nes_game": "gradius_nes",
+    "nes_code": "0x96"
+   },
+   "best_candidates": [
+    {
+     "nes_game": "gradius_nes",
+     "nes_code": "0x96",
+     "nes_title": "Challenger 1985 (Stage 1)",
+     "similarity": 1.0,
+     "verdict": "same"
+    }
+   ],
+   "notes": "Same composition found in 1 NES tune(s). Chosen Gradius (NES) 0x96 \"Challenger 1985 (Stage 1)\": same, 3 channels in use, MSX material present 1.00."
+  },
+  {
+   "msx_game": "nemesis",
+   "msx_code": "0x32",
+   "msx_name": "Stage-1 eruption",
+   "kind": "jingle",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "effect-like sound with no melodic line: no NES tune has a significant aligned line or onset match (nearest: Gradius (NES) 0xF7 \"Player destroyed\", similarity 0.00)."
+  },
+  {
+   "msx_game": "nemesis",
+   "msx_code": "0x35",
+   "msx_name": "Boss BGM",
+   "kind": "music",
+   "decision": "USE_NES",
+   "chosen": {
+    "nes_game": "gradius2_fc",
+    "nes_code": "0x74"
+   },
+   "best_candidates": [
+    {
+     "nes_game": "gradius_nes",
+     "nes_code": "0xA5",
+     "nes_title": "Aircraft Carrier (Boss)",
+     "similarity": 0.975,
+     "verdict": "same"
+    },
+    {
+     "nes_game": "lifeforce_nes",
+     "nes_code": "0x22",
+     "nes_title": "stage 5 battleship theme",
+     "similarity": 0.95,
+     "verdict": "arrangement"
+    },
+    {
+     "nes_game": "salamander_fc",
+     "nes_code": "0x22",
+     "nes_title": "Aircraft Carrier (Stage 5 interlude)",
+     "similarity": 0.95,
+     "verdict": "arrangement"
+    },
+    {
+     "nes_game": "gradius2_fc",
+     "nes_code": "0x74",
+     "nes_title": "GRADIUS 1 BOSS Theme (Stage 5-1)",
+     "similarity": 0.939,
+     "verdict": "arrangement"
+    }
+   ],
+   "notes": "Same composition found in 4 NES tune(s). Chosen Gradius II (FC) 0x74 \"GRADIUS 1 BOSS Theme (Stage 5-1)\": arrangement, 4 channels in use, MSX material present 0.88. Others: Gradius (NES) 0xA5 (same, 0.97); Life Force (NES) 0x22 (arrangement, 0.95); Salamander (FC) 0x22 (arrangement, 0.95)."
+  },
+  {
+   "msx_game": "nemesis",
+   "msx_code": "0x38",
+   "msx_name": "Ending, part 1",
+   "kind": "jingle",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "MSX-only composition: no NES tune has a significant aligned line or onset match (nearest: Gradius (NES) 0x5B \"Blank Mask (Stage 3)\", similarity 0.00)."
+  },
+  {
+   "msx_game": "nemesis",
+   "msx_code": "0x3B",
+   "msx_name": "Core destroyed / ending explosion",
+   "kind": "jingle",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "effect-like sound with no melodic line: no NES tune has a significant aligned line or onset match (nearest: Gradius II (FC) 0x7C \"Take Care! (Last Boss)\", similarity 0.00)."
+  },
+  {
+   "msx_game": "nemesis",
+   "msx_code": "0x3E",
+   "msx_name": "Screen crumble",
+   "kind": "jingle",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "effect-like sound with no melodic line: no NES tune has a significant aligned line or onset match (nearest: Gradius (NES) 0x36 \"1UP\", similarity 0.00)."
+  },
+  {
+   "msx_game": "nemesis",
+   "msx_code": "0x41",
+   "msx_name": "Stage cleared",
+   "kind": "jingle",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "effect-like sound with no melodic line: no NES tune has a significant aligned line or onset match (nearest: Gradius (NES) 0x36 \"1UP\", similarity 0.00)."
+  },
+  {
+   "msx_game": "nemesis",
+   "msx_code": "0x44",
+   "msx_name": "Ending, part 3",
+   "kind": "jingle",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "effect-like sound with no melodic line: no NES tune has a significant aligned line or onset match (nearest: Gradius (NES) 0x36 \"1UP\", similarity 0.00)."
+  },
+  {
+   "msx_game": "nemesis",
+   "msx_code": "0x47",
+   "msx_name": "Ship destroyed",
+   "kind": "jingle",
+   "decision": "USE_NES",
+   "chosen": {
+    "nes_game": "gradius_nes",
+    "nes_code": "0xF7"
+   },
+   "best_candidates": [
+    {
+     "nes_game": "gradius_nes",
+     "nes_code": "0xF7",
+     "nes_title": "Player destroyed",
+     "similarity": 0.542,
+     "verdict": "arrangement"
+    }
+   ],
+   "notes": "Same composition found in 1 NES tune(s). Chosen Gradius (NES) 0xF7 \"Player destroyed\": arrangement, 4 channels in use, MSX material present 0.00."
+  },
+  {
+   "msx_game": "nemesis",
+   "msx_code": "0x4A",
+   "msx_name": "Game over",
+   "kind": "jingle",
+   "decision": "USE_NES",
+   "chosen": {
+    "nes_game": "gradius_nes",
+    "nes_code": "0xAF"
+   },
+   "best_candidates": [
+    {
+     "nes_game": "gradius_nes",
+     "nes_code": "0xAF",
+     "nes_title": "Game Over",
+     "similarity": 1.0,
+     "verdict": "same"
+    }
+   ],
+   "notes": "Same composition found in 1 NES tune(s). Chosen Gradius (NES) 0xAF \"Game Over\": same, 3 channels in use, MSX material present 1.00."
+  },
+  {
+   "msx_game": "nemesis",
+   "msx_code": "0x4D",
+   "msx_name": "Silence",
+   "kind": "music",
+   "decision": "SILENT_SLOT",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "Silent: the engine plays no tone in 2 frame(s); nothing to match or convert (decision left null)."
+  },
+  {
+   "msx_game": "nemesis2",
+   "msx_code": "0x28",
+   "msx_name": "EMERGENCY warning alarm",
+   "kind": "jingle",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "effect-like sound with no melodic line: no NES tune has a significant aligned line or onset match (nearest: Gradius II (FC) 0x58 \"Fortress (Stage 2)\", similarity 0.00)."
+  },
+  {
+   "msx_game": "nemesis2",
+   "msx_code": "0x29",
+   "msx_name": "stage 0 (final fortress) BGM",
+   "kind": "music",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "MSX-only composition: no NES tune has a significant aligned line or onset match (nearest: Life Force (NES) 0x37 \"stage 6 theme\", similarity 0.15)."
+  },
+  {
+   "msx_game": "nemesis2",
+   "msx_code": "0x2A",
+   "msx_name": "empty music slot (silence) of the secret stages",
+   "kind": "music",
+   "decision": "SILENT_SLOT",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "Silent: the engine plays no tone in 2 frame(s); nothing to match or convert (decision left null)."
+  },
+  {
+   "msx_game": "nemesis2",
+   "msx_code": "0x2B",
+   "msx_name": "stage-start theme (first zone of stages 1-7)",
+   "kind": "music",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "MSX-only composition: no NES tune has a significant aligned line or onset match (nearest: Gradius (NES) 0xAF \"Game Over\", similarity 0.14)."
+  },
+  {
+   "msx_game": "nemesis2",
+   "msx_code": "0x2C",
+   "msx_name": "stage 1 BGM",
+   "kind": "music",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "MSX-only composition: no NES tune has a significant aligned line or onset match (nearest: Life Force (NES) 0x2B \"stage 3 theme\", similarity 0.20)."
+  },
+  {
+   "msx_game": "nemesis2",
+   "msx_code": "0x2D",
+   "msx_name": "stage 2 BGM",
+   "kind": "music",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "MSX-only composition: no NES tune has a significant aligned line or onset match (nearest: Gradius (NES) 0x93 \"Beginning Of The History (Air Battle)\", similarity 0.31)."
+  },
+  {
+   "msx_game": "nemesis2",
+   "msx_code": "0x2E",
+   "msx_name": "stage 3 BGM",
+   "kind": "music",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "MSX-only composition: no NES tune has a significant aligned line or onset match (nearest: Gradius II (FC) 0x78 \"SALAMANDER BOSS Theme (Stage 5-2)\", similarity 0.30)."
+  },
+  {
+   "msx_game": "nemesis2",
+   "msx_code": "0x2F",
+   "msx_name": "empty music slot (never requested)",
+   "kind": "music",
+   "decision": "SILENT_SLOT",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "Silent: the engine plays no tone in 2 frame(s); nothing to match or convert (decision left null)."
+  },
+  {
+   "msx_game": "nemesis2",
+   "msx_code": "0x30",
+   "msx_name": "stage 5 BGM",
+   "kind": "music",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "MSX-only composition: no NES tune has a significant aligned line or onset match (nearest: Gradius (NES) 0x96 \"Challenger 1985 (Stage 1)\", similarity 0.20)."
+  },
+  {
+   "msx_game": "nemesis2",
+   "msx_code": "0x31",
+   "msx_name": "stage 4 BGM",
+   "kind": "music",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "MSX-only composition: no NES tune has a significant aligned line or onset match (nearest: Gradius II (FC) 0x74 \"GRADIUS 1 BOSS Theme (Stage 5-1)\", similarity 0.18)."
+  },
+  {
+   "msx_game": "nemesis2",
+   "msx_code": "0x32",
+   "msx_name": "stage 6 BGM",
+   "kind": "music",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "MSX-only composition: no NES tune has a significant aligned line or onset match (nearest: Gradius II (FC) 0x70 \"The Final Enemy (Boss)\", similarity 0.13)."
+  },
+  {
+   "msx_game": "nemesis2",
+   "msx_code": "0x33",
+   "msx_name": "stage 7 BGM",
+   "kind": "music",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "MSX-only composition: no NES tune has a significant aligned line or onset match (nearest: Life Force (NES) 0x37 \"stage 6 theme\", similarity 0.18)."
+  },
+  {
+   "msx_game": "nemesis2",
+   "msx_code": "0x34",
+   "msx_name": "boss theme (end zone of stages 1-7, also the stage-6 event)",
+   "kind": "music",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "MSX-only composition: no NES tune has a significant aligned line or onset match (nearest: Gradius (NES) 0xAF \"Game Over\", similarity 0.21)."
+  },
+  {
+   "msx_game": "nemesis2",
+   "msx_code": "0x35",
+   "msx_name": "boss interior / final core theme",
+   "kind": "music",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "MSX-only composition: no NES tune has a significant aligned line or onset match (nearest: Gradius II (FC) 0x7C \"Take Care! (Last Boss)\", similarity 0.18)."
+  },
+  {
+   "msx_game": "nemesis2",
+   "msx_code": "0x36",
+   "msx_name": "secret stages BGM",
+   "kind": "music",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "MSX-only composition: no NES tune has a significant aligned line or onset match (nearest: Gradius (NES) 0xAF \"Game Over\", similarity 0.31)."
+  },
+  {
+   "msx_game": "nemesis2",
+   "msx_code": "0x37",
+   "msx_name": "interior ending: gate opens, YOU CAPTURED",
+   "kind": "jingle",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "effect-like sound with no melodic line: no NES tune has a significant aligned line or onset match (nearest: Gradius II (FC) 0x78 \"SALAMANDER BOSS Theme (Stage 5-2)\", similarity 0.00)."
+  },
+  {
+   "msx_game": "nemesis2",
+   "msx_code": "0x38",
+   "msx_name": "screen dissolves (boss, interior, event, core)",
+   "kind": "jingle",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "MSX-only composition: no NES tune has a significant aligned line or onset match (nearest: Gradius II (FC) 0x68 \"The Old Stone Age (Stage 4)\", similarity 0.00)."
+  },
+  {
+   "msx_game": "nemesis2",
+   "msx_code": "0x39",
+   "msx_name": "final core destroyed (rumble)",
+   "kind": "jingle",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "MSX-only composition: no NES tune has a significant aligned line or onset match (nearest: Life Force (NES) 0x2B \"stage 3 theme\", similarity 0.01)."
+  },
+  {
+   "msx_game": "nemesis2",
+   "msx_code": "0x3A",
+   "msx_name": "boss beaten",
+   "kind": "jingle",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "effect-like sound with no melodic line: no NES tune has a significant aligned line or onset match (nearest: Gradius (NES) 0xF7 \"Player destroyed\", similarity 0.00)."
+  },
+  {
+   "msx_game": "nemesis2",
+   "msx_code": "0x3B",
+   "msx_name": "boss / event piece blows up",
+   "kind": "jingle",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "effect-like sound with no melodic line: no NES tune has a significant aligned line or onset match (nearest: Gradius (NES) 0xAF \"Game Over\", similarity 0.00)."
+  },
+  {
+   "msx_game": "nemesis2",
+   "msx_code": "0x3C",
+   "msx_name": "Metalion flies off (interior exit, secret entrance, stage 0)",
+   "kind": "jingle",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "effect-like sound with no melodic line: no NES tune has a significant aligned line or onset match (nearest: Gradius II (FC) 0x84 \"GAME OVER\", similarity 0.00)."
+  },
+  {
+   "msx_game": "nemesis2",
+   "msx_code": "0x3D",
+   "msx_name": "Metalion destroyed",
+   "kind": "jingle",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "MSX-only composition: no NES tune has a significant aligned line or onset match (nearest: Gradius (NES) 0x96 \"Challenger 1985 (Stage 1)\", similarity 0.00)."
+  },
+  {
+   "msx_game": "nemesis2",
+   "msx_code": "0x3E",
+   "msx_name": "game start",
+   "kind": "jingle",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "MSX-only composition: no NES tune has a significant aligned line or onset match (nearest: Gradius II (FC) 0x4C \"Equipment (Select)\", similarity 0.36)."
+  },
+  {
+   "msx_game": "nemesis2",
+   "msx_code": "0x3F",
+   "msx_name": "story (attract)",
+   "kind": "music",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "MSX-only composition: no NES tune has a significant aligned line or onset match (nearest: Gradius (NES) 0x63 \"Final Attack (Stage 7)\", similarity 0.18)."
+  },
+  {
+   "msx_game": "nemesis2",
+   "msx_code": "0x40",
+   "msx_name": "interlude after stage 7 (return order)",
+   "kind": "music",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "MSX-only composition: no NES tune has a significant aligned line or onset match (nearest: Gradius II (FC) 0x50 \"TABIDACHI (Air Battle)\", similarity 0.04)."
+  },
+  {
+   "msx_game": "nemesis2",
+   "msx_code": "0x41",
+   "msx_name": "true ending",
+   "kind": "music",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "MSX-only composition: no NES tune has a significant aligned line or onset match (nearest: Life Force (NES) 0x37 \"stage 6 theme\", similarity 0.14)."
+  },
+  {
+   "msx_game": "nemesis2",
+   "msx_code": "0x42",
+   "msx_name": "game over",
+   "kind": "jingle",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "MSX-only composition: no NES tune has a significant aligned line or onset match (nearest: Gradius II (FC) 0x4C \"Equipment (Select)\", similarity 0.22)."
+  },
+  {
+   "msx_game": "salamander",
+   "msx_code": "0x19",
+   "msx_name": "Stage 7 (OPERATION X)",
+   "kind": "music",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "MSX-only composition: no NES tune has a significant aligned line or onset match (nearest: Life Force (NES) 0x37 \"stage 6 theme\", similarity 0.14)."
+  },
+  {
+   "msx_game": "salamander",
+   "msx_code": "0x1B",
+   "msx_name": "Stage 1",
+   "kind": "music",
+   "decision": "USE_NES",
+   "chosen": {
+    "nes_game": "salamander_fc",
+    "nes_code": "0x25"
+   },
+   "best_candidates": [
+    {
+     "nes_game": "lifeforce_nes",
+     "nes_code": "0x25",
+     "nes_title": "stage 1 theme",
+     "similarity": 0.947,
+     "verdict": "same"
+    },
+    {
+     "nes_game": "salamander_fc",
+     "nes_code": "0x25",
+     "nes_title": "Power of Anger (Stage 1)",
+     "similarity": 0.947,
+     "verdict": "same"
+    }
+   ],
+   "notes": "Same composition found in 2 NES tune(s). Chosen Salamander (FC) 0x25 \"Power of Anger (Stage 1)\": same, 4 channels in use, MSX material present 0.92. Others: Life Force (NES) 0x25 (same, 0.95)."
+  },
+  {
+   "msx_game": "salamander",
+   "msx_code": "0x1C",
+   "msx_name": "Stage 2",
+   "kind": "music",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "MSX-only composition: no NES tune has a significant aligned line or onset match (nearest: Gradius (NES) 0x61 \"Mechanical Globule (Stage 6)\", similarity 0.20)."
+  },
+  {
+   "msx_game": "salamander",
+   "msx_code": "0x1D",
+   "msx_name": "Stage 4",
+   "kind": "music",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "MSX-only composition: no NES tune has a significant aligned line or onset match (nearest: Life Force (NES) 0x37 \"stage 6 theme\", similarity 0.24)."
+  },
+  {
+   "msx_game": "salamander",
+   "msx_code": "0x1E",
+   "msx_name": "Stage 3",
+   "kind": "music",
+   "decision": "USE_NES",
+   "chosen": {
+    "nes_game": "salamander_fc",
+    "nes_code": "0x28"
+   },
+   "best_candidates": [
+    {
+     "nes_game": "lifeforce_nes",
+     "nes_code": "0x28",
+     "nes_title": "stage 2 theme",
+     "similarity": 0.833,
+     "verdict": "arrangement"
+    },
+    {
+     "nes_game": "salamander_fc",
+     "nes_code": "0x28",
+     "nes_title": "Starfield (Stage 2)",
+     "similarity": 0.833,
+     "verdict": "arrangement"
+    }
+   ],
+   "notes": "Same composition found in 2 NES tune(s). Chosen Salamander (FC) 0x28 \"Starfield (Stage 2)\": arrangement, 4 channels in use, MSX material present 0.68. Others: Life Force (NES) 0x28 (arrangement, 0.83)."
+  },
+  {
+   "msx_game": "salamander",
+   "msx_code": "0x1F",
+   "msx_name": "Stage 5",
+   "kind": "music",
+   "decision": "USE_NES",
+   "chosen": {
+    "nes_game": "salamander_fc",
+    "nes_code": "0x2E"
+   },
+   "best_candidates": [
+    {
+     "nes_game": "lifeforce_nes",
+     "nes_code": "0x2E",
+     "nes_title": "stage 4 theme",
+     "similarity": 0.882,
+     "verdict": "arrangement"
+    },
+    {
+     "nes_game": "salamander_fc",
+     "nes_code": "0x2E",
+     "nes_title": "Burn the Wind (Stage 4)",
+     "similarity": 0.882,
+     "verdict": "arrangement"
+    }
+   ],
+   "notes": "Same composition found in 2 NES tune(s). Chosen Salamander (FC) 0x2E \"Burn the Wind (Stage 4)\": arrangement, 4 channels in use, MSX material present 0.80. Others: Life Force (NES) 0x2E (arrangement, 0.88)."
+  },
+  {
+   "msx_game": "salamander",
+   "msx_code": "0x20",
+   "msx_name": "Stage 6",
+   "kind": "music",
+   "decision": "USE_NES",
+   "chosen": {
+    "nes_game": "salamander_fc",
+    "nes_code": "0x37"
+   },
+   "best_candidates": [
+    {
+     "nes_game": "lifeforce_nes",
+     "nes_code": "0x37",
+     "nes_title": "stage 6 theme",
+     "similarity": 0.876,
+     "verdict": "arrangement"
+    },
+    {
+     "nes_game": "salamander_fc",
+     "nes_code": "0x37",
+     "nes_title": "Destroy Them All (Stage 6)",
+     "similarity": 0.876,
+     "verdict": "arrangement"
+    }
+   ],
+   "notes": "Same composition found in 2 NES tune(s). Chosen Salamander (FC) 0x37 \"Destroy Them All (Stage 6)\": arrangement, 4 channels in use, MSX material present 0.84. Others: Life Force (NES) 0x37 (arrangement, 0.88)."
+  },
+  {
+   "msx_game": "salamander",
+   "msx_code": "0x21",
+   "msx_name": "Boss",
+   "kind": "music",
+   "decision": "USE_NES",
+   "chosen": {
+    "nes_game": "gradius2_fc",
+    "nes_code": "0x78"
+   },
+   "best_candidates": [
+    {
+     "nes_game": "gradius2_fc",
+     "nes_code": "0x78",
+     "nes_title": "SALAMANDER BOSS Theme (Stage 5-2)",
+     "similarity": 0.857,
+     "verdict": "arrangement"
+    },
+    {
+     "nes_game": "lifeforce_nes",
+     "nes_code": "0x3A",
+     "nes_title": "boss theme",
+     "similarity": 0.791,
+     "verdict": "arrangement"
+    },
+    {
+     "nes_game": "salamander_fc",
+     "nes_code": "0x3A",
+     "nes_title": "Poison of Snake (Boss)",
+     "similarity": 0.791,
+     "verdict": "arrangement"
+    }
+   ],
+   "notes": "Same composition found in 3 NES tune(s). Chosen Gradius II (FC) 0x78 \"SALAMANDER BOSS Theme (Stage 5-2)\": arrangement, 4 channels in use, MSX material present 0.79. Others: Life Force (NES) 0x3A (arrangement, 0.79); Salamander (FC) 0x3A (arrangement, 0.79)."
+  },
+  {
+   "msx_game": "salamander",
+   "msx_code": "0x22",
+   "msx_name": "Hidden-item result",
+   "kind": "music",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "MSX-only composition: no NES tune has a significant aligned line or onset match (nearest: Life Force (NES) 0x37 \"stage 6 theme\", similarity 0.10)."
+  },
+  {
+   "msx_game": "salamander",
+   "msx_code": "0x24",
+   "msx_name": "Boss destroyed",
+   "kind": "jingle",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "MSX-only composition: no NES tune has a significant aligned line or onset match (nearest: Gradius II (FC) 0x70 \"The Final Enemy (Boss)\", similarity 0.00)."
+  },
+  {
+   "msx_game": "salamander",
+   "msx_code": "0x25",
+   "msx_name": "Boss destroyed (bosses 1, 2, 4 and the stage-7 core; same notes as 0x4E)",
+   "kind": "jingle",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "effect-like sound with no melodic line: no NES tune has a significant aligned line or onset match (nearest: Gradius (NES) 0xAF \"Game Over\", similarity 0.00)."
+  },
+  {
+   "msx_game": "salamander",
+   "msx_code": "0x27",
+   "msx_name": "Ship explodes",
+   "kind": "jingle",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "MSX-only composition: no NES tune has a significant aligned line or onset match (nearest: Gradius (NES) 0x96 \"Challenger 1985 (Stage 1)\", similarity 0.00)."
+  },
+  {
+   "msx_game": "salamander",
+   "msx_code": "0x28",
+   "msx_name": "Take-off",
+   "kind": "jingle",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "effect-like sound with no melodic line: no NES tune has a significant aligned line or onset match (nearest: Gradius II (FC) 0x7C \"Take Care! (Last Boss)\", similarity 0.00)."
+  },
+  {
+   "msx_game": "salamander",
+   "msx_code": "0x2E",
+   "msx_name": "Story opening tune (docs: \"The title\")",
+   "kind": "jingle",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "MSX-only composition: no NES tune has a significant aligned line or onset match (nearest: Gradius (NES) 0x61 \"Mechanical Globule (Stage 6)\", similarity 0.33)."
+  },
+  {
+   "msx_game": "salamander",
+   "msx_code": "0x2F",
+   "msx_name": "Between stages",
+   "kind": "music",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "MSX-only composition: no NES tune has a significant aligned line or onset match (nearest: Gradius (NES) 0x61 \"Mechanical Globule (Stage 6)\", similarity 0.12)."
+  },
+  {
+   "msx_game": "salamander",
+   "msx_code": "0x30",
+   "msx_name": "Ending without Nemesis 2 / crystal",
+   "kind": "music",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "MSX-only composition: no NES tune has a significant aligned line or onset match (nearest: Gradius II (FC) 0x78 \"SALAMANDER BOSS Theme (Stage 5-2)\", similarity 0.12)."
+  },
+  {
+   "msx_game": "salamander",
+   "msx_code": "0x31",
+   "msx_name": "Good ending",
+   "kind": "music",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "MSX-only composition: no NES tune has a significant aligned line or onset match (nearest: Life Force (NES) 0x2B \"stage 3 theme\", similarity 0.12)."
+  },
+  {
+   "msx_game": "salamander",
+   "msx_code": "0x32",
+   "msx_name": "Game over",
+   "kind": "jingle",
+   "decision": "USE_NES",
+   "chosen": {
+    "nes_game": "salamander_fc",
+    "nes_code": "0x3D"
+   },
+   "best_candidates": [
+    {
+     "nes_game": "lifeforce_nes",
+     "nes_code": "0x3D",
+     "nes_title": "game over",
+     "similarity": 0.966,
+     "verdict": "same"
+    },
+    {
+     "nes_game": "salamander_fc",
+     "nes_code": "0x3D",
+     "nes_title": "Crystal Forever (Game Over)",
+     "similarity": 0.966,
+     "verdict": "same"
+    }
+   ],
+   "notes": "Same composition found in 2 NES tune(s). Chosen Salamander (FC) 0x3D \"Crystal Forever (Game Over)\": same, 3 channels in use, MSX material present 0.95. Others: Life Force (NES) 0x3D (same, 0.97)."
+  },
+  {
+   "msx_game": "salamander",
+   "msx_code": "0x34",
+   "msx_name": "Intro window (KONAMI PRESENTS)",
+   "kind": "jingle",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "effect-like sound with no melodic line: no NES tune has a significant aligned line or onset match (nearest: Life Force (NES) 0x43 \"game start\", similarity 0.00)."
+  },
+  {
+   "msx_game": "salamander",
+   "msx_code": "0x48",
+   "msx_name": "The ship leaves",
+   "kind": "jingle",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "MSX-only composition: no NES tune has a significant aligned line or onset match (nearest: Gradius (NES) 0xF7 \"Player destroyed\", similarity 0.00)."
+  },
+  {
+   "msx_game": "salamander",
+   "msx_code": "0x4E",
+   "msx_name": "Title logo jingle (docs: \"The Konami logo\")",
+   "kind": "jingle",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "effect-like sound with no melodic line: no NES tune has a significant aligned line or onset match (nearest: Gradius (NES) 0xAF \"Game Over\", similarity 0.00)."
+  },
+  {
+   "msx_game": "nemesis3",
+   "msx_code": "0x04",
+   "msx_name": "At the start of stages 3 and 5-9",
+   "kind": "music",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "MSX-only composition: no NES tune has a significant aligned line or onset match (nearest: Life Force (NES) 0x28 \"stage 2 theme\", similarity 0.25)."
+  },
+  {
+   "msx_game": "nemesis3",
+   "msx_code": "0x05",
+   "msx_name": "The bosses",
+   "kind": "music",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "MSX-only composition: no NES tune has a significant aligned line or onset match (nearest: Gradius (NES) 0xAF \"Game Over\", similarity 0.29)."
+  },
+  {
+   "msx_game": "nemesis3",
+   "msx_code": "0x06",
+   "msx_name": "Stage 1",
+   "kind": "music",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "MSX-only composition: no NES tune has a significant aligned line or onset match (nearest: Gradius (NES) 0x93 \"Beginning Of The History (Air Battle)\", similarity 0.27)."
+  },
+  {
+   "msx_game": "nemesis3",
+   "msx_code": "0x07",
+   "msx_name": "Stage 2",
+   "kind": "music",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "MSX-only composition: no NES tune has a significant aligned line or onset match (nearest: Life Force (NES) 0x2B \"stage 3 theme\", similarity 0.20)."
+  },
+  {
+   "msx_game": "nemesis3",
+   "msx_code": "0x08",
+   "msx_name": "Stage 3",
+   "kind": "music",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "MSX-only composition: no NES tune has a significant aligned line or onset match (nearest: Gradius II (FC) 0x58 \"Fortress (Stage 2)\", similarity 0.18)."
+  },
+  {
+   "msx_game": "nemesis3",
+   "msx_code": "0x09",
+   "msx_name": "Stage 4: bosses 0x01 and 0x03",
+   "kind": "music",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "MSX-only composition: no NES tune has a significant aligned line or onset match (nearest: Gradius II (FC) 0x7C \"Take Care! (Last Boss)\", similarity 0.20)."
+  },
+  {
+   "msx_game": "nemesis3",
+   "msx_code": "0x0A",
+   "msx_name": "Stage 4 and its fourth boss",
+   "kind": "music",
+   "decision": "USE_NES",
+   "chosen": {
+    "nes_game": "gradius2_fc",
+    "nes_code": "0x74"
+   },
+   "best_candidates": [
+    {
+     "nes_game": "lifeforce_nes",
+     "nes_code": "0x22",
+     "nes_title": "stage 5 battleship theme",
+     "similarity": 0.896,
+     "verdict": "same"
+    },
+    {
+     "nes_game": "salamander_fc",
+     "nes_code": "0x22",
+     "nes_title": "Aircraft Carrier (Stage 5 interlude)",
+     "similarity": 0.896,
+     "verdict": "same"
+    },
+    {
+     "nes_game": "gradius2_fc",
+     "nes_code": "0x74",
+     "nes_title": "GRADIUS 1 BOSS Theme (Stage 5-1)",
+     "similarity": 0.892,
+     "verdict": "same"
+    },
+    {
+     "nes_game": "gradius_nes",
+     "nes_code": "0xA5",
+     "nes_title": "Aircraft Carrier (Boss)",
+     "similarity": 0.882,
+     "verdict": "arrangement"
+    }
+   ],
+   "notes": "Same composition found in 4 NES tune(s). Chosen Gradius II (FC) 0x74 \"GRADIUS 1 BOSS Theme (Stage 5-1)\": same, 4 channels in use, MSX material present 0.83. Others: Life Force (NES) 0x22 (same, 0.90); Salamander (FC) 0x22 (same, 0.90); Gradius (NES) 0xA5 (arrangement, 0.88)."
+  },
+  {
+   "msx_game": "nemesis3",
+   "msx_code": "0x0B",
+   "msx_name": "Stage 4: boss 0x0B",
+   "kind": "music",
+   "decision": "USE_NES",
+   "chosen": {
+    "nes_game": "gradius2_fc",
+    "nes_code": "0x78"
+   },
+   "best_candidates": [
+    {
+     "nes_game": "gradius2_fc",
+     "nes_code": "0x78",
+     "nes_title": "SALAMANDER BOSS Theme (Stage 5-2)",
+     "similarity": 0.877,
+     "verdict": "arrangement"
+    },
+    {
+     "nes_game": "lifeforce_nes",
+     "nes_code": "0x3A",
+     "nes_title": "boss theme",
+     "similarity": 0.787,
+     "verdict": "arrangement"
+    },
+    {
+     "nes_game": "salamander_fc",
+     "nes_code": "0x3A",
+     "nes_title": "Poison of Snake (Boss)",
+     "similarity": 0.787,
+     "verdict": "arrangement"
+    }
+   ],
+   "notes": "Same composition found in 3 NES tune(s). Chosen Gradius II (FC) 0x78 \"SALAMANDER BOSS Theme (Stage 5-2)\": arrangement, 4 channels in use, MSX material present 0.77. Others: Life Force (NES) 0x3A (arrangement, 0.79); Salamander (FC) 0x3A (arrangement, 0.79)."
+  },
+  {
+   "msx_game": "nemesis3",
+   "msx_code": "0x0C",
+   "msx_name": "Stage 5",
+   "kind": "music",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "MSX-only composition: no NES tune has a significant aligned line or onset match (nearest: Life Force (NES) 0x2B \"stage 3 theme\", similarity 0.17)."
+  },
+  {
+   "msx_game": "nemesis3",
+   "msx_code": "0x0D",
+   "msx_name": "Stage 9",
+   "kind": "music",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "MSX-only composition: no NES tune has a significant aligned line or onset match (nearest: Gradius (NES) 0x61 \"Mechanical Globule (Stage 6)\", similarity 0.16)."
+  },
+  {
+   "msx_game": "nemesis3",
+   "msx_code": "0x0E",
+   "msx_name": "Stage 11",
+   "kind": "music",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "MSX-only composition: no NES tune has a significant aligned line or onset match (nearest: Gradius (NES) 0x61 \"Mechanical Globule (Stage 6)\", similarity 0.17)."
+  },
+  {
+   "msx_game": "nemesis3",
+   "msx_code": "0x3D",
+   "msx_name": "Game over",
+   "kind": "jingle",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "MSX-only composition: no NES tune has a significant aligned line or onset match (nearest: Life Force (NES) 0x37 \"stage 6 theme\", similarity 0.00)."
+  },
+  {
+   "msx_game": "nemesis3",
+   "msx_code": "0x3E",
+   "msx_name": "The story, second part",
+   "kind": "music",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "MSX-only composition: no NES tune has a significant aligned line or onset match (nearest: Gradius II (FC) 0x70 \"The Final Enemy (Boss)\", similarity 0.18)."
+  },
+  {
+   "msx_game": "nemesis3",
+   "msx_code": "0x3F",
+   "msx_name": "The on-board computer and the secret weapon",
+   "kind": "music",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "MSX-only composition: no NES tune has a significant aligned line or onset match (nearest: Gradius II (FC) 0x4C \"Equipment (Select)\", similarity 0.27)."
+  },
+  {
+   "msx_game": "nemesis3",
+   "msx_code": "0x40",
+   "msx_name": "The ending: Venom's message",
+   "kind": "music",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "MSX-only composition: no NES tune has a significant aligned line or onset match (nearest: Gradius II (FC) 0x54 \"Burning Heat (Stage 1)\", similarity 0.04)."
+  },
+  {
+   "msx_game": "nemesis3",
+   "msx_code": "0x41",
+   "msx_name": "The ending: after the message",
+   "kind": "music",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "MSX-only composition: no NES tune has a significant aligned line or onset match (nearest: Gradius II (FC) 0x70 \"The Final Enemy (Boss)\", similarity 0.13)."
+  },
+  {
+   "msx_game": "nemesis3",
+   "msx_code": "0x42",
+   "msx_name": "The ending: the rescue of James Burton",
+   "kind": "music",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "MSX-only composition: no NES tune has a significant aligned line or onset match (nearest: Gradius II (FC) 0x58 \"Fortress (Stage 2)\", similarity 0.14)."
+  },
+  {
+   "msx_game": "nemesis3",
+   "msx_code": "0x43",
+   "msx_name": "Before choosing the ship",
+   "kind": "jingle",
+   "decision": "USE_NES",
+   "chosen": {
+    "nes_game": "gradius_nes",
+    "nes_code": "0x90"
+   },
+   "best_candidates": [
+    {
+     "nes_game": "gradius_nes",
+     "nes_code": "0x90",
+     "nes_title": "Game start",
+     "similarity": 0.955,
+     "verdict": "same"
+    },
+    {
+     "nes_game": "gradius2_fc",
+     "nes_code": "0x49",
+     "nes_title": "Game start (coin)",
+     "similarity": 0.955,
+     "verdict": "same"
+    }
+   ],
+   "notes": "Same composition found in 2 NES tune(s). Chosen Gradius (NES) 0x90 \"Game start\": same, 3 channels in use, MSX material present 0.00. Others: Gradius II (FC) 0x49 (same, 0.95)."
+  },
+  {
+   "msx_game": "nemesis3",
+   "msx_code": "0x44",
+   "msx_name": "Stage 6",
+   "kind": "music",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "MSX-only composition: no NES tune has a significant aligned line or onset match (nearest: Gradius II (FC) 0x50 \"TABIDACHI (Air Battle)\", similarity 0.17)."
+  },
+  {
+   "msx_game": "nemesis3",
+   "msx_code": "0x45",
+   "msx_name": "Stage 7",
+   "kind": "music",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "MSX-only composition: no NES tune has a significant aligned line or onset match (nearest: Gradius II (FC) 0x54 \"Burning Heat (Stage 1)\", similarity 0.10)."
+  },
+  {
+   "msx_game": "nemesis3",
+   "msx_code": "0x46",
+   "msx_name": "Stage 8",
+   "kind": "music",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "MSX-only composition: no NES tune has a significant aligned line or onset match (nearest: Gradius II (FC) 0x78 \"SALAMANDER BOSS Theme (Stage 5-2)\", similarity 0.12)."
+  },
+  {
+   "msx_game": "nemesis3",
+   "msx_code": "0x47",
+   "msx_name": "Stage 10",
+   "kind": "music",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "MSX-only composition: no NES tune has a significant aligned line or onset match (nearest: Gradius (NES) 0x93 \"Beginning Of The History (Air Battle)\", similarity 0.12)."
+  },
+  {
+   "msx_game": "nemesis3",
+   "msx_code": "0x48",
+   "msx_name": "Choosing the ship",
+   "kind": "music",
+   "decision": "USE_NES",
+   "chosen": {
+    "nes_game": "gradius2_fc",
+    "nes_code": "0x4C"
+   },
+   "best_candidates": [
+    {
+     "nes_game": "gradius2_fc",
+     "nes_code": "0x4C",
+     "nes_title": "Equipment (Select)",
+     "similarity": 0.796,
+     "verdict": "arrangement"
+    }
+   ],
+   "notes": "Same composition found in 1 NES tune(s). Chosen Gradius II (FC) 0x4C \"Equipment (Select)\": arrangement, 4 channels in use, MSX material present 0.56."
+  },
+  {
+   "msx_game": "nemesis3",
+   "msx_code": "0x49",
+   "msx_name": "Ending: the extra step with the Space-Fighter Shield (good ending only)",
+   "kind": "music",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "MSX-only composition: no NES tune has a significant aligned line or onset match (nearest: Life Force (NES) 0x3A \"boss theme\", similarity 0.28)."
+  },
+  {
+   "msx_game": "nemesis3",
+   "msx_code": "0x4A",
+   "msx_name": "The story, first part",
+   "kind": "music",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "MSX-only composition: no NES tune has a significant aligned line or onset match (nearest: Gradius II (FC) 0x50 \"TABIDACHI (Air Battle)\", similarity 0.08)."
+  },
+  {
+   "msx_game": "nemesis3",
+   "msx_code": "0x4B",
+   "msx_name": "Ship destroyed",
+   "kind": "jingle",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "MSX-only composition: no NES tune has a significant aligned line or onset match (nearest: Gradius II (FC) 0x7C \"Take Care! (Last Boss)\", similarity 0.00)."
+  },
+  {
+   "msx_game": "nemesis3",
+   "msx_code": "0x4C",
+   "msx_name": "A boss falls",
+   "kind": "jingle",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "MSX-only composition: no NES tune has a significant aligned line or onset match (nearest: Life Force (NES) 0x34 \"stage 5 theme after the battleships\", similarity 0.00)."
+  },
+  {
+   "msx_game": "nemesis3",
+   "msx_code": "0x4F",
+   "msx_name": "The secret weapon blueprint",
+   "kind": "music",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "effect-like sound with no melodic line: no NES tune has a significant aligned line or onset match (nearest: Gradius (NES) 0x36 \"1UP\", similarity 0.00)."
+  },
+  {
+   "msx_game": "nemesis3",
+   "msx_code": "0x50",
+   "msx_name": "The ship leaves at the end of the stage",
+   "kind": "jingle",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "effect-like sound with no melodic line: no NES tune has a significant aligned line or onset match (nearest: Gradius II (FC) 0x84 \"GAME OVER\", similarity 0.00)."
+  },
+  {
+   "msx_game": "nemesis3",
+   "msx_code": "0x51",
+   "msx_name": "Title: the logo comes together",
+   "kind": "jingle",
+   "decision": "CONVERT_MSX",
+   "chosen": null,
+   "best_candidates": [],
+   "notes": "effect-like sound with no melodic line: no NES tune has a significant aligned line or onset match (nearest: Gradius II (FC) 0x3A \"Gofer destroyed\", similarity 0.00)."
+  }
+ ]
+}

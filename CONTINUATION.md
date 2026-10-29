@@ -1,7 +1,7 @@
-# NEMESIS LEGENDS NES - CONTINUATION (CP0022, 2026-10-29)
+# NEMESIS LEGENDS NES - CONTINUATION (CP0023, 2026-10-29)
 
 Repository: https://github.com/llioncourt/NemesisLegendsNES (`main`).
-Last pinned checkpoint: **CP0022** (Phase 2b, stage graphics vs NES). The playable ROM is
+Last pinned checkpoint: **CP0023** (Phase 2c, music vs NES; Phase 2 complete). The playable ROM is
 still `build/native/Nemesis_Legends_CP0016.nes` (sha256 in `manifests/checkpoint.json`). Do not reset or abandon the native
 motor. Public distribution: IPS only; source ROMs and derived graphics/audio
 stay private.
@@ -115,9 +115,20 @@ core (NES) were used on 2026-10-28 to capture the player ships in game.
   ending, secret room; Nemesis 2 interlude and ending). Shared themes agree across games:
   every fortress uses Gradius II stage 6, Moai Gradius II stage 4, cell stages Salamander FC
   stage 1, Nemesis volcano stages the Gradius II volcano section.
-- **2c, music (CP0023):** each MSX tune against the NES tunes (same compositions).
+- **2c, music (CP0023, done):** `manifests/music_choice.json`, `docs/MUSIC_CHOICE.md`
+  (`tools/music_choice.py`). 101 MSX music/jingle codes compared by notes (each game's own
+  driver, transposition-invariant) with 62 NES codes: USE_NES 22 (Nemesis 12 from Gradius,
+  boss theme from Gradius II; Salamander 6 from Salamander FC / Gradius II; Nemesis 3 4),
+  CONVERT_MSX 76 (all of Nemesis 2's music is its own), 3 silent slots. The Gradius boss
+  theme ("Aircraft Carrier") used by Nemesis, Nemesis 3 and Life Force maps to Gradius II
+  0x74 everywhere; the Salamander boss theme to Gradius II 0x78. Life Force and Salamander FC
+  play bit-identical music.
 
 ## Next concrete action
 
-Phase 2b and 2c as above, then Phase 3 (consistency: one visual per asset across the four
-chapters, behaviour kept per game) and Phase 4 (Gradius II art direction).
+Phase 3 (consistency): every asset that appears in more than one MSX game (enemy, boss,
+stage element, music) becomes ONE Legends asset with one visual, keeping each game's own
+behaviour. Start from the shared NES choices of phase 2 (same chosen NES object or tune =
+same asset), add the MSX-only assets shared between games (identical or near-identical MSX
+drawings, e.g. Nemesis 2 data reused by Salamander stage 7), and publish the Legends asset
+registry. Then Phase 4 (Gradius II art direction).

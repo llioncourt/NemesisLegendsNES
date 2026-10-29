@@ -1,3 +1,10 @@
+# CP0023 handoff (2026-10-29) - Phase 2c, music vs NES; Phase 2 complete
+
+Every MSX music and jingle compared note by note with the NES music (each game's own driver):
+`manifests/music_choice.json`, `docs/MUSIC_CHOICE.md`. 22 use the NES version, 76 will be
+converted (APU and MMC5 arrangements, later). Phase 2 (objects, stage graphics, music) is
+complete. ROM unchanged (CP0016). Next: Phase 3 (consistency).
+
 # CP0022 handoff (2026-10-29) - Phase 2b, stage graphics vs NES
 
 For every stage record of the four MSX games, the NES stage whose tiles, palettes and
