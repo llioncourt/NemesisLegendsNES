@@ -1,3 +1,12 @@
+# CP0018 handoff (2026-10-29) - Phase 1b, NES asset catalogue
+
+Every object and screen of Gradius (NES US / Famicom JP), Gradius II (Famicom), Life Force
+(NES US / Rev 1) and Salamander (Famicom), identified in the running games (each game's own
+sprite builder re-run on the saved RAM of every frame; OAM pixel-verified; palettes from
+palette RAM; CHR-RAM from `tools/nes_ppu_state.py`): `manifests/catalog_nes.json`,
+`docs/CATALOG_NES.md`. 427 objects, 2800 frames. ROM unchanged (CP0016). Music catalogue
+of the MSX games started (`tools/catalog_music.py`).
+
 # CP0017 handoff (2026-10-29) - Phase 1a, MSX asset catalogue
 
 Every object and screen of the four MSX games catalogued from the code and checked in

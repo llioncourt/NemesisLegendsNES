@@ -1,7 +1,7 @@
 {
   "schema": 1,
-  "checkpoint": "CP0017",
-  "edition": "PHASE1A_MSX_ASSET_CATALOGUE",
+  "checkpoint": "CP0018",
+  "edition": "PHASE1B_NES_ASSET_CATALOGUE",
   "gameplay_changed": true,
   "project_directory": "Nemesis_Legends_CP0001",
   "rom": "build/native/Nemesis_Legends_CP0016.nes",
@@ -36,7 +36,7 @@
     "src/native_title.s": "0b1be108125be223341e3938e62accd426fb645e0c7540eb91da16a19e88d35e"
   },
   "cleanup_published_to_github": true,
-  "scope": "Phase 1a of docs/DECISIONS.md: code-proven, emulator-checked catalogue of every object and screen of the four MSX games (manifests/catalog_msx.json, docs/CATALOG_MSX.md: 511 objects, 3537 frames, 101 screens, 0 unmapped drawings in the openMSX runs). Nemesis extractor now loads the per-stage sprite blocks (47 -> 107 drawings). The playable ROM is the CP0016 ROM, unchanged.",
+  "scope": "Phase 1b of docs/DECISIONS.md: catalogue of every object and screen of the NES/Famicom Gradius games (manifests/catalog_nes.json, docs/CATALOG_NES.md: 427 objects, 2800 frames, 2674 pixel-verified, 54 screens). Phase 1a MSX catalogue in manifests/catalog_msx.json. The playable ROM is the CP0016 ROM, unchanged.",
   "ui_changed": true,
   "baseline_runtime_commit": "0833559",
   "checkpoint_changed_sources": {
@@ -72,7 +72,9 @@
     "tools/extract_nemesis_msx.py": "499927a9323e00b0f0f2df2f673d63e6d1a8a1218adb2e7b07dbb285f52ec119",
     "tools/catalog_msx.py": "044623ba4ba8cb9bb284dba1150ca55301ba32bc00339415114b28cdf92b3244",
     "tools/msx_capture.py": "447950ec1f0b9a46c2385b009b085be0bb221c3f327622b637928cb8caeac6d7",
-    "tools/nes_ppu_state.py": "e53aae37d59d41fa1c938f35769286891c98e3a71ca9c87e86c6caf09f321168"
+    "tools/nes_ppu_state.py": "e53aae37d59d41fa1c938f35769286891c98e3a71ca9c87e86c6caf09f321168",
+    "tools/catalog_nes.py": "a2da7b4686d811c6aca42e7b64bdc7324ef608cef9329da2896c2526c3615148",
+    "tools/catalog_music.py": "589e3b9254e66bf8c202fb01a4d294671e7733ef794e834abbd564e2c7c0caa4"
   },
   "source_speed_preservation": "60Hz source-reference selectable; default 30Hz is a deliberately non-original accessibility mode",
   "stage3_normal_to_stage4_tested": true,
@@ -84,5 +86,6 @@
   "nemesis3_maps_structurally_loadable": true,
   "chapter_flow_structurally_tested": true,
   "rom_changed_in_this_checkpoint": false,
-  "msx_asset_catalogue": true
+  "msx_asset_catalogue": true,
+  "nes_asset_catalogue": true
 }

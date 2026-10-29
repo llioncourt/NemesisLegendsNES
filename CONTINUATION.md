@@ -1,7 +1,7 @@
-# NEMESIS LEGENDS NES - CONTINUATION (CP0017, 2026-10-29)
+# NEMESIS LEGENDS NES - CONTINUATION (CP0018, 2026-10-29)
 
 Repository: https://github.com/llioncourt/NemesisLegendsNES (`main`).
-Last pinned checkpoint: **CP0017** (Phase 1a, MSX asset catalogue). The playable ROM is
+Last pinned checkpoint: **CP0018** (Phase 1b, NES asset catalogue). The playable ROM is
 still `build/native/Nemesis_Legends_CP0016.nes` (sha256 in `manifests/checkpoint.json`). Do not reset or abandon the native
 motor. Public distribution: IPS only; source ROMs and derived graphics/audio
 stay private.
@@ -35,10 +35,18 @@ segments.
   Salamander 134 / 30, Nemesis 3 180 / 22; 3537 frames; every stage, boss, secret route and
   screen played in openMSX with 0 unmapped drawings. Gaps (86, mostly unused types and
   frames never caught on screen) are listed per game.
-- **1b, NES catalogue (CP0018, in progress):** Gradius US/JP, Gradius II, Life Force US/Rev 1,
-  Salamander (Famicom), with `tools/nes_ppu_state.py` for CHR-RAM games.
-- **1c, music (CP0019, next):** the sound-request routine logged in a full emulator run gives
-  the exact music of every stage, boss and ending (method tested on Nemesis).
+- **1b, NES catalogue (CP0018, done):** `manifests/catalog_nes.json`, `docs/CATALOG_NES.md`.
+  Gradius US/JP 65 objects, Gradius II 115, Life Force US/Rev 1 110, Salamander (Famicom) 137;
+  2800 frames, 2674 pixel-verified against the screen; all stages of every game played.
+  Gradius II switches CHR in 1 KiB pieces and mixes them on screen: the 33 real on-screen sets
+  are in its evidence (the old 8 KiB bank PNGs never show a real set). Life Force Rev 1 changes
+  one title byte and a palette refresh only; Gradius JP changes the title and endings only.
+  Salamander (Famicom) ships: two layouts only, horizontal (stages 1, 3, 5) and vertical
+  (2, 4, 6); player 2 = player 1 tiles with palettes 0 and 1 swapped.
+- **1c, music (CP0019, next):** every request of the sound routine logged in emulator runs of
+  every game; MSX done (tools/catalog_music.py), NES in progress. Found so far: the project's
+  Nemesis KSS track list counts channel parts as tracks; 8 of the 15 Gradius II NSF titles are
+  attached to the wrong code.
 - **1.1, stage map and rules (CP0020).**
 
 ## Extractor findings to apply when the stage graphics are rebuilt (phase 7)
@@ -60,6 +68,12 @@ segments.
   enemy/piece char drawings p08:BD4C/B834, pieces with their own drawing code (stage-1
   sun p03:A36B, types 0x0D/0x1E/0x2E/0x2F/0x30), boss-explosion set p20:6BBC with
   p03:A70B, boss 0x0B alternate set p20:6B83, score digits chars 0x40-0x49 (p00:4A0F).
+- NES: Salamander (Famicom) CHR region_04 is cut at 119 tiles (the game copies 120; tile $D7
+  of the stage-6 boss is missing); regions 02/17/19 of it and regions 04/11/17/18/19/21/24 of
+  Life Force are never loaded by the games; several Life Force region labels are wrong (09 is
+  the stage-3 fire set, 01/20 are the stage-5/3 boss backgrounds, 02 the stage-6 sphere).
+  Run-time CHR changes (Salamander FC stage-1 brain fade-in and stage-3 flames, Life Force
+  stage-1 boss fade-in and stage-3 animation) are not in any static decode.
 - The private evidence folders already hold correct decoders for all of the above.
 
 ## Build and test
