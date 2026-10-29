@@ -1,4 +1,4 @@
-# Nemesis Legends - CP0020: Phase 1.1, every stage and rule; Phase 1 complete
+# Nemesis Legends - CP0021: Phase 2a, every MSX object matched to the NES games
 
 **WIP / playable partial NES/Famicom MMC5 native port, not the completed saga.**
 
@@ -149,4 +149,4 @@ and commercial audio are **private recovery material**, not published here.
 Public Silicon Forge game releases use **IPS patches only**. The private ROM
 in the user package is for authorized local testing, not the public release.
 
-Current checkpoint: **CP0020**. No `Nemesis_Legends_NES_Final.nes` exists.
+Current checkpoint: **CP0021**. No `Nemesis_Legends_NES_Final.nes` exists.

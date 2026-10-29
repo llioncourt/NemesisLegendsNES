@@ -1,7 +1,7 @@
 {
   "schema": 1,
-  "checkpoint": "CP0020",
-  "edition": "PHASE1_1_STAGES_AND_RULES",
+  "checkpoint": "CP0021",
+  "edition": "PHASE2A_ASSET_CHOICE",
   "gameplay_changed": true,
   "project_directory": "Nemesis_Legends_CP0001",
   "rom": "build/native/Nemesis_Legends_CP0016.nes",
@@ -36,7 +36,7 @@
     "src/native_title.s": "0b1be108125be223341e3938e62accd426fb645e0c7540eb91da16a19e88d35e"
   },
   "cleanup_published_to_github": true,
-  "scope": "Phase 1.1 of docs/DECISIONS.md: every stage of the four MSX games in play order (spawns, events, music, graphics, bosses, routes, secrets) and each game's rules (manifests/stages_msx.json, docs/STAGES_AND_RULES.md). Phase 1 complete with the object, screen and music catalogues (catalog_msx.json, catalog_nes.json, catalog_music.json). The playable ROM is the CP0016 ROM, unchanged.",
+  "scope": "Phase 2a of docs/DECISIONS.md: every MSX object and screen compared with the four NES catalogues and the NES version chosen (manifests/asset_choice.json, docs/ASSET_CHOICE.md); shared assets reconciled to one NES version. The playable ROM is the CP0016 ROM, unchanged.",
   "ui_changed": true,
   "baseline_runtime_commit": "0833559",
   "checkpoint_changed_sources": {
@@ -79,7 +79,8 @@
     "tools/rip_lifeforce_nsf.py": "a183bcbfe7c83135935117f17ef529a4cb9d0a639d9b6718fad21b5a60296d27",
     "tools/rip_nemesis3_kss.py": "e779ce446d1d5b5c9d301cf817099c2dfbde22a9c25b41fb1661c5f354fe1452",
     "tests/test_evidence.py": "d30eddb5bdf34d054ce2d23faf6138c2fa88f7eca217f1135bef9bf830d14c33",
-    "tools/stages_msx.py": "f37d96ba29b6f79093a509156ae0a0d5455bb1f5e6a46d70d60b44453810f08f"
+    "tools/stages_msx.py": "f37d96ba29b6f79093a509156ae0a0d5455bb1f5e6a46d70d60b44453810f08f",
+    "tools/asset_choice.py": "ea0a117bfb51a2c535a2fa42d10c227c6a62f767e3fa66057b402b1c6976d2b5"
   },
   "source_speed_preservation": "60Hz source-reference selectable; default 30Hz is a deliberately non-original accessibility mode",
   "stage3_normal_to_stage4_tested": true,
@@ -94,5 +95,6 @@
   "msx_asset_catalogue": true,
   "nes_asset_catalogue": true,
   "music_catalogue": true,
-  "stages_and_rules": true
+  "stages_and_rules": true,
+  "asset_choice": true
 }

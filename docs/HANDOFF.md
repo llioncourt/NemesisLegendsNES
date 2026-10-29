@@ -1,3 +1,10 @@
+# CP0021 handoff (2026-10-29) - Phase 2a, MSX objects vs NES
+
+Every object and screen of the four MSX games compared with Gradius, Gradius II, Life Force
+and Salamander FC, with the NES version chosen (most detailed; Gradius II on equal detail;
+player ships = Salamander FC by owner decision) and one NES version per shared asset:
+`manifests/asset_choice.json`, `docs/ASSET_CHOICE.md`. ROM unchanged (CP0016).
+
 # CP0020 handoff (2026-10-29) - Phase 1.1, stages and rules; Phase 1 complete
 
 Every stage of the four MSX games in play order (71 stage records, 2876 spawn entries

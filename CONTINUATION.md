@@ -1,7 +1,7 @@
-# NEMESIS LEGENDS NES - CONTINUATION (CP0020, 2026-10-29)
+# NEMESIS LEGENDS NES - CONTINUATION (CP0021, 2026-10-29)
 
 Repository: https://github.com/llioncourt/NemesisLegendsNES (`main`).
-Last pinned checkpoint: **CP0020** (Phase 1.1, stages and rules; Phase 1 complete). The playable ROM is
+Last pinned checkpoint: **CP0021** (Phase 2a, MSX objects vs NES, choice per object). The playable ROM is
 still `build/native/Nemesis_Legends_CP0016.nes` (sha256 in `manifests/checkpoint.json`). Do not reset or abandon the native
 motor. Public distribution: IPS only; source ROMs and derived graphics/audio
 stay private.
@@ -97,10 +97,22 @@ python tools/checkpoint.py test
 Reference captures: openMSX with the free C-BIOS (MSX) and the bundled FCEUmm
 core (NES) were used on 2026-10-28 to capture the player ships in game.
 
+## Phase 2 progress
+
+- **2a, objects and screens (CP0021, done):** `manifests/asset_choice.json`, `docs/ASSET_CHOICE.md`
+  (`tools/asset_choice.py`). 602 MSX objects and screens compared with the four NES catalogues:
+  REUSE_NES 103, ADAPT_NES 121, OWNER_SHIP 7, CONVERT_MSX 310, NOT_NEEDED 61.
+  Shared assets (options, shots, laser, missile, ripple, capsules, explosions, enemy bullet,
+  HUD, font, death explosion, game over and pause screens, Ducker) get one NES version for
+  the whole game (table `SHARED` in the tool, reviewed on side-by-side sheets): ship-bound
+  assets and player weapons from the Salamander FC / Life Force set (matches the owner's ship,
+  only set with vertical-stage drawings, most frames), HUD, font, large explosion, enemy
+  bullet and screens from Gradius II. The Gradius II catalogue's "jumper" is the Ducker design.
+- **2b, stage graphics (CP0022, next):** each MSX stage's background (tile sets, char-drawn
+  objects) against the NES stages of the same theme.
+- **2c, music (CP0023):** each MSX tune against the NES tunes (same compositions).
+
 ## Next concrete action
 
-Phase 2 (comparison and choice), see the plan posted with CP0020: for every MSX object,
-screen, stage graphic and music, find the same asset in the NES games (Gradius, Gradius II,
-Life Force, Salamander FC) using the two catalogues; when several NES games have it, choose
-the most detailed; record the decision per asset (REUSE_NES, ADAPT_NES, CONVERT_MSX) with
-the evidence.
+Phase 2b and 2c as above, then Phase 3 (consistency: one visual per asset across the four
+chapters, behaviour kept per game) and Phase 4 (Gradius II art direction).
