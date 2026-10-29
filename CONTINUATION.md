@@ -1,7 +1,7 @@
-# NEMESIS LEGENDS NES - CONTINUATION (CP0024, 2026-10-29)
+# NEMESIS LEGENDS NES - CONTINUATION (CP0025, 2026-10-29)
 
 Repository: https://github.com/llioncourt/NemesisLegendsNES (`main`).
-Last pinned checkpoint: **CP0024** (Phase 3, Legends asset registry). The playable ROM is
+Last pinned checkpoint: **CP0025** (Phase 4, Gradius II art direction). The playable ROM is
 still `build/native/Nemesis_Legends_CP0016.nes` (sha256 in `manifests/checkpoint.json`). Do not reset or abandon the native
 motor. Public distribution: IPS only; source ROMs and derived graphics/audio
 stay private.
@@ -137,9 +137,19 @@ capsule family as palette variants, two core lasers, weapons drawn differently (
 fire blaster, napalm burst), one star for all star fields, the Konami logo / game over /
 continue / THE END screens.
 
+## Phase 4 (CP0025)
+
+`docs/ART_DIRECTION.md` (the Gradius II style measured over 565 sprite frames and all stage
+palettes: four fixed sprite palettes P0 20/22/02, P1 20/27/16, P2 20/12/16, P3 stage material;
+coloured dark rim on ~63 % of edge pixels; centre-lit shading; 3 tones per object; almost no
+dither; bosses are BG tiles) and `manifests/recolour_plan.json` (51 non-Gradius II NES visuals).
+The Salamander FC ships already use the Gradius II Vic Viper ramps: the owner's recolour is the
+identity. First MSX-to-NES conversion sample: good first pass for compact craft and round
+organic sprites, not enough alone for line-drawn sprites, spiky bosses and stage art.
+
 ## Next concrete action
 
-Phase 4 (art direction): the Gradius II style guide (palettes per object class, shading,
-outlines, sprite sizes, BG palette structure), measured from the Gradius II evidence; recolour
-the chosen non-Gradius II NES visuals (incl. the Salamander FC ships, owner decision) to it; a
-style sample before the mass conversion of phase 5.
+Phase 5: convert the 337 MSX-only visuals and arrange the 70 MSX-only tunes (plain APU and
+MMC5 versions). Art in two tiers: converter output plus review for compact objects; a pixel-art
+pass per asset (agents editing the pixel grids against Gradius II references) for line-drawn
+sprites, bosses and stage art. Music: decode each MSX score and write the two NES arrangements.

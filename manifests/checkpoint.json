@@ -1,7 +1,7 @@
 {
   "schema": 1,
-  "checkpoint": "CP0024",
-  "edition": "PHASE3_LEGENDS_ASSET_REGISTRY",
+  "checkpoint": "CP0025",
+  "edition": "PHASE4_ART_DIRECTION",
   "gameplay_changed": true,
   "project_directory": "Nemesis_Legends_CP0001",
   "rom": "build/native/Nemesis_Legends_CP0016.nes",
@@ -36,7 +36,7 @@
     "src/native_title.s": "0b1be108125be223341e3938e62accd426fb645e0c7540eb91da16a19e88d35e"
   },
   "cleanup_published_to_github": true,
-  "scope": "Phase 3 of docs/DECISIONS.md: 474 Legends assets, one visual or tune each, shared by every MSX object, screen, stage tile set and music code that is the same thing (manifests/legends_assets.json, docs/LEGENDS_ASSETS.md). The playable ROM is the CP0016 ROM, unchanged.",
+  "scope": "Phase 4 of docs/DECISIONS.md: the Gradius II art direction measured from the game (docs/ART_DIRECTION.md), the recolour plan of the NES visuals from other games (manifests/recolour_plan.json) and a first conversion sample of MSX-only drawings. The playable ROM is the CP0016 ROM, unchanged.",
   "ui_changed": true,
   "baseline_runtime_commit": "0833559",
   "checkpoint_changed_sources": {
@@ -102,5 +102,6 @@
   "asset_choice": true,
   "stage_gfx_choice": true,
   "music_choice": true,
-  "legends_assets": true
+  "legends_assets": true,
+  "art_direction": true
 }

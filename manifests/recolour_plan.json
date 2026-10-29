@@ -1,0 +1,2253 @@
+{
+ "schema": 1,
+ "rule": "docs/DECISIONS.md phase 4; docs/ART_DIRECTION.md",
+ "summary": {
+  "assets": 51,
+  "palette_level": 43,
+  "colour_level_screens": 8,
+  "identity": 14,
+  "recoloured": 29,
+  "chr_reindex": 22,
+  "outline_incomplete": 29,
+  "flat": 7,
+  "by_source": {
+   "sfc": 24,
+   "gr": 25,
+   "lf": 2
+  },
+  "identity_assets": [
+   "nl.player.ship",
+   "nl.enemy.n3_rotating_gun_pod",
+   "nl.enemy.sal_big_rock_that_splits_into_three_fr",
+   "nl.enemy.sal_bouncing_ball",
+   "nl.enemy.sal_falling_rock_block",
+   "nl.enemy.sal_wandering_spore",
+   "nl.enemy.small_asteroid",
+   "nl.item.capsule",
+   "nl.player.n3_vixen_with_force_field",
+   "nl.scenery.sal_piece_of_p12_b5fc",
+   "nl.scenery.stars",
+   "nl.weapon.laser",
+   "nl.weapon.ripple",
+   "nl.weapon.shot"
+  ],
+  "outline_incomplete_assets": [
+   "nl.boss.big_core",
+   "nl.boss.n1_mother",
+   "nl.boss.n2_battleship_3",
+   "nl.boss.n2_battleship_4",
+   "nl.boss.n3_stage_10_boss_1_2",
+   "nl.boss.sal_boss_2_of_stage_2",
+   "nl.boss_part.core_and_walls",
+   "nl.effect.n1_ending_six_drawings_shown_in_turn",
+   "nl.effect.n1_type_0d_death_flash",
+   "nl.effect.score_popup",
+   "nl.enemy.dee01",
+   "nl.enemy.n1_fan",
+   "nl.enemy.n1_rock",
+   "nl.enemy.n1_type_06",
+   "nl.enemy.n1_type_0a",
+   "nl.enemy.n2_splitting_bouncer",
+   "nl.enemy.rush",
+   "nl.enemy.sal_big_rock_that_splits_into_three_fr",
+   "nl.enemy.sal_falling_rock_block",
+   "nl.enemy.small_asteroid",
+   "nl.player.shield",
+   "nl.projectile.n1_ring_shot",
+   "nl.scenery.n1_ending_4x4_char_drawing_that_debri",
+   "nl.scenery.sal_piece_of_p12_b5fc",
+   "nl.scenery.stars",
+   "nl.weapon.laser",
+   "nl.weapon.missile",
+   "nl.weapon.ripple",
+   "nl.weapon.shot"
+  ],
+  "flat_assets": [
+   "nl.effect.score_popup",
+   "nl.enemy.n1_rock",
+   "nl.player.shield",
+   "nl.scenery.stars",
+   "nl.weapon.missile",
+   "nl.weapon.ripple",
+   "nl.weapon.shot"
+  ],
+  "rules": {
+   "order": [
+    "player ship: keep (Salamander FC P1/P2 already use the Vic Viper ramps and the Gradius II 2P palette toggle)",
+    "fixed classes: the one Gradius II ramp measured for the class (player 2 = palette 0/1 toggled)",
+    "other classes: a source ramp that is already a Gradius II sprite ramp is kept",
+    "otherwise: the Gradius II ramp of the class for the source hue family; slots mapped by tone (dark->dark, mid->mid, light->light; near-equal luminance ordered by silhouette-edge share)",
+    "screens/BG drawings without per-slot palette data: colour-level map onto the palettes of the matching Gradius II screen or stage"
+   ],
+   "fixed": {
+    "option": {
+     "p1": "20/27/16",
+     "p2": "20/22/02"
+    },
+    "player_shot": {
+     "p1": "20/22/02",
+     "p2": "20/27/16"
+    },
+    "player_missile": {
+     "p1": "20/27/16",
+     "p2": "20/22/02"
+    },
+    "explosion": {
+     "all": "20/27/16"
+    },
+    "capsule": {
+     "all": "20/27/16"
+    },
+    "enemy_bullet": {
+     "all": "20/22/02"
+    },
+    "popup": {
+     "all": "20/22/02"
+    },
+    "stars": {
+     "all": "20/22/02"
+    }
+   },
+   "family": {
+    "force_field": {
+     "blue": "20/22/02",
+     "cyan": "20/22/02",
+     "red": "20/27/16",
+     "flesh": "20/27/16",
+     "pink": "20/27/16",
+     "twohue": "20/22/02",
+     "grey": "20/22/02"
+    },
+    "enemy_craft": {
+     "blue": "20/22/02",
+     "cyan": "20/22/02",
+     "red": "20/27/16",
+     "flesh": "20/27/16",
+     "twohue": "20/12/16",
+     "grey": "20/00/0C",
+     "pink": "36/24/04",
+     "yellow": "38/18/08"
+    },
+    "organic": {
+     "blue": "20/22/02",
+     "cyan": "20/22/02",
+     "red": "20/27/16",
+     "twohue": "20/12/16",
+     "pink": "36/24/04",
+     "flesh": "36/15/06",
+     "grey": "20/12/16"
+    },
+    "rock": {
+     "blue": "20/10/00",
+     "cyan": "20/10/00",
+     "grey": "20/10/00",
+     "red": "20/27/16",
+     "twohue": "20/10/00",
+     "pink": "34/14/04"
+    },
+    "boss_mech": {
+     "twohue": "20/10/00",
+     "blue": "32/22/12",
+     "cyan": "32/22/12",
+     "red": "20/10/17",
+     "grey": "20/10/00",
+     "flesh": "20/10/17"
+    },
+    "boss_arm": {
+     "red": "10/00/06",
+     "twohue": "10/00/06",
+     "flesh": "10/00/06",
+     "blue": "32/22/12",
+     "cyan": "32/22/12",
+     "grey": "10/00/06"
+    },
+    "boss_organic": {
+     "flesh": "27/16/07",
+     "pink": "27/16/07",
+     "red": "27/16/07",
+     "twohue": "27/16/20",
+     "blue": "32/22/12",
+     "cyan": "32/22/12"
+    },
+    "ending_ship": {
+     "blue": "20/00/02",
+     "grey": "20/00/02",
+     "cyan": "20/22/0C",
+     "twohue": "20/22/0C",
+     "pink": "20/22/0C"
+    },
+    "player_ship": {}
+   },
+   "ramp_source": {
+    "20/22/02": "sprite P0, all stages",
+    "20/27/16": "sprite P1, all stages",
+    "20/12/16": "sprite P2, stages 1-2,4-7",
+    "20/00/0C": "sprite P3 stage 6",
+    "20/10/00": "sprite P3 stage 4 (Moai) / Big Core MK II hull BG",
+    "36/24/04": "sprite P3 stages 1-2",
+    "36/15/06": "sprite P3 stage 7",
+    "38/18/08": "sprite P3 stage 3",
+    "34/14/04": "sprite P3 stage 3 (crystals)",
+    "10/00/06": "sprite P3 stage 5 (Tetran arms)",
+    "32/22/12": "BG, Big Core MK II / Tetran / Golem core (stage 5)",
+    "20/10/17": "BG, Big Core MK II accents (stage 5)",
+    "27/16/07": "BG, Golem body (stage 5)",
+    "27/16/20": "BG, Golem (stage 5)",
+    "20/00/02": "ending sprites P0",
+    "20/22/0C": "ending sprites P2"
+   },
+   "per_asset_override": {
+    "nl.boss.sal_boss_2_of_stage_2 P0": [
+     "32/22/12",
+     "palette 0 paints only the core (eye) cells of this boss; Gradius II cores are 32/22/12 (Big Core MK II, Tetran, Golem)"
+    ]
+   }
+  }
+ },
+ "assets": [
+  {
+   "asset": "nl.player.ship",
+   "name": "Player ship (Salamander FC P1 ship; P2 palette swap)",
+   "source": "sfc.player.p1_ship",
+   "source_game": "salamander_fc",
+   "visual_kind": "OWNER_SHIP",
+   "class": "player_ship",
+   "g2_reference": [
+    "g2.player.vic_viper",
+    "g2.player.vic_viper_2p"
+   ],
+   "work_note": "Player 1 = sfc.player.p1_ship: in every posture (horizontal and vertical, level/banked, both exhaust frames) the body sprites are P0 20/22/02 and the nose/engine/exhaust sprites P1 20/27/16, exactly the Vic Viper scheme (level frame: 66 % / 34 % of the pixels in P0/P1; Gradius II $80: 72 % / 28 %), so player 1 keeps its NES colours. Player 2 = sfc.player.p2_ship (attr+9 = palette bit 0 toggled): body P1 20/27/16, parts P0 20/22/02 (66 % / 34 % in P1/P0), the rule Gradius II uses for its own 2-player ship $B8 (72 % / 28 %): a distinct red/orange second-player ship built only from Gradius II ramps, kept as is. Exhaust: P1 palette 1, P2 palette 0, as in Gradius II. The attr+4/attr+5 frames (whole ship in one palette: respawn/hit blink) stay. Pixel work (optional, no palette change): the Salamander body is darker than the Vic Viper (P0 slot 3 02 = 39 % of the ship pixels vs 30 %, white 20 = 17 % vs 26 %); moving the upper-hull 02 pixels to 22/20 gives the Gradius II light-on-top balance. The vertical-stage postures have no Gradius II counterpart (Gradius II has no vertical stages) and keep the same palette split. Drawing: outline ok (59 % dark rim; Gradius II player_ship 61 %)",
+   "palette_map": [
+    {
+     "palette": 0,
+     "variant": "p1",
+     "source": "20/22/02",
+     "target": "20/22/02",
+     "target_from": "sprite P0, all stages",
+     "method": "identity",
+     "slots": {
+      "1": "20->20",
+      "2": "22->22",
+      "3": "02->02"
+     },
+     "new_palette": "20/22/02"
+    },
+    {
+     "palette": 0,
+     "variant": "p2",
+     "source": "20/22/02",
+     "target": "20/22/02",
+     "target_from": "sprite P0, all stages",
+     "method": "identity",
+     "slots": {
+      "1": "20->20",
+      "2": "22->22",
+      "3": "02->02"
+     },
+     "new_palette": "20/22/02"
+    },
+    {
+     "palette": 1,
+     "variant": "p1",
+     "source": "20/27/16",
+     "target": "20/27/16",
+     "target_from": "sprite P1, all stages",
+     "method": "identity",
+     "slots": {
+      "1": "20->20",
+      "2": "27->27",
+      "3": "16->16"
+     },
+     "new_palette": "20/27/16"
+    },
+    {
+     "palette": 1,
+     "variant": "p2",
+     "source": "20/27/16",
+     "target": "20/27/16",
+     "target_from": "sprite P1, all stages",
+     "method": "identity",
+     "slots": {
+      "1": "20->20",
+      "2": "27->27",
+      "3": "16->16"
+     },
+     "new_palette": "20/27/16"
+    }
+   ]
+  },
+  {
+   "asset": "nl.player.option",
+   "name": "Option (multiple)",
+   "source": "sfc.player.p1_option",
+   "source_game": "salamander_fc",
+   "visual_kind": "NES",
+   "class": "option",
+   "g2_reference": [
+    "g2.player.option"
+   ],
+   "work_note": "Recolour rule: Gradius II player-1 options are attr $09 = palette 1 20/27/16 (100 % of option frames), player-2 options attr $00 = palette 0 20/22/02 (table $9F87/$9F88 = 09/00); Salamander FC has them the other way round (P1 palette 0, P2 attr+9), so the attribute palette is exchanged; outline ok (100 % dark rim; Gradius II option 100 %)",
+   "palette_map": [
+    {
+     "palette": 0,
+     "variant": "p1",
+     "source": "20/22/02",
+     "target": "20/27/16",
+     "target_from": "sprite P1, all stages",
+     "method": "slot to slot (source already in Gradius II slot order: 1 light, 2 mid, 3 outline)",
+     "slots": {
+      "1": "20->20",
+      "2": "22->27",
+      "3": "02->16"
+     },
+     "new_palette": "20/27/16"
+    },
+    {
+     "palette": 1,
+     "variant": "p2",
+     "source": "20/27/16",
+     "target": "20/22/02",
+     "target_from": "sprite P0, all stages",
+     "method": "slot to slot (source already in Gradius II slot order: 1 light, 2 mid, 3 outline)",
+     "slots": {
+      "1": "20->20",
+      "2": "27->22",
+      "3": "16->02"
+     },
+     "new_palette": "20/22/02"
+    }
+   ]
+  },
+  {
+   "asset": "nl.boss.big_core",
+   "name": "Big Core",
+   "source": "gr.boss.big_core",
+   "source_game": "gradius_nes",
+   "visual_kind": "NES",
+   "class": "boss_mech",
+   "g2_reference": [
+    "g2.boss.big_core_mk2"
+   ],
+   "work_note": "Gradius II draws boss hulls in grey 20/10/00 with the orange conduits in a second hull palette 20/10/17 on their own 16x16 cells and the core in 32/22/12: where the source mixes structure and accent colours in one palette, the accent pixels need a second palette to keep their colour; outline incomplete: 39 % of silhouette pixels are the dark tone (Gradius II bg_bosses 61 %); add a 1-px rim in the outline slot where the silhouette is mid/light; small: median 16x16 px vs Gradius II bg_bosses median 252x200 px; the source keeps its colours in a different slot order (Gradius NES: dark slot 1, white slot 3): re-index the CHR as given by chr_reindex_to_share_the_g2_palette to share the Gradius II palette RAM",
+   "palette_map": [
+    {
+     "palette": 1,
+     "variant": "p1",
+     "source": "0C/2C/30",
+     "target": "32/22/12",
+     "target_from": "BG, Big Core MK II / Tetran / Golem core (stage 5)",
+     "method": "by tone role: dark/outline->dark, mid->mid, light->light (source dark = slot 1, target dark = slot 3)",
+     "slots": {
+      "1": "0C->12",
+      "2": "2C->22",
+      "3": "30->32"
+     },
+     "new_palette": "12/22/32",
+     "chr_reindex_to_share_the_g2_palette": {
+      "1": 3,
+      "2": 2,
+      "3": 1
+     }
+    },
+    {
+     "palette": 2,
+     "variant": "p1",
+     "source": "21/26/30",
+     "target": "20/10/00",
+     "target_from": "sprite P3 stage 4 (Moai) / Big Core MK II hull BG",
+     "method": "by tone role: dark/outline->dark, mid->mid, light->light (source dark = slot 1, target dark = slot 3)",
+     "slots": {
+      "1": "21->00",
+      "2": "26->10",
+      "3": "30->20"
+     },
+     "new_palette": "00/10/20",
+     "chr_reindex_to_share_the_g2_palette": {
+      "1": 3,
+      "2": 2,
+      "3": 1
+     }
+    },
+    {
+     "palette": 3,
+     "variant": "p1",
+     "source": "06/26/30",
+     "target": "20/10/17",
+     "target_from": "BG, Big Core MK II accents (stage 5)",
+     "method": "by tone role: dark/outline->dark, mid->mid, light->light (source dark = slot 1, target dark = slot 3)",
+     "slots": {
+      "1": "06->17",
+      "2": "26->10",
+      "3": "30->20"
+     },
+     "new_palette": "17/10/20",
+     "chr_reindex_to_share_the_g2_palette": {
+      "1": 3,
+      "2": 2,
+      "3": 1
+     }
+    }
+   ]
+  },
+  {
+   "asset": "nl.boss.n1_mother",
+   "name": "Disc carrier (Mother) of Nemesis stage 3",
+   "source": "gr.subboss.mother",
+   "source_game": "gradius_nes",
+   "visual_kind": "NES",
+   "class": "boss_mech",
+   "g2_reference": [
+    "g2.subboss.wall_core",
+    "g2.boss.covered_core"
+   ],
+   "work_note": "Gradius II draws boss hulls in grey 20/10/00 with the orange conduits in a second hull palette 20/10/17 on their own 16x16 cells and the core in 32/22/12: where the source mixes structure and accent colours in one palette, the accent pixels need a second palette to keep their colour; outline incomplete: 48 % of silhouette pixels are the dark tone (Gradius II bg_bosses 61 %); add a 1-px rim in the outline slot where the silhouette is mid/light; small: median 28x32 px vs Gradius II bg_bosses median 252x200 px; the source keeps its colours in a different slot order (Gradius NES: dark slot 1, white slot 3): re-index the CHR as given by chr_reindex_to_share_the_g2_palette to share the Gradius II palette RAM",
+   "palette_map": [
+    {
+     "palette": 2,
+     "variant": "p1",
+     "source": "21/26/30",
+     "target": "20/10/00",
+     "target_from": "sprite P3 stage 4 (Moai) / Big Core MK II hull BG",
+     "method": "by tone role: dark/outline->dark, mid->mid, light->light (source dark = slot 2, target dark = slot 3)",
+     "slots": {
+      "1": "21->10",
+      "2": "26->00",
+      "3": "30->20"
+     },
+     "new_palette": "10/00/20",
+     "chr_reindex_to_share_the_g2_palette": {
+      "1": 2,
+      "2": 3,
+      "3": 1
+     }
+    }
+   ]
+  },
+  {
+   "asset": "nl.boss.n1_tentacle",
+   "name": "Stage-6 tentacle boss of Nemesis",
+   "source": "gr.boss.tentacle",
+   "source_game": "gradius_nes",
+   "visual_kind": "NES",
+   "class": "boss_organic",
+   "g2_reference": [
+    "g2.boss.golem",
+    "g2.boss_part.big_eye_cells",
+    "g2.enemy.cell_blob"
+   ],
+   "work_note": "outline ok (87 % dark rim; Gradius II bg_bosses 61 %); small: median 24x24 px vs Gradius II bg_bosses median 252x200 px; the source keeps its colours in a different slot order (Gradius NES: dark slot 1, white slot 3): re-index the CHR as given by chr_reindex_to_share_the_g2_palette to share the Gradius II palette RAM",
+   "palette_map": [
+    {
+     "palette": 3,
+     "variant": "p1",
+     "source": "06/26/30",
+     "target": "27/16/07",
+     "target_from": "BG, Golem body (stage 5)",
+     "method": "by tone role: dark/outline->dark, mid->mid, light->light (source dark = slot 1, target dark = slot 3)",
+     "slots": {
+      "1": "06->07",
+      "2": "26->16",
+      "3": "30->27"
+     },
+     "new_palette": "07/16/27",
+     "chr_reindex_to_share_the_g2_palette": {
+      "1": 3,
+      "2": 2,
+      "3": 1
+     }
+    }
+   ]
+  },
+  {
+   "asset": "nl.boss.n2_battleship_3",
+   "name": "Swept-wing battleship (Nemesis 2 boss 3 = Nemesis 3 stage-4 boss 0x01)",
+   "source": "gr.boss.big_core",
+   "source_game": "gradius_nes",
+   "visual_kind": "NES",
+   "class": "boss_mech",
+   "g2_reference": [
+    "g2.boss.big_core_mk2"
+   ],
+   "work_note": "Gradius II draws boss hulls in grey 20/10/00 with the orange conduits in a second hull palette 20/10/17 on their own 16x16 cells and the core in 32/22/12: where the source mixes structure and accent colours in one palette, the accent pixels need a second palette to keep their colour; outline incomplete: 39 % of silhouette pixels are the dark tone (Gradius II bg_bosses 61 %); add a 1-px rim in the outline slot where the silhouette is mid/light; small: median 16x16 px vs Gradius II bg_bosses median 252x200 px; the source keeps its colours in a different slot order (Gradius NES: dark slot 1, white slot 3): re-index the CHR as given by chr_reindex_to_share_the_g2_palette to share the Gradius II palette RAM",
+   "palette_map": [
+    {
+     "palette": 1,
+     "variant": "p1",
+     "source": "0C/2C/30",
+     "target": "32/22/12",
+     "target_from": "BG, Big Core MK II / Tetran / Golem core (stage 5)",
+     "method": "by tone role: dark/outline->dark, mid->mid, light->light (source dark = slot 1, target dark = slot 3)",
+     "slots": {
+      "1": "0C->12",
+      "2": "2C->22",
+      "3": "30->32"
+     },
+     "new_palette": "12/22/32",
+     "chr_reindex_to_share_the_g2_palette": {
+      "1": 3,
+      "2": 2,
+      "3": 1
+     }
+    },
+    {
+     "palette": 2,
+     "variant": "p1",
+     "source": "21/26/30",
+     "target": "20/10/00",
+     "target_from": "sprite P3 stage 4 (Moai) / Big Core MK II hull BG",
+     "method": "by tone role: dark/outline->dark, mid->mid, light->light (source dark = slot 1, target dark = slot 3)",
+     "slots": {
+      "1": "21->00",
+      "2": "26->10",
+      "3": "30->20"
+     },
+     "new_palette": "00/10/20",
+     "chr_reindex_to_share_the_g2_palette": {
+      "1": 3,
+      "2": 2,
+      "3": 1
+     }
+    },
+    {
+     "palette": 3,
+     "variant": "p1",
+     "source": "06/26/30",
+     "target": "20/10/17",
+     "target_from": "BG, Big Core MK II accents (stage 5)",
+     "method": "by tone role: dark/outline->dark, mid->mid, light->light (source dark = slot 1, target dark = slot 3)",
+     "slots": {
+      "1": "06->17",
+      "2": "26->10",
+      "3": "30->20"
+     },
+     "new_palette": "17/10/20",
+     "chr_reindex_to_share_the_g2_palette": {
+      "1": 3,
+      "2": 2,
+      "3": 1
+     }
+    }
+   ]
+  },
+  {
+   "asset": "nl.boss.n2_battleship_4",
+   "name": "Winged battleship (Nemesis 2 boss 4 = Nemesis 3 stage-4 boss 0x03)",
+   "source": "gr.boss.big_core",
+   "source_game": "gradius_nes",
+   "visual_kind": "NES",
+   "class": "boss_mech",
+   "g2_reference": [
+    "g2.boss.big_core_mk2"
+   ],
+   "work_note": "Gradius II draws boss hulls in grey 20/10/00 with the orange conduits in a second hull palette 20/10/17 on their own 16x16 cells and the core in 32/22/12: where the source mixes structure and accent colours in one palette, the accent pixels need a second palette to keep their colour; outline incomplete: 39 % of silhouette pixels are the dark tone (Gradius II bg_bosses 61 %); add a 1-px rim in the outline slot where the silhouette is mid/light; small: median 16x16 px vs Gradius II bg_bosses median 252x200 px; the source keeps its colours in a different slot order (Gradius NES: dark slot 1, white slot 3): re-index the CHR as given by chr_reindex_to_share_the_g2_palette to share the Gradius II palette RAM",
+   "palette_map": [
+    {
+     "palette": 1,
+     "variant": "p1",
+     "source": "0C/2C/30",
+     "target": "32/22/12",
+     "target_from": "BG, Big Core MK II / Tetran / Golem core (stage 5)",
+     "method": "by tone role: dark/outline->dark, mid->mid, light->light (source dark = slot 1, target dark = slot 3)",
+     "slots": {
+      "1": "0C->12",
+      "2": "2C->22",
+      "3": "30->32"
+     },
+     "new_palette": "12/22/32",
+     "chr_reindex_to_share_the_g2_palette": {
+      "1": 3,
+      "2": 2,
+      "3": 1
+     }
+    },
+    {
+     "palette": 2,
+     "variant": "p1",
+     "source": "21/26/30",
+     "target": "20/10/00",
+     "target_from": "sprite P3 stage 4 (Moai) / Big Core MK II hull BG",
+     "method": "by tone role: dark/outline->dark, mid->mid, light->light (source dark = slot 1, target dark = slot 3)",
+     "slots": {
+      "1": "21->00",
+      "2": "26->10",
+      "3": "30->20"
+     },
+     "new_palette": "00/10/20",
+     "chr_reindex_to_share_the_g2_palette": {
+      "1": 3,
+      "2": 2,
+      "3": 1
+     }
+    },
+    {
+     "palette": 3,
+     "variant": "p1",
+     "source": "06/26/30",
+     "target": "20/10/17",
+     "target_from": "BG, Big Core MK II accents (stage 5)",
+     "method": "by tone role: dark/outline->dark, mid->mid, light->light (source dark = slot 1, target dark = slot 3)",
+     "slots": {
+      "1": "06->17",
+      "2": "26->10",
+      "3": "30->20"
+     },
+     "new_palette": "17/10/20",
+     "chr_reindex_to_share_the_g2_palette": {
+      "1": 3,
+      "2": 2,
+      "3": 1
+     }
+    }
+   ]
+  },
+  {
+   "asset": "nl.boss.n3_stage_10_boss_1_2",
+   "name": "Nemesis 3: Stage 10 boss 1/2",
+   "source": "gr.boss.big_core",
+   "source_game": "gradius_nes",
+   "visual_kind": "NES",
+   "class": "boss_mech",
+   "g2_reference": [
+    "g2.boss.big_core_mk2"
+   ],
+   "work_note": "Gradius II draws boss hulls in grey 20/10/00 with the orange conduits in a second hull palette 20/10/17 on their own 16x16 cells and the core in 32/22/12: where the source mixes structure and accent colours in one palette, the accent pixels need a second palette to keep their colour; outline incomplete: 39 % of silhouette pixels are the dark tone (Gradius II bg_bosses 61 %); add a 1-px rim in the outline slot where the silhouette is mid/light; small: median 16x16 px vs Gradius II bg_bosses median 252x200 px; the source keeps its colours in a different slot order (Gradius NES: dark slot 1, white slot 3): re-index the CHR as given by chr_reindex_to_share_the_g2_palette to share the Gradius II palette RAM",
+   "palette_map": [
+    {
+     "palette": 1,
+     "variant": "p1",
+     "source": "0C/2C/30",
+     "target": "32/22/12",
+     "target_from": "BG, Big Core MK II / Tetran / Golem core (stage 5)",
+     "method": "by tone role: dark/outline->dark, mid->mid, light->light (source dark = slot 1, target dark = slot 3)",
+     "slots": {
+      "1": "0C->12",
+      "2": "2C->22",
+      "3": "30->32"
+     },
+     "new_palette": "12/22/32",
+     "chr_reindex_to_share_the_g2_palette": {
+      "1": 3,
+      "2": 2,
+      "3": 1
+     }
+    },
+    {
+     "palette": 2,
+     "variant": "p1",
+     "source": "21/26/30",
+     "target": "20/10/00",
+     "target_from": "sprite P3 stage 4 (Moai) / Big Core MK II hull BG",
+     "method": "by tone role: dark/outline->dark, mid->mid, light->light (source dark = slot 1, target dark = slot 3)",
+     "slots": {
+      "1": "21->00",
+      "2": "26->10",
+      "3": "30->20"
+     },
+     "new_palette": "00/10/20",
+     "chr_reindex_to_share_the_g2_palette": {
+      "1": 3,
+      "2": 2,
+      "3": 1
+     }
+    },
+    {
+     "palette": 3,
+     "variant": "p1",
+     "source": "06/26/30",
+     "target": "20/10/17",
+     "target_from": "BG, Big Core MK II accents (stage 5)",
+     "method": "by tone role: dark/outline->dark, mid->mid, light->light (source dark = slot 1, target dark = slot 3)",
+     "slots": {
+      "1": "06->17",
+      "2": "26->10",
+      "3": "30->20"
+     },
+     "new_palette": "17/10/20",
+     "chr_reindex_to_share_the_g2_palette": {
+      "1": 3,
+      "2": 2,
+      "3": 1
+     }
+    }
+   ]
+  },
+  {
+   "asset": "nl.boss.sal_boss_1_of_stage_1",
+   "name": "Salamander: Boss 1 of stage 1",
+   "source": "sfc.s1.boss.golem_bg",
+   "source_game": "salamander_fc",
+   "visual_kind": "NES",
+   "class": "boss_organic",
+   "g2_reference": [
+    "g2.boss.golem"
+   ],
+   "work_note": "outline ok (50 % dark rim; Gradius II bg_bosses 61 %); small: median 96x88 px vs Gradius II bg_bosses median 252x200 px; the source keeps its colours in a different slot order (Gradius NES: dark slot 1, white slot 3): re-index the CHR as given by chr_reindex_to_share_the_g2_palette to share the Gradius II palette RAM",
+   "palette_map": [
+    {
+     "palette": 1,
+     "variant": "p1",
+     "source": "35/15/07",
+     "target": "27/16/07",
+     "target_from": "BG, Golem body (stage 5)",
+     "method": "by tone role: dark/outline->dark, mid->mid, light->light (source dark = slot 3, target dark = slot 3)",
+     "slots": {
+      "1": "35->27",
+      "2": "15->16",
+      "3": "07->07"
+     },
+     "new_palette": "27/16/07"
+    },
+    {
+     "palette": 2,
+     "variant": "p1",
+     "source": "20/15/02",
+     "target": "27/16/20",
+     "target_from": "BG, Golem (stage 5)",
+     "method": "by tone role: dark/outline->dark, mid->mid, light->light (source dark = slot 3, target dark = slot 2)",
+     "slots": {
+      "1": "20->20",
+      "2": "15->27",
+      "3": "02->16"
+     },
+     "new_palette": "20/27/16",
+     "chr_reindex_to_share_the_g2_palette": {
+      "1": 3,
+      "2": 1,
+      "3": 2
+     }
+    }
+   ]
+  },
+  {
+   "asset": "nl.boss.sal_boss_2_of_stage_2",
+   "name": "Salamander: Boss 2 of stage 2",
+   "source": "sfc.s2.boss.mech_bg",
+   "source_game": "salamander_fc",
+   "visual_kind": "NES",
+   "class": "boss_mech",
+   "g2_reference": [
+    "g2.boss.big_core_mk2"
+   ],
+   "work_note": "Gradius II draws boss hulls in grey 20/10/00 with the orange conduits in a second hull palette 20/10/17 on their own 16x16 cells and the core in 32/22/12: where the source mixes structure and accent colours in one palette, the accent pixels need a second palette to keep their colour; outline incomplete: 21 % of silhouette pixels are the dark tone (Gradius II bg_bosses 61 %); add a 1-px rim in the outline slot where the silhouette is mid/light; small: median 64x64 px vs Gradius II bg_bosses median 252x200 px; the source keeps its colours in a different slot order (Gradius NES: dark slot 1, white slot 3): re-index the CHR as given by chr_reindex_to_share_the_g2_palette to share the Gradius II palette RAM",
+   "palette_map": [
+    {
+     "palette": 0,
+     "variant": "p1",
+     "source": "20/11/16",
+     "target": "32/22/12",
+     "target_from": "BG, Big Core MK II / Tetran / Golem core (stage 5)",
+     "method": "by tone role: dark/outline->dark, mid->mid, light->light (source dark = slot 3, target dark = slot 3)",
+     "slots": {
+      "1": "20->32",
+      "2": "11->22",
+      "3": "16->12"
+     },
+     "new_palette": "32/22/12"
+    },
+    {
+     "palette": 2,
+     "variant": "p1",
+     "source": "20/06/00",
+     "target": "20/10/17",
+     "target_from": "BG, Big Core MK II accents (stage 5)",
+     "method": "by tone role: dark/outline->dark, mid->mid, light->light (source dark = slot 2, target dark = slot 3)",
+     "slots": {
+      "1": "20->20",
+      "2": "06->17",
+      "3": "00->10"
+     },
+     "new_palette": "20/17/10",
+     "chr_reindex_to_share_the_g2_palette": {
+      "1": 1,
+      "2": 3,
+      "3": 2
+     }
+    }
+   ]
+  },
+  {
+   "asset": "nl.boss_part.core_and_walls",
+   "name": "Core and shield walls of the core ships",
+   "source": "gr.boss_part.big_core_walls",
+   "source_game": "gradius_nes",
+   "visual_kind": "NES",
+   "class": "boss_mech",
+   "g2_reference": [
+    "g2.boss.big_core_mk2",
+    "g2.boss_part.covered_core_shutter"
+   ],
+   "work_note": "Gradius II draws boss hulls in grey 20/10/00 with the orange conduits in a second hull palette 20/10/17 on their own 16x16 cells and the core in 32/22/12: where the source mixes structure and accent colours in one palette, the accent pixels need a second palette to keep their colour; outline incomplete: 27 % of silhouette pixels are the dark tone (Gradius II bg_bosses 61 %); add a 1-px rim in the outline slot where the silhouette is mid/light; small: median 24x32 px vs Gradius II bg_bosses median 252x200 px; the source keeps its colours in a different slot order (Gradius NES: dark slot 1, white slot 3): re-index the CHR as given by chr_reindex_to_share_the_g2_palette to share the Gradius II palette RAM",
+   "palette_map": [
+    {
+     "palette": 2,
+     "variant": "p1",
+     "source": "21/26/30",
+     "target": "20/10/00",
+     "target_from": "sprite P3 stage 4 (Moai) / Big Core MK II hull BG",
+     "method": "by tone role: dark/outline->dark, mid->mid, light->light (source dark = slot 1, target dark = slot 3)",
+     "slots": {
+      "1": "21->00",
+      "2": "26->10",
+      "3": "30->20"
+     },
+     "new_palette": "00/10/20",
+     "chr_reindex_to_share_the_g2_palette": {
+      "1": 3,
+      "2": 2,
+      "3": 1
+     }
+    }
+   ]
+  },
+  {
+   "asset": "nl.boss_part.n1_stage_6_boss_arm_turret",
+   "name": "Nemesis: Stage-6 boss arm / turret (type 4, 40 drawings)",
+   "source": "gr.boss_part.tentacle_arm",
+   "source_game": "gradius_nes",
+   "visual_kind": "NES",
+   "class": "boss_arm",
+   "g2_reference": [
+    "g2.boss_part.tetran_arm",
+    "g2.boss_part.core_turret"
+   ],
+   "work_note": "Gradius II boss arms (Tetran) are sprites in the stage P3 ramp 10/00/06 (86 % of boss sprite-part frames); outline ok (73 % dark rim; Gradius II boss_sprite_part 78 %); large: median 44x26 px vs Gradius II boss_sprite_part median 16x16 px; 100 % of frames mix 2+ palettes (Gradius II boss_sprite_part 0 %): one palette per object unless it is the player ship; the source keeps its colours in a different slot order (Gradius NES: dark slot 1, white slot 3): re-index the CHR as given by chr_reindex_to_share_the_g2_palette to share the Gradius II palette RAM",
+   "palette_map": [
+    {
+     "palette": 1,
+     "variant": "p1",
+     "source": "0C/2C/30",
+     "target": "32/22/12",
+     "target_from": "BG, Big Core MK II / Tetran / Golem core (stage 5)",
+     "method": "by tone role: dark/outline->dark, mid->mid, light->light (source dark = slot 1, target dark = slot 3)",
+     "slots": {
+      "1": "0C->12",
+      "2": "2C->22",
+      "3": "30->32"
+     },
+     "new_palette": "12/22/32",
+     "chr_reindex_to_share_the_g2_palette": {
+      "1": 3,
+      "2": 2,
+      "3": 1
+     }
+    },
+    {
+     "palette": 2,
+     "variant": "p1",
+     "source": "21/26/30",
+     "target": "10/00/06",
+     "target_from": "sprite P3 stage 5 (Tetran arms)",
+     "method": "by tone role: dark/outline->dark, mid->mid, light->light (source dark = slot 1, target dark = slot 3)",
+     "slots": {
+      "1": "21->06",
+      "2": "26->00",
+      "3": "30->10"
+     },
+     "new_palette": "06/00/10",
+     "chr_reindex_to_share_the_g2_palette": {
+      "1": 3,
+      "2": 2,
+      "3": 1
+     }
+    }
+   ]
+  },
+  {
+   "asset": "nl.effect.explosion_small",
+   "name": "Small explosion (enemies, core hits, napalm)",
+   "source": "sfc.effect.explosion_small",
+   "source_game": "salamander_fc",
+   "visual_kind": "NES",
+   "class": "explosion",
+   "g2_reference": [
+    "g2.effect.explosion_small",
+    "g2.player.vic_viper_explosion"
+   ],
+   "work_note": "Recolour rule: 100 % of Gradius II explosion frames (small, large, Vic Viper explosion) are palette 1 20/27/16; outline ok (69 % dark rim; Gradius II explosion 75 %)",
+   "palette_map": [
+    {
+     "palette": 0,
+     "variant": "p1",
+     "source": "20/22/02",
+     "target": "20/27/16",
+     "target_from": "sprite P1, all stages",
+     "method": "slot to slot (source already in Gradius II slot order: 1 light, 2 mid, 3 outline)",
+     "slots": {
+      "1": "20->20",
+      "2": "22->27",
+      "3": "02->16"
+     },
+     "new_palette": "20/27/16"
+    },
+    {
+     "palette": 1,
+     "variant": "p1",
+     "source": "20/27/16",
+     "target": "20/27/16",
+     "target_from": "sprite P1, all stages",
+     "method": "identity",
+     "slots": {
+      "1": "20->20",
+      "2": "27->27",
+      "3": "16->16"
+     },
+     "new_palette": "20/27/16"
+    }
+   ]
+  },
+  {
+   "asset": "nl.effect.n1_ending_six_drawings_shown_in_turn",
+   "name": "Nemesis: Ending: six drawings shown in turn (p00:$4EE6 dibujos del medidor)",
+   "source": "sfc.ending.p1_ship",
+   "source_game": "salamander_fc",
+   "visual_kind": "OWNER_SHIP",
+   "class": "ending_ship",
+   "g2_reference": [
+    "g2.screen_obj.ending_sprites"
+   ],
+   "work_note": "outline incomplete: 32 % of silhouette pixels are the dark tone (Gradius II screen_sprite 68 %); add a 1-px rim in the outline slot where the silhouette is mid/light",
+   "palette_map": [
+    {
+     "palette": 0,
+     "variant": "p1",
+     "source": "20/10/11",
+     "target": "20/00/02",
+     "target_from": "ending sprites P0",
+     "method": "by tone role: dark/outline->dark, mid->mid, light->light (source dark = slot 3, target dark = slot 3)",
+     "slots": {
+      "1": "20->20",
+      "2": "10->00",
+      "3": "11->02"
+     },
+     "new_palette": "20/00/02"
+    }
+   ]
+  },
+  {
+   "asset": "nl.effect.n1_type_0d_death_flash",
+   "name": "Nemesis: Type-0D death flash (type $14)",
+   "source": "gr.effect.explosion_stage6",
+   "source_game": "gradius_nes",
+   "visual_kind": "NES",
+   "class": "explosion",
+   "g2_reference": [
+    "g2.effect.explosion_large",
+    "g2.effect.explosion_small"
+   ],
+   "work_note": "Recolour rule: 100 % of Gradius II explosion frames (small, large, Vic Viper explosion) are palette 1 20/27/16; outline incomplete: 62 % of silhouette pixels are the dark tone (Gradius II explosion 75 %); add a 1-px rim in the outline slot where the silhouette is mid/light; dithering: 7.2 % of 2x2 windows are checkerboards (Gradius II 1.8 %); replace by solid tone bands; the source keeps its colours in a different slot order (Gradius NES: dark slot 1, white slot 3): re-index the CHR as given by chr_reindex_to_share_the_g2_palette to share the Gradius II palette RAM",
+   "palette_map": [
+    {
+     "palette": 3,
+     "variant": "p1",
+     "source": "06/26/30",
+     "target": "20/27/16",
+     "target_from": "sprite P1, all stages",
+     "method": "by tone role: dark/outline->dark, mid->mid, light->light (source dark = slot 1, target dark = slot 3)",
+     "slots": {
+      "1": "06->16",
+      "2": "26->27",
+      "3": "30->20"
+     },
+     "new_palette": "16/27/20",
+     "chr_reindex_to_share_the_g2_palette": {
+      "1": 3,
+      "2": 2,
+      "3": 1
+     }
+    }
+   ]
+  },
+  {
+   "asset": "nl.effect.score_popup",
+   "name": "Score / 1UP popup",
+   "source": "gr.item.one_up",
+   "source_game": "gradius_nes",
+   "visual_kind": "NES",
+   "class": "popup",
+   "g2_reference": [
+    "g2.weapon.normal_shot",
+    "g2.item.capsule"
+   ],
+   "work_note": "Recolour rule: Gradius II has no score popups; its HUD/text is white on light blue and small player-side sprites use palette 0 20/22/02; outline incomplete: 0 % of silhouette pixels are the dark tone (Gradius II player_shot 65 %); add a 1-px rim in the outline slot where the silhouette is mid/light; flat: 100 % of frames use fewer than 3 colours (Gradius II 50 %); shade the large areas with the mid tone, keep the light tone on the upper/left third; the source keeps its colours in a different slot order (Gradius NES: dark slot 1, white slot 3): re-index the CHR as given by chr_reindex_to_share_the_g2_palette to share the Gradius II palette RAM",
+   "palette_map": [
+    {
+     "palette": 1,
+     "variant": "p1",
+     "source": "0C/2C/30",
+     "target": "20/22/02",
+     "target_from": "sprite P0, all stages",
+     "method": "by tone role: dark/outline->dark, mid->mid, light->light (source dark = slot 1, target dark = slot 3)",
+     "slots": {
+      "1": "0C->02",
+      "2": "2C->22",
+      "3": "30->20"
+     },
+     "new_palette": "02/22/20",
+     "chr_reindex_to_share_the_g2_palette": {
+      "1": 3,
+      "2": 2,
+      "3": 1
+     }
+    }
+   ]
+  },
+  {
+   "asset": "nl.enemy.amoeba",
+   "name": "Amoeba (spinning cell darter)",
+   "source": "gr.enemy.amoeba",
+   "source_game": "gradius_nes",
+   "visual_kind": "NES",
+   "class": "organic",
+   "g2_reference": [
+    "g2.enemy.cell_blob",
+    "g2.enemy.cell_blob_small"
+   ],
+   "work_note": "outline ok (90 % dark rim; Gradius II organic_enemy 70 %); the source keeps its colours in a different slot order (Gradius NES: dark slot 1, white slot 3): re-index the CHR as given by chr_reindex_to_share_the_g2_palette to share the Gradius II palette RAM",
+   "palette_map": [
+    {
+     "palette": 1,
+     "variant": "p1",
+     "source": "0C/2C/30",
+     "target": "20/22/02",
+     "target_from": "sprite P0, all stages",
+     "method": "by tone role: dark/outline->dark, mid->mid, light->light (source dark = slot 1, target dark = slot 3)",
+     "slots": {
+      "1": "0C->02",
+      "2": "2C->22",
+      "3": "30->20"
+     },
+     "new_palette": "02/22/20",
+     "chr_reindex_to_share_the_g2_palette": {
+      "1": 3,
+      "2": 2,
+      "3": 1
+     }
+    },
+    {
+     "palette": 3,
+     "variant": "p1",
+     "source": "06/26/30",
+     "target": "20/27/16",
+     "target_from": "sprite P1, all stages",
+     "method": "by tone role: dark/outline->dark, mid->mid, light->light (source dark = slot 1, target dark = slot 3)",
+     "slots": {
+      "1": "06->16",
+      "2": "26->27",
+      "3": "30->20"
+     },
+     "new_palette": "16/27/20",
+     "chr_reindex_to_share_the_g2_palette": {
+      "1": 3,
+      "2": 2,
+      "3": 1
+     }
+    }
+   ]
+  },
+  {
+   "asset": "nl.enemy.dee01",
+   "name": "Dee-01 ground/ceiling turret",
+   "source": "gr.enemy.dee01",
+   "source_game": "gradius_nes",
+   "visual_kind": "NES",
+   "class": "enemy_craft",
+   "g2_reference": [
+    "g2.enemy.wall_turret",
+    "g2.boss_part.core_turret",
+    "g2.enemy.ducker"
+   ],
+   "work_note": "outline incomplete: 34 % of silhouette pixels are the dark tone (Gradius II enemy_craft 55 %); add a 1-px rim in the outline slot where the silhouette is mid/light; the source keeps its colours in a different slot order (Gradius NES: dark slot 1, white slot 3): re-index the CHR as given by chr_reindex_to_share_the_g2_palette to share the Gradius II palette RAM",
+   "palette_map": [
+    {
+     "palette": 2,
+     "variant": "p1",
+     "source": "21/26/30",
+     "target": "20/12/16",
+     "target_from": "sprite P2, stages 1-2,4-7",
+     "method": "by tone role: dark/outline->dark, mid->mid, light->light (source dark = slot 1, target dark = slot 2)",
+     "slots": {
+      "1": "21->12",
+      "2": "26->16",
+      "3": "30->20"
+     },
+     "new_palette": "12/16/20",
+     "chr_reindex_to_share_the_g2_palette": {
+      "1": 2,
+      "2": 3,
+      "3": 1
+     }
+    },
+    {
+     "palette": 3,
+     "variant": "p1",
+     "source": "06/26/30",
+     "target": "20/27/16",
+     "target_from": "sprite P1, all stages",
+     "method": "by tone role: dark/outline->dark, mid->mid, light->light (source dark = slot 1, target dark = slot 3)",
+     "slots": {
+      "1": "06->16",
+      "2": "26->27",
+      "3": "30->20"
+     },
+     "new_palette": "16/27/20",
+     "chr_reindex_to_share_the_g2_palette": {
+      "1": 3,
+      "2": 2,
+      "3": 1
+     }
+    }
+   ]
+  },
+  {
+   "asset": "nl.enemy.n1_fan",
+   "name": "Nemesis: Fan (type 02)",
+   "source": "gr.enemy.fan",
+   "source_game": "gradius_nes",
+   "visual_kind": "NES",
+   "class": "enemy_craft",
+   "g2_reference": [
+    "g2.enemy.fan",
+    "g2.enemy.disc"
+   ],
+   "work_note": "outline incomplete: 7 % of silhouette pixels are the dark tone (Gradius II enemy_craft 55 %); add a 1-px rim in the outline slot where the silhouette is mid/light; dithering: 5.6 % of 2x2 windows are checkerboards (Gradius II 1.5 %); replace by solid tone bands; the source keeps its colours in a different slot order (Gradius NES: dark slot 1, white slot 3): re-index the CHR as given by chr_reindex_to_share_the_g2_palette to share the Gradius II palette RAM",
+   "palette_map": [
+    {
+     "palette": 2,
+     "variant": "p1",
+     "source": "21/26/30",
+     "target": "20/12/16",
+     "target_from": "sprite P2, stages 1-2,4-7",
+     "method": "by tone role: dark/outline->dark, mid->mid, light->light (source dark = slot 1, target dark = slot 2)",
+     "slots": {
+      "1": "21->12",
+      "2": "26->16",
+      "3": "30->20"
+     },
+     "new_palette": "12/16/20",
+     "chr_reindex_to_share_the_g2_palette": {
+      "1": 2,
+      "2": 3,
+      "3": 1
+     }
+    }
+   ]
+  },
+  {
+   "asset": "nl.enemy.n1_rock",
+   "name": "Nemesis: Rock (type 08, rock rain and rock walls)",
+   "source": "gr.enemy.zub",
+   "source_game": "gradius_nes",
+   "visual_kind": "NES",
+   "class": "rock",
+   "g2_reference": [
+    "g2.enemy.rotating_debris",
+    "g2.projectile.volcano_rock"
+   ],
+   "work_note": "outline incomplete: 51 % of silhouette pixels are the dark tone (Gradius II rock_crystal 71 %); add a 1-px rim in the outline slot where the silhouette is mid/light; flat: 25 % of frames use fewer than 3 colours (Gradius II 0 %); shade the large areas with the mid tone, keep the light tone on the upper/left third; the source keeps its colours in a different slot order (Gradius NES: dark slot 1, white slot 3): re-index the CHR as given by chr_reindex_to_share_the_g2_palette to share the Gradius II palette RAM",
+   "palette_map": [
+    {
+     "palette": 1,
+     "variant": "p1",
+     "source": "0C/2C/30",
+     "target": "20/10/00",
+     "target_from": "sprite P3 stage 4 (Moai) / Big Core MK II hull BG",
+     "method": "by tone role: dark/outline->dark, mid->mid, light->light (source dark = slot 1, target dark = slot 3)",
+     "slots": {
+      "1": "0C->00",
+      "2": "2C->10",
+      "3": "30->20"
+     },
+     "new_palette": "00/10/20",
+     "chr_reindex_to_share_the_g2_palette": {
+      "1": 3,
+      "2": 2,
+      "3": 1
+     }
+    }
+   ]
+  },
+  {
+   "asset": "nl.enemy.n1_type_06",
+   "name": "Nemesis: Type 06 (jumps along the floor)",
+   "source": "gr.enemy.jumper",
+   "source_game": "gradius_nes",
+   "visual_kind": "NES",
+   "class": "enemy_craft",
+   "g2_reference": [
+    "g2.enemy.jumper",
+    "g2.enemy.beetle"
+   ],
+   "work_note": "outline incomplete: 38 % of silhouette pixels are the dark tone (Gradius II enemy_craft 55 %); add a 1-px rim in the outline slot where the silhouette is mid/light; the source keeps its colours in a different slot order (Gradius NES: dark slot 1, white slot 3): re-index the CHR as given by chr_reindex_to_share_the_g2_palette to share the Gradius II palette RAM",
+   "palette_map": [
+    {
+     "palette": 2,
+     "variant": "p1",
+     "source": "21/26/30",
+     "target": "20/12/16",
+     "target_from": "sprite P2, stages 1-2,4-7",
+     "method": "by tone role: dark/outline->dark, mid->mid, light->light (source dark = slot 1, target dark = slot 2)",
+     "slots": {
+      "1": "21->12",
+      "2": "26->16",
+      "3": "30->20"
+     },
+     "new_palette": "12/16/20",
+     "chr_reindex_to_share_the_g2_palette": {
+      "1": 2,
+      "2": 3,
+      "3": 1
+     }
+    },
+    {
+     "palette": 3,
+     "variant": "p1",
+     "source": "06/0F/30",
+     "target": "20/27/16",
+     "target_from": "sprite P1, all stages",
+     "method": "by tone role: dark/outline->dark, mid->mid, light->light (source dark = slot 2, target dark = slot 3)",
+     "slots": {
+      "1": "06->27",
+      "2": "0F->16",
+      "3": "30->20"
+     },
+     "new_palette": "27/16/20",
+     "chr_reindex_to_share_the_g2_palette": {
+      "1": 2,
+      "2": 3,
+      "3": 1
+     }
+    },
+    {
+     "palette": 3,
+     "variant": "p1",
+     "source": "06/26/30",
+     "target": "20/27/16",
+     "target_from": "sprite P1, all stages",
+     "method": "by tone role: dark/outline->dark, mid->mid, light->light (source dark = slot 1, target dark = slot 3)",
+     "slots": {
+      "1": "06->16",
+      "2": "26->27",
+      "3": "30->20"
+     },
+     "new_palette": "16/27/20",
+     "chr_reindex_to_share_the_g2_palette": {
+      "1": 3,
+      "2": 2,
+      "3": 1
+     }
+    }
+   ]
+  },
+  {
+   "asset": "nl.enemy.n1_type_0a",
+   "name": "Nemesis: Type 0A (group of six, curves)",
+   "source": "gr.enemy.spinner",
+   "source_game": "gradius_nes",
+   "visual_kind": "NES",
+   "class": "enemy_craft",
+   "g2_reference": [
+    "g2.enemy.spinner",
+    "g2.enemy.disc"
+   ],
+   "work_note": "outline incomplete: 18 % of silhouette pixels are the dark tone (Gradius II enemy_craft 55 %); add a 1-px rim in the outline slot where the silhouette is mid/light; dithering: 5.1 % of 2x2 windows are checkerboards (Gradius II 1.5 %); replace by solid tone bands; the source keeps its colours in a different slot order (Gradius NES: dark slot 1, white slot 3): re-index the CHR as given by chr_reindex_to_share_the_g2_palette to share the Gradius II palette RAM",
+   "palette_map": [
+    {
+     "palette": 2,
+     "variant": "p1",
+     "source": "21/26/30",
+     "target": "20/12/16",
+     "target_from": "sprite P2, stages 1-2,4-7",
+     "method": "by tone role: dark/outline->dark, mid->mid, light->light (source dark = slot 1, target dark = slot 2)",
+     "slots": {
+      "1": "21->12",
+      "2": "26->16",
+      "3": "30->20"
+     },
+     "new_palette": "12/16/20",
+     "chr_reindex_to_share_the_g2_palette": {
+      "1": 2,
+      "2": 3,
+      "3": 1
+     }
+    }
+   ]
+  },
+  {
+   "asset": "nl.enemy.n2_splitting_bouncer",
+   "name": "Nemesis 2: Splitting bouncer",
+   "source": "sfc.s4.enemy.blood_cell",
+   "source_game": "salamander_fc",
+   "visual_kind": "NES",
+   "class": "organic",
+   "g2_reference": [
+    "g2.enemy.spinning_cell",
+    "g2.enemy.cell_blob_small"
+   ],
+   "work_note": "outline incomplete: 41 % of silhouette pixels are the dark tone (Gradius II organic_enemy 70 %); add a 1-px rim in the outline slot where the silhouette is mid/light",
+   "palette_map": [
+    {
+     "palette": 2,
+     "variant": "p1",
+     "source": "35/15/07",
+     "target": "36/15/06",
+     "target_from": "sprite P3 stage 7",
+     "method": "by tone role: dark/outline->dark, mid->mid, light->light (source dark = slot 3, target dark = slot 3)",
+     "slots": {
+      "1": "35->36",
+      "2": "15->15",
+      "3": "07->06"
+     },
+     "new_palette": "36/15/06"
+    },
+    {
+     "palette": 3,
+     "variant": "p1",
+     "source": "36/24/04",
+     "target": "36/24/04",
+     "target_from": "sprite P3 stages 1-2",
+     "method": "identity",
+     "slots": {
+      "1": "36->36",
+      "2": "24->24",
+      "3": "04->04"
+     },
+     "new_palette": "36/24/04"
+    }
+   ]
+  },
+  {
+   "asset": "nl.enemy.n3_rotating_gun_pod",
+   "name": "Nemesis 3: Rotating gun pod",
+   "source": "lf.s1.jet_fighter_white",
+   "source_game": "lifeforce_nes",
+   "visual_kind": "NES",
+   "class": "enemy_craft",
+   "g2_reference": [
+    "g2.enemy.spinner",
+    "g2.enemy.rugal"
+   ],
+   "work_note": "outline ok (49 % dark rim; Gradius II enemy_craft 55 %); 71 % of frames mix 2+ palettes (Gradius II enemy_craft 0 %): one palette per object unless it is the player ship",
+   "palette_map": [
+    {
+     "palette": 0,
+     "variant": "p1",
+     "source": "20/22/02",
+     "target": "20/22/02",
+     "target_from": "sprite P0, all stages",
+     "method": "identity",
+     "slots": {
+      "1": "20->20",
+      "2": "22->22",
+      "3": "02->02"
+     },
+     "new_palette": "20/22/02"
+    },
+    {
+     "palette": 1,
+     "variant": "p1",
+     "source": "20/27/16",
+     "target": "20/27/16",
+     "target_from": "sprite P1, all stages",
+     "method": "identity",
+     "slots": {
+      "1": "20->20",
+      "2": "27->27",
+      "3": "16->16"
+     },
+     "new_palette": "20/27/16"
+    }
+   ]
+  },
+  {
+   "asset": "nl.enemy.rush",
+   "name": "Rush (hatch flyer)",
+   "source": "gr.enemy.rush",
+   "source_game": "gradius_nes",
+   "visual_kind": "NES",
+   "class": "enemy_craft",
+   "g2_reference": [
+    "g2.enemy.fighter_b",
+    "g2.enemy.rugal"
+   ],
+   "work_note": "outline incomplete: 6 % of silhouette pixels are the dark tone (Gradius II enemy_craft 55 %); add a 1-px rim in the outline slot where the silhouette is mid/light; dithering: 6.1 % of 2x2 windows are checkerboards (Gradius II 1.5 %); replace by solid tone bands; the source keeps its colours in a different slot order (Gradius NES: dark slot 1, white slot 3): re-index the CHR as given by chr_reindex_to_share_the_g2_palette to share the Gradius II palette RAM",
+   "palette_map": [
+    {
+     "palette": 2,
+     "variant": "p1",
+     "source": "21/26/30",
+     "target": "20/12/16",
+     "target_from": "sprite P2, stages 1-2,4-7",
+     "method": "by tone role: dark/outline->dark, mid->mid, light->light (source dark = slot 1, target dark = slot 2)",
+     "slots": {
+      "1": "21->12",
+      "2": "26->16",
+      "3": "30->20"
+     },
+     "new_palette": "12/16/20",
+     "chr_reindex_to_share_the_g2_palette": {
+      "1": 2,
+      "2": 3,
+      "3": 1
+     }
+    }
+   ]
+  },
+  {
+   "asset": "nl.enemy.sal_big_rock_that_splits_into_three_fr",
+   "name": "Salamander: Big rock that splits into three fragments (type 0x0F) when hit",
+   "source": "sfc.s2.enemy.asteroid_splitting",
+   "source_game": "salamander_fc",
+   "visual_kind": "NES",
+   "class": "rock",
+   "g2_reference": [
+    "g2.enemy.crystal",
+    "g2.enemy.rotating_debris"
+   ],
+   "work_note": "outline incomplete: 44 % of silhouette pixels are the dark tone (Gradius II rock_crystal 71 %); add a 1-px rim in the outline slot where the silhouette is mid/light; large: median 24x31 px vs Gradius II rock_crystal median 16x16 px",
+   "palette_map": [
+    {
+     "palette": 2,
+     "variant": "p1",
+     "source": "20/00/0C",
+     "target": "20/00/0C",
+     "target_from": "sprite P3 stage 6",
+     "method": "identity",
+     "slots": {
+      "1": "20->20",
+      "2": "00->00",
+      "3": "0C->0C"
+     },
+     "new_palette": "20/00/0C"
+    }
+   ]
+  },
+  {
+   "asset": "nl.enemy.sal_bouncing_ball",
+   "name": "Salamander: Bouncing ball (two overlaid sprites, bounces off the scenery)",
+   "source": "sfc.s2.enemy.orb",
+   "source_game": "salamander_fc",
+   "visual_kind": "NES",
+   "class": "organic",
+   "g2_reference": [
+    "g2.enemy.rolling_ball",
+    "g2.enemy.shrimp"
+   ],
+   "work_note": "outline ok (100 % dark rim; Gradius II organic_enemy 70 %)",
+   "palette_map": [
+    {
+     "palette": 0,
+     "variant": "p1",
+     "source": "20/22/02",
+     "target": "20/22/02",
+     "target_from": "sprite P0, all stages",
+     "method": "identity",
+     "slots": {
+      "1": "20->20",
+      "2": "22->22",
+      "3": "02->02"
+     },
+     "new_palette": "20/22/02"
+    },
+    {
+     "palette": 1,
+     "variant": "p1",
+     "source": "20/27/16",
+     "target": "20/27/16",
+     "target_from": "sprite P1, all stages",
+     "method": "identity",
+     "slots": {
+      "1": "20->20",
+      "2": "27->27",
+      "3": "16->16"
+     },
+     "new_palette": "20/27/16"
+    }
+   ]
+  },
+  {
+   "asset": "nl.enemy.sal_falling_rock_block",
+   "name": "Salamander: Falling rock / block (4x4, indestructible)",
+   "source": "sfc.s2.enemy.asteroid_large",
+   "source_game": "salamander_fc",
+   "visual_kind": "NES",
+   "class": "rock",
+   "g2_reference": [
+    "g2.enemy.rotating_debris",
+    "g2.enemy.crystal"
+   ],
+   "work_note": "outline incomplete: 42 % of silhouette pixels are the dark tone (Gradius II rock_crystal 71 %); add a 1-px rim in the outline slot where the silhouette is mid/light; large: median 32x46 px vs Gradius II rock_crystal median 16x16 px",
+   "palette_map": [
+    {
+     "palette": 2,
+     "variant": "p1",
+     "source": "20/00/0C",
+     "target": "20/00/0C",
+     "target_from": "sprite P3 stage 6",
+     "method": "identity",
+     "slots": {
+      "1": "20->20",
+      "2": "00->00",
+      "3": "0C->0C"
+     },
+     "new_palette": "20/00/0C"
+    }
+   ]
+  },
+  {
+   "asset": "nl.enemy.sal_pulsating_cell",
+   "name": "Salamander: Pulsating cell (grows and shrinks 2x2-4x4, fires)",
+   "source": "sfc.s4.enemy.cell_spawner",
+   "source_game": "salamander_fc",
+   "visual_kind": "NES",
+   "class": "organic",
+   "g2_reference": [
+    "g2.enemy.cell_blob",
+    "g2.enemy.cell_hatchling"
+   ],
+   "work_note": "outline ok (84 % dark rim; Gradius II organic_enemy 70 %); large: median 28x32 px vs Gradius II organic_enemy median 16x16 px",
+   "palette_map": [
+    {
+     "palette": 1,
+     "variant": "p1",
+     "source": "20/27/16",
+     "target": "20/27/16",
+     "target_from": "sprite P1, all stages",
+     "method": "identity",
+     "slots": {
+      "1": "20->20",
+      "2": "27->27",
+      "3": "16->16"
+     },
+     "new_palette": "20/27/16"
+    },
+    {
+     "palette": 2,
+     "variant": "p1",
+     "source": "35/15/07",
+     "target": "36/15/06",
+     "target_from": "sprite P3 stage 7",
+     "method": "by tone role: dark/outline->dark, mid->mid, light->light (source dark = slot 3, target dark = slot 3)",
+     "slots": {
+      "1": "35->36",
+      "2": "15->15",
+      "3": "07->06"
+     },
+     "new_palette": "36/15/06"
+    }
+   ]
+  },
+  {
+   "asset": "nl.enemy.sal_wandering_spore",
+   "name": "Salamander: Wandering spore (random direction changes)",
+   "source": "sfc.s1.enemy.star_spore",
+   "source_game": "salamander_fc",
+   "visual_kind": "NES",
+   "class": "organic",
+   "g2_reference": [
+    "g2.enemy.cross_mine",
+    "g2.enemy.cell_hatchling"
+   ],
+   "work_note": "outline ok (98 % dark rim; Gradius II organic_enemy 70 %)",
+   "palette_map": [
+    {
+     "palette": 1,
+     "variant": "p1",
+     "source": "20/27/16",
+     "target": "20/27/16",
+     "target_from": "sprite P1, all stages",
+     "method": "identity",
+     "slots": {
+      "1": "20->20",
+      "2": "27->27",
+      "3": "16->16"
+     },
+     "new_palette": "20/27/16"
+    },
+    {
+     "palette": 3,
+     "variant": "p1",
+     "source": "36/24/04",
+     "target": "36/24/04",
+     "target_from": "sprite P3 stages 1-2",
+     "method": "identity",
+     "slots": {
+      "1": "36->36",
+      "2": "24->24",
+      "3": "04->04"
+     },
+     "new_palette": "36/24/04"
+    }
+   ]
+  },
+  {
+   "asset": "nl.enemy.small_asteroid",
+   "name": "Small asteroid / spinning fragment",
+   "source": "sfc.s2.enemy.asteroid_small",
+   "source_game": "salamander_fc",
+   "visual_kind": "NES",
+   "class": "rock",
+   "g2_reference": [
+    "g2.enemy.rotating_debris",
+    "g2.enemy.crystal"
+   ],
+   "work_note": "outline incomplete: 50 % of silhouette pixels are the dark tone (Gradius II rock_crystal 71 %); add a 1-px rim in the outline slot where the silhouette is mid/light",
+   "palette_map": [
+    {
+     "palette": 2,
+     "variant": "p1",
+     "source": "20/00/0C",
+     "target": "20/00/0C",
+     "target_from": "sprite P3 stage 6",
+     "method": "identity",
+     "slots": {
+      "1": "20->20",
+      "2": "00->00",
+      "3": "0C->0C"
+     },
+     "new_palette": "20/00/0C"
+    }
+   ]
+  },
+  {
+   "asset": "nl.item.capsule",
+   "name": "Capsule (red power, blue, flashing 1UP, bonus, special)",
+   "source": "sfc.item.capsule_red",
+   "source_game": "salamander_fc",
+   "visual_kind": "NES",
+   "class": "capsule",
+   "g2_reference": [
+    "g2.item.capsule"
+   ],
+   "work_note": "outline ok (23 % dark rim; Gradius II capsule 22 %)",
+   "palette_map": [
+    {
+     "palette": 1,
+     "variant": "p1",
+     "source": "20/27/16",
+     "target": "20/27/16",
+     "target_from": "sprite P1, all stages",
+     "method": "identity",
+     "slots": {
+      "1": "20->20",
+      "2": "27->27",
+      "3": "16->16"
+     },
+     "new_palette": "20/27/16"
+    }
+   ]
+  },
+  {
+   "asset": "nl.player.death_explosion",
+   "name": "Player ship explosion",
+   "source": "sfc.player.p1_death",
+   "source_game": "salamander_fc",
+   "visual_kind": "NES",
+   "class": "explosion",
+   "g2_reference": [
+    "g2.player.vic_viper_explosion",
+    "g2.effect.explosion_small"
+   ],
+   "work_note": "Recolour rule: 100 % of Gradius II explosion frames (small, large, Vic Viper explosion) are palette 1 20/27/16; outline ok (66 % dark rim; Gradius II explosion 75 %); dithering: 5.1 % of 2x2 windows are checkerboards (Gradius II 1.8 %); replace by solid tone bands; 33 % of frames mix 2+ palettes (Gradius II explosion 0 %): one palette per object unless it is the player ship",
+   "palette_map": [
+    {
+     "palette": 0,
+     "variant": "p1",
+     "source": "20/22/02",
+     "target": "20/27/16",
+     "target_from": "sprite P1, all stages",
+     "method": "slot to slot (source already in Gradius II slot order: 1 light, 2 mid, 3 outline)",
+     "slots": {
+      "1": "20->20",
+      "2": "22->27",
+      "3": "02->16"
+     },
+     "new_palette": "20/27/16"
+    },
+    {
+     "palette": 1,
+     "variant": "p1",
+     "source": "20/27/16",
+     "target": "20/27/16",
+     "target_from": "sprite P1, all stages",
+     "method": "identity",
+     "slots": {
+      "1": "20->20",
+      "2": "27->27",
+      "3": "16->16"
+     },
+     "new_palette": "20/27/16"
+    }
+   ]
+  },
+  {
+   "asset": "nl.player.n3_vixen_with_force_field",
+   "name": "Nemesis 3: VIXEN with FORCE FIELD",
+   "source": "sfc.player.p1_force_field",
+   "source_game": "salamander_fc",
+   "visual_kind": "NES",
+   "class": "force_field",
+   "g2_reference": [
+    "g2.player.force_field"
+   ],
+   "work_note": "outline ok (99 % dark rim; Gradius II force_field 100 %)",
+   "palette_map": [
+    {
+     "palette": 0,
+     "variant": "p1",
+     "source": "20/22/02",
+     "target": "20/22/02",
+     "target_from": "sprite P0, all stages",
+     "method": "identity",
+     "slots": {
+      "1": "20->20",
+      "2": "22->22",
+      "3": "02->02"
+     },
+     "new_palette": "20/22/02"
+    },
+    {
+     "palette": 1,
+     "variant": "p1",
+     "source": "20/27/16",
+     "target": "20/27/16",
+     "target_from": "sprite P1, all stages",
+     "method": "identity",
+     "slots": {
+      "1": "20->20",
+      "2": "27->27",
+      "3": "16->16"
+     },
+     "new_palette": "20/27/16"
+    }
+   ]
+  },
+  {
+   "asset": "nl.player.shield",
+   "name": "Front shield (Gradius \"shield\"; called FORCE FIELD in Nemesis 2 and Salamander)",
+   "source": "gr.player_weapon.shield",
+   "source_game": "gradius_nes",
+   "visual_kind": "NES",
+   "class": "force_field",
+   "g2_reference": [
+    "g2.player.force_field"
+   ],
+   "work_note": "outline incomplete: 5 % of silhouette pixels are the dark tone (Gradius II force_field 100 %); add a 1-px rim in the outline slot where the silhouette is mid/light; flat: 100 % of frames use fewer than 3 colours (Gradius II 0 %); shade the large areas with the mid tone, keep the light tone on the upper/left third; small: median 8x16 px vs Gradius II force_field median 24x16 px; the source keeps its colours in a different slot order (Gradius NES: dark slot 1, white slot 3): re-index the CHR as given by chr_reindex_to_share_the_g2_palette to share the Gradius II palette RAM",
+   "palette_map": [
+    {
+     "palette": 1,
+     "variant": "p1",
+     "source": "0C/2C/30",
+     "target": "20/22/02",
+     "target_from": "sprite P0, all stages",
+     "method": "by tone role: dark/outline->dark, mid->mid, light->light (source dark = slot 1, target dark = slot 3)",
+     "slots": {
+      "1": "0C->02",
+      "2": "2C->22",
+      "3": "30->20"
+     },
+     "new_palette": "02/22/20",
+     "chr_reindex_to_share_the_g2_palette": {
+      "1": 3,
+      "2": 2,
+      "3": 1
+     }
+    },
+    {
+     "palette": 3,
+     "variant": "p1",
+     "source": "06/0F/30",
+     "target": "20/27/16",
+     "target_from": "sprite P1, all stages",
+     "method": "by tone role: dark/outline->dark, mid->mid, light->light (source dark = slot 2, target dark = slot 3)",
+     "slots": {
+      "1": "06->27",
+      "2": "0F->16",
+      "3": "30->20"
+     },
+     "new_palette": "27/16/20",
+     "chr_reindex_to_share_the_g2_palette": {
+      "1": 2,
+      "2": 3,
+      "3": 1
+     }
+    },
+    {
+     "palette": 3,
+     "variant": "p1",
+     "source": "06/26/30",
+     "target": "20/27/16",
+     "target_from": "sprite P1, all stages",
+     "method": "by tone role: dark/outline->dark, mid->mid, light->light (source dark = slot 1, target dark = slot 3)",
+     "slots": {
+      "1": "06->16",
+      "2": "26->27",
+      "3": "30->20"
+     },
+     "new_palette": "16/27/20",
+     "chr_reindex_to_share_the_g2_palette": {
+      "1": 3,
+      "2": 2,
+      "3": 1
+     }
+    }
+   ]
+  },
+  {
+   "asset": "nl.projectile.n1_ring_shot",
+   "name": "Nemesis: Ring shot (type 0B, indestructible)",
+   "source": "gr.projectile.child",
+   "source_game": "gradius_nes",
+   "visual_kind": "NES",
+   "class": "enemy_bullet",
+   "g2_reference": [
+    "g2.projectile.ion_ring",
+    "g2.projectile.enemy_bullet"
+   ],
+   "work_note": "Recolour rule: 94.6 % of Gradius II enemy-bullet frames are palette 0 20/22/02; outline incomplete: 46 % of silhouette pixels are the dark tone (Gradius II enemy_bullet 84 %); add a 1-px rim in the outline slot where the silhouette is mid/light; dithering: 17.8 % of 2x2 windows are checkerboards (Gradius II 2.1 %); replace by solid tone bands; the source keeps its colours in a different slot order (Gradius NES: dark slot 1, white slot 3): re-index the CHR as given by chr_reindex_to_share_the_g2_palette to share the Gradius II palette RAM",
+   "palette_map": [
+    {
+     "palette": 1,
+     "variant": "p1",
+     "source": "0C/2C/30",
+     "target": "20/22/02",
+     "target_from": "sprite P0, all stages",
+     "method": "by tone role: dark/outline->dark, mid->mid, light->light (source dark = slot 1, target dark = slot 3)",
+     "slots": {
+      "1": "0C->02",
+      "2": "2C->22",
+      "3": "30->20"
+     },
+     "new_palette": "02/22/20",
+     "chr_reindex_to_share_the_g2_palette": {
+      "1": 3,
+      "2": 2,
+      "3": 1
+     }
+    }
+   ]
+  },
+  {
+   "asset": "nl.scenery.n1_destructible_map_cells",
+   "name": "Nemesis: Destructible map cells",
+   "source": "gr.scenery.destructible_block_stage2",
+   "source_game": "gradius_nes",
+   "visual_kind": "NES",
+   "class": "screen/BG drawing -> stage2",
+   "work_note": "BG/screen drawing: after the colour map, rebuild it with the Gradius II BG rules (part A.3): 3-colour tiles plus the shared colour 0, palette changes on the 16x16 attribute grid only, dark slot 3 as the edge colour, no checkerboard dither; the Gradius II reference shows the target colours.",
+   "palette_map": [
+    "level",
+    "target",
+    "target_palettes",
+    "map",
+    "source_colours_px",
+    "image",
+    "crop_tiles"
+   ]
+  },
+  {
+   "asset": "nl.scenery.n1_ending_4x4_char_drawing_that_debri",
+   "name": "Nemesis: Ending: 4x4 char drawing that debris flies out of (p00:$4FB2)",
+   "source": "gr.effect.ending_mothership",
+   "source_game": "gradius_nes",
+   "visual_kind": "NES",
+   "class": "ending_ship",
+   "g2_reference": [
+    "g2.screen_obj.ending_sprites"
+   ],
+   "work_note": "outline incomplete: 54 % of silhouette pixels are the dark tone (Gradius II screen_sprite 68 %); add a 1-px rim in the outline slot where the silhouette is mid/light; small: median 24x32 px vs Gradius II screen_sprite median 46x43 px; the source keeps its colours in a different slot order (Gradius NES: dark slot 1, white slot 3): re-index the CHR as given by chr_reindex_to_share_the_g2_palette to share the Gradius II palette RAM",
+   "palette_map": [
+    {
+     "palette": 2,
+     "variant": "p1",
+     "source": "11/25/2C",
+     "target": "20/22/0C",
+     "target_from": "ending sprites P2",
+     "method": "by tone role: dark/outline->dark, mid->mid, light->light (source dark = slot 1, target dark = slot 3)",
+     "slots": {
+      "1": "11->0C",
+      "2": "25->20",
+      "3": "2C->22"
+     },
+     "new_palette": "0C/20/22",
+     "chr_reindex_to_share_the_g2_palette": {
+      "1": 3,
+      "2": 1,
+      "3": 2
+     }
+    }
+   ]
+  },
+  {
+   "asset": "nl.scenery.sal_piece_of_p12_b5fc",
+   "name": "Salamander: Piece of p12:$B5FC (shapes 0x2D-0x38)",
+   "source": "sfc.s1.enemy.blue_cell_chain",
+   "source_game": "salamander_fc",
+   "visual_kind": "NES",
+   "class": "organic",
+   "g2_reference": [
+    "g2.boss_part.golem_cells",
+    "g2.enemy.cell_hatchling"
+   ],
+   "work_note": "outline incomplete: 52 % of silhouette pixels are the dark tone (Gradius II organic_enemy 70 %); add a 1-px rim in the outline slot where the silhouette is mid/light",
+   "palette_map": [
+    {
+     "palette": 0,
+     "variant": "p1",
+     "source": "20/22/02",
+     "target": "20/22/02",
+     "target_from": "sprite P0, all stages",
+     "method": "identity",
+     "slots": {
+      "1": "20->20",
+      "2": "22->22",
+      "3": "02->02"
+     },
+     "new_palette": "20/22/02"
+    },
+    {
+     "palette": 1,
+     "variant": "p1",
+     "source": "20/27/16",
+     "target": "20/27/16",
+     "target_from": "sprite P1, all stages",
+     "method": "identity",
+     "slots": {
+      "1": "20->20",
+      "2": "27->27",
+      "3": "16->16"
+     },
+     "new_palette": "20/27/16"
+    }
+   ]
+  },
+  {
+   "asset": "nl.scenery.stars",
+   "name": "Twinkling star (background star field, cut-scene stars)",
+   "source": "sfc.title.star",
+   "source_game": "salamander_fc",
+   "visual_kind": "NES",
+   "class": "stars",
+   "g2_reference": [
+    "g2.screen_obj.title_sparkle"
+   ],
+   "work_note": "outline incomplete: 0 % of silhouette pixels are the dark tone (Gradius II screen_sprite 68 %); add a 1-px rim in the outline slot where the silhouette is mid/light; flat: 100 % of frames use fewer than 3 colours (Gradius II 5 %); shade the large areas with the mid tone, keep the light tone on the upper/left third; large: median 162x190 px vs Gradius II screen_sprite median 46x43 px",
+   "palette_map": [
+    {
+     "palette": 1,
+     "variant": "p1",
+     "source": "20/22/02",
+     "target": "20/22/02",
+     "target_from": "sprite P0, all stages",
+     "method": "identity",
+     "slots": {
+      "1": "20->20",
+      "2": "22->22",
+      "3": "02->02"
+     },
+     "new_palette": "20/22/02"
+    }
+   ]
+  },
+  {
+   "asset": "nl.screen.konami_logo",
+   "name": "Konami logo",
+   "source": "gr.title.konami_logo_us",
+   "source_game": "gradius_nes",
+   "visual_kind": "NES",
+   "class": "screen/BG drawing -> g2.screen.title",
+   "work_note": "BG/screen drawing: after the colour map, rebuild it with the Gradius II BG rules (part A.3): 3-colour tiles plus the shared colour 0, palette changes on the 16x16 attribute grid only, dark slot 3 as the edge colour, no checkerboard dither; the Gradius II reference shows the target colours.",
+   "palette_map": [
+    "level",
+    "target",
+    "target_palettes",
+    "map",
+    "source_colours_px",
+    "image",
+    "crop_tiles"
+   ]
+  },
+  {
+   "asset": "nl.screen.n1_ending",
+   "name": "Nemesis ending (sequence and loop messages)",
+   "source": "gr.screen.ending_jp",
+   "source_game": "gradius_nes",
+   "visual_kind": "NES",
+   "class": "screen/BG drawing -> g2.screen.staff_roll",
+   "work_note": "BG/screen drawing: after the colour map, rebuild it with the Gradius II BG rules (part A.3): 3-colour tiles plus the shared colour 0, palette changes on the 16x16 attribute grid only, dark slot 3 as the edge colour, no checkerboard dither; the Gradius II reference shows the target colours.",
+   "palette_map": [
+    "level",
+    "target",
+    "target_palettes",
+    "map",
+    "source_colours_px",
+    "image",
+    "crop_tiles"
+   ]
+  },
+  {
+   "asset": "nl.screen.n1_title",
+   "name": "Nemesis title (GRADIUS / NEMESIS logo by machine)",
+   "source": "gr.screen.title",
+   "source_game": "gradius_nes",
+   "visual_kind": "NES",
+   "class": "screen/BG drawing -> g2.screen.title",
+   "work_note": "BG/screen drawing: after the colour map, rebuild it with the Gradius II BG rules (part A.3): 3-colour tiles plus the shared colour 0, palette changes on the 16x16 attribute grid only, dark slot 3 as the edge colour, no checkerboard dither; the Gradius II reference shows the target colours.",
+   "palette_map": [
+    "level",
+    "target",
+    "target_palettes",
+    "map",
+    "source_colours_px",
+    "image",
+    "crop_tiles"
+   ]
+  },
+  {
+   "asset": "nl.screen.n2_title_logo_build_up",
+   "name": "Nemesis 2: Title logo build-up",
+   "source": "gr.title.gradius_logo",
+   "source_game": "gradius_nes",
+   "visual_kind": "NES",
+   "class": "screen/BG drawing -> g2.screen.logo_animation",
+   "work_note": "BG/screen drawing: after the colour map, rebuild it with the Gradius II BG rules (part A.3): 3-colour tiles plus the shared colour 0, palette changes on the 16x16 attribute grid only, dark slot 3 as the edge colour, no checkerboard dither; the Gradius II reference shows the target colours.",
+   "palette_map": [
+    "level",
+    "target",
+    "target_palettes",
+    "map",
+    "source_colours_px",
+    "image",
+    "crop_tiles"
+   ]
+  },
+  {
+   "asset": "nl.screen.sal_attract_demo",
+   "name": "Salamander: Attract demo (two ships playing stage 1)",
+   "source": "sfc.screen.attract_demo_stage1",
+   "source_game": "salamander_fc",
+   "visual_kind": "NES",
+   "class": "screen/BG drawing -> stage1",
+   "work_note": "BG/screen drawing: after the colour map, rebuild it with the Gradius II BG rules (part A.3): 3-colour tiles plus the shared colour 0, palette changes on the 16x16 attribute grid only, dark slot 3 as the edge colour, no checkerboard dither; the Gradius II reference shows the target colours.",
+   "palette_map": [
+    "level",
+    "target",
+    "target_palettes",
+    "map",
+    "source_colours_px",
+    "image",
+    "crop_tiles"
+   ]
+  },
+  {
+   "asset": "nl.screen.sal_stage_start",
+   "name": "Salamander: Stage start (HUD drawn, ship enters)",
+   "source": "sfc.screen.stage_start",
+   "source_game": "salamander_fc",
+   "visual_kind": "NES",
+   "class": "screen/BG drawing -> g2.screen.stage_start",
+   "work_note": "BG/screen drawing: after the colour map, rebuild it with the Gradius II BG rules (part A.3): 3-colour tiles plus the shared colour 0, palette changes on the 16x16 attribute grid only, dark slot 3 as the edge colour, no checkerboard dither; the Gradius II reference shows the target colours.",
+   "palette_map": [
+    "level",
+    "target",
+    "target_palettes",
+    "map",
+    "source_colours_px",
+    "image",
+    "crop_tiles"
+   ]
+  },
+  {
+   "asset": "nl.screen.sal_title",
+   "name": "Salamander title sequence",
+   "source": "sfc.screen.title",
+   "source_game": "salamander_fc",
+   "visual_kind": "NES",
+   "class": "screen/BG drawing -> g2.screen.title",
+   "work_note": "BG/screen drawing: after the colour map, rebuild it with the Gradius II BG rules (part A.3): 3-colour tiles plus the shared colour 0, palette changes on the 16x16 attribute grid only, dark slot 3 as the edge colour, no checkerboard dither; the Gradius II reference shows the target colours.",
+   "palette_map": [
+    "level",
+    "target",
+    "target_palettes",
+    "map",
+    "source_colours_px",
+    "image",
+    "crop_tiles"
+   ]
+  },
+  {
+   "asset": "nl.weapon.laser",
+   "name": "Laser (with up/down, extend, vector, twin, triple and the remains on the scenery)",
+   "source": "lf.weapon.laser",
+   "source_game": "lifeforce_nes",
+   "visual_kind": "NES",
+   "class": "player_shot",
+   "g2_reference": [
+    "g2.weapon.normal_shot",
+    "g2.weapon.laser",
+    "g2.weapon.ripple"
+   ],
+   "work_note": "outline incomplete: 38 % of silhouette pixels are the dark tone (Gradius II player_shot 65 %); add a 1-px rim in the outline slot where the silhouette is mid/light",
+   "palette_map": [
+    {
+     "palette": 0,
+     "variant": "p1",
+     "source": "20/22/02",
+     "target": "20/22/02",
+     "target_from": "sprite P0, all stages",
+     "method": "identity",
+     "slots": {
+      "1": "20->20",
+      "2": "22->22",
+      "3": "02->02"
+     },
+     "new_palette": "20/22/02"
+    },
+    {
+     "palette": 1,
+     "variant": "p2",
+     "source": "20/27/16",
+     "target": "20/27/16",
+     "target_from": "sprite P1, all stages",
+     "method": "identity",
+     "slots": {
+      "1": "20->20",
+      "2": "27->27",
+      "3": "16->16"
+     },
+     "new_palette": "20/27/16"
+    }
+   ]
+  },
+  {
+   "asset": "nl.weapon.missile",
+   "name": "Missile (2-way, hawk wing, homing, napalm, guided variants)",
+   "source": "sfc.weapon.missile",
+   "source_game": "salamander_fc",
+   "visual_kind": "NES",
+   "class": "player_missile",
+   "g2_reference": [
+    "g2.weapon.missile",
+    "g2.weapon.two_way"
+   ],
+   "work_note": "Recolour rule: Gradius II missiles/two-way are attr $01 = palette 1 20/27/16 (100 % of missile frames); player 2 takes the toggled palette as for the ship; outline incomplete: 0 % of silhouette pixels are the dark tone (Gradius II player_missile 43 %); add a 1-px rim in the outline slot where the silhouette is mid/light; flat: 100 % of frames use fewer than 3 colours (Gradius II 12 %); shade the large areas with the mid tone, keep the light tone on the upper/left third; dithering: 20.0 % of 2x2 windows are checkerboards (Gradius II 14.3 %); replace by solid tone bands",
+   "palette_map": [
+    {
+     "palette": 0,
+     "variant": "p1",
+     "source": "20/22/02",
+     "target": "20/27/16",
+     "target_from": "sprite P1, all stages",
+     "method": "slot to slot (source already in Gradius II slot order: 1 light, 2 mid, 3 outline)",
+     "slots": {
+      "1": "20->20",
+      "2": "22->27",
+      "3": "02->16"
+     },
+     "new_palette": "20/27/16"
+    },
+    {
+     "palette": 1,
+     "variant": "p2",
+     "source": "20/27/16",
+     "target": "20/22/02",
+     "target_from": "sprite P0, all stages",
+     "method": "slot to slot (source already in Gradius II slot order: 1 light, 2 mid, 3 outline)",
+     "slots": {
+      "1": "20->20",
+      "2": "27->22",
+      "3": "16->02"
+     },
+     "new_palette": "20/22/02"
+    }
+   ]
+  },
+  {
+   "asset": "nl.weapon.ripple",
+   "name": "Ripple laser",
+   "source": "sfc.weapon.ripple",
+   "source_game": "salamander_fc",
+   "visual_kind": "NES",
+   "class": "player_shot",
+   "g2_reference": [
+    "g2.weapon.normal_shot",
+    "g2.weapon.laser",
+    "g2.weapon.ripple"
+   ],
+   "work_note": "outline incomplete: 46 % of silhouette pixels are the dark tone (Gradius II player_shot 65 %); add a 1-px rim in the outline slot where the silhouette is mid/light; flat: 100 % of frames use fewer than 3 colours (Gradius II 50 %); shade the large areas with the mid tone, keep the light tone on the upper/left third",
+   "palette_map": [
+    {
+     "palette": 0,
+     "variant": "p1",
+     "source": "20/22/02",
+     "target": "20/22/02",
+     "target_from": "sprite P0, all stages",
+     "method": "identity",
+     "slots": {
+      "1": "20->20",
+      "2": "22->22",
+      "3": "02->02"
+     },
+     "new_palette": "20/22/02"
+    },
+    {
+     "palette": 1,
+     "variant": "p2",
+     "source": "20/27/16",
+     "target": "20/27/16",
+     "target_from": "sprite P1, all stages",
+     "method": "identity",
+     "slots": {
+      "1": "20->20",
+      "2": "27->27",
+      "3": "16->16"
+     },
+     "new_palette": "20/27/16"
+    }
+   ]
+  },
+  {
+   "asset": "nl.weapon.shot",
+   "name": "Normal shot (also fired backwards as TAIL/BACK BEAM)",
+   "source": "sfc.weapon.normal_shot",
+   "source_game": "salamander_fc",
+   "visual_kind": "NES",
+   "class": "player_shot",
+   "g2_reference": [
+    "g2.weapon.normal_shot",
+    "g2.weapon.laser",
+    "g2.weapon.ripple"
+   ],
+   "work_note": "outline incomplete: 0 % of silhouette pixels are the dark tone (Gradius II player_shot 65 %); add a 1-px rim in the outline slot where the silhouette is mid/light; flat: 100 % of frames use fewer than 3 colours (Gradius II 50 %); shade the large areas with the mid tone, keep the light tone on the upper/left third",
+   "palette_map": [
+    {
+     "palette": 0,
+     "variant": "p1",
+     "source": "20/22/02",
+     "target": "20/22/02",
+     "target_from": "sprite P0, all stages",
+     "method": "identity",
+     "slots": {
+      "1": "20->20",
+      "2": "22->22",
+      "3": "02->02"
+     },
+     "new_palette": "20/22/02"
+    },
+    {
+     "palette": 1,
+     "variant": "p2",
+     "source": "20/27/16",
+     "target": "20/27/16",
+     "target_from": "sprite P1, all stages",
+     "method": "identity",
+     "slots": {
+      "1": "20->20",
+      "2": "27->27",
+      "3": "16->16"
+     },
+     "new_palette": "20/27/16"
+    }
+   ]
+  }
+ ]
+}

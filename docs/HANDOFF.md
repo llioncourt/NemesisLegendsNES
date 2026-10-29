@@ -1,3 +1,9 @@
+# CP0025 handoff (2026-10-29) - Phase 4, Gradius II art direction
+
+The Gradius II style measured from the game (`docs/ART_DIRECTION.md`), the recolour plan of the
+51 NES visuals from other games (`manifests/recolour_plan.json`; the Salamander FC ships already
+match), and a first MSX-to-NES conversion sample (private). ROM unchanged (CP0016).
+
 # CP0024 handoff (2026-10-29) - Phase 3, Legends asset registry
 
 Every MSX object, screen, stage tile set and music code grouped into 474 Legends assets with
