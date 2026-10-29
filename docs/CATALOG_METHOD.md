@@ -50,3 +50,17 @@ cutscene, interlude, ending, game over, continue, demo, fonts).
   only when its notes or the gaps list explain it.
 - `series_name` is the Gradius-series name when a source gives it; it is a lead for the
   NES comparison of phase 2, never a match by itself.
+
+## Music and sound (Phase 1c, CP0019)
+
+Every source game sends all music, jingles and effects through one request routine. A
+logging breakpoint (MSX) or an in-memory hook (NES) on that routine, in emulator runs of
+every stage, boss, secret route, screen and ending, records each request with the game
+state; a "jukebox" run then plays every code alone through the game's own driver for
+loops and chips. `tools/catalog_music.py` merges the logs into `manifests/catalog_music.json`
+and `docs/CATALOG_MUSIC.md` (no audio). `tools/apply_music_catalogue.py` puts the logged
+roles on the ripped track lists (`audio/*/tracks.json`, `audio/tracklist.csv`, private):
+the earlier rips had been titled by album order or upstream configuration. New rips of the
+original drivers: `tools/rip_lifeforce_nsf.py` (Life Force, NSF, driver RAM identical to the
+game on every frame) and `tools/rip_nemesis3_kss.py` (Nemesis 3, KSS, PSG/SCC writes identical
+to the game on every frame of all 83 tracks).

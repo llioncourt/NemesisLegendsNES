@@ -58,14 +58,14 @@ class EvidenceTests(unittest.TestCase):
   from PIL import Image
   f=ROOT/'assets/title';c=(f/'title.chr').read_bytes();n=(f/'title.nam').read_bytes();self.assertEqual(len(c),4096);self.assertEqual(len(n),1024);self.assertEqual(decode(c,n).tobytes(),Image.open(f/'title_native_asset.png').tobytes())
  def test_nsf_headers_and_counts(self):
-  files=list((ROOT/'audio/native_nes').glob('*/*.nsf'));self.assertEqual(len(files),3);count=0
+  files=list((ROOT/'audio/native_nes').glob('*/*.nsf'));self.assertEqual(len(files),4);count=0  # Gradius, Gradius II, Salamander FC, Life Force (CP0019)
   for p in files:
    b=p.read_bytes();self.assertEqual(b[:5],b'NESM\x1a');count+=b[6];load,init,play=struct.unpack_from('<HHH',b,8);self.assertGreaterEqual(load,0x8000);self.assertLess(init-load,len(b)-128);self.assertLess(play-load,len(b)-128);self.assertEqual(b[123],0)
-  self.assertEqual(count,42)
+  self.assertEqual(count,82)
  def test_kss_not_renamed_nsf(self):
-  files=list((ROOT/'audio/msx_reference').glob('*/*.kss'));self.assertEqual(len(files),3)
+  files=list((ROOT/'audio/msx_reference').glob('*/*.kss'));self.assertEqual(len(files),4)  # Nemesis, Nemesis 2, Salamander, Nemesis 3 (CP0019)
   for p in files:
-   b=p.read_bytes();self.assertEqual(b[:4],b'KSCC');load,size,init,play=struct.unpack_from('<HHHH',b,4);self.assertEqual(load,0x4000);self.assertEqual(init,0xc000);self.assertEqual(play,0xc0e0);self.assertGreaterEqual(len(b),16+size)
+   b=p.read_bytes();self.assertEqual(b[:4],b'KSCC');load,size,init,play=struct.unpack_from('<HHHH',b,4);self.assertIn(load,(0x4000,0x6000));self.assertEqual(init,0xc000);self.assertEqual(play,0xc0e0);self.assertGreaterEqual(len(b),16+size)
  def test_audio_manifest_hashes(self):
   m=json.loads((ROOT/'audio/metadata.json').read_text())
   if m['track_count']==0:self.skipTest('MP3 rendering not requested; use --render-audio for this integration check.')

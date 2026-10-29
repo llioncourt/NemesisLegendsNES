@@ -185,11 +185,11 @@ add(id='nes.gradius2_fc.font',name='Gradius II Famicom 8x8 font',game='gradius2_
 tl=ROOT/'audio/tracklist.csv'
 if tl.exists():
     for row in csv.DictReader(tl.open(encoding='utf-8-sig')):
-        drv=row['driver'];game={'nemesis2_msx':'nemesis2','nemesis_msx':'nemesis','salamander_msx':'salamander','gradius2_fc':'gradius2_fc','salamander_fc':'salamander_fc','gradius':'gradius_nes_us'}
+        drv=row['driver'];game={'nemesis2_msx':'nemesis2','nemesis3_msx':'nemesis3','nemesis_msx':'nemesis','salamander_msx':'salamander','gradius2_fc':'gradius2_fc','salamander_fc':'salamander_fc','lifeforce':'lifeforce_nes_us','gradius':'gradius_nes_us'}
         key=next((k for k in game if k in drv),'unknown')
         add(id=f'audio.{key}.{int(row["index"]):02d}',name=f'{row["title"]} ({key} #{row["index"]})',game=game.get(key,key),platform='nes' if row['driver_format']=='NSF' else 'msx',category='music_track',
             format=row['driver_format'],reuse_class='REUSE' if row['driver_format']=='NSF' else 'CONVERT',extracted=True,path=drv,notes=f'command {row["source_command_hex"]}; title {row["title_status"]}')
-add(id='audio.nemesis3.driver',name='Nemesis 3 music driver and tracks',game='nemesis3',platform='msx',rom_slug='nemesis3_msx',category='sound_driver',format='unknown',reuse_class='CONVERT',extracted=False,notes='not ripped yet')
+add(id='audio.nemesis3.driver',name='Nemesis 3 music driver and tracks',game='nemesis3',platform='msx',rom_slug='nemesis3_msx',category='sound_driver',format='kss_rip',reuse_class='CONVERT',extracted=(ROOT/'audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss').is_file(),path='tools/rip_nemesis3_kss.py',notes='KSS rip of the original driver (Phase 1c), 83 codes, frame-identical to the game')
 add(id='audio.native.apu_driver',name='Native APU driver in the current ROM (donor, SFX only)',game='nemesis_legends',platform='nes',category='sound_driver',format='nes_6502',reuse_class='ADAPT',extracted=True,converted=True,integrated=True,tested=True,path='build/native/audio.bin',notes='no converted music yet')
 
 # ---------------------------------------------------------------- Nemesis Legends original assets

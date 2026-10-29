@@ -1,7 +1,7 @@
-# NEMESIS LEGENDS NES - CONTINUATION (CP0018, 2026-10-29)
+# NEMESIS LEGENDS NES - CONTINUATION (CP0019, 2026-10-29)
 
 Repository: https://github.com/llioncourt/NemesisLegendsNES (`main`).
-Last pinned checkpoint: **CP0018** (Phase 1b, NES asset catalogue). The playable ROM is
+Last pinned checkpoint: **CP0019** (Phase 1c, music and sound catalogue). The playable ROM is
 still `build/native/Nemesis_Legends_CP0016.nes` (sha256 in `manifests/checkpoint.json`). Do not reset or abandon the native
 motor. Public distribution: IPS only; source ROMs and derived graphics/audio
 stay private.
@@ -43,11 +43,17 @@ segments.
   one title byte and a palette refresh only; Gradius JP changes the title and endings only.
   Salamander (Famicom) ships: two layouts only, horizontal (stages 1, 3, 5) and vertical
   (2, 4, 6); player 2 = player 1 tiles with palettes 0 and 1 swapped.
-- **1c, music (CP0019, next):** every request of the sound routine logged in emulator runs of
-  every game; MSX done (tools/catalog_music.py), NES in progress. Found so far: the project's
-  Nemesis KSS track list counts channel parts as tracks; 8 of the 15 Gradius II NSF titles are
-  attached to the wrong code.
-- **1.1, stage map and rules (CP0020).**
+- **1c, music and sound (CP0019, done):** `manifests/catalog_music.json`, `docs/CATALOG_MUSIC.md`.
+  Every request of the eight games logged in play: 111 music, 52 jingles, 284 effects (plus
+  channel parts, silences and driver commands). Rip titles corrected by role
+  (`tools/apply_music_catalogue.py`): 8 of 15 Gradius II titles were on the wrong code, 4 Gradius
+  jingles and 5 Salamander (Famicom) cues had the wrong role (its boss theme 0x3A was labelled
+  unused), the Nemesis rip listed 6 channel parts as tracks, Nemesis 2's 15 unidentified cues are
+  named. New rips: Life Force NSF (40 songs) and Nemesis 3 KSS (83 tracks), both identical to the
+  games frame by frame. The Nemesis "stage start" jingles 0x32/0x13 are the volcano eruptions.
+- **1.1, stage map and rules (CP0020, in progress):** brief in the evidence folder
+  (`BRIEF_STAGES.md`): every stage in play order with spawns, events, music, graphics, bosses,
+  routes and secrets, plus each game's rules (weapon system, lives, two players, loops).
 
 ## Extractor findings to apply when the stage graphics are rebuilt (phase 7)
 

@@ -2865,6 +2865,60 @@
   },
   {
    "id": "n1.rle.058",
+   "name": "Nemesis RLE graphics stream @8E4B bank 5",
+   "game": "nemesis",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": "3210f8a0f2309dd4b9a89fc2b24d0f178ce4393a0a1f2854fbce545c361261bc",
+   "bank": 5,
+   "offset": 44619,
+   "category": "compressed_stream",
+   "format": "konami_rle",
+   "size_bytes": 127,
+   "content_sha256": "e4f7d5015a119282d023fd566233980e7c0a312cb2fbac217378921b201a949f",
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": true,
+    "integrated": true,
+    "tested": false,
+    "validated": false
+   },
+   "path": null,
+   "notes": "decoded into per-stage character sets"
+  },
+  {
+   "id": "n1.rle.059",
+   "name": "Nemesis RLE graphics stream @8A8C bank 5",
+   "game": "nemesis",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": "3210f8a0f2309dd4b9a89fc2b24d0f178ce4393a0a1f2854fbce545c361261bc",
+   "bank": 5,
+   "offset": 43660,
+   "category": "compressed_stream",
+   "format": "konami_rle",
+   "size_bytes": 402,
+   "content_sha256": "f7db45a642128a51985a2c3e93fca5aaa5e71afc16c928124db53ffd415db2c0",
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": true,
+    "integrated": true,
+    "tested": false,
+    "validated": false
+   },
+   "path": null,
+   "notes": "decoded into per-stage character sets"
+  },
+  {
+   "id": "n1.rle.060",
    "name": "Nemesis RLE graphics stream @680D bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -2891,7 +2945,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.059",
+   "id": "n1.rle.061",
    "name": "Nemesis RLE graphics stream @7AC6 bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -2918,7 +2972,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.060",
+   "id": "n1.rle.062",
    "name": "Nemesis RLE graphics stream @686F bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -2945,7 +2999,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.061",
+   "id": "n1.rle.063",
    "name": "Nemesis RLE graphics stream @7C9B bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -2972,7 +3026,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.062",
+   "id": "n1.rle.064",
    "name": "Nemesis RLE graphics stream @6897 bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -2999,7 +3053,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.063",
+   "id": "n1.rle.065",
    "name": "Nemesis RLE graphics stream @7DDF bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -3026,7 +3080,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.064",
+   "id": "n1.rle.066",
    "name": "Nemesis RLE graphics stream @6900 bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -3053,7 +3107,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.065",
+   "id": "n1.rle.067",
    "name": "Nemesis RLE graphics stream @7E18 bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -3080,7 +3134,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.066",
+   "id": "n1.rle.068",
    "name": "Nemesis RLE graphics stream @694A bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -3107,7 +3161,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.067",
+   "id": "n1.rle.069",
    "name": "Nemesis RLE graphics stream @7E4D bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -3134,7 +3188,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.068",
+   "id": "n1.rle.070",
    "name": "Nemesis RLE graphics stream @69A1 bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -3161,7 +3215,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.069",
+   "id": "n1.rle.071",
    "name": "Nemesis RLE graphics stream @7E8A bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -3188,7 +3242,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.070",
+   "id": "n1.rle.072",
    "name": "Nemesis RLE graphics stream @69CA bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -3215,7 +3269,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.071",
+   "id": "n1.rle.073",
    "name": "Nemesis RLE graphics stream @69F4 bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -3242,7 +3296,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.072",
+   "id": "n1.rle.074",
    "name": "Nemesis RLE graphics stream @7E8D bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -3269,7 +3323,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.073",
+   "id": "n1.rle.075",
    "name": "Nemesis RLE graphics stream @6A46 bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -3296,7 +3350,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.074",
+   "id": "n1.rle.076",
    "name": "Nemesis RLE graphics stream @7ED1 bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -3323,7 +3377,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.075",
+   "id": "n1.rle.077",
    "name": "Nemesis RLE graphics stream @6A94 bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -3350,7 +3404,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.076",
+   "id": "n1.rle.078",
    "name": "Nemesis RLE graphics stream @7EF8 bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -3377,7 +3431,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.077",
+   "id": "n1.rle.079",
    "name": "Nemesis RLE graphics stream @6AA8 bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -3404,7 +3458,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.078",
+   "id": "n1.rle.080",
    "name": "Nemesis RLE graphics stream @7EFD bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -3431,7 +3485,61 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.079",
+   "id": "n1.rle.081",
+   "name": "Nemesis RLE graphics stream @8C1E bank 5",
+   "game": "nemesis",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": "3210f8a0f2309dd4b9a89fc2b24d0f178ce4393a0a1f2854fbce545c361261bc",
+   "bank": 5,
+   "offset": 44062,
+   "category": "compressed_stream",
+   "format": "konami_rle",
+   "size_bytes": 265,
+   "content_sha256": "e41b825e74f5f60e54cd245ee27b8502424d9e75d20fc88fa22cdf7e09ea990a",
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": true,
+    "integrated": true,
+    "tested": false,
+    "validated": false
+   },
+   "path": null,
+   "notes": "decoded into per-stage character sets"
+  },
+  {
+   "id": "n1.rle.082",
+   "name": "Nemesis RLE graphics stream @8ECA bank 5",
+   "game": "nemesis",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": "3210f8a0f2309dd4b9a89fc2b24d0f178ce4393a0a1f2854fbce545c361261bc",
+   "bank": 5,
+   "offset": 44746,
+   "category": "compressed_stream",
+   "format": "konami_rle",
+   "size_bytes": 116,
+   "content_sha256": "a5c5370d57b5218cfe79420e3d218c18a2bb947f1b66340115d395f377eb971b",
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": true,
+    "integrated": true,
+    "tested": false,
+    "validated": false
+   },
+   "path": null,
+   "notes": "decoded into per-stage character sets"
+  },
+  {
+   "id": "n1.rle.083",
    "name": "Nemesis RLE graphics stream @6AD4 bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -3458,7 +3566,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.080",
+   "id": "n1.rle.084",
    "name": "Nemesis RLE graphics stream @7CA2 bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -3485,7 +3593,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.081",
+   "id": "n1.rle.085",
    "name": "Nemesis RLE graphics stream @6000 bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -3512,7 +3620,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.082",
+   "id": "n1.rle.086",
    "name": "Nemesis RLE graphics stream @73D6 bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -3539,7 +3647,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.083",
+   "id": "n1.rle.087",
    "name": "Nemesis RLE graphics stream @6056 bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -3566,7 +3674,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.084",
+   "id": "n1.rle.088",
    "name": "Nemesis RLE graphics stream @742C bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -3593,7 +3701,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.085",
+   "id": "n1.rle.089",
    "name": "Nemesis RLE graphics stream @602B bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -3620,7 +3728,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.086",
+   "id": "n1.rle.090",
    "name": "Nemesis RLE graphics stream @7401 bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -3647,7 +3755,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.087",
+   "id": "n1.rle.091",
    "name": "Nemesis RLE graphics stream @6139 bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -3674,7 +3782,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.088",
+   "id": "n1.rle.092",
    "name": "Nemesis RLE graphics stream @750F bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -3701,7 +3809,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.089",
+   "id": "n1.rle.093",
    "name": "Nemesis RLE graphics stream @610E bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -3728,7 +3836,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.090",
+   "id": "n1.rle.094",
    "name": "Nemesis RLE graphics stream @74E4 bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -3755,7 +3863,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.091",
+   "id": "n1.rle.095",
    "name": "Nemesis RLE graphics stream @615B bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -3782,7 +3890,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.092",
+   "id": "n1.rle.096",
    "name": "Nemesis RLE graphics stream @7531 bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -3809,7 +3917,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.093",
+   "id": "n1.rle.097",
    "name": "Nemesis RLE graphics stream @61BC bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -3836,7 +3944,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.094",
+   "id": "n1.rle.098",
    "name": "Nemesis RLE graphics stream @7592 bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -3863,7 +3971,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.095",
+   "id": "n1.rle.099",
    "name": "Nemesis RLE graphics stream @60AA bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -3890,7 +3998,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.096",
+   "id": "n1.rle.100",
    "name": "Nemesis RLE graphics stream @7480 bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -3917,7 +4025,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.097",
+   "id": "n1.rle.101",
    "name": "Nemesis RLE graphics stream @6239 bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -3944,7 +4052,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.098",
+   "id": "n1.rle.102",
    "name": "Nemesis RLE graphics stream @760F bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -3971,7 +4079,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.099",
+   "id": "n1.rle.103",
    "name": "Nemesis RLE graphics stream @61B2 bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -3998,7 +4106,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.100",
+   "id": "n1.rle.104",
    "name": "Nemesis RLE graphics stream @7588 bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -4025,7 +4133,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.101",
+   "id": "n1.rle.105",
    "name": "Nemesis RLE graphics stream @61A0 bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -4052,7 +4160,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.102",
+   "id": "n1.rle.106",
    "name": "Nemesis RLE graphics stream @7576 bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -4079,7 +4187,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.103",
+   "id": "n1.rle.107",
    "name": "Nemesis RLE graphics stream @6175 bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -4106,7 +4214,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.104",
+   "id": "n1.rle.108",
    "name": "Nemesis RLE graphics stream @754B bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -4133,7 +4241,61 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.105",
+   "id": "n1.rle.109",
+   "name": "Nemesis RLE graphics stream @9038 bank 5",
+   "game": "nemesis",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": "3210f8a0f2309dd4b9a89fc2b24d0f178ce4393a0a1f2854fbce545c361261bc",
+   "bank": 5,
+   "offset": 45112,
+   "category": "compressed_stream",
+   "format": "konami_rle",
+   "size_bytes": 409,
+   "content_sha256": "61f0893a76d88a4568e911f6b2b8e016b6b03f93e504658a7795587de1d13bed",
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": true,
+    "integrated": true,
+    "tested": false,
+    "validated": false
+   },
+   "path": null,
+   "notes": "decoded into per-stage character sets"
+  },
+  {
+   "id": "n1.rle.110",
+   "name": "Nemesis RLE graphics stream @8FCB bank 5",
+   "game": "nemesis",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": "3210f8a0f2309dd4b9a89fc2b24d0f178ce4393a0a1f2854fbce545c361261bc",
+   "bank": 5,
+   "offset": 45003,
+   "category": "compressed_stream",
+   "format": "konami_rle",
+   "size_bytes": 109,
+   "content_sha256": "65b3e883d34e17b86c2370975469943dac7f01d702b7b1d7ff259cbfb922db16",
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": true,
+    "integrated": true,
+    "tested": false,
+    "validated": false
+   },
+   "path": null,
+   "notes": "decoded into per-stage character sets"
+  },
+  {
+   "id": "n1.rle.111",
    "name": "Nemesis RLE graphics stream @6B36 bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -4160,7 +4322,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.106",
+   "id": "n1.rle.112",
    "name": "Nemesis RLE graphics stream @7CF0 bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -4187,7 +4349,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.107",
+   "id": "n1.rle.113",
    "name": "Nemesis RLE graphics stream @7D1C bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -4214,7 +4376,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.108",
+   "id": "n1.rle.114",
    "name": "Nemesis RLE graphics stream @6B93 bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -4241,7 +4403,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.109",
+   "id": "n1.rle.115",
    "name": "Nemesis RLE graphics stream @7D45 bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -4268,7 +4430,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.110",
+   "id": "n1.rle.116",
    "name": "Nemesis RLE graphics stream @6C03 bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -4295,7 +4457,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.111",
+   "id": "n1.rle.117",
    "name": "Nemesis RLE graphics stream @7D8C bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -4322,7 +4484,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.112",
+   "id": "n1.rle.118",
    "name": "Nemesis RLE graphics stream @7312 bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -4349,7 +4511,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.113",
+   "id": "n1.rle.119",
    "name": "Nemesis RLE graphics stream @8324 bank 5",
    "game": "nemesis",
    "platform": "msx",
@@ -4376,7 +4538,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.114",
+   "id": "n1.rle.120",
    "name": "Nemesis RLE graphics stream @6F0E bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -4403,7 +4565,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.115",
+   "id": "n1.rle.121",
    "name": "Nemesis RLE graphics stream @8100 bank 5",
    "game": "nemesis",
    "platform": "msx",
@@ -4430,7 +4592,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.116",
+   "id": "n1.rle.122",
    "name": "Nemesis RLE graphics stream @6FAF bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -4457,7 +4619,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.117",
+   "id": "n1.rle.123",
    "name": "Nemesis RLE graphics stream @8173 bank 5",
    "game": "nemesis",
    "platform": "msx",
@@ -4484,7 +4646,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.118",
+   "id": "n1.rle.124",
    "name": "Nemesis RLE graphics stream @6CE2 bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -4511,7 +4673,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.119",
+   "id": "n1.rle.125",
    "name": "Nemesis RLE graphics stream @7F6E bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -4538,7 +4700,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.120",
+   "id": "n1.rle.126",
    "name": "Nemesis RLE graphics stream @72E9 bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -4565,7 +4727,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.121",
+   "id": "n1.rle.127",
    "name": "Nemesis RLE graphics stream @82D6 bank 5",
    "game": "nemesis",
    "platform": "msx",
@@ -4592,7 +4754,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.122",
+   "id": "n1.rle.128",
    "name": "Nemesis RLE graphics stream @72DC bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -4619,7 +4781,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.123",
+   "id": "n1.rle.129",
    "name": "Nemesis RLE graphics stream @82C2 bank 5",
    "game": "nemesis",
    "platform": "msx",
@@ -4646,7 +4808,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.124",
+   "id": "n1.rle.130",
    "name": "Nemesis RLE graphics stream @82FD bank 5",
    "game": "nemesis",
    "platform": "msx",
@@ -4673,7 +4835,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.125",
+   "id": "n1.rle.131",
    "name": "Nemesis RLE graphics stream @82CB bank 5",
    "game": "nemesis",
    "platform": "msx",
@@ -4700,7 +4862,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.126",
+   "id": "n1.rle.132",
    "name": "Nemesis RLE graphics stream @6FF9 bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -4727,7 +4889,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.127",
+   "id": "n1.rle.133",
    "name": "Nemesis RLE graphics stream @81B9 bank 5",
    "game": "nemesis",
    "platform": "msx",
@@ -4754,7 +4916,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.128",
+   "id": "n1.rle.134",
    "name": "Nemesis RLE graphics stream @6CF4 bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -4781,7 +4943,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.129",
+   "id": "n1.rle.135",
    "name": "Nemesis RLE graphics stream @7F80 bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -4808,7 +4970,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.130",
+   "id": "n1.rle.136",
    "name": "Nemesis RLE graphics stream @6EFC bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -4835,7 +4997,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.131",
+   "id": "n1.rle.137",
    "name": "Nemesis RLE graphics stream @80F0 bank 5",
    "game": "nemesis",
    "platform": "msx",
@@ -4862,7 +5024,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.132",
+   "id": "n1.rle.138",
    "name": "Nemesis RLE graphics stream @6D16 bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -4889,7 +5051,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.133",
+   "id": "n1.rle.139",
    "name": "Nemesis RLE graphics stream @7F9C bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -4916,7 +5078,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.134",
+   "id": "n1.rle.140",
    "name": "Nemesis RLE graphics stream @6D38 bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -4943,7 +5105,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.135",
+   "id": "n1.rle.141",
    "name": "Nemesis RLE graphics stream @7FB7 bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -4970,7 +5132,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.136",
+   "id": "n1.rle.142",
    "name": "Nemesis RLE graphics stream @6D6C bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -4997,7 +5159,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.137",
+   "id": "n1.rle.143",
    "name": "Nemesis RLE graphics stream @7FD7 bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -5024,7 +5186,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.138",
+   "id": "n1.rle.144",
    "name": "Nemesis RLE graphics stream @6D9B bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -5051,7 +5213,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.139",
+   "id": "n1.rle.145",
    "name": "Nemesis RLE graphics stream @7FFB bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -5078,7 +5240,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.140",
+   "id": "n1.rle.146",
    "name": "Nemesis RLE graphics stream @6EEA bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -5105,7 +5267,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.141",
+   "id": "n1.rle.147",
    "name": "Nemesis RLE graphics stream @80DE bank 5",
    "game": "nemesis",
    "platform": "msx",
@@ -5132,7 +5294,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.142",
+   "id": "n1.rle.148",
    "name": "Nemesis RLE graphics stream @80CC bank 5",
    "game": "nemesis",
    "platform": "msx",
@@ -5159,7 +5321,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.143",
+   "id": "n1.rle.149",
    "name": "Nemesis RLE graphics stream @625D bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -5186,7 +5348,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.144",
+   "id": "n1.rle.150",
    "name": "Nemesis RLE graphics stream @7633 bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -5213,7 +5375,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.145",
+   "id": "n1.rle.151",
    "name": "Nemesis RLE graphics stream @6C8A bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -5240,7 +5402,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.146",
+   "id": "n1.rle.152",
    "name": "Nemesis RLE graphics stream @7F19 bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -5267,7 +5429,34 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.147",
+   "id": "n1.rle.153",
+   "name": "Nemesis RLE graphics stream @8D27 bank 5",
+   "game": "nemesis",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": "3210f8a0f2309dd4b9a89fc2b24d0f178ce4393a0a1f2854fbce545c361261bc",
+   "bank": 5,
+   "offset": 44327,
+   "category": "compressed_stream",
+   "format": "konami_rle",
+   "size_bytes": 292,
+   "content_sha256": "d34470492b866b1cb1a6b5e1caaab18461270cd958113fe35cec2a0d1482004d",
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": true,
+    "integrated": true,
+    "tested": false,
+    "validated": false
+   },
+   "path": null,
+   "notes": "decoded into per-stage character sets"
+  },
+  {
+   "id": "n1.rle.154",
    "name": "Nemesis RLE graphics stream @71DC bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -5294,7 +5483,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.148",
+   "id": "n1.rle.155",
    "name": "Nemesis RLE graphics stream @8240 bank 5",
    "game": "nemesis",
    "platform": "msx",
@@ -5321,7 +5510,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.149",
+   "id": "n1.rle.156",
    "name": "Nemesis RLE graphics stream @7209 bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -5348,7 +5537,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.150",
+   "id": "n1.rle.157",
    "name": "Nemesis RLE graphics stream @8261 bank 5",
    "game": "nemesis",
    "platform": "msx",
@@ -5375,7 +5564,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.151",
+   "id": "n1.rle.158",
    "name": "Nemesis RLE graphics stream @728E bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -5402,7 +5591,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.152",
+   "id": "n1.rle.159",
    "name": "Nemesis RLE graphics stream @82B5 bank 5",
    "game": "nemesis",
    "platform": "msx",
@@ -5429,7 +5618,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.153",
+   "id": "n1.rle.160",
    "name": "Nemesis RLE graphics stream @72B6 bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -5456,7 +5645,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.154",
+   "id": "n1.rle.161",
    "name": "Nemesis RLE graphics stream @82B8 bank 5",
    "game": "nemesis",
    "platform": "msx",
@@ -5483,7 +5672,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.155",
+   "id": "n1.rle.162",
    "name": "Nemesis RLE graphics stream @7037 bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -5510,7 +5699,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.156",
+   "id": "n1.rle.163",
    "name": "Nemesis RLE graphics stream @81F1 bank 5",
    "game": "nemesis",
    "platform": "msx",
@@ -5537,7 +5726,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.157",
+   "id": "n1.rle.164",
    "name": "Nemesis RLE graphics stream @7276 bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -5564,7 +5753,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.158",
+   "id": "n1.rle.165",
    "name": "Nemesis RLE graphics stream @82B2 bank 5",
    "game": "nemesis",
    "platform": "msx",
@@ -5591,7 +5780,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.159",
+   "id": "n1.rle.166",
    "name": "Nemesis RLE graphics stream @735A bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -5618,7 +5807,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.160",
+   "id": "n1.rle.167",
    "name": "Nemesis RLE graphics stream @83A7 bank 5",
    "game": "nemesis",
    "platform": "msx",
@@ -5645,7 +5834,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.161",
+   "id": "n1.rle.168",
    "name": "Nemesis RLE graphics stream @7B0B bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -5672,7 +5861,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.162",
+   "id": "n1.rle.169",
    "name": "Nemesis RLE graphics stream @8385 bank 5",
    "game": "nemesis",
    "platform": "msx",
@@ -5699,7 +5888,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.163",
+   "id": "n1.rle.170",
    "name": "Nemesis RLE graphics stream @8363 bank 5",
    "game": "nemesis",
    "platform": "msx",
@@ -5726,7 +5915,61 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.164",
+   "id": "n1.rle.171",
+   "name": "Nemesis RLE graphics stream @8F3E bank 5",
+   "game": "nemesis",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": "3210f8a0f2309dd4b9a89fc2b24d0f178ce4393a0a1f2854fbce545c361261bc",
+   "bank": 5,
+   "offset": 44862,
+   "category": "compressed_stream",
+   "format": "konami_rle",
+   "size_bytes": 141,
+   "content_sha256": "59cf33e6ab6dab5b43b54fd8df973a02b3f26ffd0e6fe90e38a20fdead7b006c",
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": true,
+    "integrated": true,
+    "tested": false,
+    "validated": false
+   },
+   "path": null,
+   "notes": "decoded into per-stage character sets"
+  },
+  {
+   "id": "n1.rle.172",
+   "name": "Nemesis RLE graphics stream @42FB bank 0",
+   "game": "nemesis",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": "3210f8a0f2309dd4b9a89fc2b24d0f178ce4393a0a1f2854fbce545c361261bc",
+   "bank": 0,
+   "offset": 763,
+   "category": "compressed_stream",
+   "format": "konami_rle",
+   "size_bytes": 1,
+   "content_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": true,
+    "integrated": true,
+    "tested": false,
+    "validated": false
+   },
+   "path": null,
+   "notes": "decoded into per-stage character sets"
+  },
+  {
+   "id": "n1.rle.173",
    "name": "Nemesis RLE graphics stream @7B6F bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -5753,7 +5996,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.165",
+   "id": "n1.rle.174",
    "name": "Nemesis RLE graphics stream @7BD3 bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -5780,7 +6023,7 @@
    "notes": "decoded into per-stage character sets"
   },
   {
-   "id": "n1.rle.166",
+   "id": "n1.rle.175",
    "name": "Nemesis RLE graphics stream @7C37 bank 4",
    "game": "nemesis",
    "platform": "msx",
@@ -43797,7 +44040,7 @@
   },
   {
    "id": "audio.nemesis2_msx.00",
-   "name": "Opening Sequence (nemesis2_msx #0)",
+   "name": "game start (nemesis2_msx #0)",
    "game": "nemesis2",
    "platform": "msx",
    "rom": null,
@@ -43824,7 +44067,7 @@
   },
   {
    "id": "audio.nemesis2_msx.01",
-   "name": "Story Introduction (nemesis2_msx #1)",
+   "name": "story (attract) (nemesis2_msx #1)",
    "game": "nemesis2",
    "platform": "msx",
    "rom": null,
@@ -43851,7 +44094,7 @@
   },
   {
    "id": "audio.nemesis2_msx.02",
-   "name": "Ending Sequence (nemesis2_msx #2)",
+   "name": "interlude after stage 7 (return order) (nemesis2_msx #2)",
    "game": "nemesis2",
    "platform": "msx",
    "rom": null,
@@ -43878,7 +44121,7 @@
   },
   {
    "id": "audio.nemesis2_msx.03",
-   "name": "True Ending (nemesis2_msx #3)",
+   "name": "true ending (nemesis2_msx #3)",
    "game": "nemesis2",
    "platform": "msx",
    "rom": null,
@@ -43905,7 +44148,7 @@
   },
   {
    "id": "audio.nemesis2_msx.04",
-   "name": "Boss Destruction (nemesis2_msx #4)",
+   "name": "boss / event piece blows up (nemesis2_msx #4)",
    "game": "nemesis2",
    "platform": "msx",
    "rom": null,
@@ -43932,7 +44175,7 @@
   },
   {
    "id": "audio.nemesis2_msx.05",
-   "name": "Warning (nemesis2_msx #5)",
+   "name": "EMERGENCY warning alarm (nemesis2_msx #5)",
    "game": "nemesis2",
    "platform": "msx",
    "rom": null,
@@ -43959,7 +44202,7 @@
   },
   {
    "id": "audio.nemesis2_msx.06",
-   "name": "Unidentified Source Cue 3A (nemesis2_msx #6)",
+   "name": "boss beaten (nemesis2_msx #6)",
    "game": "nemesis2",
    "platform": "msx",
    "rom": null,
@@ -43982,11 +44225,11 @@
     "validated": false
    },
    "path": "audio/msx_reference/nemesis2_msx/nemesis2_msx_original_driver.kss",
-   "notes": "command 3A; title neutral_identifier_context_unresolved"
+   "notes": "command 3A; title contextual_not_official"
   },
   {
    "id": "audio.nemesis2_msx.07",
-   "name": "Unidentified Source Cue 3D (nemesis2_msx #7)",
+   "name": "Metalion destroyed (nemesis2_msx #7)",
    "game": "nemesis2",
    "platform": "msx",
    "rom": null,
@@ -44009,11 +44252,11 @@
     "validated": false
    },
    "path": "audio/msx_reference/nemesis2_msx/nemesis2_msx_original_driver.kss",
-   "notes": "command 3D; title neutral_identifier_context_unresolved"
+   "notes": "command 3D; title contextual_not_official"
   },
   {
    "id": "audio.nemesis2_msx.08",
-   "name": "Unidentified Source Cue 42 (nemesis2_msx #8)",
+   "name": "game over (nemesis2_msx #8)",
    "game": "nemesis2",
    "platform": "msx",
    "rom": null,
@@ -44036,11 +44279,11 @@
     "validated": false
    },
    "path": "audio/msx_reference/nemesis2_msx/nemesis2_msx_original_driver.kss",
-   "notes": "command 42; title neutral_identifier_context_unresolved"
+   "notes": "command 42; title contextual_not_official"
   },
   {
    "id": "audio.nemesis2_msx.09",
-   "name": "Unidentified Source Cue 29 (nemesis2_msx #9)",
+   "name": "stage 0 (final fortress) BGM (nemesis2_msx #9)",
    "game": "nemesis2",
    "platform": "msx",
    "rom": null,
@@ -44063,11 +44306,11 @@
     "validated": false
    },
    "path": "audio/msx_reference/nemesis2_msx/nemesis2_msx_original_driver.kss",
-   "notes": "command 29; title neutral_identifier_context_unresolved"
+   "notes": "command 29; title contextual_not_official"
   },
   {
    "id": "audio.nemesis2_msx.10",
-   "name": "Unidentified Source Cue 2B (nemesis2_msx #10)",
+   "name": "stage-start theme (first zone of stages 1-7) (nemesis2_msx #10)",
    "game": "nemesis2",
    "platform": "msx",
    "rom": null,
@@ -44090,11 +44333,11 @@
     "validated": false
    },
    "path": "audio/msx_reference/nemesis2_msx/nemesis2_msx_original_driver.kss",
-   "notes": "command 2B; title neutral_identifier_context_unresolved"
+   "notes": "command 2B; title contextual_not_official"
   },
   {
    "id": "audio.nemesis2_msx.11",
-   "name": "Unidentified Source Cue 2C (nemesis2_msx #11)",
+   "name": "stage 1 BGM (nemesis2_msx #11)",
    "game": "nemesis2",
    "platform": "msx",
    "rom": null,
@@ -44117,11 +44360,11 @@
     "validated": false
    },
    "path": "audio/msx_reference/nemesis2_msx/nemesis2_msx_original_driver.kss",
-   "notes": "command 2C; title neutral_identifier_context_unresolved"
+   "notes": "command 2C; title contextual_not_official"
   },
   {
    "id": "audio.nemesis2_msx.12",
-   "name": "Unidentified Source Cue 2D (nemesis2_msx #12)",
+   "name": "stage 2 BGM (nemesis2_msx #12)",
    "game": "nemesis2",
    "platform": "msx",
    "rom": null,
@@ -44144,11 +44387,11 @@
     "validated": false
    },
    "path": "audio/msx_reference/nemesis2_msx/nemesis2_msx_original_driver.kss",
-   "notes": "command 2D; title neutral_identifier_context_unresolved"
+   "notes": "command 2D; title contextual_not_official"
   },
   {
    "id": "audio.nemesis2_msx.13",
-   "name": "Unidentified Source Cue 2E (nemesis2_msx #13)",
+   "name": "stage 3 BGM (nemesis2_msx #13)",
    "game": "nemesis2",
    "platform": "msx",
    "rom": null,
@@ -44171,11 +44414,11 @@
     "validated": false
    },
    "path": "audio/msx_reference/nemesis2_msx/nemesis2_msx_original_driver.kss",
-   "notes": "command 2E; title neutral_identifier_context_unresolved"
+   "notes": "command 2E; title contextual_not_official"
   },
   {
    "id": "audio.nemesis2_msx.14",
-   "name": "Unidentified Source Cue 30 (nemesis2_msx #14)",
+   "name": "stage 5 BGM (nemesis2_msx #14)",
    "game": "nemesis2",
    "platform": "msx",
    "rom": null,
@@ -44198,11 +44441,11 @@
     "validated": false
    },
    "path": "audio/msx_reference/nemesis2_msx/nemesis2_msx_original_driver.kss",
-   "notes": "command 30; title neutral_identifier_context_unresolved"
+   "notes": "command 30; title contextual_not_official"
   },
   {
    "id": "audio.nemesis2_msx.15",
-   "name": "Unidentified Source Cue 31 (nemesis2_msx #15)",
+   "name": "stage 4 BGM (nemesis2_msx #15)",
    "game": "nemesis2",
    "platform": "msx",
    "rom": null,
@@ -44225,11 +44468,11 @@
     "validated": false
    },
    "path": "audio/msx_reference/nemesis2_msx/nemesis2_msx_original_driver.kss",
-   "notes": "command 31; title neutral_identifier_context_unresolved"
+   "notes": "command 31; title contextual_not_official"
   },
   {
    "id": "audio.nemesis2_msx.16",
-   "name": "Unidentified Source Cue 32 (nemesis2_msx #16)",
+   "name": "stage 6 BGM (nemesis2_msx #16)",
    "game": "nemesis2",
    "platform": "msx",
    "rom": null,
@@ -44252,11 +44495,11 @@
     "validated": false
    },
    "path": "audio/msx_reference/nemesis2_msx/nemesis2_msx_original_driver.kss",
-   "notes": "command 32; title neutral_identifier_context_unresolved"
+   "notes": "command 32; title contextual_not_official"
   },
   {
    "id": "audio.nemesis2_msx.17",
-   "name": "Unidentified Source Cue 33 (nemesis2_msx #17)",
+   "name": "stage 7 BGM (nemesis2_msx #17)",
    "game": "nemesis2",
    "platform": "msx",
    "rom": null,
@@ -44279,11 +44522,11 @@
     "validated": false
    },
    "path": "audio/msx_reference/nemesis2_msx/nemesis2_msx_original_driver.kss",
-   "notes": "command 33; title neutral_identifier_context_unresolved"
+   "notes": "command 33; title contextual_not_official"
   },
   {
    "id": "audio.nemesis2_msx.18",
-   "name": "Unidentified Source Cue 34 (nemesis2_msx #18)",
+   "name": "boss theme (end zone of stages 1-7, also the stage-6 event) (nemesis2_msx #18)",
    "game": "nemesis2",
    "platform": "msx",
    "rom": null,
@@ -44306,11 +44549,11 @@
     "validated": false
    },
    "path": "audio/msx_reference/nemesis2_msx/nemesis2_msx_original_driver.kss",
-   "notes": "command 34; title neutral_identifier_context_unresolved"
+   "notes": "command 34; title contextual_not_official"
   },
   {
    "id": "audio.nemesis2_msx.19",
-   "name": "Unidentified Source Cue 35 (nemesis2_msx #19)",
+   "name": "boss interior / final core theme (nemesis2_msx #19)",
    "game": "nemesis2",
    "platform": "msx",
    "rom": null,
@@ -44333,11 +44576,11 @@
     "validated": false
    },
    "path": "audio/msx_reference/nemesis2_msx/nemesis2_msx_original_driver.kss",
-   "notes": "command 35; title neutral_identifier_context_unresolved"
+   "notes": "command 35; title contextual_not_official"
   },
   {
    "id": "audio.nemesis2_msx.20",
-   "name": "Unidentified Source Cue 36 (nemesis2_msx #20)",
+   "name": "secret stages BGM (nemesis2_msx #20)",
    "game": "nemesis2",
    "platform": "msx",
    "rom": null,
@@ -44360,7 +44603,7 @@
     "validated": false
    },
    "path": "audio/msx_reference/nemesis2_msx/nemesis2_msx_original_driver.kss",
-   "notes": "command 36; title neutral_identifier_context_unresolved"
+   "notes": "command 36; title contextual_not_official"
   },
   {
    "id": "audio.nemesis2_msx.21",
@@ -44391,7 +44634,7 @@
   },
   {
    "id": "audio.nemesis_msx.00",
-   "name": "Stage 1 Start (nemesis_msx #0)",
+   "name": "Stage-1 eruption (nemesis_msx #0)",
    "game": "nemesis",
    "platform": "msx",
    "rom": null,
@@ -44418,7 +44661,7 @@
   },
   {
    "id": "audio.nemesis_msx.01",
-   "name": "Other Stages Start (nemesis_msx #1)",
+   "name": "Stage-4 eruption (nemesis_msx #1)",
    "game": "nemesis",
    "platform": "msx",
    "rom": null,
@@ -44445,7 +44688,7 @@
   },
   {
    "id": "audio.nemesis_msx.02",
-   "name": "Core Explosion (nemesis_msx #2)",
+   "name": "Core destroyed / ending explosion (nemesis_msx #2)",
    "game": "nemesis",
    "platform": "msx",
    "rom": null,
@@ -44472,7 +44715,7 @@
   },
   {
    "id": "audio.nemesis_msx.03",
-   "name": "Ending (nemesis_msx #3)",
+   "name": "Stage cleared (nemesis_msx #3)",
    "game": "nemesis",
    "platform": "msx",
    "rom": null,
@@ -44499,7 +44742,7 @@
   },
   {
    "id": "audio.nemesis_msx.04",
-   "name": "Player Death (nemesis_msx #4)",
+   "name": "Ship destroyed (nemesis_msx #4)",
    "game": "nemesis",
    "platform": "msx",
    "rom": null,
@@ -44526,7 +44769,7 @@
   },
   {
    "id": "audio.nemesis_msx.05",
-   "name": "Unidentified Source Cue 16 (nemesis_msx #5)",
+   "name": "Stage 2 BGM (nemesis_msx #5)",
    "game": "nemesis",
    "platform": "msx",
    "rom": null,
@@ -44549,11 +44792,11 @@
     "validated": false
    },
    "path": "audio/msx_reference/nemesis_msx/nemesis_msx_original_driver.kss",
-   "notes": "command 16; title neutral_identifier_context_unresolved"
+   "notes": "command 16; title contextual_not_official"
   },
   {
    "id": "audio.nemesis_msx.06",
-   "name": "Unidentified Source Cue 19 (nemesis_msx #6)",
+   "name": "Channel part of 0x18 (Stage 3 BGM, channel 2) (nemesis_msx #6)",
    "game": "nemesis",
    "platform": "msx",
    "rom": null,
@@ -44576,11 +44819,11 @@
     "validated": false
    },
    "path": "audio/msx_reference/nemesis_msx/nemesis_msx_original_driver.kss",
-   "notes": "command 19; title neutral_identifier_context_unresolved"
+   "notes": "command 19; title channel_part_not_a_track"
   },
   {
    "id": "audio.nemesis_msx.07",
-   "name": "Unidentified Source Cue 29 (nemesis_msx #7)",
+   "name": "Ending text tune (nemesis_msx #7)",
    "game": "nemesis",
    "platform": "msx",
    "rom": null,
@@ -44603,11 +44846,11 @@
     "validated": false
    },
    "path": "audio/msx_reference/nemesis_msx/nemesis_msx_original_driver.kss",
-   "notes": "command 29; title neutral_identifier_context_unresolved"
+   "notes": "command 29; title contextual_not_official"
   },
   {
    "id": "audio.nemesis_msx.08",
-   "name": "Unidentified Source Cue 31 (nemesis_msx #8)",
+   "name": "Channel part of 0x2F (Stage 1 BGM, channel 3) (nemesis_msx #8)",
    "game": "nemesis",
    "platform": "msx",
    "rom": null,
@@ -44630,11 +44873,11 @@
     "validated": false
    },
    "path": "audio/msx_reference/nemesis_msx/nemesis_msx_original_driver.kss",
-   "notes": "command 31; title neutral_identifier_context_unresolved"
+   "notes": "command 31; title channel_part_not_a_track"
   },
   {
    "id": "audio.nemesis_msx.09",
-   "name": "Unidentified Source Cue 33 (nemesis_msx #9)",
+   "name": "Channel part of 0x32 (Stage-1 eruption, channel 2) (nemesis_msx #9)",
    "game": "nemesis",
    "platform": "msx",
    "rom": null,
@@ -44657,11 +44900,11 @@
     "validated": false
    },
    "path": "audio/msx_reference/nemesis_msx/nemesis_msx_original_driver.kss",
-   "notes": "command 33; title neutral_identifier_context_unresolved"
+   "notes": "command 33; title channel_part_not_a_track"
   },
   {
    "id": "audio.nemesis_msx.10",
-   "name": "Unidentified Source Cue 34 (nemesis_msx #10)",
+   "name": "Channel part of 0x32 (Stage-1 eruption, channel 3) (nemesis_msx #10)",
    "game": "nemesis",
    "platform": "msx",
    "rom": null,
@@ -44684,11 +44927,11 @@
     "validated": false
    },
    "path": "audio/msx_reference/nemesis_msx/nemesis_msx_original_driver.kss",
-   "notes": "command 34; title neutral_identifier_context_unresolved"
+   "notes": "command 34; title channel_part_not_a_track"
   },
   {
    "id": "audio.nemesis_msx.11",
-   "name": "Unidentified Source Cue 35 (nemesis_msx #11)",
+   "name": "Boss BGM (nemesis_msx #11)",
    "game": "nemesis",
    "platform": "msx",
    "rom": null,
@@ -44711,11 +44954,11 @@
     "validated": false
    },
    "path": "audio/msx_reference/nemesis_msx/nemesis_msx_original_driver.kss",
-   "notes": "command 35; title neutral_identifier_context_unresolved"
+   "notes": "command 35; title contextual_not_official"
   },
   {
    "id": "audio.nemesis_msx.12",
-   "name": "Unidentified Source Cue 36 (nemesis_msx #12)",
+   "name": "Channel part of 0x35 (Boss BGM, channel 2) (nemesis_msx #12)",
    "game": "nemesis",
    "platform": "msx",
    "rom": null,
@@ -44738,11 +44981,11 @@
     "validated": false
    },
    "path": "audio/msx_reference/nemesis_msx/nemesis_msx_original_driver.kss",
-   "notes": "command 36; title neutral_identifier_context_unresolved"
+   "notes": "command 36; title channel_part_not_a_track"
   },
   {
    "id": "audio.nemesis_msx.13",
-   "name": "Unidentified Source Cue 37 (nemesis_msx #13)",
+   "name": "Channel part of 0x35 (Boss BGM, channel 3) (nemesis_msx #13)",
    "game": "nemesis",
    "platform": "msx",
    "rom": null,
@@ -44765,11 +45008,11 @@
     "validated": false
    },
    "path": "audio/msx_reference/nemesis_msx/nemesis_msx_original_driver.kss",
-   "notes": "command 37; title neutral_identifier_context_unresolved"
+   "notes": "command 37; title channel_part_not_a_track"
   },
   {
    "id": "audio.salamander_msx.00",
-   "name": "Konami Logo (salamander_msx #0)",
+   "name": "Title logo jingle (docs: \"The Konami logo\") (salamander_msx #0)",
    "game": "salamander",
    "platform": "msx",
    "rom": null,
@@ -44796,7 +45039,7 @@
   },
   {
    "id": "audio.salamander_msx.01",
-   "name": "Title (salamander_msx #1)",
+   "name": "Story opening tune (docs: \"The title\") (salamander_msx #1)",
    "game": "salamander",
    "platform": "msx",
    "rom": null,
@@ -44823,7 +45066,7 @@
   },
   {
    "id": "audio.salamander_msx.02",
-   "name": "Takeoff (salamander_msx #2)",
+   "name": "Take-off (salamander_msx #2)",
    "game": "salamander",
    "platform": "msx",
    "rom": null,
@@ -44850,7 +45093,7 @@
   },
   {
    "id": "audio.salamander_msx.03",
-   "name": "Ship Departure (salamander_msx #3)",
+   "name": "The ship leaves (salamander_msx #3)",
    "game": "salamander",
    "platform": "msx",
    "rom": null,
@@ -45039,7 +45282,7 @@
   },
   {
    "id": "audio.salamander_msx.10",
-   "name": "Operation X (salamander_msx #10)",
+   "name": "Stage 7 (OPERATION X) (salamander_msx #10)",
    "game": "salamander",
    "platform": "msx",
    "rom": null,
@@ -45066,7 +45309,7 @@
   },
   {
    "id": "audio.salamander_msx.11",
-   "name": "Boss Battle (salamander_msx #11)",
+   "name": "Boss (salamander_msx #11)",
    "game": "salamander",
    "platform": "msx",
    "rom": null,
@@ -45093,7 +45336,7 @@
   },
   {
    "id": "audio.salamander_msx.12",
-   "name": "Boss Destruction (salamander_msx #12)",
+   "name": "Boss destroyed (salamander_msx #12)",
    "game": "salamander",
    "platform": "msx",
    "rom": null,
@@ -45120,7 +45363,7 @@
   },
   {
    "id": "audio.salamander_msx.13",
-   "name": "Player Death (salamander_msx #13)",
+   "name": "Ship explodes (salamander_msx #13)",
    "game": "salamander",
    "platform": "msx",
    "rom": null,
@@ -45147,7 +45390,7 @@
   },
   {
    "id": "audio.salamander_msx.14",
-   "name": "Between Stages (salamander_msx #14)",
+   "name": "Between stages (salamander_msx #14)",
    "game": "salamander",
    "platform": "msx",
    "rom": null,
@@ -45174,7 +45417,7 @@
   },
   {
    "id": "audio.salamander_msx.15",
-   "name": "Sequence at 56C4 (salamander_msx #15)",
+   "name": "Hidden-item result (salamander_msx #15)",
    "game": "salamander",
    "platform": "msx",
    "rom": null,
@@ -45201,7 +45444,7 @@
   },
   {
    "id": "audio.salamander_msx.16",
-   "name": "Incomplete Ending (salamander_msx #16)",
+   "name": "Ending without Nemesis 2 / crystal (salamander_msx #16)",
    "game": "salamander",
    "platform": "msx",
    "rom": null,
@@ -45228,7 +45471,7 @@
   },
   {
    "id": "audio.salamander_msx.17",
-   "name": "True Ending (salamander_msx #17)",
+   "name": "Good ending (salamander_msx #17)",
    "game": "salamander",
    "platform": "msx",
    "rom": null,
@@ -45255,7 +45498,7 @@
   },
   {
    "id": "audio.salamander_msx.18",
-   "name": "Game Over (salamander_msx #18)",
+   "name": "Game over (salamander_msx #18)",
    "game": "salamander",
    "platform": "msx",
    "rom": null,
@@ -45282,7 +45525,7 @@
   },
   {
    "id": "audio.salamander_msx.19",
-   "name": "Intro Window (salamander_msx #19)",
+   "name": "Intro window (KONAMI PRESENTS) (salamander_msx #19)",
    "game": "salamander",
    "platform": "msx",
    "rom": null,
@@ -45552,7 +45795,7 @@
   },
   {
    "id": "audio.gradius.09",
-   "name": "Start Sequence (gradius #9)",
+   "name": "Ending intro (flight to the mothership) (gradius #9)",
    "game": "gradius_nes_us",
    "platform": "nes",
    "rom": null,
@@ -45579,7 +45822,7 @@
   },
   {
    "id": "audio.gradius.10",
-   "name": "Stage Sequence Jingle (gradius #10)",
+   "name": "Stage clear (gradius #10)",
    "game": "gradius_nes_us",
    "platform": "nes",
    "rom": null,
@@ -45660,7 +45903,7 @@
   },
   {
    "id": "audio.gradius.13",
-   "name": "Final Encounter Sequence (gradius #13)",
+   "name": "Player destroyed (gradius #13)",
    "game": "gradius_nes_us",
    "platform": "nes",
    "rom": null,
@@ -45687,7 +45930,7 @@
   },
   {
    "id": "audio.gradius.14",
-   "name": "Short Jingle - Sound 90 (gradius #14)",
+   "name": "Game start (gradius #14)",
    "game": "gradius_nes_us",
    "platform": "nes",
    "rom": null,
@@ -45795,7 +46038,7 @@
   },
   {
    "id": "audio.gradius2_fc.03",
-   "name": "The Final Enemy (Boss) (gradius2_fc #3)",
+   "name": "Fortress (Stage 2) (gradius2_fc #3)",
    "game": "gradius2_fc",
    "platform": "nes",
    "rom": null,
@@ -45822,7 +46065,7 @@
   },
   {
    "id": "audio.gradius2_fc.04",
-   "name": "Fortress (Stage 2) (gradius2_fc #4)",
+   "name": "Heavy Blow (Stage 3-1) (gradius2_fc #4)",
    "game": "gradius2_fc",
    "platform": "nes",
    "rom": null,
@@ -45849,7 +46092,7 @@
   },
   {
    "id": "audio.gradius2_fc.05",
-   "name": "Heavy Blow (Stage 3-1) (gradius2_fc #5)",
+   "name": "Dead End (Stage 3-2) (gradius2_fc #5)",
    "game": "gradius2_fc",
    "platform": "nes",
    "rom": null,
@@ -45876,7 +46119,7 @@
   },
   {
    "id": "audio.gradius2_fc.06",
-   "name": "Dead End (Stage 3-2) (gradius2_fc #6)",
+   "name": "Something Ghostly (Stage 7) (gradius2_fc #6)",
    "game": "gradius2_fc",
    "platform": "nes",
    "rom": null,
@@ -45930,7 +46173,7 @@
   },
   {
    "id": "audio.gradius2_fc.08",
-   "name": "GRADIUS 1 BOSS Theme (Stage 5-1) (gradius2_fc #8)",
+   "name": "Over Heat (Stage 6) (gradius2_fc #8)",
    "game": "gradius2_fc",
    "platform": "nes",
    "rom": null,
@@ -45957,7 +46200,7 @@
   },
   {
    "id": "audio.gradius2_fc.09",
-   "name": "SALAMANDER BOSS Theme (Stage 5-2) (gradius2_fc #9)",
+   "name": "The Final Enemy (Boss) (gradius2_fc #9)",
    "game": "gradius2_fc",
    "platform": "nes",
    "rom": null,
@@ -45984,7 +46227,7 @@
   },
   {
    "id": "audio.gradius2_fc.10",
-   "name": "Over Heat (Stage 6) (gradius2_fc #10)",
+   "name": "GRADIUS 1 BOSS Theme (Stage 5-1) (gradius2_fc #10)",
    "game": "gradius2_fc",
    "platform": "nes",
    "rom": null,
@@ -46011,7 +46254,7 @@
   },
   {
    "id": "audio.gradius2_fc.11",
-   "name": "Something Ghostly (Stage 7) (gradius2_fc #11)",
+   "name": "SALAMANDER BOSS Theme (Stage 5-2) (gradius2_fc #11)",
    "game": "gradius2_fc",
    "platform": "nes",
    "rom": null,
@@ -46119,7 +46362,7 @@
   },
   {
    "id": "audio.salamander_fc.00",
-   "name": "Combat (Unused) (salamander_fc #0)",
+   "name": "Poison of Snake (Boss) (salamander_fc #0)",
    "game": "salamander_fc",
    "platform": "nes",
    "rom": null,
@@ -46281,7 +46524,7 @@
   },
   {
    "id": "audio.salamander_fc.06",
-   "name": "Temple Finale (Stage 5 Alternate Cue) (salamander_fc #6)",
+   "name": "Thunderbolt (Stage 5, resumed after the interlude) (salamander_fc #6)",
    "game": "salamander_fc",
    "platform": "nes",
    "rom": null,
@@ -46304,7 +46547,7 @@
     "validated": false
    },
    "path": "audio/native_nes/salamander_fc/Salamander_FC_original_driver.nsf",
-   "notes": "command 34; title contextual_not_official"
+   "notes": "command 34; title published_title"
   },
   {
    "id": "audio.salamander_fc.07",
@@ -46335,7 +46578,7 @@
   },
   {
    "id": "audio.salamander_fc.08",
-   "name": "Aircraft Carrier (Gradius Boss) (salamander_fc #8)",
+   "name": "Aircraft Carrier (Stage 5 interlude) (salamander_fc #8)",
    "game": "salamander_fc",
    "platform": "nes",
    "rom": null,
@@ -46362,7 +46605,7 @@
   },
   {
    "id": "audio.salamander_fc.09",
-   "name": "Poison of Snake (Boss) (salamander_fc #9)",
+   "name": "Crystal Forever (Game Over) (salamander_fc #9)",
    "game": "salamander_fc",
    "platform": "nes",
    "rom": null,
@@ -46416,7 +46659,7 @@
   },
   {
    "id": "audio.salamander_fc.11",
-   "name": "Crystal Forever (Game Over) (salamander_fc #11)",
+   "name": "Game Start Jingle (salamander_fc #11)",
    "game": "salamander_fc",
    "platform": "nes",
    "rom": null,
@@ -46439,7 +46682,3328 @@
     "validated": false
    },
    "path": "audio/native_nes/salamander_fc/Salamander_FC_original_driver.nsf",
-   "notes": "command 43; title published_title"
+   "notes": "command 43; title contextual_not_official"
+  },
+  {
+   "id": "audio.lifeforce.00",
+   "name": "stage 1 theme (lifeforce #0)",
+   "game": "lifeforce_nes_us",
+   "platform": "nes",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "NSF",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "REUSE",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/native_nes/lifeforce/lifeforce_nes_us_original_driver.nsf",
+   "notes": "command 25; title contextual_not_official"
+  },
+  {
+   "id": "audio.lifeforce.01",
+   "name": "stage 2 theme (lifeforce #1)",
+   "game": "lifeforce_nes_us",
+   "platform": "nes",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "NSF",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "REUSE",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/native_nes/lifeforce/lifeforce_nes_us_original_driver.nsf",
+   "notes": "command 28; title contextual_not_official"
+  },
+  {
+   "id": "audio.lifeforce.02",
+   "name": "stage 3 theme (lifeforce #2)",
+   "game": "lifeforce_nes_us",
+   "platform": "nes",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "NSF",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "REUSE",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/native_nes/lifeforce/lifeforce_nes_us_original_driver.nsf",
+   "notes": "command 2B; title contextual_not_official"
+  },
+  {
+   "id": "audio.lifeforce.03",
+   "name": "stage 4 theme (lifeforce #3)",
+   "game": "lifeforce_nes_us",
+   "platform": "nes",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "NSF",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "REUSE",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/native_nes/lifeforce/lifeforce_nes_us_original_driver.nsf",
+   "notes": "command 2E; title contextual_not_official"
+  },
+  {
+   "id": "audio.lifeforce.04",
+   "name": "stage 5 theme (lifeforce #4)",
+   "game": "lifeforce_nes_us",
+   "platform": "nes",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "NSF",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "REUSE",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/native_nes/lifeforce/lifeforce_nes_us_original_driver.nsf",
+   "notes": "command 31; title contextual_not_official"
+  },
+  {
+   "id": "audio.lifeforce.05",
+   "name": "stage 5 battleship theme (lifeforce #5)",
+   "game": "lifeforce_nes_us",
+   "platform": "nes",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "NSF",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "REUSE",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/native_nes/lifeforce/lifeforce_nes_us_original_driver.nsf",
+   "notes": "command 22; title contextual_not_official"
+  },
+  {
+   "id": "audio.lifeforce.06",
+   "name": "stage 5 theme after the battleships (lifeforce #6)",
+   "game": "lifeforce_nes_us",
+   "platform": "nes",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "NSF",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "REUSE",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/native_nes/lifeforce/lifeforce_nes_us_original_driver.nsf",
+   "notes": "command 34; title contextual_not_official"
+  },
+  {
+   "id": "audio.lifeforce.07",
+   "name": "stage 6 theme (lifeforce #7)",
+   "game": "lifeforce_nes_us",
+   "platform": "nes",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "NSF",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "REUSE",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/native_nes/lifeforce/lifeforce_nes_us_original_driver.nsf",
+   "notes": "command 37; title contextual_not_official"
+  },
+  {
+   "id": "audio.lifeforce.08",
+   "name": "boss theme (lifeforce #8)",
+   "game": "lifeforce_nes_us",
+   "platform": "nes",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "NSF",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "REUSE",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/native_nes/lifeforce/lifeforce_nes_us_original_driver.nsf",
+   "notes": "command 3A; title contextual_not_official"
+  },
+  {
+   "id": "audio.lifeforce.09",
+   "name": "game start (lifeforce #9)",
+   "game": "lifeforce_nes_us",
+   "platform": "nes",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "NSF",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "REUSE",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/native_nes/lifeforce/lifeforce_nes_us_original_driver.nsf",
+   "notes": "command 43; title contextual_not_official"
+  },
+  {
+   "id": "audio.lifeforce.10",
+   "name": "game over (lifeforce #10)",
+   "game": "lifeforce_nes_us",
+   "platform": "nes",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "NSF",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "REUSE",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/native_nes/lifeforce/lifeforce_nes_us_original_driver.nsf",
+   "notes": "command 3D; title contextual_not_official"
+  },
+  {
+   "id": "audio.lifeforce.11",
+   "name": "ending theme (lifeforce #11)",
+   "game": "lifeforce_nes_us",
+   "platform": "nes",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "NSF",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "REUSE",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/native_nes/lifeforce/lifeforce_nes_us_original_driver.nsf",
+   "notes": "command 40; title contextual_not_official"
+  },
+  {
+   "id": "audio.lifeforce.12",
+   "name": "percussion 1 (driver drum) (lifeforce #12)",
+   "game": "lifeforce_nes_us",
+   "platform": "nes",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "NSF",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "REUSE",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/native_nes/lifeforce/lifeforce_nes_us_original_driver.nsf",
+   "notes": "command 01; title contextual_not_official"
+  },
+  {
+   "id": "audio.lifeforce.13",
+   "name": "percussion 2 (driver drum) (lifeforce #13)",
+   "game": "lifeforce_nes_us",
+   "platform": "nes",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "NSF",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "REUSE",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/native_nes/lifeforce/lifeforce_nes_us_original_driver.nsf",
+   "notes": "command 02; title contextual_not_official"
+  },
+  {
+   "id": "audio.lifeforce.14",
+   "name": "rumble (noise, periodic stage effect) (lifeforce #14)",
+   "game": "lifeforce_nes_us",
+   "platform": "nes",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "NSF",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "REUSE",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/native_nes/lifeforce/lifeforce_nes_us_original_driver.nsf",
+   "notes": "command 03; title contextual_not_official"
+  },
+  {
+   "id": "audio.lifeforce.15",
+   "name": "ending beam rumble (lifeforce #15)",
+   "game": "lifeforce_nes_us",
+   "platform": "nes",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "NSF",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "REUSE",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/native_nes/lifeforce/lifeforce_nes_us_original_driver.nsf",
+   "notes": "command 04; title contextual_not_official"
+  },
+  {
+   "id": "audio.lifeforce.16",
+   "name": "normal shot (lifeforce #16)",
+   "game": "lifeforce_nes_us",
+   "platform": "nes",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "NSF",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "REUSE",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/native_nes/lifeforce/lifeforce_nes_us_original_driver.nsf",
+   "notes": "command 05; title contextual_not_official"
+  },
+  {
+   "id": "audio.lifeforce.17",
+   "name": "ripple laser shot (lifeforce #17)",
+   "game": "lifeforce_nes_us",
+   "platform": "nes",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "NSF",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "REUSE",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/native_nes/lifeforce/lifeforce_nes_us_original_driver.nsf",
+   "notes": "command 06; title contextual_not_official"
+  },
+  {
+   "id": "audio.lifeforce.18",
+   "name": "laser shot (lifeforce #18)",
+   "game": "lifeforce_nes_us",
+   "platform": "nes",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "NSF",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "REUSE",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/native_nes/lifeforce/lifeforce_nes_us_original_driver.nsf",
+   "notes": "command 07; title contextual_not_official"
+  },
+  {
+   "id": "audio.lifeforce.19",
+   "name": "stage 4 effect (bank 5 $9AD9) (lifeforce #19)",
+   "game": "lifeforce_nes_us",
+   "platform": "nes",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "NSF",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "REUSE",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/native_nes/lifeforce/lifeforce_nes_us_original_driver.nsf",
+   "notes": "command 08; title contextual_not_official"
+  },
+  {
+   "id": "audio.lifeforce.20",
+   "name": "stage 6 pulse (every 64 frames) (lifeforce #20)",
+   "game": "lifeforce_nes_us",
+   "platform": "nes",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "NSF",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "REUSE",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/native_nes/lifeforce/lifeforce_nes_us_original_driver.nsf",
+   "notes": "command 09; title contextual_not_official"
+  },
+  {
+   "id": "audio.lifeforce.21",
+   "name": "hit on an indestructible target (lifeforce #21)",
+   "game": "lifeforce_nes_us",
+   "platform": "nes",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "NSF",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "REUSE",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/native_nes/lifeforce/lifeforce_nes_us_original_driver.nsf",
+   "notes": "command 0A; title contextual_not_official"
+  },
+  {
+   "id": "audio.lifeforce.22",
+   "name": "hit on an armoured enemy (lifeforce #22)",
+   "game": "lifeforce_nes_us",
+   "platform": "nes",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "NSF",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "REUSE",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/native_nes/lifeforce/lifeforce_nes_us_original_driver.nsf",
+   "notes": "command 0B; title contextual_not_official"
+  },
+  {
+   "id": "audio.lifeforce.23",
+   "name": "stage 3 explosion (noise + effect) (lifeforce #23)",
+   "game": "lifeforce_nes_us",
+   "platform": "nes",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "NSF",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "REUSE",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/native_nes/lifeforce/lifeforce_nes_us_original_driver.nsf",
+   "notes": "command 0C; title contextual_not_official"
+  },
+  {
+   "id": "audio.lifeforce.24",
+   "name": "enemy destroyed (variant) (lifeforce #24)",
+   "game": "lifeforce_nes_us",
+   "platform": "nes",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "NSF",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "REUSE",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/native_nes/lifeforce/lifeforce_nes_us_original_driver.nsf",
+   "notes": "command 0E; title contextual_not_official"
+  },
+  {
+   "id": "audio.lifeforce.25",
+   "name": "unused effect (lifeforce #25)",
+   "game": "lifeforce_nes_us",
+   "platform": "nes",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "NSF",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "REUSE",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/native_nes/lifeforce/lifeforce_nes_us_original_driver.nsf",
+   "notes": "command 0F; title contextual_not_official"
+  },
+  {
+   "id": "audio.lifeforce.26",
+   "name": "enemy destroyed (lifeforce #26)",
+   "game": "lifeforce_nes_us",
+   "platform": "nes",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "NSF",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "REUSE",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/native_nes/lifeforce/lifeforce_nes_us_original_driver.nsf",
+   "notes": "command 10; title contextual_not_official"
+  },
+  {
+   "id": "audio.lifeforce.27",
+   "name": "segmented enemy destroyed (lifeforce #27)",
+   "game": "lifeforce_nes_us",
+   "platform": "nes",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "NSF",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "REUSE",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/native_nes/lifeforce/lifeforce_nes_us_original_driver.nsf",
+   "notes": "command 11; title contextual_not_official"
+  },
+  {
+   "id": "audio.lifeforce.28",
+   "name": "stage 1 explosion (noise + effect) (lifeforce #28)",
+   "game": "lifeforce_nes_us",
+   "platform": "nes",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "NSF",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "REUSE",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/native_nes/lifeforce/lifeforce_nes_us_original_driver.nsf",
+   "notes": "command 12; title contextual_not_official"
+  },
+  {
+   "id": "audio.lifeforce.29",
+   "name": "stage 6 effect (bank 5 $A938) (lifeforce #29)",
+   "game": "lifeforce_nes_us",
+   "platform": "nes",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "NSF",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "REUSE",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/native_nes/lifeforce/lifeforce_nes_us_original_driver.nsf",
+   "notes": "command 14; title contextual_not_official"
+  },
+  {
+   "id": "audio.lifeforce.30",
+   "name": "large enemy destroyed (lifeforce #30)",
+   "game": "lifeforce_nes_us",
+   "platform": "nes",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "NSF",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "REUSE",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/native_nes/lifeforce/lifeforce_nes_us_original_driver.nsf",
+   "notes": "command 15; title contextual_not_official"
+  },
+  {
+   "id": "audio.lifeforce.31",
+   "name": "power capsule taken (lifeforce #31)",
+   "game": "lifeforce_nes_us",
+   "platform": "nes",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "NSF",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "REUSE",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/native_nes/lifeforce/lifeforce_nes_us_original_driver.nsf",
+   "notes": "command 16; title contextual_not_official"
+  },
+  {
+   "id": "audio.lifeforce.32",
+   "name": "blue capsule (screen clear) (lifeforce #32)",
+   "game": "lifeforce_nes_us",
+   "platform": "nes",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "NSF",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "REUSE",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/native_nes/lifeforce/lifeforce_nes_us_original_driver.nsf",
+   "notes": "command 17; title contextual_not_official"
+  },
+  {
+   "id": "audio.lifeforce.33",
+   "name": "power-up activated (lifeforce #33)",
+   "game": "lifeforce_nes_us",
+   "platform": "nes",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "NSF",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "REUSE",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/native_nes/lifeforce/lifeforce_nes_us_original_driver.nsf",
+   "notes": "command 18; title contextual_not_official"
+  },
+  {
+   "id": "audio.lifeforce.34",
+   "name": "stage 6 effect (bank 5 $A099) (lifeforce #34)",
+   "game": "lifeforce_nes_us",
+   "platform": "nes",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "NSF",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "REUSE",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/native_nes/lifeforce/lifeforce_nes_us_original_driver.nsf",
+   "notes": "command 19; title contextual_not_official"
+  },
+  {
+   "id": "audio.lifeforce.35",
+   "name": "player ship destroyed (lifeforce #35)",
+   "game": "lifeforce_nes_us",
+   "platform": "nes",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "NSF",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "REUSE",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/native_nes/lifeforce/lifeforce_nes_us_original_driver.nsf",
+   "notes": "command 1A; title contextual_not_official"
+  },
+  {
+   "id": "audio.lifeforce.36",
+   "name": "ship launch (respawn / stage clear take-off) (lifeforce #36)",
+   "game": "lifeforce_nes_us",
+   "platform": "nes",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "NSF",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "REUSE",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/native_nes/lifeforce/lifeforce_nes_us_original_driver.nsf",
+   "notes": "command 1C; title contextual_not_official"
+  },
+  {
+   "id": "audio.lifeforce.37",
+   "name": "extra life (lifeforce #37)",
+   "game": "lifeforce_nes_us",
+   "platform": "nes",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "NSF",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "REUSE",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/native_nes/lifeforce/lifeforce_nes_us_original_driver.nsf",
+   "notes": "command 1E; title contextual_not_official"
+  },
+  {
+   "id": "audio.lifeforce.38",
+   "name": "big explosion (boss destroyed, planet in the ending) (lifeforce #38)",
+   "game": "lifeforce_nes_us",
+   "platform": "nes",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "NSF",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "REUSE",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/native_nes/lifeforce/lifeforce_nes_us_original_driver.nsf",
+   "notes": "command 1F; title contextual_not_official"
+  },
+  {
+   "id": "audio.lifeforce.39",
+   "name": "pause (lifeforce #39)",
+   "game": "lifeforce_nes_us",
+   "platform": "nes",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "NSF",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "REUSE",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/native_nes/lifeforce/lifeforce_nes_us_original_driver.nsf",
+   "notes": "command 46; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.00",
+   "name": "Silence: stops every channel (priority 255) (nemesis3_msx #0)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 01; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.01",
+   "name": "Silence before a new tune (priority 224) (nemesis3_msx #1)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 02; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.02",
+   "name": "Single SCC-1 sound (header only, never requested) (nemesis3_msx #2)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 03; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.03",
+   "name": "At the start of stages 3 and 5-9 (nemesis3_msx #3)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 04; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.04",
+   "name": "The bosses (nemesis3_msx #4)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 05; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.05",
+   "name": "Stage 1 (nemesis3_msx #5)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 06; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.06",
+   "name": "Stage 2 (nemesis3_msx #6)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 07; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.07",
+   "name": "Stage 3 (nemesis3_msx #7)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 08; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.08",
+   "name": "Stage 4: bosses 0x01 and 0x03 (nemesis3_msx #8)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 09; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.09",
+   "name": "Stage 4 and its fourth boss (nemesis3_msx #9)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 0A; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.10",
+   "name": "Stage 4: boss 0x0B (nemesis3_msx #10)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 0B; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.11",
+   "name": "Stage 5 (nemesis3_msx #11)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 0C; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.12",
+   "name": "Stage 9 (nemesis3_msx #12)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 0D; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.13",
+   "name": "Stage 11 (nemesis3_msx #13)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 0E; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.14",
+   "name": "Shot (normal) (nemesis3_msx #14)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 0F; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.15",
+   "name": "UP / DOWN DOUBLE (nemesis3_msx #15)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 10; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.16",
+   "name": "LASER (nemesis3_msx #16)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 11; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.17",
+   "name": "UP / DOWN LASER (nemesis3_msx #17)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 12; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.18",
+   "name": "METEOR LASER (nemesis3_msx #18)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 13; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.19",
+   "name": "SCREW LASER (nemesis3_msx #19)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 14; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.20",
+   "name": "TWINKLE LASER (nemesis3_msx #20)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 15; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.21",
+   "name": "RIPPLE LASER (nemesis3_msx #21)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 16; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.22",
+   "name": "FIRE / EXTEND BLASTER (not restarted while it sounds, p10:6053) (nemesis3_msx #22)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 17; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.23",
+   "name": "VECTOR LASER (nemesis3_msx #23)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 18; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.24",
+   "name": "Big beam (nemesis3_msx #24)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 19; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.25",
+   "name": "Capsule taken (nemesis3_msx #25)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 1A; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.26",
+   "name": "Blue capsule: every enemy on screen destroyed (nemesis3_msx #26)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 1B; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.27",
+   "name": "Power-up bought (nemesis3_msx #27)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 1C; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.28",
+   "name": "Extra life (nemesis3_msx #28)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 1D; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.29",
+   "name": "Enemy destroyed (nemesis3_msx #29)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 1E; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.30",
+   "name": "Enemy destroyed (armoured types 0x0A, 0x0D, 0x0E, 0x19, 0x21, 0x22, 0x28, 0x2C, 0x2D, 0x30, 0x4A) (nemesis3_msx #30)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 1F; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.31",
+   "name": "Large explosion (piece destroyed) (nemesis3_msx #31)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 20; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.32",
+   "name": "Enemy destroyed (one-hit types 0x07, 0x17, 0x1A, 0x1E) (nemesis3_msx #32)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 21; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.33",
+   "name": "Explosion of piece type 0x31 (nemesis3_msx #33)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 22; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.34",
+   "name": "Destructible scenery char shot (sound from B', p04:998D) (nemesis3_msx #34)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 23; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.35",
+   "name": "Destructible scenery char shot (variant) (nemesis3_msx #35)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 24; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.36",
+   "name": "Destructible scenery char shot (variant) (nemesis3_msx #36)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 25; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.37",
+   "name": "Explosion of piece type 0x35 (nemesis3_msx #37)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 26; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.38",
+   "name": "Boss weak point hit (lives left) (nemesis3_msx #38)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 27; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.39",
+   "name": "Enemy or boss hit, not destroyed (nemesis3_msx #39)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 28; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.40",
+   "name": "Enemies launched (stage 2 hatch, boss 0x06, boss 0x08 weapon) (nemesis3_msx #40)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 29; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.41",
+   "name": "Stage 10 laser-triggered enemy 0x33 (p03:B6EB) (nemesis3_msx #41)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 2A; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.42",
+   "name": "Four-part enemy appears (stage 11) (nemesis3_msx #42)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 2B; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.43",
+   "name": "Boss 0x04 fires (stage 4) (nemesis3_msx #43)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 2C; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.44",
+   "name": "Boss 0x03 / 0x0C fire, stage 9 enemy (nemesis3_msx #44)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 2D; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.45",
+   "name": "Boss 0x01 / 0x0F fire (nemesis3_msx #45)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 2E; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.46",
+   "name": "Shot hits the scenery (nemesis3_msx #46)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 2F; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.47",
+   "name": "Stage 1 sun flare shot / boss 0x11 parts (nemesis3_msx #47)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 30; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.48",
+   "name": "Option lost (stage 2 plants) / ship grabbed (stage 3) (nemesis3_msx #48)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 31; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.49",
+   "name": "Stage 2 fragments (enemy 0x35) every 4 frames (nemesis3_msx #49)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 32; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.50",
+   "name": "Scenery collision of a char enemy (not restarted while it sounds, p10:604C) (nemesis3_msx #50)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 33; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.51",
+   "name": "Stage 6 growing piece / boss 0x09 (nemesis3_msx #51)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 34; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.52",
+   "name": "Stage 3 flash (border to 0xEF) (nemesis3_msx #52)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 35; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.53",
+   "name": "Whirlpool pulling the ship (stage 3, every 16 frames) (nemesis3_msx #53)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 36; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.54",
+   "name": "Stage 7 piece 0x2D / 0x37 (nemesis3_msx #54)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 37; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.55",
+   "name": "Boss 0x06 weak point animation (stage 1) (nemesis3_msx #55)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 38; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.56",
+   "name": "Boss 0x0D (stage 9) (nemesis3_msx #56)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 39; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.57",
+   "name": "Stage 5 char projectile (0xC2) launched (nemesis3_msx #57)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 3A; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.58",
+   "name": "Sound effect never requested (p00:5916 has no caller) (nemesis3_msx #58)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 3B; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.59",
+   "name": "Stage 7 growing column (piece 0x05) (nemesis3_msx #59)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 3C; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.60",
+   "name": "Game over (nemesis3_msx #60)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 3D; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.61",
+   "name": "The story, second part (nemesis3_msx #61)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 3E; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.62",
+   "name": "The on-board computer and the secret weapon (nemesis3_msx #62)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 3F; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.63",
+   "name": "The ending: Venom's message (nemesis3_msx #63)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 40; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.64",
+   "name": "The ending: after the message (nemesis3_msx #64)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 41; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.65",
+   "name": "The ending: the rescue of James Burton (nemesis3_msx #65)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 42; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.66",
+   "name": "Before choosing the ship (nemesis3_msx #66)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 43; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.67",
+   "name": "Stage 6 (nemesis3_msx #67)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 44; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.68",
+   "name": "Stage 7 (nemesis3_msx #68)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 45; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.69",
+   "name": "Stage 8 (nemesis3_msx #69)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 46; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.70",
+   "name": "Stage 10 (nemesis3_msx #70)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 47; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.71",
+   "name": "Choosing the ship (nemesis3_msx #71)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 48; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.72",
+   "name": "Ending: the extra step with the Space-Fighter Shield (good ending only) (nemesis3_msx #72)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 49; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.73",
+   "name": "The story, first part (nemesis3_msx #73)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 4A; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.74",
+   "name": "Ship destroyed (nemesis3_msx #74)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 4B; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.75",
+   "name": "A boss falls (nemesis3_msx #75)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 4C; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.76",
+   "name": "Alarm with the border flashing (stage 3 end, ending before EMERGENCY!!) (nemesis3_msx #76)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 4D; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.77",
+   "name": "Something materialises (stage 3 end sequence, boss 0x11 appears) (nemesis3_msx #77)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 4E; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.78",
+   "name": "The secret weapon blueprint (nemesis3_msx #78)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 4F; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.79",
+   "name": "The ship leaves at the end of the stage (nemesis3_msx #79)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 50; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.80",
+   "name": "Title: the logo comes together (nemesis3_msx #80)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 51; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.81",
+   "name": "Alarm (ending) (nemesis3_msx #81)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 52; title contextual_not_official"
+  },
+  {
+   "id": "audio.nemesis3_msx.82",
+   "name": "Ending: SCC waveform sweep (not a score) (nemesis3_msx #82)",
+   "game": "nemesis3",
+   "platform": "msx",
+   "rom": null,
+   "rom_sha256": null,
+   "bank": null,
+   "offset": null,
+   "category": "music_track",
+   "format": "KSS",
+   "size_bytes": null,
+   "content_sha256": null,
+   "dependencies": [],
+   "nes_match": null,
+   "reuse_class": "CONVERT",
+   "states": {
+    "identified": true,
+    "extracted": true,
+    "converted": false,
+    "integrated": false,
+    "tested": false,
+    "validated": false
+   },
+   "path": "audio/msx_reference/nemesis3_msx/nemesis3_msx_original_driver.kss",
+   "notes": "command 53; title contextual_not_official"
   },
   {
    "id": "audio.nemesis3.driver",
@@ -46451,7 +50015,7 @@
    "bank": null,
    "offset": null,
    "category": "sound_driver",
-   "format": "unknown",
+   "format": "kss_rip",
    "size_bytes": null,
    "content_sha256": null,
    "dependencies": [],
@@ -46459,14 +50023,14 @@
    "reuse_class": "CONVERT",
    "states": {
     "identified": true,
-    "extracted": false,
+    "extracted": true,
     "converted": false,
     "integrated": false,
     "tested": false,
     "validated": false
    },
-   "path": null,
-   "notes": "not ripped yet"
+   "path": "tools/rip_nemesis3_kss.py",
+   "notes": "KSS rip of the original driver (Phase 1c), 83 codes, frame-identical to the game"
   },
   {
    "id": "audio.native.apu_driver",

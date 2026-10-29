@@ -9,20 +9,20 @@
     "manifests/content_coverage.json"
   ],
   "totals": {
-    "total": 1727,
-    "identified": 1727,
-    "extracted": 1676,
-    "converted": 307,
-    "integrated": 307,
+    "total": 1859,
+    "identified": 1859,
+    "extracted": 1809,
+    "converted": 316,
+    "integrated": 316,
     "tested": 105,
     "validated": 0,
-    "pending": 1420,
+    "pending": 1543,
     "reuse": {
-      "CONVERT": 1575,
+      "CONVERT": 1667,
       "ADAPT": 2,
       "UNKNOWN": 19,
       "NEW": 6,
-      "REUSE": 125
+      "REUSE": 165
     }
   },
   "by_game": {
@@ -66,16 +66,16 @@
       }
     },
     "lifeforce_nes_us": {
-      "total": 26,
-      "identified": 26,
-      "extracted": 25,
+      "total": 66,
+      "identified": 66,
+      "extracted": 65,
       "converted": 0,
       "integrated": 0,
       "tested": 0,
       "validated": 0,
-      "pending": 26,
+      "pending": 66,
       "reuse": {
-        "REUSE": 19,
+        "REUSE": 59,
         "UNKNOWN": 7
       }
     },
@@ -94,16 +94,16 @@
       }
     },
     "nemesis": {
-      "total": 279,
-      "identified": 279,
-      "extracted": 278,
-      "converted": 232,
-      "integrated": 232,
+      "total": 288,
+      "identified": 288,
+      "extracted": 287,
+      "converted": 241,
+      "integrated": 241,
       "tested": 53,
       "validated": 0,
       "pending": 47,
       "reuse": {
-        "CONVERT": 276,
+        "CONVERT": 285,
         "ADAPT": 1,
         "UNKNOWN": 1,
         "NEW": 1
@@ -123,16 +123,16 @@
       }
     },
     "nemesis3": {
-      "total": 750,
-      "identified": 750,
-      "extracted": 731,
+      "total": 833,
+      "identified": 833,
+      "extracted": 815,
       "converted": 34,
       "integrated": 34,
       "tested": 23,
       "validated": 0,
-      "pending": 716,
+      "pending": 799,
       "reuse": {
-        "CONVERT": 750
+        "CONVERT": 833
       }
     },
     "nemesis_legends": {
@@ -205,16 +205,16 @@
       }
     },
     "compressed_stream": {
-      "total": 1074,
-      "identified": 1074,
-      "extracted": 1074,
-      "converted": 167,
-      "integrated": 167,
+      "total": 1083,
+      "identified": 1083,
+      "extracted": 1083,
+      "converted": 176,
+      "integrated": 176,
       "tested": 0,
       "validated": 0,
       "pending": 907,
       "reuse": {
-        "CONVERT": 1074
+        "CONVERT": 1083
       }
     },
     "cutscene": {
@@ -297,17 +297,17 @@
       }
     },
     "music_track": {
-      "total": 98,
-      "identified": 98,
-      "extracted": 98,
+      "total": 221,
+      "identified": 221,
+      "extracted": 221,
       "converted": 0,
       "integrated": 0,
       "tested": 0,
       "validated": 0,
-      "pending": 98,
+      "pending": 221,
       "reuse": {
-        "CONVERT": 56,
-        "REUSE": 42
+        "CONVERT": 139,
+        "REUSE": 82
       }
     },
     "nes_chr": {
@@ -379,7 +379,7 @@
     "sound_driver": {
       "total": 8,
       "identified": 8,
-      "extracted": 5,
+      "extracted": 6,
       "converted": 1,
       "integrated": 1,
       "tested": 1,
@@ -485,7 +485,7 @@
   },
   "unknown_regions": {
     "statement": "ROM bytes not attributed to an identified resource are not yet computed per game; extraction reports list stream/script byte sums only.",
-    "nemesis_rle_bytes": 10224,
+    "nemesis_rle_bytes": 12086,
     "nemesis2_rle_bytes": 13992
   },
   "caveats": [

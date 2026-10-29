@@ -1,7 +1,7 @@
 {
   "schema": 1,
-  "checkpoint": "CP0018",
-  "edition": "PHASE1B_NES_ASSET_CATALOGUE",
+  "checkpoint": "CP0019",
+  "edition": "PHASE1C_MUSIC_AND_SOUND_CATALOGUE",
   "gameplay_changed": true,
   "project_directory": "Nemesis_Legends_CP0001",
   "rom": "build/native/Nemesis_Legends_CP0016.nes",
@@ -36,7 +36,7 @@
     "src/native_title.s": "0b1be108125be223341e3938e62accd426fb645e0c7540eb91da16a19e88d35e"
   },
   "cleanup_published_to_github": true,
-  "scope": "Phase 1b of docs/DECISIONS.md: catalogue of every object and screen of the NES/Famicom Gradius games (manifests/catalog_nes.json, docs/CATALOG_NES.md: 427 objects, 2800 frames, 2674 pixel-verified, 54 screens). Phase 1a MSX catalogue in manifests/catalog_msx.json. The playable ROM is the CP0016 ROM, unchanged.",
+  "scope": "Phase 1c of docs/DECISIONS.md: every music, jingle and sound-effect request of the eight source games logged in play (manifests/catalog_music.json, docs/CATALOG_MUSIC.md: 111 music, 52 jingles, 284 effects); rip titles corrected by role; new original-driver rips of Life Force (NSF, 40 songs) and Nemesis 3 (KSS, 83 tracks). Catalogues of phases 1a/1b in manifests/catalog_msx.json and catalog_nes.json. The playable ROM is the CP0016 ROM, unchanged.",
   "ui_changed": true,
   "baseline_runtime_commit": "0833559",
   "checkpoint_changed_sources": {
@@ -45,7 +45,7 @@
     "src/native_boot.s": "c6927e60c50ded48b3f566565a2b94fb878456b64e8b02b3e182fd9bcbfdd16b",
     "src/native_cheat.s": "f73a18fed0dd409b7dc8379f2345ef71ac5b3f2523a751b0fbf49a6c619c8347",
     "src/native_kernel.s": "6707f6dee641e29658a628a86aeff3e4a82d643f40b978a1420c2770d2003e71",
-    "tools/asset_manifest.py": "aee4daa0df7ac0d693c22fc571a7d6b8bdd57ae11c0760133864ef0b22a07da6",
+    "tools/asset_manifest.py": "cf2beb6e9e50d28bf2784ae8a37a01e23f611ea3e0a56cdac13401cf5395c250",
     "tools/build_n2_assets.py": "2b08c9c11a14acb852d0ed8109830eb23307420aa3a389d06932a3cae29641bb",
     "tools/build_n3_assets.py": "d3d595a7d8427ab7be6a277924767cca2a081bcbedc86bee954aae68ff1a8414",
     "tools/build_native.py": "18f6d1de84b74bebe2387d8c894480a3132b697768629bf63fe40c223b0c31d1",
@@ -74,7 +74,11 @@
     "tools/msx_capture.py": "447950ec1f0b9a46c2385b009b085be0bb221c3f327622b637928cb8caeac6d7",
     "tools/nes_ppu_state.py": "e53aae37d59d41fa1c938f35769286891c98e3a71ca9c87e86c6caf09f321168",
     "tools/catalog_nes.py": "a2da7b4686d811c6aca42e7b64bdc7324ef608cef9329da2896c2526c3615148",
-    "tools/catalog_music.py": "589e3b9254e66bf8c202fb01a4d294671e7733ef794e834abbd564e2c7c0caa4"
+    "tools/catalog_music.py": "7d2bce77831d3d6c0163bae0135a85ef334d0f0106838e7aa691f9d88344de35",
+    "tools/apply_music_catalogue.py": "8338b20069e0577250795c1734aab8b11f511c9ac73552f18ad08a38a5f8fce7",
+    "tools/rip_lifeforce_nsf.py": "a183bcbfe7c83135935117f17ef529a4cb9d0a639d9b6718fad21b5a60296d27",
+    "tools/rip_nemesis3_kss.py": "e779ce446d1d5b5c9d301cf817099c2dfbde22a9c25b41fb1661c5f354fe1452",
+    "tests/test_evidence.py": "d30eddb5bdf34d054ce2d23faf6138c2fa88f7eca217f1135bef9bf830d14c33"
   },
   "source_speed_preservation": "60Hz source-reference selectable; default 30Hz is a deliberately non-original accessibility mode",
   "stage3_normal_to_stage4_tested": true,
@@ -87,5 +91,6 @@
   "chapter_flow_structurally_tested": true,
   "rom_changed_in_this_checkpoint": false,
   "msx_asset_catalogue": true,
-  "nes_asset_catalogue": true
+  "nes_asset_catalogue": true,
+  "music_catalogue": true
 }

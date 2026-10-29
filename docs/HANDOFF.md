@@ -1,3 +1,12 @@
+# CP0019 handoff (2026-10-29) - Phase 1c, music and sound catalogue
+
+Every music, jingle and effect request of the eight source games logged at each game's
+request routine in emulator runs of every stage, boss, secret, screen and ending:
+`manifests/catalog_music.json`, `docs/CATALOG_MUSIC.md`. Rip titles corrected by role
+(`tools/apply_music_catalogue.py`); new original-driver rips of Life Force (NSF) and
+Nemesis 3 (KSS), frame-identical to the games; audio tests updated for four NSF and four
+KSS files. ROM unchanged (CP0016).
+
 # CP0018 handoff (2026-10-29) - Phase 1b, NES asset catalogue
 
 Every object and screen of Gradius (NES US / Famicom JP), Gradius II (Famicom), Life Force

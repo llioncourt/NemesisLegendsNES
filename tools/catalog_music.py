@@ -42,7 +42,9 @@ def build(evidence):
         for e in entries(doc):
             r = {k: e.get(k) for k in KEEP if e.get(k) not in (None, [], '')}
             r['requested_in_runs'] = requested(e)
-            if r.get('part_of'): r['kind'] = 'part'   # extra channel of a multi-channel tune
+            text = ' '.join(str(e.get(k) or '') for k in ('name', 'notes')).lower()
+            if r.get('part_of') or (e.get('never_requested') and ('channel record' in text or ' part' in str(e.get('name') or '').lower())):
+                r['kind'] = 'part'   # extra channel of a multi-channel tune, not a sound of its own
             rows.append(r)
         kinds = collections.Counter(r.get('kind') or 'none' for r in rows)
         cat['games'][game] = dict(title=title, status='catalogued', sounds=rows,
